@@ -1,0 +1,61 @@
+---
+description: Mem0 and LM Studio agent rules — per-project isolated memory
+alwaysApply: true
+---
+
+# Mem0 + LM Studio — Agent Rules
+
+## Architecture
+
+Each project has its **own isolated Mem0 collection** defined in `.env.local`:
+
+| Env var | Example (JonBeatz) | Example (VaderLabz) |
+|---------|--------------------|---------------------|
+| `MEM0_USER_ID` | `jonbeatz_personal` | `vaderlabz` |
+| `MEM0_COLLECTION` | `jonbeatz_personal_memories` | `vaderlabz_memories` |
+| `MEM0_QDRANT_PATH` | `%USERPROFILE%\.mem0\qdrant_personal` | `%USERPROFILE%\.mem0\qdrant_vaderlabz` |
+
+The shared `mem0-chat.ps1` script reads these from `.env.local` automatically.
+
+## Before search or infer-add
+
+1. Run **`npm run mem0:preflight`** from project root (confirms LM Studio :1234 + any LLM loaded).
+2. The script uses the project's own `MEM0_USER_ID` / `MEM0_COLLECTION` from `.env.local` — no cross-profile mixing.
+
+**Note:** `mem0:add` (default), `list`, and `delete` skip preflight — no LLM required.
+
+## Commands (from project root)
+
+```powershell
+npm run mem0:search -- "query"
+npm run mem0:add -- "text"
+npm run mem0:list
+```
+
+## On failure
+
+- Report LM Studio status once; fall back to `ReCall.md`.
+- Do not only tell the operator to run preflight — **run it yourself**.
+
+## Per-project isolation
+
+- Memories are scoped to the project's `.env.local` config.
+- JonBeatz memories stay in `jonbeatz_personal_memories` (qdrant_personal).
+- VaderLabz memories stay in `vaderlabz_memories` (qdrant_vaderlabz).
+- MSC and other profiles each have their own separate store.
+- **Never** change `MEM0_USER_ID` or `MEM0_COLLECTION` in `.env.local` casually — this would create a new empty memory space.
+
+## Draven memory (AI assistant — shared across all projects)
+
+Draven has his **own** isolated Mem0 collection at `draven_memories` / `%USERPROFILE%\.mem0\qdrant_draven`:
+- **Search:** `npm run draven:search -- "query"` (needs LM Studio)
+- **Add:** `npm run draven:add -- "text"` (no LM Studio needed — direct storage)
+- **List:** `npm run draven:list`
+- This stores cross-session context for the AI assistant — preferences, project locations, key decisions.
+- Draven uses this automatically: search at session start, store after significant work.
+
+## Bulk seed
+
+Use `infer=False` via `scripts/seed-profile-jedi-memories.py` for large doc seeds.
+
+See **`.cursor/docs/MEM0-LMSTUDIO.md`** for full reference.

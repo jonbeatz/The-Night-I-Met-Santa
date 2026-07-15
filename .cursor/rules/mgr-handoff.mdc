@@ -1,0 +1,28 @@
+---
+description: Seamless session handoff between Cursor and Claude Code via MGR/sessions/handoff.md
+globs: MGR/**,.mgr/**,.clauderules,CLAUDE.md
+alwaysApply: true
+---
+
+# MGR cross-tool handoff (Cursor ↔ Claude Code)
+
+Global guide: `~/.claude/CLAUDE.md` · Per-repo: `.clauderules` · Detail: `docs/HANDOFF.md`
+
+## On resume (`/go`)
+
+1. **`MGR/sessions/handoff.md`** — read first
+2. **`MGR/tasks.json`** — each pending task needs `context` (doing, achieve, according); see `docs/TASK_CONTEXT.md`
+3. **`MGR/sessions/worklog.md`** (tail) — `docs/WORKLOG.md`
+4. **`MGR/sessions/latest.md`** (tail)
+5. **`.mgr/memory/MEMORY.md`**
+
+## Task worklog (required)
+
+On every **create / start / complete / reopen / edit / delete** in `MGR/tasks.json`, append one block to **`MGR/sessions/worklog.md`** immediately (do not wait for `/stop`). mgr app logs automatically on save.
+
+## Before leaving (`/stop`)
+
+1. **Overwrite** `MGR/sessions/handoff.md` (`tool: cursor`)
+2. **Append** to `MGR/sessions/latest.md` (session summary; reference task ids)
+3. Update **`MGR/tasks.json`** — pending tasks require `context` blurbs; worklog any task changes from this session
+4. Reply: **Handoff saved.**

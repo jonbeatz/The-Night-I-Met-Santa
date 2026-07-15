@@ -1,0 +1,39 @@
+---
+description: Docs + checkpoint governance for JonBeatz backup and restore rituals
+alwaysApply: false
+globs:
+  - .cursor/docs/**/*.md
+  - package.json
+---
+
+# Docs checkpoint governance — JonBeatz
+
+When user asks for **"update project"**, **"update docs"**, or **"backup project"**:
+
+## Backup ritual (interactive)
+
+1. Follow **AskQuestion** gates per [interactive-workflows.mdc](./interactive-workflows.mdc)
+2. **Do not** auto-run backup until operator confirms via AskQuestion
+3. Default destination: `G:\Hermes_Project_BackUpz\JonBeatz` (override via `JONBEATZ_BACKUP_ROOT`)
+4. Quick path (no prompts): `npm run backup:quick` → `jonbeatz-project-v{N}-{a-z}`
+5. After confirmed backup, append row to **`.cursor/docs/Restore-Points.md`**
+
+## Other docs updates
+
+1. Sync command docs to `package.json` scripts — no guessing
+2. Prefer minimal edits in:
+   - `START-HERE.md`
+   - `Agent-Runbook.md`
+   - `MASTER-COMMANDS.md`
+   - `Custom-Prompts.md`
+   - `ReCall.md`
+   - `Restore-Points.md` (milestones/incidents only)
+3. Capture operational incidents as:
+   - symptom
+   - root cause
+   - shortest verified recovery path
+4. Avoid duplicated instructions — one source-of-truth pointer when possible
+
+## Restore point row format
+
+`| RP-YYYY-MM-DD-short-name | YYYY-MM-DD | Summary: branch @ sha, backup folder, version. Restore: git checkout <sha> or copy from G:\Hermes_Project_BackUpz\JonBeatz\<folder>. |`

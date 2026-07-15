@@ -1,0 +1,19 @@
+---
+description: When operator asks to run Playwright manual-assist, start headed browser + trust bypass + wait for operator
+alwaysApply: true
+---
+
+# Playwright manual-assist (operator phrase)
+
+When the operator says things like **"run playwright test"**, **"playwright assist"**, or **"start playwright for manual testing"**:
+
+- That phrase **alone** means start headed assist on **their machine**; do not ask for a redundant **"browser is open"** unless debugging.
+- The agent **cannot** see their screen unless they paste output, a screenshot, or describe the UI.
+
+1. **From repo root**, run Playwright test command from project scripts.
+2. **Run it in a background terminal** (`block_until_ms: 0` or equivalent) so the process keeps running: the harness stays in an interactive loop until **Ctrl+C** in that terminal. Do **not** run it in the foreground and then wait for exit — that blocks the session and can look like a "flash close" if the tool times out.
+3. **Before** Playwright checks against the app, confirm the dev server is listening on **port 3000** when the target is localhost (otherwise the browser has nothing to load).
+4. **Expectations:**
+   - Uses a separate browser profile (not daily browsing profile).
+   - Opens main app URL, auto-clicks **Local Dev Trust Bypass** when that button is **visible**.
+   - Browser stays open for follow-up instructions until the operator stops the terminal job (**Ctrl+C**).

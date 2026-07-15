@@ -1,0 +1,103 @@
+---
+description: Session workflow triggers for JonBeatz
+alwaysApply: true
+---
+
+# Workflow Session Rules - JonBeatz
+
+## Start Project (cold boot)
+
+When user says **Start Project**, **Begin Project**, or **Cold Start**:
+
+- Execute [`.cursor/prompts/Start-Project.md`](../prompts/Start-Project.md)
+- Run **`npm run session:start -- -Full`** from the JonBeatz profile root (`D:\\Hermes\\projects\\JonBeatz`)
+- Read `TRUTH.md`, `.cursor/docs/START-HERE.md`, `.cursor/docs/ReCall.md`
+- Do **not** auto-start long-running dev servers unless the operator explicitly asks
+
+## Open Project (resume workspace)
+
+When user says **Open Project** or **Resume Session**:
+
+- Execute [`.cursor/prompts/Open-Project.md`](../prompts/Open-Project.md)
+- Run **`npm run session:open`** (light probes — does **not** restart LiteLLM/ngrok if warm)
+- Read `TRUTH.md`, `.cursor/docs/START-HERE.md`, `.cursor/docs/ReCall.md`
+- Do **not** run `draven:speak` or `session:start -- -Full` unless stack is down and operator wants cold boot
+
+## Close Project (switch workspace — keep fleet)
+
+When user says **Close Project**, **Close Session**, or **Switch Project**:
+
+- Execute [`.cursor/prompts/Close-Project.md`](../prompts/Close-Project.md)
+- Update `.cursor/docs/ReCall.md` and `.cursor/docs/project-log.md`
+- Run **`npm run session:handoff`** (vault note only — **no** `session:stop`)
+- Use **AskQuestion** for git commit/push — never auto-commit
+- Do **not** run `draven:speak` or `-StopDeepSeek`
+
+## End Project (day-end)
+
+When user says **End Project**, **End Session**, **Session Closeout**, or **Done for today**:
+
+- Execute [`.cursor/prompts/End-Project.md`](../prompts/End-Project.md)
+- Update `.cursor/docs/ReCall.md` and `.cursor/docs/project-log.md`
+- Use **clickable `AskQuestion` tool** (never "Reply 1/2") for git, then `:3000` when listening, then **Stop LiteLLM + ngrok**
+- Run **`npm run session:stop`** (add **`-- -StopDeepSeek`** when operator confirms stop)
+- See `end-project-ritual.mdc`
+
+## Update Docs
+
+When user says **update docs** or **update docs and mem0**:
+
+- Execute [`.cursor/prompts/Update-Docs.md`](../prompts/Update-Docs.md)
+- **Session harvest (Phase 1b):** fold anything worth keeping from this session into the project playbook / decision log (e.g. `BOOK-PRODUCTION-SYSTEM.md` on book projects) — don’t only sync fleet mirrors
+- Edit **shared canonical** docs first when TOOLS-* or universal docs changed (`_core-scripts/shared-profile-content/docs/`)
+- Run **`npm run docs:sync`** (mirrors shared → `.cursor/docs`)
+- Run **`npm run fleet:sync`** from hub when skills/scripts/rules/prompts changed this session
+- Run **`npm run version:sync`** when version changed
+- Align version across `TRUTH.md`, `package.json`, `MASTER-COMMANDS.md`, `.cursor/docs/CHANGELOG.md`
+
+## Release Version
+
+When user says **release version**, **publish release**, or after a version bump on a milestone branch:
+
+- Execute [`.cursor/prompts/Release-Version.md`](../prompts/Release-Version.md)
+- Run **`npm run version:sync`** then **`npm run release`**
+
+## Branch Cut
+
+When user says **branch cut**, **cut JonBeatz-Project-vN**, **cut new development branch**:
+
+- Execute [`.cursor/prompts/Branch-Cut.md`](../prompts/Branch-Cut.md)
+- Full ritual: backup -> freeze previous branch @ SHA -> create `JonBeatz-Project-v{N}` -> bump **`N.0.0`** -> update Restore-Points -> **`npm run release`**
+- Do **not** stop at `git checkout -b` alone
+- Leave **`main`** untouched unless the operator explicitly requests a merge
+
+## Backup
+
+When user says **backup profile** or **backup**:
+
+- Run **`npm run backup:quick`** from profile root (non-interactive)
+
+## Review Tool (v2)
+
+| Trigger | Action |
+|---------|--------|
+| **review tool** / one repo URL | [Review-Tool.md](../prompts/Review-Tool.md) single mode |
+| **review batch** / multiple URLs | Review-Tool.md batch mode — all grades first, one install AskQuestion |
+| **review design** / **grade this site** | Review-Tool.md design grade → DESIGN-REFERENCES + optional showcase queue |
+| Design URL only (no grade keyword) | DESIGN-REFERENCES + HERMES-SHOWCASE-SPEC add queue (bookmark) |
+| **re-review** / **refresh grade** | Re-grade per TOOLS-WATCHLIST policy |
+| **review session done** | [Review-Session-Done.md](../prompts/Review-Session-Done.md) |
+
+**Always:** Step 0 duplicate pre-check (`npm run tools:review-precheck`). Update **shared canonical** `TOOLS-*.md` in `_core-scripts/shared-profile-content/`. `sync:docs` then `fleet:sync` when fleet artifacts change. Run **`npm run tools:status`** after installs.
+
+## Build Showcase Demo
+
+When user says **Build Showcase Demo**, **Fire Showcase**, **Hermes Motion Lab**, **build motion lab**, or **ultimate demo site**:
+
+- Execute [`.cursor/prompts/Build-Showcase-Demo.md`](../prompts/Build-Showcase-Demo.md)
+- Read **`.cursor/docs/HERMES-SHOWCASE-SPEC.md`** — living spec + add queue
+- Default target: **JonBeatz.dev** route `/showcase`
+
+When user sends a **design reference URL** (no build yet) **without** **review design** / **grade this site**:
+
+- Append row to **DESIGN-REFERENCES.md** add queue **and** **HERMES-SHOWCASE-SPEC.md** add queue

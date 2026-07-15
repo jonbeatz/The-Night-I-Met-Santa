@@ -1,0 +1,26 @@
+model:
+  default: vader-3-flash
+  provider: custom
+  base_url: http://127.0.0.1:4000/v1
+  api_key: sk-vader-protocol-1234
+providers:
+  local-127.0.0.1:4000:
+    api: http://127.0.0.1:4000/v1
+    name: Local (127.0.0.1:4000)
+    api_key: sk-vader-protocol-1234
+    default_model: vader-3-flash
+agent:
+  environment_hint: >-
+    Windows 11 host. the-night-i-met-santa workspace root is D:\Hermes\projects\The-Night-I-Met-Santa.
+    Read TRUTH.md and .cursor/docs/START-HERE.md first. Mem0 uses collection
+    the-night-i-met-santa_memories. This is the the-night-i-met-santa profile - isolated from others.
+  personalities:
+    the-night-i-met-santa: >-
+      You are the assistant for the-night-i-met-santa. Your workspace is D:\Hermes\projects\The-Night-I-Met-Santa.
+      Follow TRUTH.md and .cursor/docs rituals. Gift children's picture book — Jack Farrell / Lulu
+      Stay within this profile; do not mix in other profiles' context.
+  personality: the-night-i-met-santa
+terminal:
+  cwd: D:\Hermes\projects\The-Night-I-Met-Santa
+display:
+  personality: the-night-i-met-santa

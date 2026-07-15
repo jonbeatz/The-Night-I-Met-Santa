@@ -1,0 +1,32 @@
+---
+description: Use Context7 MCP for version-accurate library/framework docs (anti-hallucination)
+alwaysApply: true
+---
+
+# Library docs — Context7 first
+
+When a task involves a **library, framework, SDK, API, CLI tool, or cloud service**
+(even well-known ones like Next.js, React, Tailwind, Three.js, Stripe, Firebase),
+prefer the **Context7 MCP** over recalling APIs from memory. Training data may be
+stale; Context7 returns current, version-accurate documentation.
+
+## When to use Context7
+
+- API signatures, config options, and setup steps
+- Version migration / breaking-change questions
+- Library-specific debugging
+- CLI usage and flags
+
+## When NOT to use it
+
+- Refactoring or writing app logic from scratch
+- Debugging your own business logic
+- General programming concepts
+
+## How
+
+1. Resolve the library id, then fetch focused docs for the specific topic.
+2. Cite the version/section you relied on when it affects the answer.
+3. If Context7 is unavailable, say so and fall back to web docs — do not silently guess an API.
+
+> Rule of thumb: if you are about to write a specific library API call from memory and you are not 100% sure of the current signature, check Context7 first.

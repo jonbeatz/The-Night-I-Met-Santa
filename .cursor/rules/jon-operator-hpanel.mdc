@@ -1,0 +1,34 @@
+---
+description: Jon — hPanel bookmarks + always label Local vs Live for Hostinger commands
+alwaysApply: true
+---
+
+# Operator: Jon — Hostinger hPanel and command locality
+
+## Node.js app Start / Stop / Restart
+
+**Live (Hostinger hPanel):** [https://hpanel.hostinger.com/](https://hpanel.hostinger.com/)
+
+Say explicitly: open hPanel in browser → Node.js application → **Restart** after deploy scripts complete.
+
+## Command locality (required)
+
+Tag where every command runs:
+
+| Tag | Examples |
+|-----|----------|
+| **Local (JonBeatz)** | `npm run dev`, `backup:quick`, `sync:mcp-env`, Mem0, Playground |
+| **Local (MSC repo root)** | `npm run build`, `pushit:live*`, `msc:hostinger:*`, `git` |
+| **Live (hPanel browser)** | Node.js Restart — never `npm run build` here |
+| **Live (SSH via local script)** | `msc:hostinger:sync-app`, `recover`, `npm-install` — triggered from PC |
+
+**Never** run `pushitup` / FTPS upload commands in hPanel Terminal.
+
+## From JonBeatz workspace
+
+- Hostinger **MCP** and **reference docs** are available (`HOSTINGER-REFERENCE.md`, `Hostinger-Ops` skill).
+- **Deploy execution** requires **MyStudioChannel** repo — see `.cursor/prompts/Hostinger-MSC.md`.
+
+## Local Playground recovery (JonBeatz)
+
+`npm run dev:recover` — not MSC `dev:fresh`. Run from `D:\Hermes\projects\JonBeatz`.

@@ -1,0 +1,51 @@
+---
+description: JonBeatz image workflow — Hugging Face cloud + ComfyUI VRAM policy
+globs:
+  - "**/*comfy*"
+  - "**/*image*"
+  - "**/generate-image*"
+  - "**/gen-image*"
+  - "**/vram*"
+alwaysApply: false
+---
+
+# JonBeatz Image Workflow Rules
+
+## Docs first
+
+Before image/video tasks, read **`.cursor/docs/IMAGE-WORKFLOW.md`**. Model inventory: **`COMFYUI-MODELS.md`**. VRAM: **`VRAM-IMAGE.md`**.
+
+## Environment
+
+1. JonBeatz secrets live in **`D:\Hermes\projects\JonBeatz\.env.local`** — not MSC `.env.local` when working in this profile (run `npm run env:setup` to seed from MSC).
+2. Personal outputs go to **`D:\Hermes\assets\media\{ProjectName}`** (JonBeatz: `D:\Hermes\assets\media\JonBeatz`) via `IMAGE_OUTPUT_DIR`.
+
+## Hugging Face (cloud)
+
+3. **`npm run image:gen -- "prompt"`** for quick txt2img — **zero local VRAM** (default free path).
+4. Requires **`HF_TOKEN`** in `.env.local`. Run **`npm run image:doctor`** if missing.
+
+## fal.ai (paid bonus — optional)
+
+5. **`npm run image:fal -- "prompt"`** when Jon wants premium models or HF is capped — **pay-per-use** prepaid wallet.
+6. Requires **`FAL_API_KEY`** in `.env.local`. Run **`npm run sync:mcp-env`** for Cursor **fal-ai** MCP.
+7. Default model: **`FAL_IMAGE_MODEL=fal-ai/flux/schnell`** (~$0.003/image). See **IMAGE-WORKFLOW.md** for Nano Banana 2 / GPT Image 2 ids.
+8. **Never replace** `image:gen` with fal for routine stills — fal is bonus only.
+
+## ComfyUI (local GPU)
+
+9. **Never start ComfyUI** unless Jon explicitly asks, runs **`npm run comfy:start`**, or sets **`JONBEATZ_COMFYUI_AUTO_START=1`**.
+10. Before start, check **`npm run comfy:status`** or VRAM. Warn if **>65%** unless Jon uses `-NoVRAMCheck`.
+11. Prefer **`npm run comfy:stop`** over full VRAM cleanup when only image VRAM should be freed (keeps LM Studio).
+12. After local image/video work, **suggest `npm run comfy:stop`** to restore Mem0/LM Studio headroom.
+
+## Workstation profile commands
+
+13. Jon's PowerShell profile exposes **`gen-image-local`**, **`edit-image`**, **`inpaint-image`**, **`upscale-image`**, **`generate-video`**, **`animate-image`** — require ComfyUI on **:8188**.
+14. **JonBeatz Cursor MCP `comfyui`** (`comfyui-mcp`) — local ComfyUI only; enable in Cursor Settings after `npm run sync:mcp-env`. Still run **`comfy:start`** before MCP tools; **`comfy:stop`** when done. No Comfy Cloud MCP.
+15. Translate natural language to the right command; ask **cloud vs local vs fal bonus** when ambiguous.
+
+## Boundaries
+
+16. Do not apply MSC **deploy** or **Next.js** rules for image tasks in JonBeatz.
+17. Log reusable prompts/styles to **Mem0** (`npm run mem0:add`).

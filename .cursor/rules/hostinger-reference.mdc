@@ -1,0 +1,25 @@
+---
+description: Hostinger deploy knowledge — reference MSC repo; do not run MSC deploy from JonBeatz package.json
+alwaysApply: false
+globs:
+  - .cursor/docs/HOSTINGER*.md
+  - .cursor/docs/PITFALLS-HOSTINGER.md
+  - .env.local.example
+---
+
+# Hostinger reference (The-Night-I-Met-Santa)
+
+## Profile boundary
+
+**The-Night-I-Met-Santa** deploy runs from **`D:\\Hermes\\projects\\The-Night-I-Met-Santa`**.  
+MSC deploy (`pushit:live*`) stays in **MyStudioChannel** repo only.
+
+## When Hostinger is mentioned for this project
+
+1. Read `.cursor/docs/HOSTINGER-REFERENCE.md`
+2. Read `.cursor/docs/HOSTINGER-DEPLOY.md`
+3. Read `.cursor/skills/Hostinger-Ops/SKILL.md`
+
+## MCP
+
+`HOSTINGER_API_TOKEN` in `.env.local` → `npm run sync:mcp-env` → global `hostinger-*` servers.

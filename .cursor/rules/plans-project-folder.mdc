@@ -1,0 +1,35 @@
+---
+description: Plans in .cursor/plans (dated); PRDs and product docs in .cursor/docs
+alwaysApply: true
+---
+
+# Plans vs product docs
+
+## Two folders — do not mix
+
+| Type | Folder | Naming | Examples |
+|------|--------|--------|----------|
+| **Plans & spikes** | `.cursor/plans/` | `YYYY-MM-DD-topic.plan.md` | auth spike, ecosystem audit, branch-cut spike |
+| **PRDs & product docs** | `.cursor/docs/` | `PROJECT-PRD.md`, `*-APP.md`, `*-FEATURES.md` | `NEXT-FLICK-PRD.md`, runbooks, backlog |
+
+**Do not** put PRDs, feature catalogs, or runbooks in `.cursor/plans/`.  
+**Do not** put ephemeral Plan-mode spikes only under `.cursor/docs/` unless promoted to a living doc.
+
+## Canonical plans folder
+
+- **`.cursor/plans/`** at the repository root is the **single source of truth** for planning artefacts that belong in Git (plans, spikes, accepted Plan-mode markdown).
+- Prefer **relative paths**: `.cursor/plans/<filename>.md` — avoid machine-specific absolute paths in docs unless documenting the operator PC.
+
+## Agents
+
+- When **authoring or saving** a plan file (outside Cursor-only UI internals), **write under `.cursor/plans/`** with a descriptive filename: **`YYYY-MM-DD-topic.plan.md`**.
+- When **authoring PRDs, feature guides, or app runbooks**, write under **`.cursor/docs/`** (profile-specific names, e.g. `NEXT-FLICK-PRD.md`).
+- If Cursor first creates a draft only under **`%USERPROFILE%\.cursor\plans`**, **copy or move** the final content into **this repo's `.cursor/plans/`** before session closeout when the plan should be tracked in Git.
+- **Save to workspace** in Cursor typically targets **`<repo>\.cursor\plans`** — prefer that outcome; normalize paths under **`.cursor/plans/`** only.
+- **Hub mirror (JonBeatz):** Next-Flick product docs may be mirrored in `JonBeatz\.cursor\docs\NEXT-FLICK-*.md` for planning from Command Center — implementation truth stays in the Next-Flick repo.
+
+## Operators
+
+- Open **`.cursor/plans`** from the cloned repo.
+- After any draft lands only under `%USERPROFILE%\.cursor\plans`, copy into **`<repo>\.cursor/plans`** per project conventions.
+- Generic templates (e.g. Clerk setup prompts) belong in **shared prompts/skills**, not committed as loose files in `.cursor/plans/`.

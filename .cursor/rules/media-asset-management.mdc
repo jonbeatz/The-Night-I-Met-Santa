@@ -1,0 +1,14 @@
+---
+description: Enforce project-root media storage for uploads and generated assets
+alwaysApply: true
+---
+
+# Media Asset Management
+
+- Store uploaded media and generated binary assets under project-root `./media`.
+- This includes thumbnails, avatars, PDFs, and generated media artifacts.
+- Deploy release zips follow the deploy pipeline location (e.g. `final_deploy.zip` at repo root) unless explicitly changed in deploy tooling/docs.
+- For CMS upload collections, always set the static directory to `media`.
+- Do not use absolute host paths such as `/home/...`, `C:\...`, or `/Users/...` for media storage.
+- Use relative paths like `media/...` or server-safe resolution such as `path.resolve(dirname, 'media')`.
+- Before adding upload/media features, check for scattered assets outside `./media` and move them into appropriate subfolders.

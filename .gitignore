@@ -1,0 +1,33 @@
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated art / print outputs (large; keep local)
+Media/generated/
+Pages/
+Output/
+*.pdf
+
+# Large media sources (keep local)
+Audio/*.wav
+Audio/*.m4a
+Images/ai/
+Xtraz/
+
+# Secrets
+.env
+.env.*
+*.token
+
+.env.local
+_robocopy*.log

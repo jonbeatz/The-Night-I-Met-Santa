@@ -1,0 +1,20 @@
+---
+description: Vader Vault - cross-project Obsidian memory at H:\Vader_Vault
+alwaysApply: true
+---
+
+# Vader Vault - cross-project memory
+
+A shared Obsidian vault at `H:\Vader_Vault` is the durable, cross-project memory for the whole `D:\Hermes\projects` ecosystem. It is reachable from every workspace via the `vault` filesystem MCP.
+
+## Use it
+
+- **Before non-trivial work:** read `H:\Vader_Vault\AGENTS.md`, then the relevant `01_Projects/<Project>.md` hub for context.
+- **At session close:** append a short note to `H:\Vader_Vault\03_AI_Memory\Sessions\YYYY-MM-DD-<project>.md` (what changed, decisions, follow-ups) and update the project hub's `last_touched` + Decisions/Learnings if relevant.
+- **Reusable lessons/gotchas (cross-project):** add an atomic note under `H:\Vader_Vault\02_Knowledge\{Decisions,Learnings,Gotchas,Patterns}\` and wikilink it from the project hub(s).
+
+## Rules
+
+- **Link, never duplicate.** Repo `TRUTH.md` / `.cursor/docs/ReCall.md` stay authoritative; the vault links to them (avoids drift).
+- **No secrets** in the vault - it is git-tracked (private).
+- Complements Mem0 / Draven (runtime recall). The vault is the human-readable, durable layer; if a learning matters at runtime too, also `npm run draven:add -- "..."`.

@@ -1,0 +1,4 @@
+# Book / POD prepress Python deps (Hermes agent venv or project Python)
+img2pdf>=0.5
+pikepdf>=9.0
+Pillow>=10.0

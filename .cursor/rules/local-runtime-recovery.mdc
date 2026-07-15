@@ -1,0 +1,63 @@
+---
+description: After code edits, verify build + localhost; recover broken build cache
+alwaysApply: true
+---
+
+# Local runtime recovery and post-change verification
+
+## After each code update (build gate + local URL)
+
+**Operators expect:** substantive changes get a **production build check** and **dev server back on port 3000** without re-running commands by hand every time.
+
+1. **Agents:** After edits under runtime paths (`app/`, `components/`, `lib/`, `pages/`, etc.), **run a verify build command** from the repo root before you consider the task done, until it exits **0**.
+2. **After verify succeeds**, if **port 3000 is free**, **run the dev server** so localhost is listening again.
+3. **Cursor stop hooks** may start the dev server automatically when Git shows runtime-path changes.
+
+## Mandatory: ERR_CONNECTION_REFUSED / white screen
+
+If the operator reports **`ERR_CONNECTION_REFUSED`**, a **white screen**, or that **nothing is listening on port 3000**, the agent **must immediately** execute the recovery sequence:
+
+- Free port 3000 if occupied
+- Clean build cache
+- Rebuild and start dev server
+
+**Constraint:** Do **not** only list these steps in chat. **Run** the terminal commands from the repo root, **wait** until the log shows **Ready** (or report the error), then **verify** with **HTTP request** against **`http://127.0.0.1:3000/`** and **report the HTTP status codes**.
+
+## Auto-reset (broken dev / vendor-chunks / port conflict)
+
+If the user reports **500**, **missing chunks**, **404s**, or **`EADDRINUSE`** on port **3000**, **do not only suggest a command**. From the repo root, **run** the dev reset command. Report what the command printed (e.g. **Ready**, **Compiled**) or any error.
+
+## What operator can say (optional shorthand)
+
+- **"Postflight local"** or **"Verify localhost"** — run build verify, then HTTP smoke for main routes when possible.
+- **"Hard recovery"** — run full recovery playbook (free port, clean, build, dev).
+- **Broken localhost / vendor-chunks** — the agent should run dev reset without waiting to be asked.
+
+The agent should follow this file **without** being asked, after tasks that touch runtime code.
+
+## Execute local recovery — do not only tell operator to run it
+
+Whenever fixing or checking **Local (PC repo root)** health — including recovery commands, dev server, or HTTP smoke tests — the agent **must run those commands itself** from the repo root and report pass/fail. **Do not** substitute a handoff like "you should run..." unless the step is genuinely unsafe to automate.
+
+## Mandatory before you finish a coding task (agents)
+
+If you changed **any** file that can affect the running app — including `app/`, `components/`, `lib/`, `pages/`, `middleware.ts`, `next.config.mjs`, `package.json`, or scripts that feed the bundle — you **must**:
+
+1. **Run the build verify command from the repo root** and fix errors until it exits **0**.
+2. **After verify exits 0**, if **port 3000 is free**, **run the dev server** so localhost responds again.
+3. **Do not** mark the task complete if verify fails.
+4. If you only changed **markdown** or other non-runtime files, build verify is optional — but when in doubt, run it.
+
+## HTTP smoke after build (agents — close the loop)
+
+After build succeeds, prefer proving main routes respond:
+
+- If **port 3000 is free**: start the dev server in the background, wait until the log shows **Ready**, then run HTTP smoke tests. Expect **200**. Stop the background dev process if you started it only for this check.
+- If **port 3000 is already in use**: run the project's verify-local command from the repo root **once**.
+
+Do not skip the build step in favor of only HTTP checks.
+
+## Smoke checks
+
+- `http://localhost:3000/`
+- Main app routes as appropriate for the project

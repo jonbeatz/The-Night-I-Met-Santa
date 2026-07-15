@@ -1,0 +1,78 @@
+
++The Night I Met Santa
++
++I searched and I peeked when I first heard the noise.
++Something or someone was in with the toys.
++I slithered and crawled for a peek of a glimpse.
++It must be some fairies or holiday imps.
++
++I got up the nerve to go to the door,
++a door that was decorated, bolted and locked.
++I didn't know it when I entered the room
++to surprise the amazement or even the shock.
++
++Now I'm usually calm, not very loud,
++or even known to be a ranter.
++But what do you say when you sneak up on Santa?
++
++My jaw dropped when our eyes finally met.
++I knew right then, it was a moment I would never forget.
++For there he was in all his splendor,
++brilliant white hair, red coat with suspenders.
++
++He was down on the floor between boxes, gifts and ribbons galore.
++I couldn't move, I stayed very still.
++Finally he whispered, "Sit over here.
++Have a moment to kill."
++
++Oh, what a feeling, such a thrill.
++We chatted and laughed what seemed like an hour.
++But with laughs, stories and chatter,
++who cares, it didn't much matter.
++
++He spoke of many places, people and things.
++From toys to music to bright diamond rings.
++Coats made of wool, ties made of silk.
++He even revealed his passion for hot cocoa instead of cold milk.
++
++When I heard all the noise up in the roof,
++it hit me right then. I needed some proof.
++Where can I go? What can I get?
++I know, a photo. That's my best bet.
++
++I flew out the door and was back in a flash.
++But oh no, the hour had already passed.
++And from the noise on top of the roof
++I realized that I was still without proof.
++
++I turned around slowly. I needed to know,
++did he leave me a hint, a tip or a clue?
++Did he forget his hat or maybe a shoe?
++Now what am I supposed to do?
++
++I know, I'll look up the flue.
++I dashed to the flue but nothing was there.
++I looked over here and I looked over there.
++When I saw something on top of the chair,
++my proof I thought was just laying right there.
++
++It wasn't a shoe, hat or a coat.
++I couldn't believe it, the old guy. He left me a note.
++I fell on the chair and started to stare.
++What it said, I didn't care.
++
++I tore open the note that Santa had wrote.
++The words jumped out as to get my attention.
++And there was one thing he told me to mention.
++
++More than cakes, cocoa or milk.
++Shirts made of cotton or ties made of silk.
++Hats, stockings or a new coat.
++What he wants is simply a note.
++
++He said I've had enough eggnogs, cider and soups.
++My belt's getting harder to fit in the loops.
++And one last thing, please do me a favor.
++Always love Christmas, act like a kid and pray to your Savior.
++
++God bless.

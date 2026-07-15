@@ -1,0 +1,19 @@
+{
+  "profileName": "the-night-i-met-santa",
+  "displayName": "The-Night-I-Met-Santa",
+  "workspaceDir": "D:\\Hermes\\projects\\The-Night-I-Met-Santa",
+  "hermesHome": "%LOCALAPPDATA%\\hermes\\profiles\\the-night-i-met-santa",
+  "desktopConfig": {
+    "projectDirFile": "%APPDATA%\\Hermes\\project-dir.json",
+    "activeProfileFile": "%APPDATA%\\Hermes\\active-profile.json"
+  },
+  "launcher": "scripts\\start-hermes-desktop-the-night-i-met-santa.ps1",
+  "npmScript": "npm run desktop",
+  "cliAlias": "the-night-i-met-santa",
+  "mem0": {
+    "userId": "the-night-i-met-santa",
+    "collection": "the-night-i-met-santa_memories",
+    "qdrantPath": "%USERPROFILE%\\.mem0\\qdrant_the-night-i-met-santa"
+  },
+  "notes": "Gift children's picture book — Jack Farrell poem; Lulu 8.5x8.5 hardcover."
+}

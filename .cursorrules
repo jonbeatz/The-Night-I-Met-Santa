@@ -1,0 +1,36 @@
+---
+description: Core operating rules for The-Night-I-Met-Santa
+alwaysApply: true
+---
+
+# The-Night-I-Met-Santa — Core Rules
+
+## Environment
+
+- **OS/Shell:** Windows 10/11 PowerShell. No bash heredocs (`<<`). Use native PowerShell strings or temp files for multi-line git messages.
+- **Profile boundary:** This is `the-night-i-met-santa` — keep it isolated from other profiles.
+
+## Secrets
+
+- **Never commit** `.env*`, OAuth tokens, or API keys.
+- All secrets live in `.env.local` (gitignored).
+
+## UTF-8 / Docs
+
+- Never bulk-rewrite `.md` from PowerShell without `-Encoding UTF8`.
+- Run encoding checks before doc commits.
+
+## Source of Truth
+
+When docs differ, `TRUTH.md` wins over everything.
+
+## Draven memory (AI assistant cross-session)
+
+Draven (the AI assistant) has his own isolated Mem0 at `draven_memories` / `qdrant_draven`:
+- Search before sessions: `npm run draven:search -- "query"`
+- Store context after tasks: `npm run draven:add -- "summary"`
+- This is separate from the project's own `mem0:add/search`
+
+## Skills (read before relevant work)
+
+See SKILL-INDEX.md for the full catalog of available domain skills.
