@@ -18,6 +18,8 @@ Pages/
 Output/
 *.pdf
 
+# DO track Media/approved/ (Jon-selected keepers) — not ignored
+
 # Large media sources (keep local)
 Audio/*.wav
 Audio/*.m4a

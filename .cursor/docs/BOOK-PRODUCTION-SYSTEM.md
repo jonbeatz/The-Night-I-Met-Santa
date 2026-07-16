@@ -30,7 +30,22 @@
 | Trim | **8.5 × 8.5"** Lulu casewrap HC |
 | Pages | **32** even (no blanks) |
 | Style locked | Painted **gouache** — not colored pencil |
-| Keepers | `Media/generated/test-batch-v2/` · covers `Media/generated/test-covers-v3/` |
+| Keepers | `Media/generated/test-batch-v2/` · covers `Media/generated/test-covers-v3/` · **approved → `Media/approved/`** (two-tier) |
+| Future-book master | Repo-root **`BOOK-PLAYBOOK.md`** (pair with this living ops doc) |
+| Fonts | `.cursor/docs/FONT-CATALOG.md` · pack in `Xtraz/Fonts/` (gitignored; installed on PC) |
+
+### Media/approved two-tier (Jon 2026-07-15)
+
+| Tier | Path | Use |
+|------|------|-----|
+| **A moodboard** | `Media/approved/style-refs/{covers,back,jack,pages,santa,spread,story}/` | Favorites / shot ideas — **keep this org** |
+| **B print locks** | `characters/` · `covers/` · `pages/` · `spreads/` | Clean kebab names for compositor/Typst |
+
+Only Tier B is “locked for print.” See `Media/approved/INDEX.md`.
+
+**Important (2026-07-15):** Tier B today = **composition approval**, often dial/~1K size — **not** Lulu pixel-final.  
+Print remakes + boy/Santa continuity plan → **`.cursor/docs/CONTINUITY-AND-PRINT-FINALS.md`**.  
+Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file should get a **`.recipe.md`** sidecar (see `covers/cover-front.recipe.md`).
 
 ---
 
@@ -51,21 +66,27 @@
 | Art medium | **Painted gouache / soft watercolor** | `ILLUSTRATION-STYLE.md` |
 | Art size page | **2625 × 2625** @ 300 DPI | 8.75" with 0.125" bleed |
 | Art size spread | **5250 × 2625** master → split L/R | Continuous scene across gutter |
+| Poem typeface (preferred) | **Cormorant Garamond** (alt EB Garamond) | `FONT-CATALOG.md` — upgrade from Georgia |
+| Cover display type | **Cinzel Decorative** (alt Mountains of Christmas) | Same |
+| Lulu color | **sRGB** export for full-color interior | Lulu printers use sRGB (2026 help) |
+| Lulu paper | **Premium Color** / heavier stock | Heirloom gift feel |
+| Safety | ≥ **0.5"** from trim (faces/text) | Lulu full-bleed recommendation |
 
 ---
 
 ## 2) Tool stack (what we actually use)
 
-### Image generation — **locked lanes** (Jon 2026-07-15)
+### Image generation — **locked lanes** (Jon 2026-07-15; dual prompts 2026-07-15 night)
 
-| Priority | Lane | Endpoint | ~Cost | When |
-|:--------:|------|----------|------:|------|
-| 1 | **Dial / dev** | `fal-ai/flux-2/klein/4b` | ~$0.009/MP (~$0.01 @ square_hd) | Layout, vibe, text-zone probes — default iterate |
-| 2 | **Fallback** | `fal-ai/qwen-image-2/text-to-image` | ~$0.035/image | Klein misses the vibe; 2nd option before spending Banana |
-| 3 | **Finals** | `fal-ai/nano-banana-pro/edit` + style refs | ~$0.15/image | Approved pages / covers after dial |
+| Priority | Lane | Endpoint | ~Cost | Style prompt | When |
+|:--------:|------|----------|------:|--------------|------|
+| 1 | **Dial / mockups** | Klein 4B — fal `flux-2/klein/4b` **or** OpenRouter `flux.2-klein-4b` | ~$0.01–0.015 | **Klein D2 append** (`IMAGE-LANE-PROMPTS.md`) | Layout, vibe, cheap probes |
+| 2 | **Fallback** | `fal-ai/qwen-image-2/text-to-image` | ~$0.035 | Short master OK | Klein misses vibe |
+| 3 | **Finals** | fal `nano-banana-pro/edit` **or** OpenRouter `google/gemini-3-pro-image` | ~$0.14–0.15 | **ILLUSTRATION-STYLE master** (Gemini/Banana) | Approved pages / covers / print |
 
-**Skipped:** Ideogram V3/V4 (safety friction on Christmas child storybook beats).  
-**Evidence:** `Media/generated/model-compare-beat01/` (Beat 1 sneak; Jon picks `02` dial, `07` fallback, `05` finals).
+**Dual-lane rule:** Klein = mockup prompt only. Gemini/Banana = original master only. Do not cross-contaminate.  
+**Klein visual proof:** `Media/approved/style-refs/covers/klein-mockup-style-LOCKED-D2.png`  
+**Detail:** `.cursor/docs/IMAGE-LANE-PROMPTS.md`
 
 | Piece | Exact choice |
 |-------|----------------|
@@ -126,11 +147,14 @@
       test-covers-vN/    front+back cover sets
 [5] fal nano-banana-pro/edit @ 2K + image_urls
 [6] Jon reviews → INDEX.md notes
-[7] Promote keepers → Media/ (final names)
+[6b] **Copy winners → Media/approved/** (characters|style-refs|covers|pages|spreads) + update Media/approved/INDEX.md
+[7] Promote keepers → Media/ (final names) *or* treat approved/ as print source
 [8] Quiet-zone map per page
 [9] Pillow composite poem text
 [10] Typst / PDF → Lulu
 ```
+
+**Approved folder (2026-07-15):** `Media/approved/` is the **human-facing “what Jon picked” shelf**. Batches stay in `Media/generated/`. Git tracks `approved/` (not `generated/`).
 
 ### Prompt anatomy
 
@@ -221,7 +245,16 @@
 | 2026-07-15 | Jon mockups locked as refs: soft paint fades, **never cover faces**, Santa pages use **bottom-right** gradient; note pages **lower** not mid-window. Mocks → `text-mocks-v3/` | layout `ref-text-jon-*` |
 | 2026-07-15 | Text wash dial: overpowered solid glow rejected — use **subtle mid-opacity** paper + long fade (Pillow; not a fal model issue). Cheap art dial = Flux schnell / Klein; finals stay Nano Banana Pro | compositing |
 | 2026-07-15 | **Lane lock:** dial = **FLUX.2 [klein] 4B** (~$0.009/MP); **fallback** = **Qwen Image 2** (~$0.035/img); finals = **Nano Banana Pro /edit + refs** (~$0.15/img). Ideogram skipped (safety). Docs sync + vault pattern updated | Model lanes |
-| 2026-07-15 | Full `update docs` harvest: playbook §9 future-book recipe, Book-Findings §10, ReCall/CONTINUE, Hermes-Picture-Book-Production vault pattern | Docs ritual |
+| 2026-07-15 | Harvested `book/Childrens_Book_Design_Summary*` → Lulu checklist §8b; **corrected color advice** to **sRGB** (not CMYK-first) per Lulu help | Prepress |
+| 2026-07-15 | Flipbook webpage notes → `DIGITAL-FLIPBOOK-WATCH.md` (post-gift only; do not block print) | Optional digital |
+| 2026-07-15 | **Jack Farrell portrait LOCKED** = `v6d-armchair-tree-lights` → `Media/approved/characters/jack-farrell-portrait.png`; remake kit `CHARACTER-JACK-FARRELL.md`; book use About Author / Thank You | Character |
+| 2026-07-15 | Created **`Media/approved/`** shelf for Jon-selected finals (git-tracked); batches stay in `generated/` | Asset org |
+| 2026-07-15 | **Cover LOCKED** beige-v2 (oatmeal holly PJs; Santa face hidden). Mid-blue runner-up only. | Cover |
+| 2026-07-15 | Dual image lanes + prompts: Klein **D2** mockups vs Gemini/Banana **ILLUSTRATION-STYLE** master — `IMAGE-LANE-PROMPTS.md` | Prompts |
+| 2026-07-15 | Cast unify: Boy G0 ← style-match-A; Santa G0 = paint north star; Jack portrait ← style-match-B; eyes-met = FINAL-TEST-A | Characters |
+| 2026-07-15 | Klein **full-book** mocks (`test-book-v1`/`v2`) **rejected** (cover-bleed / not usable). **Page-by-page** Gemini finals only going forward | Process |
+| 2026-07-15 | Spread-first story map proposed: 12 spreads + 8 matter = 32 — `SPREAD-STORY-MAP.md` | Pagination |
+| 2026-07-15 | Edition credits locked (Jack author · Jon design) — `BOOK-COPY-DRAFTS.md` | Copy |
 
 *(Add a row whenever something sticks.)*
 
@@ -273,15 +306,34 @@ input:
 ### Print
 
 - [ ] Even page count
-- [ ] 300 DPI · bleed · safety margins
-- [ ] Interior PDF + cover wrap separate
-- [ ] Soft proof → then gift hardcover
+- [ ] 300 DPI · 0.125" bleed · safety ≥ 0.5" from trim for faces/text
+- [ ] Gutter: no critical faces on absolute center fold (32-page book needs no *extra* gutter margin)
+- [ ] Interior PDF = single multi-page file; **odd pages = right**; no cover pages inside
+- [ ] Cover = separate wrap PDF from **Lulu template** after real page count + paper known
+- [ ] Color: **sRGB** for Lulu full color (review Lulu’s print-ready preview after upload)
+- [ ] Flatten / no live transparency stacks in final pages (we already flatten via Pillow JPEG)
+- [ ] Soft proof → then gift hardcover (**Premium Color**)
 
 ### Handoff
 
 - [ ] Winners promoted out of `generated/` into `Media/`
 - [ ] This playbook decision log updated
 - [ ] Vault / Draven note for next session
+
+---
+
+## 8b) Lulu upload checklist (from design-summary notes + help center)
+
+Absorbed from `.cursor/docs/book/Childrens_Book_Design_Summary*.md` and verified against [Lulu Interior Formatting](https://help.lulu.com/en/support/solutions/articles/64000255590-interior-formatting-the-basics) (modified 2026-06-08):
+
+1. Download Lulu **cover template** only after interior page count + paper/ink are fixed (spine width depends on both).
+2. Upload **interior** PDF first → review **print-ready** file Lulu generates (best color/proof check before pay).
+3. Upload **cover** separately (front | spine | back).
+4. Confirm trim is recognized as **8.5×8.5** (file size with bleed = **8.75×8.75** per page).
+5. Order **one physical proof** before any multi-copy run.
+6. Prefer **Premium Color**; blank trailing pages from POD machines are normal / not charged.
+
+**Design spreads in software as doubles**, export to Lulu as **single pages in order** (not as one wide spread PDF unless the platform asks for it).
 
 ---
 

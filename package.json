@@ -31,6 +31,8 @@
     "image:fal:page": "powershell -File scripts/gen-image-fal.ps1 -Preset page",
     "image:fal:spread": "powershell -File scripts/gen-image-fal.ps1 -Preset spread",
     "image:fal:cover": "powershell -File scripts/gen-image-fal.ps1 -Preset cover",
+    "image:or": "powershell -File scripts/gen-image-openrouter.ps1",
+    "image:or:open": "powershell -File scripts/gen-image-openrouter.ps1 -Open",
     "book:composite": "python composite_pages.py",
     "book:typst": "typst compile book-final.typ Output/The-Night-I-Met-Santa-INTERIOR.pdf",
     "book:pdf:doctor": "powershell -File scripts/pdf-prepress-doctor.ps1",

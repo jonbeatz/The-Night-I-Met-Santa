@@ -221,7 +221,8 @@ Project folder: `D:\Hermes\projects\The-Night-I-Met-Santa\`
 5. **Watercolor wash approach:** Generating textures via AI then processing alpha in Pillow works, but simpler to just draw feathered rectangles in Pillow directly
 6. **Lulu is the clear winner for single-copy proofs** — $4.45 paperback, $13.27 hardcover, 8.5×8.5" square is their #1 children's format
 7. **Three image lanes beat one-model-for-everything** — Klein 4B dial → Qwen fallback → Banana `/edit`+refs finals; Ideogram is a poor fit when safety blocks child Christmas pajamas scenes
-8. **Text legibility = Pillow problem, not fal model** — overpowered paper glow rejects; use mid-opacity fade and never cover faces (`TEXT-OVERLAY-POLICY.md`)
+9. **Lulu full-color = sRGB** — their presses convert other spaces; CMYK-first advice from generic POD guides can *hurt* color on Lulu (verify print-ready preview after upload)
+10. **Design as spreads, upload as single pages** — continuous art across gutter; Lulu wants sequential pages (odd = right)
 
 ---
 

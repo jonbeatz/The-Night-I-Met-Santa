@@ -11,10 +11,12 @@ Ship **one beautiful 8.5×8.5" hardcover** (Lulu) by **2026-08-15**, with option
 | Item | Choice |
 |------|--------|
 | Trim | 8.5 × 8.5 in square |
-| Color | Full color interior |
+| Color | Full color interior — export PDF **sRGB** (Lulu native; not CMYK-first) |
 | Bleed | 0.125 in |
-| Safety | ≥ 0.25–0.375 in from trim for text/faces |
+| Safety | ≥ **0.5"** from trim for text/faces (≥ 0.625" from bleed edge) |
+| Gutter extra | None needed @ 32 pages (< 60) — still keep faces off absolute center fold |
 | Binding | Casewrap hardcover for gift; paperback optional for cheap proof |
+| Paper / ink | Lulu **Premium Color** (heavier ~80# when available) for heirloom gift |
 | Page count target | **32** (even; see v6 plan) |
 | Single page art @ 300 DPI | **2625 × 2625 px** (8.75" with bleed) |
 | Spread master @ 300 DPI | **5250 × 2625 px** → split L/R |

@@ -15,7 +15,7 @@ Plus original: `ref-overlay-cloud-text.png` · `ref-spread-bleed-text.png`
 3. **Edges must fade** — smooth gradient / faint **paint-brush swipes**, not a standout blob with a hard outline.
 4. **Glow must cover every line** — if using a corner/side fade, also seat type on a **soft white glow sized to the full text block** so no line sits on bare dark tree/wall.
 5. **Use open design areas** — walls, side panels, bottom corners, side-bleeds — never drop type in the middle of a window, over gifts as default, or over Santa’s head.
-6. **Large storybook serif** (Georgia bold family) — cover-title *feel*, flat ink.
+6. **Large storybook serif** — preferred **Cormorant Garamond** (alt: EB Garamond / Georgia) — cover-title *feel*, flat ink. See `FONT-CATALOG.md`.
 
 ---
 

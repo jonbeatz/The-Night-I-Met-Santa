@@ -22,28 +22,31 @@
 ## Core Connections
 
 - **Shared library:** `D:\Hermes\projects\_core-scripts\shared-profile-content`
-- **Image gen (locked lanes):** dial **`fal-ai/flux-2/klein/4b`** → fallback **`fal-ai/qwen-image-2/text-to-image`** → finals **`fal-ai/nano-banana-pro/edit`** + style refs — see `BOOK-PRODUCTION-SYSTEM.md` (§2).
+- **Image gen (locked lanes):** dial **Klein 4B** (fal or OpenRouter) → fallback **Qwen Image 2** → finals **Gemini 3 Pro Image (OpenRouter)** or **`nano-banana-pro/edit`** + G0 refs — see `BOOK-PRODUCTION-SYSTEM.md` + `IMAGE-LANE-PROMPTS.md`. **Page-by-page** for story finals (no whole-book Klein dumps).
 - **Layout:** Pillow pre-composite + Typst front matter (avoid Typst PNG alpha layering)
 - **Print:** Lulu 8.5×8.5" (proof paperback → hardcover gift)
-- **Playbook:** `.cursor/docs/BOOK-PRODUCTION-SYSTEM.md` — dialed workflow for this book + future titles
+- **Playbook:** `.cursor/docs/BOOK-PRODUCTION-SYSTEM.md` (this title) · future books: repo-root **`BOOK-PLAYBOOK.md`**
+- **Approved art:** `Media/approved/` two-tier (`style-refs/` moodboard · Tier B print locks) — `INDEX.md`
+- **Fonts:** `.cursor/docs/FONT-CATALOG.md` (Cormorant body · Cinzel cover; pack `Xtraz/Fonts/` gitignored)
 
 ## Source-of-truth order
 
 1. `TRUTH.md` (this file)
 2. `.cursor/docs/START-HERE.md`
 3. `.cursor/docs/CONTINUE-HERE.md` — **session continue / next actions**
-4. **`.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`** — **reusable playbook** (tools, decisions, recreate-for-next-book)
-5. `.cursor/docs/BOOK-PLAN.md`
-6. `Book-Findings.md` — layout experiments + POD research
-7. `.cursor/docs/ILLUSTRATION-STYLE.md` / `PAGE-PROMPT-BIBLE.md` / `COVER-PROMPTS.md`
-8. `.cursor/docs/IMAGE-WORKFLOW.md`
-9. `.cursor/docs/MASTER-COMMANDS.md`
-10. `.cursor/docs/ReCall.md`
-11. Shared TOOLS-* via `.cursor/docs/` mirrors
+4. **`.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`** — living ops playbook
+5. **`BOOK-PLAYBOOK.md`** — future-book master
+6. `.cursor/docs/BOOK-PLAN.md`
+7. `Book-Findings.md` — layout experiments + POD research
+8. `.cursor/docs/ILLUSTRATION-STYLE.md` / `PAGE-PROMPT-BIBLE.md` / `COVER-PROMPTS.md` / `FONT-CATALOG.md`
+9. `.cursor/docs/IMAGE-WORKFLOW.md`
+10. `.cursor/docs/MASTER-COMMANDS.md`
+11. `.cursor/docs/ReCall.md`
+12. Shared TOOLS-* via `.cursor/docs/` mirrors
 
 ## Asset locations (root — not under `.cursor/assets`)
 
-- `Media/` · `Images/` · `Audio/` · `Transcription/` · `Pages/` · `Output/`
+- `Media/` · **`Media/approved/`** · `Images/` · `Audio/` · `Transcription/` · `Pages/` · `Output/` · `Xtraz/Fonts/` (local)
 
 ## Isolation Rules
 

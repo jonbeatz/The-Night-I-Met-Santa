@@ -1,8 +1,24 @@
 # Front / back matter copy — LOCKED
 
-**Status:** Approved 2026-07-14 (Jon)  
-**Locked book target:** 32 pages · **4 cinematic spreads**  
+**Status:** Approved 2026-07-14 (Jon) · credits locked 2026-07-15  
+**Locked book target:** 32–40 pages · spread-first story (see `SPREAD-STORY-MAP.md`)  
 **Tone:** Warm, simple, Christmas Eve wonder — matches Jack’s dedication voice
+
+---
+
+## Edition credits (locked 2026-07-15)
+
+**Inside — copyright page** (usually page 2, verso of title). Quiet, standard place:
+
+> First illustrated edition, 2026.  
+> Written by Jack Farrell.  
+> Book design by Jon Farrell.
+
+**Outside — back cover** (small type, bottom; not competing with blurb/art):
+
+> Illustrated edition designed by Jon Farrell · 2026
+
+No separate designer page. Optional later: soft AI disclosure under the copyright block if Jon wants it.
 
 ---
 
@@ -25,15 +41,17 @@ Jack Farrell wrote *The Night I Met Santa* for his family so that wonder would n
 
 ## About the Author (draft — still available if separate page needed)
 
-**Page title:** About the Author
+**Page title:** About the Author  
+**Art (locked 2026-07-15):** `Images/jack/jack-farrell-portrait-LOCKED.png` (v6d armchair + tree) — preferred plate for this page **or** Thank You. Remake recipe: `CHARACTER-JACK-FARRELL.md`.
 
-Jack Farrell is a father and grandfather who wrote *The Night I Met Santa* for the people he loves. His poem has been treasured by his family for decades. This first illustrated edition (2026) was made so his words — and Santa’s reminder to love Christmas, act like a kid, and keep faith — can stay close at hand every year.
+Jack Farrell is a father and grandfather who wrote *The Night I Met Santa* for the people he loves. His poem has been treasured by his family for years. This first illustrated edition (2026) was made so his words — and Santa’s reminder to love Christmas, act like a kid, and keep faith — can stay close at hand every year.
 
 ---
 
 ## Thank You (locked — Draft A)
 
-**Page title:** Thank You
+**Page title:** Thank You  
+**Art option:** Same Jack portrait (`jack-farrell-portrait-LOCKED.png`) with soft open zone for this text — or image-only About Author + this text on facing page.
 
 Thank you to my family and loved ones — for keeping this poem, for believing in Christmas, and for sitting still long enough to hear a story about the night I met Santa.
 
@@ -49,12 +67,11 @@ God bless.
 
 ---
 
-## Quiet last page — optional ornament text (p.32)
+## Quiet last page — ornament close (locked)
 
+> God bless.  
 > Merry Christmas.  
-> Always love Christmas. Act like a kid.
-
-*(Or leave as image-only with tiny “First Edition, 2026”.)*
+> May the magic of this night stay in your heart, long after the season has gone.
 
 ---
 

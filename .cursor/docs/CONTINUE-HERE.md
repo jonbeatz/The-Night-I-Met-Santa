@@ -6,16 +6,14 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-15)
+## One-line status (2026-07-15 late night)
 
-**G2 locked:** 32 pages · 5 cinematic spreads · About + Thank You Draft A locked.  
-**Look locked:** painted gouache (not colored pencil) — `ILLUSTRATION-STYLE.md` · story keepers `Media/generated/test-batch-v2/`.  
-**Covers:** `Media/generated/test-covers-v3/` — 5 titled front+back sets (Jon: spectacular; pick pending).  
-**Playbook:** **`.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`** — tools, decisions, recreate-for-future-books (§9 model recipe).  
-**Image lanes locked:** dial **Klein 4B** (~$0.01) → fallback **Qwen Image 2** (~$0.035) → finals **Banana `/edit` + refs** (~$0.15). Evidence: `Media/generated/model-compare-beat01/`. Ideogram skipped.  
-**Full book art:** `Media/generated/test-batch-v3/` (32-page map + `reading-order/` + text/wash mocks).  
-**Text overlay:** Jon mockup refs (`ref-text-jon-*.png`) · policy doc · mocks `text-mocks-v3/` (still refine before compositor ship).  
-**Next:** review `text-mocks-v3` → golden page → rewrite `composite_pages.py` · pick cover · promote keepers.
+**Page-by-page production** (Jon direction) — Klein full-book batches (`test-book-v1` / `v2`) **rejected** as layout feel; too samey / not usable.  
+**Do not** batch-generate the whole book on Klein again for approval.  
+**Process:** one page (or one open L→R) at a time · **Lane B Gemini / Banana finals** + locked G0s · Jon approve → next.  
+**Locks still good:** cover beige-v2 · boy G0 (style-match-A) · santa-G0 (paint north star) · Jack portrait (style-match-B) · eyes-met FINAL-TEST-A.  
+**Next:** pick first interior page with Jon · recommend **S01 Approach LEFT** (or re-lock eyes-met open if preferred).
+
 ---
 
 ## What we are building
@@ -31,6 +29,10 @@ Target printer: **[Lulu](https://www.lulu.com/)** — supports exact 8.5×8.5 ca
 |------|------|
 | `Transcription/poem-clean.txt` | Poem text of record |
 | `Media/` | Scene + cover illustrations (keep; refine as needed) |
+| **`Media/approved/`** | **Two-tier keepers** — `style-refs/` moodboard · Tier B locks — see `INDEX.md` |
+| `Xtraz/Fonts/` | Local OFL pack (gitignored) — roles in `FONT-CATALOG.md` |
+| `BOOK-PLAYBOOK.md` | Future-book master playbook (repo root) |
+| `Media/generated/` | Experiments / batches (not the source of truth for “what we picked”) |
 | `Images/references/` | Jack photos + Christmas book style refs |
 | `Images/references/layout/` | **Jon’s layout north stars** (phone photos) |
 | `Pages/` | Pre-composited poem page JPEGs (currently **empty** — rebuild) |
@@ -83,33 +85,33 @@ Target printer: **[Lulu](https://www.lulu.com/)** — supports exact 8.5×8.5 ca
 ## Start next (priority order)
 
 ### 0. Do **not** re-research print from scratch
-Read **`RESEARCH-VERDICT.md`** — Lulu primary, KDP HC skipped, GitHub LaTeX links graded, timeline locked.
+Read **`RESEARCH-VERDICT.md`** — Lulu primary, KDP HC skipped, timeline locked.
 
-### 1. Confirm layout mode with Jon (30 seconds)
-Default if no answer: **cloud-overlay on full-bleed art** (ref-overlay-cloud-text).  
-Alt: left-text / right-bleed spread (ref-spread-bleed-text). Mix OK.
+### 1. Beat gap → approval sprint (print path)
+1. Open `Media/approved/INDEX.md` + `PAGE-PROMPT-BIBLE.md`.
+2. For each beat **1–15**: mark **keeper candidates** already in `style-refs/` vs **missing / weak**.
+3. **Pick cover** A–E (`style-refs/covers/` + `back/`) → copy winners to Tier B `covers/cover-front.png` + `cover-back.png`.
+4. For missing/weak beats: Klein 4B dial → Jon pick → Banana `/edit` + style-refs finals → promote to Tier B `pages/` / `spreads/`.
+5. Thin beats to fill first: **3, 5, 8–10, 14** (and re-check any near-keeper that isn’t heirloom-final).
 
-**Style (locked default):** `.cursor/docs/ILLUSTRATION-STYLE.md` — painted gouache, NOT colored pencil · refs in `test-batch-v2/_style-refs/`  
-**Full playbook (recreate later):** `.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`  
-**Per-page image prompts:** `.cursor/docs/PAGE-PROMPT-BIBLE.md` (stanza → fal prompt; text after)  
-**Cover dial-in:** `.cursor/docs/COVER-PROMPTS.md` · sets in `Media/generated/test-covers-v3/`
-### 2. Quiet-zone map
-For each `Media/scene-*.png`, note where text can sit without covering faces.
+### 2. Quiet-zone map (after Tier B art locks)
+For each locked page/spread, note where text sits without covering faces (policy: `TEXT-OVERLAY-POLICY.md`).
 
 ### 3. Rewrite `composite_pages.py` (main build work)
 - Soft **elliptical / irregular cloud** alpha (~50% cream), Gaussian blur  
-- Poem text (Georgia or similar)  
+- Poem text: **Cormorant Garamond** (see `FONT-CATALOG.md`; Georgia OK fallback)  
 - One **sample page** → Jon approves → batch all stanzas to `Pages/`
 
 ### 4. Typst front matter + export
-`book-final.typ` → `Output/*-INTERIOR.pdf` (even page count).
+`book-final.typ` → `Output/*-INTERIOR.pdf` (even page count). Place Jack portrait on About / Thank You.
 
 ### 5. Cover + Lulu
-Spine from page count → `build_cover_v2.py` → Lulu upload. Proof by **~July 25–28**.
+Spine from page count → `build_cover_v2.py` (Cinzel for title) → Lulu upload. Proof by **~July 25–28**.
+
+**Docs:** `BOOK-PRODUCTION-SYSTEM.md` · `BOOK-PLAYBOOK.md` · `PAGE-PROMPT-BIBLE.md` · `COVER-PROMPTS.md` · `FONT-CATALOG.md`
 
 ### Optional later (not blocking gift)
-Affinity Publisher polish · fal style-lock · Lulu upload runbook skill · more copies via Mixam
-
+Web flipbook (`DIGITAL-FLIPBOOK-WATCH.md`) · Affinity polish · Mixam multi-copy
 ---
 
 ## Commands (from this project root)

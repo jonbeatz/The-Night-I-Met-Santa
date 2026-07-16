@@ -1,9 +1,16 @@
+# Children's Book Webpage / Flipbook notes
+
+> **Status:** Optional **post-gift** idea. Living summary: `.cursor/docs/DIGITAL-FLIPBOOK-WATCH.md`.  
+> **Do not** start Next.js flipbook work before Lulu hardcover path is done.  
+> Verified 2026-07-15: `react-pageflip` works but npm last publish is aged (~5y) — re-check before build; prefer pre-render page images from our `Pages/` pipeline.
+
 To create an interactive, "flipping page" web version of your PDF using Next.js and Tailwind CSS, you should combine a PDF rendering engine with a page-flip animation library.
 
 Recommended Stack
 PDF Engine: react-pdf (the industry-standard React wrapper for Mozilla's pdf.js) to parse and render your PDF document.
 
 Flip Animation: react-pageflip (a React wrapper for the StPageFlip library). It is currently the most modern, actively maintained library for realistic 3D page-turning physics, works well with React, and has zero dependencies.
+→ Agent note: “actively maintained” overstated as of 2026-07; still the common React pick — re-verify at build time.
 
 Step-by-Step Implementation Strategy
 1. Parse the PDF
@@ -12,6 +19,8 @@ Since you are starting with a PDF file, you need to convert it into a format the
 Use react-pdf to load your document.
 
 Extract each page as an image or a canvas element. You can do this by mapping through the Document and Page components from react-pdf.
+
+Prefer for *this* project: feed flipbook from **already-composited** `Pages/*.jpg` (or WebP) — no live PDF parse needed.
 
 2. Implement the Flipbook
 Wrap your extracted pages within the <HTMLFlipBook> component from react-pageflip.
@@ -104,7 +113,7 @@ Pro-tip for Next.js: When you integrate react-pageflip, remember to import it us
 
 
 Side notes for PDFs related stuff to look into:
-ere are the links to the GitHub repositories and official documentation for the tools discussed:
+Here are the links to the GitHub repositories and official documentation for the tools discussed:
 
 PDF Generation & Automation Tools
 Puppeteer: A high-level library for automating Chrome/Firefox to generate PDFs from web content.
@@ -119,17 +128,10 @@ https://github.com/bpampuch/pdfmake
 Document Parsing & LLM-Ready Extraction
 PyMuPDF: A high-performance Python library for PDF extraction, conversion, and manipulation, with native support for Markdown output.
 https://github.com/pymupdf/pymupdf
+→ Already IN USE in Hermes book stack / tooling.
 
 MinerU: An ecosystem for parsing complex unstructured documents (PDFs, images, Office files) into Markdown or JSON.
 https://github.com/opendatalab/MinerU-Ecosystem
 
 Docling: A document processing tool that parses diverse formats into structured formats like Markdown or JSON, specifically built for GenAI applications.
 https://github.com/AI-App/DS4SD.Docling
-
-
-
-
-
-
-
-

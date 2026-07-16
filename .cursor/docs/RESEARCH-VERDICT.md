@@ -33,13 +33,16 @@ Source: Deep Firecrawl/Tavily + GitHub review before the project move.
 | Shutterfly / Walmart | ~8×8 photo books | Cheap/fast | Fallback only |
 | PrintNinja | Custom | Min ~100+ | Later bulk only |
 
-### POD specs (all printers)
+### POD specs (Lulu — verified 2026-07-15 help center)
 
 - Bleed **0.125"** beyond trim  
-- Safety **~0.25–0.375"** inside trim for text/faces  
-- Images **300 DPI** (covers OK to 600)  
-- Color: **CMYK** preferred; PDF/X-1a or X-3 if required  
-- Files: separate **interior PDF** + **cover PDF** (spine from page count + paper)  
+- Safety: keep important text/faces **≥ 0.5"** from trimmed edge (≥ 0.625" from bleed edge on full-bleed)  
+- Extra gutter: **not required** for books **< 60 pages** (our 32-page gift)  
+- Images **300 PPI** optimum (up to 600; little gain past 300)  
+- Color for **full-color Lulu**: export interior PDF in **sRGB** — Lulu printers use sRGB; forcing CMYK can cause unexpected conversion shifts  
+- Files: separate **interior PDF** (single multi-page, odd pages = right) + **cover PDF** (front+spine+back from Lulu template after page count known)  
+- Cover never inside interior file; no print on inside covers (standard books)  
+- Paper/ink: choose **Premium Color** (+ heavier stock when offered, ~80#) for heirloom feel  
 - Page count: **even**  
 
 **Order proof by ~July 25–28** for Aug 15 buffer.

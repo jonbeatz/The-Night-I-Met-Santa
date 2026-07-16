@@ -16,11 +16,13 @@ Keep generating toward these exact winners — use as style-ref uploads with `na
 
 | Anchor | Why |
 |--------|-----|
-| `Media/generated/test-batch-v2/_style-refs/style-spread-06.png` | Full painted living-room spread (eyes-met family) |
-| `Media/generated/test-batch-v2/_style-refs/style-sneak-02.png` | Peek / doorway painted night scene |
-| `Media/generated/test-batch-v2/_style-refs/style-santa-01.png` | Soft-painted Santa + tree |
+| `Media/approved/style-refs/style-spread-06-eyes-met.png` | Full painted living-room spread (eyes-met family) |
+| `Media/approved/style-refs/style-sneak-02.png` | Peek / doorway painted night scene |
+| `Media/approved/style-refs/style-santa-01.png` | Soft-painted Santa + tree |
+| **`Media/approved/characters/jack-farrell-portrait.png`** | **Jack Farrell author portrait** (v6d locked 2026-07-15) |
 
-Full keepers: **`Media/generated/test-batch-v2/`** (see `INDEX.md`).
+**Approved shelf:** `Media/approved/` (Jon picks only). Batches: `Media/generated/…`.  
+**Jack remake prompts:** `.cursor/docs/CHARACTER-JACK-FARRELL.md`
 
 ---
 
@@ -44,7 +46,18 @@ An **heirloom Christmas picture book**: painted like classic **gouache and water
 
 ---
 
-## MASTER STYLE BLOCK (copy-paste core)
+## Dual lanes (LOCKED 2026-07-15)
+
+| When using… | Paste this style |
+|-------------|------------------|
+| **Klein 4B** (cheap mockups) | Klein D2 append — `.cursor/docs/IMAGE-LANE-PROMPTS.md` · proof `style-refs/covers/klein-mockup-style-LOCKED-D2.png` |
+| **Gemini 3 Pro / Nano Banana** (finals) | **Master style block below** (unchanged) |
+
+Do not use the Klein append on Banana/Gemini finals, and do not expect Klein to match Banana paint quality — dial only.
+
+---
+
+## MASTER STYLE BLOCK (copy-paste core) — **finals / Gemini / Banana**
 
 Improved master — richer, still short enough to reuse:
 

@@ -10,7 +10,7 @@
 **Continuity locks (every scene):**
 - Same cozy Christmas Eve living room / tree / fireplace family of sets unless the beat moves (door, hallway, dash)
 - **Santa:** brilliant white hair/beard, red coat **with suspenders**, kind eyes — match G0 Santa sheet
-- **Child/narrator:** same age, pajamas or cozy Christmas Eve clothes — match G0 child sheet
+- **Child/narrator:** same age; **oatmeal/taupe PJs with tiny holly** (locked cover `cover-front.png` / beige-v2) — match Boy G0 when sheet exists
 - Heavily **painted gouache/watercolor** · NOT **colored pencil** · NOT photoreal · NOT cartoon flat- Leave **quiet zone** where listed (for later cloud text)
 
 ---
@@ -224,8 +224,9 @@ Wide heartfelt Christmas storybook spread, closing blessing mood, warm magical l
 |------|------------|
 | Title | Can use locked cover art (Santa or house) |
 | Dedication | Soft vignette — tree, chair, or hearth — leave center quiet for short dedication |
-| About This Story | Quiet snowy/fireplace study; Jack portrait optional separate |
-| Thank You | Warm family hearth or note-by-tree vignette |
+| About This Story | Quiet snowy/fireplace study **or** soft text over open zone |
+| **About the Author / Thank You** | **LOCKED Jack portrait** `Images/jack/jack-farrell-portrait-LOCKED.png` (v6d) — see `CHARACTER-JACK-FARRELL.md` |
+| Thank You (alt) | Same Jack plate with soft paint-fade text zone, or note-by-tree vignette |
 | Quiet end | Small ornament / tree / snow — “Merry Christmas” optional later in type |
 
 ---
