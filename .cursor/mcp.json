@@ -1,3 +1,36 @@
 {
-  "mcpServers": {}
+  "mcpServers": {
+    "affinity": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "mcp-proxy",
+        "mcp-proxy",
+        "--transport",
+        "sse",
+        "http://127.0.0.1:6767/sse"
+      ],
+      "_comment": "Affinity Studio local MCP (beta). Affinity must be open + Edit>Settings>MCP all enabled. Official help: affinity.studio/help/ai-connector-setup"
+    },
+    "indesign-uxp": {
+      "command": "node",
+      "args": [
+        "D:\\Hermes\\projects\\The-Night-I-Met-Santa\\tools\\layout-mcp\\indesign-uxp-server\\src\\index.js"
+      ],
+      "cwd": "D:\\Hermes\\projects\\The-Night-I-Met-Santa\\tools\\layout-mcp\\indesign-uxp-server",
+      "env": {
+        "INDESIGN_BRIDGE_HTTP_PORT": "19300",
+        "INDESIGN_BRIDGE_WS_PORT": "19301"
+      },
+      "_comment": "PRIMARY InDesign path (Windows). Requires: (1) bridge running on 19300/19301 (2) UXP plugin loaded + Connected in InDesign. See tools/layout-mcp/SETUP.md"
+    },
+    "indesign-exec": {
+      "command": "D:\\Hermes\\projects\\The-Night-I-Met-Santa\\tools\\layout-mcp\\indesign-scripting-mcp\\.venv\\Scripts\\python.exe",
+      "args": [
+        "D:\\Hermes\\projects\\The-Night-I-Met-Santa\\tools\\layout-mcp\\indesign-scripting-mcp\\exec_server.py"
+      ],
+      "cwd": "D:\\Hermes\\projects\\The-Night-I-Met-Santa\\tools\\layout-mcp\\indesign-scripting-mcp",
+      "_comment": "Fallback COM/JSX runner. Currently COM returns Server execution failed on this PC — keep for retry after InDesign restart / Adobe repair. Prefer indesign-uxp."
+    }
+  }
 }
