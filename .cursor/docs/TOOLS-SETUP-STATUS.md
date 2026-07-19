@@ -101,6 +101,8 @@ Everything else in **production** below is configured on Jon's PC (2026-07-04) u
 |------|-------|---------|-------|-------------------|---------------------|
 | **img2pdf** | A- (91) | **IN USE** | **READY** | None (pip) | `python -m pip install img2pdf pikepdf` — Santa book: `npm run book:pdf:doctor` |
 | **pikepdf** | A- (91) | **IN USE** | **READY** | None (pip) | Same venv as img2pdf — `npm run book:pdf:verify` |
+| **Affinity MCP** | B+ (88) | **IN USE** | **READY** | None (local app) | Affinity open + MCP toggles ON · Cursor `affinity` via `uvx mcp-proxy` → `http://127.0.0.1:6767/sse` — TNIMS `.cursor/mcp.json` (not Adobe CC) |
+| **InDesign UXP MCP** | A- (90) | **IN USE** | **READY** | None (local) | Cold: CC Desktop signed in → `layout:indesign-bridge` + UDT Load & Watch (operator) → `:19300/:19301`. TNIMS `tools/layout-mcp/SETUP.md`. Keep CC Desktop; Startup disable OK |
 | **claude-video** | A- (92) | IN USE | PARTIAL | Optional `GROQ_API_KEY` | Done — `npx skills add … -g -a cursor` |
 | **Agent-Reach** | B+ (87) | IN USE | PARTIAL | Free; optional login for Twitter/Reddit | Installed 2026-07-04 — venv + `agent-reach install --env=auto --safe` |
 | **React Bits** | B+ (88) | WATCH | **READY** (free) | Pro = paid license only | Browse/copy — no install |
@@ -164,6 +166,9 @@ Everything else in **production** below is configured on Jon's PC (2026-07-04) u
 | **Threlte** | B (84) | WATCH | NOT_INSTALLED | None | Svelte-only — reference; use R3F for JonBeatz/MSC stack |
 | **Nellavio** | B- (81) | WATCH | NOT_INSTALLED | None | Clone `nellavio/nellavio` — dashboard shell spike only |
 | **awesome-freellm-apis** | B+ (87) | **REF** | **READY** | None | **Bookmark:** https://freellm.net/ — Jon 2026-07-13; config at freellm.net/config/ |
+| **16wells/divi-docs** | A- (91) | **REF** | **READY** | None | **Bookmark:** https://16wells.github.io/divi-docs/ + /api/ — Jon 2026-07-18; DSZ Divi KB |
+| **divilovewp/divi5-skill** | A- (90) | **ADOPT** | NOT_INSTALLED | None | Clone when Jon approves — complements IAWB JSON compose |
+| **cjsimon2/Divi5-ToolKit** | B+ (88) | WATCH | NOT_INSTALLED | None | Claude Code `--plugin-dir` only; security gate before enable |
 | **Mnemosyne** | B+ (89) | **IN USE (Cursor MCP trial)** | READY | None (local SQLite) | `npm run mnemosyne:status` — JonBeatz only; Mem0 canonical |
 | **hermes-browser-extension** | A (93) | **ADOPT** | **READY** | `API_SERVER_KEY` + `API_SERVER_CORS_ORIGINS` | Chrome+Brave `:8642` + companion plugin `hermes-browser-companion` enabled (Jon 2026-07-13) |
 | **deepseek-mcp-server** | B (83) | WATCH | NOT_INSTALLED | `DEEPSEEK_API_KEY` | `npx -y deepseek-mcp-server` stdio — **do not** use hosted `ragweld.com` |
@@ -237,6 +242,8 @@ Run after install or when flipping Setup → **READY**. Add a row here when a ne
 |------|----------------|-------|
 | **img2pdf** | `npm run book:pdf:doctor` (Santa) or `python -c "import img2pdf; print(img2pdf.__version__)"` | Lossless Pages→PDF: `book:pdf:from-pages` |
 | **pikepdf** | `npm run book:pdf:verify` | Optional `--apply-boxes` / `book:pdf:verify:boxes` |
+| **Affinity MCP** | Affinity open · TCP `:6767` · Cursor `affinity` tools listed | TNIMS `.cursor/mcp.json`; Edit→Settings→MCP all ON |
+| **InDesign UXP MCP** | `npm run layout:indesign-bridge` · Bridge Panel Connected ✓ · Cursor `indesign-uxp` | UDT Watching `tools/layout-mcp/.../plugin/manifest.json` |
 | **codebase-memory-mcp** | `npm run codebase-memory:status` | Reindex: `codebase-memory:reindex` |
 | **OpenMontage** | `npm run openmontage:status` | Needs `FAL_KEY` for cloud gen |
 | **Agent-Reach** | `npm run agent-reach:doctor` | Optional channel logins |

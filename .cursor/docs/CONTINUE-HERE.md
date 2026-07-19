@@ -6,12 +6,13 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-15 late night)
+## One-line status (2026-07-19)
 
 **Page-by-page production** (Jon direction) — Klein full-book batches (`test-book-v1` / `v2`) **rejected** as layout feel; too samey / not usable.  
 **Do not** batch-generate the whole book on Klein again for approval.  
 **Process:** one page (or one open L→R) at a time · **Lane B Gemini / Banana finals** + locked G0s · Jon approve → next.  
 **Locks still good:** cover beige-v2 · boy G0 (style-match-A) · santa-G0 (paint north star) · Jack portrait (style-match-B) · eyes-met FINAL-TEST-A.  
+**DTP tool chest READY (2026-07-19 FINAL):** Affinity MCP + InDesign UXP Bridge. Cold flow in `tools/layout-mcp/SETUP.md` — CC Desktop signed in (Jon confirms) → agent apps+bridge → Jon Load & Watch → MCP. Pillow/Typst still print default.  
 **Next:** pick first interior page with Jon · recommend **S01 Approach LEFT** (or re-lock eyes-met open if preferred).
 
 ---
@@ -134,11 +135,18 @@ npm run book:pdf:doctor
 npm run book:pdf:from-pages    # lossless Pages/*.jpg → Output/*-img2pdf.pdf
 npm run book:pdf:verify        # pikepdf MediaBox QA
 npm run book:pdf:verify:boxes  # write TrimBox/BleedBox for Lulu
+
+# DTP polish (optional — READY 2026-07-19)
+npm run layout:indesign-bridge   # InDesign UXP HTTP/WS :19300/:19301 — keep running
+# Affinity MCP :6767 when Affinity open + MCP toggles ON
+# Full how-to: tools/layout-mcp/SETUP.md · status: LAYOUT-APP-AUTOMATION-RESEARCH.md
+# Agent may Start-Process Affinity / InDesign / UDT when needed
 ```
 
 Presets: **page** = 2625×2625 · **spread** = 5250×2625 · **cover** = 2048² draft  
 Text is applied **after** art lock via `composite_pages.py` (cloud overlay → flat JPEG).  
-Prepress: **img2pdf** + **pikepdf** IN USE (`requirements-book.txt`).
+Prepress: **img2pdf** + **pikepdf** IN USE (`requirements-book.txt`).  
+DTP: Affinity MCP + InDesign UXP Bridge **IN USE** — Pillow/Typst still print default.
 
 ---
 

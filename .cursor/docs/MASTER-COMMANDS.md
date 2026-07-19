@@ -90,21 +90,6 @@
 
 ---
 
-## The Night I Met Santa — layout automation
-
-Run from `D:\Hermes\projects\The-Night-I-Met-Santa`.
-
-| Command | What it does |
-|---------|--------------|
-| `npm run layout:install` | Re-clone and install Affinity/InDesign MCP helpers |
-| `npm run layout:indesign-bridge` | Start InDesign UXP HTTP/WS bridge on **19300/19301** |
-| `npm run layout:affinity-inspector` | Open MCP Inspector against Affinity local MCP `:6767` |
-| `npm run layout:affinity-docs` | Extract Affinity MCP SDK docs locally |
-
-**Docs:** [LAYOUT-APP-AUTOMATION-RESEARCH.md](./LAYOUT-APP-AUTOMATION-RESEARCH.md) · `tools/layout-mcp/SETUP.md` · [LULU-8.5-SQUARE-CHEATSHEET.md](./LULU-8.5-SQUARE-CHEATSHEET.md)
-
----
-
 ## Command Center (JonBeatz hub)
 
 | Command | What it does |

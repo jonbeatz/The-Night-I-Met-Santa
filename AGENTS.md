@@ -25,6 +25,7 @@ Read in order:
 - **Locks:** cover beige-v2 · boy G0 · santa-G0 · Jack portrait style-match-B · eyes-met FINAL-TEST-A
 - **Jack Farrell portrait:** `Media/approved/characters/jack-farrell-portrait.png` · `CHARACTER-JACK-FARRELL.md`
 - Layout v3–v5 rejected — build organic cloud overlay / bleed spread next
+- **DTP (optional):** Affinity MCP + InDesign UXP Bridge **READY** — `tools/layout-mcp/SETUP.md` · Pillow/Typst still print default
 ## Paths
 
 | Asset | Path |

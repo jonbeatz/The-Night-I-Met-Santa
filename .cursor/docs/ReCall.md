@@ -5,19 +5,18 @@
 Klein full-book batches (`test-book-v1` / `v2`) **rejected** — do not repeat.  
 Cover + cast locks held; story interiors still need careful remakes.
 
+**DTP tool chest (2026-07-19 FINAL):** Affinity MCP + InDesign UXP Bridge **LIVE**. Cold flow: CC Desktop signed in (Jon confirms) → agent UDT+InDesign+bridge → **Jon Load & Watch** → MCP. Web login ≠ enough. Pillow/Typst still print default.
+
 ## Birthday deadline
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-16 — Affinity/InDesign MCP + Lulu DTP research/setup captured; story production remains page-by-page Gemini.
+2026-07-19 **End Project** — DTP cold-start workflow FINAL documented; continue tomorrow with page-by-page Gemini (S01 / eyes-met).
 
 ## Where to continue
-1. **Start page-by-page** — recommend S01 Approach LEFT (or eyes-met open as style anchor)
-2. Lane B: **Gemini 3 Pro Image** (OpenRouter) or Banana `/edit` + boy/Santa G0 + style refs — **not** cover-as-ref on every interior
-3. Pick **back cover** → `covers/cover-back.png`
-4. Golden text page (**Cormorant**) → `composite_pages.py` → Typst → Lulu proof
-5. **Optional DTP:** Affinity + InDesign MCP wired (`.cursor/mcp.json`) — see `tools/layout-mcp/SETUP.md` · finish InDesign UXP plugin Connect once
-
+1. Resume **page-by-page Gemini** — S01 Approach LEFT or eyes-met
+2. Optional DTP — follow `tools/layout-mcp/SETUP.md` proven cold-start (wait for Jon **logged in** before UDT; Jon clicks Load & Watch)
+3. Back cover lock · compositor · Typst · Lulu proof
 
 ## System of record
 | Doc | Use |
@@ -33,7 +32,8 @@ Cover + cast locks held; story interiors still need careful remakes.
 | PAGE-PROMPT-BIBLE | Beat prompts |
 | CHARACTER-JACK-FARRELL | Author portrait |
 | CONTINUITY-AND-PRINT-FINALS | Print remake plan |
-| LAYOUT-APP-AUTOMATION-RESEARCH | Affinity/InDesign MCP status + recommendation |
+| **LAYOUT-APP-AUTOMATION-RESEARCH** | Affinity/InDesign MCP — **READY 2026-07-19** |
+| **tools/layout-mcp/SETUP.md** | How to start bridge + load UXP plugin |
 | LULU-8.5-SQUARE-CHEATSHEET | Trim, bleed, safety, cover-template notes |
 
 ## Paths
@@ -47,10 +47,11 @@ Cover + cast locks held; story interiors still need careful remakes.
 | Jack portrait | `Media/approved/characters/jack-farrell-portrait.png` |
 | Eyes-met | `Media/approved/spreads/spread-eyes-met.png` |
 | Failed Klein mocks | `Media/generated/test-book-v1/` · `test-book-v2/` (gitignored) |
+| InDesign Bridge plugin | `tools/layout-mcp/indesign-uxp-server/plugin/manifest.json` |
 
 ## Decisions locked
 - Format: **8.5×8.5"** · Printer: **Lulu** · Color: **sRGB** · ~**32 pages** spread-first
-- Layout: **Pillow cloud composite** → Typst binder
+- Layout: **Pillow cloud composite** → Typst binder (**default**); Affinity/InDesign = optional DTP polish
 - Style: **Painted gouache** (not colored pencil)
 - **Image lanes:** dial Klein 4B (cheap probes only) → Qwen fallback → **finals Gemini/Banana**
 - **Dual prompts:** Klein = D2 append · Finals = ILLUSTRATION-STYLE master (`IMAGE-LANE-PROMPTS.md`)
@@ -62,3 +63,5 @@ Cover + cast locks held; story interiors still need careful remakes.
 - **Credits:** copyright — First illustrated edition 2026 / Written by Jack / Book design by Jon · back — Illustrated edition designed by Jon Farrell · 2026
 - **Copy:** About + Thank You Draft A · quiet close locked
 - **Production mode:** **page-by-page** approvals (no whole-book Klein dumps)
+- **DTP (2026-07-19 FINAL):** Affinity MCP `:6767` + InDesign UXP `:19300/:19301` **IN USE**. Cold flow: CC Desktop signed in (**Jon confirms**) → agent launches UDT+InDesign+bridge → **Jon clicks Load & Watch** (agent cannot) → MCP. Web adobe.com login not enough. Keep CC installed; Startup disable OK.
+- **Creative Cloud:** keep Desktop app installed (licensing); OK to disable Startup — do **not** uninstall while keeping InDesign/UDT

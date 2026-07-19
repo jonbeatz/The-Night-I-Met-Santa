@@ -255,6 +255,7 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | 2026-07-15 | Klein **full-book** mocks (`test-book-v1`/`v2`) **rejected** (cover-bleed / not usable). **Page-by-page** Gemini finals only going forward | Process |
 | 2026-07-15 | Spread-first story map proposed: 12 spreads + 8 matter = 32 — `SPREAD-STORY-MAP.md` | Pagination |
 | 2026-07-15 | Edition credits locked (Jack author · Jon design) — `BOOK-COPY-DRAFTS.md` | Copy |
+| 2026-07-19 | **DTP MCP LIVE + cold-start FINAL:** Affinity `:6767` + InDesign UXP `:19300/:19301`. Workflow: CC Desktop signed in (**Jon confirms**) → agent UDT+InDesign+bridge → **Jon Load & Watch** (agent cannot click Electron) → MCP smoke PASS. Web login not enough. Keep CC installed; Startup disable OK. Pillow→Typst remains gift default. Setup: `tools/layout-mcp/SETUP.md` | Layout automation |
 
 *(Add a row whenever something sticks.)*
 

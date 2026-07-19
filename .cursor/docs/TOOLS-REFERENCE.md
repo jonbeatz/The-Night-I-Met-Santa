@@ -3092,6 +3092,69 @@ Reusable prompts for websites, videos, and campaigns from Brand Motion Studios. 
 
 ---
 
+## 16wells/divi-docs (Divi 5 technical docs) — 2026-07-18
+
+- **URLs:** https://github.com/16wells/divi-docs · https://16wells.github.io/divi-docs/ · https://16wells.github.io/divi-docs/api/
+- **Grade:** **A- (91/100)** · **Cost:** Free MIT
+- **Verdict:** **REF** · **Setup:** **READY** (web / optional local `mkdocs serve`)
+
+### Summary
+
+Community MkDocs site for **Divi 5 only** — modules, Theme Options, Visual Builder, options groups, API (hooks, REST, block JSON, JS API), CSS reference, LLM playbooks, recipes, troubleshooting. Built for humans + LLM retrieval. Not affiliated with Elegant Themes.
+
+### Gap / Overlap
+
+- **Gap:** Official ET docs are thin on Divi 5 block JSON / REST / AI compose constraints — this fills that.
+- **Overlap:** DigitalStudioz `divi-wp-dev/` Problems-Solutions + IAWB MCP — complementary (docs vs live ops).
+
+### Risks
+
+- Community-scraped + contributed — verify against live Divi version before shipping production attrs.
+- Scraping scripts / Playwright in repo — do not run against ET ToS casually; use published site as SoT.
+
+**Recommendation:** Bookmark as **primary external Divi 5 KB** for LocalWP work. Local clone optional.
+
+---
+
+## divilovewp/divi5-skill — 2026-07-18
+
+- **URL:** https://github.com/divilovewp/divi5-skill
+- **Grade:** **A- (90/100)** · **Cost:** Free
+- **Verdict:** **ADOPT** · **Setup:** NOT_INSTALLED
+
+### Summary
+
+Agent skill for JSON-native Divi 5 page generation (block comments / module attrs). Complements IA Webmaster Bridge — does not replace MCP live edits.
+
+### Risks
+
+- Generated content still needs `wp_slash` / Menu ID path gotchas (see DSZ Problems-Solutions).
+- Overlap with IAWB compose — use skill for drafts, MCP for apply/verify.
+
+**Recommendation:** Clone into skills library when Jon says install; keep IAWB primary for live site.
+
+---
+
+## cjsimon2/Divi5-ToolKit — 2026-07-18
+
+- **URL:** https://github.com/cjsimon2/Divi5-ToolKit
+- **Grade:** **B+ (88/100)** · **Cost:** Free
+- **Verdict:** **WATCH** · **Setup:** NOT_INSTALLED
+
+### Summary
+
+Claude Code plugin: CSS generate/validate, a11y, CWV, Divi 5 breakpoints, optional a11y MCP. Loads via `--plugin-dir` or `.claude/settings.local.json` marketplace.
+
+### Risks
+
+- **Writes agent config** (`.claude/settings*`, PostToolUse hooks) — security-review before global enable.
+- Claude Code–centric; Cursor remains primary for DigitalStudioz.
+- Overlaps child-theme CSS + our responsive chrome — advisory validators only.
+
+**Recommendation:** WATCH until Claude Code WP sessions need it; do not auto-wire into Cursor.
+
+---
+
 ## Prisma (ORM + platform) — status note 2026-07-14
 
 **No re-grade.** Still **B- (81) WATCH** — marketing now stresses Agent Infrastructure / Compute; stack choice remains **Drizzle + Neon + Payload**. Treat [prisma.io](https://www.prisma.io/) as the same known alternative.

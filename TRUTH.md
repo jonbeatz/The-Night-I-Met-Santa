@@ -23,7 +23,7 @@
 
 - **Shared library:** `D:\Hermes\projects\_core-scripts\shared-profile-content`
 - **Image gen (locked lanes):** dial **Klein 4B** (fal or OpenRouter) → fallback **Qwen Image 2** → finals **Gemini 3 Pro Image (OpenRouter)** or **`nano-banana-pro/edit`** + G0 refs — see `BOOK-PRODUCTION-SYSTEM.md` + `IMAGE-LANE-PROMPTS.md`. **Page-by-page** for story finals (no whole-book Klein dumps).
-- **Layout:** Pillow pre-composite + Typst front matter (avoid Typst PNG alpha layering)
+- **Layout:** Pillow pre-composite + Typst front matter (avoid Typst PNG alpha layering). Optional DTP polish: Affinity MCP + InDesign UXP Bridge — `tools/layout-mcp/SETUP.md` (READY 2026-07-19)
 - **Print:** Lulu 8.5×8.5" (proof paperback → hardcover gift)
 - **Playbook:** `.cursor/docs/BOOK-PRODUCTION-SYSTEM.md` (this title) · future books: repo-root **`BOOK-PLAYBOOK.md`**
 - **Approved art:** `Media/approved/` two-tier (`style-refs/` moodboard · Tier B print locks) — `INDEX.md`

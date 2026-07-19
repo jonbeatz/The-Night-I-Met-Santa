@@ -50,6 +50,8 @@ Jon researches tools → paste links in Cursor (often from **JonBeatz hub**) →
 |------|-------|---------|-------|------|------------------|
 | [**img2pdf**](https://github.com/josch/img2pdf) | **A- (91)** | **IN USE** | **READY** | Free | Lossless images→PDF (POD interiors from page JPEGs) |
 | [**pikepdf**](https://github.com/pikepdf/pikepdf) | **A- (91)** | **IN USE** | **READY** | Free MPL | PDF Trim/Bleed/MediaBox QA for Lulu uploads |
+| **Affinity MCP** (Studio beta) | **B+ (88)** | **IN USE** | **READY** | Free‡ | Local SSE `:6767` → Cursor via `mcp-proxy`; TNIMS polish lane — Affinity must be open (not Creative Cloud) |
+| **InDesign UXP MCP** (Bridge) | **A- (90)** | **IN USE** | **READY** | Free‡ | UXP + bridge `:19300/:19301` + UDT. **Cold flow:** CC Desktop signed in (operator confirms) → UDT+InDesign+bridge → operator **Load & Watch** (agent cannot) → MCP. Web adobe.com login not enough. Keep CC installed; Startup disable OK |
 | **claude-video `/watch`** | **A- (92)** | IN USE | PARTIAL‡ | Free† | Agent watches video — frames + transcript; best for visual analysis |
 | **find-skills** | **A- (91)** | IN USE | **READY** | Free | Meta-skill — discover + install from 2000+ skill catalog via `npx skills find` |
 | **Hallmark** | **B+ (88)** | IN USE | **READY** | Free | Anti-slop design skill — build/audit/redesign UI; 57 slop gates; complements NovaMira |
@@ -158,6 +160,9 @@ Jon researches tools → paste links in Cursor (often from **JonBeatz hub**) →
 | **React Hook Form** | **A (93)** | **IN USE** | **READY** | Free OSS | Forms — MSC; use with Zod resolver |
 | **TanStack Query** | **A (94)** | **ADOPT** | NOT_INSTALLED | Free OSS | Client server-state; App Router prefetch/hydrate |
 | **bknd** | B+ (87) | WATCH | NOT_INSTALLED | Free OSS | Embedded BaaS (beta); Firebase alt; Next.js embed |
+| [**16wells/divi-docs**](https://github.com/16wells/divi-docs) | **A- (91)** | **REF** | **READY** | Free MIT | Community Divi 5 tech docs + [LLM playbooks](https://16wells.github.io/divi-docs/) — primary external KB for DSZ LocalWP |
+| [**divilovewp/divi5-skill**](https://github.com/divilovewp/divi5-skill) | **A- (90)** | **ADOPT** | NOT_INSTALLED | Free | JSON-native Divi 5 page-gen skill — complements IAWB; clone when ready |
+| [**cjsimon2/Divi5-ToolKit**](https://github.com/cjsimon2/Divi5-ToolKit) | **B+ (88)** | **WATCH** | NOT_INSTALLED | Free | Claude Code Divi 5 CSS/a11y/CWV plugin — useful if CC on WP; Cursor stays primary |
 
 † Stack Auth: MIT SDK + AGPL backend.  
 ‡ Directus: BSL 1.1 under revenue cap; GPL alternative.  
@@ -216,6 +221,7 @@ Install any of these only after Jon approves. None replace `draven:speak` until 
 | **TTS studio / GUI** | `draven:speak` scripts | OmniVoice-Studio | Optional GUI for dubbing/clone experiments |
 | Web **research** | Tavily + fetch MCP | Firecrawl, Agent-Reach Exa | Different depth/speed |
 | **Design** mockups | Code-first (Nova/Premium-UI) | **Hallmark**, Pencil MCP, Penpot | Hallmark = agent-time anti-slop gates |
+| **DTP / picture-book layout** | Pillow + Typst (TNIMS print default) | **Affinity MCP**, **InDesign UXP Bridge** | Optional polish; see TNIMS `tools/layout-mcp/SETUP.md` |
 | **Animation taste / easing** | Scroll-Motion + gsap skills | [**emilkowalski/skills**](https://github.com/emilkowalski/skills) | `improve-animations` audits whole codebase; complements Hallmark |
 | **Cross-tool memory patterns** | Mem0 + **Vader Vault** + ReCall | [**Nemotron-Shared-Memory**](https://github.com/TheLasTech/Nemotron-Shared-Memory) | Public-safe MD+Git patterns — REF only, not a runtime |
 | **Blog / SEO content** | Manual | **Claude Blog** | Articles, changelog posts; optional Gemini for hero images |
