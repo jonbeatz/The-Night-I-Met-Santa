@@ -22,19 +22,21 @@ If an agent is new to this profile, read this file first.
 When docs differ, use this priority:
 
 1. `TRUTH.md` — Project constitution (gift book, not a website)
-2. `START-HERE.md` (this file)
-3. **`CONTINUE-HERE.md`** — where we are + what to do next (book-specific)
-4. **`BOOK-PRODUCTION-SYSTEM.md`** — **reusable dialed playbook** (tools, decisions, future books)
-5. **`RESEARCH-VERDICT.md`** — print services, GitHub grades, toolchain fork (Cursor deep research)
-6. **`BOOK-PLAN.md`** — specs, stanza map, print checklist
-7. `ILLUSTRATION-STYLE.md` / `PAGE-PROMPT-BIBLE.md` / `COVER-PROMPTS.md` — art kit
-8. `Book-Findings.md` — Hermes iteration log (prefer RESEARCH-VERDICT on POD conflicts)
-9. `IMAGE-WORKFLOW.md` — illustration pipeline (fleet cmds)
-10. `MASTER-COMMANDS.md` — Command reference
-11. `MEM0-LMSTUDIO.md` — Memory + local LLM
-12. Skills in SKILL-INDEX.md — Domain expertise (Image-Workflow, Background-Removal, DesignMD)
-13. `ReCall.md` / `project-log.md` — Session history
-14. **`TOOLS-WATCHLIST.md`** / **`TOOLS-SETUP-STATUS.md`** — fleet tool grades
+2. **`AGENT-RUNBOOK.md`** — **authoritative build procedure** (DTP, print, design)
+3. `START-HERE.md` (this file)
+4. **`CONTINUE-HERE.md`** — where we are + what to do next (book-specific)
+5. **`INDESIGN-PRODUCTION-WORKFLOW.md`** — InDesign/Lulu specs
+6. **`BOOK-PRODUCTION-SYSTEM.md`** — **reusable dialed playbook** (tools, decisions, future books)
+7. **`RESEARCH-VERDICT.md`** — print services, GitHub grades, toolchain fork (historical)
+8. **`BOOK-PLAN.md`** — specs, stanza map, print checklist
+9. `ILLUSTRATION-STYLE.md` / `PAGE-PROMPT-BIBLE.md` / `COVER-PROMPTS.md` — art kit
+10. `Book-Findings.md` — Hermes iteration log (prefer RESEARCH-VERDICT on POD conflicts)
+11. `IMAGE-WORKFLOW.md` — illustration pipeline (fleet cmds)
+12. `MASTER-COMMANDS.md` — Command reference
+13. `MEM0-LMSTUDIO.md` — Memory + local LLM
+14. Skills in SKILL-INDEX.md — Domain expertise (Image-Workflow, Background-Removal, DesignMD)
+15. `ReCall.md` / `project-log.md` — Session history
+16. **`TOOLS-WATCHLIST.md`** / **`TOOLS-SETUP-STATUS.md`** — fleet tool grades
 
 **Shared canonical:** `D:\Hermes\projects\_core-scripts\shared-profile-content\docs\TOOLS-*.md`
 

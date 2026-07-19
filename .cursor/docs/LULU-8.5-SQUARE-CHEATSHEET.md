@@ -1,6 +1,6 @@
 # Lulu 8.5×8.5" square — cheatsheet (TNIMS)
 
-**Target:** Casewrap hardcover · color · sRGB · gift for Jack · ~32 pages
+**Target:** Casewrap hardcover · color · sRGB · gift for Jack · **35–40 pages** (locked)
 **Sources:** `Xtraz/Lulu-Templates/lulu-book-creation-guide.pdf` + saved help HTML (2026-07-16)
 
 ---
@@ -24,7 +24,7 @@ Project already uses **2625²** / spread **5250×2625** in `CONTINUITY-AND-PRINT
 | Safety | Keep critical text/faces **≥ 0.5"** inside trim |
 | Gutter | Facing spreads: keep important art out of center fold |
 | Color | **sRGB** (Lulu accepts RGB; do not force CMYK-first) |
-| Page count | Even number (24–40 typical); we plan **32** |
+| Page count | Even number preferred; **locked 35–40** for this title |
 
 ---
 

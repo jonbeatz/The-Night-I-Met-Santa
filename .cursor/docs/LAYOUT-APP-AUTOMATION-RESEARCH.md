@@ -63,12 +63,13 @@ Full table: `tools/layout-mcp/SETUP.md` → Proven cold-start workflow.
 
 ---
 
-## Workflow stance
+## Workflow stance (locked 2026-07-19)
 
-1. Art: **page-by-page Gemini + G0s** (unchanged)  
-2. Text-on-art: **Pillow cloud** → Typst remains default print path  
-3. Affinity / InDesign: optional polish, spreads, typography, PDF export A/B  
-4. Exact Lulu cover wrap PDF still after interior upload (spine depends on page count)  
+1. Art: **page-by-page** Lane A Klein → Lane B Gemini/Banana + G0s (unchanged)  
+2. Text-on-art / press PDF: **InDesign UXP** = production (`AGENT-RUNBOOK.md`)  
+3. Affinity MCP: optional polish / A/B  
+4. Pillow → Typst: **fallback only** (emergency / offline)  
+5. Exact Lulu cover wrap PDF still after interior upload (spine depends on page count; target **35–40** pp)  
 
 ---
 

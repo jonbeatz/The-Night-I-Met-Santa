@@ -4,6 +4,8 @@
 **Designed for:** Hermes AI agent + human operator (Jon). Read this → build a book.
 **Based on:** `D:\Hermes\projects\The-Night-I-Met-Santa` (the full project, not a summary)
 
+> **2026-07-19 update (TNIMS):** Layout production for *this* title is **InDesign UXP** (`AGENT-RUNBOOK.md`). Pillow → Typst remains documented below as the **fallback / portable** recipe for future books without DTP. Prefer InDesign when Affinity/InDesign MCP cold-start is available. Page target for TNIMS: **35–40** (not the earlier ~32 estimate).
+
 ---
 
 ## 0. What This System Produces

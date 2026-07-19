@@ -56,9 +56,10 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | Printer | **Lulu** primary | Square HC; single copy OK — `RESEARCH-VERDICT.md` |
 | Not KDP for this trim | Skip square HC path | Same |
 | Soft proof first | Paperback optional | Cheaper before gift HC |
-| Page count | **32** | Even; industry sweet spot; Lulu HC min 24 |
-| Spreads | **4–5** cinematic doubles | Big emotional beats meet at gutter |
-| Layout engine | **Pillow pre-compose** → Typst binder | Reject Typst PNG alpha stacks |
+| Page count | **35–40** (locked 2026-07-19) | Front matter breathing room + 15-stanza pacing; earlier ~32 retired |
+| Spreads | Emotional doubles as needed | Big beats meet at fold; no extra gutter under 60 pp |
+| Layout engine | **InDesign UXP** (production) | Specs: `AGENT-RUNBOOK.md` + `INDESIGN-PRODUCTION-WORKFLOW.md` |
+| Layout fallback | Pillow pre-compose → Typst | Emergency / offline only — **not** gift default |
 | Rejected layouts | v3 white boxes · v4 checkerboard · v5 soft rect “boxes” | `Book-Findings.md` |
 | Text on interiors | **After** art approve | Cloud/watercolor wash under type — not hard white boxes |
 | Cover type in AI | Prefer festive gold flourish title | Or art-only + `build_cover_v2.py` if spelling breaks |
@@ -255,7 +256,8 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | 2026-07-15 | Klein **full-book** mocks (`test-book-v1`/`v2`) **rejected** (cover-bleed / not usable). **Page-by-page** Gemini finals only going forward | Process |
 | 2026-07-15 | Spread-first story map proposed: 12 spreads + 8 matter = 32 — `SPREAD-STORY-MAP.md` | Pagination |
 | 2026-07-15 | Edition credits locked (Jack author · Jon design) — `BOOK-COPY-DRAFTS.md` | Copy |
-| 2026-07-19 | **DTP MCP LIVE + cold-start FINAL:** Affinity `:6767` + InDesign UXP `:19300/:19301`. Workflow: CC Desktop signed in (**Jon confirms**) → agent UDT+InDesign+bridge → **Jon Load & Watch** (agent cannot click Electron) → MCP smoke PASS. Web login not enough. Keep CC installed; Startup disable OK. Pillow→Typst remains gift default. Setup: `tools/layout-mcp/SETUP.md` | Layout automation |
+| 2026-07-19 | **DTP MCP LIVE + cold-start FINAL:** Affinity `:6767` + InDesign UXP `:19300/:19301`. Workflow: CC Desktop signed in (**Jon confirms**) → agent UDT+InDesign+bridge → **Jon Load & Watch** (agent cannot click Electron) → MCP smoke PASS. Web login not enough. Keep CC installed; Startup disable OK. Setup: `tools/layout-mcp/SETUP.md` | Layout automation |
+| 2026-07-19 | **Production path flip:** InDesign UXP = gift print path; Pillow/Typst = fallback only. Page count locked **35–40**. `AGENT-RUNBOOK.md` authoritative for build. TRUTH/CONTINUE/AGENTS aligned. | Layout / governance |
 
 *(Add a row whenever something sticks.)*
 

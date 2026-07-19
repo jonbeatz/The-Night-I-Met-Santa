@@ -1,22 +1,23 @@
 # ReCall.md — The-Night-I-Met-Santa
 
 ## Current focus
-**Page-by-page Gemini finals** — one page/open at a time with locked G0s; Jon approves each.  
-Klein full-book batches (`test-book-v1` / `v2`) **rejected** — do not repeat.  
-Cover + cast locks held; story interiors still need careful remakes.
+**InDesign = production** (runbook authority). Pillow/Typst = fallback only.  
+**Page count locked: 35–40.**  
+**Page-by-page** Lane A→B with G0s; Jon approves each; never call anything “final.”  
+Cover + cast locks held; S01 Approach LEFT next after DTP cold-start.
 
-**DTP tool chest (2026-07-19 FINAL):** Affinity MCP + InDesign UXP Bridge **LIVE**. Cold flow: CC Desktop signed in (Jon confirms) → agent UDT+InDesign+bridge → **Jon Load & Watch** → MCP. Web login ≠ enough. Pillow/Typst still print default.
+**DTP:** Affinity MCP + InDesign UXP Bridge. Cold flow: CC Desktop signed in (Jon confirms) → agent UDT+InDesign+bridge → **Jon Load & Watch** → MCP. Web login ≠ enough.
 
 ## Birthday deadline
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-19 **End Project** — DTP cold-start workflow FINAL documented; continue tomorrow with page-by-page Gemini (S01 / eyes-met).
+2026-07-19 — Flipped TRUTH/CONTINUE to InDesign production + 35–40 pages; cold-start DTP in progress.
 
 ## Where to continue
-1. Resume **page-by-page Gemini** — S01 Approach LEFT or eyes-met
-2. Optional DTP — follow `tools/layout-mcp/SETUP.md` proven cold-start (wait for Jon **logged in** before UDT; Jon clicks Load & Watch)
-3. Back cover lock · compositor · Typst · Lulu proof
+1. Finish DTP cold-start (CC → UDT Load & Watch → joboptions + Cormorant check)
+2. Doc inconsistency pass (gutter, template paths, INDEX/beat audit)
+3. **S01 Approach LEFT** Lane A composition → Jon pick → Lane B
 
 ## System of record
 | Doc | Use |
@@ -50,8 +51,8 @@ Cover + cast locks held; story interiors still need careful remakes.
 | InDesign Bridge plugin | `tools/layout-mcp/indesign-uxp-server/plugin/manifest.json` |
 
 ## Decisions locked
-- Format: **8.5×8.5"** · Printer: **Lulu** · Color: **sRGB** · ~**32 pages** spread-first
-- Layout: **Pillow cloud composite** → Typst binder (**default**); Affinity/InDesign = optional DTP polish
+- Format: **8.5×8.5"** · Printer: **Lulu** · Color: **sRGB** · **35–40 pages** (locked)
+- Layout: **InDesign UXP** = production (`AGENT-RUNBOOK.md`); Pillow/Typst = **fallback only**; Affinity = optional polish
 - Style: **Painted gouache** (not colored pencil)
 - **Image lanes:** dial Klein 4B (cheap probes only) → Qwen fallback → **finals Gemini/Banana**
 - **Dual prompts:** Klein = D2 append · Finals = ILLUSTRATION-STYLE master (`IMAGE-LANE-PROMPTS.md`)

@@ -4,7 +4,7 @@
 **Text of record:** `Transcription/poem-clean.txt`  
 **Oral source (nuance only):** `Transcription/115 Front St 6.md` (e.g. “Sit over here. I’ve a moment to kill.”)  
 **Style append:** always paste from `.cursor/docs/ILLUSTRATION-STYLE.md` master block  
-**Rule:** **No poem text in the image** — text overlay comes later via Pillow.  
+**Rule:** **No poem text in the image** — text overlay comes later in **InDesign** (cloud PNG + Cormorant). Pillow = fallback only.  
 **Size:** singles → `image:fal:page` (2625²) · spreads → `image:fal:spread` (5250×2625)
 
 **Continuity locks (every scene):**

@@ -139,12 +139,12 @@ Exact cover wrap PDF (spine) comes **after** interior upload on lulu.com.
 
 ---
 
-## Recommended workflow for this book
+## Recommended workflow for this book (locked 2026-07-19)
 
-1. Generate art **page-by-page** (Gemini + G0s)  
-2. Optional: place finals in Affinity **or** InDesign for typography/spreads  
-3. Pillow cloud composite remains proven text-on-art until DTP A/B wins  
-4. Export press PDF → Lulu  
+1. Generate art **page-by-page** (Lane A → Jon → Lane B + G0s)  
+2. Place finals in **InDesign** (production) — cloud PNG + Cormorant text per `AGENT-RUNBOOK.md`  
+3. Affinity = optional polish; Pillow/Typst = **fallback only**  
+4. Export press PDF via Lulu `.joboptions` → Lulu upload  
 
 ---
 
