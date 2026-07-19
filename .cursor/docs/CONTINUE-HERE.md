@@ -6,16 +6,13 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-19)
+## One-line status (2026-07-19 handoff)
 
-**Page-by-page production** — Klein full-book batches (`test-book-v1` / `v2`) **rejected**.  
-**Do not** batch-generate the whole book on Klein again.  
-**Process:** one page/open at a time · Lane A Klein dial → Jon pick → **Lane B Gemini / Banana finals** + G0s · Jon approve → lock → next. Never call anything “final.”  
-**Locks held:** cover beige-v2 · boy G0 · santa-G0 · Jack portrait · eyes-met FINAL-TEST-A.  
-**Layout production:** **InDesign UXP** (runbook authority). Pillow/Typst = **fallback only**.  
-**Page count locked:** **35–40** (breathing room for front matter + 15-stanza pacing). Earlier ~32 estimates retired.  
-**DTP cold flow:** `AGENT-RUNBOOK.md` §1 / `tools/layout-mcp/SETUP.md` — CC Desktop signed in (Jon confirms) → UDT+InDesign+bridge → Jon Load & Watch → MCP.  
-**Next:** cold-start DTP → doc inconsistency pass → **S01 Approach LEFT** Lane A.
+**InDesign production locked** · page count **35–40** · `AGENT-RUNBOOK.md` authoritative.  
+**Eyes-met prototype open built** in InDesign (pages 2–3: LEFT/RIGHT plates + cloud + Beat 4 stanza).  
+**Working file:** `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd` · PDFs → `Output/interiors/` + `Output/covers/`.  
+**Next when Jon returns:** nudge cloud/text on prototype → then **S01 Approach LEFT** Lane A (or continue eyes-met polish).  
+DTP cold-start proven; Bridge was Connected this session. InDesign doc saved+closed for errands.
 
 ---
 
@@ -35,12 +32,15 @@ An **8.5×8.5"** full-color children’s picture book from Jack’s Christmas po
 | `Media/` | Scene + cover illustrations (keep; refine as needed) |
 | **`Media/approved/`** | **Two-tier keepers** — `style-refs/` moodboard · Tier B locks — see `INDEX.md` |
 | `Xtraz/Fonts/` | Local OFL pack (gitignored) — roles in `FONT-CATALOG.md` |
+| **`Xtraz/Adobe-inDesign/`** | **Working InDesign docs** (`.indd`) — current: `eyes-met-prototype-v1.indd` |
+| **`Xtraz/Affinity/`** | Optional Affinity working docs |
 | `BOOK-PLAYBOOK.md` | Future-book master playbook (repo root) |
 | `Media/generated/` | Experiments / batches (not the source of truth for “what we picked”) |
 | `Images/references/` | Jack photos + Christmas book style refs |
 | `Images/references/layout/` | **Jon’s layout north stars** (phone photos) |
 | `Pages/` | Optional fallback composites (empty — InDesign is production) |
-| `Output/` | Final interior + cover PDFs for Lulu (empty until export) |
+| `Output/interiors/` | Exported interior PDFs for Lulu |
+| `Output/covers/` | Exported cover PDFs for Lulu |
 | `Media/assets/` | Watercolor cloud PNGs + reusable layout assets |
 | `AGENT-RUNBOOK.md` | **Authoritative build runbook** (DTP, print, design, never-dos) |
 | `composite_pages.py` | Pillow compositor — **fallback only** |
@@ -50,7 +50,8 @@ An **8.5×8.5"** full-color children’s picture book from Jack’s Christmas po
 | `_archive/layout-attempts/` | Rejected Typst v2–v4 sources (do not revive blindly) |
 | `.cursor/docs/book/` | Preview PNGs + small v3/v4 PDF samples |
 
-**Do not** put working art under `.cursor/assets/` — root `Media/` / `Pages/` / `Output/` only.
+**Do not** put working art under `.cursor/assets/` — root `Media/` / `Pages/` / `Output/` only.  
+**Do not** keep working `.indd` under `Output/` — edit in `Xtraz/Adobe-inDesign/`; export PDFs to `Output/`.
 
 ---
 
@@ -64,7 +65,7 @@ An **8.5×8.5"** full-color children’s picture book from Jack’s Christmas po
 
 **Rejected:** hard white boxes (v3), Typst PNG alpha checkerboards (v4), soft cream **rectangles** that still feel like boxes (v5).
 
-**Engineering rule:** Pre-composite in **Pillow** (flat JPEG) → Typst only places images / front matter. Never stack transparent PNGs in Typst over full-page art.
+**Engineering rule:** InDesign production — art → cloud PNG → Cormorant text. Export PDFs to `Output/`. Working `.indd` in `Xtraz/Adobe-inDesign/`.
 
 ---
 

@@ -3,21 +3,22 @@
 ## Current focus
 **InDesign = production** (runbook authority). Pillow/Typst = fallback only.  
 **Page count locked: 35–40.**  
-**Page-by-page** Lane A→B with G0s; Jon approves each; never call anything “final.”  
-Cover + cast locks held; S01 Approach LEFT next after DTP cold-start.
+Eyes-met **prototype open** built — Jon to nudge cloud/text, then continue page-by-page.  
+Working `.indd`: `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`
 
-**DTP:** Affinity MCP + InDesign UXP Bridge. Cold flow: CC Desktop signed in (Jon confirms) → agent UDT+InDesign+bridge → **Jon Load & Watch** → MCP. Web login ≠ enough.
+**DTP:** Affinity MCP + InDesign UXP Bridge. Cold flow: CC Desktop signed in (Jon confirms) → agent UDT+InDesign+bridge → **Jon Load & Watch** → MCP.
 
 ## Birthday deadline
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-19 — Flipped TRUTH/CONTINUE to InDesign production + 35–40 pages; cold-start DTP in progress.
+2026-07-19 **Close/handoff (errands)** — Prototype saved+closed; docs/Mem0/vault/Mnemosyne synced; git push. Resume: nudge eyes-met cloud/text → S01 Lane A.
 
 ## Where to continue
-1. Finish DTP cold-start (CC → UDT Load & Watch → joboptions + Cormorant check)
-2. Doc inconsistency pass (gutter, template paths, INDEX/beat audit)
+1. Open `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd` — nudge cloud + poem on pages 2–3
+2. Optional: load Lulu `.joboptions` + export smoke PDF → `Output/interiors/`
 3. **S01 Approach LEFT** Lane A composition → Jon pick → Lane B
+4. INDEX/beat-audit disk sync when convenient
 
 ## System of record
 | Doc | Use |

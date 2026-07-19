@@ -186,9 +186,9 @@ npm run image:gen:page -- "cheap draft..."   # HF free fallback
 
 | What | How |
 |------|-----|
-| **Snapshots before big writes** | Save-as in InDesign: `book-v1.indd`, `book-v2.indd` |
+| **Snapshots before big writes** | Save-as in InDesign under `Xtraz/Adobe-inDesign/`: `book-v1.indd`, `book-v2.indd` |
 | **Lulu upload rollback** | Lulu keeps version history — you can revert uploaded files |
-| **Project backup** | `git add -A && git commit -m "pre-batch backup"` before batch operations |
+| **Project backup** | `git add -A && git commit -m "pre-batch backup"` before batch operations (docs only; `.indd` is gitignored under `Xtraz/`) |
 
 ---
 
@@ -211,14 +211,19 @@ npm run image:gen:page -- "cheap draft..."   # HF free fallback
 | `poem-clean.txt` | Poem text of record |
 | `Media/approved/INDEX.md` | Two-tier approval tracking |
 | `Media/assets/` | Cloud PNGs and other reusable assets |
-| `Pages/` | Pre-composited page images (build output) |
-| `Output/` | Final PDFs for Lulu |
+| `Pages/` | Fallback composites only (not gift default) |
+| **`Xtraz/Adobe-inDesign/`** | **Working InDesign docs** (`.indd` / `.idml`) — edit here |
+| **`Xtraz/Affinity/`** | Optional Affinity working docs |
 | `Xtraz/Lulu-Templates/` | Lulu Book Creation Guide + templates + .joboptions |
 | `Xtraz/Fonts/` | Cormorant Garamond + Cinzel (OFL, gitignored) |
+| **`Output/interiors/`** | Exported interior PDFs for Lulu |
+| **`Output/covers/`** | Exported cover PDFs for Lulu |
 | `tools/layout-mcp/SETUP.md` | Cold-start pipeline instructions |
 | `.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md` | Full specs reference |
 | `.cursor/docs/CONTINUE-HERE.md` | Session resume + next actions |
 | `BOOK-PLAYBOOK.md` | Reusable system for future books |
+
+**Rule:** Edit in `Xtraz/Adobe-inDesign/` (or `Xtraz/Affinity/`). Export press PDFs only to `Output/`. Do not keep long-lived `.indd` under `Output/`.
 
 ---
 
@@ -232,4 +237,5 @@ npm run image:gen:page -- "cheap draft..."   # HF free fallback
 - ❌ Launch UDT before Creative Cloud sign-in
 - ❌ Regenerate G0 locked art
 - ❌ Use Pillow compositing (InDesign is production path)
+- ❌ Store working `.indd` files under `Output/` (use `Xtraz/Adobe-inDesign/`)
 - ❌ Leave TL;DR notes in chat — Jon prefers full reports

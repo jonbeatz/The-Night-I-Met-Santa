@@ -50,6 +50,7 @@
 ## Asset locations (root — not under `.cursor/assets`)
 
 - `Media/` · **`Media/approved/`** · `Images/` · `Audio/` · `Transcription/` · `Pages/` · `Output/` · `Xtraz/Fonts/` (local)
+- **InDesign working:** `Xtraz/Adobe-inDesign/` · **Affinity (optional):** `Xtraz/Affinity/` · **Lulu PDF exports:** `Output/interiors/` · `Output/covers/`
 
 ## Isolation Rules
 

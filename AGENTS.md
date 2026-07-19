@@ -38,7 +38,10 @@ Read in order:
 | **Approved keepers** | **`Media/approved/`** (Tier A `style-refs/` moodboard · Tier B locks — `INDEX.md`) |
 | Cloud assets | `Media/assets/` |
 | Fonts (local) | `Xtraz/Fonts/` (gitignored) · catalog `FONT-CATALOG.md` |
+| InDesign working docs | `Xtraz/Adobe-inDesign/` (gitignored via `Xtraz/`) |
+| Affinity working docs | `Xtraz/Affinity/` (optional) |
 | Lulu templates | `Xtraz/Lulu-Templates/` |
+| Lulu PDF exports | `Output/interiors/` · `Output/covers/` |
 | Build runbook | `AGENT-RUNBOOK.md` |
 | Future playbook | `BOOK-PLAYBOOK.md` |
 | Layout refs | `Images/references/layout/` |

@@ -147,3 +147,12 @@ Old: Pillow composite_pages.py → flat JPEGs → Typst binder
 New: InDesign UXP → live text frames → press-ready sRGB PDF
 
 Pillow/Typst remains as fallback. InDesign is the production path.
+
+**Working files:** `Xtraz/Adobe-inDesign/` (`.indd`) · optional `Xtraz/Affinity/`  
+**Exports only:** `Output/interiors/` · `Output/covers/`  
+**Current prototype:** `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`
+
+### Agent scripting gotchas (2026-07-19)
+
+- Facing-page LEFT/RIGHT art: set `rulerOrigin = SPREAD_ORIGIN` and place with spread coords (page-only place can parent both plates onto the left page).
+- When document units are **inches**, set type as strings: `pointSize = "14pt"` / `leading = "20pt"`. Bare `pointSize = 14` means **14 inches** and oversets the frame.
