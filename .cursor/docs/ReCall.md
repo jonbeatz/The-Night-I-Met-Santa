@@ -3,7 +3,7 @@
 ## Current focus
 **InDesign = production** (runbook authority). Pillow/Typst = fallback only.  
 **Page count locked: 35–40.**  
-Eyes-met **prototype open** built — Jon to nudge cloud/text, then continue page-by-page.  
+Eyes-met prototype **saved+closed** — reopen to nudge cloud/text, then continue page-by-page.  
 Working `.indd`: `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`
 
 **DTP:** Affinity MCP + InDesign UXP Bridge. Cold flow: CC Desktop signed in (Jon confirms) → agent UDT+InDesign+bridge → **Jon Load & Watch** → MCP.
@@ -12,13 +12,15 @@ Working `.indd`: `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-19 **Close/handoff (errands)** — Prototype saved+closed; docs/Mem0/vault/Mnemosyne synced; git push. Resume: nudge eyes-met cloud/text → S01 Lane A.
+2026-07-19 **Close Project** — handoff for workspace switch. Fleet left running (:4000/:4040/:1234). Prototype saved+closed earlier. Resume with **Open Project**.
 
 ## Where to continue
 1. Open `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd` — nudge cloud + poem on pages 2–3
 2. Optional: load Lulu `.joboptions` + export smoke PDF → `Output/interiors/`
 3. **S01 Approach LEFT** Lane A composition → Jon pick → Lane B
 4. INDEX/beat-audit disk sync when convenient
+
+**Fleet:** left running (LiteLLM :4000, ngrok :4040, LM Studio :1234) — use **Open Project** in next workspace.
 
 ## System of record
 | Doc | Use |

@@ -25,3 +25,4 @@
 | 2026-07-19 | **Full backup** → `G:\Hermes_Project_BackUpz\The-Night-I-Met-Santa\the-night-i-met-santa-project-v1-c` (2.85 GB, verify OK). Pre-DTP cold-start after InDesign production lock @ `41a906a`. |
 | 2026-07-19 | **Eyes-met InDesign prototype** built (pages 2–3 LEFT/RIGHT + cloud + stanza). Working docs home locked: `Xtraz/Adobe-inDesign/` · Affinity `Xtraz/Affinity/` · PDF exports `Output/interiors/` + `Output/covers/`. Moved prototype from `Output/prototypes/`. |
 | 2026-07-19 | **Handoff (errands):** Saved+closed `eyes-met-prototype-v1.indd`. Gotchas: facing-page art via spread coords; `pointSize="14pt"` when rulers are inches. Resume: nudge cloud/text → S01 Lane A. Docs/Mem0/vault/Mnemosyne + git push. |
+| 2026-07-19 | **Close Project:** Workspace switch — fleet left running. Next open: nudge eyes-met prototype → S01 Lane A. |
