@@ -134,6 +134,9 @@ Images/chopz/               ← exports for InDesign (MOCK / LEFT / RIGHT / text
 - No `* copy.png` in approved folders.
 - Open in PS: **one working PSD** per task. Close source PNGs and idle templates.
 - `spread-page-template-v2.psd` — treat as experimental; prefer **`spread-page-template.psd`** until v2 is locked.
+- **`Images/`** = `references/` + `chopz/` only (scratch → `_archive/images-scratch/`). Do not merge with `Media/`.
+- **`Pages/`** = deprecated empty slot. Superseded docs → `_archive/docs/` (stubs remain under `.cursor/docs/`).
+- One-off scripts → `scripts/_scratch/`.
 
 ---
 

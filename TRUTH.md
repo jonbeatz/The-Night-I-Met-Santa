@@ -36,28 +36,36 @@
 2. **`AGENT-RUNBOOK.md`** — **authoritative build procedure** (DTP, print, design, never-dos). Older playbooks follow this when they conflict.
 3. `.cursor/docs/START-HERE.md`
 4. `.cursor/docs/CONTINUE-HERE.md` — **session continue / next actions**
-5. **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`** — full page/poem/image map (draft → lock with Jon)
-6. `.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md` — InDesign/Lulu specs detail
-7. **`.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`** — living ops playbook
-8. **`BOOK-PLAYBOOK.md`** — future-book master
-9. `.cursor/docs/BOOK-PLAN.md`
-10. `Book-Findings.md` — layout experiments + POD research (historical)
-11. `.cursor/docs/ILLUSTRATION-STYLE.md` / `PAGE-PROMPT-BIBLE.md` / `COVER-PROMPTS.md` / `FONT-CATALOG.md`
-12. `.cursor/docs/IMAGE-WORKFLOW.md`
-13. `.cursor/docs/MASTER-COMMANDS.md`
-14. `.cursor/docs/ReCall.md`
-15. Shared TOOLS-* via `.cursor/docs/` mirrors
+5. **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** — creative loop (image → PSD → InDesign · mocks/RECIPE)
+6. **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`** — full page/poem/image map (draft → lock with Jon)
+7. `.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md` — InDesign/Lulu specs detail
+8. **`.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`** — living ops playbook
+9. **`BOOK-PLAYBOOK.md`** — future-book master
+10. `.cursor/docs/ILLUSTRATION-STYLE.md` / `PAGE-PROMPT-BIBLE.md` / `COVER-PROMPTS.md` / `FONT-CATALOG.md` / `IMAGE-LANE-PROMPTS.md`
+11. `.cursor/docs/CONTINUITY-AND-PRINT-FINALS.md` / `TEXT-OVERLAY-POLICY.md`
+12. `.cursor/docs/MASTER-COMMANDS.md`
+13. `.cursor/docs/ReCall.md` · `.cursor/docs/ISSUES-RESOLVED.md`
+14. Shared TOOLS-* via `.cursor/docs/` mirrors (fleet — not book production)
+
+**Superseded (stubs only):** `BOOK-PLAN.md` · `SPREAD-STORY-MAP.md` → see `_archive/docs/`.  
+**Historical:** root `Book-Findings.md` · `RESEARCH-VERDICT.md` (Lulu OK; layout path outdated).
 
 ## Asset locations (root — not under `.cursor/assets`)
 
-- `Media/` · **`Media/approved/`** · `Images/` · `Audio/` · `Transcription/` · `Pages/` · `Output/` · `Xtraz/Fonts/` (local)
-- **InDesign working:** `Xtraz/Adobe-inDesign/` · **Photoshop working:** `Xtraz/Adobe-Photoshop/` (default agent PS saves) · **Affinity (optional):** `Xtraz/Affinity/` · **Lulu PDF exports:** `Output/interiors/` · `Output/covers/`
+- **`Media/`** — art pipeline (`approved/` · `generated/` · `assets/`)
+- **`Images/`** — `references/` (photos + layout north stars) · `chopz/` (InDesign exports). Scratch parked in `_archive/images-scratch/`
+- **`Transcription/`** — `poem-clean.txt` (text of record)
+- **`Output/`** — Lulu PDF exports (`interiors/` · `covers/`)
+- **`Xtraz/`** — Adobe working files + Fonts + Lulu templates
+- **`Pages/`** — **deprecated / empty** (Pillow fallback only — do not use for gift)
+- **InDesign:** `Xtraz/Adobe-inDesign/` · **Photoshop:** `Xtraz/Adobe-Photoshop/` · **Affinity (optional):** `Xtraz/Affinity/`
 
 ## Isolation Rules
 
-- Keep all book assets in this repo (`Media/`, `Pages/`, `Output/`, `Transcription/`).
+- Keep all book assets in this repo (`Media/`, `Images/`, `Output/`, `Transcription/`, `Xtraz/`).
 - Do not mix MSC deploy / Hostinger hPanel work here.
 - Mem0 collection: `the-night-i-met-santa_memories` only.
+- Do not treat fleet mirrors (`IMAGE-WORKFLOW.md`, `3D-*`, Hostinger) as book art path — use `IMAGE-LANE-PROMPTS.md`.
 
 ## Layout north star
 

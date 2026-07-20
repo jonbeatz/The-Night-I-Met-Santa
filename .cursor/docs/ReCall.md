@@ -18,7 +18,7 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-20 — **PAGE-BUILD-WORKFLOW** dialed (mocks+RECIPE, close PNG, MOCK-TYPE 30pt #2C2C2C, G0 continuity). Fleet Google dual OAuth still noted. **Next:** confirm BOOK-PAGE-WORKFLOW → next page unit with full recipe loop.
+2026-07-20 — Light cleanup: archived superseded docs, parked Image/script scratch, Pages deprecated, TRUTH/AGENTS aligned. **PAGE-BUILD-WORKFLOW** dialed. **Next:** confirm BOOK-PAGE-WORKFLOW → next page unit.
 
 ## Where to continue
 1. **Confirm** `.cursor/docs/BOOK-PAGE-WORKFLOW.md` (page count, L/R poem splits, About + Jack pages)

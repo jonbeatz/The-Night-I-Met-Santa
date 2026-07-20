@@ -18,6 +18,7 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 **Eyes-met:** prototype **4–5** (= story **S3** → book **10|11**).  
 **Photoshop MCP LIVE:** adobepy UXP — `PHOTOSHOP-SETUP.md`.  
 **Next:** Confirm page map → next unit with full RECIPE + tab hygiene.  
+**Cleanup (2026-07-20):** light archive done — `_archive/docs/` · `_archive/images-scratch/` · `scripts/_scratch/` · `Pages/` deprecated.  
 **Playbook:** `ISSUES-RESOLVED.md` · `BOOK-PRODUCTION-SYSTEM.md` · `PAGE-BUILD-WORKFLOW.md`.
 
 ---
@@ -35,30 +36,25 @@ An **8.5×8.5"** full-color children’s picture book from Jack’s Christmas po
 | Path | Role |
 |------|------|
 | `Transcription/poem-clean.txt` | Poem text of record |
-| `Media/` | Scene + cover illustrations (keep; refine as needed) |
-| **`Media/approved/`** | **Two-tier keepers** — `style-refs/` moodboard · Tier B locks — see `INDEX.md` |
-| `Xtraz/Fonts/` | Local OFL pack (gitignored) — roles in `FONT-CATALOG.md` |
-| **`Xtraz/Adobe-inDesign/`** | **Working InDesign docs** (`.indd`) — current: `eyes-met-prototype-v1.indd` |
-| **`Xtraz/Adobe-Photoshop/`** | Working PSDs · blanks: **`spread-page-template`** · **`single-page-template`** · **`book-covers-template`** (no spine PSD) |
-| **`Xtraz/Affinity/`** | Optional Affinity working docs |
-| `BOOK-PLAYBOOK.md` | Future-book master playbook (repo root) |
-| `Media/generated/` | Experiments / batches (not the source of truth for “what we picked”) |
-| `Images/references/` | Jack photos + Christmas book style refs |
-| `Images/references/layout/` | **Jon’s layout north stars** (phone photos) |
-| `Pages/` | Optional fallback composites (empty — InDesign is production) |
-| `Output/interiors/` | Exported interior PDFs for Lulu |
-| `Output/covers/` | Exported cover PDFs for Lulu |
+| **`Media/approved/`** | Keepers — `style-refs/` moodboard · Tier B locks — `INDEX.md` |
+| `Media/generated/` | Experiments · **`mocks/{unit}/vNN/`** + RECIPE |
 | `Media/assets/` | Watercolor cloud PNGs + reusable layout assets |
-| `AGENT-RUNBOOK.md` | **Authoritative build runbook** (DTP, print, design, never-dos) |
-| `composite_pages.py` | Pillow compositor — **fallback only** |
-| `book-final.typ` | Typst binder — **fallback only** |
-| `build_cover*.py` | Legacy wrap builders — prefer InDesign + Lulu cover template |
-| `Book-Findings.md` | Full research + failed iteration log |
-| `_archive/layout-attempts/` | Rejected Typst v2–v4 sources (do not revive blindly) |
-| `.cursor/docs/book/` | Preview PNGs + small v3/v4 PDF samples |
+| `Images/references/` | Jack/photos + Christmas book + **layout** north stars |
+| `Images/chopz/` | Exports for InDesign (MOCK / L/R / textCloud) |
+| `Xtraz/Fonts/` | Local OFL pack (gitignored) — `FONT-CATALOG.md` |
+| **`Xtraz/Adobe-inDesign/`** | Working `.indd` |
+| **`Xtraz/Adobe-Photoshop/`** | Working PSDs · blanks (`spread` / `single-page` / `book-covers`) |
+| **`Xtraz/Affinity/`** | Optional Affinity working docs |
+| `Output/interiors/` · `Output/covers/` | Lulu PDF exports |
+| `Pages/` | **Deprecated / empty** — Pillow fallback only (`Pages/README.md`) |
+| `_archive/docs/` · `_archive/images-scratch/` | Superseded docs + parked Image scratch |
+| `scripts/_scratch/` | One-off `_ps_*` / `_tmp_*` scripts |
+| `BOOK-PLAYBOOK.md` | Future-book master |
+| `AGENT-RUNBOOK.md` | **Authoritative build runbook** |
 
-**Do not** put working art under `.cursor/assets/` — root `Media/` / `Pages/` / `Output/` only.  
-**Do not** keep working `.indd` under `Output/` — edit in `Xtraz/Adobe-inDesign/`; export PDFs to `Output/`.
+**Do not** put working art under `.cursor/assets/` — root `Media/` / `Images/` / `Output/` only.  
+**Do not** keep working `.indd` under `Output/` — edit in `Xtraz/Adobe-inDesign/`; export PDFs to `Output/`.  
+**Do not** merge `Images/` into `Media/` — different jobs (refs/chops vs generated/approved).
 
 ---
 

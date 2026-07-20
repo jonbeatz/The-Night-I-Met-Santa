@@ -11,6 +11,17 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-07-20 — Light project cleanup (docs + folders)
+
+| | |
+|---|---|
+| **Symptom** | Stale maps (32-page/Pillow), duplicate Findings/Verdict, scratch scripts & Image noise cluttering creative area |
+| **Root cause** | Fast iteration left superseded docs live; fleet + book docs mixed in reading lists |
+| **Resolution** | Archived superseded → `_archive/docs/` with stubs; parked `scripts/_scratch/` + `_archive/images-scratch/`; `Pages/` marked deprecated; TRUTH/AGENTS/CONTINUE-HERE aligned to PAGE-BUILD + BOOK-PAGE; root Findings/Verdict kept as historical with banners |
+| **Verify** | `Images/` = `references` + `chopz` only · AGENTS list has no BOOK-PLAN · stubs resolve |
+
+---
+
 ## 2026-07-20 — PS ↔ InDesign size parity + docs triggers + Klein D2 / no fake gutter
 
 | | |

@@ -1,7 +1,5 @@
 # Book-Findings.md — "The Night I Met Santa"
 
-> **Historical research log** (2026-07-14 era). **Production path:** `AGENT-RUNBOOK.md` · `PAGE-BUILD-WORKFLOW.md` · InDesign — not Typst/Pillow. Kept for POD notes + failed-iteration memory.
-
 Research, tools, development process, and printing services for Jack Farrell's Christmas poem book.
 Project folder: `D:\Hermes\projects\The-Night-I-Met-Santa\`  
 (Moved from `F:\My Projects\Dad\The-Night-I-Met-Santa` on 2026-07-14)
@@ -222,9 +220,6 @@ Project folder: `D:\Hermes\projects\The-Night-I-Met-Santa\`
 4. **FAL Flux images don't have true transparency** — backgrounds come back white; need Pillow post-processing
 5. **Watercolor wash approach:** Generating textures via AI then processing alpha in Pillow works, but simpler to just draw feathered rectangles in Pillow directly
 6. **Lulu is the clear winner for single-copy proofs** — $4.45 paperback, $13.27 hardcover, 8.5×8.5" square is their #1 children's format
-7. **Three image lanes beat one-model-for-everything** — Klein 4B dial → Qwen fallback → Banana `/edit`+refs finals; Ideogram is a poor fit when safety blocks child Christmas pajamas scenes
-9. **Lulu full-color = sRGB** — their presses convert other spaces; CMYK-first advice from generic POD guides can *hurt* color on Lulu (verify print-ready preview after upload)
-10. **Design as spreads, upload as single pages** — continuous art across gutter; Lulu wants sequential pages (odd = right)
 
 ---
 
@@ -271,29 +266,3 @@ Do **not** layer transparent PNGs in Typst for poem pages. Bake once in Pillow:
 - [ ] Typography pass (line breaks, size, page numbers)
 - [ ] Bleed/safety for Lulu; cover spine from final page count
 - [ ] Proof order (~late July buffer for Aug 15)
-
----
-
-## 10. fal model lanes (locked 2026-07-15)
-
-Beat-1 real-scene shootout (same prompt/seed): `Media/generated/model-compare-beat01/`.
-
-| Priority | Lane | Endpoint | ~Cost | Role |
-|:--------:|------|----------|------:|------|
-| 1 | Dial / dev | `fal-ai/flux-2/klein/4b` | ~$0.009/MP | Default iterate for layout & vibe |
-| 2 | Fallback | `fal-ai/qwen-image-2/text-to-image` | ~$0.035/img | When Klein misses before spending Banana |
-| 3 | Finals | `fal-ai/nano-banana-pro/edit` + style refs | ~$0.15/img | Approved pages / covers |
-
-**Also tried / rejected for this book:**
-
-| Model | Outcome |
-|-------|---------|
-| FLUX.1 [schnell] | Usable cheap scratch; weaker than Klein for gouache sneak beat |
-| FLUX.2 [klein] 9B | Not clearly better than 4B at ~similar cost |
-| Nano Banana Pro txt2img (no refs) | Strong prompt-only; still use **/edit + refs** for finals continuity |
-| Ideogram V3 / V4 | Skip — fal safety filter blocked Christmas child / pajamas storybook Beat 1 (even softened prompt) |
-| Qwen Image 2 | Good painted look; adopted as **fallback only** (cost between Klein and Banana) |
-
-**Lesson for next book:** Prove lanes with one **real beat** folder before locking. Prefer MCP `user-fal-ai` over default `npm run image:fal*` (Flux schnell). See playbook **BOOK-PRODUCTION-SYSTEM.md** §2 + §9.
-
-**Wallet note:** fal dashboard balance can lag; “exhausted” mid-session may clear after top-up / refresh (~$9+ after this session’s Banana-heavy burn).

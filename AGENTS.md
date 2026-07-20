@@ -4,60 +4,52 @@ Read in order:
 
 1. **`TRUTH.md`**
 2. **`AGENT-RUNBOOK.md`** ← **authoritative build procedure** (DTP, print, design, never-dos)
-3. **`.cursor/docs/ISSUES-RESOLVED.md`** ← **`log fixes`** + **Playbook** (MOCK/chops/InDesign)
-4. **`.cursor/docs/START-HERE.md`**
-5. **`.cursor/docs/CONTINUE-HERE.md`** ← where to resume book work
-6. **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`** ← full page/poem/image map (draft)
-7. **`.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md`** ← InDesign/Lulu specs
-8. **`.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`** ← dialed tools/decisions (this title)
-8b. **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** ← image → PSD → MOCK-TYPE → InDesign · mocks/RECIPE · tab hygiene
-9. **`.cursor/docs/IMAGE-LANE-PROMPTS.md`** ← Klein mockup vs Gemini/Banana finals prompts
-10. **`BOOK-PLAYBOOK.md`** ← future-book master (repo root)
-11. **`.cursor/docs/FONT-CATALOG.md`** ← type roles (Cormorant / Cinzel / scripts)
-12. **`.cursor/docs/CONTINUITY-AND-PRINT-FINALS.md`** ← print-res remake + boy/Santa continuity
-13. **`.cursor/docs/TEXT-OVERLAY-POLICY.md`** ← how text sits on art (open zones, not gray blobs)
-14. **`.cursor/docs/BOOK-PLAN.md`**
-15. **`.cursor/docs/ReCall.md`**
+3. **`.cursor/docs/CONTINUE-HERE.md`** ← where to resume book work
+4. **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** ← image → PSD → MOCK-TYPE → InDesign · mocks/RECIPE · tab hygiene
+5. **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`** ← full page/poem/image map (draft)
+6. **`.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`** ← dialed tools/decisions (this title)
+7. **`.cursor/docs/ISSUES-RESOLVED.md`** ← **`log fixes`** + Playbook (MOCK/chops/InDesign)
+8. **`.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md`** ← InDesign/Lulu specs
+9. **`.cursor/docs/IMAGE-LANE-PROMPTS.md`** ← Klein Dial D2 vs Gemini/Banana finals
+10. **`.cursor/docs/ILLUSTRATION-STYLE.md`** · **`FONT-CATALOG.md`** · **`CONTINUITY-AND-PRINT-FINALS.md`** · **`TEXT-OVERLAY-POLICY.md`**
+11. **`BOOK-PLAYBOOK.md`** ← future-book master (repo root) — when spinning a new title
+12. **`.cursor/docs/ReCall.md`** · **`.cursor/docs/START-HERE.md`**
+
+**Do not** auto-load: fleet mirrors (`IMAGE-WORKFLOW.md`, `3D-*`, Hostinger, Showcase), superseded stubs (`BOOK-PLAN`, `SPREAD-STORY-MAP` → `_archive/docs/`), or Tony handoff (`ADOBE-TNYSE-WORKFLOW`) unless asked.
 
 ## Project facts
 
 - **Root:** `D:\Hermes\projects\The-Night-I-Met-Santa`
 - Hermes fleet sibling (shared docs/skills/rules). Isolated Mem0: `the-night-i-met-santa`
 - Gift book for Jack Farrell · birthday **2026-08-15** · Lulu **8.5×8.5"** · **35–40 pages**
-- **Art default:** painted gouache / soft watercolor — **not** colored pencil (see `ILLUSTRATION-STYLE.md`; keepers `Media/generated/test-batch-v2/`)
+- **Art default:** painted gouache / soft watercolor — **not** colored pencil (see `ILLUSTRATION-STYLE.md`)
 - **Image lanes:** Klein dial (**D2 style**) → Qwen fallback → Gemini/Banana finals (**master style**) — `IMAGE-LANE-PROMPTS.md`
-- **Production:** **page-by-page** Lane A→B (Klein full-book dumps rejected). Never call anything “final.”
-- **Layout production:** **InDesign UXP** (`AGENT-RUNBOOK.md`). Pillow/Typst = **fallback only**. Affinity = optional polish.
+- **Production:** **page-by-page** Lane A→B. Never call anything “final.”
+- **Layout:** **InDesign UXP** (`AGENT-RUNBOOK.md`). Pillow/Typst = **fallback only**. Affinity = optional polish.
 - **Locks:** cover beige-v2 · boy G0 · santa-G0 · Jack portrait style-match-B · eyes-met FINAL-TEST-A
 - **Jack Farrell portrait:** `Media/approved/characters/jack-farrell-portrait.png` · `CHARACTER-JACK-FARRELL.md`
-- **DTP:** Affinity MCP + InDesign UXP Bridge **READY** · Photoshop adobepy UXP **LIVE** — cold-start `AGENT-RUNBOOK.md` §1 / `tools/layout-mcp/SETUP.md` · PS `PHOTOSHOP-SETUP.md`
+- **DTP:** Affinity MCP + InDesign UXP Bridge **READY** · Photoshop adobepy UXP **LIVE** — `tools/layout-mcp/SETUP.md` · PS `PHOTOSHOP-SETUP.md`
 
 ## Paths
 
 | Asset | Path |
 |-------|------|
 | Poem | `Transcription/poem-clean.txt` |
-| Art | `Media/` (project root) |
-| **Approved keepers** | **`Media/approved/`** (Tier A `style-refs/` moodboard · Tier B locks — `INDEX.md`) |
-| Cloud assets | `Media/assets/` |
-| Fonts (local) | `Xtraz/Fonts/` (gitignored) · catalog `FONT-CATALOG.md` |
-| InDesign working docs | `Xtraz/Adobe-inDesign/` (gitignored via `Xtraz/`) |
-| Photoshop working docs | `Xtraz/Adobe-Photoshop/` — blanks: `spread-page-template` · `single-page-template` · `book-covers-template` |
-| Affinity working docs | `Xtraz/Affinity/` (optional) |
-| Lulu templates | `Xtraz/Lulu-Templates/` |
-| Lulu PDF exports | `Output/interiors/` · `Output/covers/` |
+| Art pipeline | `Media/approved/` · `Media/generated/` (incl. `mocks/`) · `Media/assets/` |
+| Photo / layout refs | `Images/references/` |
+| InDesign chops | `Images/chopz/` |
+| Fonts (local) | `Xtraz/Fonts/` (gitignored) · `FONT-CATALOG.md` |
+| InDesign / Photoshop / Affinity | `Xtraz/Adobe-inDesign/` · `Xtraz/Adobe-Photoshop/` · `Xtraz/Affinity/` |
+| Lulu templates / PDF exports | `Xtraz/Lulu-Templates/` · `Output/interiors/` · `Output/covers/` |
+| `Pages/` | **Deprecated** — empty fallback only (`Pages/README.md`) |
+| Scratch / archive | `scripts/_scratch/` · `_archive/docs/` · `_archive/images-scratch/` |
 | Build runbook | `AGENT-RUNBOOK.md` |
-| Future playbook | `BOOK-PLAYBOOK.md` |
-| Layout refs | `Images/references/layout/` |
-| Findings | `Book-Findings.md` |
 | Problem → fix log | `.cursor/docs/ISSUES-RESOLVED.md` (**log fixes**) |
-| Fallback compositor | `composite_pages.py` (emergency only) |
-| Fallback Typst | `book-final.typ` (emergency only) |
-| Rejected sources | `_archive/layout-attempts/` |
 
 ## Rules
 
 - Assets live at **project root**, not `.cursor/assets/`
 - **InDesign** for poem text-on-art (cloud PNG + Cormorant). Do **not** use Pillow as the gift path.
-- Do not auto-revive archived Typst v3/v4
+- Do not auto-revive archived Typst v3/v4 or `_archive/docs/` maps
 - Page-by-page only; Jon approves each; never regenerate G0 locks
+- Keep `Images/` (refs + chops) separate from `Media/` (generated/approved art)

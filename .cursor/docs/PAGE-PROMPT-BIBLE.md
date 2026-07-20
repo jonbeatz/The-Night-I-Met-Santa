@@ -1,12 +1,15 @@
 # PAGE PROMPT BIBLE — The Night I Met Santa
 
+> **Page map / numbering:** prefer **[BOOK-PAGE-WORKFLOW.md](./BOOK-PAGE-WORKFLOW.md)** (spread-first · 35–40). This bible remains useful for **scene prompt wording**; some beats here are older singles-heavy layout — reconcile against the page map before generating.
+
 **Purpose:** Exact image direction per story beat so art matches the words.  
 **Text of record:** `Transcription/poem-clean.txt`  
 **Oral source (nuance only):** `Transcription/115 Front St 6.md` (e.g. “Sit over here. I’ve a moment to kill.”)  
-**Style append:** always paste from `.cursor/docs/ILLUSTRATION-STYLE.md` master block  
-**Spreads:** also append **SPREAD master add-on** + gutter negatives from that file (no fake center fold)  
+**Style append:** Lane B → `.cursor/docs/ILLUSTRATION-STYLE.md` master · Lane A Klein → **Dial D2** in `IMAGE-LANE-PROMPTS.md`  
+**Spreads:** also append **SPREAD master add-on** + gutter negatives (no fake center fold)  
 **Rule:** **No poem text in the image** — text overlay comes later in **InDesign** (cloud PNG + Cormorant). Pillow = fallback only.  
 **Size:** singles → `image:fal:page` (2625²) · spreads → `image:fal:spread` (5250×2625)
+**How to build each page:** [PAGE-BUILD-WORKFLOW.md](./PAGE-BUILD-WORKFLOW.md)
 
 **Continuity locks (every scene):**
 - Same cozy Christmas Eve living room / tree / fireplace family of sets unless the beat moves (door, hallway, dash)

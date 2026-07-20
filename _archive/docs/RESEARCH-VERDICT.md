@@ -1,9 +1,7 @@
 # RESEARCH-VERDICT.md — Deep research (Cursor session 2026-07-14)
 
-> **2026-07-20 update:** Lulu **8.5×8.5"** casewrap still locked. **Layout primary is now InDesign UXP** (`AGENT-RUNBOOK.md`) — Pillow→Typst below is **historical / fallback only**. Living ops: `BOOK-PRODUCTION-SYSTEM.md` · `PAGE-BUILD-WORKFLOW.md`.
-
 Source: Deep Firecrawl/Tavily + GitHub review before the project move.  
-**Use this for early POD research.** Prefer runbook + production system when layout claims conflict.
+**Use this for print + tooling decisions.** Hermes `Book-Findings.md` §6 has some outdated POD rows (e.g. KDP as #2 for this gift shape, Mixam “min 25”) — prefer **this file** when they conflict.
 
 ---
 
@@ -35,13 +33,16 @@ Source: Deep Firecrawl/Tavily + GitHub review before the project move.
 | Shutterfly / Walmart | ~8×8 photo books | Cheap/fast | Fallback only |
 | PrintNinja | Custom | Min ~100+ | Later bulk only |
 
-### POD specs (all printers)
+### POD specs (Lulu — verified 2026-07-15 help center)
 
 - Bleed **0.125"** beyond trim  
-- Safety **~0.25–0.375"** inside trim for text/faces  
-- Images **300 DPI** (covers OK to 600)  
-- Color: **CMYK** preferred; PDF/X-1a or X-3 if required  
-- Files: separate **interior PDF** + **cover PDF** (spine from page count + paper)  
+- Safety: keep important text/faces **≥ 0.5"** from trimmed edge (≥ 0.625" from bleed edge on full-bleed)  
+- Extra gutter: **not required** for books **< 60 pages** (our 32-page gift)  
+- Images **300 PPI** optimum (up to 600; little gain past 300)  
+- Color for **full-color Lulu**: export interior PDF in **sRGB** — Lulu printers use sRGB; forcing CMYK can cause unexpected conversion shifts  
+- Files: separate **interior PDF** (single multi-page, odd pages = right) + **cover PDF** (front+spine+back from Lulu template after page count known)  
+- Cover never inside interior file; no print on inside covers (standard books)  
+- Paper/ink: choose **Premium Color** (+ heavier stock when offered, ~80#) for heirloom feel  
 - Page count: **even**  
 
 **Order proof by ~July 25–28** for Aug 15 buffer.
@@ -50,12 +51,24 @@ Source: Deep Firecrawl/Tavily + GitHub review before the project move.
 
 ## GitHub links graded (Jon pasted)
 
+**Re-reviewed 2026-07-14 (Open Project):** Still **do not install** for this gift book. Locked stack remains Pillow cloud → Typst binder → Lulu. LaTeX would hurt the Aug 15 deadline.
+
 | Repo | Grade | Verdict | Use for dad book? |
 |------|-------|---------|-------------------|
-| [egeerardyn/awesome-LaTeX](https://github.com/egeerardyn/awesome-LaTeX) | A / 92 | **WATCH** | Reference only if ever doing LaTeX |
-| [dspinellis/latex-advice](https://github.com/dspinellis/latex-advice) | A- / 90 | **WATCH** | Steal git/latexmk habits; not picture-book layout |
-| [latexers/awesome-LaTeX](https://github.com/latexers/awesome-LaTeX) | D / 35 | **SKIP** | Stub / dead links |
-| [ndpvt-web/latex-document-skill](https://github.com/ndpvt-web/latex-document-skill) | A- / 88 | **WATCH** | Optional Claude LaTeX skill later — **not** kids spread template |
+| [egeerardyn/awesome-LaTeX](https://github.com/egeerardyn/awesome-LaTeX) | A / 92 | **WATCH** | Strong LaTeX index — reference only if a *future* Hermes text/math doc; **not** full-bleed kids art |
+| [dspinellis/latex-advice](https://github.com/dspinellis/latex-advice) | A- / 90 | **WATCH** | Good git/latexmk habits for academic papers — **zero** picture-book layout value here |
+| [latexers/awesome-LaTeX](https://github.com/latexers/awesome-LaTeX) | D / 35 | **SKIP** | Stub / empty sections / mostly dead — see [repo](https://github.com/latexers/awesome-LaTeX) |
+| [ndpvt-web/latex-document-skill](https://github.com/ndpvt-web/latex-document-skill) | A- / 88 | **WATCH** | Claude LaTeX skill (templates/scripts) — theses/reports; **not** Santore spreads |
+
+### Better for *this* book (additive — not LaTeX)
+
+| Tool | Grade | Verdict | Why |
+|------|-------|---------|-----|
+| Pillow `composite_pages` + Typst + fal (current) | A | **IN USE** | Correct architecture for cloud-text-on-art |
+| [josch/img2pdf](https://github.com/josch/img2pdf) | A- | **IN USE** (2026-07-14) | `npm run book:pdf:from-pages` — lossless Pages→PDF |
+| [pikepdf/pikepdf](https://github.com/pikepdf/pikepdf) | A- | **IN USE** (2026-07-14) | `npm run book:pdf:verify` — Trim/Bleed box QA |
+| Affinity Publisher | A- | **WATCH** | GUI polish escape hatch only |
+| Typst “book” chapter templates (ilm, orange-book…) | C- | **SKIP** | Wrong product (TOC novels ≠ picture pages) |
 
 ---
 
