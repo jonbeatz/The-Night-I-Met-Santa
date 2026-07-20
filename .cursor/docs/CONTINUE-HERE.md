@@ -6,13 +6,13 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-19 handoff)
+## One-line status (2026-07-19 evening)
 
 **InDesign production locked** · page count **35–40** · `AGENT-RUNBOOK.md` authoritative.  
-**Eyes-met prototype open built** in InDesign (pages 2–3: LEFT/RIGHT plates + cloud + Beat 4 stanza).  
+**Eyes-met prototype** loaded in InDesign (pages 2–3: LEFT/RIGHT + cloud + Beat 4 stanza). UXP MCP **Connected**.  
 **Working file:** `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd` · PDFs → `Output/interiors/` + `Output/covers/`.  
-**Next when Jon returns:** nudge cloud/text on prototype → then **S01 Approach LEFT** Lane A (or continue eyes-met polish).  
-DTP cold-start proven; Bridge was Connected this session. InDesign doc saved+closed for errands.
+**Next:** nudge cloud/text on prototype → **S01 Approach LEFT** Lane A.  
+**New docs:** `ADOBE-CC-MCP-GUIDE.md` (verified Adobe MCP watchlist). ArcRift WATCH record on fleet TOOLS (do not install).
 
 ---
 

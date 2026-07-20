@@ -227,6 +227,28 @@ npm run image:gen:page -- "cheap draft..."   # HF free fallback
 
 ---
 
+## 14. Digital Flipbook — Family Review Tool
+
+After the book is done, create a viewable flipbook for family and friends:
+
+**Plugin:** [3D FlipBook by iberezansky](https://wordpress.org/plugins/interactive-3d-flipbook-powered-physics-engine/) (free, no limits, no watermark)
+
+- WebGL 3D rendering with real physics page bending
+- Unlimited pages and file size — perfect for a 35-40 page picture book
+- Upload to DigitalStudioz WP site (or any WordPress install)
+- Shortcode: `[3d-flip-book id="1"]` → private page → share link with family
+- Also works standalone via [GitHub repo](https://github.com/iberezansky/flip-book-jquery) (GPL — forkable for future projects)
+- Source code: [SVN browser](https://plugins.trac.wordpress.org/browser/interactive-3d-flipbook-powered-physics-engine/)
+
+**Setup (post-production):**
+1. Export viewing PDF from InDesign (spreads view, 8.5×8.5" trim, sRGB)
+2. Install 3D FlipBook on WordPress
+3. Create new flipbook → paste PDF URL
+4. Shortcode on private/family page
+5. Share link — they see a gorgeous 3D page-turning book on any device
+
+---
+
 ## 10. What NOT To Do
 
 - ❌ Generate more than one spread at a time

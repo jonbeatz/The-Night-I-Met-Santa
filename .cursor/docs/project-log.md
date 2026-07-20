@@ -26,3 +26,7 @@
 | 2026-07-19 | **Eyes-met InDesign prototype** built (pages 2–3 LEFT/RIGHT + cloud + stanza). Working docs home locked: `Xtraz/Adobe-inDesign/` · Affinity `Xtraz/Affinity/` · PDF exports `Output/interiors/` + `Output/covers/`. Moved prototype from `Output/prototypes/`. |
 | 2026-07-19 | **Handoff (errands):** Saved+closed `eyes-met-prototype-v1.indd`. Gotchas: facing-page art via spread coords; `pointSize="14pt"` when rulers are inches. Resume: nudge cloud/text → S01 Lane A. Docs/Mem0/vault/Mnemosyne + git push. |
 | 2026-07-19 | **Close Project:** Workspace switch — fleet left running. Next open: nudge eyes-met prototype → S01 Lane A. |
+| 2026-07-19 | **Start Project + stack verify:** Fleet warm (:1234/:4000/:4040). InDesign UXP Connected; `eyes-met-prototype-v1.indd` loaded. Skip COM/JSX in status (Jon preference). |
+| 2026-07-19 | **ADOBE-CC-MCP-GUIDE.md:** Verified research pass — corrected install blocks; InDesign stays UXP production. |
+| 2026-07-19 | **ArcRift review:** C (74) WATCH record on fleet TOOLS-* (Jon asked persist despite &lt;B-); do not install — Mem0/Mnemosyne primary. |
+| 2026-07-19 | **Docs + Mem0 + vault + Mnemosyne sync** + git push. |

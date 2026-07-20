@@ -12,15 +12,17 @@ Working `.indd`: `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-19 **Close Project** — handoff for workspace switch. Fleet left running (:4000/:4040/:1234). Prototype saved+closed earlier. Resume with **Open Project**.
+2026-07-19 **Docs sync** — Start Project verified (UXP LIVE, prototype loaded). Added verified `ADOBE-CC-MCP-GUIDE.md`. ArcRift C(74) WATCH on fleet TOOLS-* (record only). Mem0/vault/Mnemosyne synced.
 
 ## Where to continue
-1. Open `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd` — nudge cloud + poem on pages 2–3
+1. Nudge cloud + poem on prototype pages 2–3 (doc open in InDesign)
 2. Optional: load Lulu `.joboptions` + export smoke PDF → `Output/interiors/`
 3. **S01 Approach LEFT** Lane A composition → Jon pick → Lane B
 4. INDEX/beat-audit disk sync when convenient
 
-**Fleet:** left running (LiteLLM :4000, ngrok :4040, LM Studio :1234) — use **Open Project** in next workspace.
+## Reference (new this session)
+- **Adobe CC MCP watchlist:** `.cursor/docs/ADOBE-CC-MCP-GUIDE.md` — verified installs; InDesign authority stays `tools/layout-mcp/SETUP.md`
+- **ArcRift:** fleet `TOOLS-WATCHLIST` — C (74) WATCH record; do not install (Mem0/Mnemosyne primary)
 
 ## System of record
 | Doc | Use |
@@ -38,6 +40,7 @@ Working `.indd`: `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`
 | CONTINUITY-AND-PRINT-FINALS | Print remake plan |
 | **LAYOUT-APP-AUTOMATION-RESEARCH** | Affinity/InDesign MCP — **READY 2026-07-19** |
 | **tools/layout-mcp/SETUP.md** | How to start bridge + load UXP plugin |
+| **ADOBE-CC-MCP-GUIDE.md** | Adobe MCP watchlist (verified 2026-07-19) — optional PS/AI/AE/Premiere later |
 | LULU-8.5-SQUARE-CHEATSHEET | Trim, bleed, safety, cover-template notes |
 
 ## Paths

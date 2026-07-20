@@ -134,6 +134,7 @@ Jon researches tools → paste links in Cursor (often from **JonBeatz hub**) →
 | **Hermes WebUI** | B+ (88) | WATCH | NOT_INSTALLED | Free OSS | Native Hermes web/mobile UI — **prerequisite for Hermex**; bookmark with Hermex path |
 | **Open WebUI** | B (85) | WATCH | NOT_INSTALLED | Free OSS | Docker chat UI + Hermes API `:8642` |
 | **MemPalace** | B (84) | WATCH | NOT_INSTALLED | Free MIT | **Bookmark Jon 2026-07-13** — verbatim local memory + MCP; setup later; Mem0 stays primary |
+| [**ArcRift**](https://github.com/Eshaan-Nair/ArcRift) | **C (74)** | **WATCH** | NOT_INSTALLED | Free MIT | **Record Jon 2026-07-19** — browser AI chats→Cursor MCP + SQLite KG; below B- threshold but Jon asked to persist; Mem0/Mnemosyne primary — **do not install** |
 | **Refero MCP** | A- (91) | WATCH | NOT_INSTALLED | Paid $17/mo | **Bookmark Jon 2026-07-13** — 135k screens/flows MCP; setup later ($17/mo Pro) |
 | **Refero Styles** | B+ (88) | WATCH | NOT_INSTALLED | Freemium‡ | **Bookmark Jon 2026-07-13** — 2k+ DESIGN.md examples; pair Refero MCP + DesignMD later |
 | **AgentsView** | B+ (87) | IN USE | **READY** | Free OSS | Session search + messages — `:8080` |
@@ -435,6 +436,7 @@ Install any of these only after Jon approves. None replace `draven:speak` until 
 | 2026-07-13 | [MiMo Code](https://github.com/XiaomiMiMo/MiMo-Code) | C+ (76) | **REF bookmark** — Jon: blog/concepts only; no install |
 | 2026-07-13 | [AgentsView](https://github.com/kenn-io/agentsview) | B+ (87) | **RE-CONFIRMED IN USE** — 4.4k★; `:8080` (unchanged) |
 | 2026-07-13 | [MemPalace](https://github.com/MemPalace/mempalace) | B (84) | **WATCH bookmark** — Jon: setup later; additive vs Mem0 |
+| 2026-07-19 | [ArcRift](https://github.com/Eshaan-Nair/ArcRift) | C (74) | **WATCH record** — Jon asked persist despite &lt;B-; browser→IDE memory; skip install (Mem0/Mnemosyne) |
 | 2026-07-13 | [Hermex](https://github.com/uzairansaruzi/hermex) | B+ (88) | **WATCH bookmark** — Jon: setup later; needs hermes-webui + tunnel; Telegram stays primary |
 | 2026-07-13 | [Aight](https://aight.cool/) | B (85) | **WATCH bookmark** — Jon: setup later; Hermes gateway native iOS; Telegram stays primary |
 | 2026-07-13 | [Strands Agents](https://strandsagents.com/) | C+ (74) | **SKIP** — AWS agent SDK; heavy Hermes overlap (chat only) |

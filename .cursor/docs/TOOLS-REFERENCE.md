@@ -2681,6 +2681,42 @@ Features beyond Telegram: starred/pinned sessions, search, unread badges, multi-
 
 ---
 
+## ArcRift (2026-07-19)
+
+- **URL:** https://github.com/Eshaan-Nair/ArcRift · **Site:** https://arcrift.vercel.app/
+- **Grade:** **C (74/100)** · **License:** MIT · **Stars:** ~246 · **Version:** v1.6.3 (Jun 2026)
+- **Verdict:** **WATCH (record only)** — Jon explicitly asked to persist despite **below B- (80) doc threshold**
+- **Status:** **NOT_INSTALLED** — **do not install** unless browser ChatGPT/Claude→Cursor sync becomes a real weekly pain
+
+### Summary
+
+Local-first memory: **browser extension** (Claude / ChatGPT / Gemini / DeepSeek / Grok / Copilot / Mistral) → backend (SQLite recommended) + Ollama embeddings/KG → **MCP** for Cursor (`recall_context`, `store_memory`, `search_memory`, `list_projects`). Dashboard/tray on **`:3001`**. Setup: `npx arcrift-setup` or Releases installer. Rebranded synq → glia → ArcRift.
+
+### Gap / overlap
+
+| vs | Notes |
+|----|-------|
+| **Mem0 IN USE** | Primary semantic memory — ArcRift does **not** replace |
+| **Mnemosyne IN USE** | Cursor MCP memory trial — overlaps IDE side |
+| **MemPalace WATCH** | Better-graded local memory MCP if ever adding another store |
+| **Vader Vault / ReCall** | Durable human notes — keep authoritative |
+| **Unique gap** | Auto-scrape **web** LLM chats into IDE — only reason to revisit |
+
+### Risks
+
+- **VRAM / Ollama** — competes with LM Studio Mem0 model; installer also offers **Groq cloud** as default choice [1]
+- **Port `:3001`** — Next/Hermes collision habit
+- **Extension** — broad `host_permissions` on major AI chat sites
+- **Installer.exe / tray** — SmartScreen; always-on background service
+- **Third memory silo** — confuses agents on write target
+- **Young project** — ★246; shared secret removed (CORS localhost only)
+
+**Verify (if ever installed):** `curl http://localhost:3001/health` → save one browser chat → Cursor `search_memory`.
+
+**Recommendation:** **WATCH record** — researched; skip install. Prefer Mem0 + Mnemosyne + vault. Re-grade if major v2 or Jon’s browser-chat workflow changes.
+
+---
+
 ## AgentsView — re-confirmed (2026-07-13)
 
 - **URL:** https://github.com/kenn-io/agentsview · **Site:** https://agentsview.io
