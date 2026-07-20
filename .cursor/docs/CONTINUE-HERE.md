@@ -9,15 +9,16 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 ## One-line status (2026-07-20)
 
 **InDesign production locked** · page count **35–40** · `AGENT-RUNBOOK.md` authoritative.  
-**Page workflow draft:** **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`** — poem · imagery · temp filenames · spreads vs singles · About / Thank You / Jack portrait. Confirm ~36-page plan.  
-**Spread loop locked:** Jon PS MOCK + `Images/chopz/` → agent matches InDesign → **live Cormorant** (Medium 20/26 +5 centered #2C2C2C).  
-**Eyes-met:** prototype pages **4–5** (= story **S3** → final book **10|11** when full doc built).  
-**Working file:** `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd` · PDFs → `Output/interiors/` + `Output/covers/`.  
-**Print finals:** **2625×2625** / **5250×2625** = full **300 DPI**. No fake gutter on plates.  
-**Photoshop MCP LIVE:** adobepy UXP (`:47391`/`:8766`) — `tools/layout-mcp/PHOTOSHOP-SETUP.md`.  
-**PSD blanks:** `spread` / `single-page` / `book-covers` in `Xtraz/Adobe-Photoshop/`.  
-**Next:** Confirm `BOOK-PAGE-WORKFLOW.md` → generate missing story spreads (S1/S2/S4…).  
-**Playbook:** `ISSUES-RESOLVED.md` + `BOOK-PRODUCTION-SYSTEM.md`.
+**Creative loop dial-in:** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** — PS↔ID size parity · Klein Dial D2 · no fake gutter · mocks+RECIPE · close PNG · MOCK-TYPE by role (poem 20/26 · matter 30).  
+**Docs habit:** **`update docs`** = harvest workflow into playbooks · **`log fixes`** = ISSUES-RESOLVED card · see PAGE-BUILD §11.  
+**Smoke:** `p03-dedication.psd` + `p03-dedication-smoke.indd` · mocks `Media/generated/mocks/P03-dedication/v01/`.  
+**Page map draft:** **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`** — confirm ~36-page plan.  
+**Spread loop:** Jon PS MOCK + `Images/chopz/` → InDesign **live Cormorant** (poem 20/26 +5 #2C2C2C).  
+**Continuity:** Boy G0 + Santa G0 in `Media/approved/characters/` — attach on every boy/Santa gen.  
+**Eyes-met:** prototype **4–5** (= story **S3** → book **10|11**).  
+**Photoshop MCP LIVE:** adobepy UXP — `PHOTOSHOP-SETUP.md`.  
+**Next:** Confirm page map → next unit with full RECIPE + tab hygiene.  
+**Playbook:** `ISSUES-RESOLVED.md` · `BOOK-PRODUCTION-SYSTEM.md` · `PAGE-BUILD-WORKFLOW.md`.
 
 ---
 

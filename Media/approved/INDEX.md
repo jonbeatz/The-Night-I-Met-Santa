@@ -16,7 +16,8 @@ Experiments stay under `Media/generated/…`. Sources/refs stay under `Images/`.
 | **C — Print plates** | `print/` *(create at finals)* | Exact **2625²** / **5250×2625** / cover wrap. Remade from Tier B + recipes. |
 
 **Rule:** Seeing a file under `style-refs/covers/` does **not** mean the cover is locked — promote to `covers/cover-front.png` when you pick the winner.  
-**Print plan + continuity:** `.cursor/docs/CONTINUITY-AND-PRINT-FINALS.md`. Each Tier B file should get a **`.recipe.md`** sidecar (example: `covers/cover-front.recipe.md`).
+**Print plan + continuity:** `.cursor/docs/CONTINUITY-AND-PRINT-FINALS.md`. Each Tier B file should get a **`.recipe.md`** sidecar (example: `covers/cover-front.recipe.md`).  
+**Mock tries (before promote):** `Media/generated/mocks/{unit}/vNN/` + **`RECIPE.md`** — see `.cursor/docs/PAGE-BUILD-WORKFLOW.md` · scoreboard `Media/generated/mocks/_INDEX/`.
 
 Jon’s 2026-07-15 organization under `style-refs/` is **kept** (good browsable moodboard). Do not flatten.
 

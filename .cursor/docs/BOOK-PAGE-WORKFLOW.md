@@ -2,6 +2,7 @@
 
 **Status:** Working draft **2026-07-20** — Jon reviews / tweaks before we lock  
 **Purpose:** One accurate map of **every interior page**, the **poem words** on it, the **image to create**, and **temp filenames** so we know what to generate.  
+**How to build each page (PSD / mocks / recipes):** **`PAGE-BUILD-WORKFLOW.md`**  
 **Text of record:** `Transcription/poem-clean.txt`  
 **Copy (About / Thank You / credits):** `BOOK-COPY-DRAFTS.md`  
 **Build authority:** `AGENT-RUNBOOK.md`  
@@ -17,9 +18,13 @@
 | **Singles** | Use when a beat is quieter, transitional, or text-heavy matter — not the default |
 | **Page count** | **35–40** locked · this draft targets **36** (even, Lulu-friendly) |
 | **Facing math** | Open book = **even LEFT \| odd RIGHT** (e.g. 6\|7, 10\|11). Story spreads always sit on those pairs |
-| **Type** | Live **Cormorant** in InDesign — **no poem text baked into art** |
+| **Type** | Live **Cormorant** in InDesign — **no poem text baked into art** · poem MOCK in PS = **20/26** so preview matches |
+| **Image size** | Page **2625²** · spread **5250×2625** — place full-bleed in ID (no habitual re-scale). See `PAGE-BUILD-WORKFLOW.md` §1b |
+| **Spreads** | **No fake middle gutter/spine line** in art — seamless scene; orange fold = PSD guide only |
+| **Klein dial** | Lane A = Klein 4B + **Dial D2** append only (`IMAGE-LANE-PROMPTS.md`) |
 | **Watermarks** | Flag on finals; Jon removes in Photoshop before print promote |
 | **Prototype caveat** | Current `eyes-met-prototype-v1.indd` page numbers are **mock layout**, not this final book map |
+| **Docs triggers** | **`update docs`** = harvest into this map + build workflow · **`log fixes`** = ISSUES-RESOLVED incident card · see `PAGE-BUILD-WORKFLOW.md` §11 |
 
 ---
 

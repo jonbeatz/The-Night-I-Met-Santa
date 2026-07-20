@@ -5,6 +5,8 @@
 **Based on:** `D:\Hermes\projects\The-Night-I-Met-Santa` (the full project, not a summary)
 
 > **2026-07-19 update (TNIMS):** Layout production for *this* title is **InDesign UXP** (`AGENT-RUNBOOK.md`). Pillow → Typst remains documented below as the **fallback / portable** recipe for future books without DTP. Prefer InDesign when Affinity/InDesign MCP cold-start is available. Page target for TNIMS: **35–40** (not the earlier ~32 estimate).
+>
+> **2026-07-20 update (TNIMS → future books):** Creative page loop is dialing in under `.cursor/docs/PAGE-BUILD-WORKFLOW.md` — generate → `Media/generated/mocks/{unit}/vNN/` + **RECIPE.md** (service/model/prompt/refs) → new PSD from blank → **close source PNG** → MOCK-TYPE preview (Cormorant Medium 30pt `#2C2C2C`) + cloud brush → save → InDesign live type. Character continuity via `Media/approved/characters/` G0 locks. When polished, this becomes the master skeleton for the next picture book.
 
 ---
 

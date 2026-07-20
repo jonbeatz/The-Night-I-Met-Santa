@@ -57,7 +57,8 @@ seamless continuous two-page storybook spread across the full width, one unbroke
 
 ## Agent rule
 
-1. If Jon says **dial / Klein / cheap mock** → Lane A only.  
-2. If Jon says **final / Banana / Gemini / print / lock** → Lane B only.  
-3. If generating a **spread** (`image:fal:spread` / 5250×2625 / wide beat) → Lane B + **SPREAD add-on** + gutter negatives. Never omit.  
-4. Boy wardrobe always oatmeal/taupe + holly (cover lock) on both lanes.
+1. If Jon says **dial / Klein / cheap mock** → Lane A only → **Dial D2 append** (locked 2026-07-15 testing). Settings OpenRouter: `--guidance 4.6 --steps 30`. Model: **Klein 4B** (`fal-ai/flux-2/klein/4b` or OpenRouter `flux.2-klein-4b`).  
+2. If Jon says **final / Banana / Gemini / print / lock** → Lane B only → **ILLUSTRATION-STYLE master** (never D2 on finals).  
+3. If generating a **spread** (`image:fal:spread` / 5250×2625 / wide beat) → add **SPREAD add-on** + gutter negatives. **Never** bake a fake middle spine/fold into art. Orange FOLD in PSD = screen guide only.  
+4. Boy wardrobe always oatmeal/taupe + holly (cover lock) on both lanes.  
+5. Record lane + model + which prompt block (D2 vs master) in every `RECIPE.md`.

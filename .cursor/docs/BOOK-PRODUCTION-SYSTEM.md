@@ -1,8 +1,9 @@
 # BOOK PRODUCTION SYSTEM — Hermes Picture-Book Playbook
 
-**Status:** Living system doc · last updated **2026-07-15**  
+**Status:** Living system doc · last updated **2026-07-20**  
 **Purpose:** Dialed-in workflow to finish *The Night I Met Santa* **and** recreate the same system for **future picture books**.  
-**Owner:** Jon · Agent continue file: `CONTINUE-HERE.md`
+**Owner:** Jon · Agent continue file: `CONTINUE-HERE.md`  
+**Page creative loop (new):** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** — image → PSD → MOCK-TYPE → InDesign · mocks + RECIPE.md · tab hygiene
 
 > When this file conflicts with session chat, **this + `TRUTH.md` win**. Update this doc when a decision sticks.  
 > **Jon rule:** On **`update docs`**, agents must review the session and fold anything worth keeping into this playbook (decision log, tool path, folder locations, quality gates) — not only the usual TRUTH/ReCall sync.
@@ -68,7 +69,15 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | Art size page | **2625 × 2625** @ 300 DPI | 8.75" with 0.125" bleed |
 | Art size spread | **5250 × 2625** master → split L/R | Continuous scene across gutter |
 | PS blanks | `Xtraz/Adobe-Photoshop/{spread,single-page,book-covers}-template.psd` | Cyan=TRIM · magenta=SAFETY · orange=MOCK · **no** spine PSD (Lulu wrap) |
-| Poem typeface (preferred) | **Cormorant Garamond Medium** · **20/26** · tracking **+5** · centered · #2C2C2C | Locked Jon 2026-07-20 — `FONT-CATALOG.md` · `AGENT-RUNBOOK.md` §5 |
+| Page build loop | Image → new PSD → close PNG → MOCK-TYPE → cloud → save → InDesign | **`PAGE-BUILD-WORKFLOW.md`** · mocks under `Media/generated/mocks/` |
+| MOCK-TYPE (PSD preview) | Poem **20/26** · matter **30/~40** · **#2C2C2C** · mirrors ID by role | `PAGE-BUILD-WORKFLOW.md` §1b / §7 |
+| Poem typeface (InDesign) | **Cormorant Garamond Medium** · **20/26** · tracking **+5** · centered · #2C2C2C | Locked Jon 2026-07-20 — `FONT-CATALOG.md` · `AGENT-RUNBOOK.md` §5 |
+| PS ↔ ID art size | **2625²** / **5250×2625** placed full-bleed = 300 DPI | Ignore PS 72 dpi tag · no habitual re-scale |
+| Spreads | Seamless art — **no fake middle gutter** | Orange fold = MOCK guide only · prompt negatives |
+| Klein dial | **4B + Dial D2 append** only (not Gemini master) | `IMAGE-LANE-PROMPTS.md` · proof D2 sweetspot |
+| Mock versioning | `{unit}/vNN/` + mandatory **RECIPE.md** (service · model · prompt · refs · D2 vs master) | Scoreboard: `Media/generated/mocks/_INDEX/` |
+| Close PNG after place | Hard rule — keep PS tabs to working PSD only | Avoid tab pile-up |
+| Docs triggers | **`update docs`** = system harvest · **`log fixes`** = ISSUES card | `PAGE-BUILD-WORKFLOW.md` §11 |
 | Cover display type | **Cinzel Decorative** (alt Mountains of Christmas) | Same |
 | Lulu color | **sRGB** export for full-color interior | Lulu printers use sRGB (2026 help) |
 | Lulu paper | **Premium Color** / heavier stock | Heirloom gift feel |

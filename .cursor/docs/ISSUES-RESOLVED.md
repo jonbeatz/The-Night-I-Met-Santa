@@ -11,6 +11,66 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-07-20 — PS ↔ InDesign size parity + docs triggers + Klein D2 / no fake gutter
+
+| | |
+|---|---|
+| **Symptom** | Unclear if PS fonts/images match ID; risk of constant re-scale; MOCK type vs poem size confusion; unsure log fixes vs update docs |
+| **Root cause** | 72 dpi metadata myth; MOCK defaults were matter-sized (30pt) while poem lock is 20/26; workflow harvest triggers not spelled out next to page map |
+| **Resolution** | Locked **PAGE-BUILD-WORKFLOW.md §1b** (2625/5250 full-bleed = 300 DPI; pt sizes by role; full-canvas clouds). Poem MOCK = **20/26**; matter = **30**. Spreads: no fake gutter in art. Klein mocks = **4B + Dial D2 only**. Docs: **`update docs`** = system harvest · **`log fixes`** = ISSUES card · §11 |
+| **Verify** | Side-by-side PS/ID at 100% on next poem page; RECIPE lists D2; exported spread has no center fold |
+
+---
+
+## Playbook — Page build loop (dialed 2026-07-20)
+
+**Canonical doc:** `.cursor/docs/PAGE-BUILD-WORKFLOW.md`  
+**Mocks home:** `Media/generated/mocks/{unit}/vNN/` + mandatory **`RECIPE.md`** (prompt · service · model · refs · verdict)  
+**Scoreboard:** `Media/generated/mocks/_INDEX/README.md`
+
+### Loop (short)
+
+1. Generate art → `mocks/…/vNN/art.png` + RECIPE  
+2. Duplicate blank PSD → `Xtraz/Adobe-Photoshop/{slug}.psd` · place on **ART** · guides on  
+3. **Close source PNG tab** (keep tabs clean)  
+4. Add **MOCK-TYPE** preview → Jon positions + cloud brush  
+5. Save PSD → place into InDesign at correct book page  
+6. Promote winner → `Media/approved/` + INDEX + recipe sidecar  
+
+### MOCK-TYPE defaults (PSD preview — mirrors InDesign)
+
+| Role | Spec |
+|------|------|
+| Poem | Cormorant Medium **20/26** · tracking +5 · `#2C2C2C` |
+| Dedication / short matter | Cormorant Medium **30/~40** · `#2C2C2C` (p03 dial) |
+| Layer | `MOCK-TYPE - {slug} (preview)` |
+
+Do not ship raster MOCK-TYPE. Full-canvas cloud brush → RGBA export → full-bleed place = 1:1 with PS (`PAGE-BUILD-WORKFLOW.md` §1b).
+
+### Size parity (PS ↔ ID)
+
+| Art | Place in ID | Notes |
+|-----|-------------|-------|
+| **2625×2625** | 8.75″ bleed box | = 300 DPI; ignore PS 72 dpi tag |
+| **5250×2625** | 17.5″ × 8.75″ (or L/R 2625² chops) | same |
+
+### Spreads — no fake gutter
+
+Art + exports: **seamless**. Orange FOLD guide = screen only. Klein/Banana prompts include gutter negatives (`IMAGE-LANE-PROMPTS.md`).
+
+### Symptom → fix (this session)
+
+| Symptom | Root cause | Resolution | Verify |
+|---------|------------|------------|--------|
+| PNG tabs pile up | Source art left open after place | Close PNG as soon as ART owns pixels | Only working PSD open |
+| MOCK type tiny / wrong color | Agent used wrong size / not #2C2C2C | Poem **20/26** · matter **30** · **#2C2C2C** | Eye-check vs ID |
+| PS look ≠ ID | Wrong pixels, scaled place, or MOCK≠live size | Lock §1b parity · place full-bleed · match pt by role | Side-by-side 100% zoom |
+| Can’t recreate a liked mock | Prompt/model not recorded | Every `vNN` gets **RECIPE.md** + D2 vs master | Open recipe next to art.png |
+| Character drift | Missing G0 refs on gen | Attach boy/santa locks every boy/Santa call | Compare to G0 side-by-side |
+| Fake spine in spread art | Model drew mockup fold | Negatives + hide orange fold before export | No center line on plate |
+
+---
+
 ## Playbook — Photoshop agent MCP (LIVE 2026-07-20)
 
 **Path:** adobepy UXP + `dcc-mcp-photoshop` — **not** COM.  
@@ -59,7 +119,9 @@ Living “how we build spreads.” Dated entries below are the incident history;
 
 | Step | Who | What |
 |------|-----|------|
-| 1 | Jon | Start from **`spread-page-template.psd`** (spreads) or **`single-page-template.psd`** (singles); covers → **`book-covers-template.psd`** |
+| 1 | Jon/Agent | Start from **`spread-page-template.psd`** (spreads) or **`single-page-template.psd`** (singles); covers → **`book-covers-template.psd`** → Save As working `{slug}.psd` |
+| 1b | Agent | Place art on **ART** → **close source PNG tab** immediately (see `PAGE-BUILD-WORKFLOW.md`) |
+| 1c | Agent/Jon | Add **MOCK-TYPE** preview — poem **20/26** · matter **30pt** · `#2C2C2C` · Jon positions + **full-canvas** cloud brush |
 | 2 | Jon | Export **MOCK** (full composite) + **chops** into `Images/chopz/` — see naming + export options below |
 | 3 | Agent | Facing pages in InDesign → place chops → optional **MOCK-REF @ ~35%** to align → hide MOCK |
 | 4 | Agent | Recreate poem as **live Cormorant Garamond Medium 20/26 tracking +5, centered, #2C2C2C** (never ship raster poem) |

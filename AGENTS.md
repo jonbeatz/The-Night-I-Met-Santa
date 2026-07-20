@@ -10,6 +10,7 @@ Read in order:
 6. **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`** ← full page/poem/image map (draft)
 7. **`.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md`** ← InDesign/Lulu specs
 8. **`.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`** ← dialed tools/decisions (this title)
+8b. **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** ← image → PSD → MOCK-TYPE → InDesign · mocks/RECIPE · tab hygiene
 9. **`.cursor/docs/IMAGE-LANE-PROMPTS.md`** ← Klein mockup vs Gemini/Banana finals prompts
 10. **`BOOK-PLAYBOOK.md`** ← future-book master (repo root)
 11. **`.cursor/docs/FONT-CATALOG.md`** ← type roles (Cormorant / Cinzel / scripts)

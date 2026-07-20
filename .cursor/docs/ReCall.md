@@ -2,29 +2,33 @@
 
 ## Current focus
 **InDesign = production** (runbook authority). Pillow/Typst = fallback only.  
-**Page count locked: 35–40.** Working map: **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`** (poem + imagery + temp filenames + matter pages).  
-**Spread build loop locked:** PS MOCK + chops (`Images/chopz/`) → InDesign match → live Cormorant.  
-Working `.indd`: `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`  
-Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11** when full doc built).
+**Page count locked: 35–40.** Working map: **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`**.  
+**Creative loop (dialing):** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** — mocks/`vNN`+RECIPE → new PSD → **close PNG** → MOCK-TYPE (30pt `#2C2C2C`) → cloud → InDesign.  
+Smoke unit: `p03-dedication.psd` · mocks `Media/generated/mocks/P03-dedication/v01/`.  
+**Spread build loop:** PS MOCK + chops (`Images/chopz/`) → InDesign → live Cormorant (poem 20/26).  
+**Continuity:** Boy G0 + Santa G0 in `Media/approved/characters/`.  
+Working `.indd`: `eyes-met-prototype-v1.indd` · also `p03-dedication-smoke.indd`.  
+Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
 
 **DTP:** Affinity MCP + InDesign UXP Bridge + **Photoshop adobepy UXP LIVE** (`:47391` / `:8766`). Cold flow: CC Desktop signed in (Jon confirms) → agent UDT+apps+bridges → **Jon Load & Watch** → MCP.
 
-**PSD blanks locked:** `Xtraz/Adobe-Photoshop/` → `spread-page-template.psd` · `single-page-template.psd` · `book-covers-template.psd` (no spine-only PSD).
+**PSD blanks locked:** `Xtraz/Adobe-Photoshop/` → `spread-page-template.psd` · `single-page-template.psd` · `book-covers-template.psd` (no spine-only PSD). Open **one working PSD** at a time; close source PNGs after place.
 
 ## Birthday deadline
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-20 — Book workflow + PS MCP dialed. **Fleet Google:** dual OAuth additive — default `jonbeatz@gmail.com`; `jonf822@gmail.com` only when asked (`google_token_jonf822.json`). Pointer: `.cursor/docs/GOOGLE-WORKSPACE.md`. **Next:** Jon confirms BOOK-PAGE-WORKFLOW → create missing story spreads.
+2026-07-20 — **PAGE-BUILD-WORKFLOW** dialed (mocks+RECIPE, close PNG, MOCK-TYPE 30pt #2C2C2C, G0 continuity). Fleet Google dual OAuth still noted. **Next:** confirm BOOK-PAGE-WORKFLOW → next page unit with full recipe loop.
 
 ## Where to continue
 1. **Confirm** `.cursor/docs/BOOK-PAGE-WORKFLOW.md` (page count, L/R poem splits, About + Jack pages)
-2. Generate next story art per checklist (S1 Approach / S2 Threshold / S4 Sit here…)
-3. **Photoshop MCP tests:** solo layers + export chops to `Images/chopz/`
+2. Run next unit via **`PAGE-BUILD-WORKFLOW.md`** (recipe + PSD tab hygiene)
+3. Generate story art with G0 refs when boy/Santa appear
 4. Hide/delete MOCK-REF when pages approved in full book doc
 5. Optional: Lulu `.joboptions` + smoke PDF → `Output/interiors/`
 
 ## Reference (new this session)
+- **PAGE-BUILD-WORKFLOW.md** — image → PSD → InDesign creative loop (living)
 - **BOOK-PAGE-WORKFLOW.md** — authoritative page/poem/image map (draft)
 - **Photoshop UXP MCP:** `tools/layout-mcp/PHOTOSHOP-SETUP.md` — LIVE; COM MCPs skip
 - **Adobe CC MCP watchlist:** `.cursor/docs/ADOBE-CC-MCP-GUIDE.md`
@@ -33,6 +37,7 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11** when fu
 ## System of record
 | Doc | Use |
 |-----|-----|
+| **PAGE-BUILD-WORKFLOW.md** | Per-page creative loop · mocks · RECIPE · MOCK-TYPE · tab hygiene |
 | **BOOK-PAGE-WORKFLOW.md** | Full interior map — poem · art · filenames · matter |
 | **BOOK-PLAYBOOK.md** (repo root) | Future-book master |
 | **BOOK-PRODUCTION-SYSTEM.md** | Living ops for *this* title |
@@ -83,8 +88,20 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11** when fu
 - **Spread loop (2026-07-20):** PS MOCK 5250×2625 + chops → InDesign → live type; prefer PNG; layers Frame→Type→Cloud→Art
 - **PSD blanks:** `spread-page-template.psd` (5250×2625) · `single-page-template.psd` (2625²) · `book-covers-template.psd` (2625² front/back) — cyan=TRIM · magenta=SAFETY · orange=MOCK; **no** spine-only PSD (Lulu casewrap after interior)
 - **Poem type (2026-07-20):** Cormorant Garamond **Medium 20/26 tracking +5 centered #2C2C2C**
+- **MOCK-TYPE PSD preview (2026-07-20):** poem **20/26** · matter **30/~40** · `#2C2C2C` — mirrors ID by role; close source PNG after place
+- **PS ↔ ID (2026-07-20):** same pixel counts (2625² / 5250×2625) full-bleed place = 300 DPI; ignore 72 dpi tag; full-canvas textCloud
+- **No fake gutter** in spread art (orange fold = MOCK guide only)
+- **Klein dial:** 4B + **Dial D2** append only (`IMAGE-LANE-PROMPTS.md`)
+- **Docs triggers:** `update docs` = workflow harvest · `log fixes` = ISSUES card (`PAGE-BUILD-WORKFLOW.md` §11)
+- **Page build loop:** `.cursor/docs/PAGE-BUILD-WORKFLOW.md` · `Media/generated/mocks/{unit}/vNN/` + **RECIPE.md**
 - **Print pixels:** page **2625²** · spread **5250×2625** = full **300 DPI** at Lulu bleed size (Pass B); dial may be lower
 - **No fake gutter** on final spread art (MOCK-only fold OK)
 - **DTP (2026-07-19 FINAL):** Affinity MCP `:6767` + InDesign UXP `:19300/:19301` **IN USE**. Cold flow: CC Desktop signed in (**Jon confirms**) → agent launches UDT+InDesign+bridge → **Jon clicks Load & Watch** (agent cannot) → MCP. Web adobe.com login not enough. Keep CC installed; Startup disable OK.
 - **Photoshop MCP (2026-07-20 LIVE):** adobepy UXP broker `:47391` + dcc-mcp-photoshop `:8766/mcp` — **not** COM. Prefs: Enable Developer Mode only. Doc: `tools/layout-mcp/PHOTOSHOP-SETUP.md`. COM MCPs (loonghao/alisaitteke) rejected on this PC (`0x80080005`). **Default save folder:** `Xtraz/Adobe-Photoshop/`
 - **Creative Cloud:** keep Desktop app installed (licensing); OK to disable Startup — do **not** uninstall while keeping InDesign/UDT
+
+## Session note 2026-07-20 — PAGE-BUILD-WORKFLOW dial-in
+- Canonical loop: `.cursor/docs/PAGE-BUILD-WORKFLOW.md` · mocks `Media/generated/mocks/` + RECIPE.md · close PNG after place
+- MOCK-TYPE defaults: Cormorant Medium 30pt / #2C2C2C (from p03-dedication)
+- Continuity: Boy G0 + Santa G0 always for character scenes
+- Smoke: p03-dedication.psd still working unit
