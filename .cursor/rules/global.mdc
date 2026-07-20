@@ -15,7 +15,7 @@
 | **deepseek ngrok** | `npm run deepseek:ngrok` (force-restarts proxy with ngrok for Cursor Agent) |
 | **sync mcp** | `npm run sync:mcp-env` |
 | **log session** | `npm run log:session -- "summary"` |
-| **log fix** | `npm run log:fix` |
+| **log fix**, **log fixes** | Append to [`.cursor/docs/ISSUES-RESOLVED.md`](../docs/ISSUES-RESOLVED.md) (newest first: Symptom / Root Cause / Resolution / Verify). Optional CLI: `npm run log:fix -- --issue "..." --cause "..." --solution "..."`. Promote durable layout rules into `AGENT-RUNBOOK.md` when the fix becomes standard. |
 
 **Local commands** always run from the project root (`D:\\Hermes\\projects\\The-Night-I-Met-Santa`).
 

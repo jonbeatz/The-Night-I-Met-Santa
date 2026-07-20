@@ -80,7 +80,7 @@ These are locked. Reference them, don't recreate them:
 | **Interior PDF page size** | **8.75 × 8.75"** (with 0.125" bleed) | Lulu Book Creation Guide |
 | **Art resolution** | **300 DPI** = 2625 × 2625 px | Lulu spec |
 | **Spread art resolution** | **5250 × 2625 px** | For generation only |
-| **Safety margin** | 0.5" from trim edge = 7.5 × 7.5" safe zone | Lulu spec |
+| **Safety margin** | 0.5" from trim edge = 7.5 × 7.5" safe zone | Lulu spec — **ink** (glyphs/faces), not empty text-frame padding. Center-aligned type OK if letters sit inside magenta margins. |
 | **Gutter** | **0"** — none needed for under 60 pages | Lulu guide p.9 |
 | **Color space** | **sRGB** (not CMYK) | Lulu KB Oct 2024 |
 | **PDF format** | Single-page layout (not spreads) | Lulu requirement |
@@ -97,13 +97,18 @@ These are locked. Reference them, don't recreate them:
 
 | Element | Spec |
 |---------|------|
-| **Text alignment** | CENTERED — not justified, no indent |
-| **Font** | Cormorant Garamond, 14pt |
-| **Text color** | Dark Charcoal #2C2C2C |
+| **Text alignment** | **CENTERED** — not justified, no indent |
+| **Font** | **Cormorant Garamond Medium** |
+| **Size** | **20 pt** (Jon UI: 20px) |
+| **Leading** | **26 pt** (Jon: “26px vertical kern” = line spacing) |
+| **Tracking** | **+5** (Jon: “5px horizontal kern” — InDesign Tracking) |
+| **Text color** | Dark Charcoal **#2C2C2C** / PoemCharcoal |
 | **Text cloud** | Custom watercolor cloud PNG — irregular feathered edges, translucent — Jon creates this |
 | **Cloud position** | Placed per spread by Jon — avoids faces and focal points |
 | **Right page** | Full-bleed illustration to bleed edge |
 | **Left page** | Illustration as background + centered cloud + centered poem text |
+
+> **Locked 2026-07-20 (Jon):** poem defaults above. Agents must use these when creating new text frames. In JSX set strings when rulers are inches: `pointSize = "20pt"`, `leading = "26pt"`, `tracking = 5`, font `Cormorant Garamond\tMedium`.
 
 ---
 
@@ -111,7 +116,7 @@ These are locked. Reference them, don't recreate them:
 
 ### Layer Stack (bottom to top)
 ```
-Layer 3: create_text_frame — Cormorant Garamond, centered, dark charcoal
+Layer 3: create_text_frame — Cormorant Garamond Medium 20/26 tracking +5, centered, #2C2C2C
 Layer 2: place_image — watercolor cloud PNG (Jon's custom asset)
 Layer 1: place_image — full-bleed illustration, 2625×2625 px, 300 DPI
 ```
@@ -124,6 +129,45 @@ Layer 1: place_image — full-bleed illustration, 2625×2625 px, 300 DPI
    - `place_image` — Jon's cloud PNG on left page at Jon's coordinates
    - `create_text_frame` — poem text on left page
 3. When all pages are done: `export_pdf` — use **Lulu-Interior-Print-PDF.joboptions**
+
+### Placement gotchas (UXP MCP — 2026-07-20)
+
+Full write-ups: **`.cursor/docs/ISSUES-RESOLVED.md`**. Operator says **`log fixes`** to append new ones.
+
+| Prefer | Avoid |
+|--------|--------|
+| One place cycle + `list_page_items` / Layers check | Retry-placing when unsure (stacks Cloud duplicates) |
+| `execute_indesign_code` rectangle → `place(path)` → `resize_page_item` on the Image | Blind `place_image` / `place_file_on_page` as sole path |
+| Keep placement rectangle + sized Image until Layers shows **one** cloud | Deleting the “empty” rectangle without confirming the link |
+| Inspect PNG / trust Jon on transparency | Assuming black fill from a thumbnail description |
+| Live text via JSX on the **target page** | `create_text_frame` alone (orphan pasteboard stories) |
+| `resize_page_item` in **points** (8.75″=630, spread=1260×630) | Negative-mm `place_image`; hoping `fit()` fixes sibling Image |
+| Jon drags **Frame** layer to top if needed | Long JSX fights with `LocationOptions` in UXP bridge |
+| **PS MOCK + chops → InDesign match → live type** (default) | Raster poem PNGs as finals; placing without a MOCK |
+| textCloud at **natural size** from page top-left (match MOCK) | Squeezing cloud into a tight inset box |
+
+### Default spread workflow (Jon + agent)
+
+1. Jon: PS at **5250×2625** → export **MOCK** + chops to `Images/chopz/` (PNG preferred)
+2. Agent: facing pages → art L/R → cloud → paintFrame → optional MOCK @ 35% → live Cormorant → hide MOCK
+3. Jon: eye-check vs MOCK (glyphs inside magenta); approve
+
+**textCloud export (pick one):**
+- **A (recommended):** full page **2625²** or spread **5250×2625**, cloud painted in place, rest transparent → place full-bleed  
+- **B:** tight crop of cloud only → place/scale to MOCK  
+
+**paintFrame:** keep on big emotional spreads; optional not every page.
+
+Full playbook: **`.cursor/docs/ISSUES-RESOLVED.md`** (top “Playbook” section).
+
+### Fast chop → facing-spread recipe
+
+1. Art L/R → place once → resize **630×630** (PNG if available)  
+2. textCloud → Option A full-bleed **or** match MOCK (never squeeze pre-composed cloud into a tiny inset)  
+4. Live Cormorant Medium **20/26** tracking **+5**, centered, #2C2C2C (JSX on target page) — letters inside magenta  
+4. paintFrame on **spread** → resize **1260×630**  
+5. Optional: MOCK-REF @ ~35% → align → hide  
+6. `list_page_items` + save — do not re-place
 
 ### Export Presets
 Load these once in InDesign (File → Adobe PDF Presets → Define → Load):
@@ -171,7 +215,7 @@ For detailed stanza-to-page mapping, image prompts per beat, and beat gap audit:
 ```powershell
 # From project root:
 npm run image:fal:page -- "Christmas Eve bedroom, painterly Santore style..."
-npm run image:fal:spread -- "Santa and child by fireplace, wide cinematic..."
+npm run image:fal:spread -- "Santa and child by fireplace, wide cinematic... seamless continuous spread, NO fake book gutter NO vertical fold line NO center spine shadow"
 npm run image:fal:cover -- "hero holiday cover scene..."
 npm run image:gen:page -- "cheap draft..."   # HF free fallback
 ```
@@ -249,12 +293,13 @@ After the book is done, create a viewable flipbook for family and friends:
 
 ---
 
-## 10. What NOT To Do
+## 15. What NOT To Do
 
 - ❌ Generate more than one spread at a time
 - ❌ Call anything "final"
 - ❌ Use CMYK color space
 - ❌ Add gutter margins (not needed under 60 pages)
+- ❌ Bake a **fake center fold / gutter shadow line** into final spread art (MOCK preview only; print art must be seamless)
 - ❌ Put text on spine (book is under 80 pages)
 - ❌ Launch UDT before Creative Cloud sign-in
 - ❌ Regenerate G0 locked art

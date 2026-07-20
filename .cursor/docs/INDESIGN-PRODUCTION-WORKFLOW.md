@@ -73,7 +73,7 @@
 |---------|------|
 | **Text alignment** | Centered — not justified, no first-line indent |
 | **Text cloud** | Irregular feathered watercolor cloud PNG (custom, placed per spread) |
-| **Typography** | Cormorant Garamond, 14pt, Dark Charcoal (#2C2C2C) |
+| **Typography** | **Cormorant Garamond Medium**, **20 pt** / leading **26 pt**, tracking **+5**, centered, Dark Charcoal (#2C2C2C) — locked 2026-07-20 |
 | **Right page** | Full-bleed illustration (art fills to bleed edge) |
 | **Left page** | Illustration as subtle background + centered cloud asset + centered poem text |
 
@@ -155,4 +155,4 @@ Pillow/Typst remains as fallback. InDesign is the production path.
 ### Agent scripting gotchas (2026-07-19)
 
 - Facing-page LEFT/RIGHT art: set `rulerOrigin = SPREAD_ORIGIN` and place with spread coords (page-only place can parent both plates onto the left page).
-- When document units are **inches**, set type as strings: `pointSize = "14pt"` / `leading = "20pt"`. Bare `pointSize = 14` means **14 inches** and oversets the frame.
+- When document units are **inches**, set type as strings: `pointSize = "20pt"` / `leading = "26pt"`. Bare `pointSize = 20` means **20 inches** and oversets the frame. Tracking: `tracking = 5`. Font: `Cormorant Garamond\tMedium`.

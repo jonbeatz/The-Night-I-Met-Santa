@@ -473,6 +473,7 @@ MSC Kanban ports (3001/3005/9119) live in the **MyStudioChannel** repo — not s
 | **Close Project** / **Close Session** | Close-Project.md + `session:handoff` |
 | **End Project** / **End Session** | End-Project.md + `session:stop` (AskQuestion git → dev `:3000` if up → `-StopDeepSeek`) |
 | **update docs** | `docs:sync` / Update-Docs.md |
+| **log fix** / **log fixes** | Append to `.cursor/docs/ISSUES-RESOLVED.md` (Symptom / Cause / Resolution / Verify) |
 | **backup profile** / **backup quick** | `backup:quick` |
 | **backup project** | `backup:project` |
 | **backup full** | `backup:quick:full` |

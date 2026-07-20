@@ -6,13 +6,15 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-19 evening)
+## One-line status (2026-07-20)
 
 **InDesign production locked** · page count **35–40** · `AGENT-RUNBOOK.md` authoritative.  
-**Eyes-met prototype** loaded in InDesign (pages 2–3: LEFT/RIGHT + cloud + Beat 4 stanza). UXP MCP **Connected**.  
+**Spread loop locked:** Jon PS MOCK + `Images/chopz/` → agent matches InDesign → **live Cormorant** (Medium 20/26 +5 centered #2C2C2C).  
+**Eyes-met:** pages **4–5** MOCK-matched (art L/R + textCloud + paintFrame + live poem); pages **2–3** earlier prototype.  
 **Working file:** `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd` · PDFs → `Output/interiors/` + `Output/covers/`.  
-**Next:** nudge cloud/text on prototype → **S01 Approach LEFT** Lane A.  
-**New docs:** `ADOBE-CC-MCP-GUIDE.md` (verified Adobe MCP watchlist). ArcRift WATCH record on fleet TOOLS (do not install).
+**Print finals:** **2625×2625** / **5250×2625** = full **300 DPI** (Pass B remake; dial may be smaller). No fake gutter on plates.  
+**Next:** approve/hide MOCK-REF on 4–5 → **S01 Approach LEFT** Lane A.  
+**Playbook:** `ISSUES-RESOLVED.md` (chopz→InDesign cheat sheet) + `BOOK-PRODUCTION-SYSTEM.md`.
 
 ---
 
@@ -107,7 +109,7 @@ For each locked page/spread, note where text sits without covering faces (policy
 ### 3. InDesign build (production path)
 Follow **`AGENT-RUNBOOK.md`** + **`INDESIGN-PRODUCTION-WORKFLOW.md`**:
 - Doc: 8.5×8.5", 0.125" bleed, single-page, **35–40** pages, sRGB
-- Layer stack: art → watercolor cloud PNG → Cormorant 14pt centered #2C2C2C
+- Layer stack: art → watercolor cloud PNG → **Cormorant Garamond Medium 20/26 tracking +5**, centered #2C2C2C
 - Export: `Lulu-Interior-Print-PDF.joboptions` → upload interior → download Lulu cover template → cover export
 
 ### 4. Fallback only (if InDesign blocked)

@@ -12,7 +12,7 @@
 
 | Role | First pick | Strong alt | Avoid for long poem body |
 |------|------------|------------|---------------------------|
-| **Poem body** | **Cormorant Garamond** Regular/Medium | **EB Garamond** Regular/Medium | Fredoka, Quicksand, Six Caps, scripts |
+| **Poem body** | **Cormorant Garamond Medium** | **EB Garamond** Medium | Fredoka, Quicksand, Six Caps, scripts |
 | **Spread dialogue / emphasis** | Cormorant Garamond SemiBold / Italic | EB Garamond Italic | Display-only faces |
 | **Cover title** | **Cinzel Decorative** Bold/Regular | **Mountains of Christmas** | Tiny decorative scripts |
 | **Author credit / “Written By”** | Cinzel Decorative Regular (smaller) | Cabin SemiBold | All-caps Six Caps for long names |
@@ -22,12 +22,25 @@
 
 **Legacy default in docs:** Georgia — still fine if needed; prefer **Cormorant Garamond** once compositor is rewritten (closer to heirloom storybook).
 
-### Sample stack (lock later after golden page)
+### Poem body — LOCKED (Jon 2026-07-20)
+
+| Spec | Value | InDesign |
+|------|--------|----------|
+| Family / style | **Cormorant Garamond Medium** | `Cormorant Garamond\tMedium` |
+| Size | **20** | `pointSize = "20pt"` (rulers in inches) |
+| Leading (vertical) | **26** | `leading = "26pt"` |
+| Tracking (horizontal) | **+5** | `tracking = 5` |
+| Alignment | **Center** | `Justification.CENTER_ALIGN` |
+| Color | **#2C2C2C** | PoemCharcoal / Dark Charcoal |
+
+Agents: use these defaults for all new poem text frames until Jon changes them.
+
+### Sample stack (other roles)
 
 ```
 Cover title:     Cinzel Decorative Bold
 Cover credit:    Cinzel Decorative Regular
-Poem page body:  Cormorant Garamond Medium @ ~46–48 pt (300 DPI)
+Poem page body:  Cormorant Garamond Medium @ 20/26 tracking +5, centered (LOCKED)
 Thank You line:  Allura or Great Vibes
 ```
 

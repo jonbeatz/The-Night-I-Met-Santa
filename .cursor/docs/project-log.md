@@ -30,3 +30,4 @@
 | 2026-07-19 | **ADOBE-CC-MCP-GUIDE.md:** Verified research pass — corrected install blocks; InDesign stays UXP production. |
 | 2026-07-19 | **ArcRift review:** C (74) WATCH record on fleet TOOLS-* (Jon asked persist despite &lt;B-); do not install — Mem0/Mnemosyne primary. |
 | 2026-07-19 | **Docs + Mem0 + vault + Mnemosyne sync** + git push. |
+| 2026-07-20 | **Eyes-met pages 4–5** MOCK-matched in InDesign (chops + live type). Locked: Cormorant Medium 20/26 +5 centered #2C2C2C; PS MOCK→chopz→InDesign loop; no fake gutter on finals; Pass B = 2625² / 5250×2625 @ 300 DPI. Docs/Mem0/vault/Mnemosyne + git + full backup. |

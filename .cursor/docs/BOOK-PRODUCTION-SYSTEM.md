@@ -67,7 +67,7 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | Art medium | **Painted gouache / soft watercolor** | `ILLUSTRATION-STYLE.md` |
 | Art size page | **2625 × 2625** @ 300 DPI | 8.75" with 0.125" bleed |
 | Art size spread | **5250 × 2625** master → split L/R | Continuous scene across gutter |
-| Poem typeface (preferred) | **Cormorant Garamond** (alt EB Garamond) | `FONT-CATALOG.md` — upgrade from Georgia |
+| Poem typeface (preferred) | **Cormorant Garamond Medium** · **20/26** · tracking **+5** · centered · #2C2C2C | Locked Jon 2026-07-20 — `FONT-CATALOG.md` · `AGENT-RUNBOOK.md` §5 |
 | Cover display type | **Cinzel Decorative** (alt Mountains of Christmas) | Same |
 | Lulu color | **sRGB** export for full-color interior | Lulu printers use sRGB (2026 help) |
 | Lulu paper | **Premium Color** / heavier stock | Heirloom gift feel |
@@ -258,6 +258,9 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | 2026-07-15 | Edition credits locked (Jack author · Jon design) — `BOOK-COPY-DRAFTS.md` | Copy |
 | 2026-07-19 | **DTP MCP LIVE + cold-start FINAL:** Affinity `:6767` + InDesign UXP `:19300/:19301`. Workflow: CC Desktop signed in (**Jon confirms**) → agent UDT+InDesign+bridge → **Jon Load & Watch** (agent cannot click Electron) → MCP smoke PASS. Web login not enough. Keep CC installed; Startup disable OK. Setup: `tools/layout-mcp/SETUP.md` | Layout automation |
 | 2026-07-19 | **Production path flip:** InDesign UXP = gift print path; Pillow/Typst = fallback only. Page count locked **35–40**. `AGENT-RUNBOOK.md` authoritative for build. TRUTH/CONTINUE/AGENTS aligned. | Layout / governance |
+| 2026-07-20 | **Spread build loop locked:** Jon PS MOCK (5250×2625) + chops in `Images/chopz/` → agent matches in InDesign → **live Cormorant** (no raster poem). MOCK @ ~35% for align then hide. Prefer **PNG** links. Details: `ISSUES-RESOLVED.md` + `AGENT-RUNBOOK.md` | Layout / process |
+| 2026-07-20 | **No fake gutter on finals:** seamless spread art only. Optional center fold line OK on screen MOCKS; never bake into LEFT/RIGHT/SPREAD print plates. | Art / print |
+| 2026-07-20 | **Print DPI confirmed:** finals must be exact **2625×2625** (page) / **5250×2625** (spread) = full **300 DPI** at Lulu bleed size. Pass A dial may be ~1K; Pass B remake before Lulu plates. | Print / resolution |
 
 *(Add a row whenever something sticks.)*
 

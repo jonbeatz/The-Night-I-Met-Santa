@@ -30,7 +30,7 @@ Do **not** replace this with the long Gemini master on Klein (or vice versa).
 
 ---
 
-## Lane B — Finals master (unchanged)
+## Lane B — Finals master (unchanged core)
 
 Use full master from `ILLUSTRATION-STYLE.md` + Banana/Gemini `/edit` with style refs + locked cover / Boy G0 / Santa G0.
 
@@ -41,10 +41,23 @@ heavily painted in rich gouache and soft watercolor …
 
 (See `ILLUSTRATION-STYLE.md` for full block + negatives.)
 
+### Spreads (5250×2625) — REQUIRED add-on + negatives
+
+Always append the **SPREAD master add-on** from `ILLUSTRATION-STYLE.md` and include gutter/fold terms in negatives:
+
+```
+seamless continuous two-page storybook spread across the full width, one unbroken painted scene through the center, NO fake book gutter, NO vertical fold line, NO center spine shadow, NO page-split seam, NO mockup binding crease down the middle
+```
+
+**Negatives (spreads):** `fake book gutter, vertical fold line, center spine shadow, page crease, binding seam, mockup book fold, split-page line, gutter shadow overlay` (+ standard style negatives).
+
+**Why:** Fake center fold is MOCK-only. Print plates must be seamless (Jon 2026-07-20). Playbook: `ISSUES-RESOLVED.md`.
+
 ---
 
 ## Agent rule
 
 1. If Jon says **dial / Klein / cheap mock** → Lane A only.  
 2. If Jon says **final / Banana / Gemini / print / lock** → Lane B only.  
-3. Boy wardrobe always oatmeal/taupe + holly (cover lock) on both lanes.
+3. If generating a **spread** (`image:fal:spread` / 5250×2625 / wide beat) → Lane B + **SPREAD add-on** + gutter negatives. Never omit.  
+4. Boy wardrobe always oatmeal/taupe + holly (cover lock) on both lanes.

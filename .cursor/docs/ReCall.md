@@ -3,8 +3,9 @@
 ## Current focus
 **InDesign = production** (runbook authority). Pillow/Typst = fallback only.  
 **Page count locked: 35–40.**  
-Eyes-met prototype **saved+closed** — reopen to nudge cloud/text, then continue page-by-page.  
-Working `.indd`: `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`
+**Spread build loop locked:** PS MOCK + chops (`Images/chopz/`) → InDesign match → live Cormorant.  
+Working `.indd`: `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`  
+Pages **4–5** = eyes-met MOCK-matched stack; pages **2–3** = earlier comparison prototype.
 
 **DTP:** Affinity MCP + InDesign UXP Bridge. Cold flow: CC Desktop signed in (Jon confirms) → agent UDT+InDesign+bridge → **Jon Load & Watch** → MCP.
 
@@ -12,12 +13,12 @@ Working `.indd`: `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-19 **Docs sync** — Start Project verified (UXP LIVE, prototype loaded). Added verified `ADOBE-CC-MCP-GUIDE.md`. ArcRift C(74) WATCH on fleet TOOLS-* (record only). Mem0/vault/Mnemosyne synced.
+2026-07-20 **Docs sync** — MOCK/chopz→InDesign loop, poem type lock (Cormorant Medium 20/26 +5 centered #2C2C2C), no fake gutter on finals, Pass B print = 2625² / 5250×2625 @ 300 DPI. Mem0/vault/Mnemosyne + git.
 
 ## Where to continue
-1. Nudge cloud + poem on prototype pages 2–3 (doc open in InDesign)
+1. Hide/delete MOCK-REF when pages 4–5 approved; optional cloud/text nudge
 2. Optional: load Lulu `.joboptions` + export smoke PDF → `Output/interiors/`
-3. **S01 Approach LEFT** Lane A composition → Jon pick → Lane B
+3. **S01 Approach LEFT** Lane A composition → Jon pick → Lane B (Pass B remake to print pixels)
 4. INDEX/beat-audit disk sync when convenient
 
 ## Reference (new this session)
@@ -70,5 +71,9 @@ Working `.indd`: `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`
 - **Credits:** copyright — First illustrated edition 2026 / Written by Jack / Book design by Jon · back — Illustrated edition designed by Jon Farrell · 2026
 - **Copy:** About + Thank You Draft A · quiet close locked
 - **Production mode:** **page-by-page** approvals (no whole-book Klein dumps)
+- **Spread loop (2026-07-20):** PS MOCK 5250×2625 + chops → InDesign → live type; prefer PNG; layers Frame→Type→Cloud→Art
+- **Poem type (2026-07-20):** Cormorant Garamond **Medium 20/26 tracking +5 centered #2C2C2C**
+- **Print pixels:** page **2625²** · spread **5250×2625** = full **300 DPI** at Lulu bleed size (Pass B); dial may be lower
+- **No fake gutter** on final spread art (MOCK-only fold OK)
 - **DTP (2026-07-19 FINAL):** Affinity MCP `:6767` + InDesign UXP `:19300/:19301` **IN USE**. Cold flow: CC Desktop signed in (**Jon confirms**) → agent launches UDT+InDesign+bridge → **Jon clicks Load & Watch** (agent cannot) → MCP. Web adobe.com login not enough. Keep CC installed; Startup disable OK.
 - **Creative Cloud:** keep Desktop app installed (licensing); OK to disable Startup — do **not** uninstall while keeping InDesign/UDT

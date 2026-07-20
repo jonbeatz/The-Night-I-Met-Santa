@@ -139,7 +139,7 @@ uv pip install nano-pdf                 # NL PDF metadata editing
 [SCENE: who, what, where, light, composition]
 [QUIET ZONE: leave soft open area for later text — specify corner/side]
 [STYLE: master block from ILLUSTRATION-STYLE.md]
-[NEGATIVES: colored pencil, photoreal, text, letters, watermark, cartoon, CGI]
+[NEGATIVES: colored pencil, photoreal, text, letters, watermark, cartoon, CGI; for spreads also: fake gutter, center fold line, spine shadow, binding crease]
 ```
 
 ### Image sizes (at 300 DPI for 8.5×8.5" with bleed)
@@ -390,7 +390,7 @@ npm run session:start -- -Full          # Cold boot — launch LM Studio + DeepS
 
 # Image generation (fal.ai lanes)
 npm run image:fal:page -- "<scene>. <MASTER STYLE>"
-npm run image:fal:spread -- "<wide scene>. <MASTER STYLE>"
+npm run image:fal:spread -- "<wide scene>. <MASTER STYLE>. seamless continuous spread, NO fake book gutter NO vertical fold line NO center spine shadow"
 npm run image:fal:cover -- "<cover scene>. <MASTER STYLE>"
 
 # Book assembly

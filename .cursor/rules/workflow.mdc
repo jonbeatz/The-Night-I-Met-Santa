@@ -55,6 +55,15 @@ When user says **update docs** or **update docs and mem0**:
 - Run **`npm run version:sync`** when version changed
 - Align version across `TRUTH.md`, `package.json`, `MASTER-COMMANDS.md`, `.cursor/docs/CHANGELOG.md`
 
+## Log Fixes
+
+When user says **log fix**, **log fixes**, or **log this fix**:
+
+- Append a newest-first entry to **`.cursor/docs/ISSUES-RESOLVED.md`** with: Symptom · Root Cause · Resolution · Verify
+- Do **not** rely only on interactive `npm run log:fix` — write the doc directly from session context
+- Optional CLI: `npm run log:fix -- --issue "..." --cause "..." --solution "..."` from this repo root
+- If the fix is now standard procedure, also fold a short rule into **`AGENT-RUNBOOK.md`** (or the relevant playbook)
+
 ## Release Version
 
 When user says **release version**, **publish release**, or after a version bump on a milestone branch:

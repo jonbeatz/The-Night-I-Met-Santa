@@ -62,13 +62,19 @@ Do not use the Klein append on Banana/Gemini finals, and do not expect Klein to 
 Improved master — richer, still short enough to reuse:
 
 ```
-Traditional children's Christmas picture-book illustration, heirloom storybook quality, heavily painted in rich gouache and soft watercolor with visible soft brushstrokes and gentle blended edges, NOT colored pencil NOT crayon NOT scratchy sketch lines, warm fireplace glow mixed with cool moonlight, golden ember highlights, deep crimson and forest green palette with warm cream and muted earth tones, nostalgic Golden Age painted realism, intimate cozy magical atmosphere, Charles Santore–inspired storybook painting, classic Clement C. Moore Christmas book feel, highly detailed but soft and painterly, print-ready square page composition, no text, no letters, no watermark
+Traditional children's Christmas picture-book illustration, heirloom storybook quality, heavily painted in rich gouache and soft watercolor with visible soft brushstrokes and gentle blended edges, NOT colored pencil NOT crayon NOT scratchy sketch lines, warm fireplace glow mixed with cool moonlight, golden ember highlights, deep crimson and forest green palette with warm cream and muted earth tones, nostalgic Golden Age painted realism, intimate cozy magical atmosphere, Charles Santore–inspired storybook painting, classic Clement C. Moore Christmas book feel, highly detailed but soft and painterly, print-ready composition, no text, no letters, no watermark
 ```
 
 ### Short master (when the site has a character limit)
 
 ```
 Heavily painted children's Christmas storybook illustration, rich gouache and soft watercolor brushwork, NOT colored pencil, Santore-inspired Golden Age style, warm hearth light and soft moonlight, deep reds and forest greens, cozy heirloom magical mood, soft blended edges, no text
+```
+
+### SPREAD master add-on (always append for 5250×2625 / fal:spread / wide beats)
+
+```
+seamless continuous two-page storybook spread across the full width, one unbroken painted scene through the center, NO fake book gutter, NO vertical fold line, NO center spine shadow, NO page-split seam, NO mockup binding crease down the middle
 ```
 
 ### Negative / avoid block (paste where the tool allows)
@@ -79,13 +85,21 @@ text, words, letters, typography, title, caption, watermark, logo, signature,
 vector art, flat design, thick black outlines, cartoon sticker, comic book ink,
 anime, manga, chibi, 3D CGI, Unreal Engine, plastic skin, photoreal photograph,
 neon colors, cyberpunk purple, harsh flash lighting, cluttered composition,
-modern UI, phone in frame, low detail, blurry faces
+modern UI, phone in frame, low detail, blurry faces,
+fake book gutter, vertical fold line down the center, center spine shadow,
+page crease, binding seam, mockup book fold, split-page line, gutter shadow overlay
 ```
 
 ### Consistency add-on (for a series / book)
 
 ```
-consistent character design throughout, same Santa face beard and red coat with suspenders, same child proportions and clothing, leave soft quiet negative space for later text overlay, full-bleed illustration, square 1:1 framing
+consistent character design throughout, same Santa face beard and red coat with suspenders, same child proportions and clothing, leave soft quiet negative space for later text overlay, full-bleed illustration
+```
+
+### Spread consistency add-on (with series lock)
+
+```
+consistent character design throughout, same Santa face beard and red coat with suspenders, same child proportions and clothing, leave soft quiet negative space for later text overlay on outer edges, seamless continuous wide spread with no center fold line or gutter shadow, full-bleed painted scene
 ```
 
 ---
@@ -119,7 +133,7 @@ Portrait of Santa Claus for a children's Christmas picture book, brilliant white
 ### 2) Meeting Santa (cinematic spread energy)
 
 ```
-A child and Santa Claus meeting eyes for the first time on Christmas Eve, Santa in all his splendor among boxes gifts and ribbons on the living room floor, the child's face full of wonder, intimate magical moment, warm hearth light with cool blue moonlight from a window, Traditional children's Christmas picture-book illustration, heirloom storybook quality, painted in rich gouache and soft watercolor with visible brushstrokes, deep reds and forest greens, cozy nostalgic Golden Age realism, Charles Santore–inspired storybook painting, square composition, leave soft quiet space for text, no text, no letters
+A child and Santa Claus meeting eyes for the first time on Christmas Eve, Santa in all his splendor among boxes gifts and ribbons on the living room floor, the child's face full of wonder, intimate magical moment, warm hearth light with cool blue moonlight from a window, Traditional children's Christmas picture-book illustration, heirloom storybook quality, painted in rich gouache and soft watercolor with visible brushstrokes, deep reds and forest greens, cozy nostalgic Golden Age realism, Charles Santore–inspired storybook painting, seamless continuous wide two-page spread across the full width, NO fake book gutter NO vertical fold line NO center spine shadow, leave soft quiet space for text, no text, no letters
 ```
 
 ### 3) Cocoa & stories
@@ -146,10 +160,11 @@ Children's Christmas book cover scene, snowy house glowing with warm window ligh
 
 | Site | Tip |
 |------|-----|
-| **Midjourney** | Paste master block after the scene. Add `--stylize 120`–`250`, `--v 6` (or current). For spreads try `--ar 2:1`; for our book pages `--ar 1:1`. Put “no text” in the prompt; use `--no text letters watermark cartoon anime` if supported. |
-| **Leonardo / Flux web** | Use master + negative block in the Negative field. Prefer “illustration” / “conceptual” presets over “photo.” |
-| **ChatGPT / DALL·E** | Lead with “Illustrate (do not photograph):” then the full prompt. Repeat “no text or letters in the image.” |
-| **fal / our `image:fal:page`** | Scene sentence + master block. Size preset already 2625². For character lock, upload refs when the model supports image prompt. |
+| **Midjourney** | Paste master block after the scene. Add `--stylize 120`–`250`, `--v 6` (or current). For spreads try `--ar 2:1` + SPREAD master add-on + `--no … gutter fold crease spine`; for pages `--ar 1:1`. Put “no text” in the prompt. |
+| **Leonardo / Flux web** | Use master + negative block (include fake gutter / fold line terms) in the Negative field. Prefer “illustration” / “conceptual” presets over “photo.” |
+| **ChatGPT / DALL·E** | Lead with “Illustrate (do not photograph):” then the full prompt. Repeat “no text or letters” and for spreads “seamless continuous scene, no center fold line.” |
+| **fal / our `image:fal:page`** | Scene + master. Size 2625². |
+| **fal / our `image:fal:spread`** | Scene + master + **SPREAD master add-on** + negatives including gutter/fold. Size 5250×2625. |
 
 **Judging tests:** Keep ones that look like **soft painted gouache** (batch-v2 feeling), warm/cool light mix, and quiet corners for text.  
 **Reject:** colored-pencil / crayony grain, flat vector, hard outlines, photo-real pores, or embedded titles.

@@ -37,6 +37,7 @@ Remake this exact approved illustration at print quality.
 Preserve composition, poses, camera angle, props (including baseball glove + bat if present), lighting, and title treatment if on cover.
 Same painted gouache style. Do not redesign the scene.
 No extra text unless already in the approved image.
+If this is a two-page SPREAD: keep a seamless continuous scene — remove any fake book gutter, vertical fold line, or center spine shadow.
 ```
 
 4. Request **`resolution: 2K`** (or higher if needed), then **crop/resize** in Pillow to exact 2625² / 5250×2625.

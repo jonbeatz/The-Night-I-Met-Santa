@@ -33,6 +33,20 @@ STYLE = (
     "no text, no letters, no watermark"
 )
 
+# Required on every wide/spread gen (Jon 2026-07-20 — no fake gutter on print art)
+SPREAD_ADDON = (
+    "seamless continuous two-page storybook spread across the full width, one "
+    "unbroken painted scene through the center, NO fake book gutter, NO vertical "
+    "fold line, NO center spine shadow, NO page-split seam, NO mockup binding "
+    "crease down the middle"
+)
+
+SPREAD_NEGATIVES = (
+    "fake book gutter, vertical fold line, center spine shadow, page crease, "
+    "binding seam, mockup book fold, split-page line, gutter shadow overlay, "
+    "text, letters, watermark, photoreal, CGI, colored pencil"
+)
+
 CONTINUITY = (
     "Continuous character lock: same young boy with brown hair in soft light-blue "
     "or lightly patterned pajamas; same Santa — brilliant soft-painted white beard, "
@@ -76,6 +90,8 @@ def gen(prompt: str, image_urls: list[str], aspect: str = "1:1") -> str:
     import fal_client
 
     full = f"{CONTINUITY}{prompt} {QUIET} {STYLE}"
+    if aspect in ("21:9", "16:9", "2:1") or "SPREAD" in prompt.upper() or "spread" in prompt.lower()[:20]:
+        full = f"{full} {SPREAD_ADDON}"
     result = fal_client.subscribe(
         "fal-ai/nano-banana-pro/edit",
         arguments={
@@ -155,17 +171,18 @@ JOBS = [
      "child and Santa meeting eyes for the first time, jaw-dropped wonder, Santa in all "
      "his splendor brilliant white hair and beard, red coat WITH suspenders clearly "
      "visible, gifts ribbons boxes on living room floor, fireplace left tree right, "
-     "continuous scene across full width for gutter fold, quiet outer corners for text"),
+     "seamless continuous scene across full width NO fake gutter or center fold line, "
+     "quiet outer corners for text"),
     ("spread-sit-here", "21:9",
      "SPREAD Beat 5 matching poem: wide cinematic living-room spread, Santa sitting on "
      "the floor among boxes gifts and ribbons galore, kindly gesturing to open spot "
-     "inviting child to sit, child still in awe nearby, continuous across fold, quiet "
-     "side panels for dialogue text"),
+     "inviting child to sit, child still in awe nearby, seamless continuous across "
+     "center NO fake fold line, quiet side panels for dialogue text"),
     ("spread-chat-laugh", "21:9",
      "SPREAD Beat 6 matching poem: wide cozy two-page spread, Santa and child sitting "
      "together among Christmas gifts chatting and laughing warmly, animated friendly "
-     "conversation, tree lights and fireplace glow, continuous scene across fold, quiet "
-     "bands for poem text"),
+     "conversation, tree lights and fireplace glow, seamless continuous scene NO fake "
+     "gutter, quiet bands for poem text"),
     ("p16-beat07-cocoa", "1:1",
      "Beat 7 matching poem: Santa holding steaming mug of hot cocoa beside Christmas tree, "
      "storytelling gesture about places people toys music diamond rings, child listening "
@@ -189,8 +206,8 @@ JOBS = [
     ("spread-the-note", "21:9",
      "SPREAD Beats 12–13 matching poem: wide cinematic climax spread, child on or beside "
      "old wooden chair discovering and tearing open small blank note from Santa (no readable "
-     "writing), wonder and focus on the note, tree soft in background, continuous across "
-     "fold, quiet outer edges for poem text"),
+     "writing), wonder and focus on the note, tree soft in background, seamless continuous "
+     "across center NO fake gutter or fold line, quiet outer edges for poem text"),
     ("p23-beat14-what-he-wants", "1:1",
      "Beat 14 matching poem: child reading Santa's note by Christmas tree light, soft glow "
      "on paper (no readable letters), peaceful revelation Santa wants a simple note more "
@@ -199,7 +216,8 @@ JOBS = [
      "SPREAD Beat 15 matching poem: wide heartfelt closing blessing spread, warm magical "
      "living room after Santa's visit, child holding note near glowing tree and fireplace, "
      "soft snow light at window, mood of always love Christmas act like a kid pray to your "
-     "Savior, continuous across fold, quiet bands for final poem lines, no readable note text"),
+     "Savior, seamless continuous across center NO fake gutter, quiet bands for final poem "
+     "lines, no readable note text"),
     ("p26-god-bless", "1:1",
      "Closing 'God bless' vignette page: soft painted Christmas night window with gentle "
      "snowfall and distant star, warm interior glow, peaceful sacred cozy mood, large quiet "

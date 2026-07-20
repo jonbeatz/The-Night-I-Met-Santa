@@ -4,6 +4,7 @@
 **Text of record:** `Transcription/poem-clean.txt`  
 **Oral source (nuance only):** `Transcription/115 Front St 6.md` (e.g. “Sit over here. I’ve a moment to kill.”)  
 **Style append:** always paste from `.cursor/docs/ILLUSTRATION-STYLE.md` master block  
+**Spreads:** also append **SPREAD master add-on** + gutter negatives from that file (no fake center fold)  
 **Rule:** **No poem text in the image** — text overlay comes later in **InDesign** (cloud PNG + Cormorant). Pillow = fallback only.  
 **Size:** singles → `image:fal:page` (2625²) · spreads → `image:fal:spread` (5250×2625)
 
@@ -11,14 +12,23 @@
 - Same cozy Christmas Eve living room / tree / fireplace family of sets unless the beat moves (door, hallway, dash)
 - **Santa:** brilliant white hair/beard, red coat **with suspenders**, kind eyes — match G0 Santa sheet
 - **Child/narrator:** same age; **oatmeal/taupe PJs with tiny holly** (locked cover `cover-front.png` / beige-v2) — match Boy G0 when sheet exists
-- Heavily **painted gouache/watercolor** · NOT **colored pencil** · NOT photoreal · NOT cartoon flat- Leave **quiet zone** where listed (for later cloud text)
+- Heavily **painted gouache/watercolor** · NOT **colored pencil** · NOT photoreal · NOT cartoon flat
+- Leave **quiet zone** where listed (for later cloud text)
+- **Spreads only:** seamless continuous scene — **NO** fake book gutter, vertical fold line, or center spine shadow
 
 ---
 
 ## Master style one-liner (append to every prompt)
 
 ```
-Traditional children's Christmas picture-book illustration, heavily painted heirloom gouache and soft watercolor, visible soft brushstrokes and blended edges, NOT colored pencil NOT crayon, warm fireplace glow and cool moonlight, deep crimson and forest green, Charles Santore–inspired Golden Age storybook, NOT photoreal, NOT CGI, no text, no letters, no watermark```
+Traditional children's Christmas picture-book illustration, heavily painted heirloom gouache and soft watercolor, visible soft brushstrokes and blended edges, NOT colored pencil NOT crayon, warm fireplace glow and cool moonlight, deep crimson and forest green, Charles Santore–inspired Golden Age storybook, NOT photoreal, NOT CGI, no text, no letters, no watermark
+```
+
+## Spread add-on (append to every SPREAD / 5250×2625 prompt)
+
+```
+seamless continuous two-page storybook spread across the full width, one unbroken painted scene through the center, NO fake book gutter, NO vertical fold line, NO center spine shadow, NO page-split seam, NO mockup binding crease down the middle
+```
 
 ---
 
@@ -90,9 +100,9 @@ Child just inside a Christmas living room, sneaking forward among gifts, surpris
 
 **Prompt:**
 ```
-Wide cinematic two-page Christmas storybook spread, child and Santa Claus meeting eyes for the first time, intimate magical moment, Santa in all his splendor brilliant white hair and beard, red coat with suspenders clearly visible, gifts ribbons and boxes around them on the living room floor, warm hearth light and soft tree glow, wonder on the child's face, leave soft quiet outer corners for later text, continuous scene across the full width, clearly illustrated not photographic
+Wide cinematic two-page Christmas storybook spread, child and Santa Claus meeting eyes for the first time, intimate magical moment, Santa in all his splendor brilliant white hair and beard, red coat with suspenders clearly visible, gifts ribbons and boxes around them on the living room floor, warm hearth light and soft tree glow, wonder on the child's face, leave soft quiet outer corners for later text, seamless continuous scene across the full width with NO fake book gutter NO vertical fold line NO center spine shadow, clearly illustrated not photographic
 ```
-+ master style one-liner
++ master style one-liner + **spread add-on**
 
 ---
 
@@ -104,9 +114,9 @@ Wide cinematic two-page Christmas storybook spread, child and Santa Claus meetin
 
 **Prompt:**
 ```
-Wide cinematic Christmas living-room spread, Santa Claus sitting on the floor among boxes gifts and ribbons galore, kindly gesturing to an open spot beside him inviting the child to sit, child standing still in awe nearby, tree and fireplace glow, cozy intimate storytelling beat, leave quiet side panel areas for later text, continuous painted scene, not photoreal
+Wide cinematic Christmas living-room spread, Santa Claus sitting on the floor among boxes gifts and ribbons galore, kindly gesturing to an open spot beside him inviting the child to sit, child standing still in awe nearby, tree and fireplace glow, cozy intimate storytelling beat, leave quiet side panel areas for later text, seamless continuous painted scene across the full width with NO fake book gutter NO vertical fold line NO center spine shadow, not photoreal
 ```
-+ master style one-liner
++ master style one-liner + **spread add-on**
 
 ---
 
@@ -188,9 +198,9 @@ Christmas living room fireplace scene, child looking up the dark chimney flue th
 
 **Prompt:**
 ```
-Wide cinematic two-page spread, climax of Christmas Eve mystery, child on or beside an old wooden chair discovering and tearing open a small note from Santa, warm intimate focus on the note and the child's wonder, living room Christmas tree soft in the background, continuous painted scene across both pages, leave quiet outer edges for later text, no readable writing on the paper, storybook gouache style not photoreal
+Wide cinematic two-page spread, climax of Christmas Eve mystery, child on or beside an old wooden chair discovering and tearing open a small note from Santa, warm intimate focus on the note and the child's wonder, living room Christmas tree soft in the background, seamless continuous painted scene across both pages with NO fake book gutter NO vertical fold line NO center spine shadow, leave quiet outer edges for later text, no readable writing on the paper, storybook gouache style not photoreal
 ```
-+ master style one-liner
++ master style one-liner + **spread add-on**
 
 ---
 
@@ -212,9 +222,9 @@ Warm storybook moment of the child reading Santa's note by Christmas tree light,
 
 **Prompt:**
 ```
-Wide heartfelt Christmas storybook spread, closing blessing mood, warm magical living room after Santa's visit, child holding the note near the glowing tree and fireplace, soft snow light at the window, deep love and wonder, heirloom Golden Age feeling, leave quiet bands for later text, continuous painted scene, NOT photoreal, no readable text on the note
+Wide heartfelt Christmas storybook spread, closing blessing mood, warm magical living room after Santa's visit, child holding the note near the glowing tree and fireplace, soft snow light at the window, deep love and wonder, heirloom Golden Age feeling, leave quiet bands for later text, seamless continuous painted scene with NO fake book gutter NO vertical fold line NO center spine shadow, NOT photoreal, no readable text on the note
 ```
-+ master style one-liner
++ master style one-liner + **spread add-on**
 
 ---
 
@@ -238,7 +248,7 @@ Wide heartfelt Christmas storybook spread, closing blessing mood, warm magical l
 npm run image:fal:page -- "<BEAT PROMPT>. <master style one-liner>"
 
 # Spread
-npm run image:fal:spread -- "<SPREAD PROMPT>. <master style one-liner>"
+npm run image:fal:spread -- "<SPREAD PROMPT>. <master style one-liner>. <spread add-on>"
 ```
 
 Save winners into `Media/` with names like `scene-01-the-sneak.png`, promote after Jon approves.

@@ -4,17 +4,18 @@ Read in order:
 
 1. **`TRUTH.md`**
 2. **`AGENT-RUNBOOK.md`** ← **authoritative build procedure** (DTP, print, design, never-dos)
-3. **`.cursor/docs/START-HERE.md`**
-4. **`.cursor/docs/CONTINUE-HERE.md`** ← where to resume book work
-5. **`.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md`** ← InDesign/Lulu specs
-6. **`.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`** ← dialed tools/decisions (this title)
-7. **`.cursor/docs/IMAGE-LANE-PROMPTS.md`** ← Klein mockup vs Gemini/Banana finals prompts
-8. **`BOOK-PLAYBOOK.md`** ← future-book master (repo root)
-9. **`.cursor/docs/FONT-CATALOG.md`** ← type roles (Cormorant / Cinzel / scripts)
-10. **`.cursor/docs/CONTINUITY-AND-PRINT-FINALS.md`** ← print-res remake + boy/Santa continuity
-11. **`.cursor/docs/TEXT-OVERLAY-POLICY.md`** ← how text sits on art (open zones, not gray blobs)
-12. **`.cursor/docs/BOOK-PLAN.md`**
-13. **`.cursor/docs/ReCall.md`**
+3. **`.cursor/docs/ISSUES-RESOLVED.md`** ← **`log fixes`** + **Playbook** (MOCK/chops/InDesign)
+4. **`.cursor/docs/START-HERE.md`**
+5. **`.cursor/docs/CONTINUE-HERE.md`** ← where to resume book work
+6. **`.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md`** ← InDesign/Lulu specs
+7. **`.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`** ← dialed tools/decisions (this title)
+8. **`.cursor/docs/IMAGE-LANE-PROMPTS.md`** ← Klein mockup vs Gemini/Banana finals prompts
+9. **`BOOK-PLAYBOOK.md`** ← future-book master (repo root)
+10. **`.cursor/docs/FONT-CATALOG.md`** ← type roles (Cormorant / Cinzel / scripts)
+11. **`.cursor/docs/CONTINUITY-AND-PRINT-FINALS.md`** ← print-res remake + boy/Santa continuity
+12. **`.cursor/docs/TEXT-OVERLAY-POLICY.md`** ← how text sits on art (open zones, not gray blobs)
+13. **`.cursor/docs/BOOK-PLAN.md`**
+14. **`.cursor/docs/ReCall.md`**
 
 ## Project facts
 
@@ -46,6 +47,7 @@ Read in order:
 | Future playbook | `BOOK-PLAYBOOK.md` |
 | Layout refs | `Images/references/layout/` |
 | Findings | `Book-Findings.md` |
+| Problem → fix log | `.cursor/docs/ISSUES-RESOLVED.md` (**log fixes**) |
 | Fallback compositor | `composite_pages.py` (emergency only) |
 | Fallback Typst | `book-final.typ` (emergency only) |
 | Rejected sources | `_archive/layout-attempts/` |
