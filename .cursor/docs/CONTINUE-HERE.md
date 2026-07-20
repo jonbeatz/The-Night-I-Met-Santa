@@ -6,17 +6,18 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-20 night)
+## One-line status (2026-07-20)
 
 **InDesign production locked** · page count **35–40** · `AGENT-RUNBOOK.md` authoritative.  
+**Page workflow draft:** **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`** — poem · imagery · temp filenames · spreads vs singles · About / Thank You / Jack portrait. Confirm ~36-page plan.  
 **Spread loop locked:** Jon PS MOCK + `Images/chopz/` → agent matches InDesign → **live Cormorant** (Medium 20/26 +5 centered #2C2C2C).  
-**Eyes-met:** pages **4–5** MOCK-matched (art L/R + textCloud + paintFrame + live poem); pages **2–3** earlier prototype.  
+**Eyes-met:** prototype pages **4–5** (= story **S3** → final book **10|11** when full doc built).  
 **Working file:** `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd` · PDFs → `Output/interiors/` + `Output/covers/`.  
-**Print finals:** **2625×2625** / **5250×2625** = full **300 DPI** (Pass B remake; dial may be smaller). No fake gutter on plates.  
-**Photoshop MCP LIVE:** adobepy UXP (`:47391`/`:8766`) — COM rejected; agent can drive PS for MOCK/chops. Doc: `tools/layout-mcp/PHOTOSHOP-SETUP.md`.  
-**PSD blanks:** `spread` / `single-page` / `book-covers` templates in `Xtraz/Adobe-Photoshop/` (cyan TRIM · magenta SAFETY · orange MOCK). **No** spine-only PSD — Lulu sets spine after interior upload.  
-**Tomorrow:** (1) one-page design → InDesign (2) poem storyboard real imagery (3) PS solo-layer + chop export tests.  
-**Playbook:** `ISSUES-RESOLVED.md` (PSD blanks + chopz→InDesign + PS MCP) + `BOOK-PRODUCTION-SYSTEM.md`.
+**Print finals:** **2625×2625** / **5250×2625** = full **300 DPI**. No fake gutter on plates.  
+**Photoshop MCP LIVE:** adobepy UXP (`:47391`/`:8766`) — `tools/layout-mcp/PHOTOSHOP-SETUP.md`.  
+**PSD blanks:** `spread` / `single-page` / `book-covers` in `Xtraz/Adobe-Photoshop/`.  
+**Next:** Confirm `BOOK-PAGE-WORKFLOW.md` → generate missing story spreads (S1/S2/S4…).  
+**Playbook:** `ISSUES-RESOLVED.md` + `BOOK-PRODUCTION-SYSTEM.md`.
 
 ---
 
@@ -96,15 +97,17 @@ An **8.5×8.5"** full-color children’s picture book from Jack’s Christmas po
 
 ## Start next (priority order)
 
-### 0. Do **not** re-research print from scratch
+### 0. Confirm page workflow
+Review **`BOOK-PAGE-WORKFLOW.md`** — poem → imagery → temp filenames → full page list (About, Thank You, Jack portrait). Confirm ~36 pages + spread-first story (S1–S12).
+
+### 0b. Do **not** re-research print from scratch
 Read **`RESEARCH-VERDICT.md`** — Lulu primary, KDP HC skipped, timeline locked.
 
 ### 1. Beat gap → approval sprint (print path)
-1. Open `Media/approved/INDEX.md` + `PAGE-PROMPT-BIBLE.md`.
-2. For each beat **1–15**: mark **keeper candidates** already in `style-refs/` vs **missing / weak**.
-3. **Pick cover** A–E (`style-refs/covers/` + `back/`) → copy winners to Tier B `covers/cover-front.png` + `cover-back.png`.
-4. For missing/weak beats: Klein 4B dial → Jon pick → Banana `/edit` + style-refs finals → promote to Tier B `pages/` / `spreads/`.
-5. Thin beats to fill first: **3, 5, 8–10, 14** (and re-check any near-keeper that isn’t heirloom-final).
+1. Open `Media/approved/INDEX.md` + `BOOK-PAGE-WORKFLOW.md` + `PAGE-PROMPT-BIBLE.md`.
+2. Generate missing spreads per workflow checklist (S1, S2, S4…); keep S3 eyes-met as north star.
+3. **Pick cover** A–E if back still open → Tier B `covers/`.
+4. Lane A Klein dial → Jon pick → Lane B Gemini/Banana finals → watermark check → promote.
 
 ### 2. Quiet-zone map (after Tier B art locks)
 For each locked page/spread, note where text sits without covering faces (policy: `TEXT-OVERLAY-POLICY.md`). Jon places cloud PNG per spread.

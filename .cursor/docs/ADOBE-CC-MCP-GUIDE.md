@@ -4,6 +4,8 @@
 **Role:** Watchlist + corrected install notes — **not** an install-now checklist  
 **InDesign authority:** [`tools/layout-mcp/SETUP.md`](../../tools/layout-mcp/SETUP.md) (do not re-own that path here)
 
+**Shareable setup for Tony (Mac):** [`ADOBE-TNYSE-WORKFLOW.md`](./ADOBE-TNYSE-WORKFLOW.md) — full Cursor/Claude → InDesign + Photoshop UXP pipeline with Mac notes.
+
 **Status (this PC):** InDesign UXP **LIVE** · Affinity **READY when open** · Photoshop adobepy UXP **LIVE** (smoke 2026-07-20) · Illustrator / AE / Premiere — not wired
 
 ---

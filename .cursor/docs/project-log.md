@@ -2,6 +2,7 @@
 
 | Date | Note |
 |------|------|
+| 2026-07-20 | Google dual OAuth fleet (default jonbeatz; jonf822 ask-only). BOOK-PAGE-WORKFLOW + PS MCP dialed. Pointer `.cursor/docs/GOOGLE-WORKSPACE.md`. |
 | 2026-07-14 | Moved from F:\My Projects\Dad\... → D:\Hermes\projects\The-Night-I-Met-Santa |
 | 2026-07-14 | bootstrap-existing-project + package.json / START-HERE / TRUTH / ReCall |
 | 2026-07-14 | Pre-open cleanup: assets → root; archived rejected Typst; added CONTINUE-HERE + BOOK-PLAN; Pages/Output reset for fresh layout |

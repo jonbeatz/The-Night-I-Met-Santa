@@ -69,11 +69,13 @@ If the zip/venv is wiped: re-extract release, recreate venv, `adobepy install-br
 | **1** | Jon | Photoshop **2026** open |
 | **2** | Jon | Creative Cloud Desktop signed in (needed for UDT Load) |
 | **3** | Agent / Jon | Launch **UXP Developer Tools** (often already running with InDesign) |
-| **4** | **Jon** | UDT → **Load & Watch** on **Adobe Python Bridge for Photoshop** (`com.adobepy.bridge.photoshop`) — agent cannot click Electron |
-| **5** | Jon | Photoshop panel **Adobe Python Bridge** open / connected |
-| **6** | Agent | `npm run layout:photoshop-mcp` (starts broker if needed + MCP `:8766`) |
+| **4** | Agent | `npm run layout:photoshop-mcp` (broker `:47391` + MCP `:8766`) — start **before** relying on an existing Watching plugin |
+| **5** | **Jon** | UDT → **Load & Watch** (or **Reload** if already Watching) on **Adobe Python Bridge for Photoshop** (`com.adobepy.bridge.photoshop`) — agent cannot click Electron |
+| **6** | Jon | Photoshop panel **Adobe Python Bridge** open / connected |
 | **7** | Jon | Reload Cursor MCP if `photoshop` not green |
-| **8** | Agent | Smoke (health + document info) |
+| **8** | Agent | Smoke: broker `"sessions":≥1` + `/v1/readyz` `"dcc":true` + document info |
+
+**If Cursor is green but smoke fails (`sessions:0` / `dcc:false`):** broker was restarted after the plugin connected. **UDT Reload** on the PS bridge (not a full Photoshop quit). Then re-smoke.
 
 ### Preferences (Plugins page)
 

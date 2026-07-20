@@ -1,6 +1,8 @@
 # SPREAD-FIRST STORY MAP — Proposed (G2.1)
 
-**Status:** Proposed 2026-07-15 (Jon direction) — **not locked until Jon confirms**  
+**Status:** Proposed 2026-07-15 — **page numbers superseded**  
+**Living workflow (use this):** **[`BOOK-PAGE-WORKFLOW.md`](./BOOK-PAGE-WORKFLOW.md)** — full poem text per page, spread vs single, temp filenames, front/back matter (2026-07-20 draft, ~36 pages).
+
 **Replaces:** G2 mix of singles + 4 “hero” spreads  
 **Rule:** Every **story** leaf is half of a **full-bleed two-page spread** (5250×2625).  
 **Not spreads:** Title · copyright · dedication · About · Thank You · author / quiet end.

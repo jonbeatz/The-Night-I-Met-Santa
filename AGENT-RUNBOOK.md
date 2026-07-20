@@ -23,11 +23,13 @@ Before any book work, launch the tools. Follow this EXACT order:
 | 4b | Agent | `Start-Process "C:\Program Files\Adobe\Adobe InDesign 2026\InDesign.exe"` |
 | 4c | Agent | `npm run layout:indesign-bridge` (from project root, starts :19300/:19301) |
 | 5 | **Jon** | In UXP Developer Tools → Load & Watch on InDesign Bridge (`com.ads.indesign-bridge`) |
-| 5b | **Jon** *(when PS agent help needed)* | Same UDT → Load & Watch **Adobe Python Bridge for Photoshop** (`com.adobepy.bridge.photoshop`) — prefs: **Enable Developer Mode** only |
-| 5c | Agent *(optional)* | `npm run layout:photoshop-mcp` → broker `:47391` + MCP `:8766` |
+| 5b | Agent *(when PS agent help needed)* | `npm run layout:photoshop-mcp` → broker `:47391` + MCP `:8766` (**before** trusting an already-Watching PS plugin) |
+| 5c | **Jon** *(PS)* | UDT → Load & Watch **or Reload** **Adobe Python Bridge for Photoshop** (`com.adobepy.bridge.photoshop`) — prefs: **Enable Developer Mode** only |
 | 6 | Verify | InDesign Bridge Panel → **Connected to bridge ✓** |
-| 6b | Verify *(PS)* | `curl.exe http://127.0.0.1:47391/health` → `"sessions":≥1` · `…/8766/v1/readyz` → `"dcc":true` |
+| 6b | Verify *(PS)* | `curl.exe http://127.0.0.1:47391/health` → `"sessions":≥1` · `…/8766/v1/readyz` → `"dcc":true` — Cursor green alone is **not** enough |
 | 7 | Agent | Reload Cursor MCP → confirm indesign-uxp tools appear (~135 tools); photoshop URL green when PS stack up |
+
+**PS gotcha:** If broker restarts while UDT still shows Watching → **UDT Reload** on the Photoshop bridge (full PS restart usually unnecessary). `start-photoshop-mcp.ps1` must stay **ASCII-only** (em dashes break PowerShell).
 
 **Do NOT** launch UDT before Jon confirms CC is signed in. Web login at adobe.com doesn't count — must be Creative Cloud Desktop app.
 **Do NOT** uninstall Creative Cloud Desktop — InDesign needs it for licensing.
@@ -59,6 +61,11 @@ Full cold-start: `tools/layout-mcp/SETUP.md` · Photoshop: `tools/layout-mcp/PHO
 | G0 (locks) | Locked approved images | $0 | Already approved, do NOT regenerate |
 
 Lane B is for FINAL artwork only — AFTER Jon says the Lane A composition is good.
+
+### CRITICAL: No watermarks on print plates
+- Before promoting any image to **Pass B / `Media/approved/print/`** or linking it into InDesign for Lulu: **check for AI / service watermarks, logos, or corner badges**.
+- Agent flags them on review; **Jon removes them in Photoshop** if present (working files: `Xtraz/Adobe-Photoshop/`).
+- Do **not** ship watermarked art into `Output/` PDFs or Tier B print keepers.
 
 ---
 

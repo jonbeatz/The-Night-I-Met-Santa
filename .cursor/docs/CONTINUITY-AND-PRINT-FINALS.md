@@ -42,6 +42,7 @@ If this is a two-page SPREAD: keep a seamless continuous scene — remove any fa
 
 4. Request **`resolution: 2K`** (or higher if needed), then **crop/resize** in Pillow to exact 2625² / 5250×2625.
 5. Promote only after Jon eyeballs Pass A vs Pass B side-by-side.
+6. **Watermark gate:** confirm no AI/service watermarks, logos, or corner badges. If any appear, **Jon cleans them in Photoshop** before print promote / InDesign link. Agent must flag — do not treat watermarked files as print-ready.
 
 **Do not** rely on generic AI “upscale only” as the sole finals path — composition remake **from the approved file as ref** is more faithful for this stack.
 

@@ -28,6 +28,8 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 **Smoke PASS:** open `spread-01-eyes-met-5250x2625-v3.psd` → 5250×2625 · 9 layers · `sessions:1` · `dcc:true`.
 
+**Cold-start gotcha (2026-07-20):** Cursor `photoshop` MCP **green** ≠ bridge live. Truth = broker `"sessions":≥1` + `/v1/readyz` `"dcc":true`. If UDT shows **Watching** + PS panel open but `sessions:0` → **UDT Reload** on Adobe Python Bridge (not full PS restart). Order: start `npm run layout:photoshop-mcp` **then** Reload plugin so WebSocket reattaches. After `load_skill`, Cursor tool picker can lag — use HTTP `/v1/call` if `CallMcpTool` 404s.
+
 **Rejected:** loonghao / alisaitteke COM — `0x80080005` (same class as InDesign COM). Registry has PS **200.0**; ProgID OK; COM runtime broken. Lesson: new Adobe app automation on this PC → **UXP first**.
 
 ---
@@ -167,6 +169,34 @@ If MCP can’t reorder layers, Jon drags **Frame** above **Type** once in the La
 | `list_page_items` to verify (`execute` often returns `null`) | Trusting place_image “success” alone |
 | Live text via JSX on page | `create_text_frame` orphans on pasteboard |
 | Inspect PNG / trust Jon on transparency | Inventing black backgrounds from thumbnails |
+
+---
+
+## 2026-07-20 — Photoshop MCP: Cursor green / UDT Watching but `sessions:0` / `dcc:false`
+
+**Symptom:** Photoshop + UDT **Watching** (`com.adobepy.bridge.photoshop`) + Adobe Python Bridge panel open/checked + Cursor `photoshop` MCP green (~32 tools) — but agent smoke failed: broker `"sessions":0`, `/v1/readyz` → `dcc:false` (503).
+
+**Root cause:** `npm run layout:photoshop-mcp` restarted the adobepy broker **after** the UXP plugin had already connected. Plugin UI stayed “loaded”; WebSocket to `:47391` did not reattach. Cursor green only means MCP HTTP `:8766` is up — not that DCC is ready.
+
+**Resolution:**
+1. Keep broker/MCP running (`layout:photoshop-mcp`).
+2. In UDT → **Reload** on **Adobe Python Bridge for Photoshop** (leave InDesign alone). Full Photoshop restart usually unnecessary.
+3. Confirm Plugins → Adobe Python Bridge still checked / panel open.
+4. Re-smoke: `sessions≥1`, `dcc:true`, then `load_skill photoshop-document` + `get_document_info` (HTTP `/v1/call` OK if Cursor tools lag).
+
+**Verify (PASS 2026-07-20):** `sessions:1` · `dcc:true` · active doc `spread-01-eyes-met-5250x2625-v3.psd` 5250×2625 · 9 layers.
+
+---
+
+## 2026-07-20 — `layout:photoshop-mcp` fails: PowerShell ParserError on em dash
+
+**Symptom:** `npm run layout:photoshop-mcp` exits immediately with `Unexpected token 'extract'` at `start-photoshop-mcp.ps1` line with `Missing adobepy.exe — extract…`.
+
+**Root cause:** Unicode em dash (`—`) in a `throw` string; PowerShell mis-parsed the file encoding and treated following words as code.
+
+**Resolution:** Use ASCII hyphens only in that script’s throw messages (`Missing adobepy.exe - extract…`). Prefer ASCII in all PowerShell scripts under `tools/layout-mcp/`.
+
+**Verify:** Script starts broker `:47391` + MCP `:8766`; log shows `MCP server started at http://127.0.0.1:8766/mcp`.
 
 ---
 

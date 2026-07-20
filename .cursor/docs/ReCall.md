@@ -2,10 +2,10 @@
 
 ## Current focus
 **InDesign = production** (runbook authority). Pillow/Typst = fallback only.  
-**Page count locked: 35–40.**  
+**Page count locked: 35–40.** Working map: **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`** (poem + imagery + temp filenames + matter pages).  
 **Spread build loop locked:** PS MOCK + chops (`Images/chopz/`) → InDesign match → live Cormorant.  
 Working `.indd`: `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`  
-Pages **4–5** = eyes-met MOCK-matched stack; pages **2–3** = earlier comparison prototype.
+Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11** when full doc built).
 
 **DTP:** Affinity MCP + InDesign UXP Bridge + **Photoshop adobepy UXP LIVE** (`:47391` / `:8766`). Cold flow: CC Desktop signed in (Jon confirms) → agent UDT+apps+bridges → **Jon Load & Watch** → MCP.
 
@@ -15,17 +15,17 @@ Pages **4–5** = eyes-met MOCK-matched stack; pages **2–3** = earlier compari
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-20 **night** — PSD blanks (spread/single/cover) + Photoshop MCP LIVE; docs/Mem0/vault/Mnemosyne sync. **Tomorrow:** one-page design → InDesign · poem storyboard imagery · PS solo-layer / chop export tests.
+2026-07-20 — Book workflow + PS MCP dialed. **Fleet Google:** dual OAuth additive — default `jonbeatz@gmail.com`; `jonf822@gmail.com` only when asked (`google_token_jonf822.json`). Pointer: `.cursor/docs/GOOGLE-WORKSPACE.md`. **Next:** Jon confirms BOOK-PAGE-WORKFLOW → create missing story spreads.
 
-## Where to continue (tomorrow)
-1. **One-page design** from `single-page-template.psd` → place into InDesign (live Cormorant)
-2. Start **storyboard imagery** that matches poem beats (real scenes, not dial-only mocks)
-3. **Photoshop MCP tests:** solo layers + export chops to `Images/chopz/` for agent/Jon loop
-4. Hide/delete MOCK-REF when pages 4–5 approved
+## Where to continue
+1. **Confirm** `.cursor/docs/BOOK-PAGE-WORKFLOW.md` (page count, L/R poem splits, About + Jack pages)
+2. Generate next story art per checklist (S1 Approach / S2 Threshold / S4 Sit here…)
+3. **Photoshop MCP tests:** solo layers + export chops to `Images/chopz/`
+4. Hide/delete MOCK-REF when pages approved in full book doc
 5. Optional: Lulu `.joboptions` + smoke PDF → `Output/interiors/`
-6. **S01 Approach LEFT** Lane A when ready for next story beat
 
 ## Reference (new this session)
+- **BOOK-PAGE-WORKFLOW.md** — authoritative page/poem/image map (draft)
 - **Photoshop UXP MCP:** `tools/layout-mcp/PHOTOSHOP-SETUP.md` — LIVE; COM MCPs skip
 - **Adobe CC MCP watchlist:** `.cursor/docs/ADOBE-CC-MCP-GUIDE.md`
 - **ArcRift:** fleet `TOOLS-WATCHLIST` — C (74) WATCH record; do not install (Mem0/Mnemosyne primary)
@@ -33,9 +33,10 @@ Pages **4–5** = eyes-met MOCK-matched stack; pages **2–3** = earlier compari
 ## System of record
 | Doc | Use |
 |-----|-----|
+| **BOOK-PAGE-WORKFLOW.md** | Full interior map — poem · art · filenames · matter |
 | **BOOK-PLAYBOOK.md** (repo root) | Future-book master |
 | **BOOK-PRODUCTION-SYSTEM.md** | Living ops for *this* title |
-| **SPREAD-STORY-MAP.md** | 12-spread / 32-page map (proposed) |
+| **SPREAD-STORY-MAP.md** | Earlier 12-spread proposal (numbering → see WORKFLOW) |
 | **IMAGE-LANE-PROMPTS.md** | Klein D2 vs Gemini master (do not mix) |
 | CONTINUE-HERE | Next actions |
 | FONT-CATALOG | Type roles |

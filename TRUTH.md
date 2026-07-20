@@ -36,16 +36,17 @@
 2. **`AGENT-RUNBOOK.md`** — **authoritative build procedure** (DTP, print, design, never-dos). Older playbooks follow this when they conflict.
 3. `.cursor/docs/START-HERE.md`
 4. `.cursor/docs/CONTINUE-HERE.md` — **session continue / next actions**
-5. `.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md` — InDesign/Lulu specs detail
-6. **`.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`** — living ops playbook
-7. **`BOOK-PLAYBOOK.md`** — future-book master
-8. `.cursor/docs/BOOK-PLAN.md`
-9. `Book-Findings.md` — layout experiments + POD research (historical)
-10. `.cursor/docs/ILLUSTRATION-STYLE.md` / `PAGE-PROMPT-BIBLE.md` / `COVER-PROMPTS.md` / `FONT-CATALOG.md`
-11. `.cursor/docs/IMAGE-WORKFLOW.md`
-12. `.cursor/docs/MASTER-COMMANDS.md`
-13. `.cursor/docs/ReCall.md`
-14. Shared TOOLS-* via `.cursor/docs/` mirrors
+5. **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`** — full page/poem/image map (draft → lock with Jon)
+6. `.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md` — InDesign/Lulu specs detail
+7. **`.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`** — living ops playbook
+8. **`BOOK-PLAYBOOK.md`** — future-book master
+9. `.cursor/docs/BOOK-PLAN.md`
+10. `Book-Findings.md` — layout experiments + POD research (historical)
+11. `.cursor/docs/ILLUSTRATION-STYLE.md` / `PAGE-PROMPT-BIBLE.md` / `COVER-PROMPTS.md` / `FONT-CATALOG.md`
+12. `.cursor/docs/IMAGE-WORKFLOW.md`
+13. `.cursor/docs/MASTER-COMMANDS.md`
+14. `.cursor/docs/ReCall.md`
+15. Shared TOOLS-* via `.cursor/docs/` mirrors
 
 ## Asset locations (root — not under `.cursor/assets`)
 

@@ -264,6 +264,7 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | 2026-07-20 | **Print DPI confirmed:** finals must be exact **2625×2625** (page) / **5250×2625** (spread) = full **300 DPI** at Lulu bleed size. Pass A dial may be ~1K; Pass B remake before Lulu plates. | Print / resolution |
 | 2026-07-20 | **Photoshop MCP LIVE (UXP):** COM rejected (`0x80080005`). Stack = adobepy broker `:47391` + dcc-mcp-photoshop `:8766` + UDT plugin `com.adobepy.bridge.photoshop`. Developer Mode only. Smoke PASS. `PHOTOSHOP-SETUP.md`. InDesign remains print authority. | DTP / automation |
 | 2026-07-20 | **`spread-page-template.psd` locked:** 5250×2625 @ 300 RGB. Guides: cyan TRIM / magenta SAFETY / orange FOLD (MOCK only). Layers: white-bg → paper-base → ART → trim/safety → fold → cloud → type zones. Use: Duplicate→Save As; paint ART; hide fold for finals; Cormorant stays live in InDesign. Docs: `ISSUES-RESOLVED.md` · `PHOTOSHOP-SETUP.md` · `AGENT-RUNBOOK.md`. | Layout / PS |
+| 2026-07-20 | **Watermark gate on finals:** agent flags AI/service watermarks before Pass B / InDesign / Lulu; **Jon removes in Photoshop** if present. No watermarked plates in `Media/approved/print/` or `Output/`. | Art / print |
 | 2026-07-20 | **Also locked:** `single-page-template.psd` (2625²) + `book-covers-template.psd` (2625² front/back). **No** `book-spine-template.psd` — spine width from Lulu casewrap after interior upload. | Layout / PS |
 
 *(Add a row whenever something sticks.)*
@@ -312,6 +313,7 @@ input:
 - [ ] Quiet zones exist where poem/About/Thank You go
 - [ ] Spreads continuous across gutter
 - [ ] Covers flat; title spelling verified (or rebuild type in Python)
+- [ ] **No watermarks** (AI/service logos or badges) on Pass B / print plates — Jon removes in Photoshop if needed
 
 ### Print
 
