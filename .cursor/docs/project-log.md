@@ -31,3 +31,7 @@
 | 2026-07-19 | **ArcRift review:** C (74) WATCH record on fleet TOOLS-* (Jon asked persist despite &lt;B-); do not install — Mem0/Mnemosyne primary. |
 | 2026-07-19 | **Docs + Mem0 + vault + Mnemosyne sync** + git push. |
 | 2026-07-20 | **Eyes-met pages 4–5** MOCK-matched in InDesign (chops + live type). Locked: Cormorant Medium 20/26 +5 centered #2C2C2C; PS MOCK→chopz→InDesign loop; no fake gutter on finals; Pass B = 2625² / 5250×2625 @ 300 DPI. Docs/Mem0/vault/Mnemosyne + git + full backup. |
+| 2026-07-20 | **Photoshop MCP LIVE:** COM dead on this PC (`0x80080005`; PS registry 200.0). Adopted **adobepy 0.5.2 UXP** + **dcc-mcp-photoshop 0.1.37** (`:47391`/`:8766`). Prefs: Developer Mode only. Smoke PASS on eyes-met PSD (5250×2625, 9 layers). Docs: `PHOTOSHOP-SETUP.md`, ADOBE guide, runbook, ISSUES-RESOLVED. |
+| 2026-07-20 | **`spread-page-template.psd` documented:** cyan TRIM / magenta SAFETY / orange FOLD; layer stack + Duplicate→Save As use; live Cormorant in InDesign. Canonical: ISSUES-RESOLVED + PHOTOSHOP-SETUP + AGENT-RUNBOOK + ReCall/CONTINUE-HERE/BOOK-PRODUCTION-SYSTEM. |
+| 2026-07-20 | **Added** `single-page-template.psd` + `book-covers-template.psd` (2625²). **Skipped** spine-only PSD (Lulu casewrap after interior). Docs + README updated. |
+| 2026-07-20 | **Docs + log-fixes + Mem0 + vault + Mnemosyne** closeout. Tomorrow: one-page→InDesign · poem storyboards · PS solo-layer/chop export tests. Git commit+push. |

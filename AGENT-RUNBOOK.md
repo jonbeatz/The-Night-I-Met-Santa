@@ -23,14 +23,18 @@ Before any book work, launch the tools. Follow this EXACT order:
 | 4b | Agent | `Start-Process "C:\Program Files\Adobe\Adobe InDesign 2026\InDesign.exe"` |
 | 4c | Agent | `npm run layout:indesign-bridge` (from project root, starts :19300/:19301) |
 | 5 | **Jon** | In UXP Developer Tools → Load & Watch on InDesign Bridge (`com.ads.indesign-bridge`) |
+| 5b | **Jon** *(when PS agent help needed)* | Same UDT → Load & Watch **Adobe Python Bridge for Photoshop** (`com.adobepy.bridge.photoshop`) — prefs: **Enable Developer Mode** only |
+| 5c | Agent *(optional)* | `npm run layout:photoshop-mcp` → broker `:47391` + MCP `:8766` |
 | 6 | Verify | InDesign Bridge Panel → **Connected to bridge ✓** |
-| 7 | Agent | Reload Cursor MCP → confirm indesign-uxp tools appear (~135 tools) |
+| 6b | Verify *(PS)* | `curl.exe http://127.0.0.1:47391/health` → `"sessions":≥1` · `…/8766/v1/readyz` → `"dcc":true` |
+| 7 | Agent | Reload Cursor MCP → confirm indesign-uxp tools appear (~135 tools); photoshop URL green when PS stack up |
 
 **Do NOT** launch UDT before Jon confirms CC is signed in. Web login at adobe.com doesn't count — must be Creative Cloud Desktop app.
 **Do NOT** uninstall Creative Cloud Desktop — InDesign needs it for licensing.
+**Do NOT** use Photoshop COM MCPs (loonghao / alisaitteke) on this PC — COM `0x80080005`; use **adobepy UXP** only (`tools/layout-mcp/PHOTOSHOP-SETUP.md`).
 **OK to** disable CC from startup. Only launch it for DTP sessions.
 
-Full cold-start details: `tools/layout-mcp/SETUP.md`
+Full cold-start: `tools/layout-mcp/SETUP.md` · Photoshop: `tools/layout-mcp/PHOTOSHOP-SETUP.md` · Adobe watchlist: `.cursor/docs/ADOBE-CC-MCP-GUIDE.md`
 
 ---
 
@@ -148,9 +152,20 @@ Full write-ups: **`.cursor/docs/ISSUES-RESOLVED.md`**. Operator says **`log fixe
 
 ### Default spread workflow (Jon + agent)
 
-1. Jon: PS at **5250×2625** → export **MOCK** + chops to `Images/chopz/` (PNG preferred)
+1. Jon: start from **`spread-page-template.psd`** (spreads) or **`single-page-template.psd`** (singles) in `Xtraz/Adobe-Photoshop/` (Duplicate → Save As) → paint → export **MOCK** + chops to `Images/chopz/` (PNG preferred)
 2. Agent: facing pages → art L/R → cloud → paintFrame → optional MOCK @ 35% → live Cormorant → hide MOCK
 3. Jon: eye-check vs MOCK (glyphs inside magenta); approve
+
+#### PSD blanks (locked — matches InDesign / Lulu)
+
+| File | Size | Guides | Notes |
+|------|------|--------|-------|
+| `spread-page-template.psd` | 5250×2625 | cyan TRIM · magenta SAFETY · orange FOLD | Hide fold for finals |
+| `single-page-template.psd` | 2625×2625 | cyan TRIM · magenta SAFETY | One interior page |
+| `book-covers-template.psd` | 2625×2625 | same + orange hinge hints | Front **or** back art; final wrap from Lulu |
+| *(no spine PSD)* | — | — | Spine width set by Lulu after interior upload |
+
+**Shared:** Duplicate → Save As · paint **ART** · type live in InDesign. Full key: `Xtraz/Adobe-Photoshop/README.md`.
 
 **textCloud export (pick one):**
 - **A (recommended):** full page **2625²** or spread **5250×2625**, cloud painted in place, rest transparent → place full-bleed  
@@ -257,6 +272,7 @@ npm run image:gen:page -- "cheap draft..."   # HF free fallback
 | `Media/assets/` | Cloud PNGs and other reusable assets |
 | `Pages/` | Fallback composites only (not gift default) |
 | **`Xtraz/Adobe-inDesign/`** | **Working InDesign docs** (`.indd` / `.idml`) — edit here |
+| **`Xtraz/Adobe-Photoshop/`** | **Working Photoshop docs** — blanks: `spread-page-template.psd` · `single-page-template.psd` · `book-covers-template.psd` (no spine PSD) |
 | **`Xtraz/Affinity/`** | Optional Affinity working docs |
 | `Xtraz/Lulu-Templates/` | Lulu Book Creation Guide + templates + .joboptions |
 | `Xtraz/Fonts/` | Cormorant Garamond + Cinzel (OFL, gitignored) |
@@ -267,7 +283,7 @@ npm run image:gen:page -- "cheap draft..."   # HF free fallback
 | `.cursor/docs/CONTINUE-HERE.md` | Session resume + next actions |
 | `BOOK-PLAYBOOK.md` | Reusable system for future books |
 
-**Rule:** Edit in `Xtraz/Adobe-inDesign/` (or `Xtraz/Affinity/`). Export press PDFs only to `Output/`. Do not keep long-lived `.indd` under `Output/`.
+**Rule:** Edit in `Xtraz/Adobe-inDesign/` (or `Xtraz/Affinity/`). Photoshop working files → `Xtraz/Adobe-Photoshop/`. Export press PDFs only to `Output/`. Do not keep long-lived `.indd` under `Output/`.
 
 ---
 

@@ -7,22 +7,27 @@
 Working `.indd`: `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd`  
 Pages **4–5** = eyes-met MOCK-matched stack; pages **2–3** = earlier comparison prototype.
 
-**DTP:** Affinity MCP + InDesign UXP Bridge. Cold flow: CC Desktop signed in (Jon confirms) → agent UDT+InDesign+bridge → **Jon Load & Watch** → MCP.
+**DTP:** Affinity MCP + InDesign UXP Bridge + **Photoshop adobepy UXP LIVE** (`:47391` / `:8766`). Cold flow: CC Desktop signed in (Jon confirms) → agent UDT+apps+bridges → **Jon Load & Watch** → MCP.
+
+**PSD blanks locked:** `Xtraz/Adobe-Photoshop/` → `spread-page-template.psd` · `single-page-template.psd` · `book-covers-template.psd` (no spine-only PSD).
 
 ## Birthday deadline
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-20 **Docs sync** — MOCK/chopz→InDesign loop, poem type lock (Cormorant Medium 20/26 +5 centered #2C2C2C), no fake gutter on finals, Pass B print = 2625² / 5250×2625 @ 300 DPI. Mem0/vault/Mnemosyne + git.
+2026-07-20 **night** — PSD blanks (spread/single/cover) + Photoshop MCP LIVE; docs/Mem0/vault/Mnemosyne sync. **Tomorrow:** one-page design → InDesign · poem storyboard imagery · PS solo-layer / chop export tests.
 
-## Where to continue
-1. Hide/delete MOCK-REF when pages 4–5 approved; optional cloud/text nudge
-2. Optional: load Lulu `.joboptions` + export smoke PDF → `Output/interiors/`
-3. **S01 Approach LEFT** Lane A composition → Jon pick → Lane B (Pass B remake to print pixels)
-4. INDEX/beat-audit disk sync when convenient
+## Where to continue (tomorrow)
+1. **One-page design** from `single-page-template.psd` → place into InDesign (live Cormorant)
+2. Start **storyboard imagery** that matches poem beats (real scenes, not dial-only mocks)
+3. **Photoshop MCP tests:** solo layers + export chops to `Images/chopz/` for agent/Jon loop
+4. Hide/delete MOCK-REF when pages 4–5 approved
+5. Optional: Lulu `.joboptions` + smoke PDF → `Output/interiors/`
+6. **S01 Approach LEFT** Lane A when ready for next story beat
 
 ## Reference (new this session)
-- **Adobe CC MCP watchlist:** `.cursor/docs/ADOBE-CC-MCP-GUIDE.md` — verified installs; InDesign authority stays `tools/layout-mcp/SETUP.md`
+- **Photoshop UXP MCP:** `tools/layout-mcp/PHOTOSHOP-SETUP.md` — LIVE; COM MCPs skip
+- **Adobe CC MCP watchlist:** `.cursor/docs/ADOBE-CC-MCP-GUIDE.md`
 - **ArcRift:** fleet `TOOLS-WATCHLIST` — C (74) WATCH record; do not install (Mem0/Mnemosyne primary)
 
 ## System of record
@@ -41,7 +46,8 @@ Pages **4–5** = eyes-met MOCK-matched stack; pages **2–3** = earlier compari
 | CONTINUITY-AND-PRINT-FINALS | Print remake plan |
 | **LAYOUT-APP-AUTOMATION-RESEARCH** | Affinity/InDesign MCP — **READY 2026-07-19** |
 | **tools/layout-mcp/SETUP.md** | How to start bridge + load UXP plugin |
-| **ADOBE-CC-MCP-GUIDE.md** | Adobe MCP watchlist (verified 2026-07-19) — optional PS/AI/AE/Premiere later |
+| **ADOBE-CC-MCP-GUIDE.md** | Adobe MCP watchlist (verified 2026-07-19; PS LIVE 2026-07-20) — optional AE/Premiere later |
+| **tools/layout-mcp/PHOTOSHOP-SETUP.md** | Photoshop adobepy UXP MCP — **LIVE** |
 | LULU-8.5-SQUARE-CHEATSHEET | Trim, bleed, safety, cover-template notes |
 
 ## Paths
@@ -56,6 +62,8 @@ Pages **4–5** = eyes-met MOCK-matched stack; pages **2–3** = earlier compari
 | Eyes-met | `Media/approved/spreads/spread-eyes-met.png` |
 | Failed Klein mocks | `Media/generated/test-book-v1/` · `test-book-v2/` (gitignored) |
 | InDesign Bridge plugin | `tools/layout-mcp/indesign-uxp-server/plugin/manifest.json` |
+| **Photoshop working** | **`Xtraz/Adobe-Photoshop/`** (default agent save folder) |
+| Photoshop UXP setup | `tools/layout-mcp/PHOTOSHOP-SETUP.md` |
 
 ## Decisions locked
 - Format: **8.5×8.5"** · Printer: **Lulu** · Color: **sRGB** · **35–40 pages** (locked)
@@ -72,8 +80,10 @@ Pages **4–5** = eyes-met MOCK-matched stack; pages **2–3** = earlier compari
 - **Copy:** About + Thank You Draft A · quiet close locked
 - **Production mode:** **page-by-page** approvals (no whole-book Klein dumps)
 - **Spread loop (2026-07-20):** PS MOCK 5250×2625 + chops → InDesign → live type; prefer PNG; layers Frame→Type→Cloud→Art
+- **PSD blanks:** `spread-page-template.psd` (5250×2625) · `single-page-template.psd` (2625²) · `book-covers-template.psd` (2625² front/back) — cyan=TRIM · magenta=SAFETY · orange=MOCK; **no** spine-only PSD (Lulu casewrap after interior)
 - **Poem type (2026-07-20):** Cormorant Garamond **Medium 20/26 tracking +5 centered #2C2C2C**
 - **Print pixels:** page **2625²** · spread **5250×2625** = full **300 DPI** at Lulu bleed size (Pass B); dial may be lower
 - **No fake gutter** on final spread art (MOCK-only fold OK)
 - **DTP (2026-07-19 FINAL):** Affinity MCP `:6767` + InDesign UXP `:19300/:19301` **IN USE**. Cold flow: CC Desktop signed in (**Jon confirms**) → agent launches UDT+InDesign+bridge → **Jon clicks Load & Watch** (agent cannot) → MCP. Web adobe.com login not enough. Keep CC installed; Startup disable OK.
+- **Photoshop MCP (2026-07-20 LIVE):** adobepy UXP broker `:47391` + dcc-mcp-photoshop `:8766/mcp` — **not** COM. Prefs: Enable Developer Mode only. Doc: `tools/layout-mcp/PHOTOSHOP-SETUP.md`. COM MCPs (loonghao/alisaitteke) rejected on this PC (`0x80080005`). **Default save folder:** `Xtraz/Adobe-Photoshop/`
 - **Creative Cloud:** keep Desktop app installed (licensing); OK to disable Startup — do **not** uninstall while keeping InDesign/UDT

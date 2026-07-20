@@ -28,7 +28,7 @@ Read in order:
 - **Layout production:** **InDesign UXP** (`AGENT-RUNBOOK.md`). Pillow/Typst = **fallback only**. Affinity = optional polish.
 - **Locks:** cover beige-v2 · boy G0 · santa-G0 · Jack portrait style-match-B · eyes-met FINAL-TEST-A
 - **Jack Farrell portrait:** `Media/approved/characters/jack-farrell-portrait.png` · `CHARACTER-JACK-FARRELL.md`
-- **DTP:** Affinity MCP + InDesign UXP Bridge **READY** — cold-start in `AGENT-RUNBOOK.md` §1 / `tools/layout-mcp/SETUP.md`
+- **DTP:** Affinity MCP + InDesign UXP Bridge **READY** · Photoshop adobepy UXP **LIVE** — cold-start `AGENT-RUNBOOK.md` §1 / `tools/layout-mcp/SETUP.md` · PS `PHOTOSHOP-SETUP.md`
 
 ## Paths
 
@@ -40,6 +40,7 @@ Read in order:
 | Cloud assets | `Media/assets/` |
 | Fonts (local) | `Xtraz/Fonts/` (gitignored) · catalog `FONT-CATALOG.md` |
 | InDesign working docs | `Xtraz/Adobe-inDesign/` (gitignored via `Xtraz/`) |
+| Photoshop working docs | `Xtraz/Adobe-Photoshop/` — blanks: `spread-page-template` · `single-page-template` · `book-covers-template` |
 | Affinity working docs | `Xtraz/Affinity/` (optional) |
 | Lulu templates | `Xtraz/Lulu-Templates/` |
 | Lulu PDF exports | `Output/interiors/` · `Output/covers/` |

@@ -6,15 +6,17 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-20)
+## One-line status (2026-07-20 night)
 
 **InDesign production locked** · page count **35–40** · `AGENT-RUNBOOK.md` authoritative.  
 **Spread loop locked:** Jon PS MOCK + `Images/chopz/` → agent matches InDesign → **live Cormorant** (Medium 20/26 +5 centered #2C2C2C).  
 **Eyes-met:** pages **4–5** MOCK-matched (art L/R + textCloud + paintFrame + live poem); pages **2–3** earlier prototype.  
 **Working file:** `Xtraz/Adobe-inDesign/eyes-met-prototype-v1.indd` · PDFs → `Output/interiors/` + `Output/covers/`.  
 **Print finals:** **2625×2625** / **5250×2625** = full **300 DPI** (Pass B remake; dial may be smaller). No fake gutter on plates.  
-**Next:** approve/hide MOCK-REF on 4–5 → **S01 Approach LEFT** Lane A.  
-**Playbook:** `ISSUES-RESOLVED.md` (chopz→InDesign cheat sheet) + `BOOK-PRODUCTION-SYSTEM.md`.
+**Photoshop MCP LIVE:** adobepy UXP (`:47391`/`:8766`) — COM rejected; agent can drive PS for MOCK/chops. Doc: `tools/layout-mcp/PHOTOSHOP-SETUP.md`.  
+**PSD blanks:** `spread` / `single-page` / `book-covers` templates in `Xtraz/Adobe-Photoshop/` (cyan TRIM · magenta SAFETY · orange MOCK). **No** spine-only PSD — Lulu sets spine after interior upload.  
+**Tomorrow:** (1) one-page design → InDesign (2) poem storyboard real imagery (3) PS solo-layer + chop export tests.  
+**Playbook:** `ISSUES-RESOLVED.md` (PSD blanks + chopz→InDesign + PS MCP) + `BOOK-PRODUCTION-SYSTEM.md`.
 
 ---
 
@@ -35,6 +37,7 @@ An **8.5×8.5"** full-color children’s picture book from Jack’s Christmas po
 | **`Media/approved/`** | **Two-tier keepers** — `style-refs/` moodboard · Tier B locks — see `INDEX.md` |
 | `Xtraz/Fonts/` | Local OFL pack (gitignored) — roles in `FONT-CATALOG.md` |
 | **`Xtraz/Adobe-inDesign/`** | **Working InDesign docs** (`.indd`) — current: `eyes-met-prototype-v1.indd` |
+| **`Xtraz/Adobe-Photoshop/`** | Working PSDs · blanks: **`spread-page-template`** · **`single-page-template`** · **`book-covers-template`** (no spine PSD) |
 | **`Xtraz/Affinity/`** | Optional Affinity working docs |
 | `BOOK-PLAYBOOK.md` | Future-book master playbook (repo root) |
 | `Media/generated/` | Experiments / batches (not the source of truth for “what we picked”) |
@@ -139,8 +142,9 @@ npm run image:gen:page -- "cheap draft..."   # HF — optional
 
 # DTP production (READY 2026-07-19) — see AGENT-RUNBOOK.md §1
 npm run layout:indesign-bridge   # InDesign UXP HTTP/WS :19300/:19301 — keep running
+npm run layout:photoshop-mcp     # Photoshop adobepy broker :47391 + MCP :8766 (LIVE 2026-07-20)
 # Affinity MCP :6767 when Affinity open + MCP toggles ON (optional polish)
-# Full how-to: tools/layout-mcp/SETUP.md
+# Full how-to: tools/layout-mcp/SETUP.md · PHOTOSHOP-SETUP.md
 
 # Fallback only (Pillow/Typst — not gift default)
 npm run book:composite

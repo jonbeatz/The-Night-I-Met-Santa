@@ -32,6 +32,9 @@ tools/layout-mcp/indesign-uxp-server/
 tools/layout-mcp/indesign-scripting-mcp/
 tools/layout-mcp/adobe-mcp/
 tools/layout-mcp/devtools-cli/
+tools/layout-mcp/photoshop-adobepy/.venv/
+tools/layout-mcp/photoshop-adobepy/*.zip
+tools/layout-mcp/photoshop-adobepy/adobepy-*-windows-x64/
 tools/layout-mcp/**/node_modules/
 tools/layout-mcp/**/.venv/
 tools/layout-mcp/**/extendscript.db

@@ -4,7 +4,7 @@
 **Role:** Watchlist + corrected install notes — **not** an install-now checklist  
 **InDesign authority:** [`tools/layout-mcp/SETUP.md`](../../tools/layout-mcp/SETUP.md) (do not re-own that path here)
 
-**Status (this PC):** InDesign UXP **LIVE** · Affinity **READY when open** · Photoshop / Illustrator / AE / Premiere — **not wired** (optional later)
+**Status (this PC):** InDesign UXP **LIVE** · Affinity **READY when open** · Photoshop adobepy UXP **LIVE** (smoke 2026-07-20) · Illustrator / AE / Premiere — not wired
 
 ---
 
@@ -16,8 +16,9 @@ Live GitHub / npm / PyPI checks. Use this section when the catalog below drifts.
 |-----------------|--------|
 | InDesign UXP `:19300/:19301` | **OK** — production path for this book |
 | Affinity `:6767` “always LIVE” | **Wrong** — only when Affinity is open + MCP toggles ON |
-| `pip` / `uvx` `photoshop-mcp-server` (loonghao) | **OK** — PyPI **0.1.11**, Windows-only COM, ★~282 |
-| `@alisaitteke/photoshop-mcp` | **OK** — npm **1.3.13**, Win+Mac, ★~200 |
+| `pip` / `uvx` `photoshop-mcp-server` (loonghao) | **Package OK** — PyPI **0.1.11**, Windows COM — **FAILS on this PC** (`0x80080005`; no `PS_VERSION` map for 2026→200) |
+| `@alisaitteke/photoshop-mcp` | **Package OK** — npm ≥1.3 / **1.4.0**, also **Windows COM** — same COM failure class |
+| **dcc-mcp-photoshop + adobepy UXP** | **ADOPT path** — PyPI **0.1.37** + adobepy **0.5.2**; WebSocket UXP (bypasses COM) — see `tools/layout-mcp/PHOTOSHOP-SETUP.md` |
 | `illustrator-mcp-server` (ie3jp) | **OK package** — but upstream: **Windows COM not tested on real hardware** |
 | `npm i -g after-effects-mcp` | **Dangerous** — npm name points to **a-y-ibrahim** (★3), **not** Dakkshin (★500) |
 | Dakkshin After Effects | **OK via git clone** + `npm run install-bridge` — no clean global npm for that repo |
@@ -58,36 +59,44 @@ You already have **InDesign** working via UXP Bridge (`:19300/:19301`). Other ap
 | Creative Cloud Desktop | Keep for licensing | Installed |
 | InDesign + UXP Bridge | `:19300/:19301` · see SETUP.md | **LIVE when Connected** |
 | Affinity MCP | `:6767` · Affinity open + MCP all ON | **READY when open** (not always up) |
+| **Photoshop + adobepy UXP** | Broker `:47391` · MCP `:8766/mcp` · plugin `com.adobepy.bridge.photoshop` | **LIVE** — smoke PASS 2026-07-20 (`PHOTOSHOP-SETUP.md`) |
 | `indesign-exec` (COM/JSX) | Fallback only | Ignore — prefer UXP |
-| Cursor MCP | Project `.cursor/mcp.json` | Working |
+| Photoshop COM MCPs (loonghao / alisaitteke) | — | **Rejected on this PC** — `0x80080005` |
+| Cursor MCP | Project `.cursor/mcp.json` | Working (+ `photoshop` URL entry) |
 
 ---
 
 ## MCP / bridge catalog
 
-### Photoshop — two options
+### Photoshop — pick for **this PC**
 
-#### Option A: loonghao (Windows-friendly default)
+#### Option A (LOCKED for TNIMS): dcc-mcp-photoshop + adobepy UXP
+
+| | |
+|---|---|
+| **GitHub** | [dcc-mcp/dcc-mcp-photoshop](https://github.com/dcc-mcp/dcc-mcp-photoshop) · [dcc-mcp/adobepy](https://github.com/dcc-mcp/adobepy) |
+| **Why** | UXP WebSocket — **works when COM is broken** (proven need on this PC 2026-07-20) |
+| **Local setup** | [`tools/layout-mcp/PHOTOSHOP-SETUP.md`](../../tools/layout-mcp/PHOTOSHOP-SETUP.md) |
+| **Cursor** | `"url": "http://127.0.0.1:8766/mcp"` after `npm run layout:photoshop-mcp` |
+| **Plugin** | UDT Load & Watch → `bridges/photoshop/manifest.json` (`com.adobepy.bridge.photoshop`) |
+
+#### Option B: loonghao COM (skip here)
 
 | | |
 |---|---|
 | **GitHub** | [loonghao/photoshop-python-api-mcp-server](https://github.com/loonghao/photoshop-python-api-mcp-server) ★~282 |
-| **License** | MIT |
-| **Platform** | **Windows only** (COM) |
-| **Package** | PyPI `photoshop-mcp-server` |
-| **Best config** | `uvx` + `PS_VERSION` (see install below) |
+| **Platform** | Windows COM only |
+| **TNIMS** | **SKIP** until Adobe COM fixed — smoke failed against PS 2026 |
 
-#### Option B: alisaitteke (cross-platform / more agent recipes)
+#### Option C: alisaitteke (skip here for primary)
 
 | | |
 |---|---|
 | **GitHub** | [alisaitteke/photoshop-mcp](https://github.com/alisaitteke/photoshop-mcp) ★~200 |
-| **License** | MIT (repo badge) |
-| **Platform** | Windows + macOS |
-| **Package** | npm `@alisaitteke/photoshop-mcp` **1.3.13** |
-| **Bonus** | Standalone web UI; recipe workflows |
+| **Platform** | Win+Mac — **Windows path is still COM** (UXP plugin only for Neural Filters) |
+| **TNIMS** | **SKIP** as primary; same COM wall |
 
-**TNIMS pick:** A/B one afternoon before wiring either into `.cursor/mcp.json`. Do **not** enable both at once.
+**TNIMS pick:** Option A only. Do **not** enable COM MCPs alongside it.
 
 ---
 
@@ -295,35 +304,39 @@ Premiere and AE need a **CEP (or AE script) panel** as the in-app bridge. InDesi
 ## Recommendations for this book project
 
 ### Do now
-1. **Nothing new** — keep **InDesign UXP** as gift print production  
-2. Art finals stay **Gemini / Banana + G0 refs** (see `BOOK-PRODUCTION-SYSTEM.md`)
+1. Keep **InDesign UXP** as gift print production  
+2. Finish **Photoshop UXP** Load & Watch → smoke (`PHOTOSHOP-SETUP.md`)
+3. Art finals stay **Gemini / Banana + G0 refs**
 
-### Maybe later (after proof / if a real PS pain appears)
-3. **One** Photoshop MCP (loonghao *or* alisaitteke) — A/B first  
-4. Illustrator — only after Windows smoke passes  
+### Maybe later
+4. Illustrator — only after Windows smoke (likely COM/CEP pain)  
 
-### Later (trailer / CTFU / other projects)
+### Later (trailer / other projects)
 5. After Effects — Dakkshin via **clone**  
 6. Premiere — leancoderkavy + CEP  
 
 ### Skip / watch
 - Media Encoder MCP (none)  
-- Flue as InDesign replacement or dual driver  
+- Flue as InDesign/Photoshop dual driver  
+- loonghao / alisaitteke **COM** Photoshop on this PC until `0x80080005` fixed  
 - `npm i -g after-effects-mcp` / `premiere-pro-mcp-full`  
 - spencerhhubert Illustrator · ayushozha Premiere until install is simpler  
 
 ---
 
-## Quick-start (Photoshop only — when approved)
+## Quick-start (Photoshop — UXP path)
 
 ```powershell
-# Prefer uvx (no global pollute)
-# Then merge the loonghao JSON block above into .cursor/mcp.json
-# Launch Photoshop → reload Cursor MCP → smoke:
-#   "Create a new 8.5x8.5 inch 300 DPI RGB document"
+# Broker + MCP (keep running)
+npm run layout:photoshop-mcp
+
+# Then in UDT: Add Plugin → bridges/photoshop/manifest.json → Load & Watch
+# Photoshop → Plugins → Adobe Python Bridge
+# Reload Cursor MCP → smoke document info
 ```
 
-Until Jon says otherwise, **do not** add Photoshop/Illustrator/AE/Premiere entries to this project’s MCP config.
+Full steps: **`tools/layout-mcp/PHOTOSHOP-SETUP.md`**.  
+Do **not** add loonghao/alisaitteke COM entries while UXP is the path.
 
 ---
 
@@ -332,8 +345,11 @@ Until Jon says otherwise, **do not** add Photoshop/Illustrator/AE/Premiere entri
 | Resource | Link |
 |----------|------|
 | InDesign / Affinity setup (canonical) | [`tools/layout-mcp/SETUP.md`](../../tools/layout-mcp/SETUP.md) |
-| Photoshop MCP (Python / Windows) | https://github.com/loonghao/photoshop-python-api-mcp-server |
-| Photoshop MCP (Node) | https://github.com/alisaitteke/photoshop-mcp |
+| **Photoshop UXP setup (TNIMS)** | [`tools/layout-mcp/PHOTOSHOP-SETUP.md`](../../tools/layout-mcp/PHOTOSHOP-SETUP.md) |
+| Photoshop MCP (UXP / dcc-mcp) | https://github.com/dcc-mcp/dcc-mcp-photoshop |
+| Adobe Python broker (adobepy) | https://github.com/dcc-mcp/adobepy |
+| Photoshop MCP (Python COM — skip here) | https://github.com/loonghao/photoshop-python-api-mcp-server |
+| Photoshop MCP (Node COM — skip here) | https://github.com/alisaitteke/photoshop-mcp |
 | Illustrator MCP | https://github.com/ie3jp/illustrator-mcp-server |
 | Illustrator MCP (stale) | https://github.com/spencerhhubert/illustrator-mcp-server |
 | After Effects (Dakkshin — clone) | https://github.com/Dakkshin/after-effects-mcp |
@@ -346,4 +362,4 @@ Until Jon says otherwise, **do not** add Photoshop/Illustrator/AE/Premiere entri
 
 ---
 
-*Verified research pass: 2026-07-19. Update the Verified table when re-checking stars / package names.*
+*Verified research pass: 2026-07-19. Photoshop UXP path staged 2026-07-20 (COM rejected on this PC).*

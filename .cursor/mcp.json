@@ -31,6 +31,10 @@
       ],
       "cwd": "D:\\Hermes\\projects\\The-Night-I-Met-Santa\\tools\\layout-mcp\\indesign-scripting-mcp",
       "_comment": "Fallback COM/JSX runner. Currently COM returns Server execution failed on this PC — keep for retry after InDesign restart / Adobe repair. Prefer indesign-uxp."
+    },
+    "photoshop": {
+      "url": "http://127.0.0.1:8766/mcp",
+      "_comment": "dcc-mcp-photoshop via adobepy UXP (NOT COM). Requires: (1) npm run layout:photoshop-mcp (2) UXP Load & Watch bridges/photoshop. See tools/layout-mcp/PHOTOSHOP-SETUP.md. COM MCPs fail on this PC with 0x80080005."
     }
   }
 }

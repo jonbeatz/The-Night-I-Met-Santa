@@ -1,0 +1,1 @@
+(function(){var config={brokerUrl:"ws://127.0.0.1:47391/v1/bridge/photoshop/ws",token:"dev-token",target:"default"};globalThis.__ADOBEPY_BROKER_URL=globalThis.__ADOBEPY_BROKER_URL||config.brokerUrl;globalThis.__ADOBEPY_TOKEN=globalThis.__ADOBEPY_TOKEN||config.token;globalThis.__ADOBEPY_TARGET=globalThis.__ADOBEPY_TARGET||config.target;}());

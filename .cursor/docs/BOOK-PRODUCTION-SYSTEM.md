@@ -67,6 +67,7 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | Art medium | **Painted gouache / soft watercolor** | `ILLUSTRATION-STYLE.md` |
 | Art size page | **2625 × 2625** @ 300 DPI | 8.75" with 0.125" bleed |
 | Art size spread | **5250 × 2625** master → split L/R | Continuous scene across gutter |
+| PS blanks | `Xtraz/Adobe-Photoshop/{spread,single-page,book-covers}-template.psd` | Cyan=TRIM · magenta=SAFETY · orange=MOCK · **no** spine PSD (Lulu wrap) |
 | Poem typeface (preferred) | **Cormorant Garamond Medium** · **20/26** · tracking **+5** · centered · #2C2C2C | Locked Jon 2026-07-20 — `FONT-CATALOG.md` · `AGENT-RUNBOOK.md` §5 |
 | Cover display type | **Cinzel Decorative** (alt Mountains of Christmas) | Same |
 | Lulu color | **sRGB** export for full-color interior | Lulu printers use sRGB (2026 help) |
@@ -261,6 +262,9 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | 2026-07-20 | **Spread build loop locked:** Jon PS MOCK (5250×2625) + chops in `Images/chopz/` → agent matches in InDesign → **live Cormorant** (no raster poem). MOCK @ ~35% for align then hide. Prefer **PNG** links. Details: `ISSUES-RESOLVED.md` + `AGENT-RUNBOOK.md` | Layout / process |
 | 2026-07-20 | **No fake gutter on finals:** seamless spread art only. Optional center fold line OK on screen MOCKS; never bake into LEFT/RIGHT/SPREAD print plates. | Art / print |
 | 2026-07-20 | **Print DPI confirmed:** finals must be exact **2625×2625** (page) / **5250×2625** (spread) = full **300 DPI** at Lulu bleed size. Pass A dial may be ~1K; Pass B remake before Lulu plates. | Print / resolution |
+| 2026-07-20 | **Photoshop MCP LIVE (UXP):** COM rejected (`0x80080005`). Stack = adobepy broker `:47391` + dcc-mcp-photoshop `:8766` + UDT plugin `com.adobepy.bridge.photoshop`. Developer Mode only. Smoke PASS. `PHOTOSHOP-SETUP.md`. InDesign remains print authority. | DTP / automation |
+| 2026-07-20 | **`spread-page-template.psd` locked:** 5250×2625 @ 300 RGB. Guides: cyan TRIM / magenta SAFETY / orange FOLD (MOCK only). Layers: white-bg → paper-base → ART → trim/safety → fold → cloud → type zones. Use: Duplicate→Save As; paint ART; hide fold for finals; Cormorant stays live in InDesign. Docs: `ISSUES-RESOLVED.md` · `PHOTOSHOP-SETUP.md` · `AGENT-RUNBOOK.md`. | Layout / PS |
+| 2026-07-20 | **Also locked:** `single-page-template.psd` (2625²) + `book-covers-template.psd` (2625² front/back). **No** `book-spine-template.psd` — spine width from Lulu casewrap after interior upload. | Layout / PS |
 
 *(Add a row whenever something sticks.)*
 

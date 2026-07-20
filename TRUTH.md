@@ -23,7 +23,7 @@
 
 - **Shared library:** `D:\Hermes\projects\_core-scripts\shared-profile-content`
 - **Image gen (locked lanes):** dial **Klein 4B** (fal or OpenRouter) → fallback **Qwen Image 2** → finals **Gemini 3 Pro Image (OpenRouter)** or **`nano-banana-pro/edit`** + G0 refs — see `BOOK-PRODUCTION-SYSTEM.md` + `IMAGE-LANE-PROMPTS.md`. **Page-by-page** for story finals (no whole-book Klein dumps).
-- **Layout (production):** **InDesign UXP** — live text frames + cloud PNG on art → press-ready sRGB PDF. Specs: `AGENT-RUNBOOK.md` + `.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md`. Cold-start: `tools/layout-mcp/SETUP.md` (READY 2026-07-19). Affinity MCP = optional polish.
+- **Layout (production):** **InDesign UXP** — live text frames + cloud PNG on art → press-ready sRGB PDF. Specs: `AGENT-RUNBOOK.md` + `.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md`. Cold-start: `tools/layout-mcp/SETUP.md` (READY 2026-07-19). Affinity MCP = optional polish. **Photoshop agent control:** adobepy UXP + dcc-mcp-photoshop (`PHOTOSHOP-SETUP.md`, LIVE 2026-07-20) — not COM; not the Lulu print path.
 - **Layout (fallback only):** Pillow pre-composite + Typst — emergency / offline only; **not** the gift print path.
 - **Print:** Lulu 8.5×8.5" casewrap hardcover · **35–40 pages** (proof → gift) · sRGB · 8.75×8.75" with bleed
 - **Playbook:** repo-root **`AGENT-RUNBOOK.md`** (build authority) · `.cursor/docs/BOOK-PRODUCTION-SYSTEM.md` (this title) · future books: **`BOOK-PLAYBOOK.md`**
@@ -50,7 +50,7 @@
 ## Asset locations (root — not under `.cursor/assets`)
 
 - `Media/` · **`Media/approved/`** · `Images/` · `Audio/` · `Transcription/` · `Pages/` · `Output/` · `Xtraz/Fonts/` (local)
-- **InDesign working:** `Xtraz/Adobe-inDesign/` · **Affinity (optional):** `Xtraz/Affinity/` · **Lulu PDF exports:** `Output/interiors/` · `Output/covers/`
+- **InDesign working:** `Xtraz/Adobe-inDesign/` · **Photoshop working:** `Xtraz/Adobe-Photoshop/` (default agent PS saves) · **Affinity (optional):** `Xtraz/Affinity/` · **Lulu PDF exports:** `Output/interiors/` · `Output/covers/`
 
 ## Isolation Rules
 

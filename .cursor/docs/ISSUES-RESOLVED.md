@@ -11,6 +11,44 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## Playbook — Photoshop agent MCP (LIVE 2026-07-20)
+
+**Path:** adobepy UXP + `dcc-mcp-photoshop` — **not** COM.  
+**Doc:** `tools/layout-mcp/PHOTOSHOP-SETUP.md`
+
+| | |
+|---|---|
+| Broker | `:47391` |
+| MCP | `http://127.0.0.1:8766/mcp` |
+| Plugin | `com.adobepy.bridge.photoshop` via UDT Load & Watch |
+| Prefs | **Enable Developer Mode** only (Generator / Remote Connections off) |
+| npm | `npm run layout:photoshop-mcp` |
+| **Default save folder** | `Xtraz/Adobe-Photoshop/` (`D:\Hermes\projects\The-Night-I-Met-Santa\Xtraz\Adobe-Photoshop`) — agent saves PS files here |
+| **PSD blanks** | `spread-page-template.psd` · `single-page-template.psd` · `book-covers-template.psd` — see playbooks below (**no** spine-only PSD) |
+
+**Smoke PASS:** open `spread-01-eyes-met-5250x2625-v3.psd` → 5250×2625 · 9 layers · `sessions:1` · `dcc:true`.
+
+**Rejected:** loonghao / alisaitteke COM — `0x80080005` (same class as InDesign COM). Registry has PS **200.0**; ProgID OK; COM runtime broken. Lesson: new Adobe app automation on this PC → **UXP first**.
+
+---
+
+## Playbook — Photoshop PSD blanks (locked 2026-07-20)
+
+All under `Xtraz/Adobe-Photoshop/`. **RGB @ 300 DPI.** Colors: **cyan = TRIM** · **magenta = SAFETY** · **orange = MOCK** (fold or hinge — hide for finals).
+
+| File | Canvas | Layers (bottom → top) | Use |
+|------|--------|----------------------|-----|
+| **`spread-page-template.psd`** | 5250×2625 | white-bg → paper-base → ART → trim/safety → fold → cloud → type L/R | Facing spreads · hide orange fold for finals |
+| **`single-page-template.psd`** | 2625×2625 | white-bg → paper-base → ART → TRIM → SAFETY → cloud → type | One interior page |
+| **`book-covers-template.psd`** | 2625×2625 | white-bg → paper-base → ART → TRIM → SAFETY → hinge hints → TITLE / CREDITS | Front **or** back cover art · final wrap from Lulu after interior |
+| ~~spine~~ | — | — | **Skipped:** spine width from Lulu casewrap after interior upload; not a separate working PSD |
+
+**Shared use:** Duplicate → Save As · paint **ART** · type **live in InDesign** (Cormorant / Cinzel) — never bake poem/title into the PSD.
+
+Also: `tools/layout-mcp/PHOTOSHOP-SETUP.md` · `Xtraz/Adobe-Photoshop/README.md` · `AGENT-RUNBOOK.md`
+
+---
+
 ## Playbook — Photoshop chops → InDesign (locked 2026-07-20)
 
 Living “how we build spreads.” Dated entries below are the incident history; **this section is the operator cheat sheet.** Update when something sticks.
@@ -19,7 +57,7 @@ Living “how we build spreads.” Dated entries below are the incident history;
 
 | Step | Who | What |
 |------|-----|------|
-| 1 | Jon | Design in Photoshop at **spread 5250×2625** (continuous scenes) or **page 2625×2625** (singles) |
+| 1 | Jon | Start from **`spread-page-template.psd`** (spreads) or **`single-page-template.psd`** (singles); covers → **`book-covers-template.psd`** |
 | 2 | Jon | Export **MOCK** (full composite) + **chops** into `Images/chopz/` — see naming + export options below |
 | 3 | Agent | Facing pages in InDesign → place chops → optional **MOCK-REF @ ~35%** to align → hide MOCK |
 | 4 | Agent | Recreate poem as **live Cormorant Garamond Medium 20/26 tracking +5, centered, #2C2C2C** (never ship raster poem) |
@@ -217,5 +255,41 @@ If MCP can’t reorder layers, Jon drags **Frame** above **Type** once in the La
 **Do not:** retry-place when unsure; each retry stacks another Cloud copy.
 
 **Verify:** Layers panel → Cloud → single `<textCloud-…png>`; poem text still above cloud; art still below.
+
+---
+
+## 2026-07-20 — Photoshop MCP: COM dead; UXP adobepy LIVE
+
+**Symptom / goal:** Wire Cursor → Photoshop so agent can help with MOCK/chop setup. Guide listed loonghao / alisaitteke COM MCPs.
+
+**Root cause:** On this PC, Photoshop **2026** COM fails (`0x80080005` Server execution failed / GetActiveObject unavailable) even though registry **200.0** and ProgIDs exist. Same failure class as InDesign COM. loonghao also lacks `PS_VERSION` map for 2026→200 (tops at 2025→190). alisaitteke Windows path is still COM (UXP plugin = Neural Filters only).
+
+**Resolution (verified):**
+1. Install **adobepy 0.5.2** + **dcc-mcp-photoshop 0.1.37** (UXP WebSocket).
+2. Stage bridge → `tools/layout-mcp/photoshop-adobepy/bridges/photoshop/`.
+3. Photoshop prefs: **Enable Developer Mode** only (not Generator / Remote Connections).
+4. UDT Load & Watch `com.adobepy.bridge.photoshop` → panel open.
+5. `npm run layout:photoshop-mcp` → broker `:47391` + MCP `:8766/mcp`.
+6. Smoke: `sessions:1`, `dcc:true`, read `spread-01-eyes-met-5250x2625-v3.psd` (5250×2625, 9 layers).
+
+**Do not:** add loonghao/alisaitteke COM to mcp.json on this PC. Prefer UXP for any new Adobe host.
+
+**Docs:** `PHOTOSHOP-SETUP.md` · `ADOBE-CC-MCP-GUIDE.md` · `AGENT-RUNBOOK.md` §1
+
+---
+
+## 2026-07-20 — PSD blanks: spread / single / cover (no spine)
+
+**Goal:** Match InDesign/Lulu geometry in Photoshop so MOCK→chop→InDesign stays consistent.
+
+**Resolution (verified):**
+1. `spread-page-template.psd` — 5250×2625 @ 300 RGB; cyan TRIM · magenta SAFETY · orange FOLD (MOCK).
+2. `single-page-template.psd` — 2625×2625; cyan TRIM · magenta SAFETY (no fold).
+3. `book-covers-template.psd` — 2625×2625 front **or** back art; hinge hints MOCK; TITLE/CREDITS zones.
+4. **No** `book-spine-template.psd` — spine width from Lulu casewrap after interior upload.
+5. Layer pattern: white-bg → paper-base → ART → overlays → type zones; Duplicate→Save As; type live in InDesign.
+6. Scripts: `scripts/create_ps_page_templates.py` (+ earlier `finish_spread_page_template_psd.py`).
+
+**Verify:** Files under `Xtraz/Adobe-Photoshop/` (gitignored binaries); docs in README + ISSUES playbook + `PHOTOSHOP-SETUP.md`.
 
 ---

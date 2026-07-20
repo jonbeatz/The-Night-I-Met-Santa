@@ -125,7 +125,11 @@ These presets preserve document colors (`LeaveColorUnchanged`) and set 300 DPI /
 |--------|------|-----|
 | InDesign | `InDesign/lulu-square-hardcover-template.indd` / `.idml` | Base cover design with guides |
 | PDF | `PDF/lulu-square-hardcover-template.pdf` | Reference for dimensions |
-| Photoshop | `Photoshop/lulu-square-hardcover-template.psd` | Alternative design tool |
+| Photoshop | `Photoshop/lulu-square-hardcover-template.psd` | Lulu **cover** template (not interior spreads) |
+
+**Interior / cover PS blanks (ours):** `Xtraz/Adobe-Photoshop/` —
+`spread-page-template.psd` (5250×2625) · `single-page-template.psd` (2625²) · `book-covers-template.psd` (2625² front/back).
+**No spine-only PSD** — use Lulu casewrap after interior upload. See `ISSUES-RESOLVED.md` / `PHOTOSHOP-SETUP.md`.
 | PNG guides | `PNG/lulu-square-hardcover-template-guides.png` | Layer as reference in any tool |
 
 > The spine width in the bundled template is a minimum/default. **Replace with custom template from Lulu after interior upload** for exact spine width based on your page count.

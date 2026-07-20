@@ -14,8 +14,10 @@
 | **affinity** | Yes | **READY** — Affinity open + MCP all ON · `:6767` · Cursor shows ~11 tools |
 | **indesign-uxp** | Yes (primary) | **READY** — bridge `:19300/:19301` + UXP plugin **Connected ✓** · ~135 tools |
 | **indesign-exec** | Yes (fallback) | COM historically fails — prefer **indesign-uxp** |
+| **photoshop** | Yes (URL `:8766/mcp`) | **LIVE** — adobepy UXP; smoke PASS 2026-07-20 — `PHOTOSHOP-SETUP.md` |
 
-Ports **19300/19301** are intentional — classic UXP samples use 3000/3001 which collide with Next.js / Hermes web apps.
+Ports **19300/19301** are intentional — classic UXP samples use 3000/3001 which collide with Next.js / Hermes web apps.  
+Photoshop broker **47391** · MCP **8766** — see `PHOTOSHOP-SETUP.md`.
 
 UDT **Service Port** on this PC: **14001** (Preferences in Adobe UXP Developer Tools).
 
