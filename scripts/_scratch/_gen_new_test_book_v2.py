@@ -1,0 +1,719 @@
+"""
+new-test-book-v2 — full cover-to-cover Qwen Image 2 dial test (32 interior pages).
+Resumable: skips units that already have art-*.png.
+Spine-safe spreads: no faces / key subjects in the center gutter band.
+Camera + proof beats explicit in S07–S08.
+One image file per unit. Writes RECIPE.md + TEXT-IMAGE-MAP.md / INDEX / README.
+"""
+from __future__ import annotations
+
+import json
+import os
+import time
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+ROOT = Path(r"D:\Hermes\projects\The-Night-I-Met-Santa")
+load_dotenv(ROOT / ".env.local")
+KEY = os.getenv("FAL_API_KEY") or os.getenv("FAL_KEY")
+if not KEY:
+    raise SystemExit("FAL_API_KEY missing")
+
+OUT = ROOT / "Media" / "generated" / "new-test-book-v2"
+ENDPOINT = "fal-ai/qwen-image-2/text-to-image"
+DATE = "2026-07-21"
+BATCH = "new-test-book-v2"
+
+D2 = (
+    "PAINTED GOUACHE DIAL (mockups): deep shadowed hallway vs warm room, strong punchy contrast, "
+    "rich saturated Christmas colors, opaque gouache feel. Christmas tree lights warm and luminous "
+    "but CONTROLLED — soft bloom, ornaments and needles still readable, NOT blown-out white glare. "
+    "Clean Santa coat — NO letters, NO glyphs on clothing. Soft blended edges. "
+    "NOT washed out, NOT pale, NOT pencil grain, NOT cross-hatching, NOT desaturated."
+)
+
+FRAME = (
+    "WATERCOLOR FRAME ON: soft irregular white/cream watercolor paper vignette around the scene — "
+    "feathered painted edges bleeding into open paper, hand-painted storybook plate (not a hard "
+    "rectangle crop, not full-bleed edge-to-edge). Leave calm open cream wash zones for later "
+    "typography / soft text-cloud overlays. No hard photo border, no Polaroid frame."
+)
+
+SPINE = (
+    "SPINE-SAFE SPREAD COMPOSITION (critical): this is one wide image that folds in the MIDDLE. "
+    "Keep faces, heads, eyes, and important figure silhouettes OFF the center vertical band "
+    "(roughly the middle 20–25% of the width). Place characters on LEFT third and/or RIGHT third. "
+    "Center band should be soft room space only — empty floor, gift piles, fireplace side, rug, "
+    "gentle cream wash, or open wallpaper — never a face, never a camera held across the fold, "
+    "never a main figure straddling the gutter. Continuous scene, NO painted gutter line, NO fake spine."
+)
+
+STYLE_TAIL = (
+    "Traditional children's Christmas picture-book illustration, heirloom storybook quality, "
+    "heavily painted rich gouache and soft watercolor like Charles Santore holiday editions, "
+    "visible soft brushstrokes, gentle blended edges. NO people-text, NO letters, NO glyphs, "
+    "NO watermark, NO logo, NOT colored pencil, NOT crayon, NOT flat cartoon, NOT photoreal CGI."
+)
+
+NEG = (
+    "letters, text, glyphs, watermark, logo, comic panels, hard gutters, fake book spine line, "
+    "face in center fold, head on spine, photoreal, CGI, colored pencil, crayon, sketch"
+)
+
+BOY = (
+    "young boy about 7–9 years old, oatmeal/taupe pajamas with tiny holly print, soft brown hair, "
+    "warm storybook face, wonder in eyes"
+)
+SANTA = (
+    "kind Santa with brilliant white hair and beard, classic red coat with suspenders, "
+    "warm gentle expression, traditional Christmas storybook Santa"
+)
+CAMERA = (
+    "vintage handheld film camera (silver/black body, no readable brand text, no screen glyphs)"
+)
+
+PLATES: list[dict] = [
+    {
+        "id": "cover-front",
+        "pages": "cover-front",
+        "form": "COVER",
+        "filename": "art-cover-front.png",
+        "size": "square_hd",
+        "type_zone": "upper/mid cream for title type",
+        "script_text": "The Night I Met Santa · Jack Farrell (cover type later)",
+        "seed": 910101,
+        "scene": (
+            f"Square hardcover FRONT COVER mood: quiet Christmas Eve house doorway at night, "
+            f"warm glow spilling from inside, decorated wreath, soft snow, cozy heirloom gift-book cover. "
+            f"A child in {BOY} peeking from doorway — Santa face must stay HIDDEN (back turned or only "
+            f"gloved hand / boot tip suggested). Soft open cream area for title typography. "
+            f"Calm, magical, not scary. Absolutely NO letters painted in the art."
+        ),
+    },
+    {
+        "id": "cover-back",
+        "pages": "cover-back",
+        "form": "COVER",
+        "filename": "art-cover-back.png",
+        "size": "square_hd",
+        "type_zone": "center/lower for blurb",
+        "script_text": "Back blurb + Illustrated edition designed by Jon Farrell · 2026",
+        "seed": 910102,
+        "scene": (
+            "Square hardcover BACK COVER: quiet snowy night path or soft living-room ember glow vignette, "
+            "gentle watercolor Christmas atmosphere, large calm open cream wash for back-cover blurb type. "
+            "No people faces required. Soft ornamental holly suggestion at edges only. No letters in art."
+        ),
+    },
+    {
+        "id": "P01-title",
+        "pages": "1",
+        "form": "SINGLE",
+        "filename": "art-P01-title.png",
+        "size": "square_hd",
+        "type_zone": "UPPER cream open wash",
+        "script_text": "The Night I Met Santa · Jack Farrell",
+        "seed": 910201,
+        "scene": (
+            "TITLE PAGE plate: cozy stone fireplace LEFT with stockings and soft fire, decorated Christmas "
+            "tree RIGHT with warm controlled lights and a few gifts, scenery LOWER on the page, generous "
+            "empty cream watercolor wash at TOP for title typography. Soft rug, quiet Christmas Eve room. "
+            "No people. No hard ceiling lines. No letters."
+        ),
+    },
+    {
+        "id": "P02-copyright",
+        "pages": "2",
+        "form": "SINGLE",
+        "filename": "art-P02-copyright-textplate.png",
+        "size": "square_hd",
+        "type_zone": "center (quiet type plate)",
+        "script_text": "First illustrated edition, 2026. / Written by Jack Farrell. / Book design by Jon Farrell.",
+        "seed": 910202,
+        "scene": (
+            "TEXT-ONLY storybook plate: soft cream watercolor paper with delicate painted vignette frame, "
+            "tiny holly and soft wash ornaments in corners only, large calm empty center for copyright type. "
+            "Almost blank heirloom paper, very quiet, no scene, no people, no furniture."
+        ),
+    },
+    {
+        "id": "P03-dedication",
+        "pages": "3",
+        "form": "SINGLE",
+        "filename": "art-P03-dedication.png",
+        "size": "square_hd",
+        "type_zone": "center / lower-center soft wash",
+        "script_text": "For my family, with love. — Jack Farrell",
+        "seed": 910203,
+        "scene": (
+            "Dedication plate: soft hearth embers / quiet fireplace vignette, very gentle and sparse, "
+            "warm glow, large calm open cream center for dedication typography. No people. Dreamy quiet."
+        ),
+    },
+    {
+        "id": "P04-about-text",
+        "pages": "4",
+        "form": "SINGLE",
+        "filename": "art-P04-about-textplate.png",
+        "size": "square_hd",
+        "type_zone": "full soft center for About body",
+        "script_text": "About This Story + Draft A body (BOOK-COPY-DRAFTS.md)",
+        "seed": 910204,
+        "scene": (
+            "LEFT matter page TEXT PLATE: soft cream watercolor framed paper, faint warm wash, "
+            "tiny pine sprigs at edges, large empty readable center for multi-paragraph About text. "
+            "No scene illustration in the middle. Quiet heirloom paper look."
+        ),
+    },
+    {
+        "id": "P05-about-art",
+        "pages": "5",
+        "form": "SINGLE",
+        "filename": "art-P05-about-vignette.png",
+        "size": "square_hd",
+        "type_zone": "minimal — supporting image page",
+        "script_text": "(little or no type — companion to About)",
+        "seed": 910205,
+        "scene": (
+            "RIGHT matter companion: quiet Christmas Eve vignette — snowy window, soft tree glow, "
+            "empty gift room hush, peaceful wonder. Soft open edges. No people. Room to breathe."
+        ),
+    },
+    {
+        "id": "S01-approach",
+        "pages": "6|7",
+        "form": "SPREAD",
+        "filename": "art-S01-approach-SPREAD.png",
+        "size": {"width": 1536, "height": 768},
+        "type_zone": "soft open cloud zones L and/or lower for poem stanza",
+        "script_text": (
+            "I searched and I peeked when I first heard the noise. "
+            "Something or someone was in with the toys. "
+            "I slithered and crawled for a peek of a glimpse. "
+            "It must be some fairies or holiday imps."
+        ),
+        "seed": 910301,
+        "scene": (
+            f"WIDE seamless SPREAD. {SPINE} "
+            f"LEFT third: {BOY} peeking/crawling in a deep shadowed Christmas Eve hallway. "
+            f"RIGHT third: glowing living-room doorway full of toys and tree light. "
+            f"CENTER band: empty hallway floor / soft cream wash only — no face. Magical hush."
+        ),
+    },
+    {
+        "id": "S02-threshold",
+        "pages": "8|9",
+        "form": "SPREAD",
+        "filename": "art-S02-threshold-SPREAD.png",
+        "size": {"width": 1536, "height": 768},
+        "type_zone": "open wash near door / lower for stanza",
+        "script_text": (
+            "I got up the nerve to go to the door, a door that was decorated, bolted and locked. "
+            "I didn't know it when I entered the room to surprise the amazement or even the shock. "
+            "Now I'm usually calm, not very loud, or even known to be a ranter. "
+            "But what do you say when you sneak up on Santa?"
+        ),
+        "seed": 910302,
+        "scene": (
+            f"WIDE seamless SPREAD. {SPINE} "
+            f"LEFT: decorated Christmas door and {BOY} at the threshold stepping in. "
+            f"RIGHT: warm living room with hint of red coat / gifts — Santa not fully revealed yet "
+            f"(back or glove only). CENTER: doorframe / empty threshold floor — no faces on the fold."
+        ),
+    },
+    {
+        "id": "S03-eyes-met",
+        "pages": "10|11",
+        "form": "SPREAD",
+        "filename": "art-S03-eyes-met-SPREAD.png",
+        "size": {"width": 1536, "height": 768},
+        "type_zone": "lower or side soft wash for stanza",
+        "script_text": (
+            "My jaw dropped when our eyes finally met. I knew right then, it was a moment I would never forget. "
+            "For there he was in all his splendor, brilliant white hair, red coat with suspenders."
+        ),
+        "seed": 910303,
+        "scene": (
+            f"WIDE seamless SPREAD. {SPINE} "
+            f"LEFT third: {BOY} jaw-dropped wonder, face fully on the left page area. "
+            f"RIGHT third: {SANTA} in all his splendor among gifts by the tree, face fully on the right. "
+            f"CENTER: fireplace / gift piles / soft cream — NO faces, NO heads in the middle. "
+            f"They meet eyes across the room. Warm glow, frozen wonder."
+        ),
+    },
+    {
+        "id": "S04-sit-here",
+        "pages": "12|13",
+        "form": "SPREAD",
+        "filename": "art-S04-sit-here-SPREAD.png",
+        "size": {"width": 1536, "height": 768},
+        "type_zone": "open among gifts / lower for dialogue stanza",
+        "script_text": (
+            "He was down on the floor between boxes, gifts and ribbons galore. "
+            "I couldn't move, I stayed very still. Finally he whispered, \"Sit over here. Have a moment to kill.\""
+        ),
+        "seed": 910304,
+        "scene": (
+            f"WIDE seamless SPREAD. {SPINE} "
+            f"LEFT: {BOY} standing still among ribbons, hesitant. "
+            f"RIGHT: {SANTA} sitting on the floor among wrapped gifts inviting the boy to sit. "
+            f"CENTER: boxes, ribbons, soft open cream — no faces on the gutter. Intimate quiet thrill."
+        ),
+    },
+    {
+        "id": "S05-chat",
+        "pages": "14|15",
+        "form": "SPREAD",
+        "filename": "art-S05-chat-SPREAD.png",
+        "size": {"width": 1536, "height": 768},
+        "type_zone": "side/lower open wash",
+        "script_text": (
+            "Oh, what a feeling, such a thrill. We chatted and laughed what seemed like an hour. "
+            "But with laughs, stories and chatter, who cares, it didn't much matter."
+        ),
+        "seed": 910305,
+        "scene": (
+            f"WIDE seamless SPREAD. {SPINE} "
+            f"LEFT: {BOY} sitting and laughing softly. RIGHT: {SANTA} chatting warmly among gifts. "
+            f"CENTER: soft gift pile / rug / cream wash between them — faces stay off the fold. Joyful intimacy."
+        ),
+    },
+    {
+        "id": "S06-cocoa",
+        "pages": "16|17",
+        "form": "SPREAD",
+        "filename": "art-S06-cocoa-SPREAD.png",
+        "size": {"width": 1536, "height": 768},
+        "type_zone": "open near cups / lower",
+        "script_text": (
+            "He spoke of many places, people and things. From toys to music to bright diamond rings. "
+            "Coats made of wool, ties made of silk. He even revealed his passion for hot cocoa instead of cold milk."
+        ),
+        "seed": 910306,
+        "scene": (
+            f"WIDE seamless SPREAD. {SPINE} "
+            f"LEFT: {BOY} with a steaming cocoa mug. RIGHT: {SANTA} with cocoa, storytelling among toys. "
+            f"CENTER: cocoa steam, tray, soft cream — no faces in middle. Warm rich color."
+        ),
+    },
+    {
+        "id": "S07-proof-camera",
+        "pages": "18|19",
+        "form": "SPREAD",
+        "filename": "art-S07-proof-camera-SPREAD.png",
+        "size": {"width": 1536, "height": 768},
+        "type_zone": "soft bands between three moments for stanza",
+        "script_text": (
+            "When I heard all the noise up in the roof, it hit me right then. I needed some proof. "
+            "Where can I go? What can I get? I know, a photo. That's my best bet."
+        ),
+        "seed": 910307,
+        "scene": (
+            f"WIDE seamless SPREAD designed as THREE soft watercolor story beats flowing left-to-right "
+            f"(soft vignette blooms that merge — NOT hard comic panels). {SPINE} "
+            f"LEFT vignette: {BOY} looking UP toward roof noise (face on far left). "
+            f"CENTER vignette: soft empty cream / living-room air only — idea of proof, NO face here. "
+            f"RIGHT vignette: {BOY} excitedly grabbing a {CAMERA} from a shelf or table (face and camera "
+            f"on the RIGHT third only). Continuous Christmas living-room world. Soft open cream between "
+            f"beats for poem text. Clear CAMERA beat — photo is the plan."
+        ),
+    },
+    {
+        "id": "S08-gone-camera",
+        "pages": "20|21",
+        "form": "SPREAD",
+        "filename": "art-S08-gone-camera-SPREAD.png",
+        "size": {"width": 1536, "height": 768},
+        "type_zone": "open empty floor zone for stanza",
+        "script_text": (
+            "I flew out the door and was back in a flash. But oh no, the hour had already passed. "
+            "And from the noise on top of the roof I realized that I was still without proof."
+        ),
+        "seed": 910308,
+        "scene": (
+            f"WIDE seamless SPREAD. {SPINE} "
+            f"LEFT third: {BOY} rushing back through the doorway holding the {CAMERA}, ready for a photo. "
+            f"RIGHT third: empty place where Santa sat — gifts remain, Santa GONE; soft tree glow / "
+            f"hint of roof noise outside. CENTER: empty floor / soft cream — emotional void, no face. "
+            f"He still has the camera but no proof. Lonely wonder, not horror."
+        ),
+    },
+    {
+        "id": "S09-search",
+        "pages": "22|23",
+        "form": "SPREAD",
+        "filename": "art-S09-search-SPREAD.png",
+        "size": {"width": 1536, "height": 768},
+        "type_zone": "open near chair / flue for stanza",
+        "script_text": (
+            "I turned around slowly. I needed to know, did he leave me a hint, a tip or a clue? "
+            "Did he forget his hat or maybe a shoe? Now what am I supposed to do? "
+            "I know, I'll look up the flue. I dashed to the flue but nothing was there. "
+            "I looked over here and I looked over there. When I saw something on top of the chair, "
+            "my proof I thought was just laying right there."
+        ),
+        "seed": 910309,
+        "scene": (
+            f"WIDE seamless SPREAD. {SPINE} "
+            f"LEFT: {BOY} peeking up the fireplace flue (camera set aside on a side table — still visible). "
+            f"RIGHT: same boy noticing something resting on a chair across the room. "
+            f"CENTER: fireplace / empty floor / cream — no face on fold. Soft detective wonder."
+        ),
+    },
+    {
+        "id": "S10-note",
+        "pages": "24|25",
+        "form": "SPREAD",
+        "filename": "art-S10-note-SPREAD.png",
+        "size": {"width": 1536, "height": 768},
+        "type_zone": "open around note / lower for stanza",
+        "script_text": (
+            "It wasn't a shoe, hat or a coat. I couldn't believe it, the old guy. He left me a note. "
+            "I fell on the chair and started to stare. What it said, I didn't care. "
+            "I tore open the note that Santa had wrote. The words jumped out as to get my attention. "
+            "And there was one thing he told me to mention."
+        ),
+        "seed": 910310,
+        "scene": (
+            f"WIDE seamless SPREAD. {SPINE} "
+            f"LEFT/near-left: {BOY} on a chair discovering a folded handwritten note "
+            f"(paper blank — NO readable letters/glyphs painted). "
+            f"RIGHT: warm lamp/tree glow, empty chair arm or soft room. "
+            f"CENTER: soft cream / chair fabric — face stays off the gutter. Emotional discovery."
+        ),
+    },
+    {
+        "id": "S11-wish",
+        "pages": "26|27",
+        "form": "SPREAD",
+        "filename": "art-S11-wish-SPREAD.png",
+        "size": {"width": 1536, "height": 768},
+        "type_zone": "generous open wash for list stanza",
+        "script_text": (
+            "More than cakes, cocoa or milk. Shirts made of cotton or ties made of silk. "
+            "Hats, stockings or a new coat. What he wants is simply a note."
+        ),
+        "seed": 910311,
+        "scene": (
+            f"WIDE seamless SPREAD. {SPINE} "
+            f"LEFT: soft still-life suggestions of cocoa, stockings, coat (no faces). "
+            f"RIGHT: {BOY} holding a blank note with quiet understanding (face on right only). "
+            f"CENTER: generous open cream wash for poem list. Tender dreamy montage in one room."
+        ),
+    },
+    {
+        "id": "S12-blessing",
+        "pages": "28|29",
+        "form": "SPREAD",
+        "filename": "art-S12-blessing-SPREAD.png",
+        "size": {"width": 1536, "height": 768},
+        "type_zone": "open sky/snow wash for closing stanza",
+        "script_text": (
+            "He said I've had enough eggnogs, cider and soups. My belt's getting harder to fit in the loops. "
+            "And one last thing, please do me a favor. Always love Christmas, act like a kid and pray to your Savior. "
+            "God bless."
+        ),
+        "seed": 910312,
+        "scene": (
+            f"WIDE seamless SPREAD. {SPINE} "
+            f"LEFT: {BOY} feeling peace by a warm Christmas window (face on left). "
+            f"RIGHT: soft snowy night outside, distant hint of sleigh/roof magic without hard details. "
+            f"CENTER: soft snow/cream sky wash — no face. Hopeful gentle closing blessing."
+        ),
+    },
+    {
+        "id": "P30-thanks-text",
+        "pages": "30",
+        "form": "SINGLE",
+        "filename": "art-P30-thanks-textplate.png",
+        "size": "square_hd",
+        "type_zone": "center for Thank You body",
+        "script_text": "Thank You (BOOK-COPY-DRAFTS.md)",
+        "seed": 910401,
+        "scene": (
+            "LEFT back-matter TEXT PLATE: soft cream watercolor framed paper, faint holly wash, "
+            "large empty center for Thank You typography. Quiet heirloom paper. No busy scene."
+        ),
+    },
+    {
+        "id": "P31-portrait",
+        "pages": "31",
+        "form": "SINGLE",
+        "filename": "art-P31-jack-portrait.png",
+        "size": "square_hd",
+        "type_zone": "minimal caption space lower if needed",
+        "script_text": "(Jack / Dad portrait page — companion to Thank You)",
+        "seed": 910402,
+        "scene": (
+            "RIGHT back-matter: warm storybook portrait of a kind middle-aged father/author in a cozy armchair "
+            "near a softly lit Christmas tree, gentle smile, heirloom painted gouache portrait mood. "
+            "Soft watercolor frame. Calm, loving, gift-book feel. No letters."
+        ),
+    },
+    {
+        "id": "P32-close",
+        "pages": "32",
+        "form": "SINGLE",
+        "filename": "art-P32-quiet-close.png",
+        "size": "square_hd",
+        "type_zone": "center for Merry Christmas / quiet close",
+        "script_text": "Quiet close / Merry Christmas (soft type later)",
+        "seed": 910403,
+        "scene": (
+            "Final quiet close plate: soft Christmas ornament / candle / tiny tree vignette on cream paper, "
+            "lots of calm open wash for a short Merry Christmas line. Peaceful ending. No people. No letters."
+        ),
+    },
+]
+
+
+def fal_headers(json_body: bool = False) -> dict:
+    h = {"Authorization": f"Key {KEY}"}
+    if json_body:
+        h["Content-Type"] = "application/json"
+    return h
+
+
+def build_prompt(plate: dict) -> str:
+    parts = [plate["scene"], "", FRAME, "", D2, "", STYLE_TAIL]
+    if plate["form"] == "SPREAD":
+        parts.insert(1, "")
+        parts.insert(2, SPINE)
+    return "\n".join(parts)
+
+
+def generate(plate: dict) -> dict:
+    unit_dir = OUT / plate["id"]
+    unit_dir.mkdir(parents=True, exist_ok=True)
+    out_file = unit_dir / plate["filename"]
+    recipe_file = unit_dir / "RECIPE.md"
+    prompt = build_prompt(plate)
+
+    if out_file.is_file() and out_file.stat().st_size > 10_000:
+        print(f"SKIP existing {plate['id']}")
+        return {"id": plate["id"], "path": str(out_file), "skipped": True}
+
+    body = {
+        "prompt": prompt,
+        "num_images": 1,
+        "output_format": "png",
+        "enable_safety_checker": True,
+        "enable_prompt_expansion": False,
+        "negative_prompt": NEG[:500],
+        "seed": plate["seed"],
+        "image_size": plate["size"],
+    }
+    print(f"GEN {plate['id']} …")
+    req = urllib.request.Request(
+        f"https://fal.run/{ENDPOINT}",
+        data=json.dumps(body).encode(),
+        headers=fal_headers(True),
+        method="POST",
+    )
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                result = json.loads(r.read().decode())
+            break
+        except urllib.error.HTTPError as e:
+            err = e.read().decode(errors="replace")[:800]
+            print(f"  HTTP {e.code} attempt {attempt+1}: {err}")
+            if attempt == 2:
+                raise
+            time.sleep(5)
+        except Exception as e:
+            print(f"  err attempt {attempt+1}: {e}")
+            if attempt == 2:
+                raise
+            time.sleep(5)
+
+    imgs = result.get("images") or []
+    if not imgs:
+        raise RuntimeError(f"no images for {plate['id']}: {json.dumps(result)[:1200]}")
+    url = imgs[0]["url"] if isinstance(imgs[0], dict) else imgs[0]
+    with urllib.request.urlopen(url) as r:
+        out_file.write_bytes(r.read())
+
+    used_seed = result.get("seed", plate["seed"])
+    size_s = plate["size"] if isinstance(plate["size"], str) else f"{plate['size']['width']}x{plate['size']['height']}"
+    role = "spread" if plate["form"] == "SPREAD" else "single" if plate["form"] != "COVER" else "cover"
+    recipe = f"""# RECIPE — {BATCH} / {plate['id']}
+
+| Field | Value |
+|-------|--------|
+| **name** | {plate['id']} |
+| **unit** | {BATCH}/{plate['id']} |
+| **book page** | {plate['pages']} · {plate['form']} |
+| **page role** | `{role}` |
+| **spread side** | `{'wide-master' if plate['form']=='SPREAD' else 'n/a'}` |
+| **version** | v1 |
+| **date** | {DATE} |
+| **lane** | A2 dial (Qwen Image 2) |
+| **service** | fal.ai |
+| **model** | `{ENDPOINT}` |
+| **settings** | seed {used_seed} · size {size_s} · png · prompt_expansion off |
+| **FRAME** | ON |
+| **concept** | Full-book dial test — {plate['form']} · spine-safe · camera beats |
+| **changes** | Qwen alt vs Klein v1; ignore prior approved locks |
+| **size** | {size_s} |
+| **seed** | **{used_seed}** |
+| **request_id** | n/a |
+| **output** | `{plate['filename']}` *(one file only)* |
+| **script_text** | {plate['script_text']} |
+| **type_zone** | {plate['type_zone']} |
+| **verdict** | test-run |
+| **status** | working |
+| **promoted_to** | — |
+
+## Character / style refs used
+- boy / santa / camera: prompt continuity only (no approved locks this test)
+- style: Dial D2 language + FRAME ON + spine-safe + Santore-adjacent master
+
+## Prompt
+
+{prompt}
+
+## Negative / constraints
+- {NEG}
+
+## Gotchas
+- Test dial only — not print finals (Pass B Gemini later)
+- Faces / key subjects must stay off center fold on spreads
+
+## Notes
+- Soft open washes reserved for Photoshop text-cloud overlays
+- Camera / proof beats explicit on S07–S08
+
+## Related
+- Master map: `../TEXT-IMAGE-MAP.md`
+- Compare: `Media/generated/new-test-book-v1/`
+"""
+    recipe_file.write_text(recipe, encoding="utf-8")
+    print(f"  wrote {out_file.name} ({out_file.stat().st_size} bytes)")
+    return {"id": plate["id"], "path": str(out_file), "skipped": False, "seed": used_seed}
+
+
+def write_maps(results: list[dict]) -> None:
+    status = {r["id"]: ("skipped" if r.get("skipped") else "generated") for r in results}
+    lines = [
+        f"# TEXT ↔ IMAGE MAP — {BATCH}",
+        "",
+        f"**Date:** {DATE}  ",
+        "**Lane:** A2 Qwen Image 2 + Dial D2 + FRAME ON (fal.ai)  ",
+        "**Interior count:** **32 pages** (+ cover front/back)  ",
+        "**Purpose:** Full cover-to-cover dial imagination (Qwen alt vs Klein v1).  ",
+        "**Extras vs v1:** spine-safe faces · camera/proof beats on S07–S08.  ",
+        "**Roadmap:** `.cursor/docs/BOOK-PAGE-WORKFLOW.md` (trimmed to 32 for this test).",
+        "",
+        "## How to read",
+        "",
+        "- **Art file** = one PNG per unit (no duplicates).",
+        "- **Script / copy** = what live InDesign type should carry (NOT painted into the PNG).",
+        "- **Type zone** = where soft text-cloud / typography should sit in Photoshop / InDesign.",
+        "- **Spine rule** = faces and key subjects stay off the center fold band on spreads.",
+        "",
+        "## Cover",
+        "",
+        "| Piece | File | Copy / type |",
+        "|-------|------|-------------|",
+        "| cover-front | `cover-front/art-cover-front.png` | The Night I Met Santa · Jack Farrell (cover type later) |",
+        "| cover-back | `cover-back/art-cover-back.png` | Back blurb + Illustrated edition designed by Jon Farrell · 2026 |",
+        "",
+        "## Interior (pages 1–32)",
+        "",
+        "| Pages | Form | Unit | Art file | Script / copy (for live type) | Type zone |",
+        "|------:|------|------|----------|-------------------------------|-----------|",
+    ]
+    for p in PLATES:
+        if p["form"] == "COVER":
+            continue
+        lines.append(
+            f"| {p['pages']} | {p['form']} | `{p['id']}` | `{p['id']}/{p['filename']}` | "
+            f"{p['script_text']} | {p['type_zone']} |"
+        )
+    lines += [
+        "",
+        "## Spread-first story spine",
+        "",
+        "S01 approach → S02 threshold → S03 eyes-met → S04 sit-here → S05 chat → S06 cocoa → "
+        "**S07 proof + camera** → **S08 gone (with camera)** → S09 search → S10 note → S11 wish → S12 blessing.",
+        "",
+        "## Camera / proof beats",
+        "",
+        "| Unit | Beat |",
+        "|------|------|",
+        "| `S07-proof-camera` | Roof noise → need proof → grab vintage camera |",
+        "| `S08-gone-camera` | Rush back with camera → Santa gone → still without proof |",
+        "| `S09-search` | Camera set aside; search flue → spot clue on chair |",
+        "",
+        "## Matter pattern",
+        "",
+        "- Text-heavy lefts use **watercolor text plates** (P02, P04, P30).",
+        "- Supporting rights carry vignette / portrait (P05, P31).",
+        "- Poem spreads leave **open cream** for Jon’s custom Photoshop text-cloud.",
+        "",
+        "## Generation results",
+        "",
+        "| Unit | Status |",
+        "|------|--------|",
+    ]
+    for p in PLATES:
+        lines.append(f"| `{p['id']}` | {status.get(p['id'], 'pending')} |")
+    lines += [
+        "",
+        "## Cost / next",
+        "",
+        "- Dial alt (~3.5¢/img). Promote winners → Lane **B** Gemini finals @ print px.",
+        "- Compare side-by-side with `../new-test-book-v1/` (Klein).",
+        "- Adjust map in BOOK-PAGE-WORKFLOW after Jon reviews flow.",
+        "",
+    ]
+    (OUT / "TEXT-IMAGE-MAP.md").write_text("\n".join(lines), encoding="utf-8")
+
+    idx = [
+        f"# INDEX — {BATCH}",
+        "",
+        "Full Qwen Image 2 dial test book. See **TEXT-IMAGE-MAP.md** for poem/copy pairing.",
+        "",
+        "| # | Unit | File |",
+        "|--:|------|------|",
+    ]
+    for i, p in enumerate(PLATES, 1):
+        idx.append(f"| {i} | `{p['id']}` | `{p['id']}/{p['filename']}` |")
+    (OUT / "INDEX.md").write_text("\n".join(idx) + "\n", encoding="utf-8")
+
+    readme = f"""# {BATCH}
+
+Cover-to-cover **Qwen Image 2** dial test (fal.ai) · FRAME ON · Dial D2 · 32 interior pages + covers.
+
+Spine-safe spreads + explicit **camera / proof** beats (S07–S08). Ignores prior approved locks.
+
+| Doc | Role |
+|-----|------|
+| `TEXT-IMAGE-MAP.md` | Which poem/copy goes with which image + type zones |
+| `INDEX.md` | File list |
+| `*/RECIPE.md` | Per-plate prompt/seed |
+
+**Not finals.** Compare with `../new-test-book-v1/` (Klein). Next: Jon review → Pass B Gemini for keepers.
+
+Resume one unit: delete that folder’s `art-*.png`, then re-run:
+`python scripts\\_scratch\\_gen_new_test_book_v2.py`
+"""
+    (OUT / "README.md").write_text(readme, encoding="utf-8")
+    print(f"maps → {OUT / 'TEXT-IMAGE-MAP.md'}")
+
+
+def main() -> None:
+    OUT.mkdir(parents=True, exist_ok=True)
+    results = []
+    for plate in PLATES:
+        results.append(generate(plate))
+    write_maps(results)
+    print(f"DONE — {len(results)} plates · map → {OUT / 'TEXT-IMAGE-MAP.md'}")
+
+
+if __name__ == "__main__":
+    main()

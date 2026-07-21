@@ -18,13 +18,13 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-20 — **BOOK-PAGE-WORKFLOW LOCKED** (36 pages · Jon confirm). Light cleanup done. **Next:** pick unit S1 / S2 / S4 or P01 / P05.
+2026-07-21 (late) — Full-book **dial imagination** runs: Klein v1 · Qwen v2 · Qwen stylized v3 (G0 + 07-qwen style-ref). Jon comparing tomorrow. **Next:** pick preferred lane/pages → continue testing / Pass B keepers.
 
 ## Where to continue
-1. **Confirm** `.cursor/docs/BOOK-PAGE-WORKFLOW.md` (page count, L/R poem splits, About + Jack pages)
-2. Run next unit via **`PAGE-BUILD-WORKFLOW.md`** (recipe + PSD tab hygiene)
-3. Generate story art with G0 refs when boy/Santa appear
-4. Hide/delete MOCK-REF when pages approved in full book doc
+1. **Compare** `Media/generated/new-test-book-v1` (Klein) · `v2` (Qwen) · `v3` (Qwen stylized + G0 refs) — use each folder’s `TEXT-IMAGE-MAP.md`
+2. Decide which dial lane wins for which beats; note spine-safe + camera beats that worked
+3. Resume page-by-page via **`PAGE-BUILD-WORKFLOW.md`** (PSD + MOCK-TYPE → InDesign) for keepers
+4. Optional: targeted regen (e.g. S07 camera louder, cover letter-bake strip) before Gemini finals
 5. Optional: Lulu `.joboptions` + smoke PDF → `Output/interiors/`
 
 ## Reference (new this session)
@@ -67,6 +67,8 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
 | Jack portrait | `Media/approved/characters/jack-farrell-portrait.png` |
 | Eyes-met | `Media/approved/spreads/spread-eyes-met.png` |
 | Failed Klein mocks | `Media/generated/test-book-v1/` · `test-book-v2/` (gitignored) |
+| Full dial books (2026-07-21) | `Media/generated/new-test-book-v1` · `v2` · `v3` (gitignored; maps inside) |
+| Style-ref (Qwen peek) | `Media/approved/style-refs/pages/07-qwen-image-2.png` |
 | InDesign Bridge plugin | `tools/layout-mcp/indesign-uxp-server/plugin/manifest.json` |
 | **Photoshop working** | **`Xtraz/Adobe-Photoshop/`** (default agent save folder) |
 | Photoshop UXP setup | `tools/layout-mcp/PHOTOSHOP-SETUP.md` |
@@ -107,6 +109,15 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
 - **DTP (2026-07-19 FINAL):** Affinity MCP `:6767` + InDesign UXP `:19300/:19301` **IN USE**. Cold flow: CC Desktop signed in (**Jon confirms**) → agent launches UDT+InDesign+bridge → **Jon clicks Load & Watch** (agent cannot) → MCP. Web adobe.com login not enough. Keep CC installed; Startup disable OK.
 - **Photoshop MCP (2026-07-20 LIVE):** adobepy UXP broker `:47391` + dcc-mcp-photoshop `:8766/mcp` — **not** COM. Prefs: Enable Developer Mode only. Doc: `tools/layout-mcp/PHOTOSHOP-SETUP.md`. COM MCPs (loonghao/alisaitteke) rejected on this PC (`0x80080005`). **Default save folder:** `Xtraz/Adobe-Photoshop/`
 - **Creative Cloud:** keep Desktop app installed (licensing); OK to disable Startup — do **not** uninstall while keeping InDesign/UDT
+
+## Session note 2026-07-21 (late) — full-book dial tests v1–v3
+
+- **v1** Klein 9B T2I → `new-test-book-v1` (32 interior + covers; TEXT-IMAGE-MAP)
+- **v2** Qwen T2I → `new-test-book-v2` (spine-safe + camera/proof beats S07–S08)
+- **v3** Qwen edit+T2I → `new-test-book-v3` (atmosphere `07-qwen-image-2` · boy/santa G0 refs · less photoreal)
+- Scripts: `scripts/_scratch/_gen_new_test_book_v{1,2,3}.py` (resumable)
+- **Not finals** — dial only. Jon reviewing tomorrow before Pass B / page builds.
+- Known dial quirks: occasional baked letters on covers; S07 camera beat sometimes soft
 
 ## Session note 2026-07-21 — P01 title art lock (v22)
 
