@@ -16,7 +16,8 @@ When you discover something during a session that could benefit future projects,
 
 | # | What | Type | Project | Date | Status |
 |---|------|------|---------|------|--------|
-| 8 | Picture-book **PAGE-BUILD** master (folder skeleton Media/Images/Xtraz/Output, mocks+RECIPE, PS↔ID parity, Klein Dial D2, MOCK-TYPE roles) — promote from TNIMS `PAGE-BUILD-WORKFLOW.md` + `BOOK-PLAYBOOK.md` into shared docs/templates **after** 2–3 pages dialed | docs/templates | The-Night-I-Met-Santa | 2026-07-20 | **pending — wait until dialed** |
+| 9 | Picture-book **full RECIPE template** + provider/lane priority (fal first · Klein 9B dial → Qwen → 4B light → Gemini finals · Dial D2 vs master · FRAME toggle · don’t mid-paint-crop vignettes) — promote from TNIMS `_RECIPE-TEMPLATE.md` + `IMAGE-LANE-PROMPTS.md` + `BOOK-PLAYBOOK.md` into shared IMAGE-WORKFLOW / book skeleton | docs/templates | The-Night-I-Met-Santa | 2026-07-21 | **pending — after 2–3 more pages** |
+| 8 | Picture-book **PAGE-BUILD** master (folder skeleton Media/Images/Xtraz/Output, mocks+RECIPE, PS↔ID parity, Klein Dial D2, MOCK-TYPE roles) — promote from TNIMS `PAGE-BUILD-WORKFLOW.md` + `BOOK-PLAYBOOK.md` into shared docs/templates **after** 2–3 pages dialed | docs/templates | The-Night-I-Met-Santa | 2026-07-20 | **pending — wait until dialed** (refresh lanes 2026-07-21) |
 | 3 | Experience Engine layout doc: monolith pages may need inline-style lock when Tailwind v4 layout refactors fail repeatedly; pair with project-local layout skill | docs/skill | DigitalStudioz | 2026-07-03 | pending |
 
 ## Completed

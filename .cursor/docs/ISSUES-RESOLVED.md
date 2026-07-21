@@ -11,6 +11,41 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-07-21 — gitignore `Pages/` hid `Media/approved/pages/` keepers
+
+| | |
+|---|---|
+| **Symptom** | `Media/approved/pages/p01-title.png` (+ recipes) never showed in `git status` after promote |
+| **Root cause** | `.gitignore` had bare `Pages/` which matches **any** directory named Pages, including `Media/approved/pages/` |
+| **Resolution** | Change to **`/Pages/`** (repo-root deprecated folder only). Also track `Media/generated/mocks/**/*.md` (RECIPE templates) while still ignoring mock binaries |
+| **Verify** | `git check-ignore` no longer hits `Media/approved/pages/p01-title.png`; RECIPE.md under mocks is visible to git |
+
+---
+
+## 2026-07-21 — P01 v24 centered scenery: hard straight top (no watercolor fade)
+
+| | |
+|---|---|
+| **Symptom** | Centered fireplace+tree title mock (`P01-title/v24`) had soft watercolor bleed on left/right/bottom, but a **hard horizontal cut** across the top of the chimney / wall wash — looked cropped, not framed |
+| **Root cause** | (1) To get scenery in the **middle** with open cream **above and below**, Pillow cropped through **mid-paint** on v22 and scaled (~56% height). That sheared off the soft vignette crown. (2) v22’s own top wash is already flatter than its bottom fringe. (3) Straight alpha ramps still read as a soft **rectangle**. (4) Aggressive scallop/graft fixes looked jagged or mirrored floor onto the crown. (5) fal Gemini “soften top only” edits **ghosted/duplicated** strips or **re-pinned** the scene low full-bleed |
+| **Resolution** | Prefer **layout that keeps the native soft crown** (e.g. **v22** — scenery lower, text wash on top) when soft frame on all four sides matters most. For centered tests: composite from full soft vignette (don’t cut mid-paint) **or** accept a gentle top dissolve on `_base-hard-top.png` and document the tradeoff in `v24/RECIPE.md`. Do **not** flip bottom RGB onto the top; do **not** rely on fal edge-only edits for this. One file per `vNN/`: `art-P01-title-gemini-fal.png` + RECIPE |
+| **Verify** | Eye-check top vs bottom fringe · equal cream margins if centered · no ghost strip above vignette · Jon chooses v22 vs v23 vs v24 for promote |
+
+**Playbook rule:** Never crop through dense paint to “recenter” a watercolor vignette if you need the soft crown — reposition/scale the **whole** soft vignette, or pick a text-zone layout (top vs bottom vs both) that matches how the plate was painted.
+
+---
+
+## 2026-07-20 — Cover title logo blotchy / jagged after rembg + AI re-type
+
+| | |
+|---|---|
+| **Symptom** | `cover-title-logo.png` had white blotch halos, muddy gold, jagged letter edges; “Written By” faint or wrong color |
+| **Root cause** | (1) AI re-drawing the title (Gemini recreate) reintroduces jagged raster type. (2) `fal-ai/imageutils/rembg` on gold glow / light credit leaves white fringe and can eat pale text. (3) Chroma-green plates leave green cast if keyed badly. (4) Duplicate saves (`art.png` + dial name) wasted confusion earlier in P01 mocks |
+| **Resolution** | Use a **clean locked raster** as source (`Images/styles1/cleanLogo.png`) → fal **`clarity-upscaler`** 2× (high resemblance) → Pillow **navy-sky → transparent** (no rembg) → crop. One file only: `Media/approved/covers/cover-title-logo.png`. Prefer **live Cinzel** in InDesign for interior titles when possible |
+| **Verify** | Jon: “looks much better” (2026-07-20) · RGBA · ~3909×959 · recipe `cover-title-logo.recipe.md` |
+
+---
+
 ## 2026-07-20 — InDesign shows empty frame / red + but no title text (P01)
 
 | | |
@@ -82,7 +117,7 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 ## Playbook — Page build loop (dialed 2026-07-20)
 
 **Canonical doc:** `.cursor/docs/PAGE-BUILD-WORKFLOW.md`  
-**Mocks home:** `Media/generated/mocks/{unit}/vNN/` + mandatory **`RECIPE.md`** (prompt · service · model · refs · verdict)  
+**Mocks home:** `Media/generated/mocks/{unit}/vNN/` + mandatory **full `RECIPE.md`** (template `_RECIPE-TEMPLATE.md` — prompt · service · model · FRAME · refs · script_text · type_zone · verdict)  
 **Scoreboard:** `Media/generated/mocks/_INDEX/README.md`
 
 ### Loop (short)
@@ -131,9 +166,11 @@ Art + exports: **seamless**. Orange FOLD guide = screen only. Klein/Banana promp
 | ID empty box + red `+` | Overset / orphan `create_text_frame` | `page.textFrames.add` on Type · full frame · check `overflows` | Jon sees live title |
 | PS look ≠ ID | Wrong pixels, scaled place, or MOCK≠live size | Lock §1b · place full-bleed · match pt by role · **PS-first** | Side-by-side 100% |
 | First PSD/INDD hang or A4 | Adobe modal / Untitled wrong size | **Jon Save As** once → **ready** → agent edits | Path + 8.5² + bleed 0.125 |
-| Can’t recreate a liked mock | Prompt/model not recorded | Every `vNN` gets **RECIPE.md** + D2 vs master | Open recipe next to art.png |
+| Can’t recreate a liked mock | Prompt/model not recorded | Every `vNN` gets **full RECIPE** (`_RECIPE-TEMPLATE.md`) + D2 vs master | Open recipe next to art |
+| Thin RECIPE (no Prompt) | Shortcut after dial | Fill complete template before showing Jon; backfill locks from scratch scripts | Prompt section present |
 | Character drift | Missing G0 refs on gen | Attach boy/santa locks every boy/Santa call | Compare to G0 side-by-side |
 | Fake spine in spread art | Model drew mockup fold | Negatives + hide orange fold before export | No center line on plate |
+| Centered vignette hard top cut | Mid-paint crop sheared soft crown | Don’t crop mid-paint; keep native crown (v22-style) or gentle dissolve + RECIPE tradeoff; skip fal edge-only | Top fringe ≈ sides/bottom · no ghost strip |
 
 ---
 

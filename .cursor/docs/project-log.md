@@ -2,6 +2,7 @@
 
 | Date | Note |
 |------|------|
+| 2026-07-21 | **Docs harvest + lock:** P01 title **v22** provisional (`pages/p01-title.png`). Full **RECIPE template** locked. Image lanes: fal first · OR second · Klein **9B** dial → Qwen alt → 4B light → Gemini finals. Hard-top vignette crop logged. BOOK-PLAYBOOK / BOOK-PAGE / PAGE-BUILD / IMAGE-LANE synced. Mem0/vault/Mnemosyne + git push + full backup. |
 | 2026-07-20 | **Docs harvest:** P01 type parity + overset fixes · PS-first · Photoshop-Layer-Export skill · Pugicorn flow affirm (no map change) · Tony Google OAuth email + aliases. Mem0/vault/Mnemosyne synced. |
 | 2026-07-20 | **P01 dial + fix log:** first-Save As · PS↔ID type parity · PS API 300ppi quirk · ID overset/orphan frame fixed (Jon sees title) · PS-first locked. Cards in `ISSUES-RESOLVED.md`. |
 | 2026-07-20 | Google dual OAuth fleet (default jonbeatz; jonf822 ask-only). BOOK-PAGE-WORKFLOW + PS MCP dialed. Pointer `.cursor/docs/GOOGLE-WORKSPACE.md`. |

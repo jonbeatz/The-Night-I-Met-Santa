@@ -73,8 +73,10 @@ style-refs/
 | **Santa G0 LOCKED** | `characters/santa-G0.png` | santa-solo-C | 2026-07-15 |
 | **Eyes-met spread LOCKED** | `spreads/spread-eyes-met.png` | eyes-met-SPREAD-v3B | 2026-07-15 |
 | **Front cover LOCKED** | `covers/cover-front.png` | Doorway peek + oatmeal holly PJs (beige-v2) · glove/bat Easter eggs | 2026-07-15 |
+| **Cover title logo** | `covers/cover-title-logo.png` | Clean Cinzel path · clarity-upscaler · navy→alpha (no rembg) | 2026-07-20 |
+| **P01 title art LOCKED (provisional)** | `pages/p01-title.png` | mocks `P01-title/v22` · simpler · scenery lower · top cream · FRAME ON | **2026-07-21** |
 | Back cover | *(pending)* | Pick companion from `style-refs/back/` | — |
-| Pages | *(empty)* | Promote per PAGE-PROMPT-BIBLE beat | — |
+| Pages | *(P01 locked; rest empty)* | Promote per PAGE-PROMPT-BIBLE beat | — |
 | Spreads | *(empty)* | Promote when one wide master wins | — |
 
 ## Inventory — Tier A moodboard (highlights)
@@ -113,7 +115,7 @@ Counts as of **2026-07-15** (~50+ files). Full browse in Explorer; table below i
 | `pages/p01-title` · `p03-copyright` · `p31` · `p32` | Front/back matter art |
 
 **Full audit:** `.cursor/docs/BEAT-GAP-AUDIT.md`  
-**Still thin / need dial or finals:** Beats **3, 5, 9, 10, 14** (MISSING) · **6, 8** (THIN). Prefer Klein 4B dial → Banana `/edit` finals with style-refs.
+**Still thin / need dial or finals:** Beats **3, 5, 9, 10, 14** (MISSING) · **6, 8** (THIN). Prefer **Klein 9B** dial → Qwen alt if needed → Gemini/Banana `/edit` finals with style-refs.
 
 ### Model-lane evidence (also in pages/)
 

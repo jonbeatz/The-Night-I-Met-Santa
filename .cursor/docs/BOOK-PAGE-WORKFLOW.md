@@ -21,7 +21,9 @@
 | **Type** | Live **Cormorant** in InDesign — **no poem text baked into art** · poem MOCK in PS = **20/26** so preview matches |
 | **Image size** | Page **2625²** · spread **5250×2625** — place full-bleed in ID (no habitual re-scale). See `PAGE-BUILD-WORKFLOW.md` §1b |
 | **Spreads** | **No fake middle gutter/spine line** in art — seamless scene; orange fold = PSD guide only |
-| **Klein dial** | Lane A = Klein 4B + **Dial D2** append only (`IMAGE-LANE-PROMPTS.md`) |
+| **Klein dial** | Lane **A1** = Klein **9B** + **Dial D2** (`IMAGE-LANE-PROMPTS.md`). Alt **A2** = Qwen. Light **A3** = Klein 4B (hi-res/low-detail only). Finals **B** = Gemini/Banana master |
+| **Providers** | **fal.ai first** · OpenRouter second (Gemini / Klein 4B backup) |
+| **Recipes** | Every mock `vNN/` = **full RECIPE.md** (`Media/generated/mocks/_RECIPE-TEMPLATE.md`) — Prompt mandatory |
 | **Build order** | **Sequential** P01 → P02 → P03 → 4\|5 → S1…S12 → BM (Jon 2026-07-20) |
 | **Watermarks** | Flag on finals; Jon removes in Photoshop before print promote |
 | **Prototype caveat** | Current `eyes-met-prototype-v1.indd` page numbers are **mock layout**, not this final book map |
@@ -50,7 +52,7 @@
 | Pages | Form | Unit | Title / role | Art status |
 |------:|------|------|--------------|------------|
 | — | COVER | Cover wrap | Front / spine / back (Lulu template later) | Front **LOCKED** beige-v2 |
-| 1 | SINGLE | FM | Title | Need title treatment |
+| 1 | SINGLE | FM | Title | **LOCKED provisional** `pages/p01-title.png` ← mocks **v22** |
 | 2 | SINGLE | FM | Copyright + edition credits | Type-led · soft ornament OK |
 | 3 | SINGLE | FM | Dedication | Soft vignette |
 | 4 \| 5 | MATTER OPEN | FM | About This Story (L) + soft vignette (R) | Need vignette R |
@@ -113,9 +115,10 @@ Sources consulted: [Book Design Made Simple — front matter](https://www.bookde
 | | |
 |--|--|
 | **Text** | *The Night I Met Santa* · Jack Farrell (credit line as designed) |
-| **Imagery** | Quiet Christmas Eve living-room glow or tree — leave center/upper quiet for title type (Cinzel) |
+| **Imagery** | Fireplace L + tree R · scenery **lower** · open cream **TOP** for type · FRAME ON |
 | **Temp file** | `art-P01-title-2625.png` |
-| **Notes** | Can echo cover mood without duplicating cover composition |
+| **Approved** | `Media/approved/pages/p01-title.png` ← mocks **v22** (**locked provisional** 2026-07-21) |
+| **Notes** | MOCK type in **upper cream** (Cinzel 36 / Cormorant 18) · remake 2625² later if needed |
 
 ### Page 2 — Copyright (SINGLE · left)
 
@@ -312,13 +315,13 @@ If Jon wants **exactly 32:** drop About vignette open (merge About onto p3 or p4
 | S10 | `art-S10-note-SPREAD-5250x2625.png` | Spread | High | ☐ Need |
 | S11 | `art-S11-wish-SPREAD-5250x2625.png` | Spread | Mid | ☐ Need |
 | S12 | `art-S12-blessing-SPREAD-5250x2625.png` | Spread | High | ☐ Need |
-| P01 | `art-P01-title-2625.png` | Single | Mid | ☐ Need |
+| P01 | `art-P01-title-2625.png` · approved `pages/p01-title.png` | Single | Mid | ☑ **v22 locked provisional** |
 | P03 | `art-P03-dedication-2625.png` | Single | Low | ☐ Need |
 | P05 | `art-P05-about-vignette-2625.png` | Single | Low | ☐ Need |
 | P31 | Jack portrait | Single | — | ☑ Locked |
 | P32–33 | Quiet / Merry | Single | Low | ☐ Need |
 
-**Production loop per unit:** Lane A dial (Klein) → Jon pick → Lane B finals (Gemini/Banana) → watermark check → PS MOCK + chops → InDesign live Cormorant.
+**Production loop per unit:** Lane **A1** dial (Klein **9B**) → optional **A2** Qwen alt → Jon pick → Lane **B** finals (Gemini/Banana via **fal first**) → watermark check → PS MOCK + chops → InDesign live type. Record **full RECIPE** every version.
 
 ---
 

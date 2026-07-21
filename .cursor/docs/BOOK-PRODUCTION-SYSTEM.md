@@ -1,6 +1,6 @@
 # BOOK PRODUCTION SYSTEM — Hermes Picture-Book Playbook
 
-**Status:** Living system doc · last updated **2026-07-20**  
+**Status:** Living system doc · last updated **2026-07-21**  
 **Purpose:** Dialed-in workflow to finish *The Night I Met Santa* **and** recreate the same system for **future picture books**.  
 **Owner:** Jon · Agent continue file: `CONTINUE-HERE.md`  
 **Page creative loop (new):** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** — image → PSD → MOCK-TYPE → InDesign · mocks + RECIPE.md · tab hygiene
@@ -74,8 +74,8 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | Poem typeface (InDesign) | **Cormorant Garamond Medium** · **20/26** · tracking **+5** · centered · #2C2C2C | Locked Jon 2026-07-20 — `FONT-CATALOG.md` · `AGENT-RUNBOOK.md` §5 |
 | PS ↔ ID art size | **2625²** / **5250×2625** placed full-bleed = 300 DPI | Ignore PS 72 dpi tag · no habitual re-scale |
 | Spreads | Seamless art — **no fake middle gutter** | Orange fold = MOCK guide only · prompt negatives |
-| Klein dial | **4B + Dial D2 append** only (not Gemini master) | `IMAGE-LANE-PROMPTS.md` · proof D2 sweetspot |
-| Mock versioning | `{unit}/vNN/` + mandatory **RECIPE.md** (service · model · prompt · refs · D2 vs master) | Scoreboard: `Media/generated/mocks/_INDEX/` |
+| Klein dial | **9B + Dial D2** default (4B light only; not Gemini master) | `IMAGE-LANE-PROMPTS.md` · proof D2 sweetspot |
+| Mock versioning | `{unit}/vNN/` + mandatory **full RECIPE.md** (`_RECIPE-TEMPLATE.md` · Prompt · lane · FRAME · script_text · type_zone) | Scoreboard: `Media/generated/mocks/_INDEX/` |
 | Close PNG after place | Hard rule — keep PS tabs to working PSD only | Avoid tab pile-up |
 | Docs triggers | **`update docs`** = system harvest · **`log fixes`** = ISSUES card | `PAGE-BUILD-WORKFLOW.md` §11 |
 | First PSD/INDD create | **Jon Save As** once → **ready** → agent edits | Modals block bridge; Untitled can save as A4 |
@@ -93,22 +93,25 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 
 ## 2) Tool stack (what we actually use)
 
-### Image generation — **locked lanes** (Jon 2026-07-15; dual prompts 2026-07-15 night)
+### Image generation — **locked lanes** (Jon 2026-07-21 priority refresh)
 
-| Priority | Lane | Endpoint | ~Cost | Style prompt | When |
-|:--------:|------|----------|------:|--------------|------|
-| 1 | **Dial / mockups** | Klein 4B — fal `flux-2/klein/4b` **or** OpenRouter `flux.2-klein-4b` | ~$0.01–0.015 | **Klein D2 append** (`IMAGE-LANE-PROMPTS.md`) | Layout, vibe, cheap probes |
-| 2 | **Fallback** | `fal-ai/qwen-image-2/text-to-image` | ~$0.035 | Short master OK | Klein misses vibe |
-| 3 | **Finals** | fal `nano-banana-pro/edit` **or** OpenRouter `google/gemini-3-pro-image` | ~$0.14–0.15 | **ILLUSTRATION-STYLE master** (Gemini/Banana) | Approved pages / covers / print |
+| Priority | Lane | Endpoint | ~Cost (dial ~1K) | Style prompt | When |
+|:--------:|------|----------|-----------------:|--------------|------|
+| **1** | **A1 Dial primary** | Klein **9B** — fal `flux-2/klein/9b` *(edit: `…/9b/edit`)* | **~$0.011** | **Klein D2** | **Default mockup / testing** |
+| **2** | **A2 Dial alt** | `fal-ai/qwen-image-2/text-to-image` | **~$0.035** | Short master OK | Second opinion vs A1 |
+| **3** | **A3 Dial light** | Klein **4B** — fal `flux-2/klein/4b` | **~$0.009** | **Klein D2** | Hi-res batch / low-detail only |
+| **4** | **B Finals** | fal `gemini-3-pro-image-preview/edit` *(Banana Pro)* **or** OpenRouter `google/gemini-3-pro-image` | **~$0.14–0.15** | **Master** + **FRAME ON/OFF** | **Production-ready** keepers / print |
 
-**Dual-lane rule:** Klein = mockup prompt only. Gemini/Banana = original master only. Do not cross-contaminate.  
+**Dual-lane rule:** Klein = D2 only. Gemini/Banana = master only. Do not cross-contaminate.  
+**Watercolor frame:** toggle — default ON for title/matter; OFF for full-bleed story print. Refs: `Images/styles2/`.  
 **Klein visual proof:** `Media/approved/style-refs/covers/klein-mockup-style-LOCKED-D2.png`  
 **Detail:** `.cursor/docs/IMAGE-LANE-PROMPTS.md`
 
 | Piece | Exact choice |
 |-------|----------------|
-| Provider | **fal.ai** (`FAL_API_KEY` / `FAL_KEY` in `.env.local`) |
-| Finals model | **`fal-ai/nano-banana-pro/edit`** |
+| Provider | **fal.ai first** (`FAL_API_KEY` / `FAL_KEY`) · **OpenRouter second** for Gemini / Klein-4B backup |
+| Finals model | **`fal-ai/gemini-3-pro-image-preview/edit`** *(alias Nano Banana Pro)* |
+| Dial models | Klein **9B** default · Qwen alt · Klein **4B** light only |
 | Why edit | Style/character lock via `image_urls` refs |
 | Resolution (finals) | **`2K`** (upscale later if needed) |
 | Aspect | Pages/covers **`1:1`**; spreads wide then split |
@@ -128,7 +131,7 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 
 | Tool | Role |
 |------|------|
-| `npm run image:fal*` → default **`fal-ai/flux/schnell`** | Ultra-cheap scratch only (prefer Klein 4B for dial) |
+| `npm run image:fal*` → default **`fal-ai/flux/schnell`** | Ultra-cheap scratch only (prefer Klein **9B** for dial) |
 | `npm run image:gen` (HF) | Zero VRAM drafts |
 | ComfyUI | Only if operator asks — faces / upscale / inpaint |
 
@@ -261,7 +264,7 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | 2026-07-14 | **Text overlay direction:** open zones + white paint / bleed / mist; reject gray blobs + soft rect. Mocks `text-mocks-v2/` = **closer, not perfect** — refine before shipping compositor | `TEXT-OVERLAY-POLICY.md` |
 | 2026-07-15 | Jon mockups locked as refs: soft paint fades, **never cover faces**, Santa pages use **bottom-right** gradient; note pages **lower** not mid-window. Mocks → `text-mocks-v3/` | layout `ref-text-jon-*` |
 | 2026-07-15 | Text wash dial: overpowered solid glow rejected — use **subtle mid-opacity** paper + long fade (Pillow; not a fal model issue). Cheap art dial = Flux schnell / Klein; finals stay Nano Banana Pro | compositing |
-| 2026-07-15 | **Lane lock:** dial = **FLUX.2 [klein] 4B** (~$0.009/MP); **fallback** = **Qwen Image 2** (~$0.035/img); finals = **Nano Banana Pro /edit + refs** (~$0.15/img). Ideogram skipped (safety). Docs sync + vault pattern updated | Model lanes |
+| 2026-07-21 | **Lane priority refresh:** dial = **Klein 9B** (~$0.011/MP); alt = **Qwen Image 2** (~$0.035/img); light = **Klein 4B** (~$0.009/MP, hi-res/low-detail only); finals = **Gemini/Banana** (~$0.15). | Model lanes |
 | 2026-07-15 | Harvested `book/Childrens_Book_Design_Summary*` → Lulu checklist §8b; **corrected color advice** to **sRGB** (not CMYK-first) per Lulu help | Prepress |
 | 2026-07-15 | Flipbook webpage notes → `DIGITAL-FLIPBOOK-WATCH.md` (post-gift only; do not block print) | Optional digital |
 | 2026-07-15 | **Jack Farrell portrait LOCKED** = `v6d-armchair-tree-lights` → `Media/approved/characters/jack-farrell-portrait.png`; remake kit `CHARACTER-JACK-FARRELL.md`; book use About Author / Thank You | Character |
@@ -301,7 +304,7 @@ npm run book:pdf:from-pages
 npm run book:pdf:verify
 ```
 
-**Agent reality (2026-07-15):** Dial on **Klein 4B**, escalate to **Qwen Image 2** if needed, lock pages with **MCP `user-fal-ai` + `nano-banana-pro/edit` + refs**. Do not default to Flux schnell for dial.
+**Agent reality (2026-07-21):** Dial on **Klein 9B**, alt-compare on **Qwen Image 2**, use **Klein 4B** only for hi-res/low-detail, lock pages with **MCP `user-fal-ai` + `gemini-3-pro-image-preview/edit` + refs**. Do not default to Flux schnell for dial.
 
 ### MCP generate template
 
@@ -369,7 +372,7 @@ Absorbed from `.cursor/docs/book/Childrens_Book_Design_Summary*.md` and verified
 | Swap | Keep |
 |------|------|
 | Poem / beats | Folder layout + 2625 math (if same trim) |
-| Style refs + ILLUSTRATION-STYLE | **Image lanes:** dial Klein 4B → fallback Qwen Image 2 → finals Banana `/edit` + refs |
+| Style refs + ILLUSTRATION-STYLE | **Image lanes:** dial Klein **9B** → Qwen alt → Klein **4B** light → finals Gemini/Banana `/edit` + refs |
 | Cover title string + author | Cover flat-poster rules |
 | About / Thank You copy | Pillow → Typst → Lulu path |
 | Character sheets | Rejection list (no white boxes / no mockups; Ideogram skipped for child Christmas if safety blocks) |
@@ -378,7 +381,7 @@ Absorbed from `.cursor/docs/book/Childrens_Book_Design_Summary*.md` and verified
 
 1. **Lock style** first (2–3 north-star frames).
 2. **Dial** scenes on **`fal-ai/flux-2/klein/4b`** (~$0.01/sq) — layout + vibe only.
-3. If Klein misses: **one** shot on **`fal-ai/qwen-image-2/text-to-image`** (~$0.035) before burning finals budget.
+3. If A1 needs a second opinion: **one** shot on **Qwen** (~$0.035) before burning finals budget. Use **Klein 4B** only for hi-res/low-detail.
 4. **Promote keepers** with **`fal-ai/nano-banana-pro/edit`** @ 2K + `image_urls` style refs (~$0.15).
 5. Skip Ideogram for pajamas / child Christmas beats unless a non-child scene needs typography-in-image.
 6. Prove a lane with a **real beat prompt** (same seed/prompt folder) before locking — see `Media/generated/model-compare-beat01/` as the template.

@@ -6,18 +6,14 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-20)
+## One-line status (2026-07-21)
 
-**InDesign production locked** · page count **35–40** · `AGENT-RUNBOOK.md` authoritative.  
-**Creative loop dial-in:** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** — PS↔ID size parity · Klein Dial D2 · no fake gutter · mocks+RECIPE · close PNG · MOCK-TYPE by role (poem 20/26 · matter 30).  
-**Docs habit:** **`update docs`** = harvest workflow into playbooks · **`log fixes`** = ISSUES-RESOLVED card · see PAGE-BUILD §11.  
-**Smoke:** `p03-dedication.psd` + `p03-dedication-smoke.indd` · mocks `Media/generated/mocks/P03-dedication/v01/`.  
-**Page map:** **LOCKED** `.cursor/docs/BOOK-PAGE-WORKFLOW.md` — **36** pages (Jon confirmed 2026-07-20).  
-**Build order:** **Sequential front → back** (P01 → P02 → P03 → 4\|5 → S1…S12 → BM). No jumping around unless Jon asks.  
+**InDesign production locked** · page count **36** · `AGENT-RUNBOOK.md` authoritative.  
 **Creative loop:** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`**.  
-**Current unit:** **P01 Title** — `p01-title.psd` MOCK Cinzel **36** visible · `book-interior-v1.indd` live type visible (overset fixed).  
-**Gotchas (logged):** Jon first-Save As · PS-first then ID mirror · no Free Transform · PS API `pt×(300/72)` @300ppi · ID type via `page.textFrames.add` (not orphan `create_text_frame`) · title defaults **36/18** lower-center SAFETY.  
-**Smoke ref:** `p03-dedication.psd` (process dial — not next in queue).  
+**P01 title art LOCKED (provisional):** `Media/approved/pages/p01-title.png` ← mocks **`P01-title/v22`** (simpler · scenery lower · top cream · FRAME ON). Alts v21 / v23 / v24 kept, not locked.  
+**Current unit:** **P01 Title** — place locked art into `p01-title.psd` ART · MOCK type in **upper cream** (not lower-center) · mirror ID.  
+**Gotchas:** Jon first-Save As · PS-first · no Free Transform · PS API `pt×(300/72)` @300ppi · ID `page.textFrames.add` · don’t mid-paint-crop soft vignettes (ISSUES-RESOLVED 2026-07-21).  
+**Next after P01 type/cloud dial:** **P02** sequential.  
 **Playbook:** `ISSUES-RESOLVED.md` · `BOOK-PRODUCTION-SYSTEM.md` · `PAGE-BUILD-WORKFLOW.md`.
 
 ---

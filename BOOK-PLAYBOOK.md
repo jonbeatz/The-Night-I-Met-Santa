@@ -6,7 +6,9 @@
 
 > **2026-07-19 update (TNIMS):** Layout production for *this* title is **InDesign UXP** (`AGENT-RUNBOOK.md`). Pillow → Typst remains documented below as the **fallback / portable** recipe for future books without DTP. Prefer InDesign when Affinity/InDesign MCP cold-start is available. Page target for TNIMS: **35–40** (not the earlier ~32 estimate).
 >
-> **2026-07-20 update (TNIMS → future books):** Creative page loop is dialing in under `.cursor/docs/PAGE-BUILD-WORKFLOW.md` — generate → `Media/generated/mocks/{unit}/vNN/` + **RECIPE.md** (service/model/prompt/refs) → new PSD from blank → **close source PNG** → MOCK-TYPE preview (Cormorant Medium 30pt `#2C2C2C`) + cloud brush → save → InDesign live type. Character continuity via `Media/approved/characters/` G0 locks. When polished, this becomes the master skeleton for the next picture book.
+> **2026-07-20 update (TNIMS → future books):** Creative page loop under `.cursor/docs/PAGE-BUILD-WORKFLOW.md` — generate → `Media/generated/mocks/{unit}/vNN/` + **RECIPE.md** → new PSD from blank → **close source PNG** → MOCK-TYPE + cloud → InDesign live type. G0 character locks in `Media/approved/characters/`.
+>
+> **2026-07-21 update (lanes + recipes — future books):** **Providers:** fal.ai **first** · OpenRouter **second**. **Dial:** Klein **9B** default (~$0.011/MP) → Qwen alt (~$0.035) → Klein **4B** light only → **Finals:** Gemini/Banana (~$0.15). Dual prompts: Klein = Dial D2 · Finals = ILLUSTRATION-STYLE master. Every mock needs **full RECIPE** (`Media/generated/mocks/_RECIPE-TEMPLATE.md` — Prompt mandatory). Don’t mid-paint-crop soft watercolor vignettes to recenter.
 
 ---
 
@@ -118,21 +120,24 @@ uv pip install nano-pdf                 # NL PDF metadata editing
 
 ## 3. Image Generation Pipeline
 
-### Locked model lanes (from cost + quality testing)
+### Locked model lanes (TNIMS 2026-07-21 — copy for future books)
 
-| Priority | Model | Endpoint | ~Cost | When to Use |
-|:--------:|-------|----------|------:|-------------|
-| 1 | FLUX.2 Klein 4B | `fal-ai/flux-2/klein/4b` | ~$0.01/image | Default iterate — layout, vibe, text-zone probes |
-| 2 | Qwen Image 2 | `fal-ai/qwen-image-2/text-to-image` | ~$0.035/image | Fallback when Klein misses the vibe |
-| 3 | Nano Banana Pro /edit | `fal-ai/nano-banana-pro/edit` + refs | ~$0.15/image | Finals — approved pages/covers after dial |
+| Priority | Model | Endpoint | ~Cost (dial ~1K) | When to Use |
+|:--------:|-------|----------|-----------------:|-------------|
+| **1** | FLUX.2 Klein **9B** | `fal-ai/flux-2/klein/9b` (+ `/edit`) | **~$0.011** | **Default dial / mockup** + Dial D2 |
+| **2** | Qwen Image 2 | `fal-ai/qwen-image-2/text-to-image` | **~$0.035** | Alt / second opinion vs Klein |
+| **3** | FLUX.2 Klein **4B** | `fal-ai/flux-2/klein/4b` | **~$0.009** | Hi-res batch / low-detail only |
+| **4** | Gemini 3 Pro Image / Banana | fal `gemini-3-pro-image-preview/edit` · OpenRouter backup | **~$0.14–0.15** | **Production finals** + master style + refs |
 
-**Skipped:** Ideogram V3/V4 (safety filter blocks Christmas child storybook scenes)
+**Providers:** **fal.ai first** · OpenRouter second (Gemini / Klein 4B overlap — not a full fal mirror).  
+**Skipped:** Ideogram V3/V4 (safety filter blocks Christmas child storybook scenes)  
+**Detail:** project `IMAGE-LANE-PROMPTS.md` · full RECIPE template `Media/generated/mocks/_RECIPE-TEMPLATE.md`
 
 ### How to prove a lane (do this once per book)
 
 1. Pick ONE real story beat
-2. Generate the same prompt through all 3 models
-3. Save to `Media/generated/model-compare-beat01/`
+2. Generate the same prompt through dial + alt (+ light if useful)
+3. Save to `Media/generated/model-compare-beat01/` with **full RECIPE.md** each
 4. Jon picks the winners → that becomes the lane lock for the book
 
 ### Prompt anatomy (reusable formula)
@@ -140,10 +145,14 @@ uv pip install nano-pdf                 # NL PDF metadata editing
 ```
 [SCENE: who, what, where, light, composition]
 [QUIET ZONE: leave soft open area for later text — specify corner/side]
-[STYLE: master block from ILLUSTRATION-STYLE.md]
+[STYLE: Dial D2 for Klein · master block from ILLUSTRATION-STYLE.md for Gemini]
+[FRAME: ON for matter/title vignettes · OFF for full-bleed print spreads]
 [NEGATIVES: colored pencil, photoreal, text, letters, watermark, cartoon, CGI; for spreads also: fake gutter, center fold line, spine shadow, binding crease]
 ```
 
+### RECIPE.md (mandatory per mock version)
+
+Copy `Media/generated/mocks/_RECIPE-TEMPLATE.md` into every `vNN/`. Include **full Prompt**, lane, service, model, FRAME, seed, script_text, type_zone, refs, verdict. Thin stubs are not enough for remakes.
 ### Image sizes (at 300 DPI for 8.5×8.5" with bleed)
 
 | Type | Dimensions | Aspect |
@@ -408,11 +417,13 @@ npm run book:pdf:doctor                 # Prepress diagnostic
 
 ### Agent reality (which model to actually use)
 
-- **Dial:** Klein 4B (~$0.01/image) for layout, vibe, text-zone probes
-- **Fallback:** Qwen Image 2 (~$0.035) when Klein misses
-- **Finals:** Nano Banana Pro /edit + style refs (~$0.15) for approved pages/covers
+- **Provider:** **fal.ai first** · OpenRouter second
+- **Dial:** Klein **9B** (~$0.011) + Dial D2 — default mockups
+- **Alt:** Qwen Image 2 (~$0.035) — second opinion
+- **Light:** Klein **4B** (~$0.009) — hi-res/low-detail only
+- **Finals:** Gemini/Banana /edit + style refs (~$0.15) — production keepers
 - Do NOT default to Flux schnell for dial (weaker than Klein for gouache storybook look)
-
+- Do NOT mid-paint-crop soft watercolor vignettes to “recenter” (hard top edge)
 ---
 
 ## 11. Rejection List (What NOT to Do — Hard-Won)
@@ -426,7 +437,10 @@ npm run book:pdf:doctor                 # Prepress diagnostic
 | Generate text IN the image | AI misspells; text overlay is Pillow's job | ILLUSTRATION-STYLE.md |
 | Use WeasyPrint on Windows | GTK3 DLL dependency hell | Book-Findings.md §2 |
 | Use Ideogram for child Christmas scenes | Safety filter blocks pajamas scenes | BOOK-PRODUCTION-SYSTEM.md §2 |
-| Default to Flux schnell for dial | Weaker than Klein 4B for gouache style | Model compare beat01 |
+| Default to Flux schnell for dial | Weaker than Klein for gouache style | Model compare beat01 |
+| Use Klein 4B as default dial when 9B is available | 9B is ~1¢ and better testing quality | IMAGE-LANE-PROMPTS 2026-07-21 |
+| Ship thin RECIPE (no Prompt) | Can’t remake winners | `_RECIPE-TEMPLATE.md` |
+| Mid-paint-crop soft vignette to recenter | Shears watercolor crown → hard top | ISSUES-RESOLVED 2026-07-21 |
 | Put critical faces on center fold | Gutter swallows detail | BOOK-PLAN.md |
 | Export CMYK for Lulu | Lulu converts sRGB natively; CMYK-first can hurt color | RESEARCH-VERDICT.md |
 | Use Amazon KDP for square hardcover | KDP doesn't offer 8.5×8.5 HC | RESEARCH-VERDICT.md |
@@ -440,7 +454,8 @@ npm run book:pdf:doctor                 # Prepress diagnostic
 |------------------|-----------------|
 | Folder structure + skeleton | Poem/manuscript text |
 | Tool stack (Typst, Pillow, pypdf, Pandoc) | Trim size (if not 8.5×8.5) |
-| Image lanes (Klein → Qwen → Banana) | Style refs + ILLUSTRATION-STYLE.md |
+| Image lanes (fal first · Klein 9B → Qwen → 4B light → Gemini) | Style refs + ILLUSTRATION-STYLE.md |
+| Full RECIPE template + mocks/`vNN` | Cover title + author name |
 | Layout pattern (Pillow cloud pre-composite → Typst binder) | Cover title + author name |
 | Print specs (bleed, safety, 300 DPI, sRGB) | About/Thank You copy |
 | Text overlay rules (faces, zones, paint recipe) | Character sheets |

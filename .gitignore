@@ -13,13 +13,20 @@ __pycache__/
 venv/
 
 # Generated art / print outputs (large; keep local)
-Media/generated/
-Pages/
+Media/generated/**
+!Media/generated/mocks/
+!Media/generated/mocks/**
+!Media/generated/mocks/**/*.md
+Media/generated/mocks/**/*.png
+Media/generated/mocks/**/*.jpg
+Media/generated/mocks/**/*.jpeg
+Media/generated/mocks/**/*.webp
+/Pages/
 Output/
 *.pdf
 
 # DO track Media/approved/ (Jon-selected keepers) — not ignored
-
+# NOTE: use /Pages/ (repo root only) — bare Pages/ also matched Media/approved/pages/
 # Large media sources (keep local)
 Audio/*.wav
 Audio/*.m4a

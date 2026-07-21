@@ -50,14 +50,18 @@ If this is a two-page SPREAD: keep a seamless continuous scene — remove any fa
 
 ## 2) Prompt / recipe sidecar (so remakes match)
 
-For **every** Tier B approved file, keep a sibling recipe:
+For **every** mock version and every Tier B approved file:
 
-```
-Media/approved/covers/cover-front.png
-Media/approved/covers/cover-front.recipe.md   ← or one covers/MANIFEST.json
-```
+| Kind | Path |
+|------|------|
+| Mock try | `Media/generated/mocks/{unit}/vNN/RECIPE.md` |
+| Template | `Media/generated/mocks/_RECIPE-TEMPLATE.md` |
+| Approved lock | `Media/approved/…/{name}.recipe.md` |
 
-**Minimum recipe fields**
+**Standard (LOCKED 2026-07-21):** full field table + **Prompt** + refs + negatives + gotchas — see `.cursor/docs/PAGE-BUILD-WORKFLOW.md` §6.  
+Use `n/a` / `—` when unknown; **never omit Prompt**. Include `script_text` (poem/title lines) and `type_zone` when the page has type.
+
+**Minimum was** (superseded — still OK on old thin locks until backfilled):
 
 | Field | Example |
 |-------|---------|
@@ -73,7 +77,7 @@ Media/approved/covers/cover-front.recipe.md   ← or one covers/MANIFEST.json
 
 Optional: `Media/approved/MANIFEST.json` listing all Tier B rows for a scripted finals batch later.
 
-**Agent rule:** When promoting to Tier B, **write/update the recipe the same day** — don’t wait until PDF week.
+**Agent rule:** When promoting to Tier B, **write/update the recipe the same day** — don’t wait until PDF week. New mocks: copy `_RECIPE-TEMPLATE.md` and fill completely before showing Jon.
 
 ---
 

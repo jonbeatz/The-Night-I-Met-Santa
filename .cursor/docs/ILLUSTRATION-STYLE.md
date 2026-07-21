@@ -46,14 +46,17 @@ An **heirloom Christmas picture book**: painted like classic **gouache and water
 
 ---
 
-## Dual lanes (LOCKED 2026-07-15)
+## Dual lanes (LOCKED 2026-07-21 priority)
 
 | When using… | Paste this style |
 |-------------|------------------|
-| **Klein 4B** (cheap mockups) | Klein D2 append — `.cursor/docs/IMAGE-LANE-PROMPTS.md` · proof `style-refs/covers/klein-mockup-style-LOCKED-D2.png` |
-| **Gemini 3 Pro / Nano Banana** (finals) | **Master style block below** (unchanged) |
+| **Klein 9B** (default dial) | Klein D2 append — `.cursor/docs/IMAGE-LANE-PROMPTS.md` |
+| **Qwen Image 2** (alt dial) | Short master OK — not D2, not full finals master |
+| **Klein 4B** (light / hi-res / low-detail only) | **Same** Klein D2 append |
+| **Gemini 3 Pro / Nano Banana** (finals) | **Master style block** below + **FRAME ON or OFF** |
 
-Do not use the Klein append on Banana/Gemini finals, and do not expect Klein to match Banana paint quality — dial only.
+Do not use the Klein append on Banana/Gemini finals, and do not expect Klein to match Banana paint quality — dial only.  
+**Frame refs:** `Images/styles2/` (spread-Frame-Style1, p21, door, Jack portrait, qwen peek). Full toggle copy: `IMAGE-LANE-PROMPTS.md`.
 
 ---
 
@@ -71,7 +74,22 @@ Traditional children's Christmas picture-book illustration, heirloom storybook q
 Heavily painted children's Christmas storybook illustration, rich gouache and soft watercolor brushwork, NOT colored pencil, Santore-inspired Golden Age style, warm hearth light and soft moonlight, deep reds and forest greens, cozy heirloom magical mood, soft blended edges, no text
 ```
 
-### SPREAD master add-on (always append for 5250×2625 / fal:spread / wide beats)
+### WATERCOLOR FRAME ON (default for title / matter vignettes)
+
+```
+WATERCOLOR FRAME ON: soft irregular white/cream watercolor paper vignette around the scene —
+feathered painted edges bleeding into open paper, hand-painted storybook plate (not a hard
+rectangle crop, not full-bleed edge-to-edge). Match styles2 frame refs (spread-Frame-Style1 / p21).
+```
+
+### WATERCOLOR FRAME OFF (full-bleed print plates)
+
+```
+WATERCOLOR FRAME OFF: full-bleed illustration to all edges — continuous painted scene, NO white
+paper vignette, NO feathered blank margin, NO floating plate on cream paper.
+```
+
+### SPREAD master add-on (always append for seamless 5250×2625 / fal:spread / wide print beats)
 
 ```
 seamless continuous two-page storybook spread across the full width, one unbroken painted scene through the center, NO fake book gutter, NO vertical fold line, NO center spine shadow, NO page-split seam, NO mockup binding crease down the middle

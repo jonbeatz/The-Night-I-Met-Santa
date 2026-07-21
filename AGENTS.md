@@ -23,10 +23,11 @@ Read in order:
 - Hermes fleet sibling (shared docs/skills/rules). Isolated Mem0: `the-night-i-met-santa`
 - Gift book for Jack Farrell · birthday **2026-08-15** · Lulu **8.5×8.5"** · **35–40 pages**
 - **Art default:** painted gouache / soft watercolor — **not** colored pencil (see `ILLUSTRATION-STYLE.md`)
-- **Image lanes:** Klein dial (**D2 style**) → Qwen fallback → Gemini/Banana finals (**master style**) — `IMAGE-LANE-PROMPTS.md`
+- **Image lanes:** Klein **9B** dial (D2) → Qwen alt → Klein **4B** light → Gemini/Banana finals (**master**) — `IMAGE-LANE-PROMPTS.md`
+- **Image providers:** **fal.ai first** · OpenRouter second
 - **Production:** **page-by-page** Lane A→B. Never call anything “final.”
 - **Layout:** **InDesign UXP** (`AGENT-RUNBOOK.md`). Pillow/Typst = **fallback only**. Affinity = optional polish.
-- **Locks:** cover beige-v2 · boy G0 · santa-G0 · Jack portrait style-match-B · eyes-met FINAL-TEST-A
+- **Locks:** cover beige-v2 · boy G0 · santa-G0 · Jack portrait style-match-B · eyes-met FINAL-TEST-A · **P01 title = v22** (`Media/approved/pages/p01-title.png`, provisional 2026-07-21)
 - **Jack Farrell portrait:** `Media/approved/characters/jack-farrell-portrait.png` · `CHARACTER-JACK-FARRELL.md`
 - **DTP:** Affinity MCP + InDesign UXP Bridge **READY** · Photoshop adobepy UXP **LIVE** — `tools/layout-mcp/SETUP.md` · PS `PHOTOSHOP-SETUP.md`
 

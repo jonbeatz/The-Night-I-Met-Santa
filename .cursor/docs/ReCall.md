@@ -75,7 +75,8 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
 - Format: **8.5×8.5"** · Printer: **Lulu** · Color: **sRGB** · **35–40 pages** (locked)
 - Layout: **InDesign UXP** = production (`AGENT-RUNBOOK.md`); Pillow/Typst = **fallback only**; Affinity = optional polish
 - Style: **Painted gouache** (not colored pencil)
-- **Image lanes:** dial Klein 4B (cheap probes only) → Qwen fallback → **finals Gemini/Banana**
+- **Image lanes:** dial **Klein 9B** (default) → **Qwen** alt → Klein **4B** light only → **finals Gemini/Banana**
+- **Image providers:** **fal.ai first** · **OpenRouter second** (Gemini / Klein 4B backup) — `IMAGE-LANE-PROMPTS.md`
 - **Dual prompts:** Klein = D2 append · Finals = ILLUSTRATION-STYLE master (`IMAGE-LANE-PROMPTS.md`)
 - **Cover:** beige-v2 · oatmeal holly PJs · **Santa face HIDDEN** on cover
 - **Boy G0:** style-match-A (santa-G0 polish)
@@ -91,7 +92,7 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
 - **MOCK-TYPE PSD preview (2026-07-20):** poem **20/26** · matter **30/~40** · `#2C2C2C` — mirrors ID by role; close source PNG after place
 - **PS ↔ ID (2026-07-20):** same pixel counts (2625² / 5250×2625) full-bleed place = 300 DPI; ignore 72 dpi tag; full-canvas textCloud
 - **No fake gutter** in spread art (orange fold = MOCK guide only)
-- **Klein dial:** 4B + **Dial D2** append only (`IMAGE-LANE-PROMPTS.md`)
+- **Klein dial:** **9B** + **Dial D2** default; **4B** light only (`IMAGE-LANE-PROMPTS.md`)
 - **Docs triggers:** `update docs` = workflow harvest · `log fixes` = ISSUES card (`PAGE-BUILD-WORKFLOW.md` §11)
 - **Tony email (LOCKED):** **Tony** / **T** / **TNyse** / **bigtee** → **`bigtee@gmail.com`**
 - **First PSD/INDD create (2026-07-20):** Jon **Save As** to final path → click dialogs → **ready** → agent edits (avoids modal hang + A4 Untitled mistake)
@@ -106,6 +107,13 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
 - **DTP (2026-07-19 FINAL):** Affinity MCP `:6767` + InDesign UXP `:19300/:19301` **IN USE**. Cold flow: CC Desktop signed in (**Jon confirms**) → agent launches UDT+InDesign+bridge → **Jon clicks Load & Watch** (agent cannot) → MCP. Web adobe.com login not enough. Keep CC installed; Startup disable OK.
 - **Photoshop MCP (2026-07-20 LIVE):** adobepy UXP broker `:47391` + dcc-mcp-photoshop `:8766/mcp` — **not** COM. Prefs: Enable Developer Mode only. Doc: `tools/layout-mcp/PHOTOSHOP-SETUP.md`. COM MCPs (loonghao/alisaitteke) rejected on this PC (`0x80080005`). **Default save folder:** `Xtraz/Adobe-Photoshop/`
 - **Creative Cloud:** keep Desktop app installed (licensing); OK to disable Startup — do **not** uninstall while keeping InDesign/UDT
+
+## Session note 2026-07-21 — P01 title art lock (v22)
+
+- **Locked (provisional):** `Media/approved/pages/p01-title.png` ← `mocks/P01-title/v22` (Jon corrected from v21)
+- Layout: simpler fireplace+tree · scenery lower · open cream TOP · FRAME ON
+- Alts not locked: v21 / v23 / v24
+- Next: place into `p01-title.psd` · MOCK type in **upper** cream · then P02
 
 ## Session note 2026-07-20 — P01 title dial + fix log
 - P01: `p01-title.psd` + `book-interior-v1.indd` — Jon confirmed live title visible after overset fix

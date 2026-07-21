@@ -31,6 +31,8 @@
     "image:fal:page": "powershell -File scripts/gen-image-fal.ps1 -Preset page",
     "image:fal:spread": "powershell -File scripts/gen-image-fal.ps1 -Preset spread",
     "image:fal:cover": "powershell -File scripts/gen-image-fal.ps1 -Preset cover",
+    "image:fal:klein4": "powershell -File scripts/gen-image-fal.ps1 -Model fal-ai/flux-2/klein/4b",
+    "image:fal:klein9": "powershell -File scripts/gen-image-fal.ps1 -Model fal-ai/flux-2/klein/9b",
     "image:or": "powershell -File scripts/gen-image-openrouter.ps1",
     "image:or:open": "powershell -File scripts/gen-image-openrouter.ps1 -Open",
     "book:composite": "python composite_pages.py",

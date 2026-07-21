@@ -328,6 +328,8 @@ After the book is done, create a viewable flipbook for family and friends:
 - ❌ Use CMYK color space
 - ❌ Add gutter margins (not needed under 60 pages)
 - ❌ Bake a **fake center fold / gutter shadow line** into final spread art (MOCK preview only; print art must be seamless)
+- ❌ Crop through **mid-paint** to recenter a soft watercolor vignette (shears the soft crown → hard top edge). Reposition/scale the **whole** soft vignette, or choose a text-zone layout that matches how the plate was painted. See `ISSUES-RESOLVED.md` 2026-07-21 P01 v24
+- ❌ Ship a mock `vNN/` with a **thin RECIPE** (no full Prompt / missing lane·model·FRAME·script_text). Copy `Media/generated/mocks/_RECIPE-TEMPLATE.md`
 - ❌ Put text on spine (book is under 80 pages)
 - ❌ Launch UDT before Creative Cloud sign-in
 - ❌ Regenerate G0 locked art

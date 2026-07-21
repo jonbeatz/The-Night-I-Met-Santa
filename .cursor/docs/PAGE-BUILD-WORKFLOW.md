@@ -169,18 +169,20 @@ Images/chopz/               ← exports for InDesign (MOCK / LEFT / RIGHT / text
 
 | Lane | When | Service / model | Prompt block | Doc |
 |------|------|-----------------|--------------|-----|
-| **A — Dial / mock** | Fast comps, layout tests | **Klein 4B** — fal `flux-2/klein/4b` **or** OpenRouter `flux.2-klein-4b` | **Klein Dial D2 append only** (not Gemini master) | `IMAGE-LANE-PROMPTS.md` |
-| **A settings** | OpenRouter Klein | `--guidance 4.6 --steps 30` | Same D2 text after scene | Proof: `klein-dial-D2-sweetspot.png` |
-| **Fallback** | Klein misses vibe | fal `qwen-image-2/text-to-image` | Short master OK | same |
-| **B — Finals** | Print-bound plates | fal **`nano-banana-pro/edit`** (± Gemini 3 Pro Image) | **ILLUSTRATION-STYLE master** + G0/cover refs | same |
+| **A1 — Dial primary** | Default mockup / testing | **Klein 9B** — fal `flux-2/klein/9b` (~$0.011) | **Dial D2** | `IMAGE-LANE-PROMPTS.md` |
+| **A2 — Dial alt** | Second opinion | fal `qwen-image-2/text-to-image` (~$0.035) | Short master OK | same |
+| **A3 — Dial light** | Hi-res batch / low-detail only | **Klein 4B** — fal `flux-2/klein/4b` (~$0.009) | **Dial D2** | same |
+| **Frame** | Vignette vs bleed | — | **FRAME ON/OFF** + `Images/styles2/` | Default ON matter/title · OFF print spreads |
+| **B — Finals** | Production-ready plates | fal **`gemini-3-pro-image-preview/edit`** (± OpenRouter Gemini) | **ILLUSTRATION-STYLE master** + G0/cover refs | same |
 | **Style refs** | Mood / scene only | Upload from `Media/approved/style-refs/` | Tier A | — |
 | **Character refs** | Any boy / Santa / Jack face | **Always** attach G0 locks from `characters/` | Tier B | — |
 
 **Hard rules**
 
-1. Klein mockups **must** use the locked **Dial D2** append — that testing pass is what made Klein comps sit closer to Gemini/Banana finals. Do **not** paste the long Gemini master onto Klein (or D2 onto Banana).
-2. Every **spread** gen (A or B): append seamless-spread language + **negatives** for fake gutter / center spine / fold line (`IMAGE-LANE-PROMPTS.md` § Spreads).
-3. RECIPE must record: lane · provider · **exact model id** · seed if known · ref paths · D2 vs master · verdict.
+1. Default dial = **Klein 9B + Dial D2**. Qwen = alt compare. Klein **4B** only for hi-res volume or low-detail. Do **not** paste the long Gemini master onto Klein (or D2 onto Banana).
+2. Every **spread** gen (A or B): append seamless-spread language + **negatives** for fake gutter / center spine / fold line (`IMAGE-LANE-PROMPTS.md` § Spreads) when **FRAME OFF** / print bleed.
+3. **Watercolor frame:** say **with frame** / **full bleed** — append FRAME ON/OFF from `IMAGE-LANE-PROMPTS.md`. Refs: `Images/styles2/`.
+4. RECIPE must record: lane · provider · **exact model id** · seed if known · ref paths · D2 vs master · verdict.
 
 Never call a plate “final” until Jon promotes + watermark check (`CONTINUITY-AND-PRINT-FINALS.md`).
 
@@ -215,42 +217,76 @@ Never call a plate “final” until Jon promotes + watermark check (`CONTINUITY
 
 ---
 
-## 6) RECIPE.md template (copy into every `vNN/`)
+## 6) RECIPE.md template (mandatory — complete form)
+
+**Canonical copy-paste:** [`Media/generated/mocks/_RECIPE-TEMPLATE.md`](../../Media/generated/mocks/_RECIPE-TEMPLATE.md) · mirror [`.cursor/docs/RECIPE-TEMPLATE.md`](./RECIPE-TEMPLATE.md)  
+**Gold example (locked):** `Media/generated/mocks/P01-title/v22/RECIPE.md`
+
+**Going forward (2026-07-21):** every new `vNN/RECIPE.md` uses the **full** template — same fields every time. Use `n/a` / `—` when unknown; **never omit Prompt**. Thin recipes are outdated.
+
+| Always include | Why |
+|----------------|-----|
+| name · unit · book page · version · date | Identity |
+| page role · spread side | single vs spread L/R/wide |
+| lane · service · model · settings · FRAME | Reproduce the call |
+| concept · changes | What this version tests |
+| size · seed · request_id · output | One file + regen |
+| script_text · type_zone | Poem/title lines + where type sits |
+| verdict · status · promoted_to | Review / lock trail |
+| Character/style refs · **Prompt** · Negative · Gotchas · Notes · Related | Remake fidelity |
 
 ```markdown
 # RECIPE — {unit} / v{NN}
 
 | Field | Value |
 |-------|--------|
-| **unit** | P03-dedication |
+| **name** | Short label |
+| **unit** | P01-title |
+| **book page** | 1 · Title · SINGLE |
+| **page role** | `single` \| `spread` |
+| **spread side** | `n/a` \| `left` \| `right` \| `wide-master` |
 | **version** | v01 |
 | **date** | YYYY-MM-DD |
-| **lane** | A dial / B finals |
-| **service** | fal.ai / Klein / … |
+| **lane** | A1 \| A2 \| A3 \| B \| local composite |
+| **service** | fal.ai / OpenRouter / … |
 | **model** | exact model id |
-| **size** | 2625×2625 or 5250×2625 |
-| **seed** | if known |
-| **verdict** | keep / maybe / reject |
+| **settings** | res · aspect · steps · safety · … |
+| **FRAME** | ON \| OFF |
+| **concept** | One-line intent |
+| **changes** | vs prior / vs base |
+| **size** | 1024² / 2K / 2625² |
+| **seed** | or n/a |
+| **request_id** | or n/a |
+| **cost_note** | optional |
+| **output** | exact filename (one file only) |
+| **script_text** | Poem/title/dedication lines or n/a |
+| **type_zone** | e.g. upper cream · lower-center SAFETY |
+| **verdict** | pending \| keep \| maybe \| reject \| locked-provisional |
+| **status** | working \| locked-provisional \| superseded |
 | **promoted_to** | path or — |
 
 ## Character / style refs used
-- boy: `Media/approved/characters/boy-narrator-G0.png` (or n/a)
-- santa: `…/santa-G0.png` (or n/a)
-- style: `Media/approved/style-refs/…`
+- boy / santa / jack / style / base: paths or n/a
 
 ## Prompt
-(paste full prompt)
+(paste FULL prompt)
 
 ## Negative / constraints
-(paste)
+…
+
+## Gotchas
+…
 
 ## Notes
-What worked / what to change next version
+…
+
+## Related
+…
 ```
 
-Approved Tier B files keep a **sidecar** `*.recipe.md` next to the PNG (see `covers/cover-front.recipe.md`).
+Approved Tier B files keep a sidecar `*.recipe.md` with the same fields (Prompt required, or explicit pointer to the mock RECIPE that holds it). See `pages/p01-title.recipe.md`.
 
----
+**Do not** ship a version with only a 6-row table and no Prompt.
 
 ## 7) MOCK-TYPE defaults (Photoshop preview → mirrors InDesign)
 
