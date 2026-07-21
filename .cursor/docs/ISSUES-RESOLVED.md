@@ -11,6 +11,52 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-07-20 — InDesign shows empty frame / red + but no title text (P01)
+
+| | |
+|---|---|
+| **Symptom** | Photoshop MOCK title visible (Cinzel 36); InDesign shows a small green frame with **overset `+`** and no readable glyphs; Character panel may show Minion 12 defaults |
+| **Root cause** | (1) `create_text_frame` UXP helper can drop an **orphan** off the page / pasteboard (story exists in Layers but not on page). (2) Frame too short for 36 pt → **overset**. (3) Earlier unit/placement mistakes made a tiny bottom-left box. (4) Selecting the frame with Type tool shows app defaults (Minion 12), not the story’s real Cinzel |
+| **Resolution** | Never rely on `create_text_frame` alone. Use **`page.textFrames.add(Type layer)`** with rulers **inches**, full-width SAFETY frame (~**5.55–7.35 × 0.5–8.0 in** for P01), style characters explicitly (Cinzel **36** / Cormorant **18** / PoemCharcoal), `bringToFront`, confirm `overflows === false` + `parentPage` is the book page. Prefer **PS-first**; mirror into ID after MOCK is close |
+| **Verify** | Jon sees title on art (2026-07-20) · Layers Type story on page 1 · no red `+` · PS Character 36 matches ID 36 |
+
+---
+
+## 2026-07-20 — Photoshop text API size wrong at 300 ppi (36 → 8.64)
+
+| | |
+|---|---|
+| **Symptom** | Agent sets MOCK-TYPE to **36 pt** via `createTextLayer` / `set_character_style`; Character panel shows **~8.64 pt** (or glyphs look tiny vs InDesign 36) |
+| **Root cause** | High-level Photoshop text API at **300 ppi** scales size by **72/300**. `36 × 72/300 = 8.64` |
+| **Resolution** | Pass **`desired_pt × (300/72)`** to the high-level API (36 → **150**) **or** set size with batchPlay `pointsUnit: desired_pt`. Always read Character panel before matching InDesign. Never **Free Transform** type (breaks pt parity — can show 4 pt while glyphs look huge) |
+| **Verify** | Character panel = intended pt · bounds height ~matches print size · ID live type same pt |
+
+---
+
+## 2026-07-20 — PS MOCK type vs InDesign live type look different (P01)
+
+| | |
+|---|---|
+| **Symptom** | Title MOCK starts way top-left / wrong size vs InDesign; constant re-nudge between apps |
+| **Root cause** | Agent defaulted MOCK to canvas origin; no shared title defaults; Free Transform; ID rebuilt at different pt/spot than MOCK |
+| **Resolution** | Locked shared defaults: title **Cinzel Decorative 36/42** · author **Cormorant 18/24** · `#2C2C2C` · start **lower-center SAFETY** (~y **1729 px** on 2625) · **Move** only · **PS-first** design desk → ID print desk mirrors. Docs: `PAGE-BUILD-WORKFLOW.md` §1b + §7 |
+| **Verify** | Side-by-side PS/ID · same band on page · Jon confirmed ID text visible after overset fix |
+
+---
+
+## 2026-07-20 — First create of PSD / INDD: Jon saves once, then agent edits
+
+| | |
+|---|---|
+| **Symptom** | Agent hangs on InDesign “Save changes to Untitled…?”; or `book-interior-v1.indd` lands as **A4** instead of **8.5×8.5** while `p03-dedication-smoke.indd` looks correct |
+| **Root cause** | Modal Save/Close dialogs **block** the UXP/COM bridge until dismissed. First `create_document` / Save As without a clear human save can attach the wrong Untitled (A4 leftover) or leave units ambiguous (picas vs inches) |
+| **Resolution** | **Operator first-save rule:** Jon creates or confirms the blank (or agent opens template) → **Jon Save As** to the final path under `Xtraz/Adobe-Photoshop/` or `Xtraz/Adobe-inDesign/` → dismiss any dialog → say **ready** → agent then places art, type, resize, layers. Prefer verifying size against a known-good smoke (`p03-dedication-smoke.indd` = 8.5²) before filling the book doc |
+| **Verify** | Active doc path is the intended filename · page **8.5×8.5 in** · bleed **0.125** · no blocking Adobe modal |
+
+**Future:** If a Save/Close/font/link popup appears — **Jon clicks it**, then **ready**. Don’t leave modals open for the agent. Interrupt only if hung >1–2 min with a visible dialog.
+
+---
+
 ## 2026-07-20 — Light project cleanup (docs + folders)
 
 | | |
@@ -54,9 +100,13 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 |------|------|
 | Poem | Cormorant Medium **20/26** · tracking +5 · `#2C2C2C` |
 | Dedication / short matter | Cormorant Medium **30/~40** · `#2C2C2C` (p03 dial) |
+| **Title (P01)** | Cinzel Decorative **36/42** · author Cormorant **18/24** · `#2C2C2C` · lower-center SAFETY (~y **1729** on 2625) |
 | Layer | `MOCK-TYPE - {slug} (preview)` |
+| Position | **Move** only — never Free Transform |
+| PS API @300ppi | Pass `pt×(300/72)` to high-level API **or** batchPlay `pointsUnit` |
 
-Do not ship raster MOCK-TYPE. Full-canvas cloud brush → RGBA export → full-bleed place = 1:1 with PS (`PAGE-BUILD-WORKFLOW.md` §1b).
+Do not ship raster MOCK-TYPE. Full-canvas cloud brush → RGBA export → full-bleed place = 1:1 with PS (`PAGE-BUILD-WORKFLOW.md` §1b).  
+**PS-first:** dial MOCK in Photoshop → then mirror live type in InDesign.
 
 ### Size parity (PS ↔ ID)
 
@@ -69,16 +119,52 @@ Do not ship raster MOCK-TYPE. Full-canvas cloud brush → RGBA export → full-b
 
 Art + exports: **seamless**. Orange FOLD guide = screen only. Klein/Banana prompts include gutter negatives (`IMAGE-LANE-PROMPTS.md`).
 
-### Symptom → fix (this session)
+### Symptom → fix (this session + P01 dial)
 
 | Symptom | Root cause | Resolution | Verify |
 |---------|------------|------------|--------|
 | PNG tabs pile up | Source art left open after place | Close PNG as soon as ART owns pixels | Only working PSD open |
-| MOCK type tiny / wrong color | Agent used wrong size / not #2C2C2C | Poem **20/26** · matter **30** · **#2C2C2C** | Eye-check vs ID |
-| PS look ≠ ID | Wrong pixels, scaled place, or MOCK≠live size | Lock §1b parity · place full-bleed · match pt by role | Side-by-side 100% zoom |
+| MOCK type tiny / wrong color | Agent used wrong size / not #2C2C2C | Poem **20/26** · matter **30** · title **36/18** · **#2C2C2C** | Eye-check vs ID |
+| PS Character shows 8.64 not 36 | High-level API ×72/300 at 300ppi | Pass `pt×(300/72)` or batchPlay points | Character = intended pt |
+| Type way top-left / hard to find | Agent placed at canvas origin | Default **lower-center SAFETY** | Glyphs inside magenta |
+| Free Transform → weird pt | Scaled type layer | **Move** only | Panel pt = visual size |
+| ID empty box + red `+` | Overset / orphan `create_text_frame` | `page.textFrames.add` on Type · full frame · check `overflows` | Jon sees live title |
+| PS look ≠ ID | Wrong pixels, scaled place, or MOCK≠live size | Lock §1b · place full-bleed · match pt by role · **PS-first** | Side-by-side 100% |
+| First PSD/INDD hang or A4 | Adobe modal / Untitled wrong size | **Jon Save As** once → **ready** → agent edits | Path + 8.5² + bleed 0.125 |
 | Can’t recreate a liked mock | Prompt/model not recorded | Every `vNN` gets **RECIPE.md** + D2 vs master | Open recipe next to art.png |
 | Character drift | Missing G0 refs on gen | Attach boy/santa locks every boy/Santa call | Compare to G0 side-by-side |
 | Fake spine in spread art | Model drew mockup fold | Negatives + hide orange fold before export | No center line on plate |
+
+---
+
+## Playbook — Export each Photoshop layer as JPG (dialed 2026-07-20)
+
+**Skill:** `.cursor/skills/Photoshop-Layer-Export/SKILL.md`  
+**Script:** `scripts/ps-export-layers-jpg.py` · `npm run ps:export-layers`  
+**Setup:** `tools/layout-mcp/PHOTOSHOP-SETUP.md`
+
+### Method (solo eyeball)
+
+1. Open source `.psd` / `.psb` in Photoshop (broker live)
+2. Hide **all** layers
+3. Starting from the **visible** layer (or `--start`), walk **up** the Layers panel
+4. For each layer: show **only** that layer → `doc.export(..., format="jpg", as_copy=True)` → `{layer-name}.jpg`
+5. Output folder: Jon’s path (example: `Images/references/Pugicorn-Book-Refrence/cropped/`)
+
+### Verified
+
+| Source | Out | Result |
+|--------|-----|--------|
+| `Pugicorn-Book-Refrence.psb` (1800×1466) | `…/cropped/Pugicorn-a.jpg` … `Pugicorn-r.jpg` | **18/18** |
+
+### Symptom → fix
+
+| Symptom | Resolution |
+|---------|------------|
+| Need every layer as a file | Run this playbook — not File → Export As once |
+| Wrong walk order | Panel **up** = toward top = lower `doc.layers` index |
+| Smart Object blank frame | Short settle after show; export composites doc pixels |
+| Windows print Unicode crash | ASCII logs · `PYTHONIOENCODING=utf-8` |
 
 ---
 

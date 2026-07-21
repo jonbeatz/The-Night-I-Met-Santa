@@ -41,6 +41,7 @@ Agents: use these defaults for all new poem text frames until Jon changes them.
 |------|----------|---------------|
 | Poem body | **Same 20/26 +5 #2C2C2C** | Locked table above |
 | Dedication / short matter | **30 / ~40 #2C2C2C** (p03 dial) | Match unless Jon changes |
+| Title page (P01) | Cinzel **36/42** + Cormorant author **18/24** · `#2C2C2C` · lower-center SAFETY | Same pt + position live — **no Free Transform** in PS |
 
 Points are physical — same pt size in PS and ID when docs are 8.5″/8.75″. Pixel art: **2625²** / **5250×2625** placed full-bleed = 300 DPI; ignore PS “72 dpi” tag. Full parity rules: `.cursor/docs/PAGE-BUILD-WORKFLOW.md` §1b.
 

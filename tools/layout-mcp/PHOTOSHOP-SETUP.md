@@ -151,3 +151,21 @@ npm run layout:photoshop-broker   # broker only :47391
 | alisaitteke primary | Skip — Windows path is COM; UXP addon is Neural Filters only |
 
 **Lesson:** On this machine, Adobe desktop automation that works = **UXP bridge** (InDesign + Photoshop). Prefer UXP for any new Adobe app before COM.
+
+---
+
+## Good-to-know — export each layer as JPG (2026-07-20)
+
+**Skill:** `.cursor/skills/Photoshop-Layer-Export/SKILL.md`  
+**Script:** `scripts/ps-export-layers-jpg.py` · **npm:** `npm run ps:export-layers`
+
+Solo-visibility loop (hide all → show one → export JPG named after layer → walk **up** the Layers panel). Verified on `Pugicorn-Book-Refrence.psb` → `Images/references/Pugicorn-Book-Refrence/cropped/` (18/18).
+
+```powershell
+npm run layout:photoshop-mcp   # if broker down
+# Photoshop: open the .psd/.psb
+npm run ps:export-layers -- --doc "My-File.psb" --out "Images\references\My-File\cropped"
+```
+
+Playbook card: `.cursor/docs/ISSUES-RESOLVED.md` → **Playbook — Export each Photoshop layer as JPG**.
+

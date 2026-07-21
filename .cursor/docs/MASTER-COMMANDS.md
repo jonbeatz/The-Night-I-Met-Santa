@@ -70,6 +70,8 @@
 | `npm run image:gen:open -- "prompt"` | Same + open in default viewer |
 | `npm run image:fal -- "prompt"` | fal.ai pay-per-use bonus (`FAL_API_KEY`) |
 | `npm run image:fal:open -- "prompt"` | fal + open in default viewer |
+| `npm run layout:photoshop-mcp` | Photoshop adobepy broker + MCP (:47391 / :8766) |
+| `npm run ps:export-layers` | Export each open PSD/PSB layer as JPG (solo-eyeball) |
 | `npm run video:fal -- -StartImage a.png -EndImage b.png` | Kling I2V scroll clip via fal queue |
 | `npm run video:fal:open -- -StartImage a.png -EndImage b.png` | Kling clip + open MP4 |
 | `npm run video:polish -- -InputPath clip.mp4` | Kinocut trim/9:16/QC → `kinocut-media\polish-out` |

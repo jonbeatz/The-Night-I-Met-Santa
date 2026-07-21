@@ -1,12 +1,12 @@
 # BOOK PAGE WORKFLOW — Poem → Art → Pages
 
-**Status:** Working draft **2026-07-20** — Jon reviews / tweaks before we lock  
+**Status:** **LOCKED 2026-07-20** — Jon confirmed  
 **Purpose:** One accurate map of **every interior page**, the **poem words** on it, the **image to create**, and **temp filenames** so we know what to generate.  
 **How to build each page (PSD / mocks / recipes):** **`PAGE-BUILD-WORKFLOW.md`**  
 **Text of record:** `Transcription/poem-clean.txt`  
 **Copy (About / Thank You / credits):** `BOOK-COPY-DRAFTS.md`  
 **Build authority:** `AGENT-RUNBOOK.md`  
-**Related (older proposals):** `SPREAD-STORY-MAP.md` · `PAGE-PROMPT-BIBLE.md`
+**Related (older proposals):** `SPREAD-STORY-MAP.md` (stub) · `PAGE-PROMPT-BIBLE.md` (prompts; reconcile forms to this map)
 
 ---
 
@@ -22,6 +22,7 @@
 | **Image size** | Page **2625²** · spread **5250×2625** — place full-bleed in ID (no habitual re-scale). See `PAGE-BUILD-WORKFLOW.md` §1b |
 | **Spreads** | **No fake middle gutter/spine line** in art — seamless scene; orange fold = PSD guide only |
 | **Klein dial** | Lane A = Klein 4B + **Dial D2** append only (`IMAGE-LANE-PROMPTS.md`) |
+| **Build order** | **Sequential** P01 → P02 → P03 → 4\|5 → S1…S12 → BM (Jon 2026-07-20) |
 | **Watermarks** | Flag on finals; Jon removes in Photoshop before print promote |
 | **Prototype caveat** | Current `eyes-met-prototype-v1.indd` page numbers are **mock layout**, not this final book map |
 | **Docs triggers** | **`update docs`** = harvest into this map + build workflow · **`log fixes`** = ISSUES-RESOLVED incident card · see `PAGE-BUILD-WORKFLOW.md` §11 |
@@ -71,6 +72,27 @@
 | 36 | SINGLE | BM | Final blank or small ornament — **or cut** | Optional |
 
 **Trim options:** Drop 34–36 → **33** (odd — add blank to **34**). Prefer keep **36** or trim to **32** by shortening front (merge 4\|5 into one About page) — Jon chooses.
+
+---
+
+## Industry prelims primer (why our map looks this way)
+
+Jon asked (2026-07-20): blank openers, where copyright/title/about/author go, welcome pages, end blanks. **YouTube scrapes not required** — trade picture-book practice is settled:
+
+| Piece | Typical trade picture book | Our locked 36-page map |
+|-------|----------------------------|-------------------------|
+| **Endpapers** | Colored/patterned sheets glued to the cover (often not in the story PDF count) | Lulu casewrap handles binding boards; we don’t invent fake “page 0” art unless Jon wants printed endpapers later |
+| **Page 1 (RIGHT / recto)** | **Title** | ✅ P1 Title |
+| **Page 2 (LEFT / verso)** | **Copyright** (back of title leaf) | ✅ P2 Copyright |
+| **Page 3** | Dedication (or combined with copyright if tight) | ✅ P3 Dedication |
+| **“Welcome”** | Rare in picture books | We use **About This Story** (4\|5) as the gift-book equivalent — optional to thin later |
+| **Author bio / portrait** | Usually **back matter** | ✅ Thank You + Jack portrait **30\|31** |
+| **Story** | Double-page spreads after prelims | ✅ S1 starts **6\|7** |
+| **Closing blanks** | Optional even count / quiet last page | ✅ 32–36 quiet / optional padding |
+
+**Must-haves only:** title + copyright. Everything else is optional polish. Our map is already *more* formal than many 32-page trade books (About up front + Thank You + quiet close) — appropriate for an heirloom gift.
+
+Sources consulted: [Book Design Made Simple — front matter](https://www.bookdesignmadesimple.com/book/book-front-matter) · [Anatomy of a 32-page picture book](https://champandnessie.com/2019/11/06/anatomy-of-a-32-page-picture-book/) · Kindlepreneur / Brooke Vitale layout notes.
 
 ---
 
@@ -316,11 +338,15 @@ Mark changes here when Jon decides — don’t silently change the map.
 
 ## Decision gates for Jon
 
-1. **Confirm 36** as working page count (or request 32 / 40 remap).  
-2. **Confirm** About as pages **4\|5** (text + vignette) vs thinner front.  
-3. **Confirm** Thank You \| Jack portrait as **30\|31** facing pair.  
-4. **Confirm** all story units stay spreads (S1–S12) for now.  
-5. After confirm → generate art in checklist order (S1/S2 next after eyes-met polish, or S4).
+| # | Gate | Decision |
+|---|------|----------|
+| 1 | Page count | **36** working target (within 35–40) — **CONFIRMED 2026-07-20** |
+| 2 | About | Pages **4\|5** (text + vignette) — **CONFIRMED** |
+| 3 | Thank You \| Jack | Pages **30\|31** facing — **CONFIRMED** |
+| 4 | Story form | S1–S12 stay **spreads** for now — **CONFIRMED** |
+| 5 | Next art | **Sequential front → back** (Jon 2026-07-20): start **P01 Title**, then P02, P03, 4\|5, S1… — easier decisions from book flow |
+
+Trim 34–36 or remap to 32 only if Jon later asks — do not change this map silently.
 
 ---
 

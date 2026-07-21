@@ -39,6 +39,7 @@
     "layout:indesign-bridge": "powershell -NoProfile -Command \"$env:INDESIGN_BRIDGE_HTTP_PORT='19300'; $env:INDESIGN_BRIDGE_WS_PORT='19301'; node tools/layout-mcp/indesign-uxp-server/bridge/server.js\"",
     "layout:photoshop-mcp": "powershell -ExecutionPolicy Bypass -File tools/layout-mcp/photoshop-adobepy/start-photoshop-mcp.ps1",
     "layout:photoshop-broker": "powershell -NoProfile -Command \"$env:ADOBEPY_TOKEN='dev-token'; & 'tools/layout-mcp/photoshop-adobepy/adobepy-0.5.2-windows-x64/bin/adobepy.exe' broker --token dev-token\"",
+    "ps:export-layers": "tools/layout-mcp/photoshop-adobepy/.venv/Scripts/python.exe scripts/ps-export-layers-jpg.py",
     "layout:affinity-inspector": "npx --yes @modelcontextprotocol/inspector --sse http://127.0.0.1:6767/sse",
     "layout:affinity-docs": "powershell -NoProfile -Command \"Set-Location tools/layout-mcp/affinity-scripting; node extract_docs.js\"",
     "book:pdf:doctor": "powershell -File scripts/pdf-prepress-doctor.ps1",

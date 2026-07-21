@@ -12,13 +12,12 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 **Creative loop dial-in:** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** — PS↔ID size parity · Klein Dial D2 · no fake gutter · mocks+RECIPE · close PNG · MOCK-TYPE by role (poem 20/26 · matter 30).  
 **Docs habit:** **`update docs`** = harvest workflow into playbooks · **`log fixes`** = ISSUES-RESOLVED card · see PAGE-BUILD §11.  
 **Smoke:** `p03-dedication.psd` + `p03-dedication-smoke.indd` · mocks `Media/generated/mocks/P03-dedication/v01/`.  
-**Page map draft:** **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`** — confirm ~36-page plan.  
-**Spread loop:** Jon PS MOCK + `Images/chopz/` → InDesign **live Cormorant** (poem 20/26 +5 #2C2C2C).  
-**Continuity:** Boy G0 + Santa G0 in `Media/approved/characters/` — attach on every boy/Santa gen.  
-**Eyes-met:** prototype **4–5** (= story **S3** → book **10|11**).  
-**Photoshop MCP LIVE:** adobepy UXP — `PHOTOSHOP-SETUP.md`.  
-**Next:** Confirm page map → next unit with full RECIPE + tab hygiene.  
-**Cleanup (2026-07-20):** light archive done — `_archive/docs/` · `_archive/images-scratch/` · `scripts/_scratch/` · `Pages/` deprecated.  
+**Page map:** **LOCKED** `.cursor/docs/BOOK-PAGE-WORKFLOW.md` — **36** pages (Jon confirmed 2026-07-20).  
+**Build order:** **Sequential front → back** (P01 → P02 → P03 → 4\|5 → S1…S12 → BM). No jumping around unless Jon asks.  
+**Creative loop:** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`**.  
+**Current unit:** **P01 Title** — `p01-title.psd` MOCK Cinzel **36** visible · `book-interior-v1.indd` live type visible (overset fixed).  
+**Gotchas (logged):** Jon first-Save As · PS-first then ID mirror · no Free Transform · PS API `pt×(300/72)` @300ppi · ID type via `page.textFrames.add` (not orphan `create_text_frame`) · title defaults **36/18** lower-center SAFETY.  
+**Smoke ref:** `p03-dedication.psd` (process dial — not next in queue).  
 **Playbook:** `ISSUES-RESOLVED.md` · `BOOK-PRODUCTION-SYSTEM.md` · `PAGE-BUILD-WORKFLOW.md`.
 
 ---

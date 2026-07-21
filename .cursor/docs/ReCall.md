@@ -18,7 +18,7 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-20 — Light cleanup: archived superseded docs, parked Image/script scratch, Pages deprecated, TRUTH/AGENTS aligned. **PAGE-BUILD-WORKFLOW** dialed. **Next:** confirm BOOK-PAGE-WORKFLOW → next page unit.
+2026-07-20 — **BOOK-PAGE-WORKFLOW LOCKED** (36 pages · Jon confirm). Light cleanup done. **Next:** pick unit S1 / S2 / S4 or P01 / P05.
 
 ## Where to continue
 1. **Confirm** `.cursor/docs/BOOK-PAGE-WORKFLOW.md` (page count, L/R poem splits, About + Jack pages)
@@ -93,6 +93,13 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
 - **No fake gutter** in spread art (orange fold = MOCK guide only)
 - **Klein dial:** 4B + **Dial D2** append only (`IMAGE-LANE-PROMPTS.md`)
 - **Docs triggers:** `update docs` = workflow harvest · `log fixes` = ISSUES card (`PAGE-BUILD-WORKFLOW.md` §11)
+- **Tony email (LOCKED):** **Tony** / **T** / **TNyse** / **bigtee** → **`bigtee@gmail.com`**
+- **First PSD/INDD create (2026-07-20):** Jon **Save As** to final path → click dialogs → **ready** → agent edits (avoids modal hang + A4 Untitled mistake)
+- **PS-first (2026-07-20):** dial MOCK in Photoshop then mirror live type in InDesign (same pt/spot)
+- **Title defaults (P01):** Cinzel **36/42** + Cormorant author **18/24** · `#2C2C2C` · lower-center SAFETY · no Free Transform
+- **PS text API @300ppi:** pass `pt×(300/72)` or batchPlay `pointsUnit` — verify Character panel
+- **ID live type:** `page.textFrames.add` on Type layer — avoid orphan `create_text_frame`; check `overflows === false`
+- **PS layer to JPG export (2026-07-20):** skill `Photoshop-Layer-Export` · `npm run ps:export-layers` · playbook in ISSUES-RESOLVED
 - **Page build loop:** `.cursor/docs/PAGE-BUILD-WORKFLOW.md` · `Media/generated/mocks/{unit}/vNN/` + **RECIPE.md**
 - **Print pixels:** page **2625²** · spread **5250×2625** = full **300 DPI** at Lulu bleed size (Pass B); dial may be lower
 - **No fake gutter** on final spread art (MOCK-only fold OK)
@@ -100,8 +107,10 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
 - **Photoshop MCP (2026-07-20 LIVE):** adobepy UXP broker `:47391` + dcc-mcp-photoshop `:8766/mcp` — **not** COM. Prefs: Enable Developer Mode only. Doc: `tools/layout-mcp/PHOTOSHOP-SETUP.md`. COM MCPs (loonghao/alisaitteke) rejected on this PC (`0x80080005`). **Default save folder:** `Xtraz/Adobe-Photoshop/`
 - **Creative Cloud:** keep Desktop app installed (licensing); OK to disable Startup — do **not** uninstall while keeping InDesign/UDT
 
-## Session note 2026-07-20 — PAGE-BUILD-WORKFLOW dial-in
-- Canonical loop: `.cursor/docs/PAGE-BUILD-WORKFLOW.md` · mocks `Media/generated/mocks/` + RECIPE.md · close PNG after place
-- MOCK-TYPE defaults: Cormorant Medium 30pt / #2C2C2C (from p03-dedication)
-- Continuity: Boy G0 + Santa G0 always for character scenes
-- Smoke: p03-dedication.psd still working unit
+## Session note 2026-07-20 — P01 title dial + fix log
+- P01: `p01-title.psd` + `book-interior-v1.indd` — Jon confirmed live title visible after overset fix
+- Logged cards: first-save · PS API 300ppi · MOCK↔ID parity · ID overset/orphan frame — see `ISSUES-RESOLVED.md`
+- **PS-first** locked; title Cinzel 36 + Cormorant 18; skill `Photoshop-Layer-Export` + `npm run ps:export-layers`
+- Pugicorn shelf refs affirm spread-first pacing (no map change)
+- Tony Google OAuth guide emailed; aliases Tony/T/TNyse/bigtee → bigtee@gmail.com
+- Next: continue sequential (P02) after Jon approves P01 composition / cloud

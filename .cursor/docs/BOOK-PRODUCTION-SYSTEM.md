@@ -78,6 +78,12 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | Mock versioning | `{unit}/vNN/` + mandatory **RECIPE.md** (service · model · prompt · refs · D2 vs master) | Scoreboard: `Media/generated/mocks/_INDEX/` |
 | Close PNG after place | Hard rule — keep PS tabs to working PSD only | Avoid tab pile-up |
 | Docs triggers | **`update docs`** = system harvest · **`log fixes`** = ISSUES card | `PAGE-BUILD-WORKFLOW.md` §11 |
+| First PSD/INDD create | **Jon Save As** once → **ready** → agent edits | Modals block bridge; Untitled can save as A4 |
+| PS layer → JPG dump | `npm run ps:export-layers` · skill **Photoshop-Layer-Export** | Solo-eyeball per layer |
+| PS-first then ID | Dial MOCK in PS → mirror live type in ID | One creative desk |
+| Title (P01) type | Cinzel **36/42** + Cormorant author **18/24** · `#2C2C2C` · lower-center SAFETY | Same in PS MOCK + ID |
+| PS text API @300ppi | Pass `pt×(300/72)` or batchPlay `pointsUnit` | Else 36→8.64 |
+| ID live type create | `page.textFrames.add` on Type · check `overflows` | Avoid orphan `create_text_frame` |
 | Cover display type | **Cinzel Decorative** (alt Mountains of Christmas) | Same |
 | Lulu color | **sRGB** export for full-color interior | Lulu printers use sRGB (2026 help) |
 | Lulu paper | **Premium Color** / heavier stock | Heirloom gift feel |

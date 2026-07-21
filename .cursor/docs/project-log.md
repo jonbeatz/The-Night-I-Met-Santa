@@ -2,6 +2,8 @@
 
 | Date | Note |
 |------|------|
+| 2026-07-20 | **Docs harvest:** P01 type parity + overset fixes · PS-first · Photoshop-Layer-Export skill · Pugicorn flow affirm (no map change) · Tony Google OAuth email + aliases. Mem0/vault/Mnemosyne synced. |
+| 2026-07-20 | **P01 dial + fix log:** first-Save As · PS↔ID type parity · PS API 300ppi quirk · ID overset/orphan frame fixed (Jon sees title) · PS-first locked. Cards in `ISSUES-RESOLVED.md`. |
 | 2026-07-20 | Google dual OAuth fleet (default jonbeatz; jonf822 ask-only). BOOK-PAGE-WORKFLOW + PS MCP dialed. Pointer `.cursor/docs/GOOGLE-WORKSPACE.md`. |
 | 2026-07-14 | Moved from F:\My Projects\Dad\... → D:\Hermes\projects\The-Night-I-Met-Santa |
 | 2026-07-14 | bootstrap-existing-project + package.json / START-HERE / TRUTH / ReCall |

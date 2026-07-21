@@ -72,6 +72,7 @@ Searchable catalog of all portable skills available in `shared-profile-content/s
 | Google-Workspace | google, gmail, calendar, drive, automation | Google automation via Hermes — Gmail, Calendar, Drive operations | JonBeatz |
 | Image-Workflow | image, hf, comfyui, genai, upscale, video | HF cloud generation + ComfyUI local edit/upscale/video pipeline | JonBeatz |
 | Background-Removal | image, processing, rembg, u2net, python | AI background removal with rembg + U^2-Net — transparent PNG pipeline, CLI tool | VaderLabz |
+| **Photoshop-Layer-Export** | photoshop, layers, export, jpg, psb, adobepy, book-refs | **Solo-eyeball export:** each layer → named JPG via adobepy (`npm run ps:export-layers`) | The-Night-I-Met-Santa |
 
 ## GitHub & Docs
 

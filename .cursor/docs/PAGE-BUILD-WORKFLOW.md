@@ -47,9 +47,20 @@
 |------|-------------------------|----------------------------|
 | **Poem stanzas** | Cormorant Medium **20 / 26** · tracking **+5** · `#2C2C2C` | **Same** — rebuild live; do not rasterize |
 | **Dedication / short matter** | Cormorant Medium **30 / ~40** · `#2C2C2C` (dialed p03) | Match ~30 pt unless Jon picks otherwise |
+| **Title page (P01)** | Cinzel Decorative · title **36 pt** · author **18 pt** Cormorant · `#2C2C2C` · start **lower-center inside SAFETY** | **Same pt + position** live |
 | Cover title | Cinzel Decorative (display) | Live Cinzel in cover doc |
 
 **Agent rule:** For poem pages, set MOCK-TYPE to **20/26**, not 30. Use 30 only for short matter (dedication, thank-you lines). That way your PS fit + cloud brush previews what ID will print.
+
+**Keep PS ↔ ID type locked (2026-07-20):**
+
+| Do | Don’t |
+|----|--------|
+| Set size in the **Character** panel (pt) in both apps | **Free Transform** (Ctrl/Cmd+T) on type in Photoshop — panel can show **4 pt** while glyphs look huge |
+| **Move** tool only to reposition MOCK-TYPE | Scale text by dragging corner handles |
+| Place MOCK-TYPE inside the **SAFETY** square (not canvas 0,0 / top-left bleed) | Drop type at document origin (looks “barely on screen”) |
+| Match the **same family + same pt** when rebuilding live in InDesign | Trust a wrong Character panel readout (e.g. Minion 12) when another frame/tool is selected |
+| After Jon dials a winner, update this table + RECIPE | Freestyle a different size in ID than the approved MOCK |
 
 ### Watercolor text cloud (brushes)
 
@@ -79,9 +90,9 @@ If the cloud is painted where it belongs on the full canvas, InDesign placement 
 ③ NEW PSD = Duplicate blank template → Save As page slug
 ④ PLACE art on ART layer (guides: cyan TRIM · magenta SAFETY)
 ⑤ CLOSE source PNG tab immediately
-⑥ ADD MOCK-TYPE layer (preview) — Jon positions + cloud brush
-⑦ SAVE PSD
-⑧ PLACE art (and later chops/clouds) into InDesign at correct page
+⑥ ADD MOCK-TYPE layer (preview) — **defaults §7** (visible inside SAFETY) · Jon positions + cloud brush
+⑦ SAVE PSD when MOCK is close
+⑧ PLACE art + rebuild **same pt/position** live type into InDesign
 ⑨ Jon approves → promote winner to Media/approved/ (+ recipe sidecar)
 ```
 
@@ -89,13 +100,27 @@ If the cloud is painted where it belongs on the full canvas, InDesign placement 
 |------|-----|--------|
 | 1 Image | Agent | See §3 lanes · naming §4 · continuity §5 |
 | 2 Recipe | Agent | Template §6 — **no version without RECIPE.md** |
-| 3 PSD | Agent | From `single-page-template` / `spread-page-template` / `book-covers-template` → `Xtraz/Adobe-Photoshop/{slug}.psd` |
+| 3 PSD | Agent + **Jon** | From blank template → **Jon Save As** `{slug}.psd` first (see §3b) → then place ART |
 | 4 Place art | Agent | Soft center / full-bleed as briefed · respect SAFETY for faces |
 | 5 Close PNG | Agent | **Hard rule** — keep only working PSD (+ reopen template when needed) |
 | 6 MOCK-TYPE | Agent then Jon | Defaults §7 · Jon nudges + paints **CLOUD** wash for readable type |
-| 7 Save | Agent/Jon | PSD stays in `Xtraz/Adobe-Photoshop/` |
-| 8 InDesign | Agent | Live Cormorant (poem lock) · correct book page from `BOOK-PAGE-WORKFLOW.md` |
+| 7 Save | Agent/Jon | PSD already named; agent Save after edits |
+| 8 InDesign | Agent + **Jon** | **Jon Save As** `book-interior-v1.indd` (or page smoke) at **8.5×8.5** first → then agent places art/type |
 | 9 Promote | Jon says lock | Copy to Tier B / later `print/` · update `Media/approved/INDEX.md` |
+
+### 3b) First file creation — Jon saves once (LOCKED 2026-07-20)
+
+Adobe **Save / Close** modals block the agent bridge. Wrong Untitled can also save as **A4** instead of **8.5×8.5**.
+
+| Step | Who | What |
+|------|-----|------|
+| 1 | Agent or Jon | Open blank: `single-page-template.psd` / `spread-page-template.psd` · or new InDesign square |
+| 2 | **Jon** | **File → Save As** to final path (`Xtraz/Adobe-Photoshop/p01-title.psd`, `Xtraz/Adobe-inDesign/book-interior-v1.indd`, etc.) · click through any dialog |
+| 3 | Jon | Confirm rulers/size (**8.5×8.5 in**, bleed **0.125**, margins **0.5**) — compare to `p03-dedication-smoke.indd` if unsure |
+| 4 | Jon | Say **ready** |
+| 5 | Agent | Place art, MOCK/live type, layers, nudges — **Save** (not first-create) |
+
+**Do not** rely on the agent to dismiss “Save changes to Untitled…?” or to pick among multiple Untitled tabs.
 
 ---
 
@@ -231,17 +256,34 @@ Approved Tier B files keep a **sidecar** `*.recipe.md` next to the PNG (see `cov
 
 Same face/color always. **Size follows role** so PS design mirrors ID (see §1b).
 
-| Setting | Poem pages | Dedication / short matter |
-|---------|------------|---------------------------|
-| Font | Cormorant Garamond Medium | same |
-| Size / leading | **20 / 26** | **30 / ~40** (dialed p03) |
-| Tracking | **+5** | optional |
-| Color | **`#2C2C2C`** | **`#2C2C2C`** |
-| Alignment | Center | Center |
-| Layer name | `MOCK-TYPE - {slug} (preview)` | same |
-| Stack | Above **CLOUD** · TYPE zone guide **hidden** | same |
+| Setting | Poem pages | Dedication / short matter | Title page (P01) |
+|---------|------------|---------------------------|------------------|
+| Font | Cormorant Garamond Medium | same | **Cinzel Decorative** Regular (title) · Cormorant Medium (author) |
+| Size / leading | **20 / 26** | **30 / ~40** (dialed p03) | Title **36 / 42** · author **18 / 24** |
+| Tracking | **+5** | optional | optional |
+| Color | **`#2C2C2C`** | **`#2C2C2C`** | **`#2C2C2C`** |
+| Alignment | Center | Center | Center |
+| **Default start** | Inside SAFETY (never canvas 0,0) | Quiet / dialed zone | **Lower-center SAFETY** (~y **1729 px** on 2625) |
+| Layer name | `MOCK-TYPE - {slug} (preview)` | same | same |
+| Stack | Above **CLOUD** · TYPE zone guide **hidden** | same | same |
+| Position edits | **Move** tool only | same | same — never Free Transform |
+
+**Photoshop 300 ppi type-API quirk (LOCKED):** high-level `createTextLayer` / `set_character_style` size is scaled by **72/300**. To get Character-panel **N pt**, pass **`N × (300/72)`** (e.g. 36 → **150**) **or** set size with batchPlay `pointsUnit: N`. Verify Character shows the intended pt before matching InDesign.
 
 Print type is still **rebuilt live in InDesign** (never ship raster MOCK-TYPE). Cloud brush stays in PS → export RGBA → place full-bleed.
+
+### PS-first vs early InDesign (LOCKED 2026-07-20)
+
+**Default:** finish the **Photoshop MOCK close** (art + MOCK-TYPE + cloud wash) before deep InDesign work on that page. Then agent mirrors pt + position into live type.
+
+| Phase | Do this | Skip / light touch |
+|-------|---------|-------------------|
+| Dial art + type in PS | Full creative loop | Don’t chase pixel-perfect ID yet |
+| PS “close enough” | Place art + rebuild live type in ID to **same pt/spot** | — |
+| Jon tweaks in PS | Re-read MOCK → nudge ID once | Don’t maintain two creative masters in parallel |
+| Early ID smoke (optional) | One page to prove bridges/fonts | Not the design desk |
+
+**Why:** one creative desk (PS) → one print desk (ID). Same starting defaults so they don’t diverge “by default.”
 
 ---
 

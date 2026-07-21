@@ -145,13 +145,18 @@ Layer 1: place_image — full-bleed illustration, 2625×2625 px, 300 DPI
 
 Full write-ups: **`.cursor/docs/ISSUES-RESOLVED.md`**. Operator says **`log fixes`** to append new ones.
 
+**First-create rule (LOCKED):** Jon **Save As** new `.psd` / `.indd` to final path **once** → click any Adobe dialog → say **ready** → agent places art/type. Detail: `PAGE-BUILD-WORKFLOW.md` §3b.
+
 | Prefer | Avoid |
 |--------|--------|
+| Jon first-saves to final path under `Xtraz/Adobe-*` | Agent first-saving Untitled while a Save/Close modal is open (bridge hangs; wrong Untitled → A4) |
+| Verify **8.5×8.5 in** vs `p03-dedication-smoke.indd` | Trusting `create_document` defaults without checking |
+| Jon clicks Adobe Save/Close/font/link dialogs → **ready** | Leaving modals open for the agent |
 | One place cycle + `list_page_items` / Layers check | Retry-placing when unsure (stacks Cloud duplicates) |
 | `execute_indesign_code` rectangle → `place(path)` → `resize_page_item` on the Image | Blind `place_image` / `place_file_on_page` as sole path |
 | Keep placement rectangle + sized Image until Layers shows **one** cloud | Deleting the “empty” rectangle without confirming the link |
 | Inspect PNG / trust Jon on transparency | Assuming black fill from a thumbnail description |
-| Live text via JSX on the **target page** | `create_text_frame` alone (orphan pasteboard stories) |
+| Live text via JSX on the **target page** (`page.textFrames.add`) | `create_text_frame` alone (orphan pasteboard / empty page — text “missing”) |
 | `resize_page_item` in **points** (8.75″=630, spread=1260×630) | Negative-mm `place_image`; hoping `fit()` fixes sibling Image |
 | Jon drags **Frame** layer to top if needed | Long JSX fights with `LocationOptions` in UXP bridge |
 | **PS MOCK + chops → InDesign match → live type** (default) | Raster poem PNGs as finals; placing without a MOCK |
@@ -159,7 +164,7 @@ Full write-ups: **`.cursor/docs/ISSUES-RESOLVED.md`**. Operator says **`log fixe
 
 ### Default spread workflow (Jon + agent)
 
-1. Jon: start from **`spread-page-template.psd`** (spreads) or **`single-page-template.psd`** (singles) in `Xtraz/Adobe-Photoshop/` (Duplicate → Save As) → paint → export **MOCK** + chops to `Images/chopz/` (PNG preferred)
+1. Jon: start from **`spread-page-template.psd`** (spreads) or **`single-page-template.psd`** (singles) in `Xtraz/Adobe-Photoshop/` (**Duplicate → Jon Save As** to final slug) → paint → export **MOCK** + chops to `Images/chopz/` (PNG preferred)
 2. Agent: facing pages → art L/R → cloud → paintFrame → optional MOCK @ 35% → live Cormorant → hide MOCK
 3. Jon: eye-check vs MOCK (glyphs inside magenta); approve
 
