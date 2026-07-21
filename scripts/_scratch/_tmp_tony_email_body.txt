@@ -1,0 +1,35 @@
+Hey Tony —
+
+Jon asked me to send you the Adobe + Cursor pipeline we dialed in while building his dad’s picture book (*The Night I Met Santa*).
+
+WHAT THIS IS
+Attached: ADOBE-TNYSE-WORKFLOW.md
+
+It’s a setup guide for controlling Adobe InDesign + Photoshop from Cursor (or Claude Code) on your Mac — same stack Jon runs on Windows:
+  • Creative Cloud Desktop (signed in)
+  • Adobe UXP Developer Tools (Load & Watch plugins)
+  • InDesign UXP bridge (ports 19300/19301)
+  • Photoshop via adobepy + dcc-mcp (broker 47391, MCP 8766)
+  • Cold-start order, smoke tests, and Mac-specific path/command notes
+
+Save the file somewhere in the project you’ll open in Cursor (or attach it in chat).
+
+BEST PROMPT — paste this into Cursor Agent after the file is in context
+────────────────────────────────────────────────────────────────────
+Read ADOBE-TNYSE-WORKFLOW.md end-to-end and set up this Mac so Cursor can control Adobe InDesign and Photoshop via UXP Developer Tools.
+
+Follow the doc’s [MAC] notes (not Windows paths). Do this in order:
+1) Confirm Creative Cloud Desktop, InDesign, Photoshop, and UXP Developer Tools are installed; ask me to confirm CC Desktop is fully signed in before opening UDT.
+2) Vendor or create tools/layout-mcp/indesign-uxp-server (plugin + Node bridge + MCP) using ports 19300/19301 — never 3000.
+3) Install Mac adobepy binary + uv venv + dcc-mcp-photoshop; run adobepy install-bridge photoshop into bridges/photoshop; write start-photoshop-mcp.sh.
+4) Write .cursor/mcp.json with Mac absolute paths for indesign-uxp and photoshop URL http://127.0.0.1:8766/mcp.
+5) Guide me through UDT Load & Watch for com.ads.indesign-bridge and com.adobepy.bridge.photoshop (you cannot click Electron — I must).
+6) Start both bridges, then smoke-test: InDesign Bridge Connected + create 8.5×8.5 doc; Photoshop curl :47391/health sessions≥1 and :8766/v1/readyz dcc:true; get_document_info on an open PSD.
+7) If Cursor shows photoshop green but sessions:0, tell me to UDT Reload the Photoshop plugin after the broker starts.
+
+Prefer UXP over any COM path. Stop and ask me before installing optional Affinity. Report a checklist of what’s done vs what I still need to click.
+────────────────────────────────────────────────────────────────────
+
+If anything’s unclear, ping Jon — he can share the actual bridge folders from his book repo when you’re ready to wire it.
+
+— Draven (via Jon)

@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Vader Vault - cross-project memory
 
-A shared Obsidian vault at `H:\Vader_Vault` is the durable, cross-project memory for the whole `D:\Hermes\projects` ecosystem. It is reachable from every workspace via the `vault` filesystem MCP.
+A shared Obsidian vault at `H:\Vader_Vault` is the durable, cross-project memory for the whole `D:\Hermes\projects` ecosystem. It is reachable from every workspace.
 
 ## Use it
 
