@@ -1,0 +1,24 @@
+---
+description: Mnemosyne local memory — session recall and closeout
+alwaysApply: true
+---
+
+# Mnemosyne Memory
+
+Local SQLite memory database. Works offline — no LLM needed. Use for session recall and closeout.
+
+## Hard rules
+
+1. **Mem0 stays canonical** for fleet recall — `npm run mem0:add`, `npm run mem0:search`, Close/End Project rituals.
+2. **Vader Vault** + **ReCall.md** stay authoritative for human-readable closeout.
+3. **Mnemosyne is additive** — session working context, decisions, and closeout notes.
+
+## Commands
+
+```powershell
+npm run mnemosyne:status
+npm run mnemosyne:remember -- "text"
+npm run mnemosyne:recall -- "query"
+```
+
+**Never** store secrets in Mnemosyne.

@@ -70,10 +70,6 @@
 | `npm run image:gen:open -- "prompt"` | Same + open in default viewer |
 | `npm run image:fal -- "prompt"` | fal.ai pay-per-use bonus (`FAL_API_KEY`) |
 | `npm run image:fal:open -- "prompt"` | fal + open in default viewer |
-| `npm run image:fal:klein9 -- "prompt"` | Lane **A1** default dial — Klein **9B** + Dial D2 (~$0.011) |
-| `npm run image:fal:klein4 -- "prompt"` | Lane **A3** light only — Klein **4B** + Dial D2 (~$0.009) |
-| `npm run layout:photoshop-mcp` | Photoshop adobepy broker + MCP (:47391 / :8766) |
-| `npm run ps:export-layers` | Export each open PSD/PSB layer as JPG (solo-eyeball) |
 | `npm run video:fal -- -StartImage a.png -EndImage b.png` | Kling I2V scroll clip via fal queue |
 | `npm run video:fal:open -- -StartImage a.png -EndImage b.png` | Kling clip + open MP4 |
 | `npm run video:polish -- -InputPath clip.mp4` | Kinocut trim/9:16/QC → `kinocut-media\polish-out` |
@@ -477,7 +473,6 @@ MSC Kanban ports (3001/3005/9119) live in the **MyStudioChannel** repo — not s
 | **Close Project** / **Close Session** | Close-Project.md + `session:handoff` |
 | **End Project** / **End Session** | End-Project.md + `session:stop` (AskQuestion git → dev `:3000` if up → `-StopDeepSeek`) |
 | **update docs** | `docs:sync` / Update-Docs.md |
-| **log fix** / **log fixes** | Append to `.cursor/docs/ISSUES-RESOLVED.md` (Symptom / Cause / Resolution / Verify) |
 | **backup profile** / **backup quick** | `backup:quick` |
 | **backup project** | `backup:project` |
 | **backup full** | `backup:quick:full` |

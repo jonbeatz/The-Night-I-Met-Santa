@@ -10,7 +10,7 @@
 | **model** | n/a — source plate already generated earlier |
 | **size** | 2625×2625 |
 | **seed** | n/a |
-| **verdict** | **maybe** — smoke plate for PSD/InDesign workflow dial-in |
+| **verdict** | **keep**|
 | **promoted_to** | — (working PSD: `Xtraz/Adobe-Photoshop/p03-dedication.psd`) |
 
 ## Character / style refs used
@@ -36,3 +36,5 @@ Soft-center vignette of warm fireplace embers / quiet hearth mood for **Page 3 D
 - Dedication copy (preview): *For my family, with love. — Jack Farrell*
 - Live type still rebuilt in InDesign for print
 - Next versions (v02+) if Jon wants a different hearth / softer wash / different crop — new folder + new RECIPE
+
+- Verdict stamp: Flow pass keep 2026-07-21 — FRAME ON matter

@@ -28,6 +28,11 @@
         "D:\\Hermes\\projects\\The-Night-I-Met-Santa\\tools\\layout-mcp\\indesign-scripting-mcp\\exec_server.py"
       ],
       "cwd": "D:\\Hermes\\projects\\The-Night-I-Met-Santa\\tools\\layout-mcp\\indesign-scripting-mcp"
+    },
+    "photoshop": {
+      "transport": "http",
+      "url": "http://127.0.0.1:8766/mcp",
+      "name": "Photoshop (adobepy UXP)"
     }
   }
 }

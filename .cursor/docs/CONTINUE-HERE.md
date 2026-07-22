@@ -6,15 +6,15 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-21)
+## One-line status (2026-07-21 night)
 
-**InDesign production locked** · page count **36** · `AGENT-RUNBOOK.md` authoritative.  
-**Creative loop:** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`**.  
-**P01 title art LOCKED (provisional):** `Media/approved/pages/p01-title.png` ← mocks **`P01-title/v22`** (simpler · scenery lower · top cream · FRAME ON). Alts v21 / v23 / v24 kept, not locked.  
-**Current unit:** **P01 Title** — place locked art into `p01-title.psd` ART · MOCK type in **upper cream** (not lower-center) · mirror ID.  
-**Gotchas:** Jon first-Save As · PS-first · no Free Transform · PS API `pt×(300/72)` @300ppi · ID `page.textFrames.add` · don’t mid-paint-crop soft vignettes (ISSUES-RESOLVED 2026-07-21).  
-**Next after P01 type/cloud dial:** **P02** sequential.  
-**Playbook:** `ISSUES-RESOLVED.md` · `BOOK-PRODUCTION-SYSTEM.md` · `PAGE-BUILD-WORKFLOW.md`.
+**Flow pass PROVED the book** · Klein dials **STOPPED**. Page count **36**.  
+**INDEX:** `Media/generated/mocks/_INDEX/flow-pass-2026-07-21.md` · **Flipbook:** `Output/flow-pass-2026-07-21-flipbook.pdf`  
+**Story keeps:** S1–S6 · **S7 v03** (look-up + holly PJs) · **S8 v02** · S9–S10 · S11 v02 · S12 · locks S3/P01/cover/Jack  
+**Matter keeps:** P02 · P03 · P05 · P32 · P33 · Hard PJ append locked on all story gens  
+**NEXT = InDesign production** via `PAGE-BUILD-WORKFLOW.md` + `AGENT-RUNBOOK.md` — start **P01 Title** (art locked → PSD ART → MOCK-TYPE upper cream → live ID).  
+**Prompt SoT:** `MASTER-PRODUCTION-DOCK.md` · page map: `BOOK-PAGE-WORKFLOW.md`  
+**Gotchas:** Jon first-Save As · PS-first · no Free Transform · don’t mid-paint-crop vignettes (`ISSUES-RESOLVED.md`).
 
 ---
 
@@ -89,37 +89,32 @@ An **8.5×8.5"** full-color children’s picture book from Jack’s Christmas po
 
 ## Start next (priority order)
 
-### 0. Confirm page workflow
-Review **`BOOK-PAGE-WORKFLOW.md`** — poem → imagery → temp filenames → full page list (About, Thank You, Jack portrait). Confirm ~36 pages + spread-first story (S1–S12).
+### 0. Flow art is dial-complete — do **not** reopen Klein sweeps
+Keepers live under `Media/generated/mocks/` (see flow INDEX). Optional later: Lane B paint unify / print px remakes — **not** blocking first InDesign pages.
 
-### 0b. Do **not** re-research print from scratch
-Read **`RESEARCH-VERDICT.md`** — Lulu primary, KDP HC skipped, timeline locked.
+### 1. InDesign cold start (Jon + agent)
+Follow **`AGENT-RUNBOOK.md`** cold flow: CC Desktop → UDT + InDesign + bridges → Jon **Load & Watch** → Connected ✓.
 
-### 1. Beat gap → approval sprint (print path)
-1. Open `Media/approved/INDEX.md` + `BOOK-PAGE-WORKFLOW.md` + `PAGE-PROMPT-BIBLE.md`.
-2. Generate missing spreads per workflow checklist (S1, S2, S4…); keep S3 eyes-met as north star.
-3. **Pick cover** A–E if back still open → Tier B `covers/`.
-4. Lane A Klein dial → Jon pick → Lane B Gemini/Banana finals → watermark check → promote.
+### 2. First production unit = **P01 Title**
+1. Duplicate `single-page-template.psd` → `p01-title.psd` (Jon first Save As if needed).
+2. Place `Media/approved/pages/p01-title.png` on **ART** · **close source PNG**.
+3. MOCK-TYPE in **upper cream** (Cinzel title / Cormorant author) — not lower-center.
+4. Cloud if needed → chops → InDesign live type (same pt).
+5. Then **P02 → P03 → 4|5 → S1…** sequential.
 
-### 2. Quiet-zone map (after Tier B art locks)
-For each locked page/spread, note where text sits without covering faces (policy: `TEXT-OVERLAY-POLICY.md`). Jon places cloud PNG per spread.
+### 3. Spread loop (after front matter)
+PS MOCK + chops (`Images/chopz/`) → InDesign → live Cormorant poem **20/26 +5**. Use keep dials as ART (promote to `Media/approved/` when Jon locks a plate).
 
-### 3. InDesign build (production path)
-Follow **`AGENT-RUNBOOK.md`** + **`INDESIGN-PRODUCTION-WORKFLOW.md`**:
-- Doc: 8.5×8.5", 0.125" bleed, single-page, **35–40** pages, sRGB
-- Layer stack: art → watercolor cloud PNG → **Cormorant Garamond Medium 20/26 tracking +5**, centered #2C2C2C
-- Export: `Lulu-Interior-Print-PDF.joboptions` → upload interior → download Lulu cover template → cover export
+### 4. Do **not** re-research print
+`RESEARCH-VERDICT.md` — Lulu primary. Export via `Lulu-Interior-Print-PDF.joboptions` when pages ready.
 
-### 4. Fallback only (if InDesign blocked)
-`composite_pages.py` + `book-final.typ` / img2pdf — emergency path, not the gift default.
+### 5. Cover wrap + proof
+Back cover still open · spine after page count final · proof order **~July 25–28**.
 
-### 5. Cover + Lulu proof
-After interior upload → Lulu custom cover template (exact spine) → InDesign cover → order proof by **~July 25–28**.
-
-**Docs:** `AGENT-RUNBOOK.md` · `INDESIGN-PRODUCTION-WORKFLOW.md` · `BOOK-PRODUCTION-SYSTEM.md` · `PAGE-PROMPT-BIBLE.md` · `FONT-CATALOG.md`
+**Docs:** `AGENT-RUNBOOK.md` · `PAGE-BUILD-WORKFLOW.md` · `INDESIGN-PRODUCTION-WORKFLOW.md` · `MASTER-PRODUCTION-DOCK.md` · `FONT-CATALOG.md`
 
 ### Optional later (not blocking gift)
-Web flipbook (`DIGITAL-FLIPBOOK-WATCH.md`) · Affinity polish · Mixam multi-copy
+Lane B finals batch · web flipbook · Affinity polish · Mixam multi-copy
 ---
 
 ## Commands (from this project root)

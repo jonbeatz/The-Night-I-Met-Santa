@@ -2648,12 +2648,49 @@ Features beyond Telegram: starred/pinned sessions, search, unread badges, multi-
 
 ---
 
+## Headroom (2026-07-21)
+
+- **URL:** https://github.com/headroomlabs-ai/headroom · **Docs:** https://headroom-docs.vercel.app/docs · **PyPI:** `headroom-ai`
+- **Grade:** **B- (81/100)** · **License:** Apache-2.0 · **Stars:** ~61k (Jul 2026)
+- **Verdict:** **WATCH** — strong token-savings candidate; do not install until a deliberate LiteLLM/Cursor trial plan
+- **Status:** **NOT_INSTALLED**
+
+### Summary
+
+Local-first **context compression** for agents: library (`compress()`), OpenAI-compatible **proxy**, **MCP** (`headroom_compress` / `retrieve` / `stats`), optional `headroom wrap <agent>`, and `headroom learn` (mines failures → agent markdown). Content-aware compressors (JSON SmartCrusher, AST CodeCompressor, HF Kompress-v2-base). Claims ~15–20% coding-agent savings and 60–95% on JSON tool dumps; reversible CCR cache.
+
+### Gap / overlap
+
+| vs | Notes |
+|----|-------|
+| **LiteLLM `:4000` + ngrok** | Primary Cursor Agent path — Headroom **must not** blindly `wrap cursor` or steal the override URL |
+| **TokenTracker `:7680`** | Spend visibility — Headroom is savings engine, not dashboard |
+| **Mem0 / MemPalace / Mnemosyne** | Headroom “cross-agent memory” is another silo — keep Mem0 primary |
+| **Hermex / Hermes WebUI `:8787`** | Headroom default proxy port **`:8787` collides** — use another port if trial |
+| **LiteLLM callback** | README supports `litellm.callbacks = [HeadroomCallback()]` — safest fleet hook if ever ADOPT |
+
+### Risks
+
+- **Agent-config mutation** — `wrap` / `deploy` / `learn` rewrite agent env + can write `AGENTS.md` / `CLAUDE.md` (prefer `CLAUDE.local.md`); security-sensitive
+- **Proxy = local MITM** — all chat/tool traffic through Headroom before provider; keep loopback-only
+- **Port `:8787`** — already reserved in fleet for Hermex/WebUI WATCH
+- **HF / ONNX / AVX2** — Kompress + Magika extras download models; RAM/disk; Windows wheels OK but `[ml]` is heavy
+- **Copilot OAuth path** — stores Headroom-specific tokens if that wrap mode used (skip unless needed)
+- **Young repo** (created 2026-01) despite huge star count — treat marketing savings as provisional
+
+**Verify (when trial):** `uv tool install --python 3.13 "headroom-ai[all]"` → `headroom doctor` → `headroom proxy --port 8790` (not 8787) → optional MCP `headroom mcp serve` in isolated profile. **Do not** `headroom wrap cursor` against live ngrok Override without a rollback plan (`headroom unwrap`).
+
+**Recommendation:** **WATCH** — trial later as MCP or LiteLLM callback only; never replace Mem0; never fight `:4000`/ngrok casually.
+
+---
+
 ## MemPalace (2026-07-13)
 
 - **URL:** https://github.com/MemPalace/mempalace · **Docs:** https://mempalaceofficial.com
-- **Grade:** **B (84/100)** · **License:** MIT · **Stars:** ~57,301 (Jul 2026)
+- **Grade:** **B (84/100)** · **License:** MIT · **Stars:** ~57k (re-confirmed ~57.5k 2026-07-21)
 - **Verdict:** **WATCH** — impressive local memory; **Jon bookmark 2026-07-13 — setup later; Mem0 stays primary**
 - **Status:** **NOT_INSTALLED** (bookmark)
+- **2026-07-21:** Re-linked in batch review — **no re-grade** (duplicate precheck)
 
 ### Summary
 

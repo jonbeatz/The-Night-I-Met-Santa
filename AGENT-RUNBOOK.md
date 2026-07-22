@@ -233,7 +233,7 @@ The poem lives in `Transcription/poem-clean.txt`. All 15 stanzas. Map:
 | S01 | House quiet, fire glow, Tommy nestled in bed | Left page 1 + right page illustration |
 | S02-S15 | Remaining stanzas — see `PAGE-PROMPT-BIBLE.md` for full mapping |
 
-For detailed stanza-to-page mapping, image prompts per beat, and beat gap audit: `PAGE-PROMPT-BIBLE.md` and `BEAT-GAP-AUDIT.md`
+For detailed stanza-to-page mapping: `BOOK-PAGE-WORKFLOW.md`. For image prompts: `MASTER-PRODUCTION-DOCK.md` (`POEM-IMAGE-PROMPT-DOCK.md` / `PAGE-PROMPT-BIBLE.md` are stubs).
 
 ---
 

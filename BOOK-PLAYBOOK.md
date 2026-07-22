@@ -334,7 +334,7 @@ leading = 0.55 em             # Line spacing
 
 ---
 
-## 8. Book Structure (32-Page Template)
+## 8. Book Structure (35-40 Page Template)
 
 ### Front matter (pages 1–8)
 

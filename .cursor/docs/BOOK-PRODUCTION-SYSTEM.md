@@ -248,7 +248,7 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 
 | Date | Decision | Notes |
 |------|----------|-------|
-| 2026-07-14 | Lulu 8.5×8.5 HC; 32 pages; 4–5 spreads | G2 |
+| 2026-07-14 | Lulu 8.5×8.5 HC; 35-40 pages; ~6-8 spreads | G2 |
 | 2026-07-14 | Pillow cloud text; reject v3–v5 | Layout north star photos |
 | 2026-07-14 | About + Thank You **Draft A** locked | Copy |
 | 2026-07-14 | Aesthetic = **painted gouache**, not colored pencil | Style |
@@ -337,7 +337,7 @@ input:
 
 - [ ] Even page count
 - [ ] 300 DPI · 0.125" bleed · safety ≥ 0.5" from trim for faces/text
-- [ ] Gutter: no critical faces on absolute center fold (32-page book needs no *extra* gutter margin)
+- [ ] Gutter: no critical faces on absolute center fold (35-40 page book needs no *extra* gutter margin)
 - [ ] Interior PDF = single multi-page file; **odd pages = right**; no cover pages inside
 - [ ] Cover = separate wrap PDF from **Lulu template** after real page count + paper known
 - [ ] Color: **sRGB** for Lulu full color (review Lulu’s print-ready preview after upload)

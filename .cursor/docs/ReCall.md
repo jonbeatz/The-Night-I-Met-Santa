@@ -1,33 +1,33 @@
 # ReCall.md — The-Night-I-Met-Santa
 
 ## Current focus
-**InDesign = production** (runbook authority). Pillow/Typst = fallback only.  
-**Page count locked: 35–40.** Working map: **`.cursor/docs/BOOK-PAGE-WORKFLOW.md`**.  
-**Creative loop (dialing):** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** — mocks/`vNN`+RECIPE → new PSD → **close PNG** → MOCK-TYPE (30pt `#2C2C2C`) → cloud → InDesign.  
-Smoke unit: `p03-dedication.psd` · mocks `Media/generated/mocks/P03-dedication/v01/`.  
-**Spread build loop:** PS MOCK + chops (`Images/chopz/`) → InDesign → live Cormorant (poem 20/26).  
-**Continuity:** Boy G0 + Santa G0 in `Media/approved/characters/`.  
-Working `.indd`: `eyes-met-prototype-v1.indd` · also `p03-dedication-smoke.indd`.  
-Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
+**PHASE: InDesign production** (Klein flow dials STOPPED 2026-07-21 night).  
+**Flow pass proved the book** — INDEX + flipbook are the dial scoreboard.  
+**Page count:** **36** · map `BOOK-PAGE-WORKFLOW.md` · prompts `MASTER-PRODUCTION-DOCK.md`.  
+**Build loop:** `PAGE-BUILD-WORKFLOW.md` — keep art → PSD → close PNG → MOCK-TYPE → cloud → InDesign live type.  
+**First unit:** **P01 Title** (`Media/approved/pages/p01-title.png` → `p01-title.psd` · MOCK upper cream).  
+**Continuity:** Boy G0 + Santa G0 · hard PJ append on all story gens.  
+Working `.indd`: `eyes-met-prototype-v1.indd` · `p03-dedication-smoke.indd` (prototype; full book doc next).
 
-**DTP:** Affinity MCP + InDesign UXP Bridge + **Photoshop adobepy UXP LIVE** (`:47391` / `:8766`). Cold flow: CC Desktop signed in (Jon confirms) → agent UDT+apps+bridges → **Jon Load & Watch** → MCP.
+**DTP:** Affinity MCP + InDesign UXP Bridge + **Photoshop adobepy UXP LIVE**. Cold flow: CC → UDT+apps → Jon **Load & Watch** → MCP.
 
-**PSD blanks locked:** `Xtraz/Adobe-Photoshop/` → `spread-page-template.psd` · `single-page-template.psd` · `book-covers-template.psd` (no spine-only PSD). Open **one working PSD** at a time; close source PNGs after place.
+**PSD blanks:** `Xtraz/Adobe-Photoshop/` → `spread-page-template.psd` · `single-page-template.psd` · `book-covers-template.psd`.
 
 ## Birthday deadline
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-21 (late) — Full-book **dial imagination** runs: Klein v1 · Qwen v2 · Qwen stylized v3 (G0 + 07-qwen style-ref). Jon comparing tomorrow. **Next:** pick preferred lane/pages → continue testing / Pass B keepers.
+2026-07-22 (End Project) — Alternate **`POEM-IMAGE-PROMPT-DOCK.md`** for Jon review (poem↔page↔prompts + variety charter). Did not replace BOOK-PAGE / MASTER-PRODUCTION-DOCK. Flow dials remain stopped. Git dirty at close (dock + mocks + fleet mirrors). :3000 free. Mem0 + vault logged.
 
 ## Where to continue
-1. **Compare** `Media/generated/new-test-book-v1` (Klein) · `v2` (Qwen) · `v3` (Qwen stylized + G0 refs) — use each folder’s `TEXT-IMAGE-MAP.md`
-2. Decide which dial lane wins for which beats; note spine-safe + camera beats that worked
-3. Resume page-by-page via **`PAGE-BUILD-WORKFLOW.md`** (PSD + MOCK-TYPE → InDesign) for keepers
-4. Optional: targeted regen (e.g. S07 camera louder, cover letter-bake strip) before Gemini finals
-5. Optional: Lulu `.joboptions` + smoke PDF → `Output/interiors/`
+1. **Review prompt docks** — `POEM-IMAGE-PROMPT-DOCK.md` vs `MASTER-PRODUCTION-DOCK.md` · promote if Jon likes
+2. **InDesign cold start** per `AGENT-RUNBOOK.md` (UDT Load & Watch)
+3. **P01 Title** PSD + MOCK-TYPE + live ID (`PAGE-BUILD-WORKFLOW.md`)
+4. Sequential front matter → S1…S12 using flow keeps (promote to `Media/approved/` when Jon locks)
+5. Lulu interior export when enough pages exist
 
 ## Reference (new this session)
+- **POEM-IMAGE-PROMPT-DOCK.md** — alternate poem↔page↔prompt dock (review)
 - **PAGE-BUILD-WORKFLOW.md** — image → PSD → InDesign creative loop (living)
 - **BOOK-PAGE-WORKFLOW.md** — authoritative page/poem/image map (draft)
 - **Photoshop UXP MCP:** `tools/layout-mcp/PHOTOSHOP-SETUP.md` — LIVE; COM MCPs skip
@@ -47,7 +47,8 @@ Prototype pages **4–5** = eyes-met (= final book **S3 / pages 10\|11**).
 | FONT-CATALOG | Type roles |
 | TEXT-OVERLAY-POLICY | Type on art |
 | ILLUSTRATION-STYLE | Painted gouache default |
-| PAGE-PROMPT-BIBLE | Beat prompts |
+| **POEM-IMAGE-PROMPT-DOCK** | Poem + pages + generation prompts (alt · review) |
+| PAGE-PROMPT-BIBLE | Older beat prompts (prefer dock when generating) |
 | CHARACTER-JACK-FARRELL | Author portrait |
 | CONTINUITY-AND-PRINT-FINALS | Print remake plan |
 | **LAYOUT-APP-AUTOMATION-RESEARCH** | Affinity/InDesign MCP — **READY 2026-07-19** |

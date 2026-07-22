@@ -6,7 +6,7 @@
 **Text of record:** `Transcription/poem-clean.txt`  
 **Copy (About / Thank You / credits):** `BOOK-COPY-DRAFTS.md`  
 **Build authority:** `AGENT-RUNBOOK.md`  
-**Related (older proposals):** `SPREAD-STORY-MAP.md` (stub) · `PAGE-PROMPT-BIBLE.md` (prompts; reconcile forms to this map)
+**Related:** `MASTER-PRODUCTION-DOCK.md` (authoritative prompts + generation) · `SPREAD-STORY-MAP.md` (stub) · `PAGE-PROMPT-BIBLE.md` / `POEM-IMAGE-PROMPT-DOCK.md` (stubs → Master)
 
 ---
 
@@ -359,7 +359,8 @@ Trim 34–36 or remap to 32 only if Jon later asks — do not change this map si
 |-----|------|
 | **This file** | Page-accurate workflow + filenames + poem placement |
 | `SPREAD-STORY-MAP.md` | Earlier 32-page / 12-spread proposal (superseded for numbering by this draft) |
-| `PAGE-PROMPT-BIBLE.md` | Detailed generation prompts (update beat forms → Spread when this locks) |
+| `MASTER-PRODUCTION-DOCK.md` | Authoritative prompts + generation (page map stays this file) |
+| `PAGE-PROMPT-BIBLE.md` | Stub → MASTER-PRODUCTION-DOCK |
 | `BOOK-COPY-DRAFTS.md` | Locked About / Thank You / dedication / credits |
 | `CHARACTER-JACK-FARRELL.md` | Dad portrait remake kit |
 | `CONTINUITY-AND-PRINT-FINALS.md` | Pass B sizes + watermark gate |

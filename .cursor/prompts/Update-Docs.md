@@ -134,6 +134,14 @@ npm run draven:add -- "Docs sync [date]: [one-line summary of doc changes]"
 
 This updates **both** the project's own memory and Draven's cross-session memory. Draven stores it so he has context of what was synced across sessions. Skip if LM Studio offline — note in project-log.
 
+**Also update Mnemosyne + Vader_Vault (always works — no LLM needed):**
+
+```powershell
+npm run mnemosyne:remember -- "Docs sync [date]: [one-line summary of doc changes, decisions, next steps]"
+```
+
+Write session summary to `H:\Vader_Vault\03_AI_Memory\Sessions\YYYY-MM-DD-{project}.md`. If H: not accessible, note in project-log.
+
 Also triggers **Phase 6** — skeleton backport review.
 
 ---

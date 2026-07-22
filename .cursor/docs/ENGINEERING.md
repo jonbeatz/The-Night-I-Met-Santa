@@ -850,7 +850,7 @@ Google API scripts delegate to `D:\Hermes\projects\_core-scripts\deepseek-api\sc
 | `npm run env:setup` | Create / refresh `.env.local` |
 | `npm run dev:recover` | Free port 3000, clear `.next`/cache, `npm install`, `npm run dev` |
 | `npm run sync:mcp-env` | Sync project MCP keys from `.env.local` → `.cursor/mcp.json` |
-| `npm run obsidian:distill` | Scan `I:\Vader_Vault` for weekly ReCall.md candidate notes |
+| `npm run obsidian:distill` | Scan `H:\Vader_Vault` for weekly ReCall.md candidate notes |
 
 ---
 

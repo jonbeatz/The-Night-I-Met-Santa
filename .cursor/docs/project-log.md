@@ -2,6 +2,7 @@
 
 | Date | Note |
 |------|------|
+| 2026-07-22 | **End Project:** Alternate **`POEM-IMAGE-PROMPT-DOCK.md`** (poem↔page↔prompts, anti–standing-portrait variety; page #s still from BOOK-PAGE-WORKFLOW). Pointers in PAGE-PROMPT-BIBLE / CONTINUE-HERE / ReCall. Session also had flow/mock dials + matter mocks on disk (uncommitted). :3000 free. Git gate pending. |
 | 2026-07-21 | **End Project:** Full-book dial imagination ×3 — Klein `new-test-book-v1` · Qwen `v2` (spine-safe + camera) · Qwen stylized `v3` (07-qwen + G0 edit refs). Maps in each folder. Jon comparing tomorrow. :3000 was down. |
 | 2026-07-21 | **Docs harvest + lock:** P01 title **v22** provisional (`pages/p01-title.png`). Full **RECIPE template** locked. Image lanes: fal first · OR second · Klein **9B** dial → Qwen alt → 4B light → Gemini finals. Hard-top vignette crop logged. BOOK-PLAYBOOK / BOOK-PAGE / PAGE-BUILD / IMAGE-LANE synced. Mem0/vault/Mnemosyne + git push + full backup. |
 | 2026-07-20 | **Docs harvest:** P01 type parity + overset fixes · PS-first · Photoshop-Layer-Export skill · Pugicorn flow affirm (no map change) · Tony Google OAuth email + aliases. Mem0/vault/Mnemosyne synced. |

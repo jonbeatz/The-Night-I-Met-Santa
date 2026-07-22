@@ -1,7 +1,7 @@
 # CONTINUITY + PRINT FINALS — Plan (locked approach)
 
 **Status:** Recommended operating plan · 2026-07-15  
-**Why:** Approved art today is **composition / vibe lock**, often ~1K dial size — **not** Lulu print plates yet. Boy + Santa must stay the same people across 32 pages.
+**Why:** Approved art today is **composition / vibe lock**, often ~1K dial size — **not** Lulu print plates yet. Boy + Santa must stay the same people across 35-40 pages.
 
 ---
 

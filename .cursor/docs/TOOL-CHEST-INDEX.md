@@ -50,7 +50,7 @@
 | **AgentMail** | Freemium | `AGENTMAIL_API_KEY` | [agentmail.to](https://www.agentmail.to/) — agent inboxes | Next-Flick (ADOPT) |
 | **Sentry** | SaaS | `SENTRY_*` | MSC monitoring | MSC |
 | **GCP / Vertex** | GCP billing | `GOOGLE_APPLICATION_CREDENTIALS` | MSC google-api-proxy | JSON file path |
-| **Google Workspace (personal)** | Free (OAuth) | File: `%LOCALAPPDATA%\hermes\profiles\jonbeatz\google_token.json` | `npm run google:doctor` (JonBeatz) | jonbeatz@gmail.com — Gmail, Drive, Docs |
+| **Google Workspace (personal)** | Free (OAuth) | File: `%LOCALAPPDATA%\hermes\google_token.json` (+ profile sync) | `npm run google:doctor` (JonBeatz) | jonbeatz@gmail.com — Gmail, Drive, Docs, **YouTube full** (`youtube` + `force-ssl` + `upload`) · OAuth app **In production** (2026-07-20) |
 | **Firecrawl MCP** | Freemium | `FIRECRAWL_API_KEY` | VPE / optional | Master has key |
 | **Browserbase** | SaaS | `BROWSERBASE_*` | JonBeatz project MCP | Hub overlay |
 | **codebase-memory-mcp** | Free | — | `npm run codebase-memory:status` | IN USE — code graph MCP; JonBeatz indexed |
@@ -101,7 +101,7 @@ Run `npm run ecosystem:audit` for exact SET/EMPTY per file.
 | **AgentMail** | https://www.agentmail.to/ | Agent email inboxes (Next-Flick key SET) |
 | **Sentry** | https://sentry.io/ | MSC errors |
 | **Google Cloud** | https://console.cloud.google.com/ | Vertex / MSC |
-| **Google Workspace (jonbeatz@gmail.com)** | https://mail.google.com · https://drive.google.com · https://docs.google.com | Personal OAuth — see `JonBeatz\.cursor\docs\GOOGLE-WORKSPACE.md` |
+| **Google Workspace (jonbeatz@gmail.com)** | https://mail.google.com · https://drive.google.com · https://docs.google.com · [Audience/Production](https://console.cloud.google.com/auth/audience?project=wordpress-map-1492461083797) | Personal OAuth — see `GOOGLE-WORKSPACE.md` (Production + YouTube scope 2026-07-20) |
 | **GCP OAuth clients** | https://console.cloud.google.com/auth/clients?project=wordpress-map-1492461083797 | Desktop client for Hermes skill |
 | **Cursor** | https://cursor.com/dashboard | IDE subscription |
 | **Spaceship** | cPanel for MSC-Projectz | jon-beatz.com vault app |

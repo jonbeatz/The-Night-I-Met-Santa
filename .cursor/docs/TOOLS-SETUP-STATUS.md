@@ -182,6 +182,7 @@ Everything else in **production** below is configured on Jon's PC (2026-07-04) u
 | **Refero MCP** | A- (91) | WATCH | NOT_INSTALLED | Pro ($17/mo) when ready | **Bookmark** — Cursor MCP; Jon 2026-07-13 |
 | **Refero Styles** | B+ (88) | WATCH | NOT_INSTALLED | Refero account when ready | **Bookmark** — DESIGN.md library |
 | **MemPalace** | B (84) | WATCH | NOT_INSTALLED | None (local embed) | **Bookmark** — `uv tool install mempalace` when ready; Mem0 primary |
+| **Headroom** | B- (81) | WATCH | NOT_INSTALLED | None (local; optional HF Kompress) | **Bookmark** — `uv tool install "headroom-ai[all]"` → `headroom doctor`; proxy on **non-8787** port; MCP `headroom mcp serve` only — no `wrap cursor` vs LiteLLM/ngrok |
 | **ArcRift** | C (74) | WATCH | NOT_INSTALLED | Optional Groq; Ollama for local | **Record only** — do not install; `:3001` + tray + extension; Mem0 primary |
 | **AgentsView** | B+ (87) | IN USE | **READY** | None | Sessions `:8080` — 2026-07-04 |
 | **TokenTracker** | B+ (87) | IN USE | **READY** | None | Primary spend dashboard `:7680` |

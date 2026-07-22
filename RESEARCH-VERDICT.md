@@ -40,7 +40,7 @@ Source: Deep Firecrawl/Tavily + GitHub review before the project move.
 - Bleed **0.125"** beyond trim  
 - Safety **~0.25–0.375"** inside trim for text/faces  
 - Images **300 DPI** (covers OK to 600)  
-- Color: **CMYK** preferred; PDF/X-1a or X-3 if required  
+- Color: **sRGB** preferred (Lulu Oct 2024 — not CMYK); PDF single-page  
 - Files: separate **interior PDF** + **cover PDF** (spine from page count + paper)  
 - Page count: **even**  
 
