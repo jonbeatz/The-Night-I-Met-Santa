@@ -42,3 +42,4 @@ Everything else is **reference on demand** (do not auto-load): `PAGE-BUILD-WORKF
 - Update `_FLOW-CURRENT.json` when a plate or verdict changes (`decided_by` + `date` required).
 - Then rebuild flipbook: `npm run book:flipbook`
 - **`project-log.md` = milestones/decisions only** — not individual model tests or comparison-board runs. Document tests/boards in each version’s `RECIPE.md` and in `_FLOW-CURRENT.json`. Log to `.cursor/docs/project-log.md` only when: a spread is locked, a character reference is promoted, or a production phase completes.
+- **Backups (book tiers):** `npm run backup:quick` (daily) · `backup:full` (milestone) · `backup:archive` (deep). See `.cursor/docs/BACKUP-BOOK-TIERS.md`.
