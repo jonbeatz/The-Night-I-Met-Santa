@@ -43,3 +43,10 @@ Everything else is **reference on demand** (do not auto-load): `PAGE-BUILD-WORKF
 - Then rebuild flipbook: `npm run book:flipbook`
 - **`project-log.md` = milestones/decisions only** — not individual model tests or comparison-board runs. Document tests/boards in each version’s `RECIPE.md` and in `_FLOW-CURRENT.json`. Log to `.cursor/docs/project-log.md` only when: a spread is locked, a character reference is promoted, or a production phase completes.
 - **Backups (book tiers):** `npm run backup:quick` (daily) · `backup:full` (milestone) · `backup:archive` (deep). See `.cursor/docs/BACKUP-BOOK-TIERS.md`.
+- **Milestone git tags:** When Jon says **commit and push** or **lock it** on a major decision, after that commit succeeds create an **annotated** tag (so the one-line message is stored), then push the tag.
+  - **Name:** `{category}-{what}-locked` (or `…-final` when that reads clearer) — e.g. `s1-approach-locked`, `santa-character-locked`, `style-lock-v2-final`, `s2-threshold-locked`, `production-workflow-locked`
+  - **When:** **After** the commit that contains the change — never tag before commit
+  - **Message (one line):** what was locked + version — e.g. `S1 Approach locked — v13 LEFT + v14 RIGHT`
+  - **Commands:** `git tag -a <name> -m "<message>"` then `git push origin <name>` (or `git push origin --tags` when pushing several)
+  - **Do not** tag routine dials, docs-only tidy, or backup-script commits — only locked spreads, promoted character/style refs, or production-phase locks
+  - Skip if Jon says commit/push without a lock (ordinary WIP)
