@@ -29,7 +29,10 @@ Before any book work, launch the tools. Follow this EXACT order:
 | 6b | Verify *(PS)* | `curl.exe http://127.0.0.1:47391/health` → `"sessions":≥1` · `…/8766/v1/readyz` → `"dcc":true` — Cursor green alone is **not** enough |
 | 7 | Agent | Reload Cursor MCP → confirm indesign-uxp tools appear (~135 tools); photoshop URL green when PS stack up |
 
-**PS gotcha:** If broker restarts while UDT still shows Watching → **UDT Reload** on the Photoshop bridge (full PS restart usually unnecessary). `start-photoshop-mcp.ps1` must stay **ASCII-only** (em dashes break PowerShell).
+**PS gotchas:**
+- Cursor Settings **photoshop red / Error / Logout** usually means **`:8766` down** — run `npm run layout:photoshop-mcp`, then clear stuck auth if needed, then **UDT Reload** so `"sessions":≥1`. PS open + UDT Loaded alone is not enough.
+- If broker restarts while UDT still shows Watching/Loaded → **UDT Reload** on the Photoshop bridge (full PS restart usually unnecessary).
+- `start-photoshop-mcp.ps1` must stay **ASCII-only** (em dashes break PowerShell).
 
 **Do NOT** launch UDT before Jon confirms CC is signed in. Web login at adobe.com doesn't count — must be Creative Cloud Desktop app.
 **Do NOT** uninstall Creative Cloud Desktop — InDesign needs it for licensing.
@@ -114,7 +117,7 @@ These are locked. Reference them, don't recreate them:
 | **Leading** | **26 pt** (Jon: “26px vertical kern” = line spacing) |
 | **Tracking** | **+5** (Jon: “5px horizontal kern” — InDesign Tracking) |
 | **Text color** | Dark Charcoal **#2C2C2C** / PoemCharcoal |
-| **Text cloud** | Custom watercolor cloud PNG — irregular feathered edges, translucent — Jon creates this |
+| **Text cloud** | Custom watercolor cloud PNG — irregular feathered edges, translucent — Jon creates this · **alt:** FLUX.2 LoRA paper @ scale ~**0.35** (`Media/generated/mocks/_INDEX/text-page-lora/`) after seed lock; retrain on paper-only crops before scale 1.0 |
 | **Cloud position** | Placed per spread by Jon — avoids faces and focal points |
 | **Right page** | Full-bleed illustration to bleed edge |
 | **Left page** | Illustration as background + centered cloud + centered poem text |

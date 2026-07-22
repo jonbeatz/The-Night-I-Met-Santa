@@ -278,12 +278,12 @@ npm run mem0:add -- "Preferred image style: gold accent studio lighting, photore
 
 | Resource | Path |
 |----------|------|
-| ComfyUI engine | `D:\AI_Models\ComfyUI\` |
+| ComfyUI engine | `H:\AI_Models\ComfyUI\` |
 | Workflows | `H:\AI_Models\ComfyUI\workflows\` |
 | Model cache (H:) | `H:\AI_Models\` |
 | JonBeatz outputs | `D:\Hermes\assets\media\JonBeatz\` |
 | MSC outputs (website) | `D:\Cursor_Projectz\MyStudioChannel\public\media\` |
-| Restore symlinks | `D:\AI_Models\ComfyUI\scripts\repair-comfyui-symlinks.ps1` |
+| Restore symlinks | `H:\AI_Models\ComfyUI\scripts\repair-comfyui-symlinks.ps1` |
 | Download SD1.5 fp16 | `hf download Comfy-Org/stable-diffusion-v1-5-archive v1-5-pruned-emaonly-fp16.safetensors` → checkpoints folder |
 
 See **[COMFYUI-MODELS.md](./COMFYUI-MODELS.md)** for full model matrix.

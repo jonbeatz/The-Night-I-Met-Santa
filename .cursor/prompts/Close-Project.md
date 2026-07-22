@@ -34,7 +34,7 @@ npm run log:session -- "[short title]: [handoff summary]"
 
 ---
 
-## Step 3: Mem0 + Mnemosyne + Vader Vault
+## Step 3: Mem0 + vault
 
 If substantive:
 
@@ -45,21 +45,13 @@ npm run mem0:add -- "Handoff [date]: [one-line takeaway]"
 
 Skip Mem0 if LM Studio offline — note in project-log.
 
-**Mnemosyne (always works — no LLM needed):**
-
-```powershell
-npm run mnemosyne:remember -- "Handoff [date] The-Night-I-Met-Santa: [one-line summary of decisions, changes, next steps]"
-```
-
-**Vader Vault:**
-
 ```powershell
 npm run session:handoff -- -Summary "Handoff [date]: [one-line summary]"
 ```
 
-Or: `npm run vault:log -- -Summary "..."` (same vault note; handoff script is preferred).
+**Auto:** `session:handoff` sweeps Hermes `cua-driver` (prevents blank grey overlay leak). **Prevention:** `npm run cua:overlay:harden` once (bakes `serve --no-overlay` into logon task — re-run after cua-driver update). If a stuck grey box remains with no window controls, run `npm run cua:cleanup:reset` (~1s screen flicker; no apps close).
 
-**Fallback:** If H:\Vader_Vault is not accessible, write session summary to `.cursor/docs/project-log.md` instead and note "Vader Vault unreachable."
+Or: `npm run vault:log -- -Summary "..."` (same vault note; handoff script is preferred).
 
 Update `H:\Vader_Vault\01_Projects\The-Night-I-Met-Santa.md` hub if decisions changed. See `.cursor/rules/vader-vault.mdc`.
 

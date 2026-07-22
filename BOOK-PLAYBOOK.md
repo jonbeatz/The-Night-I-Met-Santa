@@ -9,6 +9,8 @@
 > **2026-07-20 update (TNIMS → future books):** Creative page loop under `.cursor/docs/PAGE-BUILD-WORKFLOW.md` — generate → `Media/generated/mocks/{unit}/vNN/` + **RECIPE.md** → new PSD from blank → **close source PNG** → MOCK-TYPE + cloud → InDesign live type. G0 character locks in `Media/approved/characters/`.
 >
 > **2026-07-21 update (lanes + recipes — future books):** **Providers:** fal.ai **first** · OpenRouter **second**. **Dial:** Klein **9B** default (~$0.011/MP) → Qwen alt (~$0.035) → Klein **4B** light only → **Finals:** Gemini/Banana (~$0.15). Dual prompts: Klein = Dial D2 · Finals = ILLUSTRATION-STYLE master. Every mock needs **full RECIPE** (`Media/generated/mocks/_RECIPE-TEMPLATE.md` — Prompt mandatory). Don’t mid-paint-crop soft watercolor vignettes to recenter.
+>
+> **2026-07-22 update (locked review loop — all future books):** Three mandatory artifacts after style decisions / flow passes — see **§3b** and fleet doc `PICTURE-BOOK-PRODUCTION-RULES.md`: (1) **three-panel comparison boards** (Klein | new | favorite), (2) **full-book flipbook PDF** `Output/flipbook-{date}.pdf`, (3) **verdict card** on last flipbook page (`keep` / `keep-leaning` / `reject` / `locked`).
 
 ---
 
@@ -153,6 +155,24 @@ uv pip install nano-pdf                 # NL PDF metadata editing
 ### RECIPE.md (mandatory per mock version)
 
 Copy `Media/generated/mocks/_RECIPE-TEMPLATE.md` into every `vNN/`. Include **full Prompt**, lane, service, model, FRAME, seed, script_text, type_zone, refs, verdict. Thin stubs are not enough for remakes.
+
+### 3b. Locked review loop (2026-07-22 — all future books)
+
+**Fleet SoT:** `_core-scripts/shared-profile-content/docs/PICTURE-BOOK-PRODUCTION-RULES.md`
+
+| # | Artifact | Rule |
+|---|----------|------|
+| **0** | **`_FLOW-CURRENT.json`** | Single SoT for current plates · flipbook reads **only** this |
+| **1** | **Comparison board** | **One board per decision** (Klein \| new \| favorite) · archive multi-round catch-ups |
+| **2** | **Flipbook PDF** | `Output/flipbook-{date}.pdf` · review only · not Lulu print |
+| **3** | **Verdict card** | `keep` / `keep-leaning` / `reject` / `locked` + **`decided_by` + `date`** |
+
+**Hero spend:** GPT High 4K only when flow + `_FLOW-CURRENT` mark `gpt_pillar`. Default finals = style-lock path.
+
+**Always-open kit:** Flow map · Master dock · Lane system · Runbook. Everything else = reference.
+
+**Scripts:** `scripts/book-comparison-board.py` · `scripts/book-flipbook-assemble.py`
+
 ### Image sizes (at 300 DPI for 8.5×8.5" with bleed)
 
 | Type | Dimensions | Aspect |
@@ -413,6 +433,8 @@ npm run book:pdf:verify:boxes           # Apply TrimBox/BleedBox for Lulu
 # PDF utilities
 npm run book:pdf:from-pages             # img2pdf: Pages/*.jpg → PDF (lossless)
 npm run book:pdf:doctor                 # Prepress diagnostic
+npm run book:comparison-board           # Three-panel style decision board
+npm run book:flipbook -- --manifest Output/flipbook-YYYY-MM-DD-manifest.json
 ```
 
 ### Agent reality (which model to actually use)
@@ -430,6 +452,9 @@ npm run book:pdf:doctor                 # Prepress diagnostic
 
 | Don't | Why | Where Documented |
 |-------|-----|------------------|
+| Skip three-panel boards on style/hero decisions | Memory-only picks drift; Klein control must stay visible | PICTURE-BOOK-PRODUCTION-RULES.md |
+| Ship a flow pass without `Output/flipbook-{date}.pdf` | No page-order review = silent holes | PICTURE-BOOK-PRODUCTION-RULES.md |
+| Verdict statuses outside `keep` / `keep-leaning` / `reject` / `locked` | Breaks finals handoff language | PICTURE-BOOK-PRODUCTION-RULES.md |
 | Use LaTeX for picture books | Wrong tool; slow; can't do full-bleed well | RESEARCH-VERDICT.md |
 | Stack transparent PNGs in Typst over art | PDF eats alpha → checkerboard | v4 failure |
 | Use hard white text boxes | Looks glued-on, not storybook | v3 failure |

@@ -265,6 +265,10 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | 2026-07-15 | Jon mockups locked as refs: soft paint fades, **never cover faces**, Santa pages use **bottom-right** gradient; note pages **lower** not mid-window. Mocks → `text-mocks-v3/` | layout `ref-text-jon-*` |
 | 2026-07-15 | Text wash dial: overpowered solid glow rejected — use **subtle mid-opacity** paper + long fade (Pillow; not a fal model issue). Cheap art dial = Flux schnell / Klein; finals stay Nano Banana Pro | compositing |
 | 2026-07-21 | **Lane priority refresh:** dial = **Klein 9B** (~$0.011/MP); alt = **Qwen Image 2** (~$0.035/img); light = **Klein 4B** (~$0.009/MP, hi-res/low-detail only); finals = **Gemini/Banana** (~$0.15). | Model lanes |
+| 2026-07-22 | **Model tiers v2 LOCKED** in `IMAGE-LANE-SYSTEM-v2.md`: dial Klein 9B · mock favorite **Qwen 2 Pro /edit** · style-lock-v2 (Krea) · santa-G0-v2 · finals Banana Pro `/edit` · GPT High 4K pillars only (S3/S12b). Current plates SoT = `_FLOW-CURRENT.json` + flipbook. | Lanes / process |
+| 2026-07-22 | **Logging gate:** `project-log.md` = milestones only (locked spread / promoted character / phase complete). Tests → `RECIPE.md` + `_FLOW-CURRENT` + boards. | Docs / process |
+| 2026-07-22 | **S1 Approach KEEP:** v13 L + v14 R — same door/wreath; crack is the story (4–6″ journey / 6–8″ face-on destination). Mockup quality targets from Klein v01 best-of chops. | Art lock |
+| 2026-07-22 | **S2 Threshold dial v03:** first v2-flow Qwen seamless 2048×1024 spread (enter + Santa at bag). Pending Jon eye. | Art dial |
 | 2026-07-15 | Harvested `book/Childrens_Book_Design_Summary*` → Lulu checklist §8b; **corrected color advice** to **sRGB** (not CMYK-first) per Lulu help | Prepress |
 | 2026-07-15 | Flipbook webpage notes → `DIGITAL-FLIPBOOK-WATCH.md` (post-gift only; do not block print) | Optional digital |
 | 2026-07-15 | **Jack Farrell portrait LOCKED** = `v6d-armchair-tree-lights` → `Media/approved/characters/jack-farrell-portrait.png`; remake kit `CHARACTER-JACK-FARRELL.md`; book use About Author / Thank You | Character |

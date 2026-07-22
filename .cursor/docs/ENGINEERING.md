@@ -5,8 +5,8 @@
 # ComfyUI Model Library — JonBeatz (shared workstation)
 
 **Hardware:** NVIDIA RTX 5060 Ti (16 GB VRAM)  
-**ComfyUI:** `D:\AI_Models\ComfyUI\` · port **8188**  
-**Workflows:** `D:\AI_Models\ComfyUI\workflows\`  
+**ComfyUI:** `H:\AI_Models\ComfyUI\` · port **8188**  
+**Workflows:** `H:\AI_Models\ComfyUI\workflows\`  
 **Full MSC inventory:** `D:\Cursor_Projectz\MyStudioChannel\.cursor\docs\COMFYUI-MODELS.md`
 
 JonBeatz uses the **same ComfyUI install** as MyStudioChannel. Models live on `H:\AI_Models\` and symlink into ComfyUI.
@@ -28,13 +28,13 @@ JonBeatz uses the **same ComfyUI install** as MyStudioChannel. Models live on `H
 
 ```powershell
 # Smoke test all workflows
-powershell -File D:\AI_Models\ComfyUI\scripts\test-comfyui-workflows.ps1
+powershell -File H:\AI_Models\ComfyUI\scripts\test-comfyui-workflows.ps1
 
 # Repair symlinks
-powershell -File D:\AI_Models\ComfyUI\scripts\repair-comfyui-symlinks.ps1
+powershell -File H:\AI_Models\ComfyUI\scripts\repair-comfyui-symlinks.ps1
 
 # Re-download deleted weights
-powershell -File D:\AI_Models\ComfyUI\scripts\restore-comfyui-models.ps1
+powershell -File H:\AI_Models\ComfyUI\scripts\restore-comfyui-models.ps1
 ```
 
 ---
@@ -55,7 +55,7 @@ Download SD 1.5 fp16 (requires `HF_TOKEN` in JonBeatz `.env.local`):
 
 ```powershell
 cd D:\Hermes\projects\JonBeatz
-hf download Comfy-Org/stable-diffusion-v1-5-archive v1-5-pruned-emaonly-fp16.safetensors --local-dir "D:\AI_Models\ComfyUI\ComfyUI\models\checkpoints"
+hf download Comfy-Org/stable-diffusion-v1-5-archive v1-5-pruned-emaonly-fp16.safetensors --local-dir "H:\AI_Models\ComfyUI\ComfyUI\models\checkpoints"
 ```
 
 ---
@@ -112,7 +112,7 @@ Required in **`.env.local`:**
 | Variable | Purpose |
 |----------|---------|
 | `HF_TOKEN` | Hugging Face Inference API (FLUX.1-schnell) |
-| `COMFYUI_ROOT` | Shared install `D:\AI_Models\ComfyUI` |
+| `COMFYUI_ROOT` | Shared install `H:\AI_Models\ComfyUI` |
 | `IMAGE_OUTPUT_DIR` | JonBeatz outputs `public\media` (served root-relatively) |
 | `LMSTUDIO_*` / `MEM0_*` | Personal memory stack |
 
@@ -132,7 +132,7 @@ Required in **`.env.local`:**
 
 ### PowerShell profile commands (workstation-wide)
 
-These live in Jon's **PowerShell profile** (shared with MSC). They call ComfyUI workflows under `D:\AI_Models\ComfyUI\workflows\`:
+These live in Jon's **PowerShell profile** (shared with MSC). They call ComfyUI workflows under `H:\AI_Models\ComfyUI\workflows\`:
 
 | Command | Purpose |
 |---------|---------|
@@ -196,7 +196,7 @@ http://127.0.0.1:8188 — drag workflow PNGs to load graphs; debug node executio
 
 ### Default local txt2img workflow
 
-- **Workflow:** `D:\AI_Models\ComfyUI\workflows\txt2img-gen-image-local.json`
+- **Workflow:** `H:\AI_Models\ComfyUI\workflows\txt2img-gen-image-local.json`
 - **Model:** z-image-turbo GGUF + Qwen3-4B CLIP + ae.safetensors VAE
 - **Profile command:** `gen-image-local "prompt"`
 
@@ -240,12 +240,12 @@ npm run mem0:add -- "Preferred image style: gold accent studio lighting, photore
 
 | Resource | Path |
 |----------|------|
-| ComfyUI engine | `D:\AI_Models\ComfyUI\` |
-| Workflows | `D:\AI_Models\ComfyUI\workflows\` |
+| ComfyUI engine | `H:\AI_Models\ComfyUI\` |
+| Workflows | `H:\AI_Models\ComfyUI\workflows\` |
 | Model cache (H:) | `H:\AI_Models\` |
 | JonBeatz outputs | `D:\Hermes\projects\JonBeatz\public\media\` |
 | MSC outputs (website) | `D:\Cursor_Projectz\MyStudioChannel\public\media\` |
-| Restore symlinks | `D:\AI_Models\ComfyUI\scripts\repair-comfyui-symlinks.ps1` |
+| Restore symlinks | `H:\AI_Models\ComfyUI\scripts\repair-comfyui-symlinks.ps1` |
 | Download SD1.5 fp16 | `hf download Comfy-Org/stable-diffusion-v1-5-archive v1-5-pruned-emaonly-fp16.safetensors` → checkpoints folder |
 
 See **[COMFYUI-MODELS.md](./COMFYUI-MODELS.md)** for full model matrix.

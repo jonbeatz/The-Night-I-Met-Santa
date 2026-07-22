@@ -11,6 +11,58 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-07-22 — Qwen S1 door kept splitting into “double doors”
+
+| | |
+|---|---|
+| **Symptom** | Face-on S1 Approach R (v08/v10 attempts) kept reading as **double doors** / center seam even when the prompt demanded one solid panel |
+| **Root cause** | Passing a prior plate that already had a center-split as **image_urls[0]** taught Qwen to reproduce the split. Panel molding + rim light through a center gap reinforced the biparting read |
+| **Resolution** | Do **not** use contaminated double-door dials as primary refs. Prefer **door quality target** (`mockup-quality/S01-approach-R-quality-target.jpg`) + `style-lock-v2` (+ ajar state from a known **single-panel** plate like v07/v12). Negative: `double doors, paired doors, French doors, center seam`. Latch-side gap only; wreath unbroken/centered |
+| **Verify** | v12/v14 face-on plates read as one solid door ajar on the latch edge with centered wreath |
+
+**Playbook rule:** On Qwen `/edit`, ref order teaches composition. Never feed a failed double-door plate as the lead identity ref when fixing that failure.
+
+---
+
+## 2026-07-22 — FLUX.2 LoRA “paper” gens fireplace scenes (not cream text backgrounds)
+
+| | |
+|---|---|
+| **Symptom** | After training `fal-ai/flux-2-trainer-v2` on `Images/styles2/` paper refs (`spread-Frame-Style1.png`, `p21-beat12-13-note-LEFT.png`) with caption *“Soft cream watercolor paper…”*, `fal-ai/flux-2/lora` at **scale 1.0** produced full **fireplace / story scenes**, not blank ivory paper |
+| **Root cause** | Train zip used **full illustrated pages** (and crops of them) while every `.txt` caption claimed “no illustrations.” LoRA bound the trigger phrase to **scene content**, not paper texture. Also: endpoint max is **2048²** (not native 2625) |
+| **Resolution** | Inference: LoRA **scale ~0.35** + blank-page negatives (“no fireplace / no objects / empty page only”) → cream ivory + feathered edge (`text-page-lora/v03-scale035`, `v04-scale035`). Upscale 2048→2625 Lanczos for layout. Production: **retrain on paper-only margin/edge crops** so scale 1.0 stays on texture. Weights + notes: `Media/generated/mocks/_INDEX/text-page-lora/` |
+| **Verify** | Pixel stats: fail samples mean≈(130–150, warm) high std; pass samples mean≈(255,250,230) std≈13. Eye: no characters/objects · usable for S4 L / S6 L / S10 L / Thank You L after one seed lock |
+
+**Playbook rule:** Never LoRA-train “paper” on full story plates with paper-only captions. Train on blank/edge crops. Default inference scale **0.35** until a paper-only retrain exists.
+
+---
+
+## 2026-07-22 — GPT Image 2 High 4K hero vs style-lock: quality jump ≠ style match
+
+| | |
+|---|---|
+| **Symptom** | S12b God Bless on GPT High 4K (3840×1920) looked much richer than Krea dial, but drifted toward **cinematic digital-painting** (sleigh team, lake/mountains) vs book **gouache vignette** (style-lock-v2 / Krea dial feathered edge) |
+| **Root cause** | High-tier 4K optimizes detail/clarity, not automatic adherence to Krea style-lock. Style ref alone doesn’t keep GPT in the watercolor pocket at hero resolution |
+| **Resolution** | Reserve GPT High 4K for **3–4 pillar spreads** only (~$0.40 each) when print-hero clarity wins. Batch + mood-matched pages stay **Krea / Qwen** with `style-lock-v2.png`. Compare sheet: `Media/generated/mocks/_INDEX/S12b-gpt4k-vs-krea-dial.png`. Decision pending Jon in `IMAGE-LANE-SYSTEM-v2.md` |
+| **Verify** | Side-by-side S12b v01-gpt4k vs v02-krea-dial · style-lock-v2 = S4 v07 Krea blend at `Media/approved/style-refs/style-lock-v2.png` |
+
+**Playbook rule:** $0.40 GPT heroes ≠ default finals. Style-lock lives on Krea path; GPT is optional pillar upgrade.
+
+---
+
+## 2026-07-22 — Cursor `photoshop` MCP red / Error (Logout) after CC+UDT connected
+
+| | |
+|---|---|
+| **Symptom** | InDesign UXP + indesign-exec green in Cursor Settings; **photoshop** red with **Error — Show Output** and a **Logout** control. Photoshop 2026 open, CC signed in, UDT showed Adobe Python Bridge **Loaded**, PS panel open/checked |
+| **Root cause** | (1) **Nothing listening** on `:8766` / `:47391` — `npm run layout:photoshop-mcp` had not been started this session. Cursor URL MCP only reaches `http://127.0.0.1:8766/mcp`. (2) Cursor held a **stuck auth/Logout** state on that server (tool discovery failed; only `mcp_auth` exposed). (3) After broker start, UDT still **Loaded** but broker `"sessions":0` / `dcc:false` until plugin **Reload** reattached WebSocket |
+| **Resolution** | 1. `npm run layout:photoshop-mcp` (keep terminal running). 2. Clear Cursor auth if stuck (`mcp_auth` / re-auth) so Settings flips to **ready**. 3. UDT → **Reload** (or Load & Watch) on `com.adobepy.bridge.photoshop`. 4. Confirm PS **Plugins → Adobe Python Bridge** open. 5. Smoke: `:47391/health` → `"sessions":≥1` · `:8766/v1/readyz` → `"dcc":true`. Use HTTP `/v1/call` if Cursor tool picker lags after `load_skill` |
+| **Verify** | 2026-07-22: broker `sessions:1`, `dcc:true`, Cursor `photoshop` **ready**, `photoshop_document__list_documents` via `/v1/call` OK (0 docs when workspace empty) |
+
+**Playbook rule:** Photoshop open + UDT Loaded ≠ MCP live. Always start `layout:photoshop-mcp` first; Cursor green/ready ≠ `dcc:true` until sessions≥1 after UDT Reload.
+
+---
+
 ## 2026-07-21 — gitignore `Pages/` hid `Media/approved/pages/` keepers
 
 | | |
@@ -171,6 +223,8 @@ Art + exports: **seamless**. Orange FOLD guide = screen only. Klein/Banana promp
 | Character drift | Missing G0 refs on gen | Attach boy/santa locks every boy/Santa call | Compare to G0 side-by-side |
 | Fake spine in spread art | Model drew mockup fold | Negatives + hide orange fold before export | No center line on plate |
 | Centered vignette hard top cut | Mid-paint crop sheared soft crown | Don’t crop mid-paint; keep native crown (v22-style) or gentle dissolve + RECIPE tradeoff; skip fal edge-only | Top fringe ≈ sides/bottom · no ghost strip |
+| LoRA “paper” = fireplace scene | Full story plates captioned as blank paper | Train on paper-only edge crops; infer @ **scale ~0.35** + blank negatives until retrain | Cream ivory, no objects; see `text-page-lora/` |
+| GPT 4K hero ≠ book look | 4K clarity ≠ Krea style-lock adherence | GPT for **pillars only**; batch on Krea/Qwen + `style-lock-v2` | S12b contact sheet · lock still watercolor |
 
 ---
 

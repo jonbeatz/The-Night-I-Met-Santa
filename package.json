@@ -48,6 +48,8 @@
     "book:pdf:from-pages": "python scripts/book-pdf-from-pages.py",
     "book:pdf:verify": "python scripts/book-pdf-verify.py",
     "book:pdf:verify:boxes": "python scripts/book-pdf-verify.py --apply-boxes",
+    "book:comparison-board": "python scripts/book-comparison-board.py",
+    "book:flipbook": "python scripts/book-flipbook-assemble.py --root .",
     "sync:rituals": "powershell -ExecutionPolicy Bypass -File D:\\Hermes\\projects\\_core-scripts\\shared-profile-content\\scripts\\sync-session-rituals.ps1",
     "boot:doctor": "powershell -File D:\\Hermes\\projects\\JonBeatz\\scripts\\boot-doctor.ps1",
     "boot:setup": "powershell -File D:\\Hermes\\projects\\JonBeatz\\scripts\\boot-setup.ps1",

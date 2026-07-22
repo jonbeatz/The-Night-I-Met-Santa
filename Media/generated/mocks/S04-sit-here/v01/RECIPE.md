@@ -1,57 +1,53 @@
-# RECIPE â€” S04-sit-here / v01
+# RECIPE — S04-sit-here / v01
 
 | Field | Value |
 |-------|--------|
-| **name** | sit-here â€” Primary flow dial (continuous spread) |
+| **name** | sit-here image page — Klein 9B baseline |
 | **unit** | S04-sit-here |
-| **book page** | 12|13 Â· sit-here Â· SPREAD |
-| **page role** | `spread` |
-| **spread side** | `wide-master` |
+| **book page** | Flow v2 p10\|11 · TEXT+IMAGE · this plate = RIGHT image only |
+| **page role** | single (image page) |
+| **spread side** | 
+ight |
 | **version** | v01 |
-| **date** | 2026-07-21 |
+| **date** | 2026-07-22 |
 | **lane** | A1 dial (Klein 9B) |
 | **service** | fal.ai |
-| **model** | `fal-ai/flux-2/klein/9b` |
-| **settings** | 1536Ã—768 landscape dial Â· T2I Â· continuous scene Â· faces off-center |
+| **model** | fal-ai/flux-2/klein/9b |
+| **settings** | 1536×1536 square dial · T2I · Dial D2 · FRAME OFF |
 | **FRAME** | OFF |
-| **concept** | Full-book flow pass â€” Primary from MASTER-PRODUCTION-DOCK Â· one wide painting |
-| **changes** | First dial for this unit |
-| **size** | 1536Ã—768 |
-| **seed** | n/a |
-| **request_id** | n/a |
-| **cost_note** | ~$0.01 dial |
+| **concept** | Phase 1 style-lock — Master Dock S4 scene adapted to v2 form (no seamless spread; no left text page) |
+| **changes** | First style-lock dial for this model on S4 v2 |
+| **size** | dial square (~1536² / 1:1) |
+| **seed** | 518143391 |
+| **request_id** | 019f8af1-a6e8-7961-8a88-4acd6ba9adb5 |
+| **cost_note** | ~.01 |
 | **output** | art.png |
-| **script_text** | L: floor gifts / stayed still Â· R: Sit over here / moment to kill |
-| **type_zone** | Outer left wall Â· side panel for whisper |
-| **verdict** | **keep**|
+| **script_text** | Poem lives on LEFT text page (not this gen) · image = sit invitation |
+| **type_zone** | Soft quiet outer band optional |
+| **verdict** | pending Jon style-lock pick |
 | **status** | working |
-| **promoted_to** | â€” |
+| **promoted_to** | — |
 
 ## Character / style refs used
 
-- boy: n/a (T2I this take)
-- santa: n/a (T2I this take)
-- jack: n/a
-- style / frame: Dial D2 + continuous spread add-on Â· FRAME OFF
+- boy / santa: T2I this take (G0 continuity target on later finals)
+- style: see prompt append below
 - base / edit source: n/a
 
 ## Prompt
 
-Wide cinematic Christmas gift-room spread, low camera among wrapping paper: Santa Claus sitting on the floor between boxes gifts and ribbons galore, kind face, red coat with suspenders visible; nearby a child in oatmeal holly pajamas frozen mid-step in awe; RIGHT continues as Santa gently gesturing to an open spot beside him inviting the child to sit, cozy tree and fireplace glow. Leave quiet side areas for later dialogue text. Not a stiff standing portrait.
+Single Christmas picture-book IMAGE PAGE (right-hand facing page), full-bleed FRAME OFF: low camera angle among wrapping paper and gift sea — Santa Claus sitting on the floor between boxes gifts and ribbons galore, kind face, brilliant white hair and beard, red coat with suspenders clearly visible, gently gesturing to an open spot beside him inviting a child to sit; nearby a child in oatmeal/taupe holly pajamas ONLY — NOT a red coat, NOT a Santa suit, NOT a Santa costume — frozen mid-step in awe; cozy Christmas Eve living room with tree and fireplace glow; intimate floor-level composition, not a stiff standing portrait; leave a soft quiet outer band for optional later type; no text, no letters, no watermark, no readable handwriting. WATERCOLOR FRAME OFF: full-bleed to all edges, NO white vignette, NO cream paper margin.
 
-KLEIN STYLE (mockups only): deep shadowed hallway vs warm room, strong punchy contrast, rich saturated Christmas colors, opaque gouache feel. Christmas tree lights warm and luminous but CONTROLLED â€” soft bloom, ornaments and needles still readable, NOT blown-out white glare. Clean Santa coat â€” NO letters, NO glyphs on clothing. Soft blended edges. NOT washed out, NOT pale, NOT pencil grain, NOT cross-hatching, NOT desaturated.
-
-ONE continuous unbroken painted scene across the full width â€” same room, same moment, same lighting, like one wide painting with a fold in the middle, NOT two separate images. Seamless through the center: NO fake book gutter, NO vertical fold line, NO center spine shadow, NO page-split seam. Keep faces and critical props (eyes, hands, mug, note, camera) AWAY from the exact center fold â€” center band is background only (floor, wall, tree, gifts). WATERCOLOR FRAME OFF: full-bleed to all edges, NO white vignette, NO cream paper margin. No text, no letters, no watermark, no readable handwriting.
+KLEIN STYLE (mockups only): deep shadowed hallway vs warm room, strong punchy contrast, rich saturated Christmas colors, opaque gouache feel. Christmas tree lights warm and luminous but CONTROLLED — soft bloom, ornaments and needles still readable, NOT blown-out white glare. Clean Santa coat — NO letters, NO glyphs on clothing. Soft blended edges. NOT washed out, NOT pale, NOT pencil grain, NOT cross-hatching, NOT desaturated.
 
 ## Negative / constraints
 
-- FRAME OFF Â· full bleed
-- One continuous scene Â· no fake gutter Â· no center spine
-- Faces/critical props off exact center fold
-- No text / no letters / no watermark / no readable handwriting
+- FRAME OFF · full bleed · no vignette
+- Holly PJs only on child
+- No text / letters / watermark / handwriting
+- Not a standing cast lineup
 
 ## Notes
 
-Flow pass after S1 keep. Jon reviews batch.
-
-- Verdict stamp: Flow pass keep 2026-07-21
+Phase 1 style-lock Test C (control). Prior flow-pass keep preserved in v01-flow-pass-keep.
+Contact sheet: _INDEX/style-lock-S04-2026-07-22.png

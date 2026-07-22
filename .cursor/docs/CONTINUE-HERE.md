@@ -6,15 +6,13 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-21 night)
+## One-line status (2026-07-22)
 
-**Flow pass PROVED the book** · Klein dials **STOPPED**. Page count **36**.  
-**INDEX:** `Media/generated/mocks/_INDEX/flow-pass-2026-07-21.md` · **Flipbook:** `Output/flow-pass-2026-07-21-flipbook.pdf`  
-**Story keeps:** S1–S6 · **S7 v03** (look-up + holly PJs) · **S8 v02** · S9–S10 · S11 v02 · S12 · locks S3/P01/cover/Jack  
-**Matter keeps:** P02 · P03 · P05 · P32 · P33 · Hard PJ append locked on all story gens  
-**NEXT = InDesign production** via `PAGE-BUILD-WORKFLOW.md` + `AGENT-RUNBOOK.md` — start **P01 Title** (art locked → PSD ART → MOCK-TYPE upper cream → live ID).  
-**Prompt SoT:** `MASTER-PRODUCTION-DOCK.md` · page map: `BOOK-PAGE-WORKFLOW.md`  
-**Gotchas:** Jon first-Save As · PS-first · no Free Transform · don’t mid-paint-crop vignettes (`ISSUES-RESOLVED.md`).
+**S1 Approach KEEP** (v13|v14). **Dialing S2 Threshold** (p6|7 full spread).  
+**Current:** `S02-threshold/v03` · board `…/S02-threshold-comparison-spread-v03-2026-07-22.png` · `keep-leaning`  
+**Flipbook:** `Output/flipbook-2026-07-22.pdf`  
+**SoT:** `_FLOW-CURRENT.json` · **Logging:** RECIPE + FLOW; project-log only on lock  
+**NEXT:** Jon eye on S2 v03 spread.
 
 ---
 
@@ -89,10 +87,10 @@ An **8.5×8.5"** full-color children’s picture book from Jack’s Christmas po
 
 ## Start next (priority order)
 
-### 0. Flow art is dial-complete — do **not** reopen Klein sweeps
-Keepers live under `Media/generated/mocks/` (see flow INDEX). Optional later: Lane B paint unify / print px remakes — **not** blocking first InDesign pages.
+### 0. **S2 Threshold dial** (active) · S1 KEEP
+S1: `v13`|`v14` keep. S2: `S02-threshold/v03` seamless spread — Jon eye → RECIPE/`_FLOW-CURRENT` only until locked.
 
-### 1. InDesign cold start (Jon + agent)
+### 1. InDesign cold start (when plates are keep/locked enough)
 Follow **`AGENT-RUNBOOK.md`** cold flow: CC Desktop → UDT + InDesign + bridges → Jon **Load & Watch** → Connected ✓.
 
 ### 2. First production unit = **P01 Title**

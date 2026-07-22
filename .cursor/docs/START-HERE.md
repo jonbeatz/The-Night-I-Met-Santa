@@ -22,23 +22,19 @@ If an agent is new to this profile, read this file first.
 When docs differ, use this priority:
 
 1. `TRUTH.md` — Project constitution (gift book, not a website)
-2. **`AGENT-RUNBOOK.md`** — **authoritative build procedure** (DTP, print, design)
-3. `START-HERE.md` (this file)
-4. **`CONTINUE-HERE.md`** — where we are + what to do next (book-specific)
-5. **`INDESIGN-PRODUCTION-WORKFLOW.md`** — InDesign/Lulu specs
-6. **`BOOK-PRODUCTION-SYSTEM.md`** — **reusable dialed playbook** (tools, decisions, future books)
-7. **`RESEARCH-VERDICT.md`** — print services, GitHub grades, toolchain fork (historical)
-8. **`BOOK-PLAN.md`** — specs, stanza map, print checklist
-9. `ILLUSTRATION-STYLE.md` / `PAGE-PROMPT-BIBLE.md` / `COVER-PROMPTS.md` — art kit
-10. `Book-Findings.md` — Hermes iteration log (prefer RESEARCH-VERDICT on POD conflicts)
-11. `IMAGE-WORKFLOW.md` — illustration pipeline (fleet cmds)
-12. `MASTER-COMMANDS.md` — Command reference
-13. `MEM0-LMSTUDIO.md` — Memory + local LLM
-14. Skills in SKILL-INDEX.md — Domain expertise (Image-Workflow, Background-Removal, DesignMD)
-15. `ReCall.md` / `project-log.md` — Session history
-16. **`TOOLS-WATCHLIST.md`** / **`TOOLS-SETUP-STATUS.md`** — fleet tool grades
+2. **Always-open book stack (4):**
+   - `.cursor/docs/JON-BOOK-FLOW-v2-FINAL.md`
+   - `.cursor/docs/MASTER-PRODUCTION-DOCK.md`
+   - `.cursor/docs/IMAGE-LANE-SYSTEM-v2.md`
+   - `AGENT-RUNBOOK.md`
+3. `Media/generated/mocks/_FLOW-CURRENT.json` — current plate paths + verdicts (`decided_by` + `date`)
+4. `START-HERE.md` (this file)
+5. **`CONTINUE-HERE.md`** — where we are + what to do next
+6. Everything else = **reference** (PAGE-BUILD, ISSUES-RESOLVED, ILLUSTRATION-STYLE, BOOK-PLAYBOOK, fleet mirrors) — open only when needed
 
-**Shared canonical:** `D:\Hermes\projects\_core-scripts\shared-profile-content\docs\TOOLS-*.md`
+> **Book handoff:** After this file, read **CONTINUE-HERE** + **ReCall**, then the four always-open docs. Do not auto-load the full historical stack.
+
+**Shared canonical (fleet tools):** `D:\Hermes\projects\_core-scripts\shared-profile-content\docs\TOOLS-*.md`
 
 ---
 

@@ -58,24 +58,16 @@ Profile-specific docs as listed in **`AGENTS.md`** (e.g. NEXT-FLICK-FEATURES.md 
 
 ---
 
-## Step 3: Memory recall (all systems)
+## Step 3: Mem0 recall
 
-### Mem0
 ```powershell
 npm run mem0:preflight
 npm run mem0:search -- "current priorities"
 ```
 
-If LM Studio offline → skip; note in status card.
+If LM Studio offline → use **ReCall.md** only; alert operator once.
 
-### Mnemosyne (always works — no LLM)
-```powershell
-npm run mnemosyne:recall -- "the-night-i-met-santa current status"
-```
-
-### Vader_Vault
-Read `H:\Vader_Vault\01_Projects\The-Night-I-Met-Santa.md` for latest project hub state.
-If H: not accessible → read `.cursor/docs/CONTINUE-HERE.md` instead.
+---
 
 ## Step 4: Status card (print in chat)
 
@@ -95,8 +87,6 @@ HERMES ACTIVE
 RECALL FOCUS
   - [from ReCall.md]
   - [from Mem0 if available]
-  - [from Mnemosyne]
-  - [from Vader_Vault project hub]
 
 What's the mission?
 ```

@@ -1,30 +1,25 @@
 # ReCall.md — The-Night-I-Met-Santa
 
 ## Current focus
-**PHASE: InDesign production** (Klein flow dials STOPPED 2026-07-21 night).  
-**Flow pass proved the book** — INDEX + flipbook are the dial scoreboard.  
-**Page count:** **36** · map `BOOK-PAGE-WORKFLOW.md` · prompts `MASTER-PRODUCTION-DOCK.md`.  
-**Build loop:** `PAGE-BUILD-WORKFLOW.md` — keep art → PSD → close PNG → MOCK-TYPE → cloud → InDesign live type.  
-**First unit:** **P01 Title** (`Media/approved/pages/p01-title.png` → `p01-title.psd` · MOCK upper cream).  
-**Continuity:** Boy G0 + Santa G0 · hard PJ append on all story gens.  
-Working `.indd`: `eyes-met-prototype-v1.indd` · `p03-dedication-smoke.indd` (prototype; full book doc next).
-
-**DTP:** Affinity MCP + InDesign UXP Bridge + **Photoshop adobepy UXP LIVE**. Cold flow: CC → UDT+apps → Jon **Load & Watch** → MCP.
-
-**PSD blanks:** `Xtraz/Adobe-Photoshop/` → `spread-page-template.psd` · `single-page-template.psd` · `book-covers-template.psd`.
+**PHASE: S2 Threshold dial** (p6|7 full seamless spread) after **S1 Approach KEEP**.  
+**S1 LOCKED/KEEP:** p4 `S01-approach/v13` + p5 `v14` — crack-is-the-story (narrow beam crawl + face-on wider spill).  
+**S2 current:** `S02-threshold/v03` (2048×1024 Qwen spread) · `keep-leaning` · board `…/S02-threshold-comparison-spread-v03-2026-07-22.png`  
+**SoT:** `Media/generated/mocks/_FLOW-CURRENT.json` · flipbook `Output/flipbook-2026-07-22.pdf`  
+**Always-open 4:** Flow v2 · Master Dock · IMAGE-LANE-SYSTEM-v2 · AGENT-RUNBOOK  
+**Logging:** RECIPE + `_FLOW-CURRENT` for tests; `project-log.md` only on lock / promote / phase complete.  
+**Locks:** style-lock-v2 · santa-G0-v2 · boy G0 · S1 mockup-quality L/R targets.
 
 ## Birthday deadline
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-22 (End Project) — Alternate **`POEM-IMAGE-PROMPT-DOCK.md`** for Jon review (poem↔page↔prompts + variety charter). Did not replace BOOK-PAGE / MASTER-PRODUCTION-DOCK. Flow dials remain stopped. Git dirty at close (dock + mocks + fleet mirrors). :3000 free. Mem0 + vault logged.
+2026-07-22 — Docs sync + Mem0/vault/Mnemosyne. S1 v13|v14 KEEP. S2 v03 dial pending Jon eye. IMAGE-LANE logging rule + AGENTS project-log gate.
 
 ## Where to continue
-1. **Review prompt docks** — `POEM-IMAGE-PROMPT-DOCK.md` vs `MASTER-PRODUCTION-DOCK.md` · promote if Jon likes
-2. **InDesign cold start** per `AGENT-RUNBOOK.md` (UDT Load & Watch)
-3. **P01 Title** PSD + MOCK-TYPE + live ID (`PAGE-BUILD-WORKFLOW.md`)
-4. Sequential front matter → S1…S12 using flow keeps (promote to `Media/approved/` when Jon locks)
-5. Lulu interior export when enough pages exist
+1. **Jon eye on S2 v03** — keep / lean / reject → update `_FLOW-CURRENT` → flipbook
+2. Next Flow v2 beats (S3 locked art note; S4 Sit Here already has style/santa locks)
+3. InDesign cold start when plates are keep/locked enough for PSD
+4. P01 Title PSD path still queued after art dials settle
 
 ## Reference (new this session)
 - **POEM-IMAGE-PROMPT-DOCK.md** — alternate poem↔page↔prompt dock (review)

@@ -77,6 +77,8 @@ If the zip/venv is wiped: re-extract release, recreate venv, `adobepy install-br
 
 **If Cursor is green but smoke fails (`sessions:0` / `dcc:false`):** broker was restarted after the plugin connected. **UDT Reload** on the PS bridge (not a full Photoshop quit). Then re-smoke.
 
+**If Cursor Settings shows photoshop red / Error / Logout:** almost always MCP HTTP is down — start `npm run layout:photoshop-mcp` first. Then re-auth / toggle the MCP if Cursor still shows only `mcp_auth`. Then UDT Reload → smoke `sessions≥1` + `dcc:true`. CC + UDT Loaded does **not** start `:8766`.
+
 ### Preferences (Plugins page)
 
 | Setting | Need? |

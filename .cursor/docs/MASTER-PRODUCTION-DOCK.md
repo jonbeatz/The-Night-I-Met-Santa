@@ -1,9 +1,13 @@
 # MASTER PRODUCTION DOCK — The Night I Met Santa
-**Created:** July 21, 2026 · **Status:** AUTHORITATIVE for **prompts and generation**
-**Page map SoT:** `BOOK-PAGE-WORKFLOW.md` (page numbers, filenames, poem placement) — this dock does **not** replace it  
+**Created:** July 21, 2026 · **Updated:** July 22, 2026 for Jon's Book Flow v2
+**Status:** AUTHORITATIVE for **prompts and generation**
+**Book structure authority:** `JON-BOOK-FLOW-v2-FINAL.md` — use for page layouts and design patterns
+**Page map SoT:** `BOOK-PAGE-WORKFLOW.md` (page numbers, filenames, poem placement)
 **Supersedes (prompts only):** `POEM-IMAGE-PROMPT-DOCK.md` · `PAGE-PROMPT-BIBLE.md` → stubs redirect here
 
-> **Single source of truth for image generation prompts.** Every spread has ready-to-paste prompts, backup alternatives, variety rules, and quiet zone maps. Copy a block, add the style tags, generate. For which page gets which poem lines / temp filenames, always follow **BOOK-PAGE-WORKFLOW.md**.
+> **⚠️ IMPORTANT: This dock's prompts were written for the original "all seamless spreads" layout. Jon's Book Flow v2 uses alternating patterns — Text Page + Image Page (S4, S6, S10), Split Images (S1, S9), and two S12 spreads (S12a Blessing + S12b God Bless). For page layout and text assignments, always check `JON-BOOK-FLOW-v2-FINAL.md` FIRST, then use the prompts below for generation. The prompts below still work for image content — just adapt the form (seamless spread → text+image or split) per the flow doc.**
+
+> **Single source of truth for image generation prompts.** Every beat has ready-to-paste prompts, backup alternatives, and style tags. For page structure, text placement, and which beats use which design pattern, follow **JON-BOOK-FLOW-v2-FINAL.md**.
 
 ---
 

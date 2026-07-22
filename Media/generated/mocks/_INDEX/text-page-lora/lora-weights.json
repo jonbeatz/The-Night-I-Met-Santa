@@ -1,0 +1,41 @@
+{
+  "trainer": "fal-ai/flux-2-trainer-v2",
+  "train_request_id": "019f8b1b-d679-7370-a405-12d582a982db",
+  "lora_weights": "https://v3b.fal.media/files/b/0aa34e8a/r8az-_smTtlyPagCKRA2q_pytorch_lora_weights.safetensors",
+  "config": "https://v3b.fal.media/files/b/0aa34e7c/74BRnruSDbJmVdbByoYfY_config_63812592-4bf6-4f6c-8c5c-909c738c0ba2.json",
+  "trigger_caption": "Soft cream watercolor paper with subtle feathered edges, no illustrations, no text, warm ivory, gentle paper grain",
+  "train_refs": [
+    "Images/styles2/spread-Frame-Style1.png",
+    "Images/styles2/p21-beat12-13-note-LEFT.png"
+  ],
+  "inference": [
+    {
+      "id": "v01",
+      "scale": 1.0,
+      "seed": 573892410,
+      "result": "fail_scene"
+    },
+    {
+      "id": "v02",
+      "scale": 1.0,
+      "seed": 42,
+      "result": "fail_scene"
+    },
+    {
+      "id": "v03",
+      "scale": 0.35,
+      "seed": 7,
+      "request_id": "019f8b2d-6a96-71b2-8fb2-dcd65d7893d4",
+      "result": "pass_paper"
+    },
+    {
+      "id": "v04",
+      "scale": 0.35,
+      "seed": 99,
+      "request_id": "019f8b2d-f17b-7011-bb68-fdeaa93bcacc",
+      "result": "pass_paper"
+    }
+  ],
+  "recommended_scale": 0.35,
+  "note": "Scale 1.0 overfits to illustrated train crops; use 0.35 + blank-page prompt. Retrain on paper-only margins for production."
+}
