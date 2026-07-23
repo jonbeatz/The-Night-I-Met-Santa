@@ -31,22 +31,23 @@
 | Trim | **8.5 × 8.5"** Lulu casewrap HC |
 | Pages | **32** even (no blanks) |
 | Style locked | Painted **gouache** — not colored pencil |
-| Keepers | `Media/generated/test-batch-v2/` · covers `Media/generated/test-covers-v3/` · **approved → `Media/approved/`** (two-tier) |
+| Keepers | Dials in `Media/generated/mocks/` · **current-best** in `Media/development/` · forever locks in `Media/approved/` |
 | Future-book master | Repo-root **`BOOK-PLAYBOOK.md`** (pair with this living ops doc) |
 | Fonts | `.cursor/docs/FONT-CATALOG.md` · pack in `Xtraz/Fonts/` (gitignored; installed on PC) |
 
-### Media/approved two-tier (Jon 2026-07-15)
+### Media three-tier (Jon 2026-07-22 — replaces “approved two-tier”)
 
-| Tier | Path | Use |
-|------|------|-----|
-| **A moodboard** | `Media/approved/style-refs/{covers,back,jack,pages,santa,spread,story}/` | Favorites / shot ideas — **keep this org** |
-| **B print locks** | `characters/` · `covers/` · `pages/` · `spreads/` | Clean kebab names for compositor/Typst |
+| Tier | Path | Meaning |
+|------|------|---------|
+| **1 Forever** | `Media/approved/` | **Only** `characters/` + `style-refs/style-lock-v2.png` (+ recipe). Never page art. |
+| **2 Current best** | `Media/development/` | Visual dashboard — **copy** here on keep / lock-for-now. Pre-InDesign, no live text. |
+| **3 Lulu-ready** | `Media/finals/` | After InDesign live text + bleed + export. Empty until earned. |
+| Dials | `Media/generated/mocks/` | Versioned `vNN` + RECIPE · SoT `_FLOW-CURRENT.json` (`tier` field) |
+| Archive | `Media/generated/mocks/archive/` | Former covers/pages/spreads/style-refs |
 
-Only Tier B is “locked for print.” See `Media/approved/INDEX.md`.
-
-**Important (2026-07-15):** Tier B today = **composition approval**, often dial/~1K size — **not** Lulu pixel-final.  
-Print remakes + boy/Santa continuity plan → **`.cursor/docs/CONTINUITY-AND-PRINT-FINALS.md`**.  
-Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file should get a **`.recipe.md`** sidecar (see `covers/cover-front.recipe.md`).
+Print remakes + boy/Santa continuity → **`.cursor/docs/CONTINUITY-AND-PRINT-FINALS.md`**.  
+**Quality bar (2026-07-22):** `Media/development/S03-eyes-met/v07/art.png` — prefer fewer gifts on later plates. Doorway spill language from S2 v05.  
+Jon: no further Media *folder* redesign for a week (2026-07-22) — page dials continue.
 
 ---
 
@@ -265,9 +266,16 @@ Final plates land in **`Media/approved/print/`** after Pass B. Each Tier B file 
 | 2026-07-15 | Jon mockups locked as refs: soft paint fades, **never cover faces**, Santa pages use **bottom-right** gradient; note pages **lower** not mid-window. Mocks → `text-mocks-v3/` | layout `ref-text-jon-*` |
 | 2026-07-15 | Text wash dial: overpowered solid glow rejected — use **subtle mid-opacity** paper + long fade (Pillow; not a fal model issue). Cheap art dial = Flux schnell / Klein; finals stay Nano Banana Pro | compositing |
 | 2026-07-21 | **Lane priority refresh:** dial = **Klein 9B** (~$0.011/MP); alt = **Qwen Image 2** (~$0.035/img); light = **Klein 4B** (~$0.009/MP, hi-res/low-detail only); finals = **Gemini/Banana** (~$0.15). | Model lanes |
+| 2026-07-22 | **Media three-tier LOCKED:** approved = characters + style-lock-v2 only · development = current-best dashboard · finals = Lulu after InDesign. No redesign for a week. | Asset org |
+| 2026-07-22 | **About/Dedication KEEP:** `P02-about-spread/v04` corner room; SPLIT fireplace/tree v01 = stepping-stone refs. Casewrap pastedowns = solid burgundy. | Art / print |
+| 2026-07-22 | **P01 title frame dial:** Qwen hugs art vignettes / may swap subjects on polish. **Pillow-lock** cream page + warm gold **page-margin** whisper; optional Qwen; fall back if scene drifts. Never say “feathered” (draws feathers). **KEEP:** `development/P01-title/v16` → dashboard `art.png` · FLOW p01 keep. | Art / process |
 | 2026-07-22 | **Model tiers v2 LOCKED** in `IMAGE-LANE-SYSTEM-v2.md`: dial Klein 9B · mock favorite **Qwen 2 Pro /edit** · style-lock-v2 (Krea) · santa-G0-v2 · finals Banana Pro `/edit` · GPT High 4K pillars only (S3/S12b). Current plates SoT = `_FLOW-CURRENT.json` + flipbook. | Lanes / process |
 | 2026-07-22 | **Logging gate:** `project-log.md` = milestones only (locked spread / promoted character / phase complete). Tests → `RECIPE.md` + `_FLOW-CURRENT` + boards. | Docs / process |
 | 2026-07-22 | **S1 Approach KEEP:** v13 L + v14 R — same door/wreath; crack is the story (4–6″ journey / 6–8″ face-on destination). Mockup quality targets from Klein v01 best-of chops. | Art lock |
+| 2026-07-22 | **S3 Eyes Met v07 KEEP = QUALITY BAR.** Open-coat Santa · Boy G0 · burgundy/gold · wide room. Prefer **fewer gifts** on later plates. FLOW p08\|p09 keep. | Art lock |
+| 2026-07-22 | **Santa wardrobe lock RETIRED “suspenders over coat.”** New: open red coat · cream striped shirt · brown suspenders **over shirt**. Refs santa-G0-v2 + santa-G0. | Character |
+| 2026-07-22 | **Boy G0 lock CONFIRMED** (full + face): oatmeal/taupe holly · visible berries · red trim/buttons · brown eyes · golden-highlight hair. Attach with Santa on every character gen. | Character |
+| 2026-07-22 | **S2 Threshold v05 KEEP** (doorway spill language) · wardrobe fix **queued**. **S4 Sit Here v12** Flow v2 TEXT+IMAGE dial pending Jon eye. | Art dial |
 | 2026-07-22 | **S2 Threshold dial v03:** first v2-flow Qwen seamless 2048×1024 spread (enter + Santa at bag). Pending Jon eye. | Art dial |
 | 2026-07-15 | Harvested `book/Childrens_Book_Design_Summary*` → Lulu checklist §8b; **corrected color advice** to **sRGB** (not CMYK-first) per Lulu help | Prepress |
 | 2026-07-15 | Flipbook webpage notes → `DIGITAL-FLIPBOOK-WATCH.md` (post-gift only; do not block print) | Optional digital |

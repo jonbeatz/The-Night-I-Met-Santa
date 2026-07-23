@@ -1,0 +1,16 @@
+{
+  "version": "v04",
+  "seed": 217334975,
+  "request_id": "019f8cf6-7fc7-70e2-a0f4-f3133cabd284",
+  "url": "https://v3b.fal.media/files/b/0aa35a47/c2NzgXUfaddfoNeAo2bUB_IHo0zzau.png",
+  "size": [
+    2048,
+    1024
+  ],
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "refs": [
+    "style-lock-v2",
+    "boy-narrator-G0",
+    "santa-G0-v2"
+  ]
+}

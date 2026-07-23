@@ -64,14 +64,59 @@ seamless continuous two-page storybook spread across the full width, one unbroke
 
 | Lock | Rule |
 |------|------|
-| **Boy** | Match `Media/approved/characters/boy-narrator-G0.png` · oatmeal/taupe holly pajamas **ONLY** — **NOT** a red coat, **NOT** a Santa suit, **NOT** a Santa costume |
-| **Santa** | Match `Media/approved/characters/santa-G0.png` · white hair/beard · red coat with suspenders |
+| **Boy** | Match `boy-narrator-G0.png` + `boy-narrator-G0-face.png` — see **Boy G0 lock** below · oatmeal/taupe holly PJs **ONLY** — **NOT** a red coat, **NOT** a Santa suit, **NOT** a Santa costume |
+| **Santa** | Match `Media/approved/characters/santa-G0-v2.png` (wardrobe sheet also clear on `santa-G0.png`) — see **Santa wardrobe lock** below |
 | **Room** | Same cozy Christmas Eve living room (tree, hearth, gifts) unless beat requires hall/door/roof |
 | **Text in art** | NEVER bake poem words into the illustration. No readable words, logos, handwriting on clothes/notes |
 | **Gutter** | Seamless — no fold line/shadow on spread finals (orange guide = PSD only) |
 | **Quiet zones** | Each spread specifies where text will go — keep those areas soft/clear |
-| **Hard append (all story gens)** | `Child wears oatmeal/taupe holly pajamas ONLY — NOT a red coat, NOT a Santa suit, NOT a Santa costume.` |
+| **Hard append (Boy)** | See **Boy G0 lock** — paste full block on every gen with the boy |
+| **Hard append (Santa)** | See **Santa wardrobe lock** — paste full block on every gen with Santa |
 | **Hard append (S11 Wish)** | Also: `NO readable letters, NO text, NO handwriting anywhere in the image.` |
+| **Character refs (every gen)** | Attach **Boy G0** (full + face when slots allow) **and** **Santa G0 v2** whenever either character appears — no drift, no variation |
+
+### Boy G0 lock (CONFIRMED 2026-07-22)
+
+**Refs (attach on every gen with the boy):**
+- `Media/approved/characters/boy-narrator-G0.png` — full body / pajamas
+- `Media/approved/characters/boy-narrator-G0-face.png` — face / hair / eyes
+
+#### Pajamas (exact)
+
+- **Oatmeal/taupe** base — warm beige · **NOT** white · **NOT** cream · **NOT** bright
+- **Green holly leaves with red berries** printed across the fabric — **clearly visible** pattern, not subtle
+- **Red trim** on collar, sleeve cuffs, and pant hems
+- **Red buttons** down the front of the shirt
+- Classic **button-up** pajama set style
+
+#### Face / hair (exact)
+
+- Tousled **light brown** hair with **golden highlights**
+- Large expressive **brown eyes**
+- **Rosy cheeks**, soft peachy complexion
+- Expression varies by scene — wonder, surprise, awe, joy — but **identity never drifts**
+
+**Hard append (paste on every boy gen):**
+```
+BOY G0 LOCK: oatmeal/taupe (warm beige) holly pajamas — NOT white, NOT cream, NOT bright; green holly leaves with red berries clearly visible across the fabric; red trim on collar, sleeve cuffs, and pant hems; red buttons down the front; classic button-up pajama set. Tousled light brown hair with golden highlights; large expressive brown eyes; rosy cheeks, soft peachy complexion. Match boy-narrator-G0.png and boy-narrator-G0-face.png exactly — no drift.
+```
+
+### Santa wardrobe lock (LOCKED 2026-07-22 — replaces prior “suspenders over coat”)
+
+**Refs:** `Media/approved/characters/santa-G0-v2.png` (definitive) · standing wardrobe clear on `santa-G0.png`
+
+Every Santa in every generation must match this outfit exactly:
+
+- **Red coat** worn **OPEN and unbuttoned** — not closed, not a solid red block
+- **Cream/off-white vertically striped** button-down shirt visible underneath
+- **Brown leather suspenders** over the **striped shirt** (NOT over the coat fabric)
+- **Red pants**, **black boots**, **white fur trim** on cuffs and hem
+- Relaxed, approachable, grandfather-like — **not** a formal costume
+
+**Hard append (paste on every Santa gen):**
+```
+SANTA WARDROBE LOCK: red coat worn OPEN and unbuttoned — not closed, not a solid red block; cream/off-white vertically striped button-down shirt visible underneath; brown leather suspenders over the striped shirt (NOT over the coat fabric); red pants; black boots; white fur trim on cuffs and hem; relaxed approachable grandfather-like — not a formal costume. Match santa-G0-v2 / santa-G0 reference exactly.
+```
 
 ---
 
@@ -79,7 +124,7 @@ seamless continuous two-page storybook spread across the full width, one unbroke
 
 | Pages | Form | Unit | Poem Cue | Art Status |
 |---|---|---|---|---|
-| 1 | SINGLE | P01 Title | — | 🔒 v22 locked provisional |
+| 1 | SINGLE | P01 Title | — | 🎯 v16 KEEP · `development/P01-title/art.png` |
 | 2 | SINGLE | P02 Copyright | — | Optional ornament |
 | 3 | SINGLE | P03 Dedication | — | Soft vignette |
 | 4|5 | MATTER | About | — | Need vignette R |
@@ -125,10 +170,10 @@ seamless continuous two-page storybook spread across the full width, one unbroke
 
 ---
 
-## P01 — Title · p1 · SINGLE · 🔒 LOCKED
+## P01 — Title · p1 · SINGLE · 🎯 KEEP
 
-**File:** `Media/approved/pages/p01-title.png` (v22)
-Do not regenerate unless Jon unlocks. Cream TOP for Cinzel/Cormorant type.
+**File:** `Media/development/P01-title/art.png` (**v16 KEEP**)
+Art-only · warm gold page-edge whisper · clean cream center · window+tree. Live Cinzel/Cormorant in InDesign. Do not regenerate unless Jon unlocks.
 
 ---
 

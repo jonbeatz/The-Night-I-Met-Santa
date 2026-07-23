@@ -1,0 +1,15 @@
+{
+  "version": "v04",
+  "seed": 929445456,
+  "request_id": "019f8d2b-8c02-7961-9d5e-9913f9ba1304",
+  "url": "https://v3b.fal.media/files/b/0aa35ba3/rmWY0IYHDrQvV8dY_7svT_4PUiQsiF.png",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "composition_ref": "Images/styles3/spread-01-eyes-met-WIDE.png",
+  "refs": [
+    "WIDE-comp",
+    "style-lock-v2",
+    "boy|santa-G0-strip"
+  ],
+  "quality_bar": "S02-threshold/v05",
+  "previous": "v02"
+}

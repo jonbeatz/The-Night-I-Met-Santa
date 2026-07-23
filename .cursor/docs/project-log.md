@@ -2,6 +2,16 @@
 
 | Date | Note |
 |------|------|
+| 2026-07-22 | **Update docs + Mem0/vault/Mnemosyne (evening):** S3 v07 KEEP = quality bar · Boy/Santa wardrobe locks · S2 wardrobe queued · S4 v12 TEXT+IMAGE dial. ReCall/CONTINUE/AGENTS/BOOK-PRODUCTION/ISSUES harvested. |
+| 2026-07-22 | **S3 Eyes Met LOCKED = v07.** Quality bar for all plates (oil warmth · burgundy · open-coat Santa · Boy G0 · fewer gifts later). FLOW keep. Next: S4 eye → S2 wardrobe fix. |
+| 2026-07-22 | **P01 Title KEEP reaffirmed = v16.** Tree-full / model dials v17–v22 kept as tests only — none beat original. Dashboard `development/P01-title/art.png` ← v16. FLOW p01 keep · development. **Next: S2 Threshold** (`S02-threshold/v03` keep-leaning — Jon eye). |
+| 2026-07-22 | **P01 Title KEEP:** `development/P01-title/v16` → dashboard `art.png`. Winter window+tree · moon/snow/sleigh · clean cream center · warm gold watercolor whisper at **page** edges · open cream for title/copyright. FLOW `p01` → v16 · status **keep** · tier **development**. Art-only until InDesign live type → `finals/`. Next: S2 Threshold (or P01 PSD/type). |
+| 2026-07-22 | **Update docs + Mem0/vault/Mnemosyne:** Harvested About/Dedication v04 lock · Media three-tier · casewrap burgundy · Qwen layout gotchas. ReCall/CONTINUE/TRUTH/BOOK-PRODUCTION/AGENTS/ISSUES synced. |
+| 2026-07-22 | **Media three-tier:** `approved/` = characters + style-lock-v2 only · `development/` = current-best dashboard · `finals/` = Lulu after InDesign. Old covers/pages/spreads/style-refs → `mocks/archive/`. AGENTS + FLOW `tier` field updated. |
+| 2026-07-22 | **About/Dedication LOCKED:** `P02-about-spread/v04` corner room (fireplace L wall · tree R wall · open burgundy gutter). SPLIT `P02-fireplace/v01` + `P03-tree/v01` keep as stepping-stone refs. Flow + `_FLOW-CURRENT` updated. Next: S2 Threshold. |
+| 2026-07-22 | **About/Dedication SPLIT pivot:** continuous fireplace+tree panorama abandoned (v01–v03). Now S1-pattern singles — `P02-fireplace/v01` + `P03-tree/v01`. Flow v2 + `_FLOW-CURRENT` updated. |
+| 2026-07-22 | **log fixes:** Qwen won’t open top cream (Pillow prep→polish) · baked title from text-in-ref (scrub) · Qwen 3-URL cap. Cards in ISSUES-RESOLVED · gotchas table in IMAGE-LANE-SYSTEM-v2. |
+| 2026-07-22 | **Casewrap pastedowns LOCKED:** inside front + back = solid deep burgundy (style-lock-v2 wall color). No illustration/pattern. Casewrap file only — not interior pages. Noted in AGENT-RUNBOOK §4 · Flow v2 Cover · INDESIGN-PRODUCTION-WORKFLOW. |
 | 2026-07-22 | **S1 Approach LOCKED:** v13 L (p4) + v14 R (p5) — crack-is-the-story continuity (narrow beam crawl + face-on wider spill). Qwen 2 Pro /edit dials. Next: S2 Threshold full spread. |
 | 2026-07-22 | **End Project:** Alternate **`POEM-IMAGE-PROMPT-DOCK.md`** (poem↔page↔prompts, anti–standing-portrait variety; page #s still from BOOK-PAGE-WORKFLOW). Pointers in PAGE-PROMPT-BIBLE / CONTINUE-HERE / ReCall. Session also had flow/mock dials + matter mocks on disk (uncommitted). :3000 free. Git gate pending. |
 | 2026-07-21 | **End Project:** Full-book dial imagination ×3 — Klein `new-test-book-v1` · Qwen `v2` (spine-safe + camera) · Qwen stylized `v3` (07-qwen + G0 edit refs). Maps in each folder. Jon comparing tomorrow. :3000 was down. |

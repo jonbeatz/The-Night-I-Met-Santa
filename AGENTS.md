@@ -18,13 +18,34 @@ Everything else is **reference on demand** (do not auto-load): `PAGE-BUILD-WORKF
 - **Root:** `D:\Hermes\projects\The-Night-I-Met-Santa`
 - Gift book for Jack Farrell · birthday **2026-08-15** · Lulu **8.5×8.5"**
 - **Art:** painted gouache / soft watercolor · **fal.ai first**
-- **Style lock:** `Media/approved/style-refs/style-lock-v2.png` (Krea regen + santa-G0-v2)
-- **Santa lock:** `Media/approved/characters/santa-G0-v2.png` (S4 v08 Banana Pro) — suspenders over coat · open collar
-- **Hero spend:** GPT High 4K **only** if `gpt_pillar: true` (S3 · S12b). **Primary finals** = Banana Pro `/edit` + style-lock-v2 + santa-G0-v2. Alt = pure Krea atmospheric.
-- **Dial:** Klein 9B primary · Qwen 2 Pro `/edit` favorite mock look · always attach style-lock-v2
+- **Style lock:** `Media/approved/style-refs/style-lock-v2.png` (Krea regen + santa-G0-v2) — **only** style file in approved
+- **Santa lock:** `santa-G0-v2.png` (+ standing `santa-G0.png`) — **open** red coat · cream striped shirt · brown suspenders **over shirt** · red pants · black boots
+- **Boy G0:** `boy-narrator-G0.png` + `boy-narrator-G0-face.png` — oatmeal/taupe holly · red trim/buttons · brown eyes
+- **Hero spend:** GPT High 4K **only** if `gpt_pillar: true` (S3 · S12b). **Primary finals** = Banana Pro `/edit` + style-lock-v2 + santa-G0-v2 (+ boy G0). Alt = pure Krea atmospheric.
+- **Dial:** Klein 9B primary · Qwen 2 Pro `/edit` favorite mock look · always attach style-lock-v2 (+ Boy/Santa G0 when characters present)
 - **Comparison boards:** one board per decision (Klein | new | favorite). Retroactive S04 multi-boards = archive.
-- **Locks:** cover beige-v2 · boy G0 · **santa-G0-v2** · Jack portrait · eyes-met · P01 v22
+- **Quality bar (2026-07-22):** `Media/development/S03-eyes-met/v07/art.png` — prefer fewer gifts later; doorway spill from S2 v05
+- **Forever locks (approved/):** boy G0 · **santa-G0-v2** · Jack portrait · style-lock-v2
+- **Story keeps (development/):** P01 v16 · P02 v04 · S1 v13|v14 · S2 v05 · **S3 v07** · S4 v12 dial
+- **Current-best page art:** `Media/development/` (not Lulu-final)
 - **Layout:** InDesign UXP · Photoshop adobepy LIVE
+
+## Media three-tier (LOCKED 2026-07-22)
+
+| Tier | Path | What belongs |
+|------|------|----------------|
+| **1 — Forever** | `Media/approved/` | **Only** `characters/` + `style-refs/style-lock-v2.png` (+ recipe). Never put page art here. |
+| **2 — Current best** | `Media/development/` | Visual dashboard — one folder per Flow unit. On **keep** / **lock it (for now)** → **COPY** image here. Pre-InDesign, no live text. |
+| **3 — Lulu-ready** | `Media/finals/` | Empty until InDesign live text + bleed + export. Then graduate from development. |
+| Dials | `Media/generated/mocks/` | Versioned dials + RECIPE. SoT machine list: `_FLOW-CURRENT.json` |
+| Old approved clutter | `Media/generated/mocks/archive/` | Former covers/pages/spreads/style-refs |
+
+**Rules**
+1. Jon says **keep** / **lock it** → copy to `Media/development/{unit}/` (update FLOW `path` + `tier: "development"`).
+2. Page built in InDesign with text → output to `Media/finals/` (`tier: "finals"`).
+3. `approved/` = character refs + style lock **ONLY**.
+4. `_FLOW-CURRENT.json` = machine-readable SoT (`tier`: `approved` \| `development` \| `finals` \| `mocks`).
+5. `development/` = human visual dashboard. **Nothing is Lulu-final until `finals/`.**
 
 ## Paths
 
@@ -32,14 +53,17 @@ Everything else is **reference on demand** (do not auto-load): `PAGE-BUILD-WORKF
 |-------|------|
 | Poem | `Transcription/poem-clean.txt` |
 | Current plates | `Media/generated/mocks/_FLOW-CURRENT.json` |
-| Art | `Media/approved/` · `Media/generated/mocks/` |
+| Forever locks | `Media/approved/characters/` · `Media/approved/style-refs/style-lock-v2.png` |
+| Current-best art | `Media/development/` |
+| Lulu-ready | `Media/finals/` |
+| Dials | `Media/generated/mocks/` |
 | Flipbook | `Output/flipbook-{date}.pdf` |
 | InDesign / PS | `Xtraz/Adobe-inDesign/` · `Xtraz/Adobe-Photoshop/` |
 
 ## Rules
 
-- Never call anything “final.” Never regen G0 / locked plates without Jon.
-- Update `_FLOW-CURRENT.json` when a plate or verdict changes (`decided_by` + `date` required).
+- Never call anything “final” until it lives in `Media/finals/` (InDesign + live text). Never regen G0 / style-lock without Jon.
+- Update `_FLOW-CURRENT.json` when a plate or verdict changes (`decided_by` + `date` + `tier` required).
 - Then rebuild flipbook: `npm run book:flipbook`
 - **`project-log.md` = milestones/decisions only** — not individual model tests or comparison-board runs. Document tests/boards in each version’s `RECIPE.md` and in `_FLOW-CURRENT.json`. Log to `.cursor/docs/project-log.md` only when: a spread is locked, a character reference is promoted, or a production phase completes.
 - **Backups (book tiers):** `npm run backup:quick` (daily) · `backup:full` (milestone) · `backup:archive` (deep). See `.cursor/docs/BACKUP-BOOK-TIERS.md`.

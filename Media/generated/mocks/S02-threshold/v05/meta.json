@@ -1,0 +1,18 @@
+{
+  "version": "v05",
+  "seed": 1535542168,
+  "request_id": "019f8d05-4687-7c72-b547-793bc1b63642",
+  "url": "https://v3b.fal.media/files/b/0aa35ab6/uStcL2zNjTvsOUEgbRBK6_k1MhQ8or.png",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "refs": [
+    "v04",
+    "style-lock-v2",
+    "cover-beige-v2"
+  ],
+  "upload_urls": {
+    "v04": "https://v3b.fal.media/files/b/0aa35aa6/SlhrolyJ6WUnCwbuezxAV_s02-v04-base.png",
+    "style": "https://v3b.fal.media/files/b/0aa35aa7/HE2n1I-9X572Mgm8Q5A8V_style-lock-v2.png",
+    "cover": "https://v3b.fal.media/files/b/0aa35aa7/aDoQjsY7ixF6ofwv1WsjB_cover-beige-v2.png"
+  },
+  "previous": "v04"
+}

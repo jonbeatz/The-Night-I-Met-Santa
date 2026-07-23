@@ -104,6 +104,16 @@ These are locked. Reference them, don't recreate them:
 | **Cover overhang** | 0.125" on 3 sides | Lulu spec |
 | **Page count** | 35–40 pages | Project target |
 | **Cover spine text** | **Skip** — under 80 pages | Lulu guide p.17 |
+| **Casewrap pastedowns** | **Solid deep burgundy** — inside front + inside back covers | LOCKED 2026-07-22 |
+
+### Casewrap pastedowns (LOCKED)
+
+Inside front and inside back covers (pastedowns) are part of the **Lulu casewrap PDF**, not interior pages.
+
+- **Fill:** solid deep burgundy watercolor wash matching wall color from **`style-lock-v2`** (v07 Krea blend atmosphere)
+- **No** illustration, pattern, or vignette — rich flat wash only
+- **Why:** frames the book without competing with P01 title or the final quiet-close page
+- **InDesign:** when building the casewrap, **sample** the burgundy from any approved spread with burgundy walls (S1 Approach, S4 Sit Here, etc.) or from `Media/approved/style-refs/style-lock-v2.png`
 
 ---
 
@@ -332,10 +342,12 @@ After the book is done, create a viewable flipbook for family and friends:
 - ❌ Add gutter margins (not needed under 60 pages)
 - ❌ Bake a **fake center fold / gutter shadow line** into final spread art (MOCK preview only; print art must be seamless)
 - ❌ Crop through **mid-paint** to recenter a soft watercolor vignette (shears the soft crown → hard top edge). Reposition/scale the **whole** soft vignette, or choose a text-zone layout that matches how the plate was painted. See `ISSUES-RESOLVED.md` 2026-07-21 P01 v24
+- ❌ Say **“feathered”** to Qwen/fal for vignette edges — models draw **bird feathers**. Say *watercolor bleed / soft dissolve / organic paint edge* (`ISSUES-RESOLVED.md` 2026-07-22)
+- ❌ Ask Qwen alone for a **page-margin watercolor frame** — it frames the **art vignette**. Pillow-lock cream page + outer-margin wash first; polish optional; fall back if subject swaps (`ISSUES-RESOLVED.md` 2026-07-22 P01 v16)
 - ❌ Ship a mock `vNN/` with a **thin RECIPE** (no full Prompt / missing lane·model·FRAME·script_text). Copy `Media/generated/mocks/_RECIPE-TEMPLATE.md`
 - ❌ Put text on spine (book is under 80 pages)
 - ❌ Launch UDT before Creative Cloud sign-in
 - ❌ Regenerate G0 locked art
-- ❌ Use Pillow compositing (InDesign is production path)
+- ❌ Use Pillow for **gift poem/title type** or press PDF (InDesign is production path). Pillow **is** OK for mock geometry: text-band push-down, page-margin frame structure, comparison boards
 - ❌ Store working `.indd` files under `Output/` (use `Xtraz/Adobe-inDesign/`)
 - ❌ Leave TL;DR notes in chat — Jon prefers full reports

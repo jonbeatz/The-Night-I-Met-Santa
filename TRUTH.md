@@ -27,7 +27,9 @@
 - **Layout (fallback only):** Pillow pre-composite + Typst — emergency / offline only; **not** the gift print path.
 - **Print:** Lulu 8.5×8.5" casewrap hardcover · **35–40 pages** (proof → gift) · sRGB · 8.75×8.75" with bleed
 - **Playbook:** repo-root **`AGENT-RUNBOOK.md`** (build authority) · `.cursor/docs/BOOK-PRODUCTION-SYSTEM.md` (this title) · future books: **`BOOK-PLAYBOOK.md`**
-- **Approved art:** `Media/approved/` two-tier (`style-refs/` moodboard · Tier B print locks) — `INDEX.md`
+- **Approved forever:** `Media/approved/` — **only** `characters/` + `style-refs/style-lock-v2.png` (north stars). See AGENTS.md three-tier.
+- **Current-best page art:** `Media/development/` (pre-InDesign dashboard). **Lulu-ready:** `Media/finals/` (after live text).
+- **Dials:** `Media/generated/mocks/` + `_FLOW-CURRENT.json`
 - **Fonts:** `.cursor/docs/FONT-CATALOG.md` — poem **Cormorant Garamond Medium 20/26 tracking +5 centered #2C2C2C** (locked 2026-07-20); Cinzel cover; pack `Xtraz/Fonts/` gitignored
 
 ## Source-of-truth order

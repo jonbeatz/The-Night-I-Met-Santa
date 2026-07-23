@@ -6,13 +6,13 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-22)
+## One-line status (2026-07-22 evening)
 
-**S1 Approach KEEP** (v13|v14). **Dialing S2 Threshold** (p6|7 full spread).  
-**Current:** `S02-threshold/v03` · board `…/S02-threshold-comparison-spread-v03-2026-07-22.png` · `keep-leaning`  
-**Flipbook:** `Output/flipbook-2026-07-22.pdf`  
-**SoT:** `_FLOW-CURRENT.json` · **Logging:** RECIPE + FLOW; project-log only on lock  
-**NEXT:** Jon eye on S2 v03 spread.
+**S3 Eyes Met v07 KEEP = QUALITY BAR.**  
+**S2 v05 KEEP** (wardrobe fix queued). **S4 v12** TEXT+IMAGE dial pending Jon eye.  
+**Boy G0 + Santa open-coat locks** confirmed in Master Dock / IMAGE-LANE-v2.  
+**SoT:** `_FLOW-CURRENT.json` · **NEXT:** S4 eye → then S2 wardrobe fix.
+
 
 ---
 
@@ -87,21 +87,21 @@ An **8.5×8.5"** full-color children’s picture book from Jack’s Christmas po
 
 ## Start next (priority order)
 
-### 0. **S2 Threshold dial** (active) · S1 KEEP
-S1: `v13`|`v14` keep. S2: `S02-threshold/v03` seamless spread — Jon eye → RECIPE/`_FLOW-CURRENT` only until locked.
+### 0. **S4 Sit Here v12** (active) · S3 KEEP quality bar
+S3: `S03-eyes-met/v07` KEEP. S4: `S04-sit-here/v12` TEXT L + IMAGE R — Jon eye. Then **S2 wardrobe fix** (open-coat on v05).
 
 ### 1. InDesign cold start (when plates are keep/locked enough)
 Follow **`AGENT-RUNBOOK.md`** cold flow: CC Desktop → UDT + InDesign + bridges → Jon **Load & Watch** → Connected ✓.
 
-### 2. First production unit = **P01 Title**
+### 2. First production unit = **P01 Title** (when ready for type)
 1. Duplicate `single-page-template.psd` → `p01-title.psd` (Jon first Save As if needed).
-2. Place `Media/approved/pages/p01-title.png` on **ART** · **close source PNG**.
-3. MOCK-TYPE in **upper cream** (Cinzel title / Cormorant author) — not lower-center.
+2. Place `Media/development/P01-title/art.png` (v16) on **ART** · **close source PNG**.
+3. MOCK-TYPE in **upper cream** (Cinzel title / Cormorant author).
 4. Cloud if needed → chops → InDesign live type (same pt).
-5. Then **P02 → P03 → 4|5 → S1…** sequential.
+5. Then sequential story units under S3 v07 quality bar.
 
 ### 3. Spread loop (after front matter)
-PS MOCK + chops (`Images/chopz/`) → InDesign → live Cormorant poem **20/26 +5**. Use keep dials as ART (promote to `Media/approved/` when Jon locks a plate).
+PS MOCK + chops (`Images/chopz/`) → InDesign → live Cormorant poem **20/26 +5**.
 
 ### 4. Do **not** re-research print
 `RESEARCH-VERDICT.md` — Lulu primary. Export via `Lulu-Interior-Print-PDF.joboptions` when pages ready.

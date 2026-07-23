@@ -1,0 +1,14 @@
+{
+  "version": "v01",
+  "seed": 1621229573,
+  "request_id": "019f8d0b-1296-7120-82ec-7a5e154af76d",
+  "url": "https://v3b.fal.media/files/b/0aa35ace/HYan1QsGICuo6Xe2xtK4V_c98XIzVr.png",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "refs": [
+    "S02-v05-quality-bar",
+    "boy-narrator-G0",
+    "santa-G0-v2"
+  ],
+  "gpt_pillar": true,
+  "note": "dial pass \u2014 GPT pillar reserved for approved final later"
+}

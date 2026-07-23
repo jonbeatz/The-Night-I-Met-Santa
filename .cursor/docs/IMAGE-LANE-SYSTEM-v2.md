@@ -10,21 +10,45 @@
 
 | Role | File | Source | Rule |
 |------|------|--------|------|
-| **Santa (definitive)** | `Media/approved/characters/santa-G0-v2.png` | S4 **v08** Nano Banana Pro | Continuity lock |
-| Boy | `Media/approved/characters/boy-narrator-G0.png` (+ face) | prior G0 | unchanged |
+| **Santa (definitive)** | `Media/approved/characters/santa-G0-v2.png` (+ `santa-G0.png` wardrobe sheet) | S4 **v08** + standing sheet | Continuity lock — open coat |
+| **Boy (definitive)** | `boy-narrator-G0.png` + `boy-narrator-G0-face.png` | G0 confirmed 2026-07-22 | Continuity lock — holly PJs + face |
 | Style / atmosphere | `Media/approved/style-refs/style-lock-v2.png` | S4 **v11** Krea regen (was v07) | Use on dials + finals |
-| **Mock-up quality target (S1 door)** | `Media/approved/style-refs/mockup-quality/S01-approach-R-quality-target.jpg` | **S01 v01** Klein 9B chop (best-of 2026-07-21) | Composition + rim-light quality for Qwen mocks |
-| **Mock-up quality target (S1 hall)** | `Media/approved/style-refs/mockup-quality/S01-approach-L-quality-target.jpg` | same v01 Klein chop | Crawl POV / warm doorway spill |
+| **Mock-up quality target (S1 door)** | `Media/development/_quality-targets/S01-approach-R-quality-target.jpg` | **S01 v01** Klein 9B chop (best-of 2026-07-21) | Composition + rim-light quality for Qwen mocks |
+| **Mock-up quality target (S1 hall)** | `Media/development/_quality-targets/S01-approach-L-quality-target.jpg` | same v01 Klein chop | Crawl POV / warm doorway spill |
+
+### Boy G0 lock (CONFIRMED 2026-07-22 — no drift)
+
+**Refs (attach on every gen with the boy):** `boy-narrator-G0.png` · `boy-narrator-G0-face.png`
+
+| Detail | Rule |
+|--------|------|
+| PJ base | **Oatmeal/taupe** — warm beige · **NOT** white · **NOT** cream · **NOT** bright |
+| Pattern | **Green holly leaves + red berries** — clearly visible across fabric, not subtle |
+| Trim | **Red trim** on collar, sleeve cuffs, and pant hems |
+| Buttons | **Red buttons** down the front of the shirt |
+| Cut | Classic **button-up** pajama set |
+| Hair | Tousled **light brown** with **golden highlights** |
+| Eyes | Large expressive **brown eyes** |
+| Skin | **Rosy cheeks**, soft peachy complexion |
+| Expression | Varies by scene (wonder / surprise / awe / joy) — identity never changes |
+
+Both Boy G0 refs **and** Santa G0 v2 are locked characters. Attach both families on every story gen that includes either figure (within the model’s max image_urls — prioritize style-lock + active characters).
 
 ### Santa continuity lock (not a preference)
 
-- Red coat with **black suspenders worn visibly over the coat**
-- **Open relaxed collar**
-- Sitting on the floor among gifts when the beat allows — warm, approachable
-- **NOT** a formal buttoned-up department store Santa
-- **NOT** a full suit with belt covering the suspenders
+**LOCKED 2026-07-22** — replaces prior “black suspenders over the coat.”
 
-Prior `santa-G0.png` remains historical; **new gens use santa-G0-v2**.
+| Detail | Rule |
+|--------|------|
+| Coat | Red coat worn **OPEN and unbuttoned** — not closed, not a solid red block |
+| Shirt | Cream/off-white **vertically striped** button-down visible underneath |
+| Suspenders | **Brown leather** suspenders over the **striped shirt** — **NOT** over the coat fabric |
+| Lower | Red pants · black boots · white fur trim on cuffs and hem |
+| Presence | Relaxed, approachable, grandfather-like — **not** a formal costume |
+| Pose | Sitting/kneeling on the floor among gifts when the beat allows |
+
+**Refs:** `santa-G0-v2.png` (definitive) · `santa-G0.png` (standing wardrobe sheet — same outfit).  
+Prior “suspenders over coat” language is **retired**. New gens must match open-coat / suspenders-on-shirt.
 
 ---
 
@@ -47,7 +71,7 @@ Prior `santa-G0.png` remains historical; **new gens use santa-G0-v2**.
 
 | Role | Model | Cost | Notes |
 |------|--------|------|-------|
-| **Primary finals** | Nano Banana Pro `/edit` (`fal-ai/gemini-3-pro-image-preview/edit`) | ~$0.15 | **v10 approach**: style-lock-v2 + **santa-G0-v2** (+ boy G0) |
+| **Primary finals** | Nano Banana Pro `/edit` (`fal-ai/gemini-3-pro-image-preview/edit`) | ~$0.15 | **v10 approach**: style-lock-v2 + **santa-G0-v2** + **boy-narrator-G0** (+ face when slots allow) |
 | **Alternate finals** | Pure Krea blend (`krea/v2/medium/…`) | ~$0.03 | Atmospheric / emotional spreads where soft watercolor > character micro-detail |
 | **Hero pillars** | GPT Image 2 High 4K | ~$0.40 | **Only** S3 Eyes Met · S12b God Bless (test first; Jon-marked in Flow + `_FLOW-CURRENT`) |
 
@@ -56,9 +80,14 @@ Prior `santa-G0.png` remains historical; **new gens use santa-G0-v2**.
 Every finals image **must** use:
 
 1. **`style-lock-v2.png`** — style / atmosphere reference  
-2. **`santa-G0-v2.png`** — Santa character reference  
+2. **`santa-G0-v2.png`** — Santa character reference (when Santa is in the beat)  
+3. **`boy-narrator-G0.png`** (+ **`boy-narrator-G0-face.png`** when slots allow) — Boy character reference (when the boy is in the beat)
 
-Santa must always show **black suspenders over the red coat** with an **open relaxed collar**. This is a **character continuity lock**, not a style preference.
+**Both characters are locked** — no drift, no variation. Attach Boy G0 refs alongside Santa G0 v2 on every story generation that includes either figure.
+
+Santa must always match the **open-coat wardrobe lock**: red coat open/unbuttoned · cream striped shirt · brown leather suspenders **over the shirt** · red pants · black boots · white fur trim · relaxed grandfather presence.
+
+Boy must always match the **Boy G0 lock**: oatmeal/taupe holly PJs (visible holly + red berries, red trim, red buttons) · tousled light-brown hair with golden highlights · brown eyes · rosy cheeks.
 
 ### Text pages
 
@@ -147,6 +176,17 @@ S4 Banana board (archive): `_INDEX/S04-sit-here-comparison-banana-2026-07-22.png
 | Alt atmospheric | swap some finals to Krea @ $0.03 | lower |
 
 Exact count follows Flow page map + Jon approvals.
+
+---
+
+## Gotchas (2026-07-22 harvest)
+
+| Issue | Rule |
+|-------|------|
+| **Open top cream / push scene down** | Qwen alone won’t hard-recompose. **Pillow prep** (scene in lower ~⅔ on cream) → Qwen polish. See `ISSUES-RESOLVED.md` · P02-about-spread v02 |
+| **Baked title from ref** | If the composition ref has type, expect glyphs → scrub pass or art-only ref |
+| **Qwen Pro Edit URL cap** | Max **3** `image_urls` — lock + primary + continuity; extras in prompt + RECIPE note |
+| **Double-door contamination** | Never feed a failed split-door plate as lead ref when fixing that failure |
 
 ---
 

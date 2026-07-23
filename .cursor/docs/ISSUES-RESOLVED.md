@@ -11,6 +11,136 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-07-22 — Santa wardrobe: “suspenders over coat” was wrong vs G0 refs
+
+| | |
+|---|---|
+| **Symptom** | Gens kept putting black suspenders **on** the red coat or dropping the coat to shirtsleeves; docs said “suspenders over coat” |
+| **Root cause** | Lock language contradicted approved `santa-G0.png` / `santa-G0-v2.png` (open coat · striped shirt · brown suspenders **over shirt**). Models followed the wrong written lock |
+| **Resolution** | Retire “suspenders over coat.” New lock in Master Dock / IMAGE-LANE-v2 / Flow: **open unbuttoned red coat** · cream striped shirt visible · **brown leather suspenders over shirt** · white fur cuffs/hem. Hard append on every Santa gen. S3 **v07 KEEP** proves the look |
+| **Verify** | `Media/development/S03-eyes-met/v07/art.png` — open coat + shirt + suspenders visible; docs + `_FLOW-CURRENT` `santa_continuity` updated |
+
+**Playbook rule:** Santa outfit = open coat framing striped shirt; suspenders never sit on coat fabric. Queue wardrobe fixes on any older keep that shows closed coat / suspenders-on-coat (S2 v05, S4 pre-v12).
+
+---
+
+## 2026-07-22 — Qwen 3-slot limit vs dual character + style + composition
+
+| | |
+|---|---|
+| **Symptom** | Need composition base + style-lock + Boy G0 + Santa G0 but Qwen Pro Edit max **3** `image_urls` |
+| **Root cause** | Hard API cap of 3 reference images |
+| **Resolution** | Prioritize by job: (1) composition/quality base when editing a keep, (2) style-lock OR character sheet most at risk, (3) other character. Pack Boy\|Santa into one strip only when both must lock and composition is image 1. Always paste **Boy G0** + **Santa** hard-append text even when a ref image is dropped |
+| **Verify** | S3 v04–v07 and S4 v12 gens completed within 3-URL stacks; RECIPE lists which refs were attached |
+
+**Playbook rule:** Max 3 image_urls — composition/quality first when locking layout; never skip hard-append wardrobe text.
+
+---
+
+## 2026-07-22 — P01 title frame: Qwen frames the ART, not the PAGE (+ scene swap)
+
+| | |
+|---|---|
+| **Symptom** | v12–v15: asked for organic watercolor **page** framing / clean cream behind window+tree. Qwen kept putting wash as a halo **around the vignette**. v16 polish then **replaced** window+tree with a Santa/child scene while keeping a gold border |
+| **Root cause** | (1) “Frame / feathered edge / vignette” in prompts maps to object-hugging washes, not 8.5″ page margins. (2) Soft “polish only” Qwen `/edit` still rewrites subject when style-lock + gold warmth cue dominate. (3) Color-only heuristics (title band still cream) miss a full scene swap |
+| **Resolution** | **Pillow structure lock first:** place keep plate (v11 window+tree) on clean cream with open type bands; paint **warm gold/amber whisper only in outer ~8% page margins**. Save `art-pillow-base.png`. Optional Qwen polish must be layout-locked; if subject drifts → **keep Pillow as `art.png`**. Do not ask Qwen alone to invent a page-perimeter frame |
+| **Verify** | `Media/development/P01-title/v16/art.png` + board `P01-title-v15-v16-board.png` — gold at page edges, cream behind art, window+tree intact, open cream above/below |
+
+**Playbook rule:** Page-margin frame ≠ art vignette. Geometry in Pillow → Qwen polish optional → fall back if subject changes. See also push-down gotcha (same family).
+
+---
+
+## 2026-07-22 — “Feathered edge” → literal bird feathers (P01 v12)
+
+| | |
+|---|---|
+| **Symptom** | P01 v12 organic-frame pass returned a **feather wreath** (bird plumes) around the winter window |
+| **Root cause** | Prompt used “feathered edges / feathered frame” — Qwen literalized **feathers** as objects |
+| **Resolution** | Ban the word *feather* for edge talk. Say **watercolor bleed / soft dissolve / organic paint edge**. Negatives: `feathers, plume, quill, feather wreath`. Regenerated v12 without plumage (tree later restored in v14) |
+| **Verify** | Later v12 plate: peachy wash dissolve, no bird feathers; tree fix in v14 |
+
+**Playbook rule:** Never say “feathered” to image models for vignette edges — they draw feathers.
+
+---
+
+## 2026-07-22 — P01 quiet ornaments read as clip-art (v04–v06 → mood setters)
+
+| | |
+|---|---|
+| **Symptom** | Jon rejected P01 quiet cream ornament concepts as **clip-art / basic** |
+| **Root cause** | Sparse icon-like subjects + empty cream without atmospheric room DNA |
+| **Resolution** | Pivot to **mood setters** (v07 window / v08 desk / v09 corner) with anti-clip-art language, style-lock-v2, cream walls, room DNA from `Images/styles3/p30-writing-desk.png`. Jon direction → winter window + faint sleigh (v10/v11) → framed dials v12–v16 |
+| **Verify** | Boards under `Media/generated/mocks/_INDEX/P01-title-*.png`; current structure keeper `v16` |
+
+**Playbook rule:** Title-page art needs atmospheric depth (warm/cool, room, light) — not sparse ornament stickers on cream.
+
+---
+
+## 2026-07-22 — `approved/` mixed forever locks + provisional page art + old flow
+
+| | |
+|---|---|
+| **Symptom** | `Media/approved/` held character G0s, style-lock, provisional P01, cover winners, pre-v2 eyes-met spreads, and ~436MB of style-refs — nothing was true Lulu-final (zero InDesign live-text pages) |
+| **Root cause** | “Approved” meant three different things: forever north star, current-best keep, and archived moodboard |
+| **Resolution** | **Three-tier (LOCKED):** (1) `Media/approved/` = characters + `style-lock-v2` only · (2) `Media/development/` = current-best dashboard on keep/lock · (3) `Media/finals/` = InDesign+text Lulu-ready (empty until earned). Old covers/pages/spreads/style-refs → `Media/generated/mocks/archive/`. FLOW gains `tier` field. AGENTS.md + BOOK-PRODUCTION-SYSTEM updated. Jon: no further redesign for a week |
+| **Verify** | `approved/` lists only characters + style-lock · `development/` has Cover/P01/P02/S01/S02… · `finals/README` · S03 empty on purpose |
+
+**Playbook rule:** Never put page art in `approved/`. Keep → copy `development/`. InDesign live text → `finals/`.
+
+---
+
+## 2026-07-22 — About/Dedication continuous panorama kept failing (then corner unlock)
+
+| | |
+|---|---|
+| **Symptom** | Fireplace+tree as one forced wide scene: too dense → push-down squish → widen stretch → mess. SPLIT singles worked; reconnecting them finally worked when the **room corner** became the gutter |
+| **Root cause** | Two competing focals in one panorama without a natural architectural join; soft “recompose” prompts don’t hard-move layout (see push-down gotcha) |
+| **Resolution** | SPLIT `P02-fireplace/v01` + `P03-tree/v01` as identity stepping stones → connect into `P02-about-spread/v04` with corner perspective (fireplace on L wall, tree on R wall, open burgundy at the corner for text). **KEEP.** Abandoned failed panorama strategies |
+| **Verify** | FLOW p02|p03 → v04 keep · `development/P02-about-spread/art.png` |
+
+**Playbook rule:** When a seamless room needs two focals, prefer a **real corner/wall join** over a flat wall with both objects floating. SPLIT plates are valid scaffolding for a later connected keep.
+
+---
+
+## 2026-07-22 — Qwen won’t open top cream for text (push-down recompose fails)
+
+| | |
+|---|---|
+| **Symptom** | P02 About/Dedication v01 scene was keep-quality, but asking Qwen 2 Pro `/edit` to “push the whole composition down / open top third cream” produced another **full-height room** (`art-fal-first-pass.png`) — chimney + tree still ate the text band |
+| **Root cause** | Qwen `/edit` strongly preserves subject framing from the lead plate. Soft “recompose downward” language is treated as style polish, not a hard camera move |
+| **Resolution** | **Force layout in Pillow first:** place the keep plate in the **lower ~68%** of the spread canvas on cream; smoothstep + blur dissolve the top of the scene into ivory; mild vignette. Save `_prep-push-down.png`. Then Qwen polish with style-lock-v2 + prep — prompt: keep this exact camera, refine burgundy→cream fade + upward glow, **do not raise the scene**. Final: `P02-about-spread/v02/art.png` |
+| **Verify** | Eye: ~⅓ cream across top for About (L) / Dedication (R); fireplace · tree · presents · door intact below; no baked text |
+
+**Playbook rule:** When text needs a reserved wash band, **geometry first (Pillow/composite), paint second (Qwen polish)**. Do not rely on fal alone to “push down” a beloved full-bleed plate. (Pillow here = **mock layout only** — poem type still InDesign.)
+
+---
+
+## 2026-07-22 — Qwen title dial baked live type (P01 openbook wreath)
+
+| | |
+|---|---|
+| **Symptom** | P01 openbook **v01** wreath reimagine came back with **“The Night I Met Santa”** painted into the wreath center despite “NO baked text” + negatives |
+| **Root cause** | Concept ref (`openbookFront-Ref2.jpg`) is a finished title page with baked typography. Qwen copies letterforms from strong text-in-image refs even when the prompt forbids text |
+| **Resolution** | Keep first bake as `art-with-baked-text.png`. Second pass: Qwen `/edit` on that plate + style-lock — **remove all letters**, leave open cream inside the wreath. Prefer refs that are art-only when possible; if the only composition ref has type, budget a scrub pass |
+| **Verify** | `P01-title/v01/art.png` — wreath + village + lamppost, open cream center, no glyphs |
+
+**Playbook rule:** Text-in-ref → expect baked type. Scrub pass or strip type from the ref before the keep dial.
+
+---
+
+## 2026-07-22 — Qwen Pro Edit 3-image cap (can’t attach 4+ locks)
+
+| | |
+|---|---|
+| **Symptom** | Briefs often want style-lock + 3 concept refs (or lock + quality target + G0s) but `fal-ai/qwen-image-2/pro/edit` accepts **only 1–3** `image_urls` |
+| **Root cause** | Endpoint hard limit |
+| **Resolution** | Rank slots: (1) style-lock-v2 (2) primary composition plate (3) continuity/quality (S1 burgundy, door target, G0). Put overflow cues in the **prompt** (“lamppost from Ref1…”). Record which ref was prompt-only in RECIPE |
+| **Verify** | P01 Victorian v25 + openbook v01–v03 + P02 v01 all completed with ≤3 URLs and RECIPE notes for prompt-only refs |
+
+**Playbook rule:** Plan the 3-slot stack before upload. Never drop style-lock to squeeze a weak fourth ref.
+
+---
+
 ## 2026-07-22 — Qwen S1 door kept splitting into “double doors”
 
 | | |

@@ -21,11 +21,17 @@ Media/generated/mocks/**/*.png
 Media/generated/mocks/**/*.jpg
 Media/generated/mocks/**/*.jpeg
 Media/generated/mocks/**/*.webp
+# development dashboard — track recipes/READMEs; binary art stays local
+Media/development/**
+!Media/development/**/
+!Media/development/**/*.md
+!Media/development/**/.gitkeep
+Media/finals/**
 /Pages/
 Output/
 *.pdf
 
-# DO track Media/approved/ (Jon-selected keepers) — not ignored
+# DO track Media/approved/ (characters + style-lock only) — not ignored
 # NOTE: use /Pages/ (repo root only) — bare Pages/ also matched Media/approved/pages/
 # Large media sources (keep local)
 Audio/*.wav

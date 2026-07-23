@@ -37,26 +37,37 @@ Boy: oatmeal/taupe holly pajamas ONLY. NOT a red coat. NOT a Santa suit. NOT a S
 |---|---|---|
 | **Cover** | Front: *The Night I Met Santa* · Written by Jack Farrell | 🔒 LOCKED — beige-v2 · oatmeal holly PJs · Santa face hidden |
 
+### Casewrap pastedowns (inside covers) — LOCKED 2026-07-22
+| Zone | Spec |
+|---|---|
+| **Inside front cover** | Solid deep burgundy wash — matches wall color from `style-lock-v2` (v07 Krea blend). **No** illustration or pattern. |
+| **Inside back cover** | Same solid burgundy. |
+| **File** | Part of the **Lulu casewrap** (cover wrap PDF), **not** interior pages. |
+| **Purpose** | Frames the book without competing with the title page or the final quiet-close page. |
+| **Build note** | In InDesign casewrap, sample burgundy from any approved burgundy-wall spread (S1, S4, …) or style-lock-v2. |
+
 ---
 
 ### Page 1 R — Title + Copyright
 | | Content |
 |---|---|
 | **Text** | *The Night I Met Santa* · Written by Jack Farrell · First illustrated edition, 2026 · Book design by Jon Farrell |
-| **Image** | Wreath image with title treatment and graphic in middle. May change to decorated lit-up house scenery. |
-| **Frame** | FRAME ON — watercolor vignette around scene |
-| **Notes** | SINGLE page (right-hand only). Back of front cover (left) is blank/nothing. This is the first page the reader sees. |
-| **Locked** | 🔒 P01 title v22 is locked provisional. Current image at `Media/approved/pages/p01-title.png`. |
+| **Image** | Winter window + Christmas tree · moon / snow / faint sleigh silhouette · clean cream center · warm gold watercolor whisper at **outer page edges** |
+| **Frame** | FRAME ON — page-margin gold whisper (not art-hugging wash) |
+| **Notes** | SINGLE page (right-hand only). Left of this opening = **casewrap pastedown** (solid burgundy — see above), not an interior page. This is the first interior page the reader sees. Art-only plate — live Cormorant in InDesign. |
+| **Locked** | 🎯 **KEEP 2026-07-22** — `Media/development/P01-title/art.png` ← **v16**. Tier **development** until InDesign type → `finals/`. Supersedes v22 provisional. |
 
 ---
 
-### Pages 2|3 — SPREAD: About + Dedication
+### Pages 2|3 — SPREAD: About + Dedication 🎯 KEEP
 
 | | LEFT (p2) | RIGHT (p3) |
 |---|---|---|
 | **Content** | About This Story copy | Dedication: *For my family, with love. — Jack Farrell* |
-| **Image** | Fireplace and tree scene | Window and chair / writing table scene |
-| **Connection** | Images meet in middle to form full spread-combined scene | |
+| **Image** | One continuous corner living room — fireplace on the **left wall** | Same master — tree + door on the **right wall** |
+| **Camera** | Hearth · firelight · open burgundy toward gutter for About | Tree + door · open burgundy toward gutter for Dedication |
+| **Connection** | **Seamless** — natural room corner where burgundy walls meet · soft golden wash · text clouds on each page near center |
+| **Notes** | **KEEP 2026-07-22** — `P02-about-spread/v04`. Corner perspective unlocked the panorama. SPLIT singles `P02-fireplace/v01` + `P03-tree/v01` = **keep** as identity stepping stones (not the facing layout). |
 
 ---
 
@@ -265,7 +276,7 @@ Mirror flags in `Media/generated/mocks/_FLOW-CURRENT.json` (`gpt_pillar: true`).
 
 To add a pillar: Jon marks it here **and** sets `gpt_pillar: true` on the plates in `_FLOW-CURRENT.json`. No unmarked GPT runs.
 
-**Santa continuity (all finals):** black suspenders over red coat · open relaxed collar · never formal buttoned-up suit.
+**Santa continuity (all finals):** red coat **OPEN/unbuttoned** · cream/off-white vertically striped shirt visible · **brown leather suspenders over the shirt** (not over the coat) · red pants · black boots · white fur trim on cuffs/hem · relaxed grandfather presence — never formal closed costume. Refs: `santa-G0-v2.png` · `santa-G0.png`.
 
 ### Phase 5: Batch Finals (FLUX.2 pro or Qwen 2.0 Pro)
 Everything else at print quality

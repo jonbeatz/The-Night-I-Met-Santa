@@ -1,0 +1,14 @@
+{
+  "version": "v07",
+  "seed": 1762521583,
+  "request_id": "019f8d46-96c9-73a2-927b-96b413086a94",
+  "url": "https://v3b.fal.media/files/b/0aa35c54/vklm81mJgqlAkpPjUSkcn_y8VyYuWE.png",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "refs": [
+    "v06",
+    "style-lock-v2",
+    "santa-G0.png"
+  ],
+  "fix": "open red coat over v06 shirt/suspenders",
+  "previous": "v06"
+}

@@ -1,0 +1,16 @@
+{
+  "version": "v12",
+  "layout": "text_plus_image",
+  "right": {
+    "url": "https://v3b.fal.media/files/b/0aa35c79/EU9-UJAMjodjGfObL-ls1_gSeLl28I.png",
+    "seed": 557005167,
+    "request_id": "019f8d4c-497f-77a0-a9e9-860e4cdaa960"
+  },
+  "left": {
+    "url": "https://v3b.fal.media/files/b/0aa35c7f/iKpvt3zp_sYdJvG-5W4Yj_gE7tGxCR.png",
+    "seed": 322028034,
+    "request_id": "019f8d4d-17a1-75f3-b63a-7dc5431c70de"
+  },
+  "quality_bar": "S03-eyes-met/v07",
+  "model": "fal-ai/qwen-image-2/pro/edit"
+}

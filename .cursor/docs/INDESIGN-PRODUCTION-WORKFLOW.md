@@ -14,6 +14,8 @@
 
 > **Cover template comes AFTER interior upload.** Lulu generates an exact cover template with the correct spine width once it knows your page count.
 
+> **Casewrap pastedowns = solid burgundy, no bleed illustration.** Inside front and inside back covers (pastedowns) are solid deep burgundy matching wall color from `style-lock-v2` / approved S1·S4 spreads — **not** illustrated, **not** patterned. Sample in InDesign from those refs. Pastedowns live on the casewrap, not as interior pages. (LOCKED 2026-07-22 — see `AGENT-RUNBOOK.md` §4 · Flow v2 Cover.)
+
 ---
 
 ## Full Resolution & Dimension Reference
