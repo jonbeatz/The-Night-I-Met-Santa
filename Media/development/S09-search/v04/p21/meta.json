@@ -1,0 +1,18 @@
+{
+  "page": "p21",
+  "version": "v04",
+  "status": "working",
+  "lock_candidate": true,
+  "layout": "split_single",
+  "size": [
+    2625,
+    2625
+  ],
+  "seed": 513650482,
+  "fal_url": "https://v3b.fal.media/files/b/0aa365ce/M9tSS6AUc199h_Z0kbWxi_JmC2TheM.png",
+  "refs": [
+    "Media/development/S09-search/v03/p21/art.png",
+    "Media/approved/style-refs/frame-reference.png",
+    "Media/development/S03-eyes-met/v07/art.png"
+  ]
+}

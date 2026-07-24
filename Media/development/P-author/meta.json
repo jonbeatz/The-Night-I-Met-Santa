@@ -1,0 +1,20 @@
+{
+  "unit": "P-author",
+  "version": "closer-zoom-v02",
+  "status": "keep",
+  "date": "2026-07-23",
+  "model": "locked portrait + Pillow cream vignette",
+  "resolution": "2625x2625",
+  "dimensions": {
+    "art.png": [
+      2625,
+      2625
+    ]
+  },
+  "paths": {
+    "art": "Media/development/P-author/art.png",
+    "favorite_lock": "Media/development/P-author/art-closer-zoom-LOCKED-favorite.png",
+    "approved_source": "Media/approved/characters/jack-farrell-portrait.png"
+  },
+  "page": 31
+}

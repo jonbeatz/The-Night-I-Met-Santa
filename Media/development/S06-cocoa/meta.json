@@ -1,0 +1,32 @@
+{
+  "unit": "S06-cocoa",
+  "version": "v04|v03",
+  "status": "keep",
+  "date": "2026-07-23",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "resolution": "5250x2625",
+  "dimensions": {
+    "art.png": [
+      5250,
+      2625
+    ],
+    "art-left.png": [
+      2625,
+      2625
+    ],
+    "art-right.png": [
+      2625,
+      2625
+    ]
+  },
+  "paths": {
+    "master": "Media/development/S06-cocoa/art.png",
+    "left": "Media/development/S06-cocoa/art-left.png",
+    "right": "Media/development/S06-cocoa/art-right.png"
+  },
+  "pages": {
+    "left": 14,
+    "right": 15
+  },
+  "layout": "text_plus_image"
+}

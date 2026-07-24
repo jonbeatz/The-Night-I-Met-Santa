@@ -21,10 +21,11 @@ Media/generated/mocks/**/*.png
 Media/generated/mocks/**/*.jpg
 Media/generated/mocks/**/*.jpeg
 Media/generated/mocks/**/*.webp
-# development dashboard — track recipes/READMEs; binary art stays local
+# development dashboard — track RECIPE.md + meta.json; binary art stays local
 Media/development/**
 !Media/development/**/
 !Media/development/**/*.md
+!Media/development/**/meta.json
 !Media/development/**/.gitkeep
 Media/finals/**
 /Pages/

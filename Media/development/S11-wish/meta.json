@@ -1,0 +1,12 @@
+{
+  "status": "keep",
+  "version": "v01",
+  "locked_date": "2026-07-23",
+  "layout": "text_image_defacto",
+  "layout_note": "p24 carries ALL poem text in InDesign; p25 image-only",
+  "paths": {
+    "art": "Media/development/S11-wish/art.png",
+    "art_left": "Media/development/S11-wish/art-left.png",
+    "art_right": "Media/development/S11-wish/art-right.png"
+  }
+}

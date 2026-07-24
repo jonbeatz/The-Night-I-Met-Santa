@@ -1,0 +1,11 @@
+{
+  "seed": 2138929368,
+  "request_id": "019f8c9e-1256-7d21-adb2-88dd7a7aaa7b",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "source": "v11/art.png",
+  "edge_refs": [
+    "p08-beat02-the-door.png",
+    "p28-family-hearth.png"
+  ],
+  "prompt": "Create a SINGLE square children's-book TITLE PAGE painting \u2014 ART ONLY, no text. Image 1 = watercolor/gouache paint STYLE lock (warm soft brush, paper grain). Image 2 = the SUBJECT to keep: winter window scene \u2014 four-pane window, full moon with faint tiny Santa sleigh+reindeer silhouette crossing the moon, falling snow, cream curtains tied back, Christmas tree edge with warm lights, optional holly on sill / presents, cream/ivory interior. Preserve this window composition as the clear focal point, centered about 60\u201370% of the page width in the UPPER-MIDDLE of the page. Image 3 = EDGE / VIGNETTE DNA ONLY (do not copy people, doors, fireplaces, room layouts, or any decorative objects from it): study ONLY how paint softens at the margins \u2014 organic irregular watercolor bleeds, wet soft edges dissolving into the paper, a subtle off-white/warm ivory luminous wash near the art (inner glow), then outward dissolve into soft peachy-gold / warm cream luminous warmth \u2014 NOT stark pure white. APPLY that painted-edge treatment to image 2: rich detailed window at center; around it a subtle off-white/warm ivory inner glow wash; then soft watercolor continuing outward dissolving into luminous warm cream-gold; at the very page edges the softest suggestion of painted color \u2014 hint of warm cream-gold, maybe a whisper of distant burgundy wash, watercolor paper texture. CRITICAL: soft EDGE means watercolor paint bleed / dissolve \u2014 NOT bird feathers, NOT plumes, NOT quills, NOT feather decorations, NOT oval feather wreath, NOT any feather motif. The WHOLE PAGE is one cohesive painting that breathes. Organic hand-painted soft edge \u2014 NO hard border, NO geometric frame, NO rectangle cutout, NO sticker vignette, NO feathers. Open soft luminous areas above and below the window for live title/copyright later. No people, no faces, no hands, no baked text."
+}

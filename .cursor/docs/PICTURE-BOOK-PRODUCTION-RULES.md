@@ -5,7 +5,8 @@
 **Project mirrors:** `.cursor/docs/PICTURE-BOOK-PRODUCTION-RULES.md` (via `npm run sync:docs -- -Write -AddMissing`)
 
 > These rules keep model picks visual, book-order reviewable, and verdicts durable across sessions.  
-> **2026-07-23:** Added §5 FINALS-CHECKLIST gate + matter audit-first / multi-count / closing-copy rules.
+> **2026-07-23:** Added §5 FINALS-CHECKLIST gate + matter audit-first / multi-count / closing-copy rules.  
+> **2026-07-24:** Added §6 — every locked unit must have unit-root **RECIPE.md** + **meta.json**; agent must verify before reporting locked.
 
 ---
 
@@ -113,7 +114,8 @@ Everything else = reference.
 4. GPT run? → confirm `gpt_pillar` first.  
 5. Before Banana / InDesign batch? → run **FINALS-CHECKLIST** (RES · TRIPLET · FRAME · wardrobe · face · gutter · baked text · poem).  
 6. Matter pages wrong size/frame only? → **audit-first** (frame/upscale) — don’t regen content by default.  
-7. Multi-count subjects collapsing? → bake count into canvas first; stop dial burns after 2 fails → PS or finals model.
+7. Multi-count subjects collapsing? → bake count into canvas first; stop dial burns after 2 fails → PS or finals model.  
+8. Spread locked / FLOW `keep`? → verify **`Media/development/{unit}/RECIPE.md`** AND **`meta.json`** exist. If either missing → create immediately, then report locked.
 
 ---
 
@@ -131,9 +133,40 @@ Every book keeps a **`FINALS-CHECKLIST.md`** (copy pattern from TNIMS). Grade pl
 | **GUTTER** | No baked fold · faces off bisect |
 | **TEXT** | No baked letters |
 | **POEM** | Matches `book_poem_map` / Flow |
+| **RECIPE+meta** | Unit-root `RECIPE.md` + `meta.json` present (§6) |
 
 **Closing copy:** poem blessing / last story line lives on the **story closing** text pocket — do not duplicate onto quiet back-matter pages unless the book map explicitly says so.
 
 ---
 
-*Status date: 2026-07-23 (section 5 + agent checklist items 5–7).*
+## 6. Locked-unit RECIPE.md + meta.json (2026-07-24)
+
+Every locked / keep unit under `Media/development/{unit}/` must have **BOTH** files. Created automatically on lock. **Never skip either.**
+
+| File | Path | Role |
+|------|------|------|
+| **RECIPE.md** | `Media/development/{unit}/RECIPE.md` | Human-readable: unit name, version, model, resolution, seed, date, status, composition notes, art file paths |
+| **meta.json** | `Media/development/{unit}/meta.json` | Machine-readable lock record |
+
+**`meta.json` minimum:**
+
+```json
+{
+  "unit": "S03-eyes-met",
+  "version": "v07",
+  "status": "keep",
+  "date": "2026-07-22",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "resolution": "5250x2625"
+}
+```
+
+Also preferred: `paths`, `dimensions`, `pages`, `seed`.
+
+**Agent rule:** Do **not** report a spread as locked until both files exist. If missing after a lock, create them immediately from `_FLOW-CURRENT.json` + art paths (+ version-folder RECIPE if present).
+
+Dial `vNN/RECIPE.md` remains for generation history; unit-root pair is the dashboard lock.
+
+---
+
+*Status date: 2026-07-24 (section 6 + checklist item 8).*

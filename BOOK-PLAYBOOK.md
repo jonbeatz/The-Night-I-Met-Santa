@@ -164,6 +164,40 @@ uv pip install nano-pdf                 # NL PDF metadata editing
 
 Copy `Media/generated/mocks/_RECIPE-TEMPLATE.md` into every `vNN/`. Include **full Prompt**, lane, service, model, FRAME, seed, script_text, type_zone, refs, verdict. Thin stubs are not enough for remakes.
 
+### Locked-unit RECIPE.md + meta.json (LOCKED 2026-07-24 — all future books)
+
+Every **locked / keep** spread (and matter unit) in `Media/development/{unit}/` must have **BOTH**:
+
+| File | Role | Path |
+|------|------|------|
+| **`RECIPE.md`** | Human-readable | `Media/development/{unit}/RECIPE.md` |
+| **`meta.json`** | Machine-readable | `Media/development/{unit}/meta.json` |
+
+**`RECIPE.md` must include:** spread/unit name · version locked · model · resolution · seed (or `n/a`) · date · status · composition notes · art file paths.
+
+**`meta.json` minimum shape:**
+
+```json
+{
+  "unit": "S03-eyes-met",
+  "version": "v07",
+  "status": "keep",
+  "date": "2026-07-22",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "resolution": "5250x2625"
+}
+```
+
+Prefer also: `paths`, `dimensions`, `pages`, `seed` when known.
+
+**Rules**
+
+1. Both are created **automatically when a spread is locked** (or promoted to FLOW `keep` / `locked`). **Never skip either.**
+2. Dial history may still live under `vNN/RECIPE.md` — the **unit-root** pair is the dashboard lock record.
+3. **Agent gate:** After locking a spread, Cursor **MUST verify BOTH files exist** before reporting “locked.” If either is missing, **create it immediately** from FLOW + art paths + any `vNN` recipe — then report.
+
+Fleet mirror: `PICTURE-BOOK-PRODUCTION-RULES.md` §6.
+
 ### 3b. Locked review loop (2026-07-22 — all future books)
 
 **Fleet SoT:** `_core-scripts/shared-profile-content/docs/PICTURE-BOOK-PRODUCTION-RULES.md`
@@ -193,6 +227,7 @@ Copy `Media/generated/mocks/_RECIPE-TEMPLATE.md` into every `vNN/`. Include **fu
 | **Closing copy** | Poem blessing / last line lives on the **story closing** text pocket — don’t duplicate onto quiet back-matter |
 | **Spread frames** | Soft cream dissolve on full spreads = **finals only** — not on development keepers |
 | **Boards** | Always `book_review_board.*` so Flow poem captions appear — never hand-roll `_INDEX` labels |
+| **Unit RECIPE + meta** | On lock: both `Media/development/{unit}/RECIPE.md` **and** `meta.json` — verify before saying “locked” |
 
 ### Image sizes (at 300 DPI for 8.5×8.5" with bleed)
 
@@ -496,6 +531,7 @@ npm run book:flipbook -- --manifest Output/flipbook-YYYY-MM-DD-manifest.json
 | Default to Flux schnell for dial | Weaker than Klein for gouache style | Model compare beat01 |
 | Use Klein 4B as default dial when 9B is available | 9B is ~1¢ and better testing quality | IMAGE-LANE-PROMPTS 2026-07-21 |
 | Ship thin RECIPE (no Prompt) | Can’t remake winners | `_RECIPE-TEMPLATE.md` |
+| Report “locked” without unit-root RECIPE.md **and** meta.json | Breaks remakes + agent audit | BOOK-PLAYBOOK · PICTURE-BOOK-PRODUCTION-RULES §6 |
 | Mid-paint-crop soft vignette to recenter | Shears watercolor crown → hard top | ISSUES-RESOLVED 2026-07-21 |
 | Put critical faces on center fold | Gutter swallows detail | BOOK-PLAN.md |
 | Export CMYK for Lulu | Lulu converts sRGB natively; CMYK-first can hurt color | RESEARCH-VERDICT.md |
@@ -511,7 +547,7 @@ npm run book:flipbook -- --manifest Output/flipbook-YYYY-MM-DD-manifest.json
 | Folder structure + **three-tier Media** | Poem/manuscript text |
 | Tool stack (InDesign UXP primary · Typst/Pillow fallback) | Trim size (if not 8.5×8.5) |
 | Image lanes (fal first · Klein 9B → Qwen → 4B light → Gemini) | Style lock + ILLUSTRATION-STYLE.md |
-| Full RECIPE + mocks/`vNN` + `_FLOW-CURRENT.json` | Cover title + author name |
+| Full RECIPE + mocks/`vNN` + **unit RECIPE.md + meta.json** + `_FLOW-CURRENT.json` | Cover title + author name |
 | Review loop (boards · flipbook · verdicts) | Character G0 sheets |
 | **FINALS-CHECKLIST** pattern + ISSUES playbook rules | About / Thank You / quiet-close copy |
 | Print specs (bleed, safety, 300 DPI, sRGB · triplet sizes) | Page count + spread map |
@@ -547,4 +583,4 @@ npm run book:flipbook -- --manifest Output/flipbook-YYYY-MM-DD-manifest.json
 ---
 
 *Generated from `D:\Hermes\projects\The-Night-I-Met-Santa` — the complete working project.*
-*Last updated: 2026-07-23 (three-tier Media · FINALS-CHECKLIST · gen gotchas · rejection list harvest)*
+*Last updated: 2026-07-24 (unit-root RECIPE.md + meta.json lock gate)*

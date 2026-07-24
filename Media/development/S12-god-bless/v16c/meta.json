@@ -1,0 +1,12 @@
+{
+  "version": "v16c",
+  "status": "working",
+  "base": "v15b",
+  "method": "pil_raise_then_qwen",
+  "seed": 264820772,
+  "fal_url": "https://v3b.fal.media/files/b/0aa37633/zMQhxE6Ke8xUIG4iaBJGT_dfBj5lFR.png",
+  "size": [
+    5250,
+    2625
+  ]
+}

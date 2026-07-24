@@ -1,0 +1,10 @@
+{
+  "seed": 1271918122,
+  "request_id": "019f8cbd-b30c-79c2-868b-ec14f2dc6c07",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "structure": "Pillow page lock (v11 scene + gold page margins)",
+  "prompt": "Edit image 2 ONLY \u2014 the LAYOUT is LOCKED and already correct. Image 1 = paint style. Image 2 structure (do not change): (1) Winter WINDOW + Christmas TREE vignette floating on CLEAN CREAM in the upper-middle. (2) Wide open CLEAN CREAM above the window for a title and below the tree for copyright. (3) A barely-there WARM GOLD / soft amber watercolor whisper ONLY on the outermost PAGE margins (top, bottom, left, right edges of the full square page) \u2014 like a soft picture-frame border for the whole 8.5x8.5 page. The gold must stay at the extreme outer edges and must NOT form a second frame around the window+tree. YOUR JOB: only soften the outer-edge gold so it looks like quiet hand-painted watercolor bleeding into cream (fireplace / tree-light warmth). Keep it extremely subtle. FORBIDDEN: blue frame, cool wash, any colored wash behind or around the art vignette, moving gold inward into the title/copyright cream fields, hard borders, text, people.",
+  "note": "Qwen replaced scene with Santa/child \u2014 KEPT Pillow page-structure lock (v11 window+tree + warm gold page margins)",
+  "title_zone_creamish": true,
+  "final": "art-pillow-base.png -> art.png"
+}

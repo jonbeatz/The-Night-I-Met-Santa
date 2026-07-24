@@ -1,0 +1,10 @@
+{
+  "status": "keep",
+  "version": "v02",
+  "locked_date": "2026-07-23",
+  "layout": "text_image",
+  "paths": {
+    "art_left": "Media/development/S10-note/art-left.png",
+    "art_right": "Media/development/S10-note/art-right.png"
+  }
+}

@@ -1,6 +1,6 @@
 # BOOK PRODUCTION SYSTEM — Hermes Picture-Book Playbook
 
-**Status:** Living system doc · last updated **2026-07-23**  
+**Status:** Living system doc · last updated **2026-07-24**  
 **Purpose:** Dialed-in workflow to finish *The Night I Met Santa* **and** recreate the same system for **future picture books**.  
 **Owner:** Jon · Agent continue file: `CONTINUE-HERE.md`  
 **Page creative loop (new):** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** — image → PSD → MOCK-TYPE → InDesign · mocks + RECIPE.md · tab hygiene
@@ -47,8 +47,10 @@
 
 Print remakes + boy/Santa continuity → **`.cursor/docs/CONTINUITY-AND-PRINT-FINALS.md`**.  
 **Quality bar (2026-07-22):** `Media/development/S03-eyes-met/v07/art.png` — prefer fewer gifts on later plates. Doorway spill language from S2 v05.  
-**Pre-finals gate (2026-07-23):** `.cursor/docs/FINALS-CHECKLIST.md` — RES / TRIP / FRAME / COAT / FACE / GUTTER / TEXT / POEM.  
-**Closing copy (2026-07-23):** Poem **“God bless.”** on **S12 R (p27)** under North Star · **p32** = *Merry Christmas.* only · **p33** = *May the magic…* · S12 = **p26|27 only**.  
+**Quality-bar compare file (2026-07-24):** `Media/development/_quality-targets/S03-eyes-met-v07-quality-bar.jpg` (copy only; PNG remains SoT).  
+**Lock record (2026-07-24):** On keep/lock → **both** `Media/development/{unit}/RECIPE.md` + `meta.json`. Agent verifies both before reporting locked. Fleet: `PICTURE-BOOK-PRODUCTION-RULES.md` §6 · `BOOK-PLAYBOOK.md`.  
+**Pre-finals gate (2026-07-23):** `.cursor/docs/FINALS-CHECKLIST.md` — RES / TRIP / FRAME / COAT / FACE / GUTTER / TEXT / POEM / RECIPE+meta.  
+**Closing copy (2026-07-23):** Poem **“God bless.”** on **S12 R (p27)** under North Star · **p32** = *Merry Christmas.* only · **p33** = *May the magic…* · S12 = **p26|27 only** (FLOW triplet only).  
 Jon: no further Media *folder* redesign for a week (2026-07-22) — page dials continue.
 
 ---
@@ -79,6 +81,7 @@ Jon: no further Media *folder* redesign for a week (2026-07-22) — page dials c
 | Spreads | Seamless art — **no fake middle gutter** | Orange fold = MOCK guide only · prompt negatives |
 | Klein dial | **9B + Dial D2** default (4B light only; not Gemini master) | `IMAGE-LANE-PROMPTS.md` · proof D2 sweetspot |
 | Mock versioning | `{unit}/vNN/` + mandatory **full RECIPE.md** (`_RECIPE-TEMPLATE.md` · Prompt · lane · FRAME · script_text · type_zone) | Scoreboard: `Media/generated/mocks/_INDEX/` |
+| Locked-unit record | Unit-root **`RECIPE.md` + `meta.json`** on every keep (auto on lock; verify before “locked”) | `BOOK-PLAYBOOK` · PICTURE-BOOK §6 |
 | Close PNG after place | Hard rule — keep PS tabs to working PSD only | Avoid tab pile-up |
 | Docs triggers | **`update docs`** = system harvest · **`log fixes`** = ISSUES card | `PAGE-BUILD-WORKFLOW.md` §11 |
 | First PSD/INDD create | **Jon Save As** once → **ready** → agent edits | Modals block bridge; Untitled can save as A4 |
@@ -268,6 +271,8 @@ Jon: no further Media *folder* redesign for a week (2026-07-22) — page dials c
 | 2026-07-15 | Jon mockups locked as refs: soft paint fades, **never cover faces**, Santa pages use **bottom-right** gradient; note pages **lower** not mid-window. Mocks → `text-mocks-v3/` | layout `ref-text-jon-*` |
 | 2026-07-15 | Text wash dial: overpowered solid glow rejected — use **subtle mid-opacity** paper + long fade (Pillow; not a fal model issue). Cheap art dial = Flux schnell / Klein; finals stay Nano Banana Pro | compositing |
 | 2026-07-21 | **Lane priority refresh:** dial = **Klein 9B** (~$0.011/MP); alt = **Qwen Image 2** (~$0.035/img); light = **Klein 4B** (~$0.009/MP, hi-res/low-detail only); finals = **Gemini/Banana** (~$0.15). | Model lanes |
+| 2026-07-24 | **Lock record gate:** every keep unit = unit-root RECIPE.md + meta.json · agent verify before “locked” · `.gitignore` tracks meta.json · audit backfill script | Process |
+| 2026-07-24 | **FLOW S12 dedup** → 3 plates only · **quality bar JPG** under `_quality-targets/` | Hygiene |
 | 2026-07-23 | **Playbook gaps filled (working):** back cover **v02** (text-scrub) · pastedown burgundy RGB(90,22,18) · optional p34 ornament · p35 colophon · p36 blank · Cover/P01 `art-2625` SeedVR (KEEP `art.png` untouched). Script: `_gen_remaining_playbook_plates.py` | Wrap / padding |
 | 2026-07-23 | **p31 closer-zoom FAVORITE** promoted to `development/P-author/art.png` (approved Jack source untouched) | Matter |
 | 2026-07-23 | **Back cover:** Qwen first pass often bakes title/ISBN — always run scrub pass before review | Gen gotcha |

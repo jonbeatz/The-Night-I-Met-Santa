@@ -1,0 +1,17 @@
+{
+  "version": "v13",
+  "layout": "text_plus_image",
+  "right": {
+    "url": "https://v3b.fal.media/files/b/0aa35d7a/TDsVjWpdkAQlXP5Z3gz9G_COiaPXEb.png",
+    "seed": 1422180652,
+    "request_id": "019f8d73-7871-7031-9afe-b4568be2f878"
+  },
+  "left": {
+    "url": "https://v3b.fal.media/files/b/0aa35d7a/baQpbl2IKjf8XJNq31hAm_oh4vIeAk.png",
+    "seed": 739714616,
+    "request_id": "019f8d73-7844-79a0-81fc-26bec41d3913"
+  },
+  "quality_bar": "S03-eyes-met/v07",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "notes": "Santa RIGHT; L mistletoe top-right only"
+}

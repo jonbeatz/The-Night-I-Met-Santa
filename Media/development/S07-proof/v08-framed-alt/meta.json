@@ -1,0 +1,7 @@
+{
+  "version": "v08-framed-alt",
+  "status": "preview_alt",
+  "replaces_keep": false,
+  "base": "v06-clean-wall",
+  "note": "shallow frame + wall ROI restore"
+}

@@ -1,0 +1,12 @@
+{
+  "version": "v02",
+  "status": "working",
+  "replaces_primary": false,
+  "seed": 1153745647,
+  "fal_url": "https://v3b.fal.media/files/b/0aa36180/0PWQLVYae-IH88n3NIlvx_nqFrZcmI.png",
+  "composition": "Images/styles2/09-beat09-santa-gone.png",
+  "size": [
+    5250,
+    2625
+  ]
+}

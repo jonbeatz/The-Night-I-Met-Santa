@@ -1,0 +1,19 @@
+{
+  "unit": "P36-blank",
+  "version": "v01",
+  "status": "working",
+  "date": "2026-07-23",
+  "model": "Pillow cream RGB(252,246,238)",
+  "resolution": "2625x2625",
+  "dimensions": {
+    "art.png": [
+      2625,
+      2625
+    ]
+  },
+  "paths": {
+    "art": "Media/development/P36-blank/art.png"
+  },
+  "page": 36,
+  "optional": true
+}

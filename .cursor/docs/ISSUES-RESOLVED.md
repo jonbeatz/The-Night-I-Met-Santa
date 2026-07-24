@@ -11,6 +11,52 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-07-24 — Mem0/Draven add fails: huggingface-hub 1.2.3 too old
+
+| | |
+|---|---|
+| **Symptom** | `npm run mem0:add` / `draven:add` → `huggingface-hub>=1.5.0,<2.0 is required … found huggingface-hub==1.2.3` |
+| **Root cause** | Hermes agent venv (`%LOCALAPPDATA%\hermes\hermes-agent\venv`) pinned an old hub; mem0 scripts prefer that Python |
+| **Resolution** | `python -m pip install "huggingface-hub>=1.5.0,<2.0"` in that venv → hub **1.24.0**; Mem0/Draven add OK |
+| **Verify** | `npm run mem0:add -- "ping"` returns `"success": true` |
+
+---
+
+## 2026-07-24 — Locked units missing unit-root RECIPE.md + meta.json
+
+| | |
+|---|---|
+| **Symptom** | Many FLOW keep units had dial `vNN/RECIPE.md` (or none) but no **unit-root** `Media/development/{unit}/RECIPE.md` + `meta.json` — agents could not remake/audit from the dashboard folder alone |
+| **Root cause** | Lock process copied art to development/ and updated FLOW, but never auto-wrote the dual lock record; `.gitignore` also excluded `meta.json` (only `*.md` re-included) |
+| **Resolution** | Audit script `_audit_fix_recipes_meta_flow.py` wrote missing unit-root pairs · playbook + fleet **PICTURE-BOOK-PRODUCTION-RULES §6** require both on every lock · agent must verify before reporting “locked” · `.gitignore` now tracks `!Media/development/**/meta.json` |
+| **Verify** | Each keep unit under `Media/development/` has both files; `git check-ignore` does **not** ignore unit-root `meta.json` |
+
+**Playbook rule:** Lock = art copy + FLOW update + **RECIPE.md + meta.json**. Never report locked until both exist.
+
+---
+
+## 2026-07-24 — FLOW S12 plate dedup (merged p28/p29)
+
+| | |
+|---|---|
+| **Symptom** | `_FLOW-CURRENT.json` listed redundant S12-related plates (merged p28/p29) alongside the real closing spread |
+| **Root cause** | Earlier map treated S12 as a longer closing block; later lock set S12 = **p26\|27 only** but FLOW extras lingered |
+| **Resolution** | Deduped to **3 plates**: `s12`→`art.png`, `p26`→`art-left`, `p27`→`art-right`. Closing copy still: **God bless.** on S12 R only |
+| **Verify** | FLOW S12 entries = three paths only; FINALS-CHECKLIST / poem map still p26\|27 |
+
+---
+
+## 2026-07-24 — Quality bar relocated under `_quality-targets/`
+
+| | |
+|---|---|
+| **Symptom** | Quality-target README still pointed at old S01 Klein chops; no single named bar file for finals compare |
+| **Root cause** | S3 v07 became the bar in docs, but `_quality-targets/` was never updated |
+| **Resolution** | Added `Media/development/_quality-targets/S03-eyes-met-v07-quality-bar.jpg` (copy of S3 v07; PNG art untouched) · README rewritten to that one file |
+| **Verify** | Open quality-bar JPG · source remains `S03-eyes-met/art.png` / `v07` |
+
+---
+
 ## 2026-07-23 — Back cover Qwen baked title + ISBN gibberish
 
 | | |

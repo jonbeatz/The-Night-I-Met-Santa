@@ -1,0 +1,9 @@
+{
+  "seed": 1489470457,
+  "request_id": "019f8cc7-107c-7b40-bff6-dad566bafa32",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "source": "v11 \u2192 full tree \u2192 Pillow like v16",
+  "v16_lock": "page geometry + gold margins",
+  "prompt_scene": "Edit image 2 ONLY. Image 1 = paint style. Keep the SAME winter window composition: four-pane window, moon, falling snow, faint Santa sleigh silhouette on the moon, cream curtains, holly on sill, cream walls. ONE CHANGE: make the Christmas TREE on the RIGHT fully complete and opaque \u2014 full green tree, all warm lights, all ornaments, all wrapped presents underneath clearly visible and solid. No fading, no dissolving into cream, no ghost edges. Tree must be as detailed as the window. Soft FRAME ON cream vignette OK on LEFT/TOP but the tree and presents on the RIGHT must stay fully painted. No people, no text.",
+  "note": "Qwen completed tree on v11 plate \u2192 Pillow recompose (v16 page geometry + gold margins, right-opaque vignette)"
+}

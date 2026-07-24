@@ -1,0 +1,8 @@
+{
+  "seed": 894831175,
+  "request_id": "019f8cd7-eb85-7982-8409-d5fd3e80b8d6",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "source": "Media/development/P01-title/v19/art-scene.png",
+  "fix": "complete treetop / star with margin above",
+  "prompt": "Edit image 2 ONLY \u2014 almost everything is LOCKED. Image 1 = watercolor/gouache paint style. Image 2 is the title-page scene to preserve: rich deep-green Christmas TREE on the RIGHT with warm golden lights, red and gold ornaments, wrapped presents at the base; winter WINDOW on the LEFT with moon, falling snow, faint Santa sleigh silhouette, cream curtains, holly on sill; cream interior; soft vignette to cream. ONE FIX ONLY: the TREETOP is slightly cut off \u2014 make the Christmas tree COMPLETE from the VERY TOP to the presents at the base. The star or tree-topper and uppermost branches must be FULLY VISIBLE with a small margin of open cream/space ABOVE the treetop. Nothing cropped at the top. Nothing cropped at the bottom (presents fully visible). If needed, shift or scale the composition slightly taller / pull the camera back a touch so the entire tree fits inside the painted plate with breathing room above the tip. Keep rich traditional colors (deep greens, warm golds, soft reds) \u2014 NOT pastel. Do NOT change the window, moon, sleigh, presents richness, or overall layout otherwise. No people, no baked text."
+}

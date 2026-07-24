@@ -1,0 +1,13 @@
+{
+  "version": "v20",
+  "status": "working",
+  "model": "fal-ai/gemini-3-pro-image-preview/edit",
+  "canvas": "v17",
+  "look": "v18b",
+  "seed": null,
+  "fal_url": "https://v3b.fal.media/files/b/0aa3771e/9iCEyidQEw24RnNeh1cOH_iIxhE7jD.png",
+  "size": [
+    5250,
+    2625
+  ]
+}

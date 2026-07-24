@@ -1,0 +1,25 @@
+{
+  "version": "v09",
+  "status": "keep",
+  "locked": true,
+  "locked_date": "2026-07-23",
+  "decided_by": "Jon",
+  "authoring": "photoshop_custom",
+  "base_version": "v03",
+  "base_seed": 1458164223,
+  "base_fal_url": "https://v3b.fal.media/files/b/0aa361cf/RmgoJf4K-KNTgOy3CvP0x_h6Y5dFpq.png",
+  "base_model": "fal-ai/qwen-image-2/pro/edit",
+  "notes": "Jon Photoshop finish over v03 favorite. Swirl energy from v02 lineage. Primary + _LOCKED-v09.",
+  "size": [5250, 2625],
+  "files": {
+    "art": "art.png",
+    "art_left": "art-left.png",
+    "art_right": "art-right.png"
+  },
+  "primary_paths": {
+    "art": "Media/development/S08-gone/art.png",
+    "art_left": "Media/development/S08-gone/art-left.png",
+    "art_right": "Media/development/S08-gone/art-right.png",
+    "locked_dir": "Media/development/S08-gone/_LOCKED-v09/"
+  }
+}

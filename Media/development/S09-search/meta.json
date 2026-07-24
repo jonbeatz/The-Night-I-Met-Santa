@@ -1,0 +1,10 @@
+{
+  "status": "keep",
+  "locked_date": "2026-07-23",
+  "p20": "v06",
+  "p21": "v05",
+  "paths": {
+    "art_left": "Media/development/S09-search/art-left.png",
+    "art_right": "Media/development/S09-search/art-right.png"
+  }
+}

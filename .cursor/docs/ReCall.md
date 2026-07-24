@@ -1,10 +1,11 @@
 # ReCall.md — The-Night-I-Met-Santa
 
 ## Current focus
-**PHASE: End of day 2026-07-23** — leave-off locked below. Resume tomorrow with Jon review + S12 PS.  
-**Quality bar:** `S03-eyes-met/v07` KEEP — oil warmth · burgundy · open-coat Santa · Boy G0 · prefer fewer gifts.  
+**PHASE: 2026-07-24** — hygiene + lock-record gate done; still waiting on Jon review + S12 PS.  
+**Quality bar:** `S03-eyes-met/v07` KEEP — also `Media/development/_quality-targets/S03-eyes-met-v07-quality-bar.jpg` (compare only; PNG SoT).  
+**Lock record (LOCKED 2026-07-24):** every keep unit needs **both** `Media/development/{unit}/RECIPE.md` + `meta.json` — verify before saying “locked.” Fleet: PICTURE-BOOK-PRODUCTION-RULES **§6**.  
 **Story keeps (development/):** P01 v16 · P02 v04 · S1 v13|v14 · **S2 v06** open-coat · **S3 v07** · **S4 v13** · S5 v01 · S6 v04|v03 · S7 v03 · S8 v09 · S9 v06|v05 · S10 v02 · S11 v01.  
-**S12:** `S12-god-bless/v22` **working** — Jon Photoshopping nine-deer + open-coat master; **do not burn Qwen for deer**.  
+**S12:** `S12-god-bless/v22` **working** — Jon Photoshopping nine-deer + open-coat master; **do not burn Qwen for deer**. FLOW = **3 plates** only (`s12` / `p26` / `p27`).  
 **Back matter:** p30 KEEP · **p31 closer-zoom FAVORITE** · p32|33 SeedVR+cream working (Jon eye).  
 **Wrap / padding (working, awaiting Jon eye):** back cover **v02** · pastedown burgundy · p34 · p35 · p36 · Cover/P01 `art-2625.png`.  
 **SoT:** `_FLOW-CURRENT.json` · Always-open 4: Flow v2 · Master Dock · IMAGE-LANE-v2 · AGENT-RUNBOOK  
@@ -16,20 +17,20 @@
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-23 night — **End Project.** Leave-off notes written for tomorrow resume.
+2026-07-24 — Docs harvest: unit RECIPE+meta gate · FLOW S12 dedup · quality-bar file · ISSUES cards.
 
-## Where we left off (2026-07-23)
-- All story FLOW plates exist; playbook gaps generated and docs/Mem0/vault synced (`b0b6324`).
+## Where we left off (2026-07-24)
+- Unit-root RECIPE.md + meta.json backfilled for keep units; playbook + §6 locked; `meta.json` now git-tracked.
+- FLOW S12 deduped to p26|27 triplet only.
 - Jon has **not** yet graded: back cover v02, pastedown, p34–36, Cover/P01 art-2625.
 - S12 still **Jon’s PS master** (open coat + 9 deer + “God bless.” sky).
 - p32|33 still need **Jon eye** → flip FLOW `keep`.
 
-## Start here tomorrow
-1. **Open Project** (not cold boot unless stack is down) → read CONTINUE-HERE + this ReCall.
-2. **Jon review** the 7 paths listed in CONTINUE-HERE → keep / iterate / cut optional p34–36.
-3. **Land S12 PS plate** when ready → update FLOW · re-check coat + deer + North Star text zone.
-4. **Eye p32|33** → keep flip.
-5. Then Phase 3 Banana / InDesign (P01 first) — don’t start until reviews above are clear.
+## Start here next
+1. **Jon review** the 7 paths listed in CONTINUE-HERE → keep / iterate / cut optional p34–36.
+2. **Land S12 PS plate** when ready → update FLOW · write RECIPE+meta · re-check coat + deer + North Star text zone.
+3. **Eye p32|33** → keep flip + RECIPE+meta.
+4. Then Phase 3 Banana / InDesign (P01 first) — don’t start until reviews above are clear.
 
 ## Reference (this session)
 - **FINALS-CHECKLIST.md** — HIGH/MED/LOW audit of all FLOW plates

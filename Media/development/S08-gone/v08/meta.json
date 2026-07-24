@@ -1,0 +1,14 @@
+{
+  "version": "v08",
+  "status": "working",
+  "lock_on_approval": true,
+  "quality_base": "v03",
+  "swirl_ref": "v02/art-left.png",
+  "quality_bar": "S03-eyes-met/v07",
+  "seed": 1453412213,
+  "fal_url": "https://v3b.fal.media/files/b/0aa36370/zZvasPaJApQdDcXdYynkm_cPR8S6ju.png",
+  "size": [
+    5250,
+    2625
+  ]
+}

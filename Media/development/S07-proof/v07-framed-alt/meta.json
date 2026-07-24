@@ -1,0 +1,7 @@
+{
+  "version": "v07-framed-alt",
+  "status": "preview_alt",
+  "replaces_keep": false,
+  "base": "Media\\development\\S07-proof\\v06-clean-wall\\art.png",
+  "frame": "spread-frame-reference.png"
+}

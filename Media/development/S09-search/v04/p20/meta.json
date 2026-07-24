@@ -1,0 +1,18 @@
+{
+  "page": "p20",
+  "version": "v04",
+  "status": "working",
+  "lock_candidate": true,
+  "layout": "split_single",
+  "size": [
+    2625,
+    2625
+  ],
+  "seed": 1726843155,
+  "fal_url": "https://v3b.fal.media/files/b/0aa365ca/zbOH6eh462s0fOJSgQKaD_xqSyvLTv.png",
+  "refs": [
+    "Media/development/S09-search/_tmp-v04-posture-strip.png",
+    "Media/approved/characters/boy-narrator-G0.png",
+    "Media/development/S09-search/v03/p20/art.png"
+  ]
+}

@@ -37,17 +37,18 @@ Everything else is **reference on demand** (do not auto-load): `PAGE-BUILD-WORKF
 | Tier | Path | What belongs |
 |------|------|----------------|
 | **1 — Forever** | `Media/approved/` | **Only** `characters/` + `style-refs/style-lock-v2.png` (+ recipe). Never put page art here. |
-| **2 — Current best** | `Media/development/` | Visual dashboard — one folder per Flow unit. On **keep** / **lock it (for now)** → **COPY** image here. Pre-InDesign, no live text. |
+| **2 — Current best** | `Media/development/` | Visual dashboard — one folder per Flow unit. On **keep** / **lock it (for now)** → **COPY** image here **+ write `RECIPE.md` + `meta.json`**. Pre-InDesign, no live text. |
 | **3 — Lulu-ready** | `Media/finals/` | Empty until InDesign live text + bleed + export. Then graduate from development. |
 | Dials | `Media/generated/mocks/` | Versioned dials + RECIPE. SoT machine list: `_FLOW-CURRENT.json` |
 | Old approved clutter | `Media/generated/mocks/archive/` | Former covers/pages/spreads/style-refs |
 
 **Rules**
-1. Jon says **keep** / **lock it** → copy to `Media/development/{unit}/` (update FLOW `path` + `tier: "development"`).
+1. Jon says **keep** / **lock it** → copy to `Media/development/{unit}/` (update FLOW `path` + `tier: "development"`) **and** write unit-root **`RECIPE.md` + `meta.json`**. Do not report locked until both exist.
 2. Page built in InDesign with text → output to `Media/finals/` (`tier: "finals"`).
 3. `approved/` = character refs + style lock **ONLY**.
 4. `_FLOW-CURRENT.json` = machine-readable SoT (`tier`: `approved` \| `development` \| `finals` \| `mocks`).
 5. `development/` = human visual dashboard. **Nothing is Lulu-final until `finals/`.**
+6. Quality-bar compare: `Media/development/_quality-targets/S03-eyes-met-v07-quality-bar.jpg` (PNG under `S03-eyes-met/` remains SoT).
 
 ## Paths
 

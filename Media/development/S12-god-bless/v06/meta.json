@@ -1,0 +1,18 @@
+{
+  "version": "v06",
+  "status": "working",
+  "unit": "S12-god-bless",
+  "reindeer_count_target": 9,
+  "refs": [
+    "IMG_2811.PNG",
+    "15862F89-0D70-4832-B724-7EFA3278B63E.png",
+    "santa-G0-v2.png"
+  ],
+  "seed": 1452401043,
+  "fal_url": "https://v3b.fal.media/files/b/0aa37159/mce9me-fEUHV3u7dHtaGh_bRf6sYbi.png",
+  "size": [
+    5250,
+    2625
+  ],
+  "no_baked_text": true
+}

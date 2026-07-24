@@ -1,0 +1,32 @@
+{
+  "unit": "Cover",
+  "version": "beige-v2",
+  "status": "keep",
+  "date": "2026-07-18",
+  "model": "locked",
+  "resolution": "1024x1024",
+  "dimensions": {
+    "art.png": [
+      1024,
+      1024
+    ],
+    "art-2625.png": [
+      2625,
+      2625
+    ],
+    "art-back.png": [
+      2625,
+      2625
+    ],
+    "pastedown-burgundy.png": [
+      2625,
+      2625
+    ]
+  },
+  "paths": {
+    "front": "Media/development/Cover/art.png",
+    "front_2625": "Media/development/Cover/art-2625.png",
+    "back": "Media/development/Cover/art-back.png",
+    "pastedown": "Media/development/Cover/pastedown-burgundy.png"
+  }
+}

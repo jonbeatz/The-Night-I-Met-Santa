@@ -1,0 +1,8 @@
+{
+  "seed": 498847713,
+  "request_id": "019f8cd3-e729-7c51-aeca-1f032c698fd8",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "prompt_order": "tree first, window second",
+  "page_lock": "v16 gold margins + cream",
+  "prompt": "Create a SINGLE square children's-book TITLE PAGE painting \u2014 ART ONLY, no text. Image 1 = watercolor/gouache paint STYLE lock. Image 2 = mood/window DNA only (moon, snow, curtains) \u2014 do NOT copy a cropped tree from it. PROMPT ORDER IS CRITICAL \u2014 build in this order: FIRST: paint a FULL traditional Christmas TREE as the priority hero on the RIGHT side of the plate. The tree must be COMPLETE from star/tip to base \u2014 NOT cropped, NOT cut off by any edge, NOT fading, NOT a peek. Entire tree visible with breathing space around it. Rich DEEP forest green needles, warm golden string lights, red and gold ornaments, wrapped presents clearly visible at the base. Traditional Christmas richness \u2014 NOT pastel, NOT washed out, NOT pale mint. SECOND: on the LEFT, add the winter WINDOW scene that complements the tree (not the other way around): four-pane window, full moon, falling snow, faint tiny Santa sleigh+reindeer silhouette on the moon, cream curtains tied back, holly on sill. Cream/ivory interior. COMPOSITION: wide enough to show COMPLETE tree AND COMPLETE window side by side with breathing room between them. Widen the vignette if needed so neither is clipped. Soft watercolor/gouache, luminous but RICH traditional colors \u2014 deep greens, warm golds, soft reds. Soft FRAME ON dissolving to cream paper around the paired scene. Open cream above/below for live title/copyright later. No people, no baked text."
+}

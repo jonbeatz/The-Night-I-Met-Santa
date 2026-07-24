@@ -2,6 +2,7 @@
 
 | Date | Note |
 |------|------|
+| 2026-07-24 | **Update docs + Mem0/vault/Mnemosyne + git push:** Unit-root RECIPE.md + meta.json lock gate (BOOK-PLAYBOOK + PICTURE-BOOK §6) · backfilled keep units · FLOW S12 dedup (3 plates) · S3 v07 quality-bar JPG · `meta.json` git-tracked · ISSUES cards. Fixed hermes-venv `huggingface-hub` 1.2.3→1.24 for Mem0/Draven. Next still = Jon wrap review → S12 PS → p32\|33. |
 | 2026-07-23 | **End Project:** Leave-off notes in ReCall + CONTINUE. Tomorrow = Jon review 7 wrap/padding plates → S12 PS land → p32|33 eye. Git leave-off commit + session stop. |
 | 2026-07-23 | **Update docs + Mem0/vault/Mnemosyne + git push:** Playbook gaps filled — back cover v02 · pastedown burgundy · p34–36 · Cover/P01 art-2625 · p31 closer-zoom FAVORITE · FLOW extras. Jon review next. |
 | 2026-07-23 | **Update docs + Mem0/vault/Mnemosyne + git push + backup:full:** S1–S11 KEEP · S12 v22 Jon PS · back matter Phase 1+2 (p30 keep · p31 Pillow frame · p32|33 SeedVR) · FINALS-CHECKLIST · poem map p30–33 · “God bless.” = S12 R only. |

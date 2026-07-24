@@ -1,0 +1,16 @@
+{
+  "version": "v22",
+  "status": "working",
+  "last_qwen_test": true,
+  "refs": [
+    "v11",
+    "v06/art-left",
+    "v16"
+  ],
+  "seed": 1588930229,
+  "fal_url": "https://v3b.fal.media/files/b/0aa3779a/ckI3p-I5xp1MIjI1Po8iq_7hLDZ8nQ.png",
+  "size": [
+    5250,
+    2625
+  ]
+}

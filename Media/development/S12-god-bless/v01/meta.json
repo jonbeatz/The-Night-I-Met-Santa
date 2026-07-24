@@ -1,0 +1,17 @@
+{
+  "version": "v01",
+  "status": "working",
+  "unit": "S12-closing",
+  "merges": [
+    "S12a-blessing",
+    "S12b-god-bless"
+  ],
+  "pages": "26|27",
+  "absorbs_pages": "28|29",
+  "size": [
+    5250,
+    2625
+  ],
+  "seed": 1313823450,
+  "fal_url": "https://v3b.fal.media/files/b/0aa36a50/gaMSl1opYYhO2x8QP2D6a_CmxXSlBC.png"
+}

@@ -1,0 +1,7 @@
+{
+  "seed": 1485528954,
+  "request_id": "019f8c8f-2416-7963-b700-6460ece29f68",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "source": "v07/art.png",
+  "prompt": "Edit image 2 only \u2014 keep the SAME winter window title-page painting. Image 1 = watercolor/gouache paint style lock. Preserve: cream/ivory walls, four-pane window, soft blue-gray night with full moon and falling snow, light cream curtains tied back, Christmas tree edge with warm lights and ornaments, optional presents and tiny holly on sill, soft FRAME ON vignette fading to cream paper. ADD only this: through the window in the distant night sky, a VERY FAINT tiny silhouette of Santa's sleigh and reindeer crossing in front of / near the moon \u2014 subtle, easy to miss, distant and soft, not detailed, not large, not cartoon. The window still owns the frame. REMOVE any baked letters, titles, watermarks, or gibberish text completely \u2014 leave open cream. Do not add people, faces, or hands indoors. Art only \u2014 no text."
+}

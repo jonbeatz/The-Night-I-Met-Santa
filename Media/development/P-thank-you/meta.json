@@ -1,0 +1,18 @@
+{
+  "unit": "P-thank-you",
+  "version": "lora-v03",
+  "status": "keep",
+  "date": "2026-07-22",
+  "model": "FLUX.2 LoRA",
+  "resolution": "2625x2625",
+  "dimensions": {
+    "art.png": [
+      2625,
+      2625
+    ]
+  },
+  "paths": {
+    "art": "Media/development/P-thank-you/art.png"
+  },
+  "page": 30
+}

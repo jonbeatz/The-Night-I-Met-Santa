@@ -1,0 +1,13 @@
+{
+  "version": "v11",
+  "status": "working",
+  "fix": "santa_face_match_G0",
+  "base": "v10",
+  "face_ref": "Media/approved/characters/santa-G0-face.png",
+  "seed": 1505603621,
+  "fal_url": "https://v3b.fal.media/files/b/0aa374a5/VmUJTU-EeQEmul0pQc1Wj_pfajQ901.png",
+  "size": [
+    5250,
+    2625
+  ]
+}

@@ -18,6 +18,8 @@
     "session:resume": "powershell -ExecutionPolicy Bypass -File D:\\Hermes\\projects\\_core-scripts\\shared-profile-content\\scripts\\session-start.ps1 -Quiet",
     "session:handoff": "powershell -ExecutionPolicy Bypass -File D:\\Hermes\\projects\\_core-scripts\\shared-profile-content\\scripts\\session-handoff.ps1",
     "session:stop": "powershell -ExecutionPolicy Bypass -File D:\\Hermes\\projects\\_core-scripts\\shared-profile-content\\scripts\\session-stop.ps1",
+    "cursor:prep-update": "powershell -ExecutionPolicy Bypass -File D:\\Hermes\\projects\\_core-scripts\\shared-profile-content\\scripts\\cursor-prep-update.ps1",
+    "cursor:prep-update:list": "powershell -ExecutionPolicy Bypass -File D:\\Hermes\\projects\\_core-scripts\\shared-profile-content\\scripts\\cursor-prep-update.ps1 -ListOnly",
     "profile:align": "powershell -ExecutionPolicy Bypass -File D:\\Hermes\\projects\\_core-scripts\\profile-switcher\\Align-Hermes-Profile.ps1 -Action align",
     "profile:align:full": "powershell -ExecutionPolicy Bypass -File D:\\Hermes\\projects\\_core-scripts\\profile-switcher\\Align-Hermes-Profile.ps1 -Action align -FullSwitch",
     "profile:align:check": "powershell -ExecutionPolicy Bypass -File D:\\Hermes\\projects\\_core-scripts\\profile-switcher\\Align-Hermes-Profile.ps1 -Action check",

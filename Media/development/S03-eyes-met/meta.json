@@ -1,0 +1,35 @@
+{
+  "unit": "S03-eyes-met",
+  "version": "v07",
+  "status": "keep",
+  "date": "2026-07-22",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "resolution": "5250x2625",
+  "seed": 1762521583,
+  "request_id": "019f8d46-96c9-73a2-927b-96b413086a94",
+  "quality_bar": true,
+  "dimensions": {
+    "art.png": [
+      5250,
+      2625
+    ],
+    "art-left.png": [
+      2625,
+      2625
+    ],
+    "art-right.png": [
+      2625,
+      2625
+    ]
+  },
+  "paths": {
+    "master": "Media/development/S03-eyes-met/art.png",
+    "left": "Media/development/S03-eyes-met/art-left.png",
+    "right": "Media/development/S03-eyes-met/art-right.png",
+    "quality_target": "Media/development/_quality-targets/S03-eyes-met-v07-quality-bar.jpg"
+  },
+  "pages": {
+    "left": 8,
+    "right": 9
+  }
+}

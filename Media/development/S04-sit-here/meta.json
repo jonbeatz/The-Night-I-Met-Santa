@@ -1,0 +1,36 @@
+{
+  "unit": "S04-sit-here",
+  "version": "v13",
+  "status": "keep",
+  "date": "2026-07-22",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "resolution": "5250x2625",
+  "seeds": {
+    "left": 739714616,
+    "right": 1422180652
+  },
+  "dimensions": {
+    "art.png": [
+      5250,
+      2625
+    ],
+    "art-left.png": [
+      2625,
+      2625
+    ],
+    "art-right.png": [
+      2625,
+      2625
+    ]
+  },
+  "paths": {
+    "master": "Media/development/S04-sit-here/art.png",
+    "left": "Media/development/S04-sit-here/art-left.png",
+    "right": "Media/development/S04-sit-here/art-right.png"
+  },
+  "pages": {
+    "left": 10,
+    "right": 11
+  },
+  "layout": "text_plus_image"
+}
