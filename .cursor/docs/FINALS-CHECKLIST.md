@@ -53,7 +53,7 @@
 | Page | Grade | Action taken | Path |
 |------|-------|--------------|------|
 | **p30** | **PASS** | FINE AS-IS — 2625² cream paper, FRAME ON, no bake | `Media/development/P-thank-you/art.png` |
-| **p31** | **PASS** after frame | Pillow cream vignette @ 2625 — **no regen**; approved `jack-farrell-portrait.png` untouched | `Media/development/P-author/art.png` |
+| **p31** | **KEEP / FAVORITE** | Closer-zoom page-fill (Jon 2026-07-23) · approved source untouched · prev framed → `art-PREV-framed-before-closer-zoom.png` | `Media/development/P-author/art.png` |
 | **p32** | Was FAIL res → **PASS tech** | SeedVR + cream dissolve → 2625² · content keep-leaning · Jon eye still open | `…/P-quiet-close/art-left.png` |
 | **p33** | Was FAIL res → **PASS tech** | Same · Jon eye still open | `…/P-quiet-close/art-right.png` |
 
@@ -74,19 +74,19 @@
 ### Cover · beige-v2 · `Media/development/Cover/art.png`
 | Check | Result |
 |-------|--------|
-| RES | **FAIL** — 1024² (need 2625² for print) |
+| RES | KEEP still **1024²** · print-scale candidate **`art-2625.png`** (SeedVR 2026-07-23) — Jon eye before replacing KEEP |
 | FRAME | N/A cover wrap path |
 | COAT | N/A (face hidden lock) |
-| TEXT | OK — no bake |
-| Notes | KEEP composition · SeedVR/Banana finals later · Phase 3 |
+| TEXT | OK — no bake on front KEEP |
+| Notes | Also: **back cover v02** `Cover/art-back.png` · **pastedown** `Cover/pastedown-burgundy.png` |
 
 ### P01 Title · v16 · `Media/development/P01-title/art.png`
 | Check | Result |
 |-------|--------|
-| RES | **FAIL for print** — 2048² (target 2625²) |
+| RES | KEEP still **2048²** · print-scale candidate **`art-2625.png`** (SeedVR) — Jon eye |
 | FRAME | Soft gold/cream edge present (title FRAME ON) |
 | TEXT | OK — open cream for live type |
-| Notes | KEEP art · upscale on finals · do not overwrite v16 lock casually |
+| Notes | KEEP art · do not overwrite v16 lock casually |
 
 ### S12 God Bless · v22 · **p26\|27** · `Media/development/S12-god-bless/`
 | Check | Result |
@@ -121,8 +121,10 @@ Legend: ✅ pass · ⚠ watch · ❌ fail · — n/a · 🔒 locked keep
 
 | Unit | Pages | Ver | Status | RES | TRIP | FRAME | COAT | FACE | GUTTER | TEXT | Pri |
 |------|-------|-----|--------|-----|------|-------|------|------|--------|------|-----|
-| Cover | Cover | beige-v2 | 🔒 keep | ❌ 1024 | — | — | — | OK hide | — | ✅ | **H** |
-| P01 Title | 1 | v16 | 🔒 keep | ⚠ 2048 | — | ✅ ON | — | — | — | ✅ | **H** |
+| Cover | Cover | beige-v2 | 🔒 keep | ⚠ 1024 + art-2625 | — | — | — | OK hide | — | ✅ | **H** |
+| Back cover | Back | v02 | working | ✅ 2625 | — | — | — | — | — | ✅ scrub | **M** |
+| Pastedown | Casewrap | v01 | 🔒 keep | ✅ solid | — | — | — | — | — | — | L |
+| P01 Title | 1 | v16 | 🔒 keep | ⚠ 2048 + art-2625 | — | ✅ ON | — | — | — | ✅ | **H** |
 | P02 About | 2\|3 | v04 | 🔒 keep | ✅ | ✅ | soft L/R | — | — | ✅ corner | ✅ | L |
 | S1 Approach | 4\|5 | v13\|v14 | 🔒 keep | ✅ | ✅ split | OFF OK | — | boy OK | n/a split | ✅ | L |
 | S2 Threshold | 6\|7 | v06 | 🔒 keep | ✅ | ✅ | OFF OK | ✅ open | ✅ | ✅ | ✅ | L |
@@ -138,8 +140,11 @@ Legend: ✅ pass · ⚠ watch · ❌ fail · — n/a · 🔒 locked keep
 | **S12 God Bless** | **26\|27** | v22 | **working** | ✅ | ✅ | soft ON | ❌ closed | ⚠ | ✅ | ⚠ zone | **H** |
 | p28\|29 | — | merged | merged | — | — | — | — | — | — | — | — |
 | P Thank You | 30 | lora-v03 | 🔒 keep | ✅ | — | ✅ ON | — | — | — | ✅ | L |
-| P Author | 31 | framed | 🔒 locked | ✅ | — | ✅ ON | — | Jack lock | — | credits OK | L |
+| P Author | 31 | closer-zoom | 🔒 FAVORITE | ✅ | — | page-fill | — | Jack lock | — | live later | L |
 | Quiet Close | 32\|33 | v02 | working | ✅ | — | ✅ ON | — | — | — | ✅ map | **M** |
+| p34 Padding | 34 | v01 | working opt | ✅ | — | ✅ ON | — | — | — | ✅ | L |
+| p35 Colophon | 35 | v01 | working opt | ✅ | — | ✅ ON | — | — | — | ✅ open | L |
+| p36 Blank | 36 | v01 | working opt | ✅ cream | — | — | — | — | — | — | L |
 
 \*S09 / S10 `art.png` missing earlier this session — **stitched from L\|R** 2026-07-23 (hygiene only, no regen).
 
@@ -169,7 +174,7 @@ Legend: ✅ pass · ⚠ watch · ❌ fail · — n/a · 🔒 locked keep
 
 ## Hygiene done this pass
 
-1. p31 framed → `Media/development/P-author/art.png` (approved portrait untouched)
+1. p31 **closer-zoom FAVORITE** → `Media/development/P-author/art.png` (approved `jack-farrell-portrait.png` untouched)
 2. p32\|33 SeedVR + cream → 2625² (`v02-upscale-framed`)
 3. S09 + S10 `art.png` triplets restored
 4. `book_poem_map.py` + `BOOK-COPY-DRAFTS.md` + Flow quiet-close text corrected for p32/p33

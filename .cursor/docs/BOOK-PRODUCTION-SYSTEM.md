@@ -268,6 +268,10 @@ Jon: no further Media *folder* redesign for a week (2026-07-22) — page dials c
 | 2026-07-15 | Jon mockups locked as refs: soft paint fades, **never cover faces**, Santa pages use **bottom-right** gradient; note pages **lower** not mid-window. Mocks → `text-mocks-v3/` | layout `ref-text-jon-*` |
 | 2026-07-15 | Text wash dial: overpowered solid glow rejected — use **subtle mid-opacity** paper + long fade (Pillow; not a fal model issue). Cheap art dial = Flux schnell / Klein; finals stay Nano Banana Pro | compositing |
 | 2026-07-21 | **Lane priority refresh:** dial = **Klein 9B** (~$0.011/MP); alt = **Qwen Image 2** (~$0.035/img); light = **Klein 4B** (~$0.009/MP, hi-res/low-detail only); finals = **Gemini/Banana** (~$0.15). | Model lanes |
+| 2026-07-23 | **Playbook gaps filled (working):** back cover **v02** (text-scrub) · pastedown burgundy RGB(90,22,18) · optional p34 ornament · p35 colophon · p36 blank · Cover/P01 `art-2625` SeedVR (KEEP `art.png` untouched). Script: `_gen_remaining_playbook_plates.py` | Wrap / padding |
+| 2026-07-23 | **p31 closer-zoom FAVORITE** promoted to `development/P-author/art.png` (approved Jack source untouched) | Matter |
+| 2026-07-23 | **Back cover:** Qwen first pass often bakes title/ISBN — always run scrub pass before review | Gen gotcha |
+| 2026-07-23 | **BOOK-PLAYBOOK + fleet PICTURE-BOOK-PRODUCTION-RULES backported** — three-tier · FINALS-CHECKLIST §5 · matter audit-first · multi-count · closing-copy · rejection list | Future books |
 | 2026-07-23 | **S12 = p26\|27 only** · “God bless.” on S12 R not p32 · p32 Merry Christmas · p33 quiet-close line · FINALS-CHECKLIST gate · back matter audit-first (frame/upscale only) | Closing / matter |
 | 2026-07-23 | **S12 multi-deer:** bake count into edit canvas before style-merge; Qwen collapses teams — stop after 2 fails → PS or Banana | Gen gotcha |
 | 2026-07-22 | **Media three-tier LOCKED:** approved = characters + style-lock-v2 only · development = current-best dashboard · finals = Lulu after InDesign. No redesign for a week. | Asset org |

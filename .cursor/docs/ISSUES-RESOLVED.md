@@ -11,6 +11,19 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-07-23 — Back cover Qwen baked title + ISBN gibberish
+
+| | |
+|---|---|
+| **Symptom** | First back-cover gen (`Cover-back/v01`) painted gold title, author line, and garbled bottom ISBN string despite “NO letters” prompt |
+| **Root cause** | Cover companion /edit still inherits front-cover title language; Qwen often invents placeholder type in empty zones |
+| **Resolution** | Archive v01 as `art-BAKED-TEXT.png` · **v02 scrub pass** (edit keep scene, remove all text) → `Media/development/Cover/art-back.png` · keep type for InDesign |
+| **Verify** | Open `art-back.png` — no readable title/credit/ISBN; soft empty street for blurb |
+
+**Playbook rule:** Back covers get a dedicated **text-scrub** pass before Jon review. Never trust first Qwen empty-zone.
+
+---
+
 ## 2026-07-23 — Quiet-close copy drift put “God bless.” on p32
 
 | | |

@@ -11,6 +11,8 @@
 > **2026-07-21 update (lanes + recipes — future books):** **Providers:** fal.ai **first** · OpenRouter **second**. **Dial:** Klein **9B** default (~$0.011/MP) → Qwen alt (~$0.035) → Klein **4B** light only → **Finals:** Gemini/Banana (~$0.15). Dual prompts: Klein = Dial D2 · Finals = ILLUSTRATION-STYLE master. Every mock needs **full RECIPE** (`Media/generated/mocks/_RECIPE-TEMPLATE.md` — Prompt mandatory). Don’t mid-paint-crop soft watercolor vignettes to recenter.
 >
 > **2026-07-22 update (locked review loop — all future books):** Three mandatory artifacts after style decisions / flow passes — see **§3b** and fleet doc `PICTURE-BOOK-PRODUCTION-RULES.md`: (1) **three-panel comparison boards** (Klein | new | favorite), (2) **full-book flipbook PDF** `Output/flipbook-{date}.pdf`, (3) **verdict card** on last flipbook page (`keep` / `keep-leaning` / `reject` / `locked`).
+>
+> **2026-07-23 update (TNIMS → future books — harden before next title):** Media **three-tier** (approved = characters + style-lock only · development = current-best · finals = post-InDesign). Pre-Banana gate = **`FINALS-CHECKLIST.md`** (RES / TRIP / FRAME / COAT / FACE / GUTTER / TEXT / POEM). Matter pages: **audit-first** (frame/upscale before regen). Multi-count subjects (reindeer teams, etc.): **bake count into the edit canvas first**, style-merge second — stop burning dial models after two collapses → PS or Banana. Closing poem lines live on the **story** closing text pocket — don’t duplicate blessing copy onto quiet back-matter pages. Wardrobe locks must match G0 refs (e.g. open coat · suspenders **over shirt**). Boards always use `book_poem_map` + `book_review_board` (never hand-rolled labels). Spread cream frames = **finals only**. Detail: TNIMS `BOOK-PRODUCTION-SYSTEM.md` + `ISSUES-RESOLVED.md` + `FINALS-CHECKLIST.md`.
 
 ---
 
@@ -50,20 +52,24 @@ MyNewBook/
 ├── Images/references/       # Author photos, style refs, book layout refs
 ├── Images/references/style/ # Style north-star images
 ├── Images/references/layout/ # How text should sit on art (REFERENCE PHOTOS)
-├── Media/                   # Working / legacy promoted illustrations
-├── Media/approved/          # TWO-TIER keepers (git-tracked) — see INDEX.md
-│   ├── style-refs/          # Tier A moodboard (covers/back/jack/pages/santa/spread/story)
-│   ├── characters/          # Tier B print locks (people)
-│   ├── covers|pages|spreads/# Tier B print locks (clean kebab names)
-├── Media/generated/         # Experimental batches (test-batch-vN/, test-covers-vN/)
+├── Media/                   # Art pipeline root
+├── Media/approved/          # THREE-TIER #1 — forever locks ONLY
+│   ├── characters/          # G0 people locks (boy, santa, author, …)
+│   └── style-refs/          # style-lock + frame refs (NOT page art)
+├── Media/development/       # THREE-TIER #2 — current-best dashboard (pre-InDesign)
+├── Media/finals/            # THREE-TIER #3 — Lulu-ready after live type (empty until earned)
+├── Media/generated/mocks/   # Versioned dials vNN + RECIPE · SoT `_FLOW-CURRENT.json`
 ├── Xtraz/Fonts/             # Local OFL font pack (gitignored) — document in FONT-CATALOG.md
-├── Pages/                   # Pre-composited print-ready JPEGs
-├── Output/                  # Final interior + cover PDFs
+├── Xtraz/Adobe-inDesign/    # Working .indd (not under Output/)
+├── Xtraz/Adobe-Photoshop/   # Working PSDs + blanks
+├── Pages/                   # Deprecated Pillow fallback only
+├── Output/                  # Final interior + cover PDFs + flipbooks
 ├── _archive/                # Rejected experiments — do not auto-revive
 └── .cursor/docs/            # All plans, prompts, and playbook docs
 ```
 
-**Approved two-tier rule:** `style-refs/` = browsable favorites; `characters|covers|pages|spreads` = compositor/Typst source of truth after Jon says “lock.”
+**Media three-tier (LOCKED 2026-07-22 — copy for every new book):**  
+`approved/` = characters + style-lock/frame refs only · `development/` = current-best page art · `finals/` = post-InDesign print. Never put story page art in `approved/`.
 
 ### Essential docs (create these)
 
@@ -72,7 +78,9 @@ MyNewBook/
 | `TRUTH.md` | Project constitution — what this IS and ISN'T |
 | `.cursor/docs/START-HERE.md` | Daily ops, handshakes, session rituals |
 | `.cursor/docs/CONTINUE-HERE.md` | Session resume — what's done, what's next |
-| `.cursor/docs/BOOK-PRODUCTION-SYSTEM.md` | Reusable playbook (copy from this project) |
+| `.cursor/docs/BOOK-PRODUCTION-SYSTEM.md` | Living ops playbook (copy + adapt) |
+| `.cursor/docs/FINALS-CHECKLIST.md` | Pre-Banana / pre-InDesign plate audit (copy pattern from TNIMS) |
+| `.cursor/docs/ISSUES-RESOLVED.md` | Problem → fix → playbook rule (append-only) |
 | `.cursor/docs/ILLUSTRATION-STYLE.md` | Locked art style, master prompt blocks, north stars |
 | `.cursor/docs/TEXT-OVERLAY-POLICY.md` | How poem text sits on art (zones, rules, paint recipe) |
 | `.cursor/docs/PAGE-PROMPT-BIBLE.md` | Every story beat → exact image prompt |
@@ -171,13 +179,27 @@ Copy `Media/generated/mocks/_RECIPE-TEMPLATE.md` into every `vNN/`. Include **fu
 
 **Always-open kit:** Flow map · Master dock · Lane system · Runbook. Everything else = reference.
 
-**Scripts:** `scripts/book-comparison-board.py` · `scripts/book-flipbook-assemble.py`
+**Scripts:** `scripts/book-comparison-board.py` · `scripts/book-flipbook-assemble.py` · `scripts/book_poem_map.py` · `scripts/book_review_board.py`
+
+### 3c. Quality gates + gen gotchas (2026-07-23 — all future books)
+
+| Gate | Rule |
+|------|------|
+| **FINALS-CHECKLIST** | Before Banana spend / InDesign batch: audit every keep for RES · TRIPLET · FRAME · wardrobe · face drift · gutter · baked text · poem map |
+| **Matter audit-first** | Thank-you / author / quiet-close: fix **frame + resolution** before regenerating content |
+| **Multi-count subjects** | Bake exact count into the **edit canvas** first; style-merge second. If dial model drops count twice → stop → PS composite or finals model |
+| **Qwen edit slots** | Max **3 `image_urls`** — composition/quality first; never skip hard wardrobe append text |
+| **Wardrobe = G0 pixels** | Written locks must match approved refs (TNIMS: open coat · striped shirt · suspenders **over shirt**, not over coat) |
+| **Closing copy** | Poem blessing / last line lives on the **story closing** text pocket — don’t duplicate onto quiet back-matter |
+| **Spread frames** | Soft cream dissolve on full spreads = **finals only** — not on development keepers |
+| **Boards** | Always `book_review_board.*` so Flow poem captions appear — never hand-roll `_INDEX` labels |
 
 ### Image sizes (at 300 DPI for 8.5×8.5" with bleed)
 
-| Type | Dimensions | Aspect |
+| Type | Dimensions | Aspect / note |
 |------|-----------|--------|
 | Single page | 2625 × 2625 px | 1:1 |
+| Seamless spread master | 5250 × 2625 px | Always also write `art-left.png` + `art-right.png` @ 2625² (**triplet**) |
 | Spread (cinematic) | 5250 × 2625 px | 2:1 → split L/R |
 | Cover (wrap) | Per Lulu template after page count | Varies |
 
@@ -397,7 +419,7 @@ Aim for 15–20 poem pages to fill the body.
 [7]  Seed style refs → 2–3 approved painted frames
 [8]  Generate art batches → Media/generated/test-batch-vN/ (scene illustrations)
 [9]  Generate cover batches → Media/generated/test-covers-vN/ (front+back sets)
-[10] Jon reviews → promote to `Media/approved/style-refs/` (moodboard) then **lock** winners into `characters|covers|pages|spreads`
+[10] Jon reviews → lock characters + style-lock into `Media/approved/` · copy current-best page art to `Media/development/` · dials stay in `Media/generated/mocks/` · `finals/` only after InDesign
 [11] Write TEXT-OVERLAY-POLICY.md from Jon's mockup feedback
 [12] Quiet-zone map per illustration (where text won't cover faces)
 [13] Rewrite composite_pages.py (cloud wash + text → Pages/*.jpg)
@@ -455,6 +477,15 @@ npm run book:flipbook -- --manifest Output/flipbook-YYYY-MM-DD-manifest.json
 | Skip three-panel boards on style/hero decisions | Memory-only picks drift; Klein control must stay visible | PICTURE-BOOK-PRODUCTION-RULES.md |
 | Ship a flow pass without `Output/flipbook-{date}.pdf` | No page-order review = silent holes | PICTURE-BOOK-PRODUCTION-RULES.md |
 | Verdict statuses outside `keep` / `keep-leaning` / `reject` / `locked` | Breaks finals handoff language | PICTURE-BOOK-PRODUCTION-RULES.md |
+| Hand-roll boards without Flow poem captions | Can't verify script under each page | book_poem_map + book_review_board |
+| Put story page art in `Media/approved/` | Breaks three-tier; approved = characters + style-lock only | BOOK-PRODUCTION-SYSTEM.md |
+| Skip FINALS-CHECKLIST before Banana / print batch | Silent res / coat / gutter / bake failures | FINALS-CHECKLIST · PICTURE-BOOK-PRODUCTION-RULES §5 |
+| Regenerate matter pages when only size/frame is wrong | Waste + drift — audit-first frame/upscale | ISSUES-RESOLVED 2026-07-23 |
+| Expect dial models to invent missing multi-count subjects | Bake count into canvas first; stop after 2 collapses | ISSUES-RESOLVED 2026-07-23 |
+| Duplicate poem blessing onto quiet back-matter | Closing line belongs on story closing text pocket | BOOK-COPY / FINALS-CHECKLIST |
+| Write wardrobe locks that contradict G0 pixels | Models follow wrong text (e.g. suspenders over coat) | ISSUES-RESOLVED 2026-07-22 |
+| Apply cream spread frames on development keepers | Frames = finals only; cream bleed invents ghosts | ISSUES-RESOLVED 2026-07-23 |
+| Exceed 3 `image_urls` on Qwen Pro Edit | Hard API cap | IMAGE-LANE-SYSTEM-v2 |
 | Use LaTeX for picture books | Wrong tool; slow; can't do full-bleed well | RESEARCH-VERDICT.md |
 | Stack transparent PNGs in Typst over art | PDF eats alpha → checkerboard | v4 failure |
 | Use hard white text boxes | Looks glued-on, not storybook | v3 failure |
@@ -477,16 +508,16 @@ npm run book:flipbook -- --manifest Output/flipbook-YYYY-MM-DD-manifest.json
 
 | Keep (universal) | Swap (per book) |
 |------------------|-----------------|
-| Folder structure + skeleton | Poem/manuscript text |
-| Tool stack (Typst, Pillow, pypdf, Pandoc) | Trim size (if not 8.5×8.5) |
-| Image lanes (fal first · Klein 9B → Qwen → 4B light → Gemini) | Style refs + ILLUSTRATION-STYLE.md |
-| Full RECIPE template + mocks/`vNN` | Cover title + author name |
-| Layout pattern (Pillow cloud pre-composite → Typst binder) | Cover title + author name |
-| Print specs (bleed, safety, 300 DPI, sRGB) | About/Thank You copy |
-| Text overlay rules (faces, zones, paint recipe) | Character sheets |
-| POD research (Lulu primary; others backup) | Deadline |
-| Prompt anatomy + negative block | Page count + spread count |
-| Rejection list | — |
+| Folder structure + **three-tier Media** | Poem/manuscript text |
+| Tool stack (InDesign UXP primary · Typst/Pillow fallback) | Trim size (if not 8.5×8.5) |
+| Image lanes (fal first · Klein 9B → Qwen → 4B light → Gemini) | Style lock + ILLUSTRATION-STYLE.md |
+| Full RECIPE + mocks/`vNN` + `_FLOW-CURRENT.json` | Cover title + author name |
+| Review loop (boards · flipbook · verdicts) | Character G0 sheets |
+| **FINALS-CHECKLIST** pattern + ISSUES playbook rules | About / Thank You / quiet-close copy |
+| Print specs (bleed, safety, 300 DPI, sRGB · triplet sizes) | Page count + spread map |
+| Text overlay rules (faces, zones, cloud PNG) | Deadline |
+| Prompt anatomy + negative block + wardrobe hard-appends | — |
+| Rejection list (§11) | — |
 
 ---
 
@@ -516,4 +547,4 @@ npm run book:flipbook -- --manifest Output/flipbook-YYYY-MM-DD-manifest.json
 ---
 
 *Generated from `D:\Hermes\projects\The-Night-I-Met-Santa` — the complete working project.*
-*Last updated: 2026-07-15 (Media/approved two-tier + FONT-CATALOG)*
+*Last updated: 2026-07-23 (three-tier Media · FINALS-CHECKLIST · gen gotchas · rejection list harvest)*
