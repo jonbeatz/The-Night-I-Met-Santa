@@ -2,31 +2,24 @@
   "unit": "Cover",
   "version": "beige-v2",
   "status": "keep",
-  "date": "2026-07-18",
-  "model": "locked",
-  "resolution": "1024x1024",
+  "date": "2026-07-24",
+  "model": "locked beige-v2 @2625",
+  "resolution": "2625x2625",
   "dimensions": {
-    "art.png": [
-      1024,
-      1024
-    ],
-    "art-2625.png": [
-      2625,
-      2625
-    ],
-    "art-back.png": [
-      2625,
-      2625
-    ],
-    "pastedown-burgundy.png": [
-      2625,
-      2625
-    ]
+    "art.png": [2625, 2625],
+    "art-2625.png": [2625, 2625],
+    "art-1024-backup.png": [1024, 1024],
+    "art-spine.png": [225, 2625],
+    "art-back.png": [2625, 2625],
+    "pastedown-burgundy.png": [2625, 2625]
   },
   "paths": {
     "front": "Media/development/Cover/art.png",
     "front_2625": "Media/development/Cover/art-2625.png",
+    "front_backup_1024": "Media/development/Cover/art-1024-backup.png",
+    "spine": "Media/development/Cover/art-spine.png",
     "back": "Media/development/Cover/art-back.png",
     "pastedown": "Media/development/Cover/pastedown-burgundy.png"
-  }
+  },
+  "spine_note": "PLACEHOLDER — exact width from Lulu calculator after page count lock. Provisional 225px (~0.75in @300dpi)."
 }

@@ -9,9 +9,9 @@
 
 **Current plates SoT:** `Media/generated/mocks/_FLOW-CURRENT.json` (flipbook reads this only).
 
-**Session resume:** `TRUTH.md` → `CONTINUE-HERE.md` → `ReCall.md` → then the four above.
+**Session resume:** `TRUTH.md` → `.cursor/docs/START-HERE.md` → `.cursor/docs/ReCall.md` → `.cursor/docs/CONTINUE-HERE.md` → then the four always-open docs above → `_FLOW-CURRENT.json`.
 
-Everything else is **reference on demand** (do not auto-load): `PAGE-BUILD-WORKFLOW`, `BOOK-PAGE-WORKFLOW`, `BOOK-PRODUCTION-SYSTEM`, `ISSUES-RESOLVED`, `INDESIGN-PRODUCTION-WORKFLOW`, `IMAGE-LANE-PROMPTS`, `ILLUSTRATION-STYLE`, `FONT-CATALOG`, `BOOK-PLAYBOOK`, fleet mirrors, archives, Tony handoff.
+Everything else is **reference on demand** (do not auto-load): `.cursor/docs/PAGE-BUILD-WORKFLOW.md`, `.cursor/docs/BOOK-PAGE-WORKFLOW.md`, `.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`, `.cursor/docs/ISSUES-RESOLVED.md`, **`.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md`** (full Lulu/ID specs — build authority still `AGENT-RUNBOOK.md`), `.cursor/docs/IMAGE-LANE-PROMPTS.md`, `.cursor/docs/ILLUSTRATION-STYLE.md`, `.cursor/docs/FONT-CATALOG.md`, `BOOK-PLAYBOOK.md`, fleet mirrors, archives, Tony handoff.
 
 ## Project facts
 

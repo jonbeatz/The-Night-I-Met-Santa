@@ -2,7 +2,7 @@
   "schema": "flow-current/v1",
   "updated": "2026-07-24",
   "flow_doc": ".cursor/docs/JON-BOOK-FLOW-v2-FINAL.md",
-  "notes_session": "Playbook gaps: back cover · pastedown burgundy · p34–36 working plates + Cover/P01 art-2625 print-scale (KEEP art.png untouched)",
+  "notes_session": "Deep audit fix: Cover+P01 art.png promoted to 2625; P-quiet-close art.png triplet stitched; spine placeholder; S07 development_path aligned; P01 verdicts=v16; S12 untouched",
   "style_lock": "Media/approved/style-refs/style-lock-v2.png",
   "hero_spend_rule": "GPT Image 2 High 4K ONLY for gpt_pillar=true (S3 Eyes Met, S12b God Bless). Primary finals = Nano Banana Pro /edit + style-lock-v2 + santa-G0-v2. Alt finals = pure Krea atmospheric.",
   "flipbook_note": "scripts/book-flipbook-assemble.py reads THIS FILE ONLY. Do not guess paths from folders.",
@@ -21,15 +21,16 @@
       "caption": "Cover · beige-v2 LOCKED",
       "path": "Media/development/Cover/art.png",
       "version": "beige-v2",
-      "model": "locked",
+      "model": "locked beige-v2 @2625",
       "status": "keep",
       "decided_by": "Jon",
-      "date": "2026-07-18",
-      "notes": "oatmeal holly PJs · Santa face hidden",
+      "date": "2026-07-24",
+      "notes": "oatmeal holly PJs · Santa face hidden · art.png promoted to 2625 (was 1024; backup art-1024-backup.png) · art-spine.png PLACEHOLDER (Lulu width TBD)",
       "gpt_pillar": false,
       "development_path": "Media/development/Cover/art.png",
       "tier": "development",
-      "source_mock": "Media/generated/mocks/archive/style-refs-pre-tier-reorg/covers/WINNER-cover-front-beige-pj-v2.png"
+      "source_mock": "Media/generated/mocks/archive/style-refs-pre-tier-reorg/covers/WINNER-cover-front-beige-pj-v2.png",
+      "pixel_size": "2625x2625"
     },
     {
       "id": "p01",
@@ -41,12 +42,13 @@
       "model": "Pillow structure + Qwen 2 Pro /edit (polish rejected — Pillow lock)",
       "status": "keep",
       "decided_by": "Jon",
-      "date": "2026-07-22",
-      "notes": "Art-only KEEP · warm gold page-edge whisper · clean cream center · window+tree · moon/snow/sleigh · open cream above/below for live type. v17–v22 tree-full / model dials = tests only (did not beat v16). NOT Lulu-final until InDesign type → finals/",
+      "date": "2026-07-24",
+      "notes": "Art-only KEEP · warm gold page-edge whisper · clean cream center · window+tree · moon/snow/sleigh · open cream above/below for live type. art.png promoted to 2625 from art-2625 (backup art-2048-backup.png). v17-v22 tests only. NOT Lulu-final until InDesign type.",
       "gpt_pillar": false,
       "development_path": "Media/development/P01-title/art.png",
       "tier": "development",
-      "source_mock": "Media/development/P01-title/v16/art.png"
+      "source_mock": "Media/development/P01-title/v16/art.png",
+      "pixel_size": "2625x2625"
     },
     {
       "id": "p02",
@@ -329,7 +331,7 @@
       "date": "2026-07-23",
       "notes": "LOCKED unframed · fireplace+tree L · recovered from fal after v04 reject · archive _LOCKED-v03",
       "gpt_pillar": false,
-      "development_path": "Media/development/S07-proof/art.png",
+      "development_path": "Media/development/S07-proof/art-left.png",
       "tier": "development",
       "pixel_size": "2625x2625",
       "spread_side": "L"
@@ -347,7 +349,7 @@
       "date": "2026-07-23",
       "notes": "LOCKED · boy R look-up · camera FG · no Santa/skylight · Jon 2026-07-23",
       "gpt_pillar": false,
-      "development_path": "Media/development/S07-proof/art.png",
+      "development_path": "Media/development/S07-proof/art-right.png",
       "tier": "development",
       "pixel_size": "2625x2625",
       "spread_side": "R"
@@ -602,7 +604,7 @@
       "status": "working",
       "decided_by": "Jon",
       "date": "2026-07-23",
-      "notes": "Upscaled 1024→2625 · cream frame · InDesign: Merry Christmas. only (God bless on S12 R)",
+      "notes": "Upscaled 1024->2625 · cream frame · master art.png stitched 5250x2625 · InDesign: Merry Christmas. only (God bless on S12 R)",
       "gpt_pillar": false,
       "development_path": "Media/development/P-quiet-close/art-left.png",
       "tier": "development",
@@ -619,7 +621,7 @@
       "status": "working",
       "decided_by": "Jon",
       "date": "2026-07-23",
-      "notes": "Upscaled 1024→2625 · cream frame · InDesign: May the magic… line",
+      "notes": "Upscaled 1024->2625 · cream frame · master art.png stitched 5250x2625 · InDesign: May the magic… line",
       "gpt_pillar": false,
       "development_path": "Media/development/P-quiet-close/art-right.png",
       "tier": "development",
@@ -725,22 +727,22 @@
     {
       "page": "1",
       "beat": "Title",
-      "version": "v22",
-      "model": "Gemini/Banana",
-      "status": "locked",
+      "version": "v16",
+      "model": "Pillow structure + Qwen polish rejected",
+      "status": "keep",
       "decided_by": "Jon",
-      "date": "2026-07-21",
-      "notes": "provisional P01"
+      "date": "2026-07-22",
+      "notes": "KEEP · v16 Pillow page frame · NOT v22 Gemini/Banana (tests only) · art.png now 2625 (promoted 2026-07-24)"
     },
     {
       "page": "2|3",
       "beat": "About+Dedication",
-      "version": "mocks",
-      "model": "various",
-      "status": "keep-leaning",
+      "version": "v04",
+      "model": "Qwen 2 Pro /edit",
+      "status": "keep",
       "decided_by": "Jon",
       "date": "2026-07-22",
-      "notes": "need Flow v2 combined fireplace/window spread"
+      "notes": "KEEP · P02-about-spread v04 corner room · matches plates"
     },
     {
       "page": "4|5",

@@ -8,18 +8,19 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ## One-line status (2026-07-24)
 
-**Story S1–S11 KEEP** · **S12 v22 working** (Jon PS master) · **Back matter:** p30 KEEP · **p31 closer-zoom FAVORITE** · p32|33 upscaled  
-**Hygiene done:** unit-root **RECIPE.md + meta.json** on keeps · FLOW S12 = **3 plates** · quality bar JPG under `_quality-targets/`  
-**Wrap gaps (working, Jon eye):** back cover **v02** · pastedown · optional **p34–36** · Cover/P01 **art-2625**  
+**Story S1–S11 KEEP** · **S12 v22 working** (Jon PS master) · **Back matter:** p30 KEEP · **p31 closer-zoom FAVORITE** · p32|33 upscaled + **art.png triplet**  
+**Deep audit:** Cover + P01 `art.png` @ **2625²** · spine **placeholder** · FLOW S07 paths + P01 verdict fixed · styles1 non-authority  
+**Wrap gaps (working, Jon eye):** back cover **v02** · pastedown · optional **p34–36** · `Cover/art-spine.png` (Lulu width TBD)  
 **FINALS-CHECKLIST** · **“God bless.” = S12 R only** · SoT `_FLOW-CURRENT.json`  
-**Lock gate:** never report locked without both `development/{unit}/RECIPE.md` + `meta.json` (BOOK-PLAYBOOK · PICTURE-BOOK §6).
+**Lock gate:** never report locked without both `development/{unit}/RECIPE.md` + `meta.json`.
 
 ### Start next
-1. **Review these 7 files** (keep / iterate / cut p34–36):  
-   `Media/development/Cover/art-back.png` · `pastedown-burgundy.png` · `art-2625.png` · `P01-title/art-2625.png` · `P34-padding/art.png` · `P35-colophon/art.png` · `P36-blank/art.png`
+1. **Review wrap/padding** (keep / iterate / cut p34–36):  
+   `Cover/art-back.png` · `pastedown-burgundy.png` · `art-spine.png` · `P34-padding` · `P35-colophon` · `P36-blank`
 2. **Finish or land S12 PS** (open coat + 9 deer + “God bless.” under North Star) — no more Qwen deer burns → then RECIPE+meta.
 3. **Eye p32|33** → FLOW `keep` + RECIPE+meta.
-4. Only then Banana / InDesign (P01 first).
+4. Lock page count → **Lulu spine calculator** → replace spine placeholder.
+5. Only then Banana / InDesign (P01 first).
 
 **Proof order window:** ~July 25–28 · Gift **2026-08-15**.
 

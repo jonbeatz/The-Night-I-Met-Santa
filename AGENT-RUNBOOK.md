@@ -306,6 +306,7 @@ npm run image:gen:page -- "cheap draft..."   # HF free fallback
 | `tools/layout-mcp/SETUP.md` | Cold-start pipeline instructions |
 | `.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md` | Full specs reference |
 | `.cursor/docs/CONTINUE-HERE.md` | Session resume + next actions |
+| `.cursor/docs/ReCall.md` | Session focus / leave-off (after START-HERE) |
 | `BOOK-PLAYBOOK.md` | Reusable system for future books |
 
 **Rule:** Edit in `Xtraz/Adobe-inDesign/` (or `Xtraz/Affinity/`). Photoshop working files → `Xtraz/Adobe-Photoshop/`. Export press PDFs only to `Output/`. Do not keep long-lived `.indd` under `Output/`.

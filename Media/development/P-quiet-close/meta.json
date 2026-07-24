@@ -2,20 +2,16 @@
   "unit": "P-quiet-close",
   "version": "v02-upscale-framed",
   "status": "working",
-  "date": "2026-07-23",
+  "date": "2026-07-24",
   "model": "SeedVR + Pillow cream dissolve",
-  "resolution": "2625x2625",
+  "resolution": "5250x2625",
   "dimensions": {
-    "art-left.png": [
-      2625,
-      2625
-    ],
-    "art-right.png": [
-      2625,
-      2625
-    ]
+    "art.png": [5250, 2625],
+    "art-left.png": [2625, 2625],
+    "art-right.png": [2625, 2625]
   },
   "paths": {
+    "art": "Media/development/P-quiet-close/art.png",
     "left": "Media/development/P-quiet-close/art-left.png",
     "right": "Media/development/P-quiet-close/art-right.png"
   },
@@ -26,5 +22,6 @@
   "text": {
     "p32": "Merry Christmas.",
     "p33": "May the magic of this night stay in your heart, long after the season has gone."
-  }
+  },
+  "notes": "Master art.png stitched from L/R 2026-07-24 (triplet hygiene)."
 }

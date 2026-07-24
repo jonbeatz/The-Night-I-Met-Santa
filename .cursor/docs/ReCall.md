@@ -1,43 +1,53 @@
 # ReCall.md — The-Night-I-Met-Santa
 
+## Session resume (read in order)
+
+1. `TRUTH.md`
+2. `.cursor/docs/START-HERE.md`
+3. **This file** — `.cursor/docs/ReCall.md`
+4. `.cursor/docs/CONTINUE-HERE.md`
+5. Always-open: Flow v2 · Master Dock · IMAGE-LANE-v2 · `AGENT-RUNBOOK.md`
+6. SoT plates: `Media/generated/mocks/_FLOW-CURRENT.json`
+
 ## Current focus
-**PHASE: 2026-07-24** — hygiene + lock-record gate done; still waiting on Jon review + S12 PS.  
+**PHASE: 2026-07-24** — deep audit fixes landed; still waiting on Jon review + S12 PS.  
 **Quality bar:** `S03-eyes-met/v07` KEEP — also `Media/development/_quality-targets/S03-eyes-met-v07-quality-bar.jpg` (compare only; PNG SoT).  
 **Lock record (LOCKED 2026-07-24):** every keep unit needs **both** `Media/development/{unit}/RECIPE.md` + `meta.json` — verify before saying “locked.” Fleet: PICTURE-BOOK-PRODUCTION-RULES **§6**.  
+**Print-scale:** Cover + P01 `art.png` now **2625²** (promoted from art-2625; backups kept).  
 **Story keeps (development/):** P01 v16 · P02 v04 · S1 v13|v14 · **S2 v06** open-coat · **S3 v07** · **S4 v13** · S5 v01 · S6 v04|v03 · S7 v03 · S8 v09 · S9 v06|v05 · S10 v02 · S11 v01.  
 **S12:** `S12-god-bless/v22` **working** — Jon Photoshopping nine-deer + open-coat master; **do not burn Qwen for deer**. FLOW = **3 plates** only (`s12` / `p26` / `p27`).  
-**Back matter:** p30 KEEP · **p31 closer-zoom FAVORITE** · p32|33 SeedVR+cream working (Jon eye).  
-**Wrap / padding (working, awaiting Jon eye):** back cover **v02** · pastedown burgundy · p34 · p35 · p36 · Cover/P01 `art-2625.png`.  
+**Back matter:** p30 KEEP · **p31 closer-zoom FAVORITE** · p32|33 SeedVR+cream working (Jon eye) · **P-quiet-close `art.png` triplet stitched**.  
+**Wrap / padding (working, awaiting Jon eye):** back cover **v02** · pastedown burgundy · p34 · p35 · p36 · **spine placeholder** `Cover/art-spine.png` (Lulu width TBD).  
 **SoT:** `_FLOW-CURRENT.json` · Always-open 4: Flow v2 · Master Dock · IMAGE-LANE-v2 · AGENT-RUNBOOK  
 **Pre-finals gate:** `.cursor/docs/FINALS-CHECKLIST.md`  
-**Character locks:** Boy G0 · Santa G0 v2 (**open coat** · striped shirt · suspenders **over shirt**) · Jack portrait · style-lock-v2.  
+**Character locks:** Boy G0 · Santa G0 v2 (**open coat** · striped shirt · suspenders **over shirt**) · Jack portrait · style-lock-v2. Canonical = `Media/approved/characters/` (not `Images/styles1/`).  
 **Casewrap pastedowns:** solid burgundy RGB(90,22,18) plate ready.
 
 ## Birthday deadline
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-24 — Docs harvest: unit RECIPE+meta gate · FLOW S12 dedup · quality-bar file · ISSUES cards.
+2026-07-24 — Deep audit fix: Cover/P01 @2625 · quiet-close triplet · spine placeholder · FLOW S07 paths + P01 verdict · styles1 README.
 
 ## Where we left off (2026-07-24)
-- Unit-root RECIPE.md + meta.json backfilled for keep units; playbook + §6 locked; `meta.json` now git-tracked.
-- FLOW S12 deduped to p26|27 triplet only.
-- Jon has **not** yet graded: back cover v02, pastedown, p34–36, Cover/P01 art-2625.
+- Deep audit Phase 1–3 applied (see project-log). S12 **not** touched.
+- Jon has **not** yet graded: back cover v02, pastedown, p34–36, spine (placeholder only).
 - S12 still **Jon’s PS master** (open coat + 9 deer + “God bless.” sky).
 - p32|33 still need **Jon eye** → flip FLOW `keep`.
 
 ## Start here next
-1. **Jon review** the 7 paths listed in CONTINUE-HERE → keep / iterate / cut optional p34–36.
+1. **Jon review** the wrap/padding paths in CONTINUE-HERE → keep / iterate / cut optional p34–36.
 2. **Land S12 PS plate** when ready → update FLOW · write RECIPE+meta · re-check coat + deer + North Star text zone.
 3. **Eye p32|33** → keep flip + RECIPE+meta.
-4. Then Phase 3 Banana / InDesign (P01 first) — don’t start until reviews above are clear.
+4. Lock page count → **Lulu spine calculator** → replace `art-spine.png` placeholder in casewrap.
+5. Then Phase 3 Banana / InDesign (P01 first) — don’t start until reviews above are clear.
 
 ## Reference (this session)
 - **FINALS-CHECKLIST.md** — HIGH/MED/LOW audit of all FLOW plates
 - **book_poem_map.py** — includes P-thank-you / P-author / P-quiet-close
 - Frame refs: `Media/approved/style-refs/frame-reference.png` · `spread-frame-reference.png`
 - S12 consolidated folder only: `Media/development/S12-god-bless/` (S12b merged)
-- Review list: `Media/development/Cover/art-back.png` · `pastedown-burgundy.png` · `art-2625.png` · `P01-title/art-2625.png` · `P34-padding` · `P35-colophon` · `P36-blank`
+- Review list: `Cover/art-back.png` · `pastedown-burgundy.png` · `art-spine.png` · `P34-padding` · `P35-colophon` · `P36-blank`
 
 ## System of record
 | Doc | Use |
@@ -64,7 +74,7 @@
 |------|--------|
 | Poem | `Transcription/poem-clean.txt` |
 | **Approved** | **`Media/approved/`** |
-| Cover LOCKED | `Media/development/Cover/art.png` (beige-v2 · print size later) |
+| Cover LOCKED | `Media/development/Cover/art.png` (beige-v2 · **2625²**) · spine placeholder `art-spine.png` |
 | Boy G0 | `Media/approved/characters/boy-narrator-G0.png` (+ face) |
 | Santa G0 v2 | `Media/approved/characters/santa-G0-v2.png` (+ standing `santa-G0.png`) |
 | Jack portrait | `Media/approved/characters/jack-farrell-portrait.png` (source) · framed `Media/development/P-author/art.png` |

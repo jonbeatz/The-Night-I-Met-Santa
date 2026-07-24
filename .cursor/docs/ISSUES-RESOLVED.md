@@ -11,6 +11,17 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-07-24 — Deep audit: Cover/P01 under-resolution + quiet-close missing master
+
+| | |
+|---|---|
+| **Symptom** | Cover `art.png` 1024² · P01 `art.png` 2048² while print-scale `art-2625.png` already existed; P-quiet-close had L/R only (no `art.png` master); FLOW S07 `development_path` pointed at spread while `path` was L/R; verdicts still said P01 v22 |
+| **Root cause** | Print-scale files were generated as sidecars without promoting dashboard `art.png`; triplet stitch skipped on quiet-close; FLOW fields drifted |
+| **Resolution** | Promote Cover/P01 `art-2625`→`art.png` (backups kept) · stitch quiet-close master 5250×2625 · spine placeholder · align FLOW S07 + P01 verdict · RECIPE/meta updates · styles1 README |
+| **Verify** | Cover+P01 art.png = 2625² · quiet-close art.png = 5250×2625 · FLOW p16/p17 development_path = art-left/right · verdicts Title = v16 keep |
+
+---
+
 ## 2026-07-24 — Mem0/Draven add fails: huggingface-hub 1.2.3 too old
 
 | | |
