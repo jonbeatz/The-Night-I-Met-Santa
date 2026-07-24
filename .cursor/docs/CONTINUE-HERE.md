@@ -6,13 +6,11 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-22 evening)
+## One-line status (2026-07-23 evening)
 
-**S3 Eyes Met v07 KEEP = QUALITY BAR.**  
-**S2 v05 KEEP** (wardrobe fix queued). **S4 v12** TEXT+IMAGE dial pending Jon eye.  
-**Boy G0 + Santa open-coat locks** confirmed in Master Dock / IMAGE-LANE-v2.  
-**SoT:** `_FLOW-CURRENT.json` · **NEXT:** S4 eye → then S2 wardrobe fix.
-
+**Story S1–S11 KEEP** · **S12 v22 working** (Jon PS master for 9 deer + open coat) · **Back matter ready** (p30 KEEP · p31 framed · p32|33 upscaled)  
+**FINALS-CHECKLIST** written · **“God bless.” = S12 R only** · p32 = *Merry Christmas.* · p33 = quiet-close line  
+**SoT:** `_FLOW-CURRENT.json` · **NEXT:** land S12 PS plate → Jon eye p32|33 → Phase 3 Cover/P01 size + Banana.
 
 ---
 
@@ -87,29 +85,28 @@ An **8.5×8.5"** full-color children’s picture book from Jack’s Christmas po
 
 ## Start next (priority order)
 
-### 0. **S4 Sit Here v12** (active) · S3 KEEP quality bar
-S3: `S03-eyes-met/v07` KEEP. S4: `S04-sit-here/v12` TEXT L + IMAGE R — Jon eye. Then **S2 wardrobe fix** (open-coat on v05).
+### 0. **S12 God Bless** (active blocker)
+Jon Photoshop master on `Media/development/S12-god-bless/` — target: **9 reindeer ahead** · open-coat Santa · moon L · North Star R + clear sky for **“God bless.”** · Victorian house lower-R. Do **not** burn more Qwen deer gens. When ready → update FLOW primary + FINALS-CHECKLIST.
 
-### 1. InDesign cold start (when plates are keep/locked enough)
+### 1. **p32|33 Quiet Close** — Jon eye
+Plates at 2625² with cream frame (`P-quiet-close/v02-upscale-framed`). Approve → FLOW `keep`. Text: p32 *Merry Christmas.* · p33 *May the magic…*
+
+### 2. **FINALS-CHECKLIST** HIGH items
+Cover 1024 → 2625 · P01 2048 → 2625 · S12 coat/deer after PS. See `.cursor/docs/FINALS-CHECKLIST.md`.
+
+### 3. InDesign cold start (when plates are keep/locked enough)
 Follow **`AGENT-RUNBOOK.md`** cold flow: CC Desktop → UDT + InDesign + bridges → Jon **Load & Watch** → Connected ✓.
 
-### 2. First production unit = **P01 Title** (when ready for type)
+### 4. First production unit = **P01 Title** (when ready for type)
 1. Duplicate `single-page-template.psd` → `p01-title.psd` (Jon first Save As if needed).
 2. Place `Media/development/P01-title/art.png` (v16) on **ART** · **close source PNG**.
 3. MOCK-TYPE in **upper cream** (Cinzel title / Cormorant author).
 4. Cloud if needed → chops → InDesign live type (same pt).
-5. Then sequential story units under S3 v07 quality bar.
-
-### 3. Spread loop (after front matter)
-PS MOCK + chops (`Images/chopz/`) → InDesign → live Cormorant poem **20/26 +5**.
-
-### 4. Do **not** re-research print
-`RESEARCH-VERDICT.md` — Lulu primary. Export via `Lulu-Interior-Print-PDF.joboptions` when pages ready.
 
 ### 5. Cover wrap + proof
 Back cover still open · spine after page count final · proof order **~July 25–28**.
 
-**Docs:** `AGENT-RUNBOOK.md` · `PAGE-BUILD-WORKFLOW.md` · `INDESIGN-PRODUCTION-WORKFLOW.md` · `MASTER-PRODUCTION-DOCK.md` · `FONT-CATALOG.md`
+**Docs:** `AGENT-RUNBOOK.md` · `FINALS-CHECKLIST.md` · `PAGE-BUILD-WORKFLOW.md` · `MASTER-PRODUCTION-DOCK.md` · `FONT-CATALOG.md`
 
 ### Optional later (not blocking gift)
 Lane B finals batch · web flipbook · Affinity polish · Mixam multi-copy

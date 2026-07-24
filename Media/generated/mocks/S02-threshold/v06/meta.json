@@ -1,0 +1,9 @@
+{
+  "version": "v06",
+  "previous": "v05",
+  "task": "wardrobe_fix_open_coat",
+  "url": "https://v3b.fal.media/files/b/0aa35da1/C8hIFwRKt7sINap3UgNpC_b44Y2ar2.png",
+  "seed": 381681017,
+  "request_id": "019f8d79-604f-7a63-b235-f0eb6a89ab2e",
+  "model": "fal-ai/qwen-image-2/pro/edit"
+}

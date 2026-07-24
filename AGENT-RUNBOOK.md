@@ -344,6 +344,10 @@ After the book is done, create a viewable flipbook for family and friends:
 - ❌ Crop through **mid-paint** to recenter a soft watercolor vignette (shears the soft crown → hard top edge). Reposition/scale the **whole** soft vignette, or choose a text-zone layout that matches how the plate was painted. See `ISSUES-RESOLVED.md` 2026-07-21 P01 v24
 - ❌ Say **“feathered”** to Qwen/fal for vignette edges — models draw **bird feathers**. Say *watercolor bleed / soft dissolve / organic paint edge* (`ISSUES-RESOLVED.md` 2026-07-22)
 - ❌ Ask Qwen alone for a **page-margin watercolor frame** — it frames the **art vignette**. Pillow-lock cream page + outer-margin wash first; polish optional; fall back if subject swaps (`ISSUES-RESOLVED.md` 2026-07-22 P01 v16)
+- ❌ **Overwrite a LOCKED KEEP** to run a frame/color test — use a new version folder (`vNN-framed-alt/`); archive `_LOCKED-vNN/` (`ISSUES-RESOLVED.md` 2026-07-23)
+- ❌ Apply **deep cream vignette** into burgundy mid-walls without protecting opacity / restoring wall ROI — cream bleed reads as a “ghost face” (`ISSUES-RESOLVED.md` 2026-07-23)
+- ❌ Ship a spread without the **triplet** (`art.png` 5250×2625 + `art-left.png` + `art-right.png` 2625²) — automatic on every spread gen
+- ❌ Hand-roll `_INDEX` comparison boards without poem captions — always use `scripts/book_review_board.py` (`seamless_board` / `split_board` / `text_image_board`); poem source `book_poem_map.py` (`ISSUES-RESOLVED.md` 2026-07-23)
 - ❌ Ship a mock `vNN/` with a **thin RECIPE** (no full Prompt / missing lane·model·FRAME·script_text). Copy `Media/generated/mocks/_RECIPE-TEMPLATE.md`
 - ❌ Put text on spine (book is under 80 pages)
 - ❌ Launch UDT before Creative Cloud sign-in

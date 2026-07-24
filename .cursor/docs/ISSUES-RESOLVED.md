@@ -11,6 +11,99 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-07-23 — Quiet-close copy drift put “God bless.” on p32
+
+| | |
+|---|---|
+| **Symptom** | Flow / BOOK-COPY / dock prompts listed *God bless. / Merry Christmas.* on quiet-close p32 — collided with poem closing line already planned under S12 North Star |
+| **Root cause** | Older matter map treated quiet pages as the poem blessing dump; S12 later became the single epic closing spread (p26\|27) with **“God bless.”** on the right page |
+| **Resolution** | Locked inventory: **S12 R = “God bless.”** · **p32 = “Merry Christmas.” only** · **p33 = May the magic…** Updated `BOOK-COPY-DRAFTS.md` · `JON-BOOK-FLOW-v2-FINAL.md` · `scripts/book_poem_map.py` · `FINALS-CHECKLIST.md` · FLOW p32 notes |
+| **Verify** | `python -c "from scripts.book_poem_map import captions; print(captions('P-quiet-close'))"` → Merry Christmas / May the magic… · S12 right still God bless |
+
+**Playbook rule:** Closing poem blessing lives on the **story** closing spread text pocket — never duplicate on back-matter quiet pages.
+
+---
+
+## 2026-07-23 — Back matter audit-first: frame/upscale beats regen
+
+| | |
+|---|---|
+| **Symptom** | Temptation to regenerate p30–33 to “match” S3 quality bar when only resolution / frame were wrong |
+| **Root cause** | p32\|33 sat at 1024²; p31 was approved portrait without standard cream vignette; p30 already passed at 2625² |
+| **Resolution** | Audit first · **p30 KEEP** · **p31 Pillow cream frame only** (approved source untouched) · **p32\|33 SeedVR→2625 + cream dissolve** · no content regen. Script: `scripts/_scratch/_phase1_back_matter.py` |
+| **Verify** | All four plates 2625² · `P-author/art.png` · `P-quiet-close/art-*.png` · FINALS-CHECKLIST Phase 1 table |
+
+**Playbook rule:** Matter pages — fix frame/size first; regenerate only if composition fails the checklist.
+
+---
+
+## 2026-07-23 — S12 God Bless: Qwen keeps collapsing the 9-reindeer team
+
+| | |
+|---|---|
+| **Symptom** | Closing spread dials (v14→v19b) repeatedly drop below **nine** reindeer (often 5–8, once ~3). Wrong formation recurs: deer **behind** sleigh, on the ground, or short harness line. Multi-glow noses; Santa not over moon; North Star text pocket lost on some merges |
+| **Root cause** | (1) **Qwen 2 Pro Edit** prioritizes style-ref pixels over count constraints — merging **v06 look** onto a 9-deer lock overwrites the team. (2) Starting from a short-team canvas (v18b ~6) cannot “add to nine” reliably. (3) Dual goals in one edit (chuckling Santa + exact 4 pairs + Rudolph) compete; model simplifies the herd. (4) Hard **3 `image_urls`** cap forces dropping a ref when packing layout + look + G0 |
+| **Resolution (working so far)** | Prefer **layout canvas that already has nine ahead** (e.g. **v17**) before style merges. Do **not** expect Qwen to invent missing deer onto a short team. **v18b** = best Qwen look (chuckling open-coat Santa, moon) but ~6 deer. **v20** = Gemini/Banana Pro edit (not Qwen): stronger look + moon + big star, but **overshot to ~10 deer** and **two** red noses — still needs PS trim to 4 pairs + Rudolph-only. Jon Photoshopping a master shortly |
+| **Verify** | Count heads on flight crop before promoting. Triplet @ 5250×2625. Boards `_INDEX/S12-god-bless-v*-final-*`. Compare **v18b** (short) vs **v20** (Banana ~10 + dual noses) vs **v17** (best nine-count) |
+
+**Playbook rule:** For S12 (and any multi-animal harness team): **bake the count into the edit canvas first**; style-merge second. If Qwen drops animals twice, stop burning Qwen — switch finals model or composite in PS. Never call a short-team plate “nine” without a head count.
+
+**Related:** Qwen 3-slot limit (2026-07-22); S12 folder consolidated to `Media/development/S12-god-bless/` only.
+
+---
+
+## 2026-07-23 — S9 review board missing Flow poem captions
+
+| | |
+|---|---|
+| **Symptom** | `_INDEX/S09-search-v01-split-2026-07-23.png` showed only short labels (“p20 — search POV”) — no Flow poem under each page. Jon expected the standing board system |
+| **Root cause** | Scratch gen script built a **custom** Pillow board (title + tech + labels) instead of calling `scripts/book_review_board.split_board()`. Locked rule (2026-07-22): every board gets poem (or image-context) captions from `book_poem_map.py` |
+| **Resolution** | Rebuild with `split_board(unit="S09-search")` → poem under p20/p21. Backup unlabeled board as `.no-poem.png`. Patch `_s09_search_v01_split.py` to always use `split_board`. Helpers: `seamless_board` (spreads) · `split_board` (S1/S9) · `text_image_board` (TEXT+IMAGE) |
+| **Verify** | Reopen `S09-search-v01-split-2026-07-23.png` — LEFT/RIGHT poem lines present; captions match `book_poem_map` S09-search |
+
+**Playbook rule:** Never hand-roll `_INDEX` boards. Always `book_review_board.*` so poem + tech cue are automatic.
+
+---
+
+## 2026-07-23 — Framed S7 “ghost Santa” was cream vignette bleed (not Santa leak)
+
+| | |
+|---|---|
+| **Symptom** | Pillow “spread frame” alts of S7 Proof showed a pale face-like blob on the burgundy wall between tree and boy; Jon rejected framed v04 / early framed alts |
+| **Root cause** | Soft cream dissolve bleeding into dark burgundy mid-wall reads as a ghost face. Easy to mis-blame the frame-ref scene (which contains Santa). Frame-ref RGB was not being pasted into the art when center opacity is forced |
+| **Resolution** | (1) Frames = **finals only** / alt preview folders — never overwrite KEEP. (2) Shallow outer vignette (larger safe ellipse). (3) After frame, **restore mid-wall ROI** from clean unframed base with feathered paste. Framed preview: `Media/development/S07-proof/v08-framed-alt/`. KEEP stays unframed v03 |
+| **Verify** | Board `S07-proof-v03-KEEP-vs-v08-framed-alt-2026-07-23.png`; wall crop clean burgundy; `_LOCKED-v03/art.png` unchanged |
+
+**Playbook rule:** On dark walls, cream vignette can invent “ghost faces.” Protect mid-field opacity; restore wall ROI from clean base after framing. Never overwrite KEEP for frame tests.
+
+---
+
+## 2026-07-23 — Frame/test pass overwrote S7 KEEP; old `mocks/.../v03` was not the lock
+
+| | |
+|---|---|
+| **Symptom** | S7 framed v04 replaced development `art.png`; “recover from `mocks/S07-proof/v03`” pointed at a **2026-07-21** dial (1536×768), not the locked Qwen plate |
+| **Root cause** | No keeper hygiene — test wrote over current. Folder name `v03` reused for unrelated older mock |
+| **Resolution** | Recover locked plate from fal CDN (`fal_url` in RECIPE / session) → SeedVR → 5250×2625. Archive immutable copy at `Media/development/S07-proof/_LOCKED-v03/art.png`. Docs: tests get **new version folders**; KEEP untouched. Spread frames finals-only |
+| **Verify** | `art.png` MD5 matches `_LOCKED-v03`; FLOW S07 → **v03 status keep**; rejected framed work lives under `v05`/`v07`/`v08-framed-alt` only |
+
+**Playbook rule:** Never overwrite a LOCKED KEEP for a test. Archive `_LOCKED-vNN/`. Don’t trust version folder names alone — check size/date/fal_url.
+
+---
+
+## 2026-07-23 — Spreads missing InDesign L/R chops (triplet not automatic)
+
+| | |
+|---|---|
+| **Symptom** | Several development spreads had only `art.png` or only `art-left`/`art-right` — flipbook vs InDesign paths broken |
+| **Root cause** | No standing rule that every spread write must emit all three files |
+| **Resolution** | HARD RULE in `MASTER-PRODUCTION-DOCK.md` + `IMAGE-LANE-SYSTEM-v2.md`: every spread → `art.png` **5250×2625** + `art-left.png` + `art-right.png` **2625²** in one pass. Retro script `scripts/_scratch/_spread_triplet_retro.py` backfilled S1–S12 + P02 |
+| **Verify** | All listed units show `art=5250x2625` · `L=2625x2625` · `R=2625x2625` |
+
+**Playbook rule:** Spread generation always writes the triplet — never skip splits.
+
+---
+
 ## 2026-07-22 — Santa wardrobe: “suspenders over coat” was wrong vs G0 refs
 
 | | |

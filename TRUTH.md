@@ -46,8 +46,9 @@
 10. `.cursor/docs/ILLUSTRATION-STYLE.md` / `PAGE-PROMPT-BIBLE.md` / `COVER-PROMPTS.md` / `FONT-CATALOG.md` / `IMAGE-LANE-PROMPTS.md`
 11. `.cursor/docs/CONTINUITY-AND-PRINT-FINALS.md` / `TEXT-OVERLAY-POLICY.md`
 12. `.cursor/docs/MASTER-COMMANDS.md`
-13. `.cursor/docs/ReCall.md` · `.cursor/docs/ISSUES-RESOLVED.md`
-14. Shared TOOLS-* via `.cursor/docs/` mirrors (fleet — not book production)
+13. **`.cursor/docs/FINALS-CHECKLIST.md`** — pre-Banana / pre-InDesign plate audit
+14. `.cursor/docs/ReCall.md` · `.cursor/docs/ISSUES-RESOLVED.md`
+15. Shared TOOLS-* via `.cursor/docs/` mirrors (fleet — not book production)
 
 **Superseded (stubs only):** `BOOK-PLAN.md` · `SPREAD-STORY-MAP.md` → see `_archive/docs/`.  
 **Historical:** root `Book-Findings.md` · `RESEARCH-VERDICT.md` (Lulu OK; layout path outdated).

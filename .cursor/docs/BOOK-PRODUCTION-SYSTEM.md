@@ -1,6 +1,6 @@
 # BOOK PRODUCTION SYSTEM — Hermes Picture-Book Playbook
 
-**Status:** Living system doc · last updated **2026-07-21**  
+**Status:** Living system doc · last updated **2026-07-23**  
 **Purpose:** Dialed-in workflow to finish *The Night I Met Santa* **and** recreate the same system for **future picture books**.  
 **Owner:** Jon · Agent continue file: `CONTINUE-HERE.md`  
 **Page creative loop (new):** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** — image → PSD → MOCK-TYPE → InDesign · mocks + RECIPE.md · tab hygiene
@@ -47,6 +47,8 @@
 
 Print remakes + boy/Santa continuity → **`.cursor/docs/CONTINUITY-AND-PRINT-FINALS.md`**.  
 **Quality bar (2026-07-22):** `Media/development/S03-eyes-met/v07/art.png` — prefer fewer gifts on later plates. Doorway spill language from S2 v05.  
+**Pre-finals gate (2026-07-23):** `.cursor/docs/FINALS-CHECKLIST.md` — RES / TRIP / FRAME / COAT / FACE / GUTTER / TEXT / POEM.  
+**Closing copy (2026-07-23):** Poem **“God bless.”** on **S12 R (p27)** under North Star · **p32** = *Merry Christmas.* only · **p33** = *May the magic…* · S12 = **p26|27 only**.  
 Jon: no further Media *folder* redesign for a week (2026-07-22) — page dials continue.
 
 ---
@@ -266,10 +268,12 @@ Jon: no further Media *folder* redesign for a week (2026-07-22) — page dials c
 | 2026-07-15 | Jon mockups locked as refs: soft paint fades, **never cover faces**, Santa pages use **bottom-right** gradient; note pages **lower** not mid-window. Mocks → `text-mocks-v3/` | layout `ref-text-jon-*` |
 | 2026-07-15 | Text wash dial: overpowered solid glow rejected — use **subtle mid-opacity** paper + long fade (Pillow; not a fal model issue). Cheap art dial = Flux schnell / Klein; finals stay Nano Banana Pro | compositing |
 | 2026-07-21 | **Lane priority refresh:** dial = **Klein 9B** (~$0.011/MP); alt = **Qwen Image 2** (~$0.035/img); light = **Klein 4B** (~$0.009/MP, hi-res/low-detail only); finals = **Gemini/Banana** (~$0.15). | Model lanes |
+| 2026-07-23 | **S12 = p26\|27 only** · “God bless.” on S12 R not p32 · p32 Merry Christmas · p33 quiet-close line · FINALS-CHECKLIST gate · back matter audit-first (frame/upscale only) | Closing / matter |
+| 2026-07-23 | **S12 multi-deer:** bake count into edit canvas before style-merge; Qwen collapses teams — stop after 2 fails → PS or Banana | Gen gotcha |
 | 2026-07-22 | **Media three-tier LOCKED:** approved = characters + style-lock-v2 only · development = current-best dashboard · finals = Lulu after InDesign. No redesign for a week. | Asset org |
 | 2026-07-22 | **About/Dedication KEEP:** `P02-about-spread/v04` corner room; SPLIT fireplace/tree v01 = stepping-stone refs. Casewrap pastedowns = solid burgundy. | Art / print |
 | 2026-07-22 | **P01 title frame dial:** Qwen hugs art vignettes / may swap subjects on polish. **Pillow-lock** cream page + warm gold **page-margin** whisper; optional Qwen; fall back if scene drifts. Never say “feathered” (draws feathers). **KEEP:** `development/P01-title/v16` → dashboard `art.png` · FLOW p01 keep. | Art / process |
-| 2026-07-22 | **Model tiers v2 LOCKED** in `IMAGE-LANE-SYSTEM-v2.md`: dial Klein 9B · mock favorite **Qwen 2 Pro /edit** · style-lock-v2 (Krea) · santa-G0-v2 · finals Banana Pro `/edit` · GPT High 4K pillars only (S3/S12b). Current plates SoT = `_FLOW-CURRENT.json` + flipbook. | Lanes / process |
+| 2026-07-22 | **Comparison boards must show poem captions** under each side (Flow v2 script). Helpers: `scripts/book_poem_map.py` + `scripts/book_review_board.py`. Retroactive rebuild/annotate: `scripts/_scratch/_rebuild_boards_with_poem.py`. | Process |
 | 2026-07-22 | **Logging gate:** `project-log.md` = milestones only (locked spread / promoted character / phase complete). Tests → `RECIPE.md` + `_FLOW-CURRENT` + boards. | Docs / process |
 | 2026-07-22 | **S1 Approach KEEP:** v13 L + v14 R — same door/wreath; crack is the story (4–6″ journey / 6–8″ face-on destination). Mockup quality targets from Klein v01 best-of chops. | Art lock |
 | 2026-07-22 | **S3 Eyes Met v07 KEEP = QUALITY BAR.** Open-coat Santa · Boy G0 · burgundy/gold · wide room. Prefer **fewer gifts** on later plates. FLOW p08\|p09 keep. | Art lock |

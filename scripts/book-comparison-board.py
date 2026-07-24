@@ -2,6 +2,7 @@
 """Build a labeled three-panel comparison board for picture-book style decisions.
 
 Locked rule: Left = Klein 9B control · Center = new model · Right = current favorite.
+Poem rule (Jon 2026-07-22): pass --unit so Flow v2 script text appears under the board.
 
 Usage:
   python book-comparison-board.py \\
@@ -72,18 +73,20 @@ def build(
     out: Path,
     title: str,
     panel: int = 900,
+    unit: str | None = None,
 ) -> Path:
     label_h = 100
     gap = 24
     margin = 36
     header = 72
+    poem_extra = 64 if unit else 0
     panels = [
         _panel(Image.open(left), left_label, panel, label_h),
         _panel(Image.open(center), center_label, panel, label_h),
         _panel(Image.open(right), right_label, panel, label_h),
     ]
     w = margin * 2 + panel * 3 + gap * 2
-    h = margin * 2 + header + panel + label_h
+    h = margin * 2 + header + panel + label_h + poem_extra
     sheet = Image.new("RGB", (w, h), (252, 248, 240))
     draw = ImageDraw.Draw(sheet)
     draw.text((margin, 22), title, fill=(32, 28, 24), font=_font(28))
@@ -93,6 +96,17 @@ def build(
         sheet.paste(p, (x, margin + header))
         draw.text((x, margin + header - 28), roles[i], fill=(110, 100, 90), font=_font(14))
         x += panel + gap
+    if unit:
+        try:
+            from book_poem_map import footer_lines
+
+            py = margin + header + panel + label_h + 10
+            for line in footer_lines(unit):
+                shown = line if len(line) <= 160 else line[:157] + "..."
+                draw.text((margin, py), shown, fill=(70, 64, 58), font=_font(13))
+                py += 18
+        except Exception as exc:  # noqa: BLE001
+            print("poem caption skipped:", exc)
     out.parent.mkdir(parents=True, exist_ok=True)
     sheet.save(out, "PNG")
     return out
@@ -109,6 +123,7 @@ def main() -> int:
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--title", default="Style comparison")
     ap.add_argument("--panel", type=int, default=900)
+    ap.add_argument("--unit", default=None, help="Flow beat id e.g. S05-chat — adds poem captions")
     args = ap.parse_args()
     path = build(
         args.left,
@@ -120,6 +135,7 @@ def main() -> int:
         args.out,
         args.title,
         args.panel,
+        args.unit,
     )
     print(f"Wrote {path}")
     return 0

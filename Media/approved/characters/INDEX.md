@@ -1,6 +1,7 @@
 # Character sheets — LOCKED
 
 **Style / atmosphere:** `Media/approved/style-refs/style-lock-v2.png`  
+**Frame dissolve (singles / text pages):** `Media/approved/style-refs/frame-reference.png` · shorthand **standard frame treatment**  
 **Boy G0 (CONFIRMED 2026-07-22):** `boy-narrator-G0.png` + `boy-narrator-G0-face.png` — oatmeal/taupe holly PJs (red trim/buttons, visible holly+berries) · brown eyes · golden-highlight hair  
 **Santa (definitive 2026-07-22):** `santa-G0-v2.png` — open coat · striped shirt · brown suspenders over shirt (standing sheet: `santa-G0.png`)  
 **Cover:** `covers/cover-front.png` = **beige-v2** (unchanged; Santa face hidden)

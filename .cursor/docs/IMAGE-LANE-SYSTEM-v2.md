@@ -54,24 +54,36 @@ Prior “suspenders over coat” language is **retired**. New gens must match op
 
 ## ⚡ Locked model tiers
 
-### Dial / mock-up tier (pre-viz · flow passes · composition)
+### HARD RULES — LOCKED 2026-07-23
+
+1. **MODEL LOCK** — **Qwen 2 Pro Edit** (`fal-ai/qwen-image-2/pro/edit`, **v06** look class) is the **ONLY** model for **mock-up / development** tier generation. **Nano Banana Pro = FINALS only.** Hitting 2625² / 5250×2625 does **not** mean switch models.
+2. **RESOLUTION LOCK** — Singles **2625 × 2625** · full spreads **5250 × 2625**. No low-res dials for development images.
+3. **SPREAD OUTPUT TRIPLET** — Every spread (mock-up **and** final) must produce **three** files in one pass — **never skip**:
+   - `art.png` — **5250 × 2625** (review / flipbook)
+   - `art-left.png` — **2625 × 2625** (InDesign L)
+   - `art-right.png` — **2625 × 2625** (InDesign R)
+   Applies to **S1–S12**, **P02 About**, and any full-spread layout. Singles: `art.png` @ 2625² only.
+4. **NO DUPLICATES** — Delete Banana drafts, Lanczos/SeedVR temps, `*-banana-2k*`, and extra version copies **immediately** after keepers are saved. Allowed PNGs = the triplet (spreads) or `art.png` (singles) — plus optional `_LOCKED-vNN/` archive.
+5. **KEEPER HYGIENE** — Never overwrite a **LOCKED KEEP** for a test (frame, color, etc.). Tests get **new version numbers**; archive keepers under `_LOCKED-vNN/` when needed. Spread frames = **finals only**, not mock-ups.
+
+### Dial / mock-up tier (pre-viz · flow passes · composition · development)
 
 | Role | Model | Cost | Notes |
 |------|--------|------|-------|
-| **Primary dial** | Klein 9B (`fal-ai/flux-2/klein/9b`) | ~$0.01 | Cheap baseline / control · also source of S1 quality targets |
-| **Favorite mock look** | Qwen 2 Pro `/edit` | ~$0.08 | Detail + edge for mocks |
+| **ONLY mock / development model** | **Qwen 2 Pro `/edit` (v06)** | ~$0.08 | **Mandatory** for all development plates going forward |
 | **Atmosphere ref** | `style-lock-v2.png` (Krea) | — | Always attach |
-| **Quality / lighting ref** | `mockup-quality/S01-approach-*-quality-target.jpg` | — | **Always attach on Qwen mocks** when a beat has a quality target (start with S1 door/hall) |
+| **Quality / lighting ref** | S3 Eyes Met v07 / beat quality targets | — | Prefer current quality bar over Klein dials |
+| ~~Klein 9B dial~~ | retired for development plates | — | Cheap experiments only — **not** development keepers |
 
-**Mock-up dual-lock rule:** Qwen `/edit` mock-ups use **both** `style-lock-v2` (paint atmosphere) **and** the beat’s mock-up quality target (composition + lighting). S1 door target = fuller wreath · tree peek right · presents at base · dramatic rim light on frame.
+**Mock-up dual-lock rule:** Qwen `/edit` uses **style-lock-v2** (paint atmosphere) **and** character G0 refs (within 3-URL cap). Quality bar = S3 Eyes Met v07 unless a beat-specific target is set.
 
-**Quality target provenance:** Best-of chops from `S01-approach/v01` — **Klein 9B** · 1536×768 landscape dial · Dial D2 · flow-pass **keep** 2026-07-21 (`_INDEX/best-of-mockup-2026-07-21.md`).
+**Quality target provenance:** Best-of chops from `S01-approach/v01` — **Klein 9B** · historical only. Current quality bar: **`Media/development/S03-eyes-met/v07/art.png`**.
 
 ### Finals tier (production keepers for the real book)
 
 | Role | Model | Cost | Notes |
 |------|--------|------|-------|
-| **Primary finals** | Nano Banana Pro `/edit` (`fal-ai/gemini-3-pro-image-preview/edit`) | ~$0.15 | **v10 approach**: style-lock-v2 + **santa-G0-v2** + **boy-narrator-G0** (+ face when slots allow) |
+| **Primary finals** | **Nano Banana Pro `/edit`** | ~$0.15 | **FINALS ONLY** — not for mock-up / development |
 | **Alternate finals** | Pure Krea blend (`krea/v2/medium/…`) | ~$0.03 | Atmospheric / emotional spreads where soft watercolor > character micro-detail |
 | **Hero pillars** | GPT Image 2 High 4K | ~$0.40 | **Only** S3 Eyes Met · S12b God Bless (test first; Jon-marked in Flow + `_FLOW-CURRENT`) |
 
@@ -156,14 +168,15 @@ S4 Banana board (archive): `_INDEX/S04-sit-here-comparison-banana-2026-07-22.png
 
 | Decision | Winner |
 |---|---|
-| Dial model | **Klein 9B** (~$0.01) |
-| Mock favorite look | **Qwen 2 Pro /edit** (~$0.08) |
+| Dial / development model | **Qwen 2 Pro /edit v06 ONLY** (~$0.08) — print res |
 | Style lock | **Krea → style-lock-v2** |
 | Santa lock | **santa-G0-v2** (v08 Banana Pro) |
-| Primary finals | **Banana Pro /edit + lock + santa-G0-v2** (~$0.15) |
+| Primary finals | **Banana Pro /edit + lock + G0s** (~$0.15) — FINALS ONLY |
 | Alt finals | **Pure Krea** (~$0.03) atmospheric |
 | Hero finals | **GPT High 4K** pillars only (~$0.40) |
 | Text pages | **FLUX.2 LoRA** @ ~0.35 |
+| Resolution | Singles **2625²** · spreads **5250×2625** + L/R **2625²** (triplet) |
+| File hygiene | **One final PNG** per page — delete intermediates |
 
 ---
 

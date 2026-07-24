@@ -2,6 +2,9 @@
 
 | Date | Note |
 |------|------|
+| 2026-07-23 | **Update docs + Mem0/vault/Mnemosyne + git push + backup:full:** S1–S11 KEEP · S12 v22 Jon PS · back matter Phase 1+2 (p30 keep · p31 Pillow frame · p32|33 SeedVR) · FINALS-CHECKLIST · poem map p30–33 · “God bless.” = S12 R only. |
+| 2026-07-23 | **Back matter audit-first:** p30 PASS · p31 frame-only · p32|33 upscale+frame (no content regen). Quiet-close copy corrected in BOOK-COPY / Flow / book_poem_map. |
+| 2026-07-23 | **S12 God Bless:** consolidated to p26\|27 · Qwen deer-collapse logged · v22 last Qwen test · Jon PS master next. |
 | 2026-07-22 | **Update docs + Mem0/vault/Mnemosyne (evening):** S3 v07 KEEP = quality bar · Boy/Santa wardrobe locks · S2 wardrobe queued · S4 v12 TEXT+IMAGE dial. ReCall/CONTINUE/AGENTS/BOOK-PRODUCTION/ISSUES harvested. |
 | 2026-07-22 | **S3 Eyes Met LOCKED = v07.** Quality bar for all plates (oil warmth · burgundy · open-coat Santa · Boy G0 · fewer gifts later). FLOW keep. Next: S4 eye → S2 wardrobe fix. |
 | 2026-07-22 | **P01 Title KEEP reaffirmed = v16.** Tree-full / model dials v17–v22 kept as tests only — none beat original. Dashboard `development/P01-title/art.png` ← v16. FLOW p01 keep · development. **Next: S2 Threshold** (`S02-threshold/v03` keep-leaning — Jon eye). |

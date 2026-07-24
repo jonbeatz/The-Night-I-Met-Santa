@@ -1,42 +1,39 @@
 # ReCall.md — The-Night-I-Met-Santa
 
 ## Current focus
-**PHASE: S4 Sit Here dial** after S3 quality-bar lock.  
-**Quality bar (2026-07-22):** `S03-eyes-met/v07` KEEP — oil warmth · burgundy · fire/tree gold · wide room · open-coat Santa · Boy G0 · eye contact when story needs it · prefer **fewer gifts** than S3 clutter. Doorway spill language still from **S2 v05**.  
-**P01 Title KEEP:** `development/P01-title/` ← **v16**.  
-**About/Dedication KEEP:** `P02-about-spread/v04`.  
-**S1 KEEP:** p4 `v13` + p5 `v14`.  
-**S2 KEEP:** `S02-threshold/v05` · **wardrobe fix queued** (open-coat Santa).  
-**S3 KEEP:** `S03-eyes-met/v07` · **QUALITY BAR** · pages 8|9 done.  
-**S4:** `S04-sit-here/v12` TEXT+IMAGE · **working** (Jon eye).  
-**Media three-tier:** `approved/` = characters + style-lock only · `development/` = current-best · `finals/` after InDesign.  
+**PHASE: S12 God Bless PS master** (Jon) + back-matter ready + **FINALS-CHECKLIST** gate.  
+**Quality bar:** `S03-eyes-met/v07` KEEP — oil warmth · burgundy · open-coat Santa · Boy G0 · prefer fewer gifts.  
+**Story keeps (development/):** P01 v16 · P02 v04 · S1 v13|v14 · **S2 v06** open-coat · **S3 v07** · **S4 v13** · S5 v01 · S6 v04|v03 · S7 v03 · S8 v09 · S9 v06|v05 · S10 v02 · S11 v01.  
+**S12:** `S12-god-bless/v22` **working** — Jon Photoshopping nine-deer + open-coat master; stop burning Qwen for deer count.  
+**Back matter:** p30 KEEP · p31 Jack framed 2625 · p32|33 SeedVR+cream working (Jon eye).  
 **SoT:** `_FLOW-CURRENT.json` · Always-open 4: Flow v2 · Master Dock · IMAGE-LANE-v2 · AGENT-RUNBOOK  
-**Character locks:** Boy G0 (full+face) · Santa G0 v2 / santa-G0 (**open coat** · striped shirt · brown suspenders **over shirt**). **Casewrap pastedowns:** solid burgundy.
+**Pre-finals gate:** `.cursor/docs/FINALS-CHECKLIST.md`  
+**Character locks:** Boy G0 · Santa G0 v2 (**open coat** · striped shirt · suspenders **over shirt**) · Jack portrait · style-lock-v2.  
+**Casewrap pastedowns:** solid burgundy.
 
 ## Birthday deadline
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-22 (evening) — S3 v07 KEEP quality bar · Boy/Santa wardrobe locks · S4 v12 dial · S2 wardrobe queued.
+2026-07-23 — Back matter Phase 1+2 · FINALS-CHECKLIST · S12 = p26|27 only · “God bless.” on S12 R not p32.
 
 ## Where to continue
-1. **S4 Sit Here v12** — Jon eye on L + R (`development/S04-sit-here/v12/`) — keep / lean / reject (L may need quieter mistletoe-only dial)
-2. **S2 wardrobe fix** (queued) — open-coat Santa on v05 composition
-3. Continue story beats under S3 v07 quality bar (fewer gifts)
-4. InDesign when enough `development/` keeps exist for PSD/MOCK-TYPE
+1. **Jon finishes S12 PS master** → swap FLOW primary · re-check open coat + 9 deer + “God bless.” sky under North Star
+2. **Jon eye p32|33** Quiet Close → flip FLOW `keep`
+3. Phase 3: Cover/P01 print-size SeedVR · Banana regenerates · spine/wrap docs
+4. InDesign when enough keeps for PSD/MOCK-TYPE (P01 first production unit)
 
-## Reference (new this session)
-- **POEM-IMAGE-PROMPT-DOCK.md** — alternate poem↔page↔prompt dock (review)
-- **PAGE-BUILD-WORKFLOW.md** — image → PSD → InDesign creative loop (living)
-- **BOOK-PAGE-WORKFLOW.md** — authoritative page/poem/image map (draft)
-- **Photoshop UXP MCP:** `tools/layout-mcp/PHOTOSHOP-SETUP.md` — LIVE; COM MCPs skip
-- **Adobe CC MCP watchlist:** `.cursor/docs/ADOBE-CC-MCP-GUIDE.md`
-- **ArcRift:** fleet `TOOLS-WATCHLIST` — C (74) WATCH record; do not install (Mem0/Mnemosyne primary)
+## Reference (this session)
+- **FINALS-CHECKLIST.md** — HIGH/MED/LOW audit of all FLOW plates
+- **book_poem_map.py** — includes P-thank-you / P-author / P-quiet-close
+- Frame refs: `Media/approved/style-refs/frame-reference.png` · `spread-frame-reference.png`
+- S12 consolidated folder only: `Media/development/S12-god-bless/` (S12b merged)
 
 ## System of record
 | Doc | Use |
 |-----|-----|
-| **PAGE-BUILD-WORKFLOW.md** | Per-page creative loop · mocks · RECIPE · MOCK-TYPE · tab hygiene |
+| **FINALS-CHECKLIST.md** | Pre-Banana / pre-InDesign audit gate |
+| **PAGE-BUILD-WORKFLOW.md** | Per-page creative loop · mocks · RECIPE · MOCK-TYPE |
 | **BOOK-PAGE-WORKFLOW.md** | Full interior map — poem · art · filenames · matter |
 | **BOOK-PLAYBOOK.md** (repo root) | Future-book master |
 | **BOOK-PRODUCTION-SYSTEM.md** | Living ops for *this* title |
@@ -57,12 +54,12 @@
 |------|--------|
 | Poem | `Transcription/poem-clean.txt` |
 | **Approved** | **`Media/approved/`** |
-| Cover LOCKED | `Media/approved/covers/cover-front.png` (beige-v2) |
+| Cover LOCKED | `Media/development/Cover/art.png` (beige-v2 · print size later) |
 | Boy G0 | `Media/approved/characters/boy-narrator-G0.png` (+ face) |
 | Santa G0 v2 | `Media/approved/characters/santa-G0-v2.png` (+ standing `santa-G0.png`) |
-| Jack portrait | `Media/approved/characters/jack-farrell-portrait.png` |
+| Jack portrait | `Media/approved/characters/jack-farrell-portrait.png` (source) · framed `Media/development/P-author/art.png` |
 | Quality bar | `Media/development/S03-eyes-met/v07/art.png` |
-| S2 KEEP | `Media/development/S02-threshold/art.png` (v05 · wardrobe queued) |
+| S12 working | `Media/development/S12-god-bless/art.png` (v22) |
 | Style lock | `Media/approved/style-refs/style-lock-v2.png` |
 | **Photoshop working** | **`Xtraz/Adobe-Photoshop/`** |
 | Photoshop UXP setup | `tools/layout-mcp/PHOTOSHOP-SETUP.md` |
@@ -74,17 +71,23 @@
 - **Image lanes:** dial **Klein 9B** → **Qwen** alt → Klein **4B** light → **finals Gemini/Banana**
 - **Image providers:** **fal.ai first** · **OpenRouter second**
 - **Cover:** beige-v2 · oatmeal holly PJs · **Santa face HIDDEN** on cover
-- **Santa wardrobe (2026-07-22):** open red coat · cream striped shirt · brown suspenders **over shirt** (not over coat) — prior “suspenders over coat” **retired**
-- **Boy G0 (2026-07-22):** oatmeal/taupe holly · visible berries · red trim/buttons · brown eyes · golden-highlight hair — attach full + face refs
-- **Quality bar:** S3 Eyes Met **v07** · prefer fewer gifts on later plates · burgundy story walls + cream text clouds
+- **Santa wardrobe:** open red coat · cream striped shirt · brown suspenders **over shirt**
+- **Boy G0:** oatmeal/taupe holly · visible berries · red trim/buttons · brown eyes
+- **Quality bar:** S3 Eyes Met **v07**
+- **S12 = p26|27 only** · p28|29 merged/absorbed
+- **Poem “God bless.”** on **S12 R under North Star** — **not** on p32
+- **p32** = *Merry Christmas.* only · **p33** = *May the magic of this night…*
 - **Text on art:** InDesign live Cormorant + cloud PNG — never bake poem into art
 - **Page-by-page** only; Jon approves each; never call “final” until print path
 - **Casewrap pastedowns:** solid burgundy
 - **Media three-tier:** approved / development / finals
+- **Spread frames:** finals only (not on development keepers) · singles cream vignette = FRAME ON for text/matter pages
 
 ## Do not
-- Regenerate locked G0s / style-lock / cover without Jon
+- Regenerate locked G0s / style-lock / cover / Jack portrait without Jon
+- Burn more Qwen gens for S12 nine-deer until Jon PS master lands
 - Say “feathered” for paint edges (draws feathers)
 - Exceed 3 `image_urls` on Qwen Pro Edit
 - Spend GPT High 4K except `gpt_pillar: true` beats
 - Auto-start long-running servers unless asked
+- Put “God bless.” on p32 (belongs on S12 R)

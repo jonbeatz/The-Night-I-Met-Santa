@@ -1,0 +1,19 @@
+{
+  "version": "v02",
+  "side": "left",
+  "layout": "text_plus_image",
+  "left": {
+    "url": "https://v3b.fal.media/files/b/0aa35e4b/KCHzcmPFdXWDTGnjzMcRL_AS6XjqN7.png",
+    "seed": 2038430340,
+    "request_id": "019f8d93-62ef-7420-85e9-d2a5c0b4c641"
+  },
+  "right": {
+    "locked": "v01",
+    "path": "Media\\development\\S06-cocoa\\v01\\art-right.png"
+  },
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "refs": [
+    "E-back-village-snow.png",
+    "p28-family-hearth.png"
+  ]
+}

@@ -11,17 +11,87 @@
 
 ---
 
+## 🎨 Design System
+
+### HARD RULES — LOCKED 2026-07-23
+
+1. **MODEL LOCK** — **Qwen 2 Pro Edit** (`fal-ai/qwen-image-2/pro/edit`, v06 look class) is the **ONLY** model for **mock-up / development** tier generation. **Nano Banana Pro is for FINALS only.** Print resolution does **not** justify switching models — stay on Qwen for development plates.
+2. **RESOLUTION LOCK** — ALL **single pages** generate at **2625 × 2625**. ALL **full spreads** generate at **5250 × 2625**. **No low-res dials** for `Media/development/` images.
+3. **SPREAD OUTPUT TRIPLET (automatic — never skip)** — Every spread generation (mock-up **and** final) must produce **three** files in one pass:
+   | File | Size | Use |
+   |------|------|-----|
+   | `art.png` | **5250 × 2625** | Full spread · review / flipbook |
+   | `art-left.png` | **2625 × 2625** | Left page · InDesign |
+   | `art-right.png` | **2625 × 2625** | Right page · InDesign |
+   Applies to **all** spreads: S1–S12, P02 About, and any full-spread layout. Split from the master on the vertical midline. **Single pages** only need `art.png` at **2625 × 2625**.
+4. **NO DUPLICATES** — Do not keep parallel “almost final” PNGs, Banana drafts, Lanczos/SeedVR temps, or `*-banana-2k*` beside keepers. The **only** allowed PNGs for a spread unit are the **triplet** above (plus optional `_LOCKED-vNN/` archive). Singles: `art.png` only.
+5. **KEEPER HYGIENE** — Never overwrite a **LOCKED KEEP** for a test. Tests get **new version numbers**. Spread frames = **finals only**, not mock-ups.
+
+### Resolution Lock (ALL development + print plates) — LOCKED 2026-07-22 / reinforced 2026-07-23
+
+| Form | Exact pixels | Notes |
+|------|----------------|-------|
+| **Single page** (incl. TEXT pages, title, thank-you, quiet close) | **2625 × 2625** | Lulu 8.5″ + 0.125″ bleed @ 300 DPI |
+| **Full spread** (seamless masters) | **5250 × 2625** | Always also write `art-left.png` + `art-right.png` at **2625²** (triplet rule) |
+
+**Rules:**
+- Development current-best art is **print-sized** — no 512² / 1024 dials as keepers.
+- Mock-up tier = **Qwen 2 Pro Edit only**. If the API returns below target, **upscale to exact 2625² / 5250×2625**, save the final plate, **delete** the intermediate — do **not** switch to Banana for development.
+- Boards may show smaller previews; source files under `Media/development/` must be full res.
+
+### Frame Style — Singles & Text Pages
+
+Every **single page** and **text page** uses the soft watercolor vignette dissolve technique:
+
+- Art is richest / most detailed at the center (or primary subject zone)
+- Gently fades and dissolves to cream/ivory at the page edges
+- **No** hard borders · **No** geometric frames · **No** sharp edges
+- The page **breathes** — one cohesive watercolor painting, not an illustration dropped on paper
+- **Applies to:** P01 title · all TEXT + IMAGE left pages (S4, S6, S10) · Thank You page · Quiet Close pages
+- **Reference:** `Media/approved/style-refs/frame-reference.png` (fireplace + tree room dissolve — from `Images/styles3/p28-family-hearth.png`)
+
+**Hard append (when prompting these pages):**
+```
+STANDARD FRAME TREATMENT: soft watercolor vignette dissolve — richest detail toward center, gently bleeds and fades to cream/ivory at page edges; no hard borders, no geometric frames, no sharp edges; one cohesive breathing watercolor page, not an illustration dropped on paper. Match frame-reference.png dissolve technique.
+```
+
+### Frame Style — Full Spreads (LOCKED 2026-07-23)
+
+**Reference:** `Images/styles2/spread-Frame-Style1.png` → canonical `Media/approved/style-refs/spread-frame-reference.png`
+
+**When to apply:** **FINALS only** (post-approval polish). **Do not** apply spread frames on mock-up / development keepers.
+
+**Treatment:**
+- Gentle **rounded vignette** across the whole 5250×2625 plate
+- Edges dissolve / fade into **warm cream**; corners softly rounded
+- Transition is a **watercolor bleed** — cloud-like, not a hard rectangle
+- Prefer **Pillow composite** on a locked composition (exact pixels) over regenerating
+
+**Hard append / shorthand (finals):** `standard spread frame treatment`
+
+### Keeper hygiene (LOCKED 2026-07-23)
+
+- **Never overwrite a locked KEEP** to run a test (frame pass, color dial, etc.).
+- Tests always get a **new version number** (`vN+1`). Keepers stay untouched under `art.png` / `_LOCKED-vNN/`.
+- Rejected tests are deleted; the locked plate remains the development current.
+---
+
 ## Quick Reference
 
 | What | Where |
 |------|-------|
 | **Poem text** | `Transcription/poem-clean.txt` |
 | **Page map** | `BOOK-PAGE-WORKFLOW.md` (page numbers, filenames) — **locked map SoT** |
+| **Book Flow v2** | `JON-BOOK-FLOW-v2-FINAL.md` (layouts · poem · camera) |
 | **Build loop** | `PAGE-BUILD-WORKFLOW.md` (PS → InDesign) |
 | **Style master** | `ILLUSTRATION-STYLE.md` |
 | **Image lanes** | `IMAGE-LANE-PROMPTS.md` (Klein D2 vs finals) |
 | **Print specs** | `AGENT-RUNBOOK.md` §4 (Lulu 8.5×8.5", sRGB, 0.125" bleed) |
 | **Approved art** | `Media/approved/INDEX.md` |
+| **Frame dissolve ref (singles)** | `Media/approved/style-refs/frame-reference.png` |
+| **Spread frame ref** | `Media/approved/style-refs/spread-frame-reference.png` (from `Images/styles2/spread-Frame-Style1.png`) |
+| **standard frame treatment** | Soft vignette dissolve → cream (singles) · **standard spread frame treatment** on full spreads |
+| **Resolution lock** | Singles **2625²** · spreads **5250×2625** + **art-left/art-right 2625²** (triplet · never skip) |
 | **Page count** | **35–40** locked · working target **36** (per BOOK-PAGE-WORKFLOW) |
 
 ---
@@ -58,6 +128,12 @@ KLEIN STYLE (mockups only): deep shadowed hallway vs warm room, strong punchy co
 seamless continuous two-page storybook spread across the full width, one unbroken painted scene through the center, NO fake book gutter, NO vertical fold line, NO center spine shadow, NO page-split seam, NO mockup binding crease down the middle
 ```
 
+### Standard Frame Treatment (every SINGLE / TEXT page)
+Shorthand: write **`standard frame treatment`** in the prompt — means the exact dissolve technique in **Design System → Frame Style**. Attach `frame-reference.png` when slots allow.
+```
+STANDARD FRAME TREATMENT: soft watercolor vignette dissolve — richest detail toward center, gently bleeds and fades to cream/ivory at page edges; no hard borders, no geometric frames, no sharp edges; one cohesive breathing watercolor page, not an illustration dropped on paper. Match frame-reference.png dissolve technique.
+```
+
 ---
 
 ## 🔒 Continuity Locks (Applies to Every Plate)
@@ -70,6 +146,7 @@ seamless continuous two-page storybook spread across the full width, one unbroke
 | **Text in art** | NEVER bake poem words into the illustration. No readable words, logos, handwriting on clothes/notes |
 | **Gutter** | Seamless — no fold line/shadow on spread finals (orange guide = PSD only) |
 | **Quiet zones** | Each spread specifies where text will go — keep those areas soft/clear |
+| **Frame (singles / text pages)** | **standard frame treatment** — soft vignette dissolve to cream · ref `frame-reference.png` |
 | **Hard append (Boy)** | See **Boy G0 lock** — paste full block on every gen with the boy |
 | **Hard append (Santa)** | See **Santa wardrobe lock** — paste full block on every gen with Santa |
 | **Hard append (S11 Wish)** | Also: `NO readable letters, NO text, NO handwriting anywhere in the image.` |
@@ -359,54 +436,47 @@ Intimate Christmas fireside scene: Santa with a steaming mug of cocoa, warm smil
 
 ---
 
-## S7 — Proof · p18|19 · SPREAD (can go SINGLE if needed)
+## S7 — Proof · p16|17 · SPREAD
 
-| | LEFT (p18) | RIGHT (p19) |
+| | LEFT (p16) | RIGHT (p17) |
 |---|---|---|
 | **Poem** | When I heard all the noise up in the roof, / it hit me right then. I needed some proof. | Where can I go? What can I get? / I know, a photo. That's my best bet. |
-| **Camera** | Child looking up — ceiling/roof cue · urgency | Idea spark · era-neutral **camera** on table or in hands — **not phone UI** |
-| **Quiet zones** | Bottom left | Bottom right |
+| **Camera** | Wide room establish — tree + fireplace · burgundy walls · warm firelight | Boy look-up · urgency · era-neutral classic camera · Santa half-gone optional |
+| **Quiet zones** | Soft outer corners | Soft outer corners |
+| **Model** | **Qwen 2 Pro Edit v06** · **5250 × 2625** |
 
 ### Primary Prompt (spread)
 ```
-Wide Christmas living-room spread: child looking sharply upward toward the ceiling as if hearing reindeer noise on the roof, startled playful urgency; continuous scene shows a plan forming — a simple classic camera resting nearby as the idea for proof (era-neutral camera body, NOT a modern phone UI, no glowing screen icons), warm interior light, Santa may be partly visible or already shifting away. Leave quiet bottom bands for later text. Dynamic look-up pose, not a static standing portrait.
-```
-+ Dial D2 + spread add-on
+Wide seamless Christmas living-room storybook SPREAD 5250x2625, rich oil-painting / painted gouache quality matching S3 Eyes Met quality bar, continuous scene NO fake gutter NO spine shadow.
 
-### Backup Prompt (strong single if spread feels thin)
-```
-Christmas living room scene: child looking urgently upward toward the ceiling, reindeer noise implied, a vintage camera on a nearby side table catching the child's eye — the idea dawning (classic camera, NOT phone UI). Single strong vertical composition. Warm interior, Christmas tree glow. Leave quiet area for text.
-```
-+ Dial D2 · FRAME ON (single)
+LEFT half (room establish): full cozy Christmas living room — decorated tree with warm glow, stone fireplace with firelight, burgundy walls, gifts without overcrowding, warm golden interior light.
 
-### Optional SINGLE
-If Jon decides this works better as one page: one 2625² plate — child look-up + camera idea, quiet bottom for all four lines.
+RIGHT half (realization): boy looking sharply UP toward the ceiling with surprise and urgency — he heard reindeer on the roof; the idea strikes — he needs proof. Era-neutral classic camera body in his hand or resting on a nearby table (film/vintage camera, NOT a phone, NOT a modern device, NO screen UI, NO glowing icons). Holly pajamas. Santa may be partly visible shifting away into shadow or already mostly gone — the moment is about the boy's realization, not a Santa hero portrait.
 
-**Temp:** `art-S07-proof-SPREAD-5250x2625.png` (or `art-P18-proof-2625.png` if single)
+Seamless continuous lighting and floor across the spread.
+```
++ HARD wardrobe APPEND (Boy G0 + Santa G0 if Santa visible) + style-lock language
+
+**Temp:** `Media/development/S07-proof/art.png` (5250×2625)
 
 ---
 
-## S8 — Gone · p20|21 · SPREAD
+## S8 — Gone · p18|19 · SPREAD
 
-| | LEFT (p20) | RIGHT (p21) |
+| | LEFT (p18) | RIGHT (p19) |
 |---|---|---|
 | **Poem** | I flew out the door and was back in a flash. / But oh no, the hour had already passed. | And from the noise on top of the roof / I realized that I was still without proof. |
-| **Camera** | Empty room · vacant gift spot · soft afterimage of where Santa was | Child returned with camera · door ajar · roof noise as ceiling attention |
-| **Quiet zones** | Upper left | Upper right |
+| **Camera** | Boy + camera in hand (strap on neck) · fireplace · door ajar · look-up (missed him) | Tree + gifts · empty room · Santa gone |
+| **Quiet zones** | Soft outer corners | Soft outer corners |
+| **Model** | **Qwen 2 Pro Edit v06** · **5250 × 2625** |
 
 ### Primary Prompt
 ```
-Wide Christmas living-room spread of absence: empty spot among gifts where Santa sat, wrapping paper still, tree glowing; child rushing back holding a camera, disappointment and urgency, door still ajar behind, suggestion of noise from the roof by the child's upward glance. No Santa figure present. Leave quiet upper areas for later text. Emphasize empty space and motion — not a posed duo.
+Wide seamless Christmas living-room spread: LEFT — boy standing before fireplace holding a vintage film camera (strap around neck), looking nervously up toward the ceiling — he just missed Santa; door ajar behind him. RIGHT — continuous empty room with Christmas tree, gifts, and ribbons — Santa's absence felt. Burgundy walls, warm firelight and tree glow. NO Santa figure. NO skylight. NO phone.
 ```
-+ Dial D2 + spread add-on
++ HARD Boy G0 wardrobe append + S7 room continuity
 
-### Backup Prompt (afterimage emphasis)
-```
-Christmas room spread: the warm space where Santa was sitting now empty — just scattered ribbons and a still-warm mug; child has just rushed back in holding a camera, face showing they missed him; the room feels full of his recent presence but he's gone. Soft melancholy with Christmas warmth.
-```
-+ Dial D2 + spread add-on
-
-**Temp:** `art-S08-gone-SPREAD-5250x2625.png`
+**Temp:** `Media/development/S08-gone/art.png` (5250×2625)
 
 ---
 

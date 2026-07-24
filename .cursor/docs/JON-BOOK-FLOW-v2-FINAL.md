@@ -226,10 +226,10 @@ Boy: oatmeal/taupe holly pajamas ONLY. NOT a red coat. NOT a Santa suit. NOT a S
 
 | | LEFT (p32) | RIGHT (p33) |
 |---|---|---|
-| **Text** | *God bless. / Merry Christmas.* | *May the magic of this night stay in your heart, long after the season has gone.* |
+| **Text** | *Merry Christmas.* only | *May the magic of this night stay in your heart, long after the season has gone.* |
 | **Image** | Soft snow / empty chair peace | Matching close vignette — ornament, gentle glow |
 | **Frame** | FRAME ON — both pages | |
-| **Notes** | Optional. Can split lines L/R or keep all on one side with ornament opposite. Cut if trimming page count. | |
+| **Notes** | **"God bless." is on S12 R (p27) under the North Star — not on p32.** Cut if trimming page count. | |
 
 ---
 

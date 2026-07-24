@@ -25,8 +25,10 @@ Everything else is **reference on demand** (do not auto-load): `PAGE-BUILD-WORKF
 - **Dial:** Klein 9B primary · Qwen 2 Pro `/edit` favorite mock look · always attach style-lock-v2 (+ Boy/Santa G0 when characters present)
 - **Comparison boards:** one board per decision (Klein | new | favorite). Retroactive S04 multi-boards = archive.
 - **Quality bar (2026-07-22):** `Media/development/S03-eyes-met/v07/art.png` — prefer fewer gifts later; doorway spill from S2 v05
-- **Forever locks (approved/):** boy G0 · **santa-G0-v2** · Jack portrait · style-lock-v2
-- **Story keeps (development/):** P01 v16 · P02 v04 · S1 v13|v14 · S2 v05 · **S3 v07** · S4 v12 dial
+- **Forever locks (approved/):** boy G0 · **santa-G0-v2** · Jack portrait · style-lock-v2 · frame refs
+- **Story keeps (development/):** P01 v16 · P02 v04 · S1 v13|v14 · **S2 v06** · **S3 v07** · **S4 v13** · S5–S11 KEEP · **S12 v22 working** (Jon PS)
+- **Back matter:** p30 KEEP · p31 framed (`P-author`) · p32|33 working · **"God bless." on S12 R only**
+- **Pre-finals gate:** `.cursor/docs/FINALS-CHECKLIST.md`
 - **Current-best page art:** `Media/development/` (not Lulu-final)
 - **Layout:** InDesign UXP · Photoshop adobepy LIVE
 

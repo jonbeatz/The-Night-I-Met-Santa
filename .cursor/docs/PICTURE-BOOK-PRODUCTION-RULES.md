@@ -32,10 +32,24 @@ Maps every page/beat → **path · version · model · status · decided_by · d
 Label: model · version · cost · resolution · strengths.  
 Save: `Media/generated/mocks/{unit}/_INDEX/{unit}-comparison-{YYYY-MM-DD}.png`
 
+**Poem captions (LOCKED 2026-07-22):** every board must show Flow v2 script text under each side.
+
+| Layout | Footer format |
+|--------|----------------|
+| LEFT/RIGHT spread or split | `LEFT pN — "poem…"` · `RIGHT pN — "poem…"` |
+| Single page | `pN — "poem / title text…"` |
+| TEXT + IMAGE | `LEFT pN — "poem…"` · `RIGHT pN — "poem…"` or `RIGHT pN — IMAGE — "context…"` when Flow says no text |
+
+**Glanceable tech cue (LOCKED 2026-07-22):** one quiet line under the title — model · size · quality bar.  
+Example: `Qwen 2 Pro /edit · 2048×1024 · S3 v07 quality bar`  
+No seeds / request IDs on the board (those stay in RECIPE.md).
+
+Poem source: `JON-BOOK-FLOW-v2-FINAL.md` via `scripts/book_poem_map.py`.  
+Board helpers: `scripts/book_review_board.py` (`text_image_board` · `seamless_board` · `split_board` · `tech=`).  
+Three-panel model tests: `scripts/book-comparison-board.py` (still add poem via `book_poem_map` when the unit is a story beat).
+
 **Going forward:** one prompt → **one board** → one lock.  
 Multi-round catch-up boards are **archive**, not active decision noise.
-
-**Helper:** `scripts/book-comparison-board.py`
 
 ---
 

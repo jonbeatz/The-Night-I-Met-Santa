@@ -67,11 +67,14 @@ God bless.
 
 ---
 
-## Quiet last page — ornament close (locked)
+## Quiet last pages — ornament close (locked · corrected 2026-07-23)
 
-> God bless.  
-> Merry Christmas.  
-> May the magic of this night stay in your heart, long after the season has gone.
+Poem closing **"God bless."** is on **S12 R (p27)** under the North Star — not here.
+
+| Page | InDesign text only |
+|------|--------------------|
+| **p32** | Merry Christmas. |
+| **p33** | May the magic of this night stay in your heart, long after the season has gone. |
 
 ---
 
