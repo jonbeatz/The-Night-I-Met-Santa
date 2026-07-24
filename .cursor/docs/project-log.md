@@ -2,6 +2,7 @@
 
 | Date | Note |
 |------|------|
+| 2026-07-23 | **End Project:** Leave-off notes in ReCall + CONTINUE. Tomorrow = Jon review 7 wrap/padding plates → S12 PS land → p32|33 eye. Git leave-off commit + session stop. |
 | 2026-07-23 | **Update docs + Mem0/vault/Mnemosyne + git push:** Playbook gaps filled — back cover v02 · pastedown burgundy · p34–36 · Cover/P01 art-2625 · p31 closer-zoom FAVORITE · FLOW extras. Jon review next. |
 | 2026-07-23 | **Update docs + Mem0/vault/Mnemosyne + git push + backup:full:** S1–S11 KEEP · S12 v22 Jon PS · back matter Phase 1+2 (p30 keep · p31 Pillow frame · p32|33 SeedVR) · FINALS-CHECKLIST · poem map p30–33 · “God bless.” = S12 R only. |
 | 2026-07-23 | **Back matter audit-first:** p30 PASS · p31 frame-only · p32|33 upscale+frame (no content regen). Quiet-close copy corrected in BOOK-COPY / Flow / book_poem_map. |

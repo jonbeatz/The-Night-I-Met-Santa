@@ -6,13 +6,22 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-23 late)
+## One-line status (2026-07-23 night — End Project)
 
 **Story S1–S11 KEEP** · **S12 v22 working** (Jon PS master) · **Back matter:** p30 KEEP · **p31 closer-zoom FAVORITE** · p32|33 upscaled  
 **Playbook gaps filled (working):** back cover **v02** · pastedown burgundy · optional **p34–36** · Cover/P01 **art-2625** print-scale (KEEP `art.png` untouched)  
 **FINALS-CHECKLIST** · **“God bless.” = S12 R only** · SoT `_FLOW-CURRENT.json`  
-**NEXT:** Jon review remaining plates → land S12 PS → eye p32|33 → Banana/InDesign.  
 **p31 favorite:** `Media/development/P-author/art.png` ← closer-zoom.
+
+### Leave-off → start tomorrow
+1. **Open Project** → read this file + `ReCall.md`.
+2. **Review these 7 files** (keep / iterate / cut p34–36):  
+   `Media/development/Cover/art-back.png` · `pastedown-burgundy.png` · `art-2625.png` · `P01-title/art-2625.png` · `P34-padding/art.png` · `P35-colophon/art.png` · `P36-blank/art.png`
+3. **Finish or land S12 PS** (open coat + 9 deer + “God bless.” under North Star) — no more Qwen deer burns.
+4. **Eye p32|33** → FLOW `keep`.
+5. Only then Banana / InDesign (P01 first).
+
+**Proof order window:** ~July 25–28 · Gift **2026-08-15**.
 
 ---
 
