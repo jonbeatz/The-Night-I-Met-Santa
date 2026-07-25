@@ -10,7 +10,7 @@
 6. SoT plates: `Media/generated/mocks/_FLOW-CURRENT.json`
 
 ## Current focus
-**PHASE: 2026-07-24** — deep audit fixes landed; still waiting on Jon review + S12 PS.  
+**PHASE: End of day 2026-07-24** — leave-off locked below. Resume with Jon review + S12 PS.  
 **Quality bar:** `S03-eyes-met/v07` KEEP — also `Media/development/_quality-targets/S03-eyes-met-v07-quality-bar.jpg` (compare only; PNG SoT).  
 **Lock record (LOCKED 2026-07-24):** every keep unit needs **both** `Media/development/{unit}/RECIPE.md` + `meta.json` — verify before saying “locked.” Fleet: PICTURE-BOOK-PRODUCTION-RULES **§6**.  
 **Print-scale:** Cover + P01 `art.png` now **2625²** (promoted from art-2625; backups kept).  
@@ -27,20 +27,21 @@
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
 
 ## Last updated
-2026-07-24 — Deep audit fix: Cover/P01 @2625 · quiet-close triplet · spine placeholder · FLOW S07 paths + P01 verdict · styles1 README.
+2026-07-24 night — **End Project.** Deep audit + docs pushed (`aac3917`). Leave-off for resume.
 
-## Where we left off (2026-07-24)
-- Deep audit Phase 1–3 applied (see project-log). S12 **not** touched.
+## Where we left off (2026-07-24 End Project)
+- Deep audit Phase 1–3 done and committed · S12 **not** touched.
 - Jon has **not** yet graded: back cover v02, pastedown, p34–36, spine (placeholder only).
 - S12 still **Jon’s PS master** (open coat + 9 deer + “God bless.” sky).
 - p32|33 still need **Jon eye** → flip FLOW `keep`.
 
 ## Start here next
-1. **Jon review** the wrap/padding paths in CONTINUE-HERE → keep / iterate / cut optional p34–36.
-2. **Land S12 PS plate** when ready → update FLOW · write RECIPE+meta · re-check coat + deer + North Star text zone.
-3. **Eye p32|33** → keep flip + RECIPE+meta.
-4. Lock page count → **Lulu spine calculator** → replace `art-spine.png` placeholder in casewrap.
-5. Then Phase 3 Banana / InDesign (P01 first) — don’t start until reviews above are clear.
+1. **Open Project** → read CONTINUE-HERE + this ReCall.
+2. **Jon review** wrap/padding paths in CONTINUE-HERE → keep / iterate / cut optional p34–36.
+3. **Land S12 PS plate** when ready → update FLOW · write RECIPE+meta · re-check coat + deer + North Star text zone.
+4. **Eye p32|33** → keep flip + RECIPE+meta.
+5. Lock page count → **Lulu spine calculator** → replace `art-spine.png`.
+6. Then Banana / InDesign (P01 first).
 
 ## Reference (this session)
 - **FINALS-CHECKLIST.md** — HIGH/MED/LOW audit of all FLOW plates
