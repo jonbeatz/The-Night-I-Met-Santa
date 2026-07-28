@@ -6,9 +6,9 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-27 night — End Project)
+## One-line status (2026-07-28)
 
-**Story S1–S12 KEEP** · **S12 = v23 LOCKED FINAL** · **text-layout-master.psd** ready (P01 = page 1 on **RIGHT**)  
+**Story S1–S12 KEEP** · **P01 = v25 LOCKED** (page 1 RIGHT · burgundy full-bleed) · **S12 = v23 LOCKED FINAL** · **text-layout-master.psd** ready  
 **Back matter:** p30 KEEP · **p31 closer-zoom FAVORITE** · p32|33 still need Jon eye  
 **Wrap gaps (Jon eye):** back cover **v02** · pastedown · optional **p34–36** · `Cover/art-spine.png` (Lulu width TBD)  
 **FINALS-CHECKLIST** · **“God bless.” = S12 R only** · SoT `_FLOW-CURRENT.json`  
@@ -16,12 +16,10 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ### Leave-off → start next
 1. **Open Project** → read this file + `ReCall.md`.
-2. **Review wrap/padding** (keep / iterate / cut p34–36):  
-   `Cover/art-back.png` · `pastedown-burgundy.png` · `art-spine.png` · `P34-padding` · `P35-colophon` · `P36-blank`
-3. **Eye p32|33** → FLOW `keep` + RECIPE+meta.
-4. Lock page count → **Lulu spine calculator** → replace spine placeholder.
-5. **Type / InDesign** via `Xtraz/Adobe-Photoshop/text-layout-master.psd` (P01 first) — tell Cursor the group/page for poem text.
-6. Banana finals as needed.
+2. **Type P01** (v25 on RIGHT / page 1) in text-layout-master → InDesign live type.
+3. Continue poem type down the script (tell Cursor the group/page).
+4. **Or** wrap/padding review → p32|33 keep → Lulu spine.
+5. Banana finals as needed.
 
 **Proof order window:** ~July 25–28 (tight) · Gift **2026-08-15**.
 
@@ -112,7 +110,8 @@ Follow **`AGENT-RUNBOOK.md`** cold flow: CC Desktop → UDT + InDesign + bridges
 
 ### 4. First production unit = **P01 Title** (when ready for type)
 1. Duplicate `single-page-template.psd` → `p01-title.psd` (Jon first Save As if needed).
-2. Place `Media/development/P01-title/art.png` (v16) on **ART** · **close source PNG**.
+2. Place `Media/development/P01-title/art.png` (**v25 KEEP**) on **ART** · **close source PNG**.  
+   Opening spread: art on **RIGHT = page 1**; left = cream endpaper.
 3. MOCK-TYPE in **upper cream** (Cinzel title / Cormorant author).
 4. Cloud if needed → chops → InDesign live type (same pt).
 

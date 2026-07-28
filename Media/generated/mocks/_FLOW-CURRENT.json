@@ -36,19 +36,20 @@
       "id": "p01",
       "page": "1",
       "beat": "Title",
-      "caption": "p1 · Title · P01 v16 KEEP (winter window + gold page frame)",
+      "caption": "p1 · Title · P01 v25 KEEP (centered window · full-bleed burgundy · RIGHT page)",
       "path": "Media/development/P01-title/art.png",
-      "version": "v16",
-      "model": "Pillow structure + Qwen 2 Pro /edit (polish rejected — Pillow lock)",
+      "version": "v25",
+      "model": "fal-ai/qwen-image-2/pro/edit",
       "status": "keep",
       "decided_by": "Jon",
-      "date": "2026-07-24",
-      "notes": "Art-only KEEP · warm gold page-edge whisper · clean cream center · window+tree · moon/snow/sleigh · open cream above/below for live type. art.png promoted to 2625 from art-2625 (backup art-2048-backup.png). v17-v22 tests only. NOT Lulu-final until InDesign type.",
+      "date": "2026-07-28",
+      "notes": "Art-only KEEP · page 1 = RIGHT half of opening spread (left = cream endpaper). Full-bleed burgundy #4A0E17 · centered window · tree+gifts right (crop OK). Supersedes v16 (backup art-v16-keep-backup.png). Lineage v23→v24→v25. NOT Lulu-final until InDesign type.",
       "gpt_pillar": false,
       "development_path": "Media/development/P01-title/art.png",
       "tier": "development",
-      "source_mock": "Media/development/P01-title/v16/art.png",
-      "pixel_size": "2625x2625"
+      "source_mock": "Media/development/P01-title/v25/art.png",
+      "pixel_size": "2625x2625",
+      "page_side": "right"
     },
     {
       "id": "p02",
@@ -727,12 +728,12 @@
     {
       "page": "1",
       "beat": "Title",
-      "version": "v16",
-      "model": "Pillow structure + Qwen polish rejected",
+      "version": "v25",
+      "model": "fal-ai/qwen-image-2/pro/edit",
       "status": "keep",
       "decided_by": "Jon",
-      "date": "2026-07-22",
-      "notes": "KEEP · v16 Pillow page frame · NOT v22 Gemini/Banana (tests only) · art.png now 2625 (promoted 2026-07-24)"
+      "date": "2026-07-28",
+      "notes": "KEEP · v25 full-bleed burgundy · centered window · tree right · page 1 = RIGHT of opening (left cream endpaper) · supersedes v16"
     },
     {
       "page": "2|3",

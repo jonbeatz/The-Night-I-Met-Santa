@@ -1,42 +1,49 @@
-# RECIPE — P01-title / v16 KEEP @2625
+# RECIPE — P01-title / v25 KEEP @2625
 
 | Field | Value |
 |-------|--------|
-| **name** | Winter Window — warm gold PAGE-edge frame |
+| **name** | Winter Window — centered · full-bleed burgundy · tree right |
 | **unit** | P01-title |
-| **book page** | 1 · Title + Copyright · SINGLE |
-| **page role** | `single` |
-| **version locked** | **v16** |
-| **date** | 2026-07-24 (resolution promote) · keep decided 2026-07-22 |
-| **lane** | Pillow structure lock (Qwen polish rejected — scene swap) |
-| **service** | fal.ai (scene lineage) + Pillow (page frame) · SeedVR print-scale |
-| **model** | scene from Qwen 2 Pro /edit (v11) · page frame Pillow |
-| **FRAME** | ON — warm gold whisper at **outer page margins** only |
-| **resolution** | **art.png 2625×2625** (promoted from art-2625 2026-07-24) |
-| **seed** | 1271918122 (v16 Qwen attempt; Pillow base kept) |
+| **book page** | **1** · Title + Copyright · **RIGHT page of opening spread** (left = endpaper cream) |
+| **page role** | `single` · opens book on **recto / page 1** |
+| **version locked** | **v25** |
+| **date** | 2026-07-28 |
+| **lane** | Qwen 2 Pro Edit (mock/development) |
+| **service** | fal.ai |
+| **model** | `fal-ai/qwen-image-2/pro/edit` |
+| **FRAME** | **OFF** — full-bleed burgundy `#4A0E17` to edges |
+| **resolution** | **art.png 2625×2625** (LANCZOS from v25 2048; SeedVR optional later) |
+| **seed** | 1723090123 |
 | **status** | **keep** · tier **development** |
 | **dashboard** | `Media/development/P01-title/` |
-| **script_text** | *The Night I Met Santa* · Written by Jack Farrell · First illustrated edition, 2026 · Book design by Jon Farrell (live InDesign — not in art) |
-| **type_zone** | **Upper cream** (title) · **lower cream** (author/copyright) |
-| **source** | `Media/development/P01-title/v16/art.png` |
-| **supersedes** | v22 fireplace+tree provisional (tests only — did not beat v16) |
+| **script_text** | *The Night I Met Santa* · Written by Jack Farrell · First illustrated edition, 2026 · Book design by Jon Farrell (**live InDesign** — not baked in art) |
+| **type_zone** | Title/author on burgundy — light ink / live type in InDesign (no cream mat) |
+| **source** | `Media/development/P01-title/v25/art.png` |
+| **supersedes** | **v16** KEEP (cream walls + gold page frame) — backed up as `art-v16-keep-backup.png` |
+
+## Book opening map (critical)
+
+| Spread half | Content |
+|-------------|---------|
+| **LEFT** (verso / inside front endpaper) | Blank cream `#FDFBF7` — not this art |
+| **RIGHT** (recto / **page 1**) | This plate — title art |
+
+PSD: `Xtraz/Adobe-Photoshop/text-layout-master.psd` group **P01** · plate `_plates/P01.png` places art on **x=2625** (right half).
 
 ## Composition notes
 
-Winter window + tree on clean cream · warm gold page-edge whisper · open cream above/below for live title/copyright.  
-**2026-07-24 deep audit:** `art.png` was 2048² — promoted `art-2625.png` → `art.png`. Backup: `art-2048-backup.png`.
+Full-bleed house burgundy walls · winter window **centered** · Christmas tree + gifts to the **right** (right-edge crop OK) · moon/snow/sleigh in glass · holly on sill. Lineage: v23 burgundy+full tree → v24 no cream frame → **v25** centered window.
 
 ## Art file paths
 
-- `Media/development/P01-title/art.png` — **2625²** (current)
-- `Media/development/P01-title/art-2625.png` — print-scale source
-- `Media/development/P01-title/art-2048-backup.png` — pre-promote backup
-- `Media/development/P01-title/v16/art.png` — locked version source
+- `Media/development/P01-title/art.png` — **2625²** current dashboard (**v25**)
+- `Media/development/P01-title/art-2625.png` — same
+- `Media/development/P01-title/v25/art.png` — locked version source (2048)
+- `Media/development/P01-title/art-v16-keep-backup.png` — previous KEEP
 
 ## Notes
 
-- Jon KEEP 2026-07-22 (reaffirmed after v17–v22 dials — none beat v16).
+- Jon KEEP 2026-07-28.
 - Do **not** promote to `Media/approved/` (characters + style-lock only).
-- Dial history under `v07`…`v22/`; dashboard `art.png` = **v16 content @2625**.
-- Former unit-root filename `art.recipe.md` retired → this `RECIPE.md` (PICTURE-BOOK §6).
-- FLOW: `p01` v16 keep · verdicts aligned to v16 (not v22).
+- FLOW: `p01` → v25 keep · page **"1"**.
+- Poem/copy: `scripts/book_poem_map.py` → `P01-title` · `page: 1`.

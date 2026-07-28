@@ -1,21 +1,33 @@
 {
   "unit": "P01-title",
-  "version": "v16",
+  "version": "v25",
   "status": "keep",
-  "date": "2026-07-24",
-  "model": "Pillow structure lock (+ Qwen polish rejected) @2625",
+  "date": "2026-07-28",
+  "model": "fal-ai/qwen-image-2/pro/edit",
   "resolution": "2625x2625",
-  "seed": 1271918122,
+  "seed": 1723090123,
+  "page": 1,
+  "page_side": "right",
+  "book_opening": {
+    "left": "cream endpaper #FDFBF7 (not art)",
+    "right": "page 1 title art (this plate)"
+  },
   "dimensions": {
     "art.png": [2625, 2625],
     "art-2625.png": [2625, 2625],
-    "art-2048-backup.png": [2048, 2048]
+    "v25_source": [2048, 2048]
   },
   "paths": {
     "art": "Media/development/P01-title/art.png",
     "art_2625": "Media/development/P01-title/art-2625.png",
-    "art_backup_2048": "Media/development/P01-title/art-2048-backup.png",
-    "locked_version": "Media/development/P01-title/v16/art.png"
+    "locked_version": "Media/development/P01-title/v25/art.png",
+    "previous_keep_backup": "Media/development/P01-title/art-v16-keep-backup.png",
+    "psd_plate": "Xtraz/Adobe-Photoshop/text-layout-master/_plates/P01.png"
   },
-  "page": 1
+  "changes_from_v16": [
+    "full-bleed burgundy walls #4A0E17",
+    "no cream page frame",
+    "window centered",
+    "tree + gifts to the right (crop OK)"
+  ]
 }

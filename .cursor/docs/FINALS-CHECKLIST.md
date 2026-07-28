@@ -81,13 +81,13 @@
 | TEXT | OK — no bake on front KEEP |
 | Notes | Also: **back cover v02** `Cover/art-back.png` · **pastedown** `Cover/pastedown-burgundy.png` |
 
-### P01 Title · v16 · `Media/development/P01-title/art.png`
+### P01 Title · **v25** · `Media/development/P01-title/art.png`
 | Check | Result |
 |-------|--------|
-| RES | KEEP still **2048²** · print-scale candidate **`art-2625.png`** (SeedVR) — Jon eye |
-| FRAME | Soft gold/cream edge present (title FRAME ON) |
-| TEXT | OK — open cream for live type |
-| Notes | KEEP art · do not overwrite v16 lock casually |
+| RES | **2625²** dashboard (from v25 2048) · SeedVR optional on finals |
+| FRAME | **OFF** — full-bleed burgundy `#4A0E17` |
+| TEXT | Live InDesign on burgundy · **page 1 = RIGHT** of opening (left cream endpaper) |
+| Notes | KEEP 2026-07-28 · supersedes v16 (`art-v16-keep-backup.png`) · centered window · tree right |
 
 ### S12 God Bless · v22 · **p26\|27** · `Media/development/S12-god-bless/`
 | Check | Result |
@@ -125,7 +125,7 @@ Legend: ✅ pass · ⚠ watch · ❌ fail · — n/a · 🔒 locked keep
 | Cover | Cover | beige-v2 | 🔒 keep | ⚠ 1024 + art-2625 | — | — | — | OK hide | — | ✅ | **H** |
 | Back cover | Back | v02 | working | ✅ 2625 | — | — | — | — | — | ✅ scrub | **M** |
 | Pastedown | Casewrap | v01 | 🔒 keep | ✅ solid | — | — | — | — | — | — | L |
-| P01 Title | 1 | v16 | 🔒 keep | ⚠ 2048 + art-2625 | — | ✅ ON | — | — | — | ✅ | **H** |
+| P01 Title | 1 (RIGHT) | v25 | 🔒 keep | ✅ 2625 | — | OFF (burgundy bleed) | — | — | — | ✅ | **M** |
 | P02 About | 2\|3 | v04 | 🔒 keep | ✅ | ✅ | soft L/R | — | — | ✅ corner | ✅ | L |
 | S1 Approach | 4\|5 | v13\|v14 | 🔒 keep | ✅ | ✅ split | OFF OK | — | boy OK | n/a split | ✅ | L |
 | S2 Threshold | 6\|7 | v06 | 🔒 keep | ✅ | ✅ | OFF OK | ✅ open | ✅ | ✅ | ✅ | L |

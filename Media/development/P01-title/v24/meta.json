@@ -1,0 +1,18 @@
+{
+  "unit": "P01-title",
+  "version": "v24",
+  "date": "2026-07-28",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "seed": 929333600,
+  "status": "dial",
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa415b7/d0Fgb03yWXep7mpyJroby_style-lock-v2.png",
+    "https://v3b.fal.media/files/b/0aa415b8/Zf4Xsa4hFMne3qh5CDgvW_p01-v23-src.png"
+  ],
+  "result_url": "https://v3b.fal.media/files/b/0aa415c7/5OmKMiym6oDlo55GshxUI_nCwMz2gG.png",
+  "changes": [
+    "no cream frame",
+    "full-bleed burgundy walls"
+  ],
+  "source": "v23"
+}

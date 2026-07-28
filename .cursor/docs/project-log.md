@@ -2,6 +2,8 @@
 
 | Date | Note |
 |------|------|
+| 2026-07-28 | **End Project:** P01 v25 locked (page 1 RIGHT). Type path next. Wrap/p32|33/spine still open. |
+| 2026-07-28 | **P01 Title LOCKED = v25.** Full-bleed burgundy · centered window · tree right. Dashboard `art.png` @2625. **Page 1 = RIGHT** of opening (left cream endpaper). FLOW + RECIPE+meta. Supersedes v16 (backup kept). Plate `_plates/P01.png` refreshed. |
 | 2026-07-27 | **End Project:** S12 v23 locked · text-layout-master PSD (5250×2625 groups) · P01 moved to **right** (page 1) / left cream endpaper. Next = wrap review → p32\|33 → Lulu spine → type/InDesign. |
 | 2026-07-27 | **text-layout-master.psd** @ `Xtraz/Adobe-Photoshop/` (+ v2). Guides trim/live/fold · DESIGN-TOKENS strip · poem lookup `book_poem_map.py`. P01 `rightSingle` fix confirmed. |
 | 2026-07-27 | **S12 LOCKED FINAL = v23.** Jon compared Qwen v24 polish and kept v23. Dashboard unchanged (already v23). v24 = rejected alt. |
