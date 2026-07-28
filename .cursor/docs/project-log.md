@@ -2,6 +2,10 @@
 
 | Date | Note |
 |------|------|
+| 2026-07-27 | **End Project:** S12 v23 locked · text-layout-master PSD (5250×2625 groups) · P01 moved to **right** (page 1) / left cream endpaper. Next = wrap review → p32\|33 → Lulu spine → type/InDesign. |
+| 2026-07-27 | **text-layout-master.psd** @ `Xtraz/Adobe-Photoshop/` (+ v2). Guides trim/live/fold · DESIGN-TOKENS strip · poem lookup `book_poem_map.py`. P01 `rightSingle` fix confirmed. |
+| 2026-07-27 | **S12 LOCKED FINAL = v23.** Jon compared Qwen v24 polish and kept v23. Dashboard unchanged (already v23). v24 = rejected alt. |
+| 2026-07-27 | **S12 God Bless LOCKED = v23.** Triplet promoted to dashboard · RECIPE+meta · FLOW locked. Closed-coat outdoor exception vs DESIGN-TOKENS open-coat. Story S1–S12 complete for Banana finals (wrap/matter/spine still pending). |
 | 2026-07-24 | **End Project:** Leave-off in ReCall + CONTINUE. Deep audit already pushed (`aac3917`). Next = Jon wrap review → S12 PS → p32\|33 → Lulu spine calc → Banana/InDesign. |
 | 2026-07-24 | **Update docs + Mem0/vault/Mnemosyne + git push:** Deep audit harvest committed — Cover/P01 `art.png` @2625 · quiet-close triplet · spine placeholder · FLOW S07/verdicts · TELEGRAM deepseek-v4-pro · styles1 README · ReCall resume order. Next: Jon wrap review → S12 PS → p32\|33 → Lulu spine calc. |
 | 2026-07-24 | **Deep audit fix (Phase 1–3):** (1) P-quiet-close stitched `art.png` 5250×2625 from L/R. (2) Cover `art-2625`→`art.png` (backup `art-1024-backup.png`). (3) P01 `art-2625`→`art.png` (backup `art-2048-backup.png`). (4) Cover `art-spine.png` PLACEHOLDER (Lulu width TBD). (5) ReCall session-resume header + AGENTS paths. (6) INDESIGN doc confirmed at `.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md`. (7) TELEGRAM retired `vader-3-flash` → `deepseek-v4-pro`. (8) FLOW S07 `development_path` = L/R files. (9) FLOW verdicts P01→v16 KEEP Pillow (+ About v04 keep). (10) `Images/styles1/README.md` non-authority. (11) P01 `art.recipe.md`→`RECIPE.md`. S12 untouched. |

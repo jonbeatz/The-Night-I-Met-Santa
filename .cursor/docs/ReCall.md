@@ -10,12 +10,13 @@
 6. SoT plates: `Media/generated/mocks/_FLOW-CURRENT.json`
 
 ## Current focus
-**PHASE: End of day 2026-07-24** — leave-off locked below. Resume with Jon review + S12 PS.  
+**PHASE: End of day 2026-07-27** — leave-off locked below.  
 **Quality bar:** `S03-eyes-met/v07` KEEP — also `Media/development/_quality-targets/S03-eyes-met-v07-quality-bar.jpg` (compare only; PNG SoT).  
 **Lock record (LOCKED 2026-07-24):** every keep unit needs **both** `Media/development/{unit}/RECIPE.md` + `meta.json` — verify before saying “locked.” Fleet: PICTURE-BOOK-PRODUCTION-RULES **§6**.  
 **Print-scale:** Cover + P01 `art.png` now **2625²** (promoted from art-2625; backups kept).  
 **Story keeps (development/):** P01 v16 · P02 v04 · S1 v13|v14 · **S2 v06** open-coat · **S3 v07** · **S4 v13** · S5 v01 · S6 v04|v03 · S7 v03 · S8 v09 · S9 v06|v05 · S10 v02 · S11 v01.  
-**S12:** `S12-god-bless/v22` **working** — Jon Photoshopping nine-deer + open-coat master; **do not burn Qwen for deer**. FLOW = **3 plates** only (`s12` / `p26` / `p27`).  
+**S12:** `S12-god-bless/v23` **LOCKED FINAL** 2026-07-27 (Jon preferred over v24 Qwen polish) — Santa sleigh · closed coat · 9 deer · red-nose leader · Victorian house · cream vignette · North Star “God bless.” pocket.  
+**Text-layout master PSD:** `Xtraz/Adobe-Photoshop/text-layout-master.psd` (+ v2) — 5250×2625 · groups S01–S12 + P01/P02/P-thank-you/P32-33 · **P01 = page 1 on RIGHT**, left cream endpaper `#FDFBF7`. Poem lookup: `scripts/book_poem_map.py` + `text-layout-master/POEM-LOOKUP.md`.  
 **Back matter:** p30 KEEP · **p31 closer-zoom FAVORITE** · p32|33 SeedVR+cream working (Jon eye) · **P-quiet-close `art.png` triplet stitched**.  
 **Wrap / padding (working, awaiting Jon eye):** back cover **v02** · pastedown burgundy · p34 · p35 · p36 · **spine placeholder** `Cover/art-spine.png` (Lulu width TBD).  
 **SoT:** `_FLOW-CURRENT.json` · Always-open 4: Flow v2 · Master Dock · IMAGE-LANE-v2 · AGENT-RUNBOOK  
@@ -24,24 +25,24 @@
 **Casewrap pastedowns:** solid burgundy RGB(90,22,18) plate ready.
 
 ## Birthday deadline
-**2026-08-15** — Lulu hardcover gift for Jack Farrell. Order proof by **~July 25–28**.
+**2026-08-15** — Lulu hardcover gift for Jack Farrell. Proof window ~July 25–28 (tight / slipping — order ASAP).
 
 ## Last updated
-2026-07-24 night — **End Project.** Deep audit + docs pushed (`aac3917`). Leave-off for resume.
+2026-07-27 night — **End Project.** S12 v23 locked · text-layout-master PSD + P01 right-half fix.
 
-## Where we left off (2026-07-24 End Project)
-- Deep audit Phase 1–3 done and committed · S12 **not** touched.
-- Jon has **not** yet graded: back cover v02, pastedown, p34–36, spine (placeholder only).
-- S12 still **Jon’s PS master** (open coat + 9 deer + “God bless.” sky).
+## Where we left off (2026-07-27 End Project)
+- **S12 v23 LOCKED FINAL** (v24 rejected). Story S1–S12 Banana-ready for art.
+- **text-layout-master.psd** built; **P01 corrected** — page 1 on **right**, left = cream endpaper.
+- Wrap/padding still need **Jon eye** (back cover v02 · pastedown · p34–36 · spine placeholder).
 - p32|33 still need **Jon eye** → flip FLOW `keep`.
 
 ## Start here next
 1. **Open Project** → read CONTINUE-HERE + this ReCall.
 2. **Jon review** wrap/padding paths in CONTINUE-HERE → keep / iterate / cut optional p34–36.
-3. **Land S12 PS plate** when ready → update FLOW · write RECIPE+meta · re-check coat + deer + North Star text zone.
-4. **Eye p32|33** → keep flip + RECIPE+meta.
-5. Lock page count → **Lulu spine calculator** → replace `art-spine.png`.
-6. Then Banana / InDesign (P01 first).
+3. **Eye p32|33** → keep flip + RECIPE+meta.
+4. Lock page count → **Lulu spine calculator** → replace `art-spine.png`.
+5. Type / InDesign using text-layout-master (P01 first) — say group/page name for poem lines from `book_poem_map.py`.
+6. Banana finals pass as needed.
 
 ## Reference (this session)
 - **FINALS-CHECKLIST.md** — HIGH/MED/LOW audit of all FLOW plates

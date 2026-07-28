@@ -1,0 +1,20 @@
+{
+  "unit": "S12-god-bless",
+  "version": "v23",
+  "status": "locked",
+  "date": "2026-07-27",
+  "decided_by": "Jon",
+  "resolution": "5250x2625",
+  "dimensions": {
+    "art.png": [5250, 2625],
+    "art-left.png": [2625, 2625],
+    "art-right.png": [2625, 2625]
+  },
+  "paths": {
+    "art": "Media/development/S12-god-bless/v23/art.png",
+    "left": "Media/development/S12-god-bless/v23/art-left.png",
+    "right": "Media/development/S12-god-bless/v23/art-right.png",
+    "dashboard_lock": "Media/development/S12-god-bless/meta.json"
+  },
+  "notes": "Locked FINAL — Jon preferred over v24. Unit-root meta.json is the lock SoT; this file mirrors the version folder."
+}

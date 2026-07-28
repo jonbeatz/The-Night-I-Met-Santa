@@ -1,0 +1,23 @@
+{
+  "unit": "S12-god-bless",
+  "version": "v24",
+  "status": "rejected",
+  "date": "2026-07-27",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "resolution": "5250x2625",
+  "seed": 418651895,
+  "fal_url": "https://v3b.fal.media/files/b/0aa3fbf8/3Atx5mrqL9ilqDlaqLXWa_kuLMAmdd.png",
+  "base": "v23",
+  "refs": [
+    "Media/development/S12-god-bless/v23/art.png",
+    "Media/development/S03-eyes-met/art.png",
+    "Media/approved/style-refs/style-lock-v2.png"
+  ],
+  "paths": {
+    "art": "Media/development/S12-god-bless/v24/art.png",
+    "left": "Media/development/S12-god-bless/v24/art-left.png",
+    "right": "Media/development/S12-god-bless/v24/art-right.png"
+  },
+  "rejected_reason": "Jon preferred v23 lock clarity / North Star pocket",
+  "date_rejected": "2026-07-27"
+}

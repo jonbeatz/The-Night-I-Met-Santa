@@ -6,11 +6,11 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-24 night — End Project)
+## One-line status (2026-07-27 night — End Project)
 
-**Story S1–S11 KEEP** · **S12 v22 working** (Jon PS master) · **Back matter:** p30 KEEP · **p31 closer-zoom FAVORITE** · p32|33 upscaled + **art.png triplet**  
-**Deep audit shipped (`aac3917`):** Cover + P01 `art.png` @ **2625²** · spine **placeholder** · FLOW S07/verdicts fixed  
-**Wrap gaps (working, Jon eye):** back cover **v02** · pastedown · optional **p34–36** · `Cover/art-spine.png` (Lulu width TBD)  
+**Story S1–S12 KEEP** · **S12 = v23 LOCKED FINAL** · **text-layout-master.psd** ready (P01 = page 1 on **RIGHT**)  
+**Back matter:** p30 KEEP · **p31 closer-zoom FAVORITE** · p32|33 still need Jon eye  
+**Wrap gaps (Jon eye):** back cover **v02** · pastedown · optional **p34–36** · `Cover/art-spine.png` (Lulu width TBD)  
 **FINALS-CHECKLIST** · **“God bless.” = S12 R only** · SoT `_FLOW-CURRENT.json`  
 **Lock gate:** never report locked without both `development/{unit}/RECIPE.md` + `meta.json`.
 
@@ -18,12 +18,12 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 1. **Open Project** → read this file + `ReCall.md`.
 2. **Review wrap/padding** (keep / iterate / cut p34–36):  
    `Cover/art-back.png` · `pastedown-burgundy.png` · `art-spine.png` · `P34-padding` · `P35-colophon` · `P36-blank`
-3. **Finish or land S12 PS** (open coat + 9 deer + “God bless.” under North Star) — no more Qwen deer burns → then RECIPE+meta.
-4. **Eye p32|33** → FLOW `keep` + RECIPE+meta.
-5. Lock page count → **Lulu spine calculator** → replace spine placeholder.
-6. Only then Banana / InDesign (P01 first).
+3. **Eye p32|33** → FLOW `keep` + RECIPE+meta.
+4. Lock page count → **Lulu spine calculator** → replace spine placeholder.
+5. **Type / InDesign** via `Xtraz/Adobe-Photoshop/text-layout-master.psd` (P01 first) — tell Cursor the group/page for poem text.
+6. Banana finals as needed.
 
-**Proof order window:** ~July 25–28 · Gift **2026-08-15**.
+**Proof order window:** ~July 25–28 (tight) · Gift **2026-08-15**.
 
 ---
 
