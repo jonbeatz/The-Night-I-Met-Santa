@@ -1,0 +1,19 @@
+{
+  "unit": "Cover",
+  "version": "v10-banana-pose-paint",
+  "date": "2026-07-29",
+  "seed": null,
+  "status": "dial",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "print_px": [
+    2625,
+    2625
+  ],
+  "dpi": 300,
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa4483f/SUQo-u9_x0rZa0xSEawjv_cover-original.png",
+    "https://v3b.fal.media/files/b/0aa4483f/Z7BXBA654hHkcu8WA3YeO_cover-v06.png",
+    "https://v3b.fal.media/files/b/0aa4484f/4ZnCQe6ve_sp4uiBnaEQF_boy-G0.png"
+  ],
+  "result_url": "https://v3b.fal.media/files/b/0aa4483f/mn1_CXYOl2aJXgskaJFmB_NnCeZLHo.png"
+}

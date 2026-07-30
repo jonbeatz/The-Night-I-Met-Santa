@@ -6,20 +6,17 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-28)
+## One-line status (2026-07-30)
 
-**Story S1–S12 KEEP** · **P01 = v25 LOCKED** (page 1 RIGHT · burgundy full-bleed) · **S12 = v23 LOCKED FINAL** · **text-layout-master.psd** ready  
-**Back matter:** p30 KEEP · **p31 closer-zoom FAVORITE** · p32|33 still need Jon eye  
-**Wrap gaps (Jon eye):** back cover **v02** · pastedown · optional **p34–36** · `Cover/art-spine.png` (Lulu width TBD)  
-**FINALS-CHECKLIST** · **“God bless.” = S12 R only** · SoT `_FLOW-CURRENT.json`  
-**Lock gate:** never report locked without both `development/{unit}/RECIPE.md` + `meta.json`.
+**TOMORROW:** Jon delivers **final keep list** → full **InDesign live-text** book build.  
+**Cover = v14-MyPhotoshop-v2 LOCKED** · Story/matter mostly KEEP · age-up dials S01/S03/S04 pending Jon eye  
+**SoT:** `_FLOW-CURRENT.json` · **“God bless.” = S12 R only** · spine/Lulu wrap still after page lock
 
-### Leave-off → start next
-1. **Open Project** → read this file + `ReCall.md`.
-2. **Type P01** (v25 on RIGHT / page 1) in text-layout-master → InDesign live type.
-3. Continue poem type down the script (tell Cursor the group/page).
-4. **Or** wrap/padding review → p32|33 keep → Lulu spine.
-5. Banana finals as needed.
+### Leave-off → start next (2026-07-30 night → tomorrow)
+1. **Open Project** → this file + `ReCall.md`.
+2. Jon names **all finals** (which plates KEEP / which age-up alts promote).
+3. **Full InDesign** with **real live text** (poem + matter + cover author line) — not MOCK-TYPE only.
+4. Then: casewrap/spine · export path toward `Media/finals/`.
 
 **Proof order window:** ~July 25–28 (tight) · Gift **2026-08-15**.
 

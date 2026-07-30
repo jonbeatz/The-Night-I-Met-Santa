@@ -1,39 +1,46 @@
-# RECIPE — Cover / beige-v2 KEEP @2625
+# RECIPE — Cover / v14-MyPhotoshop-v2 KEEP @2625
 
 | Field | Value |
 |-------|--------|
 | **unit** | Cover |
 | **book pages** | Cover (front) · spine · back · pastedown |
-| **version locked** | beige-v2 |
-| **model** | `locked (beige-v2)` |
-| **resolution** | **art.png 2625×2625** (promoted from art-2625 2026-07-24) |
-| **seed** | n/a |
-| **date** | 2026-07-24 |
-| **status** | keep |
+| **version locked** | **v14-MyPhotoshop-v2** |
+| **source** | Jon Photoshop composite · `v14-MyPhotosho-v1/Cover-art-v2.png` |
+| **model** | n/a (operator PS lock) |
+| **resolution** | **art.png 2625×2625** @ 300 DPI |
+| **date** | 2026-07-29 |
+| **status** | **keep / LOCKED** |
+| **decided_by** | Jon |
 | **dashboard** | `Media/development/Cover/` |
 
-## Composition notes
+## What is locked
 
-Front: oatmeal holly PJs · Santa face HIDDEN.  
-**2026-07-24 deep audit:** `art.png` was 1024² — promoted print-scale `art-2625.png` → `art.png`. Old file kept as `art-1024-backup.png`.
+- Front cover art: deep burgundy living room · boy peek · Santa kneeling (face mostly hidden toward tree) · title **"The Night I Met Santa"** + gold flourish **baked into art**
+- **Author credit NOT baked** — add **"Written by Jack Farrell"** (or equivalent) as **live type in InDesign**
+- Print plate: `Media/development/Cover/art.png` (+ `art-2625.png`)
 
-## Spine (HARDCOVER CASEWRAP — required before Lulu)
+## Sibling PS exports (same folder — not dashboard)
 
 | File | Role |
 |------|------|
-| `art-spine.png` | **PLACEHOLDER** only — title + “Jon Beatz” on cream strip |
+| `Cover-art-v2.png` | **LOCKED source** — title baked, no author (cleanest) |
+| `Cover-art-v1.png` | Full with author name also baked (alt) |
+| `Cover-art-v3.png` | Title scrubbed / no-title reference |
 
-**Hard rule:** Real spine width comes from **Lulu’s cover calculator** after interior page count is locked. Current placeholder is provisional **225×2625 px** (~0.75" @ 300 DPI) — **not** submission-ready. Rebuild spine into the full casewrap PDF with exact calculator dimensions before order.
+## Supersedes
 
-## Art file paths
+- **beige-v2** — backup: `Media/development/Cover/art-beige-v2-superseded-2026-07-29.png`
+- Dial lineage v03–v13c remains under `Cover/v0*` for history only
 
-- `Media/development/Cover/art.png` — **2625²** front (current)
-- `Media/development/Cover/art-2625.png` — same print-scale source
-- `Media/development/Cover/art-1024-backup.png` — pre-promote backup
-- `Media/development/Cover/art-spine.png` — placeholder
-- `Media/development/Cover/art-back.png` — back cover working
-- `Media/development/Cover/pastedown-burgundy.png`
+## Spine / wrap (unchanged)
+
+| File | Role |
+|------|------|
+| `art-spine.png` | **PLACEHOLDER** — Lulu calculator width TBD |
+| `art-back.png` | Back cover working |
+| `pastedown-burgundy.png` | Casewrap pastedown |
 
 ## Notes
 
-Unit-root recipe for FLOW keep. Do not regenerate G0 / beige-v2 content without Jon.
+- Title-in-art is OK per Jon 2026-07-29; author stays live for type control / effects in InDesign.
+- Do not regenerate this plate casually. Iterate only with Jon.

@@ -1,0 +1,15 @@
+{
+  "unit": "S04-sit-here",
+  "version": "v14-age-s07",
+  "date": "2026-07-30",
+  "status": "dial",
+  "seed": 1048926395,
+  "age_target": "S07-proof / S08-gone",
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa44d31/qCd7hrwaNHa3UabeV6mWu_S04-sit-here-src.png",
+    "https://v3b.fal.media/files/b/0aa44d32/zAuOgem0wakUUGmXh0IH2_age-s07.png",
+    "https://v3b.fal.media/files/b/0aa44d33/xuByPAkqO9wEm5YKlA5pG_boy-G0.png"
+  ],
+  "result_url": "https://v3b.fal.media/files/b/0aa44d43/3NLtBqyJ9ohfkbO3kP5bF_QLLTGg3Q.png",
+  "note": "Sit-here R \u2014 age boy; then stitch art.png with existing art-left"
+}

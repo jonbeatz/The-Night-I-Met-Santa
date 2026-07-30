@@ -72,14 +72,14 @@
 
 ## HIGH — fix first
 
-### Cover · beige-v2 · `Media/development/Cover/art.png`
+### Cover · **v14-MyPhotoshop-v2** · `Media/development/Cover/art.png`
 | Check | Result |
 |-------|--------|
-| RES | KEEP still **1024²** · print-scale candidate **`art-2625.png`** (SeedVR 2026-07-23) — Jon eye before replacing KEEP |
+| RES | **PASS 2625²** @ 300 DPI (Jon PS · promoted 2026-07-29) |
 | FRAME | N/A cover wrap path |
-| COAT | N/A (face hidden lock) |
-| TEXT | OK — no bake on front KEEP |
-| Notes | Also: **back cover v02** `Cover/art-back.png` · **pastedown** `Cover/pastedown-burgundy.png` |
+| COAT | N/A (face mostly hidden lock) |
+| TEXT | Title + flourish **baked** · **Written by Jack Farrell** = live InDesign |
+| Notes | Supersedes beige-v2 (`art-beige-v2-superseded-2026-07-29.png`) · source `v14-MyPhotosho-v1/Cover-art-v2.png` · also: back `art-back.png` · pastedown · spine placeholder |
 
 ### P01 Title · **v25** · `Media/development/P01-title/art.png`
 | Check | Result |
@@ -111,7 +111,6 @@
 | **p32\|33** Quiet Close | Tech PASS @ 2625 + FRAME ON · mood keep-leaning | Jon eye approve → flip FLOW `keep` |
 | **S5 Chat v01** | Santa left arm crosses fold | Accept or nudge on Banana finals |
 | **Story spreads** | Cream **spread** frame = finals-only per Master Dock | Apply `standard spread frame treatment` after lock approve |
-| **Cover / P01** | Undersized | SeedVR → print size on finals lane |
 | **Banana regenerates** | Phase 3 | Style-lock + santa-G0-v2 pass later |
 
 ---
@@ -122,7 +121,7 @@ Legend: ✅ pass · ⚠ watch · ❌ fail · — n/a · 🔒 locked keep
 
 | Unit | Pages | Ver | Status | RES | TRIP | FRAME | COAT | FACE | GUTTER | TEXT | Pri |
 |------|-------|-----|--------|-----|------|-------|------|------|--------|------|-----|
-| Cover | Cover | beige-v2 | 🔒 keep | ⚠ 1024 + art-2625 | — | — | — | OK hide | — | ✅ | **H** |
+| Cover | Cover | v14-PS-v2 | 🔒 keep | ✅ 2625 | — | — | — | OK hide | — | ⚠ title baked · author live | **M** |
 | Back cover | Back | v02 | working | ✅ 2625 | — | — | — | — | — | ✅ scrub | **M** |
 | Pastedown | Casewrap | v01 | 🔒 keep | ✅ solid | — | — | — | — | — | — | L |
 | P01 Title | 1 (RIGHT) | v25 | 🔒 keep | ✅ 2625 | — | OFF (burgundy bleed) | — | — | — | ✅ | **M** |

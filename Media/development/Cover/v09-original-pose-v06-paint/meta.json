@@ -1,0 +1,19 @@
+{
+  "unit": "Cover",
+  "version": "v09-original-pose-v06-paint",
+  "date": "2026-07-29",
+  "seed": 35094086,
+  "status": "dial",
+  "print_px": [
+    2625,
+    2625
+  ],
+  "dpi": 300,
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa4482b/Tteu9ixpbnL0QYQmZxnWl_cover-original-pose.png",
+    "https://v3b.fal.media/files/b/0aa4483b/Vqa3qr77dq07dx_uuPbTO_cover-v06-paint.png",
+    "https://v3b.fal.media/files/b/0aa4482c/BtVEnl_mchLvvAEkf41_I_boy-G0.png"
+  ],
+  "result_url": "https://v3b.fal.media/files/b/0aa4482d/IXG37hLTex2nhNH8jLi52_Dspz9Xwa.png",
+  "strategy": "original_pose_lock_v06_paint"
+}

@@ -1,0 +1,14 @@
+{
+  "unit": "Cover",
+  "version": "v14-MyPhotoshop-v2",
+  "date": "2026-07-29",
+  "status": "keep",
+  "decided_by": "Jon",
+  "source": "Cover-art-v2.png",
+  "print_px": [2625, 2625],
+  "dpi": 300,
+  "title_baked": true,
+  "author_baked": false,
+  "promoted_to": "Media/development/Cover/art.png",
+  "siblings": ["Cover-art-v1.png", "Cover-art-v2.png", "Cover-art-v3.png"]
+}

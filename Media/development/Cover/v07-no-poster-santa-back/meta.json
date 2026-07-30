@@ -1,0 +1,18 @@
+{
+  "unit": "Cover",
+  "version": "v07-no-poster-santa-back",
+  "date": "2026-07-29",
+  "seed": 2017859063,
+  "status": "dial",
+  "print_px": [
+    2625,
+    2625
+  ],
+  "dpi": 300,
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa447c0/uoQEtDbCPMaFlZVeHotst_cover-original.png",
+    "https://v3b.fal.media/files/b/0aa447c0/fvqupGmMVcHW9FclbbxYq_cover-v06.png",
+    "https://v3b.fal.media/files/b/0aa447c1/yEHlCdC1GnkIFKilYhW3K_boy-G0.png"
+  ],
+  "result_url": "https://v3b.fal.media/files/b/0aa447c1/ZUgl7A8SYLlxjTEbFFi3X_QNx04clU.png"
+}

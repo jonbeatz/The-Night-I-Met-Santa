@@ -1,0 +1,18 @@
+{
+  "unit": "Cover",
+  "version": "v11-conservative-paint-scrub",
+  "date": "2026-07-29",
+  "seed": null,
+  "status": "dial",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "print_px": [
+    2625,
+    2625
+  ],
+  "dpi": 300,
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa4485c/rK8ahiLNERzsSKmttiweF_cover-original.png",
+    "https://v3b.fal.media/files/b/0aa4484d/cO4J2SeInjfxwfyrFZVGO_cover-v06-paint.png"
+  ],
+  "result_url": "https://v3b.fal.media/files/b/0aa4484e/_VEas2IWjLbvy1Sbh0POb_WxfULyCf.png"
+}

@@ -10,36 +10,28 @@
 6. SoT plates: `Media/generated/mocks/_FLOW-CURRENT.json`
 
 ## Current focus
-**PHASE: End of day 2026-07-28** — leave-off locked below.  
-**Quality bar:** `S03-eyes-met/v07` KEEP — also `Media/development/_quality-targets/S03-eyes-met-v07-quality-bar.jpg` (compare only; PNG SoT).  
-**Lock record (LOCKED 2026-07-24):** every keep unit needs **both** `Media/development/{unit}/RECIPE.md` + `meta.json` — verify before saying “locked.” Fleet: PICTURE-BOOK-PRODUCTION-RULES **§6**.  
-**Print-scale:** Cover + P01 `art.png` **2625²**.  
-**Story keeps (development/):** **P01 v25** (page 1 = RIGHT · burgundy full-bleed) · P02 v04 · S1 v13|v14 · **S2 v06** open-coat · **S3 v07** · **S4 v13** · S5 v01 · S6 v04|v03 · S7 v03 · S8 v09 · S9 v06|v05 · S10 v02 · S11 v01.  
-**S12:** `S12-god-bless/v23` **LOCKED FINAL** 2026-07-27.  
-**Text-layout master PSD:** `Xtraz/Adobe-Photoshop/text-layout-master.psd` (+ v2) — **P01 = v25 on RIGHT / page 1**, left cream endpaper.  
-**Back matter / wrap:** still need Jon eye (p32|33 · back cover v02 · pastedown · p34–36 · spine).  
-**SoT:** `_FLOW-CURRENT.json` · Pre-finals: `FINALS-CHECKLIST.md`  
-**Character locks:** Boy G0 · Santa G0 v2 (**open coat**) · Jack portrait · style-lock-v2.
+**PHASE: 2026-07-30 night → TOMORROW = InDesign live-text pass.**  
+Jon: book art is essentially locked; **will name all finals tomorrow**, then we build **full InDesign with real text**.  
+**Cover LOCKED:** **v14-MyPhotoshop-v2** → `Media/development/Cover/art.png` (title baked · author live ID).  
+**Pending Jon eye (not promoted):** boy age-up dials — `S01-approach/v15-age-s07` · `S03-eyes-met/v08-age-s07` · `S04-sit-here/v14b-age-s07` (v14 dropped Santa — use **v14b**).  
+**Story/matter:** P01 v25 · P02 v04 · S1–S12 (S12 v23) · p30 keep · wrap/spine still open.  
+**SoT:** `_FLOW-CURRENT.json` · `FINALS-CHECKLIST.md` · `AGENT-RUNBOOK.md` for ID.
 
 ## Birthday deadline
-**2026-08-15** — Lulu hardcover gift for Jack Farrell. Proof window slipped — order ASAP.
+**2026-08-15** — Lulu hardcover gift for Jack Farrell. Proof ASAP after ID text lock.
 
 ## Last updated
-2026-07-28 afternoon — **End Project.** P01 v25 locked · type path ready.
+2026-07-30 late — leave-off: **tomorrow = finals list + full InDesign live text**.
 
-## Where we left off (2026-07-28 End Project)
-- **P01 v25 LOCKED** — full-bleed burgundy · centered window · tree right · dashboard @2625 · FLOW keep · page **1 = RIGHT**.
-- Lineage dialed today: v23 (burgundy+tree) → v24 (no cream frame) → **v25** (centered) KEEP.
-- text-layout-master PSD refreshed with v25 plate.
-- Wrap/padding + p32|33 still open for Jon eye.
-- Type/InDesign next: start with **P01** (live title on burgundy).
+## Where we left off (2026-07-30)
+- Cover v14 locked earlier; age-up alts generated for S01 L / S03 / S04 (await KEEP).
+- Jon pausing for sleep — **tomorrow delivers final plate list**, then full InDesign real-type book.
 
 ## Start here next
 1. **Open Project** → CONTINUE-HERE + this ReCall.
-2. **Type P01** in text-layout-master / InDesign (page 1 RIGHT).
-3. Continue type down the script (say group/page for poem lines).
-4. Or: wrap/padding review → p32|33 keep → Lulu spine.
-5. Banana finals as needed.
+2. Capture Jon’s **finals checklist** (promote age-ups? any swaps?).
+3. **Full InDesign live text** across cover author + poem + matter (Cormorant · clouds per runbook).
+4. Casewrap/spine · path to `Media/finals/`.
 
 ## Reference (this session)
 - **FINALS-CHECKLIST.md** — HIGH/MED/LOW audit of all FLOW plates
@@ -73,7 +65,7 @@
 |------|--------|
 | Poem | `Transcription/poem-clean.txt` |
 | **Approved** | **`Media/approved/`** |
-| Cover LOCKED | `Media/development/Cover/art.png` (beige-v2 · **2625²**) · spine placeholder `art-spine.png` |
+| Cover LOCKED | `Media/development/Cover/art.png` (**v14-MyPhotoshop-v2** · **2625²** · title baked) · spine placeholder `art-spine.png` |
 | Boy G0 | `Media/approved/characters/boy-narrator-G0.png` (+ face) |
 | Santa G0 v2 | `Media/approved/characters/santa-G0-v2.png` (+ standing `santa-G0.png`) |
 | Jack portrait | `Media/approved/characters/jack-farrell-portrait.png` (source) · framed `Media/development/P-author/art.png` |
@@ -89,7 +81,8 @@
 - Style: **Painted gouache** (not colored pencil)
 - **Image lanes:** dial **Klein 9B** → **Qwen** alt → Klein **4B** light → **finals Gemini/Banana**
 - **Image providers:** **fal.ai first** · **OpenRouter second**
-- **Cover:** beige-v2 · oatmeal holly PJs · **Santa face HIDDEN** on cover
+- **Cover:** **v14-MyPhotoshop-v2** · oatmeal holly PJs · **Santa face mostly HIDDEN** · title baked · author live InDesign
+- **Cover superseded:** beige-v2 backed up as `art-beige-v2-superseded-2026-07-29.png`
 - **Santa wardrobe:** open red coat · cream striped shirt · brown suspenders **over shirt**
 - **Boy G0:** oatmeal/taupe holly · visible berries · red trim/buttons · brown eyes
 - **Quality bar:** S3 Eyes Met **v07**

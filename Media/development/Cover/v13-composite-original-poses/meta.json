@@ -1,0 +1,6 @@
+{
+  "version": "v13-composite-original-poses",
+  "seed": null,
+  "result_url": "https://v3b.fal.media/files/b/0aa44873/YwtLFGUTHSYkOs8ZN14PX_YLi8auLg.png",
+  "method": "pillow_composite_then_banana_unify"
+}

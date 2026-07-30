@@ -1,0 +1,18 @@
+{
+  "unit": "Cover",
+  "version": "v05-painted-hat-no-whitedoor",
+  "date": "2026-07-29",
+  "seed": 1602975051,
+  "status": "dial",
+  "print_px": [
+    2625,
+    2625
+  ],
+  "dpi": 300,
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa4473a/OuNPTdmvaVI-fHzVMlTG7_cover-paint-pose.png",
+    "https://v3b.fal.media/files/b/0aa4473a/VBt0PY5zsjrwj7tRXAHXn_boy-G0.png",
+    "https://v3b.fal.media/files/b/0aa4473a/imnmbf8uZjB7L5d9RmCjz_boy-v04-peek.png"
+  ],
+  "result_url": "https://v3b.fal.media/files/b/0aa4473b/fEORKDVehMLp-YfjiPZkY_lBlU5iLe.png"
+}

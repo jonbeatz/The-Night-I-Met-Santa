@@ -1,0 +1,18 @@
+{
+  "unit": "Cover",
+  "version": "v08-single-boy-santa-tree",
+  "date": "2026-07-29",
+  "seed": 727610155,
+  "status": "dial",
+  "print_px": [
+    2625,
+    2625
+  ],
+  "dpi": 300,
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa44804/S7G9pHgG7WeiC_KVSl-mk_cover-original.png",
+    "https://v3b.fal.media/files/b/0aa447f5/yMh6IBXtmtcsiWM7_GThe_cover-v07.png",
+    "https://v3b.fal.media/files/b/0aa447f5/uABZQyg_rmM6Nn-TYfPJR_cover-v06-paint.png"
+  ],
+  "result_url": "https://v3b.fal.media/files/b/0aa447f6/EV7CVROayqHZ7zMLykIFZ_gMxwaWNa.png"
+}

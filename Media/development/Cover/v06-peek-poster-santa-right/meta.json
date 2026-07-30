@@ -1,0 +1,18 @@
+{
+  "unit": "Cover",
+  "version": "v06-peek-poster-santa-right",
+  "date": "2026-07-29",
+  "seed": 720953305,
+  "status": "dial",
+  "print_px": [
+    2625,
+    2625
+  ],
+  "dpi": 300,
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa44792/thJjKPcwTaPtIUJhJ4KHR_cover-original.png",
+    "https://v3b.fal.media/files/b/0aa447a2/U4h96gSPDfNthGPazEvx7_cover-v05.png",
+    "https://v3b.fal.media/files/b/0aa44793/tbAwiLEF1PPaD_FV0ulnI_boy-G0.png"
+  ],
+  "result_url": "https://v3b.fal.media/files/b/0aa44794/OyX91yYNDs7aJwzndIAJr_yxIlkapb.png"
+}

@@ -1,0 +1,18 @@
+{
+  "unit": "Cover",
+  "version": "v04-g0-pose-burgundy",
+  "date": "2026-07-29",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "seed": 237865759,
+  "status": "dial",
+  "print_px": [
+    2625,
+    2625
+  ],
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa446e0/Mmuz5xZZ5VS2I5NgDfNTo_cover-pose.png",
+    "https://v3b.fal.media/files/b/0aa446e0/rInB4QifP6OkeD_GCZqNT_boy-G0.png",
+    "https://v3b.fal.media/files/b/0aa446e1/87QHAZIxYFy4_XZ3fajvc_santa-G0-v2.png"
+  ],
+  "result_url": "https://v3b.fal.media/files/b/0aa446f1/LTvSBLXNIyZd4LrLKyX7E_xuo42JCJ.png"
+}

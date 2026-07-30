@@ -35,7 +35,7 @@ Boy: oatmeal/taupe holly pajamas ONLY. NOT a red coat. NOT a Santa suit. NOT a S
 ### Cover
 | Page | Content | Image |
 |---|---|---|
-| **Cover** | Front: *The Night I Met Santa* · Written by Jack Farrell | 🔒 LOCKED — beige-v2 · oatmeal holly PJs · Santa face hidden |
+| **Cover** | Front: *The Night I Met Santa* (baked) · Written by Jack Farrell (**live InDesign**) | 🔒 LOCKED — **v14-MyPhotoshop-v2** · deep burgundy · oatmeal holly PJs · Santa face mostly hidden · `Media/development/Cover/art.png` |
 
 ### Casewrap pastedowns (inside covers) — LOCKED 2026-07-22
 | Zone | Spec |

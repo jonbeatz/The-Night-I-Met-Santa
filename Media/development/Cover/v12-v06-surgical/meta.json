@@ -1,0 +1,18 @@
+{
+  "unit": "Cover",
+  "version": "v12-v06-surgical",
+  "date": "2026-07-29",
+  "seed": null,
+  "status": "dial",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "base": "v06",
+  "print_px": [
+    2625,
+    2625
+  ],
+  "dpi": 300,
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa44871/n7FEqutQC3VMp_aTZvuGM_cover-v06.png"
+  ],
+  "result_url": "https://v3b.fal.media/files/b/0aa44861/-MNGoWPrGr_cZLUfJ3MnM_jCi0ERkh.png"
+}

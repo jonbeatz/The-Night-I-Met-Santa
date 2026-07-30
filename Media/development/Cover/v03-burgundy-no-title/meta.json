@@ -1,0 +1,18 @@
+{
+  "unit": "Cover",
+  "version": "v03-burgundy-no-title",
+  "date": "2026-07-29",
+  "model": "fal-ai/qwen-image-2/pro/edit",
+  "seed": 617869848,
+  "status": "dial",
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa44644/Qy5as2n66MVgb7ZyXjoQP_style-lock-v2.png",
+    "https://v3b.fal.media/files/b/0aa44635/_D-NEVO2nLp3AArpJdUkY_cover-beige-v2.png"
+  ],
+  "result_url": "https://v3b.fal.media/files/b/0aa44636/XTk-SkqEj2ZZg1z5S0dou_nNQlFzw3.png",
+  "changes": [
+    "scrub title treatment",
+    "burgundy walls #4A0E17"
+  ],
+  "does_not_replace": "Media/development/Cover/art.png until Jon KEEP"
+}

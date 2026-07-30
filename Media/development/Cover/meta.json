@@ -1,14 +1,26 @@
 {
   "unit": "Cover",
-  "version": "beige-v2",
+  "version": "v14-MyPhotoshop-v2",
   "status": "keep",
-  "date": "2026-07-24",
-  "model": "locked beige-v2 @2625",
+  "date": "2026-07-29",
+  "decided_by": "Jon",
+  "model": "Jon Photoshop composite (operator lock)",
   "resolution": "2625x2625",
+  "dpi": 300,
+  "title_baked": true,
+  "author_baked": false,
+  "author_live_indesign": "Written by Jack Farrell",
+  "source_file": "Media/development/Cover/v14-MyPhotosho-v1/Cover-art-v2.png",
+  "supersedes": "beige-v2",
+  "beige_v2_backup": "Media/development/Cover/art-beige-v2-superseded-2026-07-29.png",
+  "siblings": {
+    "v1_title_plus_author": "Media/development/Cover/v14-MyPhotosho-v1/Cover-art-v1.png",
+    "v2_title_only_LOCKED": "Media/development/Cover/v14-MyPhotosho-v1/Cover-art-v2.png",
+    "v3_no_title_ref": "Media/development/Cover/v14-MyPhotosho-v1/Cover-art-v3.png"
+  },
   "dimensions": {
     "art.png": [2625, 2625],
     "art-2625.png": [2625, 2625],
-    "art-1024-backup.png": [1024, 1024],
     "art-spine.png": [225, 2625],
     "art-back.png": [2625, 2625],
     "pastedown-burgundy.png": [2625, 2625]
@@ -16,10 +28,10 @@
   "paths": {
     "front": "Media/development/Cover/art.png",
     "front_2625": "Media/development/Cover/art-2625.png",
-    "front_backup_1024": "Media/development/Cover/art-1024-backup.png",
     "spine": "Media/development/Cover/art-spine.png",
     "back": "Media/development/Cover/art-back.png",
-    "pastedown": "Media/development/Cover/pastedown-burgundy.png"
+    "pastedown": "Media/development/Cover/pastedown-burgundy.png",
+    "version_folder": "Media/development/Cover/v14-MyPhotosho-v1/"
   },
   "spine_note": "PLACEHOLDER — exact width from Lulu calculator after page count lock. Provisional 225px (~0.75in @300dpi)."
 }

@@ -2,6 +2,8 @@
 
 | Date | Note |
 |------|------|
+| 2026-07-30 | **Leave-off:** Jon says book essentially locked; **tomorrow = name all finals + full InDesign live-text build**. Age-up dials S01 v15 / S03 v08 / S04 v14b pending eye (not promoted). |
+| 2026-07-29 | **Cover LOCKED = v14-MyPhotoshop-v2.** Jon PS composite `Cover-art-v2.png` → dashboard `art.png` @2625. Title+flourish baked · **Written by Jack Farrell** = live InDesign. Supersedes beige-v2 (backup kept). FLOW + RECIPE+meta. |
 | 2026-07-28 | **End Project:** P01 v25 locked (page 1 RIGHT). Type path next. Wrap/p32|33/spine still open. |
 | 2026-07-28 | **P01 Title LOCKED = v25.** Full-bleed burgundy · centered window · tree right. Dashboard `art.png` @2625. **Page 1 = RIGHT** of opening (left cream endpaper). FLOW + RECIPE+meta. Supersedes v16 (backup kept). Plate `_plates/P01.png` refreshed. |
 | 2026-07-27 | **End Project:** S12 v23 locked · text-layout-master PSD (5250×2625 groups) · P01 moved to **right** (page 1) / left cream endpaper. Next = wrap review → p32\|33 → Lulu spine → type/InDesign. |
@@ -67,3 +69,8 @@
 | 2026-07-20 | **`spread-page-template.psd` documented:** cyan TRIM / magenta SAFETY / orange FOLD; layer stack + Duplicate→Save As use; live Cormorant in InDesign. Canonical: ISSUES-RESOLVED + PHOTOSHOP-SETUP + AGENT-RUNBOOK + ReCall/CONTINUE-HERE/BOOK-PRODUCTION-SYSTEM. |
 | 2026-07-20 | **Added** `single-page-template.psd` + `book-covers-template.psd` (2625²). **Skipped** spine-only PSD (Lulu casewrap after interior). Docs + README updated. |
 | 2026-07-20 | **Docs + log-fixes + Mem0 + vault + Mnemosyne** closeout. Tomorrow: one-page→InDesign · poem storyboards · PS solo-layer/chop export tests. Git commit+push. |
+
+### 2026-07-30 — Personal session
+- **Branch:** main
+- **Changes:** End Project 2026-07-30: Cover v14 locked · age-ups pending · tomorrow InDesign live text
+- **Status:** completed
