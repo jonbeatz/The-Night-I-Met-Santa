@@ -38,7 +38,7 @@
 |------|------|
 | `art-spine.png` | **PLACEHOLDER** — Lulu calculator width TBD |
 | `art-back.png` | Back cover working |
-| `pastedown-burgundy.png` | Casewrap pastedown |
+| `pastedown-burgundy.png` | Flipbook blank burgundy **`#4A0E17`** RGB(74,14,23) — LOCKED 2026-07-31 (not Lulu interior) |
 
 ## Notes
 

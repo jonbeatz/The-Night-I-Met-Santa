@@ -8,17 +8,43 @@
 
 ## Edition credits (locked 2026-07-15)
 
-**Inside — copyright page** (usually page 2, verso of title). Quiet, standard place:
-
-> First illustrated edition, 2026.  
-> Written by Jack Farrell.  
-> Book design by Jon Farrell.
+**Title page (short — keep light):** Written by Jack Farrell · First illustrated edition, 2026 · Book design by Jon Farrell.
 
 **Outside — back cover** (small type, bottom; not competing with blurb/art):
 
 > Illustrated edition designed by Jon Farrell · 2026
 
 No separate designer page. Optional later: soft AI disclosure under the copyright block if Jon wants it.
+
+---
+
+## Copyright / colophon — p2 burgundy (draft 2026-07-31)
+
+**Placement:** Interior **v2** PDF **p2 LEFT** (burgundy `#4A0E17`), facing title **p3 RIGHT**. Keep **p1** blank burgundy. Prefer beginning over end blanks.
+
+**Status:** Copy approved for mockup · Jon PS mockup tomorrow · then InDesign live type.
+
+```
+Copyright © 2026 Jack Farrell
+All rights reserved.
+
+No part of this book may be reproduced or transmitted
+in any form or by any means, electronic or mechanical,
+including photocopying, recording, or by any information
+storage and retrieval system, without permission in writing
+from the publisher or author.
+
+This is a work of fiction. Names, characters, places, and
+incidents either are the product of the author’s imagination
+or are used fictitiously, and any resemblance to actual
+persons, living or dead, is entirely coincidental.
+
+First illustrated edition, 2026
+Produced by Jon Farrell
+www.jon-beatz.com
+```
+
+Type: quiet cream on burgundy · ~9–11 pt feel · Cormorant or body face.
 
 ---
 

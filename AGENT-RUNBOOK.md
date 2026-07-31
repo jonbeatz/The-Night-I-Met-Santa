@@ -96,7 +96,7 @@ These are locked. Reference them, don't recreate them:
 | **Spread art resolution** | **5250 × 2625 px** | For generation only |
 | **Safety margin** | 0.5" from trim edge = 7.5 × 7.5" safe zone | Lulu spec — **ink** (glyphs/faces), not empty text-frame padding. Center-aligned type OK if letters sit inside magenta margins. |
 | **Gutter** | **0"** — none needed for under 60 pages | Lulu guide p.9 |
-| **Color space** | **sRGB** (not CMYK) | Lulu KB Oct 2024 |
+| **Color space** | **sRGB** — confirm PDF is exported in sRGB, not CMYK (Lulu 2026 full-color requirement) | Lulu help Jun 2026 |
 | **PDF format** | Single-page layout (not spreads) | Lulu requirement |
 | **Fonts** | Embedded or outlined | Lulu requirement |
 | **Spine** | 0.25" for 24–84 pages | Lulu guide p.14 |
@@ -104,16 +104,18 @@ These are locked. Reference them, don't recreate them:
 | **Cover overhang** | 0.125" on 3 sides | Lulu spec |
 | **Page count** | 35–40 pages | Project target |
 | **Cover spine text** | **Skip** — under 80 pages | Lulu guide p.17 |
-| **Casewrap pastedowns** | **Solid deep burgundy** — inside front + inside back covers | LOCKED 2026-07-22 |
+| **Casewrap pastedowns** | **Lulu supplies white endsheets** (not in interior PDF; not customizable) | [Hardcover Endsheets](https://help.lulu.com/en/support/solutions/articles/64000272836-hardcover-endsheets) · flipbook may simulate burgundy |
 
-### Casewrap pastedowns (LOCKED)
+### Casewrap pastedowns / endsheets (LOCKED — Lulu 2026)
 
-Inside front and inside back covers (pastedowns) are part of the **Lulu casewrap PDF**, not interior pages.
+Lulu **adds** endsheets when binding casewrap hardcovers. They glue the book block to the cover boards.
 
-- **Fill:** solid deep burgundy watercolor wash matching wall color from **`style-lock-v2`** (v07 Krea blend atmosphere)
-- **No** illustration, pattern, or vignette — rich flat wash only
-- **Why:** frames the book without competing with P01 title or the final quiet-close page
-- **InDesign:** when building the casewrap, **sample** the burgundy from any approved spread with burgundy walls (S1 Approach, S4 Sit Here, etc.) or from `Media/approved/style-refs/style-lock-v2.png`
+- Endsheets/flyleaves **cannot be customized**; Lulu’s are **white** ([Hardcover Endsheets](https://help.lulu.com/en/support/solutions/articles/64000272836-hardcover-endsheets)). Do **not** try to replace printer pastedowns in the PDF.
+- **Design burgundy pages in the interior are OK** — they are book pages, not a substitute for Lulu endsheets. Open still reads: white endsheet → interior.
+- **Interior v2 (candidate 2026-07-31):** `TNIMS-Interior-FINAL-v2-burgundy-open` — **32 pp** with two `#4A0E17` pages before title so title stays **RIGHT** (PDF p1 is always right; +1 alone breaks every spread). Rollback: `TNIMS-Interior-FINAL` **30 pp**. README: `Xtraz/Adobe-Finals/TNIMS-Interior-FINAL-v2-burgundy-open-README.md`.
+- **Flipbook:** blank burgundy IFC/IBC = **`#4A0E17`** RGB(74,14,23) — `Media/development/Cover/pastedown-burgundy.png` · `TNIMS-FLIPBOOK.indd` / `TNIMS-FLIPBOOK-trim.pdf` (LOCKED 2026-07-31).
+- Cover wrap: still fill the **0.75″ wrap** on the cover PDF; that tucks under the endsheet on the inside board.
+- **S04 text+image PDF export:** hide facing art per page then merge. On v2, S04 is **p12|13** (was p10|11 on 30-pp FINAL). Merge: `scripts/_scratch/_merge_s04_interior_pdf_v2.py`.
 
 ---
 
@@ -178,8 +180,48 @@ Full write-ups: **`.cursor/docs/ISSUES-RESOLVED.md`**. Operator says **`log fixe
 ### Default spread workflow (Jon + agent)
 
 1. Jon: start from **`spread-page-template.psd`** (spreads) or **`single-page-template.psd`** (singles) in `Xtraz/Adobe-Photoshop/` (**Duplicate → Jon Save As** to final slug) → paint → export **MOCK** + chops to `Images/chopz/` (PNG preferred)
-2. Agent: facing pages → art L/R → cloud → paintFrame → optional MOCK @ 35% → live Cormorant → hide MOCK
+2. Agent: facing pages → **place seamless art as ONE `*-spread.png` centered on the spine** (see § Seamless spread placement) → cloud if separate → optional MOCK @ 35% → **live type matching each PS type layer’s size/leading/tracking/color/position** → hide MOCK
 3. Jon: eye-check vs MOCK (glyphs inside magenta); approve
+
+### Seamless spread placement (LOCKED 2026-07-30 — v9/v10)
+
+**Do not** place left/right half PNGs each with full 0.125″ bleed on all four sides. That makes both frames cross the gutter and **overlap by 0.25″**, so seamless art does not meet at the fold.
+
+| Rule | Detail |
+|------|--------|
+| **Master** | `5250 × 2625` @ 300 DPI = **17.5″ × 8.75″** (PSB fold = canvas midpoint) |
+| **Place** | One linked `*-spread.png` spanning the facing spread |
+| **Align** | Frame midpoint **= InDesign spine** (left page’s right edge, usually **8.5″**) |
+| **Bounds** | `top/bottom = ±0.125″` from trim; `left = spine − 8.75″` (−0.25); `right = spine + 8.75″` (17.25) |
+| **Fit** | `CONTENT_TO_FRAME` after place; re-assert bounds |
+| **Singles** | Page 1 / true single pages still use `*-right.png` / `2625²` in the page bleed box |
+| **Verify** | Facing-pages view · midX of spread frame == spine · delta **0** |
+
+Half exports (`*-left.png` / `*-right.png`) remain useful for chops/MOCK; **print facing art uses the full spread file**.
+
+### Text+image placement (LOCKED 2026-07-31 — S04)
+
+**Exception to seamless one-file placement.** When facing pages are **not** one continuous scene (cream text page \| full illustration — S04 Sit Here, and any similar text+image pair):
+
+| Rule | Detail |
+|------|--------|
+| **Do not** | Place one spanning `*-spread.png` for Lulu single-page PDF — spine bleed pulls the facing half into each page (obvious on hard color splits) |
+| **Place** | Separate `*-left.png` / `*-right.png` (or `S04-p10-left` / `S04-p11-right`) · each **8.75″ × 8.75″** bleed box on its page |
+| **PDF export** | Export the text page with **image-page art hidden**, and the image page with **text-page art hidden**, then merge into the full interior PDF. Overlapping full-bleed frames still crosstalk if both stay visible (z-order wins for *both* pages’ spine strips) |
+| **INDD editing** | Keep **both** frames visible on the spread after export |
+| **Seamless image spreads** | Unchanged — still one `*-spread.png` centered on the spine |
+
+Chops: `Images/chopz/from-psb-v7/S04-p10-left.png` · `S04-p11-right.png` · `S04-p10-11-spread.png` (spread file kept for PS/MOCK; print ID uses L/R).
+
+### PS → InDesign live type (LOCKED 2026-07-30)
+
+Defaults (Cormorant Medium 20/26 +5) are a **fallback only**. When building from a master PSB/PSD:
+
+1. Read **each visible type layer** — size, leading, tracking, color, justification, and **bbox**
+2. Create live frames at that **exact page position** (bbox px ÷ 300 − bleed)
+3. Apply **that layer’s** formatting — do **not** force every stanza to 20/26 if the PS layer differs
+4. Prefer one frame per PS type layer (Jon often splits stanzas across multiple layers)
+5. No baked letter FX unless Jon asks — v7+ masters ship type without Drop Shadow / Outer Glow
 
 #### PSD blanks (locked — matches InDesign / Lulu)
 
@@ -202,10 +244,10 @@ Full playbook: **`.cursor/docs/ISSUES-RESOLVED.md`** (top “Playbook” section
 
 ### Fast chop → facing-spread recipe
 
-1. Art L/R → place once → resize **630×630** (PNG if available)  
-2. textCloud → Option A full-bleed **or** match MOCK (never squeeze pre-composed cloud into a tiny inset)  
-4. Live Cormorant Medium **20/26** tracking **+5**, centered, #2C2C2C (JSX on target page) — letters inside magenta  
-4. paintFrame on **spread** → resize **1260×630**  
+1. **Spread art** → place **`*-spread.png` once** · bounds **17.5″ × 8.75″** · midpoint on spine (not L/R halves with full bleed)  
+2. textCloud → Option A full-bleed **or** match MOCK (never squeeze pre-composed cloud into a tiny inset) — skip if cloud already baked in spread plate  
+3. Live type → **match each PS type layer** (size/leading/tracking/color/bbox); fallback only: Cormorant Medium **20/26** tracking **+5**, centered  
+4. paintFrame on **spread** → resize **1260×630** (optional)  
 5. Optional: MOCK-REF @ ~35% → align → hide  
 6. `list_page_items` + save — do not re-place
 
@@ -223,6 +265,7 @@ Load these once in InDesign (File → Adobe PDF Presets → Define → Load):
 3. Download the custom template
 4. Build cover in InDesign using `Lulu-Cover-Print-PDF.joboptions`
 5. Export as one-piece spread PDF (back + spine + front)
+6. **Color check:** confirm PDF is **sRGB**, not CMYK. If live type has drop shadows, `Leave Color Unchanged` can still flatten to DeviceCMYK — export with **`PDFColorSpace.RGB`** (destination sRGB). See `ISSUES-RESOLVED.md` 2026-07-31.
 
 Hardcover cover template reference files in: `Xtraz/Lulu-Templates/Square-Template/lulu-book-template-all-square/Cover Templates/Hardcover/`
 
@@ -339,7 +382,7 @@ After the book is done, create a viewable flipbook for family and friends:
 
 - ❌ Generate more than one spread at a time
 - ❌ Call anything "final"
-- ❌ Use CMYK color space
+- ❌ Export CMYK for Lulu — confirm PDF is **sRGB**, not CMYK (per Lulu’s current print requirements; old “CMYK for print” does not apply)
 - ❌ Add gutter margins (not needed under 60 pages)
 - ❌ Bake a **fake center fold / gutter shadow line** into final spread art (MOCK preview only; print art must be seamless)
 - ❌ Crop through **mid-paint** to recenter a soft watercolor vignette (shears the soft crown → hard top edge). Reposition/scale the **whole** soft vignette, or choose a text-zone layout that matches how the plate was painted. See `ISSUES-RESOLVED.md` 2026-07-21 P01 v24

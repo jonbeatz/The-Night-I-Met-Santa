@@ -23,8 +23,14 @@ Project already uses **2625²** / spread **5250×2625** in `CONTINUITY-AND-PRINT
 
 | Safety | Keep critical text/faces **≥ 0.5"** inside trim |
 | Gutter | Facing spreads: keep important art out of center fold |
-| Color | **sRGB** (Lulu accepts RGB; do not force CMYK-first) |
-| Page count | Even number preferred; **locked 35–40** for this title |
+| Color | Confirm PDF is exported in **sRGB**, not CMYK — per Lulu’s current print requirements |
+| Endsheets | Lulu adds **white** endsheets automatically ([Hardcover Endsheets](https://help.lulu.com/en/support/solutions/articles/64000272836-hardcover-endsheets)) — not customizable |
+| Design burgundy in interior | OK as **book pages** (v2 opens with two `#4A0E17` pages before title). Still get white printer endsheets |
+| Candidate interior | **32 pp** `TNIMS-Interior-FINAL-v2-burgundy-open-Lulu.pdf` · rollback **30** `TNIMS-Interior-FINAL-Lulu.pdf` |
+| Binding note | PDF p1 = RIGHT. Insert **two** pages (not one) to keep title on odd/right and spreads paired |
+| Flipbook blank burgundy | **`#4A0E17`** RGB(74,14,23) — IFC/IBC preview (LOCKED 2026-07-31) |
+| Flipbook preview | Separate trim 8.5 PDF; burgundy IFC/IBC OK for preview only |
+| Page count | Even preferred; this title **30** rollback / **32** v2 candidate |
 
 ---
 

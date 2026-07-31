@@ -14,7 +14,7 @@
 
 > **Cover template comes AFTER interior upload.** Lulu generates an exact cover template with the correct spine width once it knows your page count.
 
-> **Casewrap pastedowns = solid burgundy, no bleed illustration.** Inside front and inside back covers (pastedowns) are solid deep burgundy matching wall color from `style-lock-v2` / approved S1·S4 spreads — **not** illustrated, **not** patterned. Sample in InDesign from those refs. Pastedowns live on the casewrap, not as interior pages. (LOCKED 2026-07-22 — see `AGENT-RUNBOOK.md` §4 · Flow v2 Cover.)
+> **Casewrap pastedowns / endsheets (Lulu):** Lulu **adds** physical endsheets when binding the hardcover — they are **not** part of the interior PDF. Per [Hardcover Endsheets](https://help.lulu.com/en/support/solutions/articles/64000272836-hardcover-endsheets) (current help): endsheets/flyleaves **cannot be customized** and are **white**. Do **not** add blank burgundy (or any) pastedown pages to the Lulu interior PDF. Burgundy IFC/IBC pages belong only in the **flipbook preview** (`TNIMS-FLIPBOOK*`). Cover wrap art still fills the wrap area that tucks under the endsheet.
 
 ---
 
@@ -49,7 +49,7 @@
 
 | Spec | Exact Value |
 |------|-------------|
-| **Color space** | **sRGB preferred** (not CMYK). Lulu converts to rich CMYK internally. ICC: sRGB + Gracol. |
+| **Color space** | **sRGB** — confirm PDF is exported in sRGB, not CMYK (per Lulu’s current full-color print requirements). Old “CMYK for print” rule does **not** apply to Lulu’s digital press. |
 | **Trim size** | 8.5 × 8.5" |
 | **Interior PDF page size** | 8.75 × 8.75" (trim + 0.125" bleed all sides) |
 | **Bleed** | 0.125" on all edges |
@@ -58,7 +58,7 @@
 | **Resolution** | 300 DPI (cover: 300-600 DPI) |
 | **PDF format** | Single-page (not spreads), no trim marks, no security, no passwords |
 | **Fonts** | Embedded or converted to outlines |
-| **PDF export** | sRGB PDF (not CMYK PDF/X-1a) |
+| **PDF export** | sRGB PDF (`LeaveColorUnchanged` / sRGB assets — not CMYK PDF/X-1a) |
 | **Solid blacks** | 100% K only. TAC ≤ 270% |
 | **Light tints** | Avoid builds under 20% |
 | **Cover wrap** | 0.75" beyond trim on all sides |
@@ -93,13 +93,14 @@ Layer 1: place_image (full-bleed illustration, 2625×2625 px, 300 DPI)
 
 ## Build Sequence
 
-1. `create_document` — 8.5×8.5", 0.125" bleed, single-page layout
-2. For each page pair in manifest:
-   - `place_image` — left page art (2625×2625 px)
-   - `place_image` — right page art (2625×2625 px)
-   - `place_image` — watercolor cloud asset on left page
-   - `create_text_frame` — centered poem text, left page
-3. `export_pdf` — Load Lulu's PDF preset: `Lulu-Interior-Print-PDF.joboptions`
+1. `create_document` — 8.5×8.5", 0.125" bleed, facing pages
+2. For each **facing art spread** in manifest:
+   - **Seamless image+image:** place **one** `*-spread.png` (5250×2625) spanning both pages — frame **17.5″ × 8.75″**, **midpoint on the spine** (do **not** place L/R halves with full bleed on each page — that overlaps the gutter by 0.25″). See `AGENT-RUNBOOK.md` § Seamless spread placement.
+   - **Text+image** (e.g. S04 p10\|11): place **separate** left/right `2625²` chops per page — **not** one spanning spread. For Lulu PDF, export each side with the facing art **hidden**, then merge (`AGENT-RUNBOOK.md` § Text+image placement · `ISSUES-RESOLVED.md` 2026-07-31).
+   - Optional: watercolor cloud PNG if not already baked into the plate
+   - Live text frames from PS type layers — **match each layer’s size/leading/tracking/color/bbox** (not one global 20/26 unless the layer is that size)
+3. Singles (e.g. P01): place `2625²` / `*-right.png` in that page’s bleed box
+4. `export_pdf` — Load Lulu's PDF preset: `Lulu-Interior-Print-PDF.joboptions`
 4. Upload interior PDF to Lulu → get cover template with exact spine
 5. Build cover in InDesign:
    - Open `lulu-square-hardcover-template.idml` (or custom template from Lulu)

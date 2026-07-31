@@ -2,6 +2,9 @@
 
 | Date | Note |
 |------|------|
+| 2026-07-31 | **End Project:** Interior **v2 burgundy-open** (32 pp) exported; 30-pp FINAL kept. Binding: +2 burgundy so title stays RIGHT. Copyright → p2 facing title (Jon PS mockup tomorrow). Docs/Mem0/vault/Mnemosyne + git push. |
+| 2026-07-31 | **Update docs + PDFs + Mem0/vault/Mnemosyne:** Remade Interior (S04 isolated) · Cover sRGB · Flipbook trim 34pp. Specs PASS. Lulu endsheets = white auto. Flipbook IFC/IBC burgundy kept. |
+| 2026-07-31 | **Interior v2:** Save As `TNIMS-Interior-FINAL-v2-burgundy-open.indd` · PDF `TNIMS-Interior-FINAL-v2-burgundy-open-Lulu.pdf`. Open: white endsheet → p1 R burgundy → p2 L burgundy \| p3 R title. S04 isolate export now **p12\|13**. README in Adobe-Finals. |
 | 2026-07-30 | **Leave-off:** Jon says book essentially locked; **tomorrow = name all finals + full InDesign live-text build**. Age-up dials S01 v15 / S03 v08 / S04 v14b pending eye (not promoted). |
 | 2026-07-29 | **Cover LOCKED = v14-MyPhotoshop-v2.** Jon PS composite `Cover-art-v2.png` → dashboard `art.png` @2625. Title+flourish baked · **Written by Jack Farrell** = live InDesign. Supersedes beige-v2 (backup kept). FLOW + RECIPE+meta. |
 | 2026-07-28 | **End Project:** P01 v25 locked (page 1 RIGHT). Type path next. Wrap/p32|33/spine still open. |

@@ -1,6 +1,6 @@
 # BOOK PRODUCTION SYSTEM — Hermes Picture-Book Playbook
 
-**Status:** Living system doc · last updated **2026-07-24**  
+**Status:** Living system doc · last updated **2026-07-30**  
 **Purpose:** Dialed-in workflow to finish *The Night I Met Santa* **and** recreate the same system for **future picture books**.  
 **Owner:** Jon · Agent continue file: `CONTINUE-HERE.md`  
 **Page creative loop (new):** **`.cursor/docs/PAGE-BUILD-WORKFLOW.md`** — image → PSD → MOCK-TYPE → InDesign · mocks + RECIPE.md · tab hygiene
@@ -29,7 +29,7 @@
 | Birthday | **2026-08-15** (proof ~July 25–28) |
 | Poem | `Transcription/poem-clean.txt` |
 | Trim | **8.5 × 8.5"** Lulu casewrap HC |
-| Pages | **32** even (no blanks) |
+| Pages | **32** candidate (v2 burgundy-open) · **30** rollback FINAL · mid-book blank burgundy cut 2026-07-30 |
 | Style locked | Painted **gouache** — not colored pencil |
 | Keepers | Dials in `Media/generated/mocks/` · **current-best** in `Media/development/` · forever locks in `Media/approved/` |
 | Future-book master | Repo-root **`BOOK-PLAYBOOK.md`** (pair with this living ops doc) |
@@ -72,12 +72,18 @@ Jon: no further Media *folder* redesign for a week (2026-07-22) — page dials c
 | About / Thank You | **Draft A locked** | `BOOK-COPY-DRAFTS.md` |
 | Art medium | **Painted gouache / soft watercolor** | `ILLUSTRATION-STYLE.md` |
 | Art size page | **2625 × 2625** @ 300 DPI | 8.75" with 0.125" bleed |
-| Art size spread | **5250 × 2625** master → split L/R | Continuous scene across gutter |
+| Art size spread | **5250 × 2625** master → place as **one spread link** in ID (midpoint = spine) | Continuous scene across gutter — **not** L/R halves with full bleed (gutter overlap bug 2026-07-30) |
+| Text+image (S04 etc.) | Separate **2625²** L/R page frames · PDF export with facing art hidden then merge | Hard cream\|illustration split — spanning spread causes spine-bleed crosstalk in single-page Lulu PDF (2026-07-31) |
 | PS blanks | `Xtraz/Adobe-Photoshop/{spread,single-page,book-covers}-template.psd` | Cyan=TRIM · magenta=SAFETY · orange=MOCK · **no** spine PSD (Lulu wrap) |
 | Page build loop | Image → new PSD → close PNG → MOCK-TYPE → cloud → save → InDesign | **`PAGE-BUILD-WORKFLOW.md`** · mocks under `Media/generated/mocks/` |
 | MOCK-TYPE (PSD preview) | Poem **20/26** · matter **30/~40** · **#2C2C2C** · mirrors ID by role | `PAGE-BUILD-WORKFLOW.md` §1b / §7 |
-| Poem typeface (InDesign) | **Cormorant Garamond Medium** · **20/26** · tracking **+5** · centered · #2C2C2C | Locked Jon 2026-07-20 — `FONT-CATALOG.md` · `AGENT-RUNBOOK.md` §5 |
-| PS ↔ ID art size | **2625²** / **5250×2625** placed full-bleed = 300 DPI | Ignore PS 72 dpi tag · no habitual re-scale |
+| Poem typeface (InDesign) | **Cormorant Garamond Medium** · defaults **20/26** · tracking **+5** · centered · white or #2C2C2C | **Per-layer override:** when transferring from PSB, match **each type layer’s** size/leading/tracking/color/bbox (`AGENT-RUNBOOK.md` 2026-07-30) |
+| PS ↔ ID art size | **2625²** / **5250×2625** · spread frame **17.5″×8.75″** centered on spine | Ignore PS 72 dpi tag · no habitual re-scale |
+| Working interior | `Xtraz/Adobe-inDesign/TNIMS-Interior-from-PSB-v10.indd` | Jon live-type dialed · spread art spine-aligned (v9 fix) |
+| Mid-book blank burgundy | **Removed** (was p28\|29) | Not pastedowns — dead air after S12; thank-you follows God bless |
+| End blank burgundy | **Keep** quiet close after thank-you | Even count · Jon locked 2026-07-30 (page #s shift +2 in v2) |
+| Opening burgundy (v2) | **Two** `#4A0E17` pages before title | p1 R blank · p2 L copyright (planned) · title p3 R. Need **+2** not +1 so odd/RIGHT pairing holds (2026-07-31) |
+| Print interior files | FINAL 30pp rollback · **v2-burgundy-open** 32pp candidate | `Xtraz/Adobe-Finals/` · `Output/interiors/` (gitignored binaries) |
 | Spreads | Seamless art — **no fake middle gutter** | Orange fold = MOCK guide only · prompt negatives |
 | Klein dial | **9B + Dial D2** default (4B light only; not Gemini master) | `IMAGE-LANE-PROMPTS.md` · proof D2 sweetspot |
 | Mock versioning | `{unit}/vNN/` + mandatory **full RECIPE.md** (`_RECIPE-TEMPLATE.md` · Prompt · lane · FRAME · script_text · type_zone) | Scoreboard: `Media/generated/mocks/_INDEX/` |
@@ -91,7 +97,7 @@ Jon: no further Media *folder* redesign for a week (2026-07-22) — page dials c
 | PS text API @300ppi | Pass `pt×(300/72)` or batchPlay `pointsUnit` | Else 36→8.64 |
 | ID live type create | `page.textFrames.add` on Type · check `overflows` | Avoid orphan `create_text_frame` |
 | Cover display type | **Cinzel Decorative** (alt Mountains of Christmas) | Same |
-| Lulu color | **sRGB** export for full-color interior | Lulu printers use sRGB (2026 help) |
+| Lulu color | Confirm PDF is **sRGB**, not CMYK — per Lulu’s current print requirements | Lulu help 2026; old “CMYK for print” does not apply |
 | Lulu paper | **Premium Color** / heavier stock | Heirloom gift feel |
 | Safety | ≥ **0.5"** from trim (faces/text) | Lulu full-bleed recommendation |
 
@@ -271,7 +277,10 @@ Jon: no further Media *folder* redesign for a week (2026-07-22) — page dials c
 | 2026-07-15 | Jon mockups locked as refs: soft paint fades, **never cover faces**, Santa pages use **bottom-right** gradient; note pages **lower** not mid-window. Mocks → `text-mocks-v3/` | layout `ref-text-jon-*` |
 | 2026-07-15 | Text wash dial: overpowered solid glow rejected — use **subtle mid-opacity** paper + long fade (Pillow; not a fal model issue). Cheap art dial = Flux schnell / Klein; finals stay Nano Banana Pro | compositing |
 | 2026-07-21 | **Lane priority refresh:** dial = **Klein 9B** (~$0.011/MP); alt = **Qwen Image 2** (~$0.035/img); light = **Klein 4B** (~$0.009/MP, hi-res/low-detail only); finals = **Gemini/Banana** (~$0.15). | Model lanes |
-| 2026-07-24 | **Deep audit:** Cover + P01 dashboard `art.png` must be **2625²** (promote from art-2625; keep backup). Casewrap **spine required** before Lulu — placeholder OK until calculator width. Quiet-close needs full triplet (`art.png` + L/R). | Hygiene / print |
+| 2026-07-31 | **S04 text+image PDF gutter fix:** separate L/R chops in ID (not spanning spread) · export p10/p11 with facing art hidden then merge · Jon confirmed. New PS chops were correct size; placement+export method was the fix. | Print / InDesign |
+| 2026-07-31 | **Interior v2 burgundy-open:** +2 design burgundy pages before title (32 pp). Not Lulu pastedowns — printer still adds white endsheets. Rollback = 30-pp FINAL. S04 export pages **12\|13**. Copyright planned p2 facing title (Jon mockup next). | Print sequence |
+| 2026-07-31 | **Flipbook vs Lulu PDF:** Flipbook = trim 8.5 (bleed MediaBox caused 0.25″ swapped gutter in 3D viewers). Order Front→burgundy IFC→30 interior→burgundy IBC→Back. Lulu endsheets = white auto. Cover export force RGB if drop shadows. | Print / Preview |
+| 2026-07-31 | **Blank burgundy LOCKED = `#4A0E17`** RGB(74,14,23) for flipbook IFC/IBC + interior design blanks. Supersedes RGB(90,22,18). | Color lock |
 | 2026-07-24 | **Lock record gate:** every keep unit = unit-root RECIPE.md + meta.json · agent verify before “locked” · `.gitignore` tracks meta.json · audit backfill script | Process |
 | 2026-07-24 | **FLOW S12 dedup** → 3 plates only · **quality bar JPG** under `_quality-targets/` | Hygiene |
 | 2026-07-23 | **Playbook gaps filled (working):** back cover **v02** (text-scrub) · pastedown burgundy RGB(90,22,18) · optional p34 ornament · p35 colophon · p36 blank · Cover/P01 `art-2625` SeedVR (KEEP `art.png` untouched). Script: `_gen_remaining_playbook_plates.py` | Wrap / padding |
@@ -366,7 +375,7 @@ input:
 - [ ] Gutter: no critical faces on absolute center fold (35-40 page book needs no *extra* gutter margin)
 - [ ] Interior PDF = single multi-page file; **odd pages = right**; no cover pages inside
 - [ ] Cover = separate wrap PDF from **Lulu template** after real page count + paper known
-- [ ] Color: **sRGB** for Lulu full color (review Lulu’s print-ready preview after upload)
+- [ ] Confirm the PDF is exported in **sRGB**, not CMYK — per Lulu's current print requirements (review Lulu’s print-ready preview after upload)
 - [ ] Flatten / no live transparency stacks in final pages (we already flatten via Pillow JPEG)
 - [ ] Soft proof → then gift hardcover (**Premium Color**)
 
@@ -386,8 +395,9 @@ Absorbed from `.cursor/docs/book/Childrens_Book_Design_Summary*.md` and verified
 2. Upload **interior** PDF first → review **print-ready** file Lulu generates (best color/proof check before pay).
 3. Upload **cover** separately (front | spine | back).
 4. Confirm trim is recognized as **8.5×8.5** (file size with bleed = **8.75×8.75** per page).
-5. Order **one physical proof** before any multi-copy run.
-6. Prefer **Premium Color**; blank trailing pages from POD machines are normal / not charged.
+5. Confirm the PDF is exported in **sRGB**, not CMYK — per Lulu's current print requirements.
+6. Order **one physical proof** before any multi-copy run.
+7. Prefer **Premium Color**; blank trailing pages from POD machines are normal / not charged.
 
 **Design spreads in software as doubles**, export to Lulu as **single pages in order** (not as one wide spread PDF unless the platform asks for it).
 

@@ -11,6 +11,61 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-07-31 — Inserting one front page breaks every Lulu spread pair
+
+| | |
+|---|---|
+| **Symptom** | Want burgundy blank facing title when book opens; adding **one** page → 31 pp would put title on **LEFT** and shift all even\|odd pairs. |
+| **Root cause** | Lulu/PDF: page **1 is always RIGHT** (odd=right, even=left). Single insert flips parity of every following page. |
+| **Resolution** | Insert **two** `#4A0E17` design pages: p1 R blank (faces white endsheet) · p2 L (copyright planned) · p3 R title. File: `TNIMS-Interior-FINAL-v2-burgundy-open` (32 pp). Keep 30-pp FINAL as rollback. S04 isolate export moves to **p12\|13**. |
+| **Verify** | ID sides `1R 2L 3R…`; title on p3; S04 links on 12\|13; PDF 32×8.75 Media / 8.5 Trim |
+
+---
+
+## 2026-07-31 — Cover PDF exported DeviceCMYK despite Leave Color Unchanged
+
+| | |
+|---|---|
+| **Symptom** | `TNIMS-Cover-FINAL-Lulu.pdf` images were **DeviceCMYK**; `TNIMS-Cover-v4.pdf` was already sRGB ICC. Linked cover art in INDD was RGB. |
+| **Root cause** | Live type frames had **drop shadows** → transparency flatten under Lulu cover preset (`AllowTransparency false`) rasterized to **CMYK**. `LeaveColorUnchanged` / `UNCHANGED_COLOR_SPACE` does not stop that flatten path. |
+| **Resolution** | Re-export cover with `pdfColorSpace = PDFColorSpace.RGB` (sRGB destination). Deliverable replaced: `Output/covers/TNIMS-Cover-FINAL-Lulu.pdf`. CMYK copy kept as `TNIMS-Cover-FINAL-Lulu-CMYK-backup.pdf`. |
+| **Verify** | New PDF: ICCBased RGB (no `DeviceCMYK`); size **18.25×8.75″** |
+
+---
+
+## 2026-07-31 — S04 text+image PDF: page 10/11 showed each other’s art at the gutter
+
+| | |
+|---|---|
+| **Symptom** | Only S04 (p10\|11) in `TNIMS-Interior-FINAL-Lulu.pdf` looked wrong: p10 had a thin burgundy strip on the right; p11 had a thin cream strip on the left. Other spreads looked fine. |
+| **Root cause** | S04 is **text + image** (cream mistletoe page \| burgundy Santa page), not a continuous seamless scene. INDD had one spanning `S04-spread.png` (correct size/placement for seamless spreads). Lulu single-page PDF export includes **0.125″ past the spine**, so each page pulled 0.125″ of the facing half. Hard cream↔burgundy made it obvious; continuous spreads hid the same bleed math. Jon’s re-chops (`S04-p10-left` / `S04-p11-right` / `S04-p10-11-spread`) were correctly sized — **chops alone did not fix PDF crosstalk**. |
+| **Resolution** | 1) Place **separate** `S04-p10-left.png` + `S04-p11-right.png` as 8.75″ page bleed frames (not one spanning spread). 2) On PDF export: export p10 with **right art hidden**, p11 with **left art hidden**, then merge into the full interior PDF (overlapping full-bleed frames still crosstalk via z-order if both stay visible). Keep both visible in the INDD for editing. Documented in `AGENT-RUNBOOK.md` § Text+image placement. |
+| **Verify** | Jon confirmed PDF looks better. Edge sample: p10 right ≈ cream; p11 left ≈ burgundy. Files: `Xtraz/Adobe-Finals/TNIMS-Interior-FINAL.indd` · `Output/interiors/TNIMS-Interior-FINAL-Lulu.pdf` |
+
+---
+
+## 2026-07-30 — Seamless spread art misaligned at gutter (L/R half bleed overlap)
+
+| | |
+|---|---|
+| **Symptom** | Facing spreads in InDesign did not meet seamlessly at the fold the way the PSB looked — art looked shifted / broken in the middle |
+| **Root cause** | Agent placed `*-left.png` + `*-right.png` each with **0.125″ bleed on all four sides**. Both frames crossed the spine → **0.25″ overlap**. Also, a 5250×2625 (17.5″) master’s fold is the **canvas midpoint**; that midpoint must sit on InDesign’s **spine (8.5″)**, which is **not** the same as putting each half’s outer-bleed box on each page |
+| **Resolution** | **v9 fix (kept in v10):** for every facing art spread, place **one** `*-spread.png` at **17.5″ × 8.75″** with frame midpoint = spine (`left = spine−8.75`, `right = spine+8.75`). Fit `CONTENT_TO_FRAME`. Keep text frames. Documented in `AGENT-RUNBOOK.md` § Seamless spread placement |
+| **Verify** | Facing-pages view · sample spreads midX == 8.5 · delta **0** · Jon confirmed lined up on v10 |
+
+---
+
+## 2026-07-30 — PS→ID type used one global style; Jon had to re-format every frame
+
+| | |
+|---|---|
+| **Symptom** | After PSB→InDesign builds (v7+), all live text used default Cormorant 20/26; Jon had to change size/spacing per frame by hand in v8–v10 |
+| **Root cause** | Agent applied a single paragraph style instead of reading **each PS type layer’s** size, leading, tracking, and color |
+| **Resolution** | Rule: match **per-layer** PS formatting + bbox when transferring type. Global 20/26 is fallback only. See `AGENT-RUNBOOK.md` § PS → InDesign live type |
+| **Verify** | Next PSB→ID build should ship near-final type; Jon only nudges |
+
+---
+
 ## 2026-07-24 — Deep audit: Cover/P01 under-resolution + quiet-close missing master
 
 | | |

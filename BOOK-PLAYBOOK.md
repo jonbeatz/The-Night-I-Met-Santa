@@ -405,7 +405,7 @@ leading = 0.55 em             # Line spacing
 - [ ] No critical faces on absolute center fold
 - [ ] Interior PDF = single multi-page file; odd pages = right
 - [ ] Cover PDF = separate wrap file (download Lulu template after page count is final)
-- [ ] Color: sRGB (not CMYK)
+- [ ] Confirm the PDF is exported in **sRGB**, not CMYK — per Lulu's current print requirements
 - [ ] Flattened — no live transparency stacks
 - [ ] Order 1 physical proof before any multi-copy run
 

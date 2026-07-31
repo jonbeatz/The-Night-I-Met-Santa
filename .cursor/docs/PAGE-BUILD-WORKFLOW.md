@@ -92,7 +92,9 @@ If the cloud is painted where it belongs on the full canvas, InDesign placement 
 ⑤ CLOSE source PNG tab immediately
 ⑥ ADD MOCK-TYPE layer (preview) — **defaults §7** (visible inside SAFETY) · Jon positions + cloud brush
 ⑦ SAVE PSD when MOCK is close
-⑧ PLACE art + rebuild **same pt/position** live type into InDesign
+⑧ PLACE art + rebuild live type into InDesign  
+   · Spreads: one `*-spread.png`, midpoint on spine (`AGENT-RUNBOOK.md`)  
+   · Type: match **each PS type layer** size/leading/tracking/color/bbox
 ⑨ Jon approves → promote winner to Media/approved/ (+ recipe sidecar)
 ```
 

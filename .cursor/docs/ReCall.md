@@ -10,35 +10,35 @@
 6. SoT plates: `Media/generated/mocks/_FLOW-CURRENT.json`
 
 ## Current focus
-**PHASE: 2026-07-30 night → TOMORROW = InDesign live-text pass.**  
-Jon: book art is essentially locked; **will name all finals tomorrow**, then we build **full InDesign with real text**.  
-**Cover LOCKED:** **v14-MyPhotoshop-v2** → `Media/development/Cover/art.png` (title baked · author live ID).  
-**Pending Jon eye (not promoted):** boy age-up dials — `S01-approach/v15-age-s07` · `S03-eyes-met/v08-age-s07` · `S04-sit-here/v14b-age-s07` (v14 dropped Santa — use **v14b**).  
-**Story/matter:** P01 v25 · P02 v04 · S1–S12 (S12 v23) · p30 keep · wrap/spine still open.  
-**SoT:** `_FLOW-CURRENT.json` · `FINALS-CHECKLIST.md` · `AGENT-RUNBOOK.md` for ID.
+**PHASE: Burgundy-open interior v2 ready · copyright page mockup pending (Jon tomorrow).**  
+Rollback print: `TNIMS-Interior-FINAL` (30 pp). Candidate: `TNIMS-Interior-FINAL-v2-burgundy-open` (32 pp).  
+Flipbook: `TNIMS-FLIPBOOK` (34 pp — not for Lulu upload).
 
 ## Birthday deadline
-**2026-08-15** — Lulu hardcover gift for Jack Farrell. Proof ASAP after ID text lock.
+**2026-08-15** — Lulu hardcover gift for Jack Farrell. Upload interior → get spine template → proof.
 
 ## Last updated
-2026-07-30 late — leave-off: **tomorrow = finals list + full InDesign live text**.
+2026-07-31 (late) — Interior v2 burgundy-open + docs/Mem0/vault harvest · End Project.
 
-## Where we left off (2026-07-30)
-- Cover v14 locked earlier; age-up alts generated for S01 L / S03 / S04 (await KEEP).
-- Jon pausing for sleep — **tomorrow delivers final plate list**, then full InDesign real-type book.
+## Where we left off (2026-07-31 late)
+- **Interior v2 (candidate for Lulu):** `Xtraz/Adobe-Finals/TNIMS-Interior-FINAL-v2-burgundy-open.indd` + `Output/interiors/TNIMS-Interior-FINAL-v2-burgundy-open-Lulu.pdf` — **32 pp** · 8.75 Media · Trim 8.5 · S04 isolated on **p12|13**.
+- **Why 32 not 31:** PDF p1 is always RIGHT. One insert puts title on LEFT and breaks every spread. Two `#4A0E17` burgundies keep title odd/RIGHT.
+- **Open sequence:** Lulu white endsheet → p1 R burgundy → p2 L burgundy | p3 R title. Copyright text planned for **p2** (back of first burgundy leaf) — Jon Photoshop mockup **tomorrow** with fresh eyes.
+- **Rollback:** `TNIMS-Interior-FINAL.indd` + `TNIMS-Interior-FINAL-Lulu.pdf` (30 pp) untouched.
+- **Cover / Flipbook (unchanged):** Cover FINAL sRGB · Flipbook trim 34 pp seamless gutters confirmed.
+- **Lulu endsheets:** still white auto. Design burgundy pages in interior ≠ printer pastedowns (see runbook).
 
 ## Start here next
-1. **Open Project** → CONTINUE-HERE + this ReCall.
-2. Capture Jon’s **finals checklist** (promote age-ups? any swaps?).
-3. **Full InDesign live text** across cover author + poem + matter (Cormorant · clouds per runbook).
-4. Casewrap/spine · path to `Media/finals/`.
+1. Jon: PS mockup copyright on burgundy p2 (copy in CONTINUE-HERE / BOOK-COPY-DRAFTS).
+2. Approve copy → set live type in v2 INDD → re-export v2 Lulu PDF.
+3. Upload **v2 Interior** (or FINAL if rolling back) to Lulu → spine template → proof.
 
 ## Reference (this session)
-- **FINALS-CHECKLIST.md** — HIGH/MED/LOW audit of all FLOW plates
-- **book_poem_map.py** — includes P-thank-you / P-author / P-quiet-close
-- Frame refs: `Media/approved/style-refs/frame-reference.png` · `spread-frame-reference.png`
-- S12 consolidated folder only: `Media/development/S12-god-bless/` (S12b merged)
-- Review list: `Cover/art-back.png` · `pastedown-burgundy.png` · `art-spine.png` · `P34-padding` · `P35-colophon` · `P36-blank`
+- v2 README: `Xtraz/Adobe-Finals/TNIMS-Interior-FINAL-v2-burgundy-open-README.md`
+- Merge S04 v2: `python scripts/_scratch/_merge_s04_interior_pdf_v2.py`
+- Flipbook rebuild: `python scripts/build_flipbook_trim_pdf.py`
+- Spec verify: `python scripts/_scratch/_verify_lulu_flipbook_pdfs.py`
+- **FINALS-CHECKLIST.md** · `AGENT-RUNBOOK.md` · `INDESIGN-PRODUCTION-WORKFLOW.md`
 
 ## System of record
 | Doc | Use |
@@ -59,47 +59,3 @@ Jon: book art is essentially locked; **will name all finals tomorrow**, then we 
 | **tools/layout-mcp/SETUP.md** | InDesign bridge |
 | **tools/layout-mcp/PHOTOSHOP-SETUP.md** | Photoshop adobepy UXP MCP — **LIVE** |
 | LULU-8.5-SQUARE-CHEATSHEET | Trim, bleed, safety, cover-template notes |
-
-## Paths
-| What | Where |
-|------|--------|
-| Poem | `Transcription/poem-clean.txt` |
-| **Approved** | **`Media/approved/`** |
-| Cover LOCKED | `Media/development/Cover/art.png` (**v14-MyPhotoshop-v2** · **2625²** · title baked) · spine placeholder `art-spine.png` |
-| Boy G0 | `Media/approved/characters/boy-narrator-G0.png` (+ face) |
-| Santa G0 v2 | `Media/approved/characters/santa-G0-v2.png` (+ standing `santa-G0.png`) |
-| Jack portrait | `Media/approved/characters/jack-farrell-portrait.png` (source) · framed `Media/development/P-author/art.png` |
-| Quality bar | `Media/development/S03-eyes-met/v07/art.png` |
-| S12 working | `Media/development/S12-god-bless/art.png` (v22) |
-| Style lock | `Media/approved/style-refs/style-lock-v2.png` |
-| **Photoshop working** | **`Xtraz/Adobe-Photoshop/`** |
-| Photoshop UXP setup | `tools/layout-mcp/PHOTOSHOP-SETUP.md` |
-
-## Decisions locked
-- Format: **8.5×8.5"** · Printer: **Lulu** · Color: **sRGB** · **35–40 pages** (locked)
-- Layout: **InDesign UXP** = production (`AGENT-RUNBOOK.md`); Pillow/Typst = **fallback only**; Affinity = optional polish
-- Style: **Painted gouache** (not colored pencil)
-- **Image lanes:** dial **Klein 9B** → **Qwen** alt → Klein **4B** light → **finals Gemini/Banana**
-- **Image providers:** **fal.ai first** · **OpenRouter second**
-- **Cover:** **v14-MyPhotoshop-v2** · oatmeal holly PJs · **Santa face mostly HIDDEN** · title baked · author live InDesign
-- **Cover superseded:** beige-v2 backed up as `art-beige-v2-superseded-2026-07-29.png`
-- **Santa wardrobe:** open red coat · cream striped shirt · brown suspenders **over shirt**
-- **Boy G0:** oatmeal/taupe holly · visible berries · red trim/buttons · brown eyes
-- **Quality bar:** S3 Eyes Met **v07**
-- **S12 = p26|27 only** · p28|29 merged/absorbed
-- **Poem “God bless.”** on **S12 R under North Star** — **not** on p32
-- **p32** = *Merry Christmas.* only · **p33** = *May the magic of this night…*
-- **Text on art:** InDesign live Cormorant + cloud PNG — never bake poem into art
-- **Page-by-page** only; Jon approves each; never call “final” until print path
-- **Casewrap pastedowns:** solid burgundy
-- **Media three-tier:** approved / development / finals
-- **Spread frames:** finals only (not on development keepers) · singles cream vignette = FRAME ON for text/matter pages
-
-## Do not
-- Regenerate locked G0s / style-lock / cover / Jack portrait without Jon
-- Burn more Qwen gens for S12 nine-deer until Jon PS master lands
-- Say “feathered” for paint edges (draws feathers)
-- Exceed 3 `image_urls` on Qwen Pro Edit
-- Spend GPT High 4K except `gpt_pillar: true` beats
-- Auto-start long-running servers unless asked
-- Put “God bless.” on p32 (belongs on S12 R)
