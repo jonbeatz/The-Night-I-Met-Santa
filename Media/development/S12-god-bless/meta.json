@@ -2,13 +2,11 @@
   "unit": "S12-god-bless",
   "spread": "S12",
   "pages": "26|27",
-  "version": "v23",
+  "version": "v29",
   "status": "locked",
-  "date": "2026-07-27",
+  "date": "2026-07-31",
   "decided_by": "Jon",
-  "reaffirmed": "2026-07-27 Jon preferred v23 over v24 Qwen polish",
-  "rejected_versions": ["v24"],
-  "model": "v23 composite lock (Qwen/Banana/PS lineage)",
+  "model": "Jon Photoshop composite final",
   "resolution": "5250x2625",
   "dimensions": {
     "art.png": [5250, 2625],
@@ -19,25 +17,19 @@
     "art": "Media/development/S12-god-bless/art.png",
     "left": "Media/development/S12-god-bless/art-left.png",
     "right": "Media/development/S12-god-bless/art-right.png",
-    "version_folder": "Media/development/S12-god-bless/v23/",
-    "backup_pre_lock": "Media/development/S12-god-bless/_backup-pre-v23-lock/"
+    "version_folder": "Media/development/S12-god-bless/v29/",
+    "backup_pre_lock": "Media/development/S12-god-bless/_backup-pre-v29-lock/"
   },
   "composition": {
     "santa_in_sleigh": true,
-    "coat": "closed_outdoor_cold",
     "reindeer_count": 9,
     "leader_red_nose": true,
     "boy": "implied_via_warm_victorian_house",
-    "frame": "cream_vignette",
-    "palette": "burgundy_deep_blue",
-    "text_pocket": "North Star R — God bless. (InDesign)"
+    "text_pocket": "North Star R — God bless. (InDesign)",
+    "no_baked_text": true
   },
-  "design_tokens": {
-    "palette": "pass",
-    "frame": "pass",
-    "santa_face": "pass",
-    "santa_open_coat_rule": "exception_closed_for_outdoor",
-    "resolution": "pass",
-    "no_baked_text": "pass"
-  }
+  "supersedes": ["v25", "v23"],
+  "indesign": "placed_and_saved_by_Jon_2026-07-31",
+  "tier": "development",
+  "note": "Not Lulu-final until Media/finals/ after PDF export + sign-off"
 }

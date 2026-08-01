@@ -26,7 +26,7 @@ Everything else is **reference on demand** (do not auto-load): `.cursor/docs/PAG
 - **Comparison boards:** one board per decision (Klein | new | favorite). Retroactive S04 multi-boards = archive.
 - **Quality bar (2026-07-22):** `Media/development/S03-eyes-met/v07/art.png` — prefer fewer gifts later; doorway spill from S2 v05
 - **Forever locks (approved/):** boy G0 · **santa-G0-v2** · Jack portrait · style-lock-v2 · frame refs
-- **Story keeps (development/):** **Cover v14-MyPhotoshop-v2** · **P01 v25** (page 1 RIGHT · full-bleed burgundy) · P02 v04 · S1 v13|v14 · **S2 v06** · **S3 v07** · **S4 v13** · S5–S11 KEEP · **S12 v23 LOCKED FINAL**
+- **Story keeps (development/):** **Cover v14-MyPhotoshop-v2** · **P01 v25** (page 1 RIGHT · full-bleed burgundy) · P02 v04 · S1 v13|v14 · **S2 v06** · **S3 v07** · **S4 v13** · S5–S11 KEEP · **S12 v29 LOCKED FINAL** (Jon PS · supersedes v25)
 - **Back matter:** p30 KEEP · p31 framed (`P-author`) · p32|33 working · **"God bless." on S12 R only**
 - **Pre-finals gate:** `.cursor/docs/FINALS-CHECKLIST.md`
 - **Current-best page art:** `Media/development/` (not Lulu-final)

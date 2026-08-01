@@ -17,7 +17,8 @@ from pathlib import Path
 import fitz  # PyMuPDF
 
 ROOT = Path(__file__).resolve().parents[1]
-INTERIOR = ROOT / "Output/interiors/TNIMS-Interior-FINAL-Lulu.pdf"
+# Deliverable interior = v2 burgundy-open (32 pp). Rollback 30-pp FINAL kept separately.
+INTERIOR = ROOT / "Output/interiors/TNIMS-Interior-FINAL-v2-burgundy-open-Lulu.pdf"
 COVER = ROOT / "Output/covers/TNIMS-Cover-FINAL-Lulu.pdf"
 OUT = ROOT / "Output/interiors/TNIMS-FLIPBOOK-trim.pdf"
 
@@ -136,7 +137,7 @@ def main() -> None:
     print(f"  page size: {TRIM}\" x {TRIM}\" (trim only, no bleed)")
     print(f"  pastedown: {pastedown.name if pastedown.is_file() else f'solid {BURGUNDY_HEX}'}")
     print(f"  size: {OUT.stat().st_size / 1e6:.2f} MB")
-    print("  open order: cover → [burgundy | page01] → [spread 2|3] … → [burgundy | back]")
+    print("  open order: cover -> [burgundy | page01] -> [spread 2|3] ... -> [burgundy | back]")
 
     front_doc.close()
     back_doc.close()

@@ -18,33 +18,30 @@ No separate designer page. Optional later: soft AI disclosure under the copyrigh
 
 ---
 
-## Copyright / colophon — p2 burgundy (draft 2026-07-31)
+## Copyright / colophon — p2 (live in ID — 2026-07-31)
 
-**Placement:** Interior **v2** PDF **p2 LEFT** (burgundy `#4A0E17`), facing title **p3 RIGHT**. Keep **p1** blank burgundy. Prefer beginning over end blanks.
+**Placement:** Interior **v2** p2 LEFT facing title p3 · seamless art from `TNIMS-P2-P3-v2.psb`. Keep **p1** blank burgundy.
 
-**Status:** Copy approved for mockup · Jon PS mockup tomorrow · then InDesign live type.
+**Status:** Live in `TNIMS-Interior-FINAL-v2-burgundy-open.indd` + `TNIMS-FLIPBOOK.indd`. Style `Copyright-Legal`.
+
+**Type lock (match PSD):** Cormorant Garamond Medium · **14/16** (edition line **16/16**) · tracking **+12** · cream RGB(255,254,251) · **CENTER** · layer `3-Live-Type`. Art plate without type: `Images/chopz/from-psb-v7/P02-P03-spread-art.png`.
 
 ```
 Copyright © 2026 Jack Farrell
 All rights reserved.
 
-No part of this book may be reproduced or transmitted
-in any form or by any means, electronic or mechanical,
-including photocopying, recording, or by any information
-storage and retrieval system, without permission in writing
-from the publisher or author.
+No part of this book may be reproduced or transmitted in any form
+or by any means, electronic or mechanical, including photocopying,
+recording, or by any information storage and retrieval system,
+without permission in writing from the publisher or author.
 
-This is a work of fiction. Names, characters, places, and
-incidents either are the product of the author’s imagination
-or are used fictitiously, and any resemblance to actual
-persons, living or dead, is entirely coincidental.
+This is a work of fiction. Names, characters, places, and incidents either
+are the product of the author’s imagination or are used fictitiously,
+and any resemblance to actual persons, living or dead, is entirely coincidental.
 
-First illustrated edition, 2026
-Produced by Jon Farrell
+First illustrated edition, 2026. Book design by Jon Farrell.
 www.jon-beatz.com
 ```
-
-Type: quiet cream on burgundy · ~9–11 pt feel · Cormorant or body face.
 
 ---
 

@@ -222,6 +222,8 @@ Defaults (Cormorant Medium 20/26 +5) are a **fallback only**. When building from
 3. Apply **that layer’s** formatting — do **not** force every stanza to 20/26 if the PS layer differs
 4. Prefer one frame per PS type layer (Jon often splits stanzas across multiple layers)
 5. No baked letter FX unless Jon asks — v7+ masters ship type without Drop Shadow / Outer Glow
+6. **Match PSD fidelity:** font, size, leading, tracking, **alignment**, color, box — center stays center
+7. **Pica rulers gotcha (2026-07-31):** if document units are **picas**, switch viewPreferences to **POINTS** before setting `pointSize`/`leading` (or use `"14pt"` strings). Bare `pointSize = 14` = **14 picas** ≈ 132 pt → fake overset. See `ISSUES-RESOLVED.md`.
 
 #### PSD blanks (locked — matches InDesign / Lulu)
 

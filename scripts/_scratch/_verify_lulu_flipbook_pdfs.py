@@ -56,6 +56,16 @@ def summarize(path: Path, expect_pages=None, expect_w=None, expect_h=None):
 
 
 oks = []
+# Primary Lulu interior deliverable (v2 burgundy-open)
+oks.append(
+    summarize(
+        ROOT / "Output/interiors/TNIMS-Interior-FINAL-v2-burgundy-open-Lulu.pdf",
+        expect_pages=32,
+        expect_w=8.75,
+        expect_h=8.75,
+    )
+)
+# Rollback 30-pp FINAL (kept; not the candidate)
 oks.append(
     summarize(
         ROOT / "Output/interiors/TNIMS-Interior-FINAL-Lulu.pdf",
@@ -72,10 +82,11 @@ oks.append(
         expect_h=8.75,
     )
 )
+# Flipbook = front + IFC + 32 interior + IBC + back = 36
 oks.append(
     summarize(
         ROOT / "Output/interiors/TNIMS-FLIPBOOK-trim.pdf",
-        expect_pages=34,
+        expect_pages=36,
         expect_w=8.5,
         expect_h=8.5,
     )

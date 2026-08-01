@@ -6,52 +6,59 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-07-31 late)
+## One-line status (2026-08-01 early AM)
 
-**Interior v2 burgundy-open exported** (32 pp) · 30-page FINAL kept for rollback.  
-**Next:** Jon PS mockup of copyright on **p2 burgundy** (facing title) → then live type in ID → Lulu upload.
+**Gold foil end-page logos ready** (`Images/styles3/`). Masters still in `Adobe-Finals/final/`.  
+**TOMORROW (priority):** Remake final PDF deliverables with latest remade artwork + place new logos as needed.
 
-| Deliverable | Path | Pages |
-|-------------|------|-------|
-| Rollback interior | `Output/interiors/TNIMS-Interior-FINAL-Lulu.pdf` | 30 |
-| **Candidate interior** | `Output/interiors/TNIMS-Interior-FINAL-v2-burgundy-open-Lulu.pdf` | **32** |
-| Cover | `Output/covers/TNIMS-Cover-FINAL-Lulu.pdf` | wrap sRGB |
-| Flipbook | `Output/interiors/TNIMS-FLIPBOOK-trim.pdf` | 34 trim |
+| Deliverable | Path | Spec |
+|-------------|------|------|
+| **INDD masters** | `Xtraz/Adobe-Finals/final/` | Interior 32 · Cover 1 · Flipbook 34 |
+| **Interior PDF** | `Output/finals/TNIMS-Interior-FINAL-v2-burgundy-open-Lulu.pdf` | 32 · 8.75² / Trim 8.5² · S04 isolate — **re-export after art** |
+| **Cover PDF** | `Output/finals/TNIMS-Cover-FINAL-Lulu.pdf` | 18.25×8.75 · sRGB — **re-export after art** |
+| **Flipbook PDF** | `Output/finals/TNIMS-FLIPBOOK-trim.pdf` | **34** · 8.5² trim — **re-export after art** |
+
+### New logos (2026-08-01) — transparent PNG
+| Logo | Path |
+|------|------|
+| God Bless | `Images/styles3/logo-god-bless.png` (+ `-on-black`) |
+| Jack Farrell | `Images/styles3/logo-jack-farrell.png` (+ `-on-black`) |
+| Merry Christmas | `Images/styles3/logo-merry-christmas.png` (+ `-on-black`) |
+| Source style | `Images/styles3/logo2.png` |
 
 ### Leave-off → start next
-1. **Fresh eyes:** Photoshop mockup — copyright block on burgundy **p2 LEFT** (faces title p3). Keep **p1** blank burgundy.
-2. Approve type → InDesign v2 live text → re-export Lulu PDF (S04 still p12|13 isolate+merge).
-3. Upload interior to Lulu → custom spine → re-fit cover if needed → physical proof.
+1. **Remake final last PDF deliverables** with latest remade artwork (Jon’s latest plates + logos).
+2. Spec verify (`scripts/_scratch/_verify_finals_pdfs.py`) → refresh `Adobe-Finals/final/` snapshots if needed.
+3. Then Lulu upload → spine → proof.
 
 **Gift deadline:** **2026-08-15**.
 
 ---
 
-## Copyright copy (draft for p2 — mockup tomorrow)
+## Copyright / p2|p3 (in ID — 2026-07-31)
 
-Use cream type on `#4A0E17`. Keep title page to short credits only.
+**Source PSD:** `Xtraz/Adobe-Photoshop/TNIMS-P2-P3-v2.psb`  
+**Art (no type):** `Images/chopz/from-psb-v7/P02-P03-spread-art.png` — seamless spread  
+**Live type:** p2 · style `Copyright-Legal` · Cormorant Medium · 14/16 · tracking +12 · cream · **center** · `3-Live-Type`
 
 ```
 Copyright © 2026 Jack Farrell
 All rights reserved.
 
-No part of this book may be reproduced or transmitted
-in any form or by any means, electronic or mechanical,
-including photocopying, recording, or by any information
-storage and retrieval system, without permission in writing
-from the publisher or author.
+No part of this book may be reproduced or transmitted in any form
+or by any means, electronic or mechanical, including photocopying,
+recording, or by any information storage and retrieval system,
+without permission in writing from the publisher or author.
 
-This is a work of fiction. Names, characters, places, and
-incidents either are the product of the author’s imagination
-or are used fictitiously, and any resemblance to actual
-persons, living or dead, is entirely coincidental.
+This is a work of fiction. Names, characters, places, and incidents either
+are the product of the author’s imagination or are used fictitiously,
+and any resemblance to actual persons, living or dead, is entirely coincidental.
 
-First illustrated edition, 2026
-Produced by Jon Farrell
+First illustrated edition, 2026. Book design by Jon Farrell.
 www.jon-beatz.com
 ```
 
-**Placement lock:** beginning (p2 facing title) — not end blanks. p1 stays solid burgundy.
+**Placement:** p1 blank burgundy · p2|p3 legal|title · not end blanks.
 
 ---
 

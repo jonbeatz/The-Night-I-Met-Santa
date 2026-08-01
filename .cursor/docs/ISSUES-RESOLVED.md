@@ -11,6 +11,17 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-07-31 — InDesign pointSize with pica rulers = huge type / fake overset
+
+| | |
+|---|---|
+| **Symptom** | Live copyright frame looked empty or massively overset; `tf.contents` short; story had full text. |
+| **Root cause** | Document rulers in **picas**. Setting `pointSize = 14` applied **14 picas (~132 pt)**, not 14 pt. |
+| **Resolution** | Switch `viewPreferences` measurement units to **POINTS** before setting type sizes (or use `pt/6` in picas). Restore picas after. PS→ID: match font/size/leading/tracking/**alignment**/color/box from PSD. |
+| **Verify** | Readback `pointSize` is 14 with units=POINTS; frame not overset; center align matches PSD. |
+
+---
+
 ## 2026-07-31 — Inserting one front page breaks every Lulu spread pair
 
 | | |

@@ -2,6 +2,13 @@
 
 | Date | Note |
 |------|------|
+| 2026-08-01 | **End Project:** Gold foil transparent logos from `logo2.png` — God Bless (readable redo) · Jack Farrell · Merry Christmas → `Images/styles3/`. Docs/Mem0/vault. **Tomorrow = remake final PDF deliverables with latest remade artwork.** |
+| 2026-07-31 | **Finals PDF refresh (tree stars):** Re-exported all 3 master PDFs to `Output/finals/` + refreshed `Adobe-Finals/final/` INDDs after Jon art fix. Spec ALL PASS · cover sRGB. |
+| 2026-07-31 | **Finals PDF refresh (P0-Legal):** Jon redesigned legal\|title · `Media/development/P0-Legal/` + RECIPE/meta. Re-exported all 3 master PDFs to `Output/finals/` · refreshed `Adobe-Finals/final/` INDDs. Spec ALL PASS. |
+| 2026-07-31 | **MASTER FINALS LOCKED.** INDDs → `Xtraz/Adobe-Finals/final/` · PDFs → `Output/finals/` (interior 32 S04-isolate · cover sRGB · flipbook 34 from FLIPBOOK.indd). Preflight links/bleed/type + verify ALL PASS. |
+| 2026-07-31 | **Deliverable PDFs re-exported:** Interior v2 32pp (S04 isolate) · Cover sRGB · Flipbook trim **36**pp (from v2). Spec verify ALL PASS. S12 v29 in print path. |
+| 2026-07-31 | **S12 God Bless LOCKED = v29.** Jon Photoshop final (9 deer). Dashboard triplet + RECIPE/meta · FLOW p26\|27 · supersedes v25. Backup `_backup-pre-v29-lock/`. Art already in INDD (Jon saved). Next = PDF re-export. |
+| 2026-07-31 | **Log updates:** P2\|P3 from `TNIMS-P2-P3-v2.psb` into v2 + flipbook. Art-only seamless plate + **live** centered copyright (`Copyright-Legal`). PDF re-export still pending. Picas/`pointSize` gotcha logged in ISSUES. |
 | 2026-07-31 | **End Project:** Interior **v2 burgundy-open** (32 pp) exported; 30-pp FINAL kept. Binding: +2 burgundy so title stays RIGHT. Copyright → p2 facing title (Jon PS mockup tomorrow). Docs/Mem0/vault/Mnemosyne + git push. |
 | 2026-07-31 | **Update docs + PDFs + Mem0/vault/Mnemosyne:** Remade Interior (S04 isolated) · Cover sRGB · Flipbook trim 34pp. Specs PASS. Lulu endsheets = white auto. Flipbook IFC/IBC burgundy kept. |
 | 2026-07-31 | **Interior v2:** Save As `TNIMS-Interior-FINAL-v2-burgundy-open.indd` · PDF `TNIMS-Interior-FINAL-v2-burgundy-open-Lulu.pdf`. Open: white endsheet → p1 R burgundy → p2 L burgundy \| p3 R title. S04 isolate export now **p12\|13**. README in Adobe-Finals. |

@@ -10,34 +10,32 @@
 6. SoT plates: `Media/generated/mocks/_FLOW-CURRENT.json`
 
 ## Current focus
-**PHASE: Burgundy-open interior v2 ready · copyright page mockup pending (Jon tomorrow).**  
-Rollback print: `TNIMS-Interior-FINAL` (30 pp). Candidate: `TNIMS-Interior-FINAL-v2-burgundy-open` (32 pp).  
-Flipbook: `TNIMS-FLIPBOOK` (34 pp — not for Lulu upload).
+**PHASE: REMARK FINAL PDFs** — masters still in `Xtraz/Adobe-Finals/final/`; PDFs need refresh with latest remade artwork + new end-page logos.  
+INDDs: `Xtraz/Adobe-Finals/final/` · PDFs: `Output/finals/` (stale vs latest art until remade).
 
 ## Birthday deadline
 **2026-08-15** — Lulu hardcover gift for Jack Farrell. Upload interior → get spine template → proof.
 
 ## Last updated
-2026-07-31 (late) — Interior v2 burgundy-open + docs/Mem0/vault harvest · End Project.
+2026-08-01 (early AM) — Gold foil logo suite + End Project. Tomorrow = remake final PDF deliverables.
 
-## Where we left off (2026-07-31 late)
-- **Interior v2 (candidate for Lulu):** `Xtraz/Adobe-Finals/TNIMS-Interior-FINAL-v2-burgundy-open.indd` + `Output/interiors/TNIMS-Interior-FINAL-v2-burgundy-open-Lulu.pdf` — **32 pp** · 8.75 Media · Trim 8.5 · S04 isolated on **p12|13**.
-- **Why 32 not 31:** PDF p1 is always RIGHT. One insert puts title on LEFT and breaks every spread. Two `#4A0E17` burgundies keep title odd/RIGHT.
-- **Open sequence:** Lulu white endsheet → p1 R burgundy → p2 L burgundy | p3 R title. Copyright text planned for **p2** (back of first burgundy leaf) — Jon Photoshop mockup **tomorrow** with fresh eyes.
-- **Rollback:** `TNIMS-Interior-FINAL.indd` + `TNIMS-Interior-FINAL-Lulu.pdf` (30 pp) untouched.
-- **Cover / Flipbook (unchanged):** Cover FINAL sRGB · Flipbook trim 34 pp seamless gutters confirmed.
-- **Lulu endsheets:** still white auto. Design burgundy pages in interior ≠ printer pastedowns (see runbook).
+## Where we left off (2026-08-01)
+- Generated matching gold-foil transparent logos from `Images/styles3/logo2.png`:
+  - `logo-god-bless.png` (readable redo; v1 squashed archived)
+  - `logo-jack-farrell.png`
+  - `logo-merry-christmas.png`
+  - Each has `-on-black.png` preview twin
+- Prior session already locked masters + S12 v29 / P0-Legal / finals folder — **PDFs not yet re-exported with tonight’s remade artwork.**
 
-## Start here next
-1. Jon: PS mockup copyright on burgundy p2 (copy in CONTINUE-HERE / BOOK-COPY-DRAFTS).
-2. Approve copy → set live type in v2 INDD → re-export v2 Lulu PDF.
-3. Upload **v2 Interior** (or FINAL if rolling back) to Lulu → spine template → proof.
+## Start here next (TOMORROW — priority)
+1. **Remake final PDF deliverables** with latest remade artwork (logos + any plate updates Jon placed).
+2. Refresh: Interior (S04 isolate) · Cover sRGB · Flipbook trim 34 · optional paperback cover alt.
+3. Spec verify → then Lulu upload when Jon signs off.
 
 ## Reference (this session)
-- v2 README: `Xtraz/Adobe-Finals/TNIMS-Interior-FINAL-v2-burgundy-open-README.md`
-- Merge S04 v2: `python scripts/_scratch/_merge_s04_interior_pdf_v2.py`
-- Flipbook rebuild: `python scripts/build_flipbook_trim_pdf.py`
-- Spec verify: `python scripts/_scratch/_verify_lulu_flipbook_pdfs.py`
+- Logo scripts: `scripts/_scratch/_logo_god_bless.py` · `_logo_jack_farrell.py` · `_logo_merry_christmas.py`
+- Logo path: `Images/styles3/logo-*.png`
+- Spec verify: `python scripts/_scratch/_verify_finals_pdfs.py`
 - **FINALS-CHECKLIST.md** · `AGENT-RUNBOOK.md` · `INDESIGN-PRODUCTION-WORKFLOW.md`
 
 ## System of record
