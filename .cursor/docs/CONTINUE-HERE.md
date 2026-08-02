@@ -6,40 +6,33 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-08-01 late)
+## One-line status (2026-08-01 night — leave-off)
 
-**Interior + Flipbook INDDs synced · master PDFs exported.** S04 gutter fixed (spine-meet).  
-**Next:** PDF eye-check → Lulu interior upload → rebuild cover to Lulu spine template.
+**Lulu specs locked · Phase C TEST wrap built · not ordered.**  
+**Tomorrow:** finalize cover (nudge QR/credits into purple safe) → rebuild PSD @ 19×10.25 / 0.25″ spine → Cover PDF when ready.
 
-| Deliverable | Path | Spec |
-|-------------|------|------|
-| **PSB master** | `Xtraz/Adobe-Photoshop/FINAL-Master-PSDs/TNIMS-Book-Master-FINAL.psb` | 5250×2625 · interior units only |
-| **Cover PSDs** | `…/FINAL-Master-PSDs/TNIMS-Cover-*.psd` | Wrap 5475×2625 (18.25×8.75) · spine placeholder 0.75″ |
-| **Chopz** | `Xtraz/Adobe-Finals/FINAL-Master-Chopz/` | Interior + Flipbook (+ Cover chops) |
-| **INDD masters** | `Xtraz/Adobe-inDesign/FINAL-Master-inDD/` | Interior SoT · Flipbook from Interior · Cover separate |
-| **PDFs** | `Output/FINAL-Master-PDFs/` | Interior Lulu-bleed · Flipbook trim |
+### Tomorrow finalize checklist
+| # | Task |
+|---|------|
+| 1 | Read `Xtraz/Lulu-Templates/from-lulu/phase-c-test/HOW-TO-READ-LULU-GUIDES.md` |
+| 2 | **Nudge QR left** (~0.06″ from purple right edge now — too tight) |
+| 3 | **Nudge back credits** up / inward off purple bottom |
+| 4 | Title flourishes clearly inside purple (not on edge) |
+| 5 | Master wrap **5700×3075** · spine **75 px (0.25″)** — replace old 5475×2625 / 0.75″ |
+| 6 | Live type in Cover INDD for print (don’t rely on baked TEST type) |
+| 7 | Cover PDF sRGB → Lulu upload only when Jon says · **no order yet** |
 
-### Page map (34 pp Interior / Flipbook)
-| Pages | Content |
-|------:|---------|
-| 1 | Interior: pastedown burgundy · Flipbook: `flipbook-FRONT` |
-| 2\|3 | `P0-P01-spread` — copyright L · Written by / Jack / dedication R |
-| 4\|5 | `P02-spread` — baked Our Story begins + live body (Jon plate) |
-| 6–29 | S01–S12 (S04 = p12\|13 left/right, spine-meet) |
-| 30\|31 | Thank you |
-| 32\|33 | Back-Page (Happy Holidays art + live close) |
-| 34 | Interior: pastedown · Flipbook: `flipbook-BACK` |
+### Key paths
+| Item | Path |
+|------|------|
+| Knock-off list | `.cursor/docs/LULU-ORDER-CHECKLIST.md` |
+| Specs lock | `Xtraz/Lulu-Templates/from-lulu/SPECS-LOCKED-2026-08-01.md` |
+| Lulu template PDF | `Xtraz/Lulu-Templates/v82ejwq-cover-template.pdf` |
+| Phase C TEST | `Xtraz/Lulu-Templates/from-lulu/phase-c-test/` |
+| Interior PDF (draft on Lulu) | `Output/FINAL-Master-PDFs/TNIMS-Interior-FINAL.pdf` |
+| Lulu project | draft **`v82ejwq`** · Print Book · Case Wrap · Matte · Premium Color |
 
-### Workflow docs
-- `.cursor/docs/MERGED-PLATE-EXPORT-WORKFLOW.md`
-- `AGENT-RUNBOOK.md` — S04 text\|image: frames **meet at spine** (no facing bleed overlap)
-
-### Cover note
-`TNIMS-Cover-Wrap-FINAL.psd` is a valid **working** wrap. Not Lulu-final until spine width from Lulu after interior upload. Cover INDD may still link older `cover-wrap-FINAL-art-no-type.png` — refresh after PSD export.
-
-### Leave-off → start next
-1. Review `TNIMS-Interior-FINAL.pdf` + `TNIMS-Flipbook-FINAL.pdf`
-2. Upload Interior to Lulu → get cover template → rebuild wrap
-3. Cover PDF export (sRGB) → full Lulu package
+### Product lock (don’t change without reason)
+**8.5×8.5″** · **34 pp** · **Premium Color** · **80# White Coated** · **Hardcover Case Wrap** · **Matte cover** · spine **0.25″** · cover canvas **19×10.25″**
 
 **Gift deadline:** **2026-08-15**.

@@ -2,6 +2,7 @@
 
 | Date | Note |
 |------|------|
+| 2026-08-01 | **End day — Lulu specs + Phase C TEST:** Draft `v82ejwq` · Interior 34pp uploaded · template `v82ejwq-cover-template.pdf` · spine **0.25″** · canvas **19×10.25″** · TEST wrap in `from-lulu/phase-c-test/`. **Tomorrow finalize:** nudge QR left + credits inward; rebuild Cover PSD @ Lulu size; no order yet. Guides: `HOW-TO-READ-LULU-GUIDES.md`. |
 | 2026-08-01 | **InDesign finals + PDFs:** Relinked Merged chops · P0\|P01 combined spread · P02 baked plate · Flipbook rebuilt from Interior (FRONT/BACK) · S04 spine-meet (no gutter crosstalk) · master PDFs in `Output/FINAL-Master-PDFs/`. Cover wrap PSD audited (working; Lulu spine TBD). Docs/Mem0/Mnemosyne/vault. |
 | 2026-08-01 | **Merged export 17/17:** `TNIMS-Book-Master-FINAL.psb` → `FINAL-Master-Chopz` (Interior+Flipbook). Playbook `MERGED-PLATE-EXPORT-WORKFLOW.md` · script `export_merged_plates_from_psb.py`. Glow shells intentional; live type in ID. Next = relink existing INDDs → PDF. |
 | 2026-08-01 | **End Project:** Gold foil transparent logos from `logo2.png` — God Bless (readable redo) · Jack Farrell · Merry Christmas → `Images/styles3/`. Docs/Mem0/vault. **Tomorrow = remake final PDF deliverables with latest remade artwork.** |
