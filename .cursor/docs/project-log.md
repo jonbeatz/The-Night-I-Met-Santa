@@ -2,6 +2,8 @@
 
 | Date | Note |
 |------|------|
+| 2026-08-01 | **InDesign finals + PDFs:** Relinked Merged chops · P0\|P01 combined spread · P02 baked plate · Flipbook rebuilt from Interior (FRONT/BACK) · S04 spine-meet (no gutter crosstalk) · master PDFs in `Output/FINAL-Master-PDFs/`. Cover wrap PSD audited (working; Lulu spine TBD). Docs/Mem0/Mnemosyne/vault. |
+| 2026-08-01 | **Merged export 17/17:** `TNIMS-Book-Master-FINAL.psb` → `FINAL-Master-Chopz` (Interior+Flipbook). Playbook `MERGED-PLATE-EXPORT-WORKFLOW.md` · script `export_merged_plates_from_psb.py`. Glow shells intentional; live type in ID. Next = relink existing INDDs → PDF. |
 | 2026-08-01 | **End Project:** Gold foil transparent logos from `logo2.png` — God Bless (readable redo) · Jack Farrell · Merry Christmas → `Images/styles3/`. Docs/Mem0/vault. **Tomorrow = remake final PDF deliverables with latest remade artwork.** |
 | 2026-07-31 | **Finals PDF refresh (tree stars):** Re-exported all 3 master PDFs to `Output/finals/` + refreshed `Adobe-Finals/final/` INDDs after Jon art fix. Spec ALL PASS · cover sRGB. |
 | 2026-07-31 | **Finals PDF refresh (P0-Legal):** Jon redesigned legal\|title · `Media/development/P0-Legal/` + RECIPE/meta. Re-exported all 3 master PDFs to `Output/finals/` · refreshed `Adobe-Finals/final/` INDDs. Spec ALL PASS. |

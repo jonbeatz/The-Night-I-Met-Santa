@@ -115,7 +115,7 @@ Lulu **adds** endsheets when binding casewrap hardcovers. They glue the book blo
 - **Interior v2 (candidate 2026-07-31):** `TNIMS-Interior-FINAL-v2-burgundy-open` — **32 pp** with two `#4A0E17` pages before title so title stays **RIGHT** (PDF p1 is always right; +1 alone breaks every spread). Rollback: `TNIMS-Interior-FINAL` **30 pp**. README: `Xtraz/Adobe-Finals/TNIMS-Interior-FINAL-v2-burgundy-open-README.md`.
 - **Flipbook:** blank burgundy IFC/IBC = **`#4A0E17`** RGB(74,14,23) — `Media/development/Cover/pastedown-burgundy.png` · `TNIMS-FLIPBOOK.indd` / `TNIMS-FLIPBOOK-trim.pdf` (LOCKED 2026-07-31).
 - Cover wrap: still fill the **0.75″ wrap** on the cover PDF; that tucks under the endsheet on the inside board.
-- **S04 text+image PDF export:** hide facing art per page then merge. On v2, S04 is **p12|13** (was p10|11 on 30-pp FINAL). Merge: `scripts/_scratch/_merge_s04_interior_pdf_v2.py`.
+- **S04 text+image (p12|13 on 34-pp FINAL):** Prefer **spine-meet** frames (no facing bleed overlap) + normal PDF export. Isolate hide/merge is legacy fallback only — see Text+image placement below.
 
 ---
 
@@ -199,19 +199,20 @@ Full write-ups: **`.cursor/docs/ISSUES-RESOLVED.md`**. Operator says **`log fixe
 
 Half exports (`*-left.png` / `*-right.png`) remain useful for chops/MOCK; **print facing art uses the full spread file**.
 
-### Text+image placement (LOCKED 2026-07-31 — S04)
+### Text+image placement (UPDATED 2026-08-01 — S04)
 
 **Exception to seamless one-file placement.** When facing pages are **not** one continuous scene (cream text page \| full illustration — S04 Sit Here, and any similar text+image pair):
 
 | Rule | Detail |
 |------|--------|
 | **Do not** | Place one spanning `*-spread.png` for Lulu single-page PDF — spine bleed pulls the facing half into each page (obvious on hard color splits) |
-| **Place** | Separate `*-left.png` / `*-right.png` (or `S04-p10-left` / `S04-p11-right`) · each **8.75″ × 8.75″** bleed box on its page |
-| **PDF export** | Export the text page with **image-page art hidden**, and the image page with **text-page art hidden**, then merge into the full interior PDF. Overlapping full-bleed frames still crosstalk if both stay visible (z-order wins for *both* pages’ spine strips) |
-| **INDD editing** | Keep **both** frames visible on the spread after export |
+| **Place** | Separate `*-left.png` / `*-right.png` · **outer** bleeds 0.125″ · frames **meet at the spine** (no facing-page invasion) |
+| **PDF export (preferred)** | Normal Lulu Interior export with both frames visible — spine-meet prevents gutter crosstalk |
+| **PDF export (legacy fallback)** | If frames still overlap at spine: hide facing art per page, export, merge (`_merge_s04_interior_pdf_v2.py`) |
+| **Why** | Full 0.125″ bleed on **all four** sides of each half → ~0.25″ overlap at gutter → cream page shows burgundy sliver (and vice versa) |
 | **Seamless image spreads** | Unchanged — still one `*-spread.png` centered on the spine |
 
-Chops: `Images/chopz/from-psb-v7/S04-p10-left.png` · `S04-p11-right.png` · `S04-p10-11-spread.png` (spread file kept for PS/MOCK; print ID uses L/R).
+Chops: finals under `FINAL-Master-Chopz/` (`S04-left` / `S04-right`). Spread file OK for PS/MOCK only.
 
 ### PS → InDesign live type (LOCKED 2026-07-30)
 

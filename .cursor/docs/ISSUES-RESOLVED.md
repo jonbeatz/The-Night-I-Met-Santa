@@ -11,6 +11,18 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-08-01 — S04 p12\|13 burgundy/cream sliver on PDF (gutter crosstalk)
+
+| | |
+|---|---|
+| **Symptom** | Page 12 (cream text) showed a thin burgundy strip on the right; page 13 showed cream on the left. Looked like wrong art / bad PSD export. |
+| **Root cause** | S04 is text\|image (not seamless). Separate `S04-left` / `S04-right` frames each had **full 0.125″ bleed on all four sides**, so both crossed the spine and overlapped ~0.25″. Single-page PDF export drew both frames → facing art leaked. **PSD/chops were fine.** |
+| **Resolution** | Clamp frames to **meet at the spine** (outer bleeds kept; no facing-page invasion). Normal PDF export — no isolate merge required for this setup. Lulu OK: critical outer bleeds intact; gutter is in the binding. |
+| **Verify** | InDesign p12\|13 facing view clean · Interior + Flipbook PDFs · right edge of p12 is cream only. |
+| **Rule** | Hard text\|image splits: L/R plates stop at spine. Seamless spreads: still one `*-spread.png`. |
+
+---
+
 ## 2026-07-31 — InDesign pointSize with pica rulers = huge type / fake overset
 
 | | |
