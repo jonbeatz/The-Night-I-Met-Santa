@@ -57,7 +57,7 @@ Prior “suspenders over coat” language is **retired**. New gens must match op
 ### HARD RULES — LOCKED 2026-07-23
 
 1. **MODEL LOCK** — **Qwen 2 Pro Edit** (`fal-ai/qwen-image-2/pro/edit`, **v06** look class) is the **ONLY** model for **mock-up / development** tier generation. **Nano Banana Pro = FINALS only.** Hitting 2625² / 5250×2625 does **not** mean switch models.
-2. **RESOLUTION LOCK** — Singles **2625 × 2625** · full spreads **5250 × 2625**. No low-res dials for development images.
+2. **RESOLUTION LOCK** — Singles **2625 × 2625** · full spreads **5250 × 2625**. No low-res dials for development images. **Highest useful print res** for anything that may become a keeper (downscale later; don’t lock a tiny master). Cover keepers → Lulu template size (**5700×3075** wrap when locked).
 3. **SPREAD OUTPUT TRIPLET** — Every spread (mock-up **and** final) must produce **three** files in one pass — **never skip**:
    - `art.png` — **5250 × 2625** (review / flipbook)
    - `art-left.png` — **2625 × 2625** (InDesign L)

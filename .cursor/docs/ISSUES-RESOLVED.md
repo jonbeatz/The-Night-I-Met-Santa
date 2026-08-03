@@ -11,6 +11,30 @@ Append-only log of **problems we hit** and **verified fixes**. Newest first.
 
 ---
 
+## 2026-08-02 — Opaque RGBA chops flatten to ~117 DPI in Lulu Interior PDF
+
+| | |
+|---|---|
+| **Symptom** | Soft-proof / Hermes flagged interior p4–5 (and thank-you p30–31) at ~120 DPI. |
+| **Root cause** | Placed PNGs were **opaque RGBA**. InDesign transparency flatten tiled them (~1023²) → effective ~117 dpi. |
+| **Resolution** | Flatten chops to **RGB** (no alpha), relink Interior, re-export Lulu Interior PDF. Verified ~301 DPI. |
+| **Verify** | PDF page image effective resolution ≥300 at print size. |
+| **Rule** | Print plates for Lulu Interior: **RGB opaque**, not RGBA — even if fully opaque. |
+
+---
+
+## 2026-08-02 — Cover “12 DPI” / tiny bitmap false alarm (QR)
+
+| | |
+|---|---|
+| **Symptom** | Hermes claimed a cover element was 235×235 @ ~12 DPI. |
+| **Root cause** | Divided pixel size by **full wrap width** (~19″) instead of **placed size** (~0.78″ QR). |
+| **Resolution** | No cover change. QR effective DPI ≈ 300 at placed size. |
+| **Verify** | Effective dpi = pixels ÷ inches of the **frame**, not the wrap canvas. |
+| **Rule** | Soft-proof DPI claims against placed geometry. |
+
+---
+
 ## 2026-08-01 — S04 p12\|13 burgundy/cream sliver on PDF (gutter crosstalk)
 
 | | |

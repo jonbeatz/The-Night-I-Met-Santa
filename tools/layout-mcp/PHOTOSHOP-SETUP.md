@@ -69,15 +69,17 @@ If the zip/venv is wiped: re-extract release, recreate venv, `adobepy install-br
 | **1** | Jon | Photoshop **2026** open |
 | **2** | Jon | Creative Cloud Desktop signed in (needed for UDT Load) |
 | **3** | Agent / Jon | Launch **UXP Developer Tools** (often already running with InDesign) |
-| **4** | Agent | `npm run layout:photoshop-mcp` (broker `:47391` + MCP `:8766`) — start **before** relying on an existing Watching plugin |
+| **4** | Agent | **Auto on Start/Open Project:** `session:start` / `session:open` run `layout:photoshop-mcp:bg` (broker `:47391` + MCP `:8766` detached). Manual: `npm run layout:photoshop-mcp:bg` or foreground `layout:photoshop-mcp` |
 | **5** | **Jon** | UDT → **Load & Watch** (or **Reload** if already Watching) on **Adobe Python Bridge for Photoshop** (`com.adobepy.bridge.photoshop`) — agent cannot click Electron |
 | **6** | Jon | Photoshop panel **Adobe Python Bridge** open / connected |
 | **7** | Jon | Reload Cursor MCP if `photoshop` not green |
 | **8** | Agent | Smoke: broker `"sessions":≥1` + `/v1/readyz` `"dcc":true` + document info |
 
+**Why Cursor showed red:** opening Cursor / Photoshop / UDT does **not** start `:8766`. Session rituals now warm it; one **UDT Reload** is still required after broker restart when `sessions:0`.
+
 **If Cursor is green but smoke fails (`sessions:0` / `dcc:false`):** broker was restarted after the plugin connected. **UDT Reload** on the PS bridge (not a full Photoshop quit). Then re-smoke.
 
-**If Cursor Settings shows photoshop red / Error / Logout:** almost always MCP HTTP is down — start `npm run layout:photoshop-mcp` first. Then re-auth / toggle the MCP if Cursor still shows only `mcp_auth`. Then UDT Reload → smoke `sessions≥1` + `dcc:true`. CC + UDT Loaded does **not** start `:8766`.
+**If Cursor Settings shows photoshop red / Error / Logout:** almost always MCP HTTP is down — run `npm run layout:photoshop-mcp:bg` (or wait for session warm). Then re-auth / toggle the MCP if Cursor still shows only `mcp_auth`. Then UDT Reload → smoke `sessions≥1` + `dcc:true`. CC + UDT Loaded does **not** start `:8766`.
 
 ### Preferences (Plugins page)
 
@@ -122,13 +124,54 @@ $env:ADOBEPY_TOKEN='dev-token'
 - Cursor’s tool picker can lag after `load_skill` — if `CallMcpTool` 404s, use HTTP `/v1/call` or reload MCP; bridge is still live.
 - Plugin id: `com.adobepy.bridge.photoshop`
 
+### Best practices — automation on this PC (2026-08-02)
+
+| Do | Don’t |
+|----|--------|
+| `dialogOptions: "dontDisplay"` on every batchPlay | Leave default dialogs — they stack |
+| Select layers with `{"_ref":"layer","_id": N}` | Use `id` without underscore (fails) |
+| Place files via **Photoshop.exe native open** → Duplicate layer | Clipboard paste (can paste screenshots/error grabs) |
+| Multi-select related layers → **one** `transform` | Scale logo and curls separately (group bounds lie) |
+| Stop if a red bridge dialog appears; Jon clicks OK **once**, then retry | Keep firing Get/Select/Move while a dialog is open → “command not available” spam (20+ OK clicks) |
+| Skip `move` to front when layer is already top | Blind “move to front” (throws Move not available) |
+| Align **visible** pixels to Lulu clear edge | Trust smart-object bounds alone (often include empty padding) |
+| Prefer **live PSD review** (open docs + guide overlay + bounds / preview export) | Rely only on Jon screenshots when PS is open and connected |
+| Place plate art, logos, QR, reusable bits as **Smart Objects** | Rasterize then Free-Transform (quality loss on resize) |
+| Replace SO via **Edit Contents** / paste into SO (keeps parent **layer styles**) | Delete/rebuild the layer and lose drop shadows etc. |
+| Build cover wrap at **Lulu template px** once known | Invent placeholder spine for “finals,” then upscale remorph |
+
+**Smart Objects (Jon 2026-08-02):** Default for anything you may scale — cover logo, panel art, QR. Uniform transform only; align **visible** pixels to guides (SO bounds often include empty padding).
+
+**Edge / guides gotchas (Jon 2026-08-02 — Front white hairline + “guides stopped early”):**
+
+| Issue | Cause | Prevention |
+|-------|--------|------------|
+| **1px white (or light) line at canvas edge** | Often already in the art/composite: art SO not flush to canvas, white doc background peeking, or flatten/export fringe — **not** from Lulu remap alone. Front FINAL had a pure-white bottom row before 5700 work. | Before calling a cover “done”: zoom **100–400%** on all four edges (guides off). Flatten-check or export a flat and scan last/first row for `RGB 255`. Fix by extending art / crop-heal **into the art** (or a heal strip **under** guides), never leave white BG showing. |
+| **Lulu color guides look short / don’t reach the edge** | A later opaque layer (e.g. `bottom-edge-heal`) was stacked **above** `02-LULU-GUIDES` and covered the cyan band. Guide layer was full-canvas; visibility was wrong. | Stack order: **`02-LULU-GUIDES` always on top** (toggle visibility). Edge heals / retouch go **below** guides. Don’t use ruler guides as SoT — clear them if they confuse; color overlay is SoT. |
+| **Nested duplicate `02-LULU-GUIDES`** | Dragging Front/Back folders into Wrap can bring a second guide layer. | One guide layer at **document root** only; delete nested copies. |
+
+**Preflight (covers — before Save / soft-proof / Lulu):**
+1. Guides off → eye-check edges for white/light hairlines.  
+2. Guides on → cyan/magenta reach **canvas** edges; readable type still in clear.  
+3. Layer stack: guides top · no stray heal above guides · no nested guide duplicates.  
+4. Optional: flat export + script/scan bottom/top row for pure white.
+
+**Cover / guide review preference (Jon 2026-08-02):** Looking at the **actual open PSDs** in Photoshop is better than screenshots — fuller layers, guides, and placement. Jon is fine clicking **OK** on occasional red bridge dialogs from preview-export. Still: if a dialog is open, **stop → OK once → continue** (don’t stack commands). Close leftover `_review_*` tabs without saving.
+
+**Why the OK spam happens:** one failed modal leaves Photoshop blocked; every follow-up Get/Select/Move then fails with “not currently available,” each often showing another dialog.
+
+**Working pattern for transforms:** select by `_id` → optional `addToSelection` → single `transform` with offset/scale → one bounds `get` to verify → done.
+
 ---
 
 ## npm
 
 ```powershell
-npm run layout:photoshop-mcp      # broker (if needed) + MCP :8766  (keep running)
+npm run layout:photoshop-mcp      # broker (if needed) + MCP :8766  (foreground — blocks)
+npm run layout:photoshop-mcp:bg   # same, detached (session:start / session:open use this)
 npm run layout:photoshop-broker   # broker only :47391
+# Skip PS warm on session ritual:
+#   powershell -File scripts/session-start-tnims.ps1 -Full -SkipPhotoshop
 ```
 
 ---

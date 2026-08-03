@@ -3,6 +3,27 @@
 **Goal:** One hardcover casewrap gift for Jack · birthday **2026-08-15**  
 **Why Lulu first on interior:** Spine width depends on **page count + paper**. Lulu generates the **exact cover template** after the interior PDF is uploaded. Our wrap PSD used a **0.75″ spine placeholder**; for **hardcover 24–84 pp** Lulu’s table is **0.25″ spine** — confirm with their downloaded template.
 
+## Cover workflow — best plan (TNIMS + future Hermes books)
+
+**Development:** You do **not** need Lulu’s exact template on day one. Keep a **ballpark** end goal (trim size, hardcover vs paperback, rough page range) and design/generate at that print res. Exact spine width can wait.
+
+**Before final cover PDF / order:** Download Lulu’s template (after interior upload) and align the wrap to **exact** px — that’s a late lock, not a start gate.
+
+| Phase | Do this | Why |
+|-------|---------|-----|
+| Early | Ballpark trim + binding; build art at high print res (pages **2625²** · spreads **5250×2625**; cover panels ~square bleed size) | Creative progress without page-count stress |
+| When page count is stable enough | Upload interior draft → grab template | Unlocks exact spine / wrap |
+| Late | Fit wrap to template (**this book: 5700×3075 · 0.25″ spine**) · matched Front/Back solos | Delivery geometry |
+| Spine type | Skip on thin spines (≤~0.25″) | Usually illegible |
+| Photoshop | Smart Objects for art/logo/QR; keep layer styles on SO replace | Non-destructive resize |
+| Recipes | Highest useful print res for keepers | Downscale OK; tiny dials ≠ masters |
+
+**Avoid:** treating a wild placeholder spine as “final forever,” then discovering the real spine is totally different. Soft-proof remaps are fine; native fit before order is better when time allows.
+
+**Spine text policy (gift hardcover, short book):** Prefer **no spine text** — color/art strip only.
+
+**Cover edge preflight (avoid white hairlines / “short guides”):** Zoom all four edges with guides off; keep `02-LULU-GUIDES` on **top**; never put opaque edge-heals above guides. Full gotchas: `tools/layout-mcp/PHOTOSHOP-SETUP.md`.
+
 ## Current intent (2026-08-01) — SPECS ONLY · NOT FINAL SUBMIT
 
 We are **not** locking the master / ordering the gift yet.

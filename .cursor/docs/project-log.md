@@ -2,6 +2,7 @@
 
 | Date | Note |
 |------|------|
+| 2026-08-03 | **Print-ready pass + back BG + sled vector:** Interior RGBA→RGB PDF fix (p4–5/30–31) · Cover QR “12dpi” false alarm · Back `Merged-Back-Cover-BG` via rebuild-wrap → art-notype → INDD → flipbook · PDFs in `Output/FINAL-Master-PDFs/` · thank-you locked · Illustrator Image Trace recipe for silhouettes (`Images/references/sled1-vector.*`). Softcover skip for gift HC. **Not ordered.** |
 | 2026-08-01 | **End day — Lulu specs + Phase C TEST:** Draft `v82ejwq` · Interior 34pp uploaded · template `v82ejwq-cover-template.pdf` · spine **0.25″** · canvas **19×10.25″** · TEST wrap in `from-lulu/phase-c-test/`. **Tomorrow finalize:** nudge QR left + credits inward; rebuild Cover PSD @ Lulu size; no order yet. Guides: `HOW-TO-READ-LULU-GUIDES.md`. |
 | 2026-08-01 | **InDesign finals + PDFs:** Relinked Merged chops · P0\|P01 combined spread · P02 baked plate · Flipbook rebuilt from Interior (FRONT/BACK) · S04 spine-meet (no gutter crosstalk) · master PDFs in `Output/FINAL-Master-PDFs/`. Cover wrap PSD audited (working; Lulu spine TBD). Docs/Mem0/Mnemosyne/vault. |
 | 2026-08-01 | **Merged export 17/17:** `TNIMS-Book-Master-FINAL.psb` → `FINAL-Master-Chopz` (Interior+Flipbook). Playbook `MERGED-PLATE-EXPORT-WORKFLOW.md` · script `export_merged_plates_from_psb.py`. Glow shells intentional; live type in ID. Next = relink existing INDDs → PDF. |

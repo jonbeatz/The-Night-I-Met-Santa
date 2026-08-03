@@ -205,7 +205,7 @@ Boy: oatmeal/taupe holly pajamas ONLY. NOT a red coat. NOT a Santa suit. NOT a S
 
 | | LEFT (p28) | RIGHT (p29) |
 |---|---|---|
-| **Poem** | *And one last thing, please do me a favor. / Always love Christmas, act like a kid and pray to your Savior.* | *God bless.* |
+| **Poem** | *And one last thing, please do me a favor. / Always love Christmas, act like a kid and pray to your Savior.* | *(no live “God bless.” — that line is baked into **S11** art as an image)* |
 | **Image** | Santa flying past the moon in the blue night sky over the decorative house | Right side of house with snowman in front lawn. The North Star gleaming in the sky. |
 | **Camera** | Epic departure · Santa silhouette against moon | Ground level · snowman witness · star above |
 | **Connection** | Spread-wide · the grand farewell | |
@@ -229,7 +229,7 @@ Boy: oatmeal/taupe holly pajamas ONLY. NOT a red coat. NOT a Santa suit. NOT a S
 | **Text** | *Merry Christmas.* only | *May the magic of this night stay in your heart, long after the season has gone.* |
 | **Image** | Soft snow / empty chair peace | Matching close vignette — ornament, gentle glow |
 | **Frame** | FRAME ON — both pages | |
-| **Notes** | **"God bless." is on S12 R (p27) under the North Star — not on p32.** Cut if trimming page count. | |
+| **Notes** | Poem **“God bless.”** is **baked into S11 art**. **S12** uses a **Merry Christmas graphic** in the art (Jon preferred over live/God-bless type there). Thank-you (p30) may still end with live *God bless. — Jack Farrell* (author sign-off). Cut if trimming page count. | |
 
 ---
 

@@ -100,10 +100,10 @@ These are locked. Reference them, don't recreate them:
 | **PDF format** | Single-page layout (not spreads) | Lulu requirement |
 | **Fonts** | Embedded or outlined | Lulu requirement |
 | **Spine** | 0.25" for 24–84 pages | Lulu guide p.14 |
-| **Cover wrap** | 0.75" beyond trim all sides | Lulu spec |
-| **Cover overhang** | 0.125" on 3 sides | Lulu spec |
-| **Page count** | 35–40 pages | Project target |
-| **Cover spine text** | **Skip** — under 80 pages | Lulu guide p.17 |
+| **Cover wrap (delivery · v82ejwq)** | **19 × 10.25″** = **5700 × 3075** @ 300 · spine **75 px** | Lulu template after interior upload |
+| **Cover wrap (legacy working PSDs)** | 5475 × 2625 · 0.75″ spine placeholder | Soft-proof until native rebuild |
+| **Page count** | **34** (gift HC) | Locked for spine; was 35–40 target earlier |
+| **Cover spine text** | **Skip** on ≤0.25″ / under ~80 pp HC | Color/art strip only — type illegible at 75 px |
 | **Casewrap pastedowns** | **Lulu supplies white endsheets** (not in interior PDF; not customizable) | [Hardcover Endsheets](https://help.lulu.com/en/support/solutions/articles/64000272836-hardcover-endsheets) · flipbook may simulate burgundy |
 
 ### Casewrap pastedowns / endsheets (LOCKED — Lulu 2026)
@@ -263,14 +263,25 @@ Load these once in InDesign (File → Adobe PDF Presets → Define → Load):
 
 ## 7. Cover Build — AFTER Interior is Uploaded
 
-1. Upload interior PDF to Lulu
-2. Lulu generates custom cover template with exact spine width
-3. Download the custom template
-4. Build cover in InDesign using `Lulu-Cover-Print-PDF.joboptions`
-5. Export as one-piece spread PDF (back + spine + front)
-6. **Color check:** confirm PDF is **sRGB**, not CMYK. If live type has drop shadows, `Leave Color Unchanged` can still flatten to DeviceCMYK — export with **`PDFColorSpace.RGB`** (destination sRGB). See `ISSUES-RESOLVED.md` 2026-07-31.
+**Best plan (TNIMS + future Hermes print books):** Start from a **ballpark** trim/binding/page range — you do **not** need Lulu’s exact template to begin art. Lock the exact wrap size **before final cover PDF / order**.
 
-Hardcover cover template reference files in: `Xtraz/Lulu-Templates/Square-Template/lulu-book-template-all-square/Cover Templates/Hardcover/`
+1. Ballpark trim · binding · rough page range; generate keepers at print res  
+2. When page count is stable enough: upload interior → download cover template + guides  
+3. Fit wrap to **exact** template px (this book: **5700 × 3075**)  
+4. Optional Front / Back / Spine solos = panel crops of that wrap (matched guides)  
+5. Soft-proof → Cover PDF (`Lulu-Cover-Print-PDF.joboptions`) · **sRGB**  
+6. **Do not order** until Jon explicitly says so  
+
+**Spine type:** skip on 0.25″ (75 px) — use art/color only.  
+**Interior book master (`TNIMS-Book-Master-FINAL.psb`):** **5250 × 2625** @ 300 (= two **8.75″** bleed pages). That is the correct interior size — **do not** resize the PSB to cover-wrap dimensions.
+
+**Art + Photoshop (cover and pages):**
+- Generate / keep masters at the **highest useful print res** the lane allows (never low-res dials for keepers) so we can downscale cleanly.  
+- Prefer **upscale to exact target** if the API returns short — don’t ship undersized plates.  
+- **Oversize keepers for covers:** leave extra margin beyond panel/wrap crop so reposition (chair, feet, cover-fit) is a transform — not a full regen. Lock Lulu wrap px before treating cover PSDs as delivery SoT (lesson 2026-08-02).  
+- In Photoshop: place logos, plate art, and reusable assets as **Smart Objects** so transforms stay non-destructive. When replacing SO contents, **preserve layer styles** on the parent (Edit Contents / paste into SO — don’t rebuild the layer cold unless you copy effects).
+
+Hardcover guides / templates: `Xtraz/Lulu-Templates/` · delivery SoT PSDs: `FINAL-Master-PSDs/5700x3075-version/` (Front · Back · Wrap only) · rebuild after panel edit: **`.cursor/docs/COVER-REBUILD-WORKFLOW.md`** (`npm run book:cover:rebuild-wrap` → `book:cover:art-notype` → Cover INDD → flipbook bake) · checklist: `.cursor/docs/LULU-ORDER-CHECKLIST.md`
 
 ---
 
@@ -306,7 +317,7 @@ npm run image:fal:cover -- "hero holiday cover scene..."
 npm run image:gen:page -- "cheap draft..."   # HF free fallback
 ```
 
-**Presets:** page = 2625×2625 · spread = 5250×2625 · cover = 2048² draft
+**Presets:** page = 2625×2625 · spread = 5250×2625 · cover draft may be square dial — **keeper / final cover art = Lulu wrap or panel size (up to 5700×3075 / panel ~2812×3075), never undersized**
 **Output:** Files land in `Media/generated/` — review, then promote approved art to `Media/approved/`
 **Lane A → B workflow:** Generate Lane A compositions → Jon picks one → Generate Lane B final → Jon approves → Lock
 

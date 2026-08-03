@@ -12,12 +12,13 @@
 | `npm run dev` | Launch Next.js local Playground UI on **localhost:3000** | Anytime |
 | `npm run web:dev:stop` | Free port **3000** only (no `.next` wipe) — website profiles | **End Project** before quitting Cursor |
 | `npm run build` | Compile Playground UI static files | Prior to ship |
-| `npm run session:start` | LM Studio preflight + probes + Telegram ensure | Light probe |
-| `npm run session:start -- -Full` | Mem0 + DeepSeek + **ngrok** + image doctor | **Start Project** |
+| `npm run session:start` | LM Studio preflight + probes + Telegram ensure (+ **TNIMS:** PS MCP `:8766` bg warm) | Light probe |
+| `npm run session:start -- -Full` | Mem0 + DeepSeek + **ngrok** + image doctor (+ **TNIMS:** PS MCP warm) | **Start Project** |
 | `npm run session:start -- -WithDeepSeek` | Also start DeepSeek stack | Paid cloud prep |
 | `npm run session:start -- -WithDeepSeek -WithNgrok` | DeepSeek + ngrok | Cursor Agent boot |
 | `npm run session:start:full` | Same as `-Full` | **Start Project** |
-| `npm run session:open` | Light probes — no stack restart | **Open Project** / **Resume Session** |
+| `npm run session:open` | Light probes — no stack restart (+ **TNIMS:** PS MCP warm) | **Open Project** / **Resume Session** |
+| `npm run layout:photoshop-mcp:bg` | **TNIMS:** adobepy broker + dcc-mcp `:8766` detached | Manual PS MCP warm / red Cursor MCP |
 | `npm run session:resume` | Alias of `session:open` | Same |
 | `npm run session:handoff` | Vault note only — fleet stays up; sweeps Hermes `cua-driver` | **Close Project** / **Close Session** |
 | `npm run session:stop` | Day-end closeout (+ optional stack stop); sweeps Hermes `cua-driver` | **End Project** |

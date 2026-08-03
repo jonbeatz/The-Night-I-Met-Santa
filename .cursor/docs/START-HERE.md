@@ -43,12 +43,13 @@ When docs differ, use this priority:
 Say **Start Project** or **Cold Start**.
 
 **Agent must:**
-1. Run `npm run session:start -- -Full` from profile root (auto-launches LM Studio if offline, starts DeepSeek + ngrok)
+1. Run `npm run session:start -- -Full` from profile root (auto-launches LM Studio if offline, starts DeepSeek + ngrok; also warms Photoshop MCP `:8766` in background)
 2. Run `npm run mem0:preflight` → if offline, alert operator to start LM Studio manually
 3. Run `npm run mem0:search -- "test"` as smoke test → if fails, ask operator to load `qwen3-4b-instruct-2507` in LM Studio GUI
 4. Read `TRUTH.md`, this file, and `ReCall.md`
 5. Search Mem0 for "current priorities"
 6. Print session status card (ports, services, Mem0)
+7. If Photoshop work is planned and broker reports `sessions:0`, remind Jon: UDT **Reload** Adobe Python Bridge (then refresh Cursor MCP if still red)
 
 ---
 
@@ -57,10 +58,11 @@ Say **Start Project** or **Cold Start**.
 Say **Open Project** or **Resume Session** when switching into this workspace (LiteLLM/ngrok may already be up).
 
 **Agent must:**
-1. Run `npm run session:open` (light probes only — no `-Full`)
+1. Run `npm run session:open` (light probes only — no `-Full`; still warms Photoshop MCP `:8766` if down)
 2. Read `TRUTH.md`, this file, and `ReCall.md`
 3. `npm run mem0:search -- "current priorities"`
 4. Print status card — **no** `draven:speak`
+5. If PS MCP tools will be used and `sessions:0`, remind UDT Reload
 
 ---
 

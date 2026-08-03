@@ -50,7 +50,7 @@ Print remakes + boy/Santa continuity → **`.cursor/docs/CONTINUITY-AND-PRINT-FI
 **Quality-bar compare file (2026-07-24):** `Media/development/_quality-targets/S03-eyes-met-v07-quality-bar.jpg` (copy only; PNG remains SoT).  
 **Lock record (2026-07-24):** On keep/lock → **both** `Media/development/{unit}/RECIPE.md` + `meta.json`. Agent verifies both before reporting locked. Fleet: `PICTURE-BOOK-PRODUCTION-RULES.md` §6 · `BOOK-PLAYBOOK.md`.  
 **Pre-finals gate (2026-07-23):** `.cursor/docs/FINALS-CHECKLIST.md` — RES / TRIP / FRAME / COAT / FACE / GUTTER / TEXT / POEM / RECIPE+meta.  
-**Closing copy (2026-07-23):** Poem **“God bless.”** on **S12 R (p27)** under North Star · **p32** = *Merry Christmas.* only · **p33** = *May the magic…* · S12 = **p26|27 only** (FLOW triplet only).  
+**Closing copy (2026-08-02):** Poem **“God bless.”** = **baked image on S11**. **S12** = **Merry Christmas graphic** in art (no live blessing type). Thank-you may end with live *God bless. — Jack Farrell* (author sign-off). **p32** quiet/back matter as placed — not the poem blessing.  
 Jon: no further Media *folder* redesign for a week (2026-07-22) — page dials continue.
 
 ---
@@ -74,7 +74,11 @@ Jon: no further Media *folder* redesign for a week (2026-07-22) — page dials c
 | Art size page | **2625 × 2625** @ 300 DPI | 8.75" with 0.125" bleed |
 | Art size spread | **5250 × 2625** master → place as **one spread link** in ID (midpoint = spine) | Continuous scene across gutter — **not** L/R halves with full bleed (gutter overlap bug 2026-07-30) |
 | Text+image (S04 etc.) | Separate **2625²** L/R page frames · PDF export with facing art hidden then merge | Hard cream\|illustration split — spanning spread causes spine-bleed crosstalk in single-page Lulu PDF (2026-07-31) |
-| PS blanks | `Xtraz/Adobe-Photoshop/{spread,single-page,book-covers}-template.psd` | Cyan=TRIM · magenta=SAFETY · orange=MOCK · **no** spine PSD (Lulu wrap) |
+| PS blanks | `Xtraz/Adobe-Photoshop/{spread,single-page,book-covers}-template.psd` | Cyan=TRIM · magenta=SAFETY · orange=MOCK |
+| Cover geometry | Ballpark while developing · **exact Lulu wrap before order** (**5700×3075** this book) | Template is a late lock, not a start gate |
+| Cover spine type | **Skip** on ≤0.25″ / short HC | Art/color strip only |
+| Keeper resolution | **Max useful print res** for recipe/lane | Downscale OK; tiny dials are not masters |
+| Photoshop assets | **Smart Objects** for art/logo/QR | Non-destructive resize; keep layer styles on SO replace |
 | Page build loop | Image → new PSD → close PNG → MOCK-TYPE → cloud → save → InDesign | **`PAGE-BUILD-WORKFLOW.md`** · mocks under `Media/generated/mocks/` |
 | MOCK-TYPE (PSD preview) | Poem **20/26** · matter **30/~40** · **#2C2C2C** · mirrors ID by role | `PAGE-BUILD-WORKFLOW.md` §1b / §7 |
 | Poem typeface (InDesign) | **Cormorant Garamond Medium** · defaults **20/26** · tracking **+5** · centered · white or #2C2C2C | **Per-layer override:** when transferring from PSB, match **each type layer’s** size/leading/tracking/color/bbox (`AGENT-RUNBOOK.md` 2026-07-30) |

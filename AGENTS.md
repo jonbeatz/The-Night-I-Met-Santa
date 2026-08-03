@@ -27,7 +27,7 @@ Everything else is **reference on demand** (do not auto-load): `.cursor/docs/PAG
 - **Quality bar (2026-07-22):** `Media/development/S03-eyes-met/v07/art.png` — prefer fewer gifts later; doorway spill from S2 v05
 - **Forever locks (approved/):** boy G0 · **santa-G0-v2** · Jack portrait · style-lock-v2 · frame refs
 - **Story keeps (development/):** **Cover v14-MyPhotoshop-v2** · **P01 v25** (page 1 RIGHT · full-bleed burgundy) · P02 v04 · S1 v13|v14 · **S2 v06** · **S3 v07** · **S4 v13** · S5–S11 KEEP · **S12 v29 LOCKED FINAL** (Jon PS · supersedes v25)
-- **Back matter:** p30 KEEP · p31 framed (`P-author`) · p32|33 working · **"God bless." on S12 R only**
+- **Back matter:** **p30–31 thank-you spread LOCKED (2026-08-02)** — gold **Thank You** + **Jack Farrell** logos in art · live white body + *God bless.* · Interior SoT art in `TNIMS-Interior-FINAL-Chopz` (Flipbook mirrored) · Poem **“God bless.”** baked on **S11** · **S12** = Merry Christmas graphic in art
 - **Pre-finals gate:** `.cursor/docs/FINALS-CHECKLIST.md`
 - **Current-best page art:** `Media/development/` (not Lulu-final)
 - **Layout:** InDesign UXP · Photoshop adobepy LIVE

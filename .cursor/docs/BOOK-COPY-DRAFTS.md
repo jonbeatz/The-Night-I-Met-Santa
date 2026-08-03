@@ -92,7 +92,7 @@ God bless.
 
 ## Quiet last pages — ornament close (locked · corrected 2026-07-23)
 
-Poem closing **"God bless."** is on **S12 R (p27)** under the North Star — not here.
+Poem closing **"God bless."** is **baked into S11 art**. **S12** carries a **Merry Christmas graphic** in the art (not live God-bless type). Thank-you may still end with live *God bless. — Jack Farrell* (author sign-off).
 
 | Page | InDesign text only |
 |------|--------------------|

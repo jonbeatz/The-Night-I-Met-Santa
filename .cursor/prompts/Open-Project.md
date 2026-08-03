@@ -29,6 +29,8 @@ npm run profile:align:check  # probe for agents
 | Mode | Command | When |
 |------|---------|------|
 | **Open Project** | `npm run session:open` | Switching into this workspace |
+
+> **TNIMS:** `session:open` also warms Photoshop MCP `:8766` in the background. If tools fail with `sessions:0`, remind Jon to **UDT Reload** Adobe Python Bridge.
 | **Align (light)** | `npm run profile:align` | After operator confirms mismatch on Open |
 | **Start Project** | `npm run session:start -- -Full` | Cold boot / first PC session / stack down |
 | **Align (full)** | `npm run profile:align:full` | Cold boot — optional after `-Full` |

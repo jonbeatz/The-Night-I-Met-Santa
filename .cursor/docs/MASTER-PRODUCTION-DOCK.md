@@ -16,7 +16,9 @@
 ### HARD RULES — LOCKED 2026-07-23
 
 1. **MODEL LOCK** — **Qwen 2 Pro Edit** (`fal-ai/qwen-image-2/pro/edit`, v06 look class) is the **ONLY** model for **mock-up / development** tier generation. **Nano Banana Pro is for FINALS only.** Print resolution does **not** justify switching models — stay on Qwen for development plates.
-2. **RESOLUTION LOCK** — ALL **single pages** generate at **2625 × 2625**. ALL **full spreads** generate at **5250 × 2625**. **No low-res dials** for `Media/development/` images.
+2. **RESOLUTION LOCK** — ALL **single pages** generate at **2625 × 2625**. ALL **full spreads** generate at **5250 × 2625**. **No low-res dials** for `Media/development/` images. **Always prefer the highest useful print resolution** the model/lane allows so keepers can be resized down cleanly (never invent a smaller “preview-only” master for something you may print).
+   - **Cover / casewrap keepers:** target **Lulu delivery size** once the template is known (**5700 × 3075** wrap, or front/back panel ~**2812–2813 × 3075**). Soft-proof remaps from legacy sizes are OK for eye-check only — regenerate or place **native** at delivery size for finals.
+   - If the API returns below target → **upscale to exact** plate size, save, delete intermediate.
 3. **SPREAD OUTPUT TRIPLET (automatic — never skip)** — Every spread generation (mock-up **and** final) must produce **three** files in one pass:
    | File | Size | Use |
    |------|------|-----|
@@ -33,6 +35,8 @@
 |------|----------------|-------|
 | **Single page** (incl. TEXT pages, title, thank-you, quiet close) | **2625 × 2625** | Lulu 8.5″ + 0.125″ bleed @ 300 DPI |
 | **Full spread** (seamless masters) | **5250 × 2625** | Always also write `art-left.png` + `art-right.png` at **2625²** (triplet rule) |
+| **Cover wrap (delivery)** | **5700 × 3075** | Soft-proof / final fit for this HC · develop covers at high print res with ballpark spine; exact fit before order |
+| **Policy** | **Max useful print res** for keepers | Downscale OK · upscale-from-tiny dials = last resort |
 
 **Rules:**
 - Development current-best art is **print-sized** — no 512² / 1024 dials as keepers.

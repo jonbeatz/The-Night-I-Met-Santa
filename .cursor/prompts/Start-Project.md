@@ -26,6 +26,8 @@ npm run session:start -- -Full
 
 > **ngrok pitfall:** If LiteLLM `:4000` is already running from a prior session, a plain start may skip ngrok. `session:start -- -Full`, `deepseek:ngrok`, and `start-deepseek.ps1 -Ngrok` all force-restart the proxy so the tunnel always attaches. Confirm `ngrok :4040 [online]` before using Cursor Agent.
 
+> **TNIMS Photoshop MCP:** `session:start` / `session:open` also warm **broker `:47391` + MCP `:8766`** in the background (`scripts/session-start-tnims.ps1`). That does **not** replace UDT **Reload** on Adobe Python Bridge when `sessions:0`. Skip with `-SkipPhotoshop` if needed. Manual: `npm run layout:photoshop-mcp:bg`.
+
 **Engine audit:** Verify `D:\Hermes\projects\_core-scripts\` exists - `deepseek-api/`, `telegram-gateway/`, `voice-engine/`, `shared-profile-content/`.
 
 **Voice check:** `DRAVEN_VOICE_POLICY=ritual` in `.env.local` - speak **only** Start greeting, End farewell, explicit "speak/say", optional errors. **Never** auto-read replies.

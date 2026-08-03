@@ -30,22 +30,27 @@
 
 ---
 
-## Poem / text inventory — p30–33 (+ S12 R)
+## Poem / text inventory — closing (Interior FINAL · 2026-08-02)
 
-| Page | Role | InDesign text (exact) | Art plate |
-|------|------|------------------------|-----------|
-| **p26** | S12 L | Eggnogs…Savior stanza (`book_poem_map` S12 left) | `S12-god-bless` L |
-| **p27** | S12 R | **God bless.** — under the North Star | `S12-god-bless` R |
-| **p30** | Thank You | Thank You Draft A (`BOOK-COPY-DRAFTS.md`) — body ends *God bless. — Jack Farrell* | `P-thank-you/art.png` |
-| **p31** | Author | Optional credits only — portrait-led | `P-author/art.png` |
-| **p32** | Quiet Close L | **Merry Christmas.** only | `P-quiet-close/art-left.png` |
-| **p33** | Quiet Close R | **May the magic of this night stay in your heart, long after the season has gone.** | `P-quiet-close/art-right.png` |
+| Page | Role | InDesign text | Art plate |
+|------|------|----------------|-----------|
+| **p26\|27** | **S11** | Live poem (note / favor stanzas). **Poem “God bless.” is baked into S11 art** — not a live text frame | `S11-spread.png` |
+| **p28\|29** | **S12** | **No live type** — **Merry Christmas graphic** baked into art (replaces old “God bless.” on this spread) | `S12-spread.png` |
+| **p30** | Thank You | Thank You Draft — body ends live *God bless. — Jack Farrell* (author sign-off, separate from poem close) | thank-you spread |
+| **p31** | Author | Optional credits — portrait-led | author plate |
+| **p32** | Quiet Close L / back blurb | As placed in Interior FINAL | `Back-Page` / quiet as linked |
+| **p33** | Quiet Close R | As placed | — |
 
-**Corrections locked 2026-07-23**
+**Corrections locked 2026-08-02**
 
-- S12 = **p26\|27 only** (p28\|29 merged / absorbed).
-- Poem **"God bless."** stays on **S12 R** — **not** on p32.
-- p32 ≠ “God bless. / Merry Christmas.” — that older Flow line is superseded.
+- Poem **"God bless."** moved off S12 → **baked image on S11**. S12 now carries a **Merry Christmas graphic** in the art (Jon preferred). Do **not** add live “God bless.” on S12.
+- Thank-you page live *God bless. — Jack Farrell* is the **author sign-off**, not the poem North Star line.
+- Older note “God bless on S12 R only” is **superseded**.
+
+**Corrections locked 2026-07-23** (historical)
+
+- S12 page-index remap of that week is superseded by Interior FINAL page map above.
+- p32 ≠ “God bless. / Merry Christmas.” — that older Flow line remains superseded.
 
 ---
 
