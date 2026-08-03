@@ -126,5 +126,7 @@ After relink + type match:
 ## Related
 
 - `AGENT-RUNBOOK.md` — print authority · seamless spread · S04 spine-meet  
+- **`.cursor/docs/PS-TO-ID-TYPE-HANDOFF.md`** — type inventory · style kit · MOCK · book-2 upgrades  
+- **`npm run book:type:*`** — export / validate / page-map / apply JSX pipeline  
 - `tools/layout-mcp/PHOTOSHOP-SETUP.md` — UXP cold-start  
 - `scripts/export_merged_plates_from_psb.py` — this pipeline  

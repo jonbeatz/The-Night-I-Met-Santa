@@ -6,53 +6,64 @@
 2. `.cursor/docs/START-HERE.md`
 3. **This file** — `.cursor/docs/ReCall.md`
 4. `.cursor/docs/CONTINUE-HERE.md`
-5. **`.cursor/docs/LULU-ORDER-CHECKLIST.md`** + **`Xtraz/Lulu-Templates/from-lulu/`**
-6. **`.cursor/docs/MERGED-PLATE-EXPORT-WORKFLOW.md`** — finals export playbook
-7. **`.cursor/docs/COVER-REBUILD-WORKFLOW.md`** — Front/Back → Wrap → INDD → flipbook
-8. Always-open: Flow v2 · Master Dock · IMAGE-LANE-v2 · `AGENT-RUNBOOK.md`
-9. SoT plates: `Media/generated/mocks/_FLOW-CURRENT.json`
+5. **`.cursor/docs/LULU-WEBSITE-ORDER-PLAYBOOK.md`** ← full Lulu website recreate (HC+SC+cart+coupons+shipping)
+6. **`.cursor/docs/LULU-ORDER-CHECKLIST.md`**
+7. **`.cursor/docs/MERGED-PLATE-EXPORT-WORKFLOW.md`**
+8. **`.cursor/docs/COVER-REBUILD-WORKFLOW.md`**
+9. **`.cursor/docs/PS-TO-ID-TYPE-HANDOFF.md`** ← PS→ID type inventory + book-2 upgrades (fleet §7)
+10. Always-open: Flow v2 · Master Dock · IMAGE-LANE-v2 · `AGENT-RUNBOOK.md`
+11. SoT plates: `Media/generated/mocks/_FLOW-CURRENT.json`
 
 ## Current focus
-**Print-ready path almost closed.** Interior + Cover + Flipbook PDFs refreshed · back-cover mantel/curtains (`Merged-Back-Cover-BG`) propagated through Wrap/INDD/flipbook · thank-you spread locked · **not ordered.** Soft-proof Cover vs Lulu guides; optional QR/credits nudge still open from Phase C leave-off.
-
-## Birthday deadline
-**2026-08-15** — Lulu hardcover gift for Jack Farrell.
+**Day-end 2026-08-03.** Lulu orders live · type-inventory pipeline shipped · continue tomorrow with delivery watch + optional full `book:type:pipeline`.
 
 ## Last updated
-2026-08-03 — Session harvest: print PDF audit + back BG update + sled vector recipe.
+2026-08-03 late — End Project. Session: Lulu website orders + playbook · PS→ID type handoff + `book:type:*` tooling (S01 smoke OK).
 
-### Print / PDF (2026-08-02 night)
-- PDFs: `Output/FINAL-Master-PDFs/` — Interior (Lulu Interior) · Cover (Lulu Cover) · Flipbook (HQ Print, preview only)
-- Notes: `Output/FINAL-Master-PDFs/PRINT-READINESS-NOTES-2026-08-02.md`
-- **RGBA trap:** opaque RGBA spreads (`P02`, thank-you) exported as ~117 DPI tiles — flatten to **RGB** before Lulu PDF. Fixed + verified ~301 DPI.
-- **Cover “12 DPI” Hermes flag:** false alarm — QR is ~300 DPI at placed size (~0.78″); don’t divide by full 19″ wrap width.
-- Softcover: **not needed** for gift (HC casewrap). Same interior PDF; paperback needs separate Lulu cover template.
+### Lulu orders (2026-08-03)
+| Who | Order # | Cart | Ship | Coupon | Total | Est. delivery |
+|-----|---------|------|------|--------|-------|---------------|
+| **Jack** | **USD-C4242921** | 1 HC + 2 SC → Abington MA | Expedited | RE5RQ6G15 (−15%) | $59.85 | Aug 11–12 |
+| **Jon** | **USD-C4242970** | 1 HC + 1 SC · Montebello CA | Mail | RAC26SAVE10 (−10%) | $34.53 | Aug 18–19 |
 
-### Cover / back BG
-- Back PSD SoT includes `covers` (mantel/curtain) + **`Merged-Back-Cover-BG`**
-- Propagate: `npm run book:cover:rebuild-wrap` → `book:cover:art-notype` → Cover INDD relink → rebake flipbook FRONT/BACK from Cover export
-- Flipbook square crop can clip tree/QR on the right — **expected**; print SoT is Cover wrap, not flipbook trim
+**Projects:** HC `v82ejwq` · SC `454zdy8` · both published.  
+**Billing (both):** Jon · 576 N Bellflower #142 · Long Beach CA 90814 · (213) 219-8893.  
+**Playbook:** `.cursor/docs/LULU-WEBSITE-ORDER-PLAYBOOK.md`
 
-### Thank-you / poem close (locked)
-- Poem **“God bless.”** baked on **S11** art · S12 = Merry Christmas graphic in art
-- Thank-you: gold logos in art · live white body + *God bless.* sign-off · portrait right
+### Final PDFs
+| File | Use |
+|------|------|
+| `TNIMS-Interior-FINAL.pdf` | Both bindings |
+| `TNIMS-Cover-FINAL.pdf` | Hardcover |
+| `TNIMS-Cover-SOFTCOVER-FINAL.pdf` | Softcover |
+| `TNIMS-Flipbook-FINAL.pdf` | Preview only |
 
-### Sled silhouette vector (reusable)
-- Source: `Images/references/sled1.psd`
-- **Winner:** Illustrator Image Trace (B&W) after upscale+blur+threshold → `sled1-vector.ai` / `.svg` / `.eps`
-- Photoshop Work Path OK for simple logos; complex silhouettes → Illustrator. Judge smoothness in AI at 400%, not browser PNG previews.
+### Lulu website lessons (short)
+- Start: **English** + **Children** before Review unlocks
+- Goal: **Print Your Book** · Premium Color · 80# coated · Matte
+- Cart only at **`https://www.lulu.com/cart`** (not `/account/cart`)
+- Two projects for HC+SC · Add Version to Cart · set qtys · one address per checkout
+- Coupons: RE5RQ6G15 15% (single-use) · RAC26SAVE10 10%
+- Mail ≈ Ground ETA −2 days, ~$8 cheaper (this cart)
+- Optional zip `454zdy8_DRAFT_print_ready` = Lulu Print-Ready snapshot (archive OK, not new master)
+
+### Type handoff (shipped this session)
+- Doc: `.cursor/docs/PS-TO-ID-TYPE-HANDOFF.md` · fleet §7
+- npm: `book:type:export` · `export:split` · `validate` · `page-map` · `apply` · `styles` · `pipeline`
+- S01 smoke: 2 frames after dedupe → `Media/development/S01-approach/type-inventory.json`
 
 ## Start here next
-1. Soft-proof Cover PDF vs Lulu guides (QR left/up · credits inward if still needed)  
-2. Re-upload Interior to Lulu when Jon OK (same 34 pp → same spine)  
-3. Cover PDF upload → proof only when Jon says order  
-4. **Do not order** until explicit OK  
+1. Watch order emails / tracking for Jack (Expedited) then Jon (Mail)
+2. Optional: `npm run book:type:pipeline` for full book inventory (or unit-by-unit)
+3. Reprints: My Projects → Add to Cart → playbook
+4. Physical QC when Jack’s Expedited box arrives (aim before **2026-08-15**)
 
 ## System of record
 | Doc | Use |
 |-----|-----|
-| **COVER-REBUILD-WORKFLOW.md** | Front/Back edit → Wrap → art-notype → INDD → flipbook |
-| **LULU-ORDER-CHECKLIST.md** | Phases A–E |
-| **PRINT-READINESS-NOTES-*** | Latest PDF audit |
+| **LULU-WEBSITE-ORDER-PLAYBOOK.md** | Recreate website order end-to-end |
+| **LULU-ORDER-CHECKLIST.md** | Phases A–E status |
+| **COVER-REBUILD-WORKFLOW.md** | Cover PS/INDD |
 | **AGENT-RUNBOOK.md** | Print authority |
+| **PS-TO-ID-TYPE-HANDOFF.md** | Type inventory · live ID · MOCK |
 | CONTINUE-HERE | Next actions |

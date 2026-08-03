@@ -6,40 +6,35 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-08-03)
+## One-line status (2026-08-03 late)
 
-**Print PDFs current · back mantel/curtains on Wrap/INDD/flipbook · thank-you locked · not ordered.**  
-Next: soft-proof Cover vs Lulu guides → re-upload Interior when OK → proof only on Jon’s word. After Front/Back moves → **COVER-REBUILD-WORKFLOW**.
+**Lulu orders live.** Jack **USD-C4242921** (1 HC + 2 SC · Expedited · Aug 11–12) · Jon **USD-C4242970** (1 HC + 1 SC · Mail · Aug 18–19).  
+Recreate / reprints → **`.cursor/docs/LULU-WEBSITE-ORDER-PLAYBOOK.md`**.
 
-### Cover working set (Photoshop)
-| File | Role |
-|------|------|
-| `…/5700x3075-version/TNIMS-Cover-FRONT-FINAL-5700x3075.psd` | Front master |
-| `…/TNIMS-Cover-BACK-FINAL-5700x3075.psd` | Back master |
-| `…/TNIMS-Cover-Wrap-FINAL-5700x3075.psd` | Wide wrap (both + spine) |
-
-Close scratch tabs (`FROM-FRONT-BUILD`, `art-no-type-build`) without saving.  
-`npm run book:cover:reopen-sot` if extras appear.
-
-### After Front/Back edit
-1. `npm run book:cover:rebuild-wrap`
-2. `npm run book:cover:art-notype`
-3. Relink Cover INDD · confirm live type + QR
-4. Export Cover → rebake `flipbook-FRONT/BACK.png` · relink Flipbook INDD  
-
-Playbook: `.cursor/docs/COVER-REBUILD-WORKFLOW.md`
+### Lulu projects
+| Binding | ID | Specs |
+|---------|-----|--------|
+| Hardcover | `v82ejwq` | Case Wrap · Matte · Premium · 80# · ~$18.28 |
+| Softcover | `454zdy8` | Perfect Bound · Matte · Premium · 80# · ~$9.46 |
 
 ### Key paths
 | Item | Path |
 |------|------|
+| **Website order playbook** | `.cursor/docs/LULU-WEBSITE-ORDER-PLAYBOOK.md` |
+| **PS→ID type handoff** | `.cursor/docs/PS-TO-ID-TYPE-HANDOFF.md` |
+| Order checklist | `.cursor/docs/LULU-ORDER-CHECKLIST.md` |
 | Cover rebuild | `.cursor/docs/COVER-REBUILD-WORKFLOW.md` |
-| Knock-off list | `.cursor/docs/LULU-ORDER-CHECKLIST.md` |
-| Specs lock | `Xtraz/Lulu-Templates/from-lulu/SPECS-LOCKED-2026-08-01.md` |
-| Cover INDD | `Xtraz/Adobe-inDesign/FINAL-Master-inDD/TNIMS-Cover-FINAL.indd` |
-| Flipbook INDD | `…/TNIMS-Flipbook-FINAL.indd` |
-| Lulu project | draft **`v82ejwq`** · Case Wrap · Matte · Premium Color |
+| Specs HC / SC | `Xtraz/Lulu-Templates/from-lulu/SPECS-*.md` |
+| Master PDFs | `Output/FINAL-Master-PDFs/` |
 
 ### Product lock (don’t change without reason)
-**8.5×8.5″** · **34 pp** · **Premium Color** · **80# White Coated** · **Hardcover Case Wrap** · **Matte cover** · spine **0.25″** · cover canvas **19×10.25″**
+**8.5×8.5″** · **34 pp** · **Premium Color** · **80# White Coated** · **Matte**  
+HC Case Wrap spine **0.25″** · SC Perfect Bound spine **0.137″**
 
-**Gift deadline:** **2026-08-15**.
+### Next
+1. Track shipping emails  
+2. Physical QC when Jack’s Expedited box arrives  
+3. Reorder copies anytime from My Projects → Add to Cart  
+4. Book 2: type pipeline ready — `npm run book:type:pipeline` (PS→inventory→JSX); see `PS-TO-ID-TYPE-HANDOFF.md` §8
+
+**Gift deadline:** **2026-08-15** (Jack Expedited aimed before it).

@@ -214,17 +214,20 @@ Half exports (`*-left.png` / `*-right.png`) remain useful for chops/MOCK; **prin
 
 Chops: finals under `FINAL-Master-Chopz/` (`S04-left` / `S04-right`). Spread file OK for PS/MOCK only.
 
-### PS → InDesign live type (LOCKED 2026-07-30)
+### PS → InDesign live type (LOCKED 2026-07-30 · inventory 2026-08-03)
 
-Defaults (Cormorant Medium 20/26 +5) are a **fallback only**. When building from a master PSB/PSD:
+**Full schema + book-2 upgrades:** `.cursor/docs/PS-TO-ID-TYPE-HANDOFF.md` · fleet `PICTURE-BOOK-PRODUCTION-RULES.md` §7.
 
-1. Read **each visible type layer** — size, leading, tracking, color, justification, and **bbox**
+Defaults (Cormorant Medium 20/26 +5) are a **fallback only**. Prefer **`type-inventory.json`** on the unit (font · size · leading · tracking · color · align · bbox · text · bold `runs`). When building from a master PSB/PSD:
+
+1. Read **inventory** if present; else each visible type layer — size, leading, tracking, color, justification, and **bbox**
 2. Create live frames at that **exact page position** (bbox px ÷ 300 − bleed)
 3. Apply **that layer’s** formatting — do **not** force every stanza to 20/26 if the PS layer differs
 4. Prefer one frame per PS type layer (Jon often splits stanzas across multiple layers)
 5. No baked letter FX unless Jon asks — v7+ masters ship type without Drop Shadow / Outer Glow
 6. **Match PSD fidelity:** font, size, leading, tracking, **alignment**, color, box — center stays center
 7. **Pica rulers gotcha (2026-07-31):** if document units are **picas**, switch viewPreferences to **POINTS** before setting `pointSize`/`leading` (or use `"14pt"` strings). Bare `pointSize = 14` = **14 picas** ≈ 132 pt → fake overset. See `ISSUES-RESOLVED.md`.
+8. **MOCK @ ~35%** → eye-check → hide MOCK before PDF. Atmosphere in art; light/no Outer Glow as sole body-text treatment.
 
 #### PSD blanks (locked — matches InDesign / Lulu)
 

@@ -25,6 +25,7 @@
 | **FACE** | Boy / Santa G0 drift (eyes, beard, age, holly PJs) |
 | **GUTTER** | No baked fold line · faces/eyes not bisected · continuous scene |
 | **TEXT** | No baked letters · type zones open for InDesign |
+| **TYPE-INV** | `type-inventory.json` for units with live type (`npm run book:type:export`) |
 | **POEM** | Copy matches inventory below / `scripts/book_poem_map.py` |
 | **RECIPE+meta** | Unit-root `Media/development/{unit}/RECIPE.md` **and** `meta.json` both present |
 

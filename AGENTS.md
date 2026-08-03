@@ -11,7 +11,7 @@
 
 **Session resume:** `TRUTH.md` → `.cursor/docs/START-HERE.md` → `.cursor/docs/ReCall.md` → `.cursor/docs/CONTINUE-HERE.md` → then the four always-open docs above → `_FLOW-CURRENT.json`.
 
-Everything else is **reference on demand** (do not auto-load): `.cursor/docs/PAGE-BUILD-WORKFLOW.md`, `.cursor/docs/BOOK-PAGE-WORKFLOW.md`, `.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`, `.cursor/docs/ISSUES-RESOLVED.md`, **`.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md`** (full Lulu/ID specs — build authority still `AGENT-RUNBOOK.md`), `.cursor/docs/IMAGE-LANE-PROMPTS.md`, `.cursor/docs/ILLUSTRATION-STYLE.md`, `.cursor/docs/FONT-CATALOG.md`, `BOOK-PLAYBOOK.md`, fleet mirrors, archives, Tony handoff.
+Everything else is **reference on demand** (do not auto-load): `.cursor/docs/PAGE-BUILD-WORKFLOW.md`, `.cursor/docs/BOOK-PAGE-WORKFLOW.md`, `.cursor/docs/BOOK-PRODUCTION-SYSTEM.md`, `.cursor/docs/ISSUES-RESOLVED.md`, **`.cursor/docs/INDESIGN-PRODUCTION-WORKFLOW.md`** (full Lulu/ID specs — build authority still `AGENT-RUNBOOK.md`), **`.cursor/docs/PS-TO-ID-TYPE-HANDOFF.md`** (type inventory · live ID), `.cursor/docs/LULU-WEBSITE-ORDER-PLAYBOOK.md`, `.cursor/docs/IMAGE-LANE-PROMPTS.md`, `.cursor/docs/ILLUSTRATION-STYLE.md`, `.cursor/docs/FONT-CATALOG.md`, `BOOK-PLAYBOOK.md`, fleet mirrors, archives, Tony handoff.
 
 ## Project facts
 
@@ -29,6 +29,7 @@ Everything else is **reference on demand** (do not auto-load): `.cursor/docs/PAG
 - **Story keeps (development/):** **Cover v14-MyPhotoshop-v2** · **P01 v25** (page 1 RIGHT · full-bleed burgundy) · P02 v04 · S1 v13|v14 · **S2 v06** · **S3 v07** · **S4 v13** · S5–S11 KEEP · **S12 v29 LOCKED FINAL** (Jon PS · supersedes v25)
 - **Back matter:** **p30–31 thank-you spread LOCKED (2026-08-02)** — gold **Thank You** + **Jack Farrell** logos in art · live white body + *God bless.* · Interior SoT art in `TNIMS-Interior-FINAL-Chopz` (Flipbook mirrored) · Poem **“God bless.”** baked on **S11** · **S12** = Merry Christmas graphic in art
 - **Pre-finals gate:** `.cursor/docs/FINALS-CHECKLIST.md`
+- **Lulu website orders / reprints:** `.cursor/docs/LULU-WEBSITE-ORDER-PLAYBOOK.md` (+ checklist)
 - **Current-best page art:** `Media/development/` (not Lulu-final)
 - **Layout:** InDesign UXP · Photoshop adobepy LIVE
 

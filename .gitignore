@@ -21,16 +21,20 @@ Media/generated/mocks/**/*.png
 Media/generated/mocks/**/*.jpg
 Media/generated/mocks/**/*.jpeg
 Media/generated/mocks/**/*.webp
-# development dashboard — track RECIPE.md + meta.json; binary art stays local
+# development dashboard — track RECIPE.md + meta.json + type-inventory; binary art stays local
 Media/development/**
 !Media/development/**/
 !Media/development/**/*.md
 !Media/development/**/meta.json
+!Media/development/**/type-inventory.json
+!Media/development/**/type-inventory.example.json
 !Media/development/**/.gitkeep
 Media/finals/**
 /Pages/
 Output/
 *.pdf
+nul
+tmp-ps-call.json
 
 # DO track Media/approved/ (characters + style-lock only) — not ignored
 # NOTE: use /Pages/ (repo root only) — bare Pages/ also matched Media/approved/pages/

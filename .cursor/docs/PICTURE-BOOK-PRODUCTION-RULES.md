@@ -115,7 +115,8 @@ Everything else = reference.
 5. Before Banana / InDesign batch? → run **FINALS-CHECKLIST** (RES · TRIPLET · FRAME · wardrobe · face · gutter · baked text · poem).  
 6. Matter pages wrong size/frame only? → **audit-first** (frame/upscale) — don’t regen content by default.  
 7. Multi-count subjects collapsing? → bake count into canvas first; stop dial burns after 2 fails → PS or finals model.  
-8. Spread locked / FLOW `keep`? → verify **`Media/development/{unit}/RECIPE.md`** AND **`meta.json`** exist. If either missing → create immediately, then report locked.
+8. Spread locked / FLOW `keep`? → verify **`Media/development/{unit}/RECIPE.md`** AND **`meta.json`** exist. If either missing → create immediately, then report locked.  
+9. Layout / live type? → **`type-inventory.json`** present (§7) before claiming PS→ID fidelity; Merged art + live ID type (not baked body copy).
 
 ---
 
@@ -169,4 +170,35 @@ Dial `vNN/RECIPE.md` remains for generation history; unit-root pair is the dashb
 
 ---
 
-*Status date: 2026-07-24 (section 6 + checklist item 8).*
+## 7. Photoshop → InDesign type handoff (2026-08-03)
+
+**Problem:** Matching PS type to live InDesign by eye (bold runs, sizes, leading, kerning, frame boxes) is the #1 layout time sink.
+
+**Locked model for all Hermes picture books:**
+
+1. **Design** type in Photoshop (placement + hierarchy).  
+2. On keep/layout lock, write **`type-inventory.json`** (font · size · leading · tracking · color · align · bbox · text · optional bold `runs`).  
+3. Export **Merged art** for ID links (fill-0 glow shells OK as **guides only**).  
+4. InDesign: create a **style kit** once per book → build **live frames from inventory** → MOCK @ ~35% → hide MOCK.  
+5. **Do not** place full PSB layers into InDesign. **Do not** bake body copy as final print type.
+
+**Shadows/glows:** Prefer atmosphere painted into art; avoid Outer Glow/Drop Shadow as the sole body-text treatment.
+
+**Detail + JSON schema:** keep a project doc `PS-TO-ID-TYPE-HANDOFF.md` (TNIMS reference implementation). Fleet rule is this section; per-book inventory paths live in the project.
+
+**Scripts (TNIMS; copy pattern to new books):**
+
+```powershell
+npm run book:type:export          # PSB → type-inventory.json
+npm run book:type:export:split    # + Media/development/{unit}/type-inventory.json
+npm run book:type:validate -- path\to\type-inventory.json
+npm run book:type:page-map
+npm run book:type:apply           # emit JSX for MCP / File>Scripts
+npm run book:type:pipeline        # export → map → validate → emit apply
+```
+
+**Agent checklist add:** Layout lock without `type-inventory.json` when type is required → create inventory (or flag Jon) before claiming type fidelity.
+
+---
+
+*Status date: 2026-08-03 (section 7 type handoff).*

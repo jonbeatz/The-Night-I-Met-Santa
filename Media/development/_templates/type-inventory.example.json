@@ -1,0 +1,33 @@
+{
+  "schema": "tnims-type-inventory/v1",
+  "unit": "S04-sit-here",
+  "canvas_px": [5250, 2625],
+  "dpi": 300,
+  "bleed_in": 0.125,
+  "notes": "Example only — generate real files with: npm run book:type:export",
+  "frames": [
+    {
+      "id": "S04-sit-here-left-01",
+      "group": "S04",
+      "ps_layer": "type/body-01",
+      "page": "left",
+      "book_page": 10,
+      "bbox_px": { "l": 420, "t": 780, "r": 2200, "b": 1180 },
+      "bounds_in": { "top": 2.475, "left": 1.275, "bottom": 3.8083, "right": 7.2083 },
+      "font": "Cormorant Infant",
+      "style": "Medium",
+      "size_pt": 20,
+      "leading_pt": 26,
+      "tracking": 50,
+      "color": "#2C1810",
+      "align": "center",
+      "space_before_pt": 0,
+      "space_after_pt": 8,
+      "paragraph_style": "Poem-Body",
+      "text": "Example stanza line one.\nExample stanza line two.",
+      "runs": [
+        { "start": 8, "end": 15, "character_style": "Poem-Emph" }
+      ]
+    }
+  ]
+}
