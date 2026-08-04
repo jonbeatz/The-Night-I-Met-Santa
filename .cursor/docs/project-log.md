@@ -2,6 +2,8 @@
 
 | Date | Note |
 |------|------|
+| 2026-08-03 | **End Project full.** Sell-online SoT locked · HOLD until HC+SC QC · commit+push session docs · `:3000` free · `session:stop -StopDeepSeek`. Next: track Lulu shipping (Jack ~Aug 11–12 · Jon ~Aug 18–19) → physical QC → `SELL-ONLINE-STRATEGY.md` §15. |
+| 2026-08-03 | **Sell-online strategy locked (HOLD until physical QC).** SoT: `.cursor/docs/SELL-ONLINE-STRATEGY.md` — Plan B-soft (Bowker + KDP 8.5² PB + Kindle; skip commercial HC; trim personal thank-you for retail; hands-off Amazon fulfill → EFT). Options A / B-soft / B-full / C · fulfillment §12 · marketing §13 · checklist §14 · **post-QC implementation §15** · decision log §16. CONTINUE/ReCall pointers. Next after books: QC → §15. |
 | 2026-08-03 | **End Project.** ReCall/CONTINUE updated · Mem0 + vault logged. Uncommitted WIP remains (docs + type pipeline + large Images/Media). Next: watch Lulu shipping; optional `book:type:pipeline`. |
 | 2026-08-03 | **Type-inventory pipeline shipped.** `book:type:export|export:split|validate|page-map|apply|styles|pipeline` · scripts under `scripts/` (+ fleet `picture-book-*-type*` / `_impl_*`) · schema + example · S01 smoke (2 frames after dedupe) · JSX → `Xtraz/Adobe-inDesign/_generated/`. Docs: PS-TO-ID-TYPE-HANDOFF §8 · FINALS TYPE-INV · fleet §7. |
 | 2026-08-03 | **PS→ID type handoff locked.** `.cursor/docs/PS-TO-ID-TYPE-HANDOFF.md` (inventory schema · style kit · MOCK · glow policy · book-2 upgrades). Fleet `PICTURE-BOOK-PRODUCTION-RULES.md` §7 + playbook excerpt; `sync:docs` mirrored. Cross-links: AGENT-RUNBOOK · MERGED · ReCall · AGENTS. Optional next: export/apply inventory scripts when Jon asks. |

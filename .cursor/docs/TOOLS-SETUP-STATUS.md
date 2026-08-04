@@ -55,7 +55,8 @@ Everything else in **production** below is configured on Jon's PC (2026-07-04) u
 | **Draven Mem0** | A | READY | (hardcoded collection) | `scripts/draven-mem0.ps1` | Cross-project — `npm run draven:add` |
 | **Telegram gateway** | A- | READY | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `TELEGRAM_ALLOWED_USERS` | `.env.local` + profile `.env` | `npm run telegram:ensure` |
 | **ngrok (Cursor bridge)** | A- | READY | `NGROK_AUTHTOKEN` | `.env.local` | `:4040` when LiteLLM ngrok on |
-| **OmniVoice Draven** | A- | READY | `OMNIVOICE_PYTHON` (path) | `.env.local` | Lazy start on ritual speak |
+| **Edge Liam Draven** | A- | READY | network (Edge TTS) | `.env.local` `DRAVEN_EDGE_VOICE` | Ritual primary (2026-08-03) |
+| **OmniVoice Draven** | A- | READY | `OMNIVOICE_PYTHON` (path) | `.env.local` Omni knobs | Optional restore / Edge fallback |
 | **Context7 MCP** | A | **READY** | **None** | MCP manifest | Always on |
 | **filesystem MCP** | A | **READY** | **None** | Built-in | Always on |
 | **fetch MCP** | A- | **READY** | **None** | MCP manifest | Always on |

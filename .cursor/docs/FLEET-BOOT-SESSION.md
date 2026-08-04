@@ -52,7 +52,7 @@ New skeleton projects inherit this via bootstrap + `npm run sync:docs -- -Write 
 | **Catalog only** | `.cursor/mcp-manifest.json` | Optional docs/reference — **never** paste `project_mcp_servers` into `mcp.json` |
 | **Hermes profile** | `%LOCALAPPDATA%\hermes\profiles\jonbeatz\config.yaml` | `mcp_servers: {}` — Cursor-only MCP (no duplicate Hostinger/github Node children) |
 
-**LiteLLM master key (all profiles — 2026-07-13):** Every Hermes profile `model.api_key` must be `sk-jonbeatz-deepseek-2026` with `deepseek-v4-pro` at `http://127.0.0.1:4000/v1`. Wrong keys return HTTP 400 **"No connected db"** (stateless LiteLLM — not a SQLite bug). **Watchdog:** `profiles\jonbeatz\scripts\profile-health-watchdog.py` — Hermes cron every 6h; Telegram alert on failure only. Policy: JonBeatz `TRUTH.md` → LiteLLM Master Key Policy.
+**LiteLLM master key (all profiles — 2026-08-03):** Every Hermes profile on `:4000` must use real master key `sk-jonbeatz-deepseek-2026` (never a chat-redacted `«redacted:sk-…»` string in YAML). Provider = DeepSeek **Flash + Pro only** + **`discover_models: false`**. Default model = **`deepseek-v4-flash`** on **all** profiles (Pro when the operator asks). Wrong keys return HTTP 400 **"No connected db"** (stateless LiteLLM — not a SQLite bug). **Never** add a second LiteLLM OpenRouter provider (URL merge floods DeepSeek Direct). Team + Mem0 scopes: **`FLEET-TEAM-MEMORY.md`**. **Watchdog:** `profiles\jonbeatz\scripts\profile-health-watchdog.py` — Hermes cron every 6h; Telegram alert on failure only.
 
 **Red Cursor error:** `mcpServers must be an object` → fix project `.cursor/mcp.json` schema.
 

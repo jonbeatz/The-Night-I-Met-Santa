@@ -47,6 +47,10 @@ Sibling profiles **consume** shared docs/skills; they do **not** copy the asset 
 
 Reviews triggered from JonBeatz (or any profile) **must** persist to shared `TOOLS-*.md` — not JonBeatz-only mirrors. See **[FLEET-TOOLS-KNOWLEDGE.md](./FLEET-TOOLS-KNOWLEDGE.md)**.
 
+### Team + memory rails (fleet-wide)
+
+Cursor ↔ Hermes roles, vault bridge, write-once matrix, and per-profile Mem0 scopes: **[FLEET-TEAM-MEMORY.md](./FLEET-TEAM-MEMORY.md)**. Vault board: `H:\Vader_Vault\03_AI_Memory\CURSOR-HERMES-BRIDGE.md`.
+
 ---
 
 ## Fleet sync commit checklist (required before push)

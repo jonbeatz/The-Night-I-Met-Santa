@@ -43,6 +43,11 @@ When user says **End Project**, **End Session**, **Session Closeout**, or **Done
 - Run **`npm run session:stop`** (add **`-- -StopDeepSeek`** when operator confirms stop)
 - See `end-project-ritual.mdc`
 
+When user says **End Project full**, **End Session full**, or **Full end**:
+
+- Same End Project ritual **without AskQuestion** — auto commit+push (if dirty), stop `:3000` if up, `session:stop -- -StopDeepSeek`
+- See `end-project-ritual.mdc` → Shortcut: End Project full
+
 ## Update Docs
 
 When user says **update docs** or **update docs and mem0**:

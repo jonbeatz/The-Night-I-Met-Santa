@@ -31,6 +31,7 @@ scripts/mem0_integration.py  →  Mem0 OSS (Qdrant local)
 | **user_id** | `jonbeatz_personal` |
 | **collection** | `jonbeatz_personal_memories` |
 | **qdrant path** | `%USERPROFILE%\.mem0\qdrant_personal` |
+| **Python runtime** | Hermes venv `%LOCALAPPDATA%\hermes\hermes-agent\venv\Scripts\python.exe` (scripts pin this — **not** Python312) |
 | **Config file** | `hermes-desktop-profile.json` → `mem0` block |
 
 MSC uses a **separate** store — never mix slugs or user IDs.

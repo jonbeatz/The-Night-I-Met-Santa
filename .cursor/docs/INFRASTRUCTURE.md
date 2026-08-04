@@ -420,7 +420,8 @@ Start these from **MyStudioChannel** (`npm run msc:session:start`).
 
 | Tool | Path / command |
 |------|----------------|
-| Python (Mem0) | `C:\Users\JONBEATZ\AppData\Local\Programs\Python\Python312\python.exe` |
+| Python (Mem0 / Draven scripts) | `%LOCALAPPDATA%\hermes\hermes-agent\venv\Scripts\python.exe` (**Hermes venv 3.11** — intentional; do **not** use Python312 for Mem0) |
+| Python (Extended Health / `hermes update` safety) | `%LOCALAPPDATA%\Programs\Python\Python312\python.exe` — only via `EXTENDED_HEALTH_PYTHON` / `start-extended-health.bat` |
 | LM Studio CLI | `lms` on PATH |
 | Mem0 model | `qwen3-4b-instruct-2507` |
 | Embedder | HuggingFace `multi-qa-MiniLM-L6-cos-v1` (in ***.py) |

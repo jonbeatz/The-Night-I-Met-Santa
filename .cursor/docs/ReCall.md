@@ -6,19 +6,20 @@
 2. `.cursor/docs/START-HERE.md`
 3. **This file** — `.cursor/docs/ReCall.md`
 4. `.cursor/docs/CONTINUE-HERE.md`
-5. **`.cursor/docs/LULU-WEBSITE-ORDER-PLAYBOOK.md`** ← full Lulu website recreate (HC+SC+cart+coupons+shipping)
-6. **`.cursor/docs/LULU-ORDER-CHECKLIST.md`**
-7. **`.cursor/docs/MERGED-PLATE-EXPORT-WORKFLOW.md`**
-8. **`.cursor/docs/COVER-REBUILD-WORKFLOW.md`**
-9. **`.cursor/docs/PS-TO-ID-TYPE-HANDOFF.md`** ← PS→ID type inventory + book-2 upgrades (fleet §7)
-10. Always-open: Flow v2 · Master Dock · IMAGE-LANE-v2 · `AGENT-RUNBOOK.md`
-11. SoT plates: `Media/generated/mocks/_FLOW-CURRENT.json`
+5. **`.cursor/docs/SELL-ONLINE-STRATEGY.md`** ← commercial sell (HOLD until QC · §15 when ready)
+6. **`.cursor/docs/LULU-WEBSITE-ORDER-PLAYBOOK.md`** ← full Lulu website recreate (HC+SC+cart+coupons+shipping)
+7. **`.cursor/docs/LULU-ORDER-CHECKLIST.md`**
+8. **`.cursor/docs/MERGED-PLATE-EXPORT-WORKFLOW.md`**
+9. **`.cursor/docs/COVER-REBUILD-WORKFLOW.md`**
+10. **`.cursor/docs/PS-TO-ID-TYPE-HANDOFF.md`** ← PS→ID type inventory + book-2 upgrades (fleet §7)
+11. Always-open: Flow v2 · Master Dock · IMAGE-LANE-v2 · `AGENT-RUNBOOK.md`
+12. SoT plates: `Media/generated/mocks/_FLOW-CURRENT.json`
 
 ## Current focus
-**Day-end 2026-08-03.** Lulu orders live · type-inventory pipeline shipped · continue tomorrow with delivery watch + optional full `book:type:pipeline`.
+**End Project full 2026-08-03.** Gift Lulu orders in transit · sell strategy locked HOLD until physical QC · next = watch deliveries → QC → Plan B-soft §15.
 
 ## Last updated
-2026-08-03 late — End Project. Session: Lulu website orders + playbook · PS→ID type handoff + `book:type:*` tooling (S01 smoke OK).
+2026-08-03 night — **End Project full.** Session: Open Project + sell-online research lock (Plan B-soft, hands-off KDP, marketing) · ballpark pricing/volume chat · docs/Mem0/vault. Auto commit+push docs · StopDeepSeek.
 
 ### Lulu orders (2026-08-03)
 | Who | Order # | Cart | Ship | Coupon | Total | Est. delivery |
@@ -53,10 +54,10 @@
 - S01 smoke: 2 frames after dedupe → `Media/development/S01-approach/type-inventory.json`
 
 ## Start here next
-1. Watch order emails / tracking for Jack (Expedited) then Jon (Mail)
-2. Optional: `npm run book:type:pipeline` for full book inventory (or unit-by-unit)
-3. Reprints: My Projects → Add to Cart → playbook
-4. Physical QC when Jack’s Expedited box arrives (aim before **2026-08-15**)
+1. **HOLD** commercial spend/files until HC + SC in hand
+2. Physical QC → must-fix notes
+3. Implement: **`.cursor/docs/SELL-ONLINE-STRATEGY.md` §15** (Plan B-soft · KDP hands-off)
+4. SoT: findings · options A/B-soft/B-full/C · fulfillment §12 · marketing §13 · checklist §14 · decision log §16
 
 ## System of record
 | Doc | Use |

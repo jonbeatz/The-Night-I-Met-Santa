@@ -182,7 +182,7 @@ Jon researches tools → paste links in Cursor (often from **JonBeatz hub**) →
 
 ## Voice / TTS watch deck (Jon 2026-07-04)
 
-**Production:** OmniVoice instruct (CPU, ritual-only) + Edge Ryan fallback — do not replace.
+**Production:** Edge Liam (`en-CA-LiamNeural`, ritual-only; matches Hermes) + OmniVoice optional restore — do not remove Omni install.
 
 | Tool | Grade | Verdict | When to reach for it |
 |------|-------|---------|----------------------|
@@ -196,7 +196,7 @@ Install any of these only after Jon approves. None replace `draven:speak` until 
 
 ## Voice dictation watch deck (Jon 2026-07-04)
 
-**Baseline:** Windows **Win+H** talk-to-type. **Production speak-out:** OmniVoice (`draven:speak`) — do not replace.
+**Baseline:** Windows **Win+H** talk-to-type. **Production speak-out:** Edge Liam via `draven:speak` (OmniVoice optional restore) — do not remove Omni.
 
 | Tool | Grade | Verdict | When to reach for it |
 |------|-------|---------|----------------------|
@@ -218,7 +218,7 @@ Install any of these only after Jon approves. None replace `draven:speak` until 
 | **Skill discovery** | Manual `npx skills add` | **find-skills** | Ask "is there a skill for X?" → `npx skills find [query]` |
 | **Browser automation** | cursor-ide-browser MCP | Agent Browser, Playwright, Browserbase | cursor-ide-browser default in Cursor; agent-browser for Rust CLI/MCP |
 | **Engineering workflow** | Hermes rituals + Workflow-Portable | Agent Skills (Osmani) | Cherry-pick Osmani gates; don't replace Start/End Project |
-| **Draven TTS** | OmniVoice (CPU, voice design) | NeuTTS, LuxTTS (clone) | Keep Omni primary; clones need ref clip |
+| **Draven TTS** | Edge Liam (ritual) + OmniVoice (optional) | NeuTTS, LuxTTS (clone) | Liam primary; Omni restore documented; clones need ref clip |
 | **Voice dictation (STT in)** | Windows Win+H | **OpenWhispr**, **Calliop** | Local OSS alt; paste-at-cursor; try later |
 | **TTS studio / GUI** | `draven:speak` scripts | OmniVoice-Studio | Optional GUI for dubbing/clone experiments |
 | Web **research** | Tavily + fetch MCP | Firecrawl, Agent-Reach Exa | Different depth/speed |

@@ -3079,7 +3079,7 @@ Open-source local TTS/STT/voice-cloning desktop app (Windows/macOS/Linux). Multi
 | Layer | Hermes |
 |-------|--------|
 | **Handy** | **IN USE** — offline dictation |
-| **OmniVoice + Edge Ryan** | **IN USE** — Draven ritual speak |
+| **OmniVoice + Edge Liam** | **IN USE** — Liam ritual primary; Omni optional restore |
 | **Voicebox** | Broader studio (clone + stories + MCP TTS) — heavy overlap |
 
 ### Risks
@@ -3091,7 +3091,7 @@ Open-source local TTS/STT/voice-cloning desktop app (Windows/macOS/Linux). Multi
 
 **Verify:** Install MSI → health `:17493` → one Kokoro generate (light) → MCP speak smoke; measure VRAM before enabling larger engines.
 
-**Recommendation:** **WATCH** — excellent capability, but stack already covers dictation + Draven. Spike when cloning / multi-voice production is needed; keep OmniVoice primary for rituals.
+**Recommendation:** **WATCH** — excellent capability, but stack already covers dictation + Draven. Spike when cloning / multi-voice production is needed; keep Edge Liam primary for rituals (Omni optional restore).
 
 ---
 
