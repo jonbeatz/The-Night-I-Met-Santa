@@ -16,10 +16,19 @@
 12. SoT plates: `Media/generated/mocks/_FLOW-CURRENT.json`
 
 ## Current focus
-**End Project full 2026-08-03.** Gift Lulu orders in transit · sell strategy locked HOLD until physical QC · next = watch deliveries → QC → Plan B-soft §15.
+**2026-08-18.** Physical HC+SC received (look great). **Family Select links LIVE** (not public/General).
+
+| Binding | List | Select URL |
+|---------|------|------------|
+| Softcover `454zdy8` | $12 | https://www.lulu.com/shop/jon-farrell/the-night-i-met-santa-softcover/paperback/product-454zdy8.html |
+| Hardcover `v82ejwq` | $22 | https://www.lulu.com/shop/jon-farrell/the-night-i-met-santa-hardcover/hardcover/product-v82ejwq.html |
+
+**Docs:** `.cursor/docs/LULU-FAMILY-ORDERING.md` (links) · `.cursor/docs/LULU-BOOKSTORE-SELECT-PLAYBOOK.md` (wizard + **Revenue Goal** pricing gotcha).  
+**Vault:** `The-Night-I-Met-Santa-Lulu-Family-Orders` · pattern `Lulu-Bookstore-Select-Playbook` · sales timing `Lulu-Bookstore-sales-reporting`.  
+Sales & Payments updates **end of business day** (not live). Optional: send more links · check sales tomorrow. Sell/Amazon still optional later.
 
 ## Last updated
-2026-08-03 night — **End Project full.** Session: Open Project + sell-online research lock (Plan B-soft, hands-off KDP, marketing) · ballpark pricing/volume chat · docs/Mem0/vault. Auto commit+push docs · StopDeepSeek.
+2026-08-18 — Family Select SC+HC live; playbook documented (Revenue Goal vs Fixed List Price).
 
 ### Lulu orders (2026-08-03)
 | Who | Order # | Cart | Ship | Coupon | Total | Est. delivery |
@@ -54,10 +63,11 @@
 - S01 smoke: 2 frames after dedupe → `Media/development/S01-approach/type-inventory.json`
 
 ## Start here next
-1. **HOLD** commercial spend/files until HC + SC in hand
-2. Physical QC → must-fix notes
-3. Implement: **`.cursor/docs/SELL-ONLINE-STRATEGY.md` §15** (Plan B-soft · KDP hands-off)
-4. SoT: findings · options A/B-soft/B-full/C · fulfillment §12 · marketing §13 · checklist §14 · decision log §16
+1. Track Lulu shipping (Jack Expedited · Jon Mail) → physical QC HC+SC
+2. Then `SELL-ONLINE-STRATEGY.md` §15 (Plan B-soft)
+3. **Sibling project:** Harlow → `D:\Hermes\projects\Harlow's-Big-Adventure` (Open/Start there; `profile:align` to `harlows-big-adventure`)
+
+**Fleet:** left running — Open Project in next workspace.
 
 ## System of record
 | Doc | Use |
@@ -68,3 +78,8 @@
 | **AGENT-RUNBOOK.md** | Print authority |
 | **PS-TO-ID-TYPE-HANDOFF.md** | Type inventory · live ID · MOCK |
 | CONTINUE-HERE | Next actions |
+
+
+## Cross-project (2026-08-06)
+**Harlow's Big Adventure** scaffolded at `D:\Hermes\projects\Harlow's-Big-Adventure` (Book-2 test). Switch Cursor there for Mom's book; TNIMS stays gift/QC + sell HOLD.
+

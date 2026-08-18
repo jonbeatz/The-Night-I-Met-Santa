@@ -98,7 +98,7 @@ Log new automation ideas to **ReCall.md** + **Mem0**.
 ## Boundaries
 
 - **Shared token** with MSC Hermes stack — same `google_token.json`
-- **JonBeatz Mem0** stays isolated (`jonbeatz_personal`) — do not store email bodies in MSC Mem0
+- **Mem0** stays **per-project isolated** (see this project's `TRUTH.md` / `MEM0-LMSTUDIO.md`) — do not store email bodies in MSC Mem0
 - Website-related Google tasks → open **MyStudioChannel** repo instead
 
 ---
@@ -406,7 +406,7 @@ Start these from **MyStudioChannel** (`npm run msc:session:start`).
 | Resource | Shared? | Location |
 |----------|---------|----------|
 | Google OAuth token | Shared | `%LOCALAPPDATA%\hermes\google_token.json` |
-| Mem0 store | **Isolated** | `%USERPROFILE%\.mem0\qdrant_personal` |
+| Mem0 store | **Isolated per project** | `%USERPROFILE%\.mem0\<this project's qdrant path>` — see `TRUTH.md` / `MEM0-LMSTUDIO.md` |
 | Active Hermes profile | Per session | `%APPDATA%\Hermes\active-profile.json` |
 | LiteLLM master key | Shared stack | `D:\Hermes\projects\_core-scripts\deepseek-api\.env.local` |
 | ComfyUI engine | **Shared** | `H:\AI_Models\ComfyUI` (port 8188) |
@@ -451,7 +451,7 @@ Personal vault: `H:\Vader_Vault` (not in git). Ship layer = this profile's `.cur
 | Daily focus, ideas, session context | **ReCall.md** | Mem0 search |
 | Agent constitution, commands, workflows | **TRUTH.md** + `.cursor/docs/` | — |
 | Long-form personal notes, journaling | **Obsidian vault** | Distill to ReCall weekly |
-| Durable facts agents must recall | **Mem0** (`jonbeatz_personal`) | One-line in ReCall |
+| Durable facts agents must recall | **Mem0** (this project's scope — `TRUTH.md`) | One-line in ReCall |
 | Troubleshooting fixes | **ISSUES-RESOLVED.md** | Mem0 if recurring |
 | Session history | **project-log.md** | `npm run log:session` |
 
@@ -548,7 +548,7 @@ Full reference: `.cursor/docs/MASTER-COMMANDS.md` · Phrases: `.cursor/docs/Cust
 
 ## Boundaries
 - This profile is **personal** — not MyStudioChannel.
-- Mem0 uses `jonbeatz_personal` / `qdrant_personal` (isolated from MSC).
+- Mem0 uses **this project's** isolated scope (`TRUTH.md` / `MEM0-LMSTUDIO.md`) — never MSC collections.
 - Google OAuth tokens are shared globally (`%LOCALAPPDATA%\hermes\google_token.json`).
 
 ## Agent entry

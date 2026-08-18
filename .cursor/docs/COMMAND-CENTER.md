@@ -12,7 +12,7 @@ JonBeatz is the **delegation and propagation hub** — bootstrap new Hermes proj
 
 | Zone | Path | Role |
 |------|------|------|
-| **Factory** | `D:\Hermes\apps\` | Profile Jedi, TaskBoardAI, Open-Generative-AI, 3DGenStudio, Hermes Desktop |
+| **Factory** | `D:\Hermes\apps\` | Profile Jedi, TaskBoardAI, DesignLab (VaderBoard), Open-Generative-AI, 3DGenStudio, Hermes Desktop |
 | **Office** | `D:\Hermes\projects\` | JonBeatz (hub), `_core-scripts`, sibling profiles |
 | **Vault** | `D:\Hermes\assets\` | Media, 3D workflow assets, backups |
 
@@ -27,9 +27,13 @@ JonBeatz is the **delegation and propagation hub** — bootstrap new Hermes proj
 | `npm run kanban:start` | TaskBoardAI :3001 + Hermes Workspace :3005 + Dashboard :9119 |
 | `npm run kanban:stop` | Stop kanban stack |
 | `npm run kanban:seed` | One fleet-verify task per profile board (idempotent smoke) |
+| `npm run designlab:dev` | DesignLab / VaderBoard mood board UI — http://127.0.0.1:3090 |
+| `npm run vaderboard:dev` | Alias → same as designlab:dev |
 | `npm run sync:docs -- -Write -AddMissing` | Pull shared universal docs into **this** profile |
 | `npm run sync:skills:global` | Install all shared skills machine-wide (`~/.claude/skills`) |
 | `npm run bootstrap:website` | Scaffold new `-Website` project from shared template (if aliased) |
+
+**Client invoicing (fleet):** [INVOICING.md](./INVOICING.md) — vault ledger at `H:\Vader_Vault\_attachments\invoices\JonFarrell\`. Not the same as `deepseek:billing-*`.
 
 Sibling profiles **consume** shared docs/skills; they do **not** copy the asset vault into `.cursor/`.
 
@@ -151,6 +155,7 @@ Not in `hermes-fleet-profiles.json` — open as separate workspaces or via Profi
 |-----|------|--------|--------|
 | **Profile Jedi** | `D:\Hermes\apps\profile-jedi` | [jonbeatz/profile-jedi](https://github.com/jonbeatz/profile-jedi) | `npm run backup:quick` |
 | **TaskBoardAI** | `D:\Hermes\apps\TaskBoardAI` | [jonbeatz/hermes-taskboard](https://github.com/jonbeatz/hermes-taskboard) private | `npm run backup:quick` (includes `boards/*.json`) |
+| **DesignLab** (VaderBoard) | `D:\Hermes\apps\designlab` | Local Factory app | Mood boards — `npm run designlab:dev` · [DESIGNLAB-WORKFLOW.md](./DESIGNLAB-WORKFLOW.md) |
 | **Open-Generative-AI** | `D:\Hermes\apps\Open-Generative-AI` | [Anil-matcha/Open-Generative-AI](https://github.com/Anil-matcha/Open-Generative-AI) upstream | None — local clone; dev `:3000` |
 | **Hermes Desktop** | `%LOCALAPPDATA%\hermes` | — | Profile env mirrors |
 

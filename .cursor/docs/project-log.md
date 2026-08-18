@@ -2,6 +2,8 @@
 
 | Date | Note |
 |------|------|
+| 2026-08-18 | **Family Select links LIVE.** SC `454zdy8` $12 · HC `v82ejwq` $22 · access Select (not General). Payee Jon Farrell. Playbook locked: Revenue Goal (not Fixed List Price). Sales & Payments = **end of business day** (not live). Vault: `Lulu-Bookstore-Select-Playbook` · `Lulu-Bookstore-sales-reporting`. Mirrored to Harlow. |
+| 2026-08-06 | **Close Project → Harlow.** Scaffolded `Harlow's-Big-Adventure` (Book-2). Fleet left running. TNIMS next: Lulu shipping QC then sell §15. |
 | 2026-08-03 | **End Project full.** Sell-online SoT locked · HOLD until HC+SC QC · commit+push session docs · `:3000` free · `session:stop -StopDeepSeek`. Next: track Lulu shipping (Jack ~Aug 11–12 · Jon ~Aug 18–19) → physical QC → `SELL-ONLINE-STRATEGY.md` §15. |
 | 2026-08-03 | **Sell-online strategy locked (HOLD until physical QC).** SoT: `.cursor/docs/SELL-ONLINE-STRATEGY.md` — Plan B-soft (Bowker + KDP 8.5² PB + Kindle; skip commercial HC; trim personal thank-you for retail; hands-off Amazon fulfill → EFT). Options A / B-soft / B-full / C · fulfillment §12 · marketing §13 · checklist §14 · **post-QC implementation §15** · decision log §16. CONTINUE/ReCall pointers. Next after books: QC → §15. |
 | 2026-08-03 | **End Project.** ReCall/CONTINUE updated · Mem0 + vault logged. Uncommitted WIP remains (docs + type pipeline + large Images/Media). Next: watch Lulu shipping; optional `book:type:pipeline`. |

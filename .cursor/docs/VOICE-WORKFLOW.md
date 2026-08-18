@@ -1,8 +1,8 @@
 # Draven Voice Workflow — Edge Liam + OmniVoice (optional)
 
-**Last updated:** 2026-08-03  
+**Last updated:** 2026-08-08  
 **Operator:** Jon Beatz  
-**Status:** **Ritual-only** — Edge Liam primary (matches Hermes); OmniVoice installed + dialed-in for restore
+**Status:** **Ritual-only** — Edge Liam primary (matches Hermes); OmniVoice installed + dialed-in for restore; NeuTTS parked for fun clone tests
 
 ---
 
@@ -197,6 +197,25 @@ Allowed speak request
 | [Calliop](https://github.com/Lappom/Calliop) | WATCH — alt | Windows Wispr-style; Alt+Space; bundled Qwen cleanup |
 
 Details: [TOOLS-WATCHLIST.md](./TOOLS-WATCHLIST.md) · [TOOLS-REFERENCE.md](./TOOLS-REFERENCE.md)
+
+---
+
+## NeuTTS (parked — keep both stacks)
+
+**Policy (Jon 2026-08-08):** Keep both paths. Fun later for Jon / Maria voice-clone experiments. **Not** wired into Draven rituals (still Edge → Omni). Do **not** delete during vault cleanups.
+
+| Path | What’s there | Size (approx) |
+|------|--------------|---------------|
+| `H:\AI_Models\Hermes-NeuTTS` | `pytorch_model.bin` + `my_voice\` (Jon long/short + Maria wavs + `speak_clone.bat`) | ~1.1 GB |
+| `H:\LLM_VAULT\jonbeatz\neutts-air-Q4_0` | LM Studio GGUF `neutts-air-Q4_0.gguf` | ~0.5 GB |
+
+| Do | Don’t |
+|----|-------|
+| Leave weights + ref wavs in place | Treat as Draven primary / replace Liam |
+| Use for manual clone smoke when curious | Merge into OmniVoice or delete “duplicate” NeuTTS |
+| See TOOLS-WATCHLIST **WATCH** grade | Auto-install / wire into `draven:speak` without Jon asking |
+
+When ready to test: load the LMS GGUF **or** run the Hermes-NeuTTS scrap against `my_voice\` refs — separate from Edge/Omni.
 
 ---
 

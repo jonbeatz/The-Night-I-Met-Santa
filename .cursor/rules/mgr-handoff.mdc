@@ -1,10 +1,12 @@
 ---
-description: Seamless session handoff between Cursor and Claude Code via MGR/sessions/handoff.md
+description: Session handoff between Cursor and Claude Code via MGR/sessions/handoff.md. Only relevant in repos that HAVE an MGR/ folder (or .mgr/ / .clauderules) — attaches via globs; do not set alwaysApply (dead weight in repos without MGR).
 globs: MGR/**,.mgr/**,.clauderules,CLAUDE.md
-alwaysApply: true
+alwaysApply: false
 ---
 
 # MGR cross-tool handoff (Cursor ↔ Claude Code)
+
+> **Scope guard:** this rule only applies when the repo actually contains `MGR/` (or `.mgr/` / `.clauderules`). If those don't exist, ignore this rule entirely.
 
 Global guide: `~/.claude/CLAUDE.md` · Per-repo: `.clauderules` · Detail: `docs/HANDOFF.md`
 

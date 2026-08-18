@@ -54,6 +54,9 @@ Everything else in **production** below is configured on Jon's PC (2026-07-04) u
 | **Mem0 + Qdrant** | A | READY | `MEM0_API_KEY` | `.env.local` per profile | `npm run mem0:preflight` |
 | **Draven Mem0** | A | READY | (hardcoded collection) | `scripts/draven-mem0.ps1` | Cross-project — `npm run draven:add` |
 | **Telegram gateway** | A- | READY | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `TELEGRAM_ALLOWED_USERS` | `.env.local` + profile `.env` | `npm run telegram:ensure` |
+| **Hermes MCP (`hermes mcp serve`)** | A- | **READY** / **IN USE** | None (local hermes.exe) | `%USERPROFILE%\.cursor\mcp.json` + `HERMES_HOME`=jonbeatz profile | Cursor ↔ Telegram messaging; gateway up for sends — JonBeatz `HERMES-MCP-BRIDGE.md` |
+| **Hermes client `hermes-fs`** | A- | **READY** / **IN USE** | None | jonbeatz `config.yaml` mcp_servers | Read-only: projects/apps/assets + Vader_Vault |
+| **Hermes client `n8n`** | A- | **READY** / **IN USE** | `N8N_API_KEY` in `%USERPROFILE%\.config\n8n-mcp\env` | `D:\Hermes\apps\hermes-n8n-mcp` | `npm run n8n:mcp:test` · `/reload-mcp` in Desktop |
 | **ngrok (Cursor bridge)** | A- | READY | `NGROK_AUTHTOKEN` | `.env.local` | `:4040` when LiteLLM ngrok on |
 | **Edge Liam Draven** | A- | READY | network (Edge TTS) | `.env.local` `DRAVEN_EDGE_VOICE` | Ritual primary (2026-08-03) |
 | **OmniVoice Draven** | A- | READY | `OMNIVOICE_PYTHON` (path) | `.env.local` Omni knobs | Optional restore / Edge fallback |
@@ -109,6 +112,8 @@ Everything else in **production** below is configured on Jon's PC (2026-07-04) u
 | **React Bits** | B+ (88) | WATCH | **READY** (free) | Pro = paid license only | Browse/copy — no install |
 | **Firecrawl MCP** | B+ (86) | WATCH | NEEDS_KEY | `FIRECRAWL_API_KEY` | Enable in MCP + key; skills exist |
 | **Penpot** | B (82) | WATCH | NOT_INSTALLED | Self-host or cloud account | penpot.app + MCP when needed |
+| **DesignLab** (VaderBoard) | A- (90) | **IN USE** | **READY** | None (local) | `D:\Hermes\apps\designlab` · `npm run designlab:dev` · http://127.0.0.1:3090 |
+| **DesignLab** (VaderBoard) | A- (90) | **IN USE** | **READY** | None (local) | `D:\Hermes\apps\designlab` · `npm run designlab:dev` · http://127.0.0.1:3090 |
 | **Composio** | B (84) | WATCH | PARTIAL | `COMPOSIO_API_KEY` | Already in JonBeatz manifest |
 | **NeuTTS** | A- (90) | WATCH | NOT_INSTALLED | None (local HF models) | Clone TTS — ref wav + transcript on install |
 | **OmniVoice-Studio** | B+ (87) | WATCH | NOT_INSTALLED | None (local desktop) | GUI + MCP hub — install on approval |

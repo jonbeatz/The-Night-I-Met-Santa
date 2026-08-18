@@ -1,11 +1,12 @@
-# Image Workflow — JonBeatz Complete Guide
+# Image Workflow — Hermes fleet (shared workstation)
 
-**Profile root:** `D:\Hermes\projects\JonBeatz`  
-**Canonical model inventory:** [COMFYUI-MODELS.md](./COMFYUI-MODELS.md)  
-**VRAM playbook:** [VRAM-IMAGE.md](./VRAM-IMAGE.md)  
-**Environment:** `.env.local` (from `.env.local.example` — run `npm run env:setup`)
+**Hub profile:** `D:\Hermes\projects\JonBeatz` (Command Center)  
+**Canonical model inventory:** [COMFYUI-MODELS.md](./COMFYUI-MODELS.md) → [ENGINEERING.md](./ENGINEERING.md)  
+**VRAM playbook:** [VRAM-IMAGE.md](./VRAM-IMAGE.md) → [ENGINEERING.md](./ENGINEERING.md)  
+**Environment:** profile `.env.local` (from `.env.local.example` — run `npm run env:setup`)  
+**Vault picker:** `H:\Vader_Vault\02_Knowledge\Patterns\Local-image-model-picker-16GB.md`
 
-This is the **JonBeatz agent source of truth** for Hugging Face cloud generation + local ComfyUI editing, upscaling, and video.
+This is the **fleet agent source of truth** for Hugging Face cloud generation + fal + local ComfyUI editing, upscaling, and video on the shared RTX 16 GB box.
 
 ---
 
@@ -26,7 +27,7 @@ This is the **JonBeatz agent source of truth** for Hugging Face cloud generation
 ```powershell
 cd D:\Hermes\projects\JonBeatz
 npm run env:setup          # creates .env.local; merges HF_TOKEN from MSC if present
-npm run image:doctor       # verify HF_TOKEN, ComfyUI paths, Python deps
+npm run image:doctor       # HF_TOKEN, Comfy paths, Python deps + vault↔Comfy hardlink health
 pip install huggingface_hub pillow python-dotenv
 ```
 
@@ -55,10 +56,11 @@ Required in **`.env.local`:**
 | Start ComfyUI | `npm run comfy:start` | Local GPU :8188 |
 | Stop ComfyUI (keep LM Studio) | `npm run comfy:stop` | Local |
 | ComfyUI status JSON | `npm run comfy:status` | Local |
-| Repair model symlinks (post H: migration) | `npm run comfy:repair-symlinks` | Local |
+| Repair model hardlinks (post H: migration) | `npm run comfy:repair-symlinks` | Local |
+| Check vault↔Comfy hardlinks only | `npm run comfy:hardlink-check` | Local |
 | Full model comparison test | `npm run comfy:compare -- "prompt"` | Local GPU |
 | LM Studio vault audit | `npm run lmstudio:audit` | Local |
-| Health check | `npm run image:doctor` | Local |
+| Health check (env + hardlinks) | `npm run image:doctor` | Local |
 | ComfyUI web UI | Browser → http://127.0.0.1:8188 | Local |
 
 ### PowerShell profile commands (workstation-wide)
@@ -73,8 +75,8 @@ These live in Jon's **PowerShell profile** (shared with MSC). They call ComfyUI 
 | `inpaint-image -InputPath ... -MaskPath ...` | inpaint |
 | `upscale-image -InputPath ... -TargetSize 4K` | upscale |
 | `fix-face -InputPath ...` | face restore |
-| `generate-video -Prompt ...` | CogVideoX text-to-video |
-| `animate-image -InputPath ...` | SVD image-to-video |
+| `generate-video -Prompt ...` | CogVideoX T2V — **disabled** (see parked note below); use `video:fal` |
+| `animate-image -InputPath ...` | SVD image-to-video (legacy local) |
 
 **Natural language:** Jon can say *"make me a chicken playing golf"* → agent runs cloud `gen-image` or asks cloud vs local.
 
@@ -169,6 +171,10 @@ Check balance: [fal.ai/dashboard](https://fal.ai/dashboard).
 
 **fal credits exhausted?** Local fallback (manual install): **LongCat-Video** → **HunyuanVideo** → ComfyUI `generate-video` → **LTX Desktop** (GUI NLE — Jon download later). Same FFmpeg → WebP → `ScrollFrameHero`. Details: `TOOLS-REFERENCE.md` § LongCat / HunyuanVideo / LTX Desktop · `SCROLL-VIDEO-RESEARCH.md` tool matrix.
 
+**Wan2.1 local weights (parked research lane):** `H:\AI_Models\Wan2.1` — keep **both** `checkpoints` (~16 GB native) and `hf` (~27 GB Diffusers). Not duplicates to delete; Windows verify = `npm run wan21:status`. Production clips still default to **fal**.
+
+**CogVideo (parked — keep ~3.3 GB I2V):** `H:\AI_Models\ComfyUI\ComfyUI\models\CogVideo\CogVideoX_5b_I2V_GGUF_Q4_0.safetensors`. Workflow `txt2vid-cogvideo.json` stays in `workflows\_disabled\` (needs separate T2V weights to revive). Jon 2026-08-08: **do not delete** — fun/local I2V later; daily video = **fal**. Details in that folder’s README.
+
 ### Video polish chain (after gen)
 
 Canonical runbook: **[VIDEO-POLISH-CHAIN.md](./VIDEO-POLISH-CHAIN.md)**
@@ -196,17 +202,76 @@ npm run comfy:restart
 npm run comfy:status
 ```
 
-**Agent rule:** Never auto-start ComfyUI unless Jon asks or `JONBEATZ_COMFYUI_AUTO_START=1`. See `.cursor/rules/image-workflow.mdc`.
+**Agent rule:** Never auto-start ComfyUI unless Jon asks or `COMFYUI_AUTO_START=1` (legacy `JONBEATZ_COMFYUI_AUTO_START=1` also OK). See `.cursor/rules/image-workflow.mdc`.
 
 ### Web UI
 
 http://127.0.0.1:8188 — drag workflow PNGs to load graphs; debug node execution visually.
 
-### Default local txt2img workflow
+### App Mode (preferred easy GUI — 2026-08-08)
 
-- **Workflow:** `H:\AI_Models\ComfyUI\workflows\txt2img-gen-image-local.json`
-- **Model:** z-image-turbo GGUF + Qwen3-4B CLIP + ae.safetensors VAE
-- **Profile command:** `gen-image-local "prompt"`
+**Day-to-day local gens:** use official **ComfyUI App Mode** (no node graph). Requires ComfyUI frontend ≥1.41.13 (this stack: **0.31.0** / frontend **1.48.7**).
+
+```powershell
+npm run comfy:start
+# heavy Qwen: npm run comfy:start -- -UnloadLMStudio -LowVram
+# → open http://127.0.0.1:8188 → Workflows → Hermes-Fable5 → *-AppMode.json
+# → stay in App mode → edit controls → Run → npm run comfy:stop
+```
+
+| Dial | App Mode workflow (user library) | Controls |
+|------|----------------------------------|----------|
+| **Fast Q4** | `z-image-turbo-Q4-AppMode.json` | Prompt · Negative · W/H · Seed · Steps |
+| **Keep BF16** | `z-image-turbo-BF16-AppMode.json` | same |
+| **Best 2512** | `qwen-image-2512-AppMode.json` | same |
+| **Flux Klein 4B** | `flux-klein-4B-AppMode.json` | same |
+| **Flux Klein 9B** | `flux-klein-9B-AppMode.json` | same |
+| **Edit 2511** | `edit-qwen-2511-AppMode.json` | **Image** · Prompt · Negative · Seed · Steps · Denoise |
+
+**Path:** `H:\AI_Models\ComfyUI\ComfyUI\user\default\workflows\Hermes-Fable5\`  
+**Vault:** `ComfyUI-App-Mode-Fable5` · picker `Local-image-model-picker-16GB`  
+**Smoke:** App Mode z-image Q4 PASS → `D:\Hermes\assets\media\JonBeatz\comfyui-appmode-20260808\`
+
+Use **Graph mode** only when building/debugging nodes. API workflows under `H:\AI_Models\ComfyUI\workflows\` remain the CLI / graph source of truth.
+
+### Default local txt2img workflow (graph / API)
+
+| Goal | Workflow | Notes |
+|------|----------|-------|
+| **Fast dial (default)** | `txt2img-gen-image-local.json` / `txt2img-z-image-turbo.json` | z-image-turbo Q4 + Qwen3-4B CLIP + `ae.safetensors` — ~50s @ 1024, 8 steps |
+| **Fast lane, final quality** | `txt2img-z-image-turbo-bf16.json` | z-image-turbo **BF16** (11.5 GB safetensors) — ~155s cold @ 1024. Q4 = iterate, BF16 = final |
+| **Best quality / realism** | `txt2img-qwen-image-2512.json` | Qwen-Image-2512 Q4_K_M + Qwen2.5-VL-7B TE + `qwen_image_vae` — ~4 min @ 1024 / 20 steps |
+| **Local instruction edit** | `edit-image-qwen-2511.json` | **Qwen-Image-Edit-2511** Q4_K_M (local nano-banana-style edits) + Qwen2.5-VL TE — set `OVERRIDE_INPUT_IMAGE.png` + prompt; 20 steps / cfg 2.5 |
+| **Flux quality (fast)** | `txt2img-flux-klein-9b.json` | FLUX.2 Klein **9B** Q4 + **Qwen3-8B** TE + `flux2-vae` — ~90–100s (**non-commercial**) |
+| **Flux speed / Apache** | `txt2img-flux-klein.json` | Klein **4B** Q5 + Qwen3-4B TE |
+
+> **VRAM rule (16 GB):** the big Qwen models (2512, Edit-2511) fully load but crawl (~199 s/step) if LM Studio's qwen3-4b stays resident. **`lms unload qwen3-4b-instruct-2507` before heavy Qwen renders**, then `npm run mem0:preflight` to restore. Klein + both z-image variants run fine with it resident.
+
+- **Profile command (fast):** `gen-image-local "prompt"`
+- **ComfyUI:** **v0.31.0** · torch **2.11.0+cu128** (RTX 50 / Blackwell — **never** `pip install torch` from default PyPI)
+- **Repair links:** `npm run comfy:repair-symlinks` (symlink → hardlink fallback on same H: volume; drops deleted `flux1-dev-Q4_K_M`, includes Edit-2511 + BF16)
+- **Hardlink health:** `npm run comfy:hardlink-check` or `npm run image:doctor` (fails on broken critical Fable 5 links — see vault gotcha `LLM-VAULT-vs-AI-Models-hardlinks`)
+- **Smoke outputs:** `D:\Hermes\assets\media\JonBeatz\comfyui-smoke-20260807\` · App Mode `comfyui-appmode-20260808\`
+
+#### Local vs fal picture-book lanes
+
+| Book stage (fal) | Local equivalent |
+|------------------|------------------|
+| Dial `fal-ai/flux-2/klein/4b` | Same family → Klein 4B GGUF (slightly softer) |
+| Fallback `fal-ai/qwen-image-2/...` | Related only → **Qwen-Image-2512** (not identical to fal Qwen-Image-2) |
+| Finals `fal-ai/nano-banana-pro/edit` | **Local edit lane now exists** → `edit-image-qwen-2511.json` (Qwen-Image-Edit-2511). fal stays default for book finals; local is the free/offline option |
+
+#### LM Studio custom load settings (red-dot configs)
+
+Stored under `%USERPROFILE%\.lmstudio\.internal\user-concrete-model-default-config\` (refresh My Models / restart LM Studio to see **Customized**):
+
+| Model | Parallel | Context | GPU |
+|-------|----------|---------|-----|
+| flux-2-klein-9b / qwen-image-2512 / **qwen-image-edit-2511** / klein-4b / z-image-turbo | 1 | 4096 | offload **max** + flash attn + keep-in-memory + KV GPU |
+| Qwen3-8B (Klein TE) | 1 | 8192 | max GPU |
+| Qwen2.5-VL-7B (Qwen-Image TE) | 1 | 4096 | max GPU |
+
+> **⚠️ Reality check (2026-08-08):** LM Studio's llama-server **cannot load diffusion GGUFs at all** (tested every image arch on newest engine 2.27.1 — all fail "exited before becoming healthy"). Image GGUFs index in My Models but never load; the dials above are **inert insurance** in case LMS ships diffusion support. **ComfyUI is the ONLY local image runtime.** Model root: `H:\LLM_VAULT` (`downloadsFolder`) — the legacy `~\.lmstudio\models` junction was removed 2026-08-08 (restore: `mklink /J` → `H:\AI_Models`).
 
 ### Edit / inpaint / upscale / video
 
@@ -313,4 +378,4 @@ See **[COMFYUI-MODELS.md](./COMFYUI-MODELS.md)** for full model matrix.
 
 ---
 
-*Last updated: 2026-07-04 · JonBeatz v1.2 image workflow + comfyui-mcp*
+*Last updated: 2026-08-08 · +App Mode Fable 5 (`Hermes-Fable5/*-AppMode.json`) · +Qwen-Image-Edit-2511 + z-image BF16 · LMS junction removed · LMS can't load diffusion GGUFs — ComfyUI only · ComfyUI 0.31 · cu128*

@@ -83,6 +83,7 @@ Jon researches tools → paste links in Cursor (often from **JonBeatz hub**) →
 | **Firecrawl MCP** | **B+ (86)** | WATCH | NEEDS_KEY | Freemium | Deep web scrape; skills exist — MCP optional alt to Tavily/fetch |
 | **Composio MCP** | **B (84)** | WATCH | PARTIAL | Freemium | Social automation; already in manifest, optional |
 | **Penpot** | **B (82)** | WATCH | NOT_INSTALLED | Free OSS | Figma alt + MCP; alt to Pencil when designer handoff needed |
+| **DesignLab** (alias **VaderBoard**) | **A- (90)** | **IN USE** | **READY** | Free MIT | Local Excalidraw mood board / ref studio — `D:\Hermes\apps\designlab` · `:3090` · `npm run designlab:dev` |
 | **Tripo Studio** | **A (93)** | **PRIMARY** | **READY**‡ | Freemium | Cloud image/text → GLB — product scroll §2; vault WORKFLOW |
 | **3DGenStudio** | **A- (91)** | **IN USE** | **READY**‡ | Free | Local Comfy Kanban 3D — `:3021`/`:5183`; Tripo web still primary |
 | [**TRELLIS.2**](https://github.com/microsoft/TRELLIS.2) | **B- (82)** | WATCH | NOT_INSTALLED | Free§ | MSFT 4B image→PBR GLB — Linux + **24GB VRAM**; HF Space demo on Win |

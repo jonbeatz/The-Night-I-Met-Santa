@@ -7,6 +7,7 @@ If an agent is new to this profile, read this file first.
 **Kind:** Gift children’s book (Jack Farrell) — print via Lulu, birthday Aug 15
 
 > **Book handoff:** After this file, always read **`.cursor/docs/CONTINUE-HERE.md`** and **`.cursor/docs/ReCall.md`**.  
+> **Family share links (Select):** `.cursor/docs/LULU-FAMILY-ORDERING.md` · wizard playbook `.cursor/docs/LULU-BOOKSTORE-SELECT-PLAYBOOK.md`.  
 > **Lulu reprints / website order:** `.cursor/docs/LULU-WEBSITE-ORDER-PLAYBOOK.md` (orders placed 2026-08-03).
 
 ## Operator Profile

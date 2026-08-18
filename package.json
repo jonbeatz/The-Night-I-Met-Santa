@@ -165,7 +165,13 @@
     "web:build": "next build",
     "web:start": "next start",
     "web:lint": "next lint",
-    "build:pages": "next build"
+    "build:pages": "next build",
+    "comfy:start": "powershell -File scripts/comfy-delegate.ps1 -Action start",
+    "comfy:stop": "powershell -File scripts/comfy-delegate.ps1 -Action stop",
+    "comfy:restart": "powershell -File scripts/comfy-delegate.ps1 -Action restart",
+    "comfy:status": "powershell -File scripts/comfy-delegate.ps1 -Action status",
+    "comfy:repair-symlinks": "powershell -NoProfile -ExecutionPolicy Bypass -File H:/AI_Models/ComfyUI/scripts/repair-comfyui-symlinks.ps1",
+    "comfy:hardlink-check": "powershell -NoProfile -ExecutionPolicy Bypass -File H:/AI_Models/ComfyUI/scripts/repair-comfyui-symlinks.ps1 -CheckOnly"
   },
   "author": "The-Night-I-Met-Santa",
   "license": "MIT"

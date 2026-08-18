@@ -68,6 +68,7 @@
 - Keep all book assets in this repo (`Media/`, `Images/`, `Output/`, `Transcription/`, `Xtraz/`).
 - Do not mix MSC deploy / Hostinger hPanel work here.
 - Mem0 collection: `the-night-i-met-santa_memories` only.
+- **Voice:** **Edge Liam** primary (ritual-only); OmniVoice optional restore. Hermes `auto_tts: false` (no auto-speak chat replies).
 - Do not treat fleet mirrors (`IMAGE-WORKFLOW.md`, `3D-*`, Hostinger) as book art path — use `IMAGE-LANE-PROMPTS.md`.
 
 ## Layout north star

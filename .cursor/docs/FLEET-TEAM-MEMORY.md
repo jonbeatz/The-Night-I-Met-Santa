@@ -23,10 +23,13 @@ Switching Cursor folders does **not** change the vault bridge. Leave notes there
 
 **Note lanes (pick one):**
 
-1. **Bridge board** — mid-flight Cursor ↔ Hermes
-2. **TaskBoardAI `:3001`** — durable shared todos (`boards/{boardId}.json`) — **only** kanban SoT (not Hermes Workspace `:3005` SQLite)
-3. **ReCall + vault Sessions** — milestones
-4. **Mem0 / Draven one-liners** — cold-start / assistant continuity (both agents may write)
+1. **Bridge board** — mid-flight Cursor ↔ Hermes (durable async notes) — **prefer at desk**
+2. **Hermes MCP (`hermes mcp serve` in Cursor)** — Telegram when Jon is **away / phone** (IN USE 2026-08-04; see `HERMES-MCP-BRIDGE.md`). Not default spam during desk sessions.
+2b. **Hermes client MCPs (jonbeatz):** `hermes-fs` read-only disk eyes + `n8n` overseer + InDesign — see `CURSOR-HERMES-COMMAND-CONTROL.md`
+3. **TaskBoardAI `:3001`** — durable shared todos (`boards/{boardId}.json`) — **only** kanban SoT (not Hermes Workspace `:3005` SQLite)
+4. **ReCall + vault Sessions** — milestones
+5. **Mem0 / Draven one-liners** — cold-start / assistant continuity (both agents may write)
+6. **Jon paste (desk default for Hermes action)** — still used for self-breaking rails / when Hermes must act now at PC
 
 ---
 
@@ -51,7 +54,7 @@ Switching Cursor folders does **not** change the vault bridge. Leave notes there
 | JonBeatz | `jonbeatz` | `jonbeatz_personal` / `jonbeatz_personal_memories` |
 | DigitalStudioz | `digitalstudioz` | `digitalstudioz_memories` |
 | VaderLabz | `vaderlabz` | `vaderlabz_memories` |
-| JonBeatz.dev | `jonbeatz-dev` | `jonbeatz_dev` / `qdrant_jonbeatz_dev` |
+| JonBeatz.dev | `jonbeatz-dev` | `jonbeatz_dev` / `jonbeatz_dev_memories` / `qdrant_jonbeatz_dev` (underscores; slug stays hyphen) |
 | Next-Flick | `next-flick` | `next-flick` / `next-flick_memories` |
 | The-Night-I-Met-Santa | `the-night-i-met-santa` | `the-night-i-met-santa_memories` |
 | MSC (separate repo) | `msc` | MSC-only — never JonBeatz personal |

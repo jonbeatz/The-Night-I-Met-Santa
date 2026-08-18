@@ -18,6 +18,21 @@ WEBHOOK_URL=http://127.0.0.1:5678/
 
 Optional defense in depth: Windows Firewall Allow `127.0.0.1` + Block remote inbound on TCP **5678**.
 
+## Hermes n8n MCP (overseer inspect)
+
+**App:** `D:\Hermes\apps\hermes-n8n-mcp` (Windows venv)  
+**Hermes profile config:** `jonbeatz` → `mcp_servers.n8n` (read-mostly tools)  
+**Env file:** `%USERPROFILE%\.config\n8n-mcp\env`
+
+```powershell
+# After creating an API key in n8n Settings → n8n API:
+npm run n8n:mcp:set-key -- "YOUR_KEY"
+npm run n8n:mcp:test
+```
+
+Then `/reload-mcp` in Hermes Desktop (or start a fresh session).
+
+
 ## Extended Health sidecar (n8n CE)
 
 Community Edition **rejects** `n8n-nodes-base.executeCommand`.  
@@ -70,6 +85,19 @@ PATCH updates the **draft**. Activate with `{ "versionId": "<draft versionId>" }
 ## Helper scripts (profile-local)
 
 JonBeatz keeps operator helpers under `scripts/n8n_*.py` that read `N8N_OWNER_PASSWORD` + `MSC_LITELLM_MASTER_KEY` from `.env.local` (never commit passwords).
+
+Use owner-login scripts (not the read-only Hermes MCP key) when you need to **PATCH / activate** workflows. Playwright against the UI without an `n8n-auth` session cookie will show the editor but **autosave Unauthorized**.
+
+### Health workflows (JonBeatz)
+
+| Workflow | ID | Schedule | Notes |
+|----------|-----|----------|-------|
+| Fleet Health | `KKJcMp41pLxcstgM` | every 15 min | Status only (no Telegram spam) |
+| Daily Health Briefing | `gTbp2sfYjxCPTVFz` | 8 AM | Nodes: `Check DeepSeek` / `Check n8n` / `Check LM Studio` |
+| Weekly Health Report | `lDlivEqEG1k0Qtez` | Mon 9 AM | Nodes: `DeepSeek` / `n8n` / `LM Studio` — Build Report fixed 2026-08-04 (`const text = ;` was the bug) |
+| Extended Health | (sidecar) | ~30 min | Probes `:5699` — see above |
+
+Rebuild helpers: `scripts/n8n-rebuild-health-workflows.py` · one-off weekly fix: `scripts/_scratch/fix-weekly-build-report.py`.
 
 ## Related
 

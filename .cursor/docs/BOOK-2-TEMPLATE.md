@@ -22,7 +22,7 @@ Copy these files/folders directly:
 .cursor/docs/PS-TO-ID-TYPE-HANDOFF.md
 .cursor/docs/BACKUP-BOOK-TIERS.md         → update backup root path
 .cursor/docs/RECIPE-TEMPLATE.md
-.cursor/docs/AGENT-RUNBOOK.md
+AGENT-RUNBOOK.md                          → lives at REPO ROOT (not .cursor/docs/)
 .cursor/docs/FINALS-CHECKLIST.md          → rebuild unit matrix
 .cursor/docs/LULU-8.5-SQUARE-CHEATSHEET.md  → if same trim
 .cursor/docs/LULU-WEBSITE-ORDER-PLAYBOOK.md
@@ -40,7 +40,16 @@ Xtraz/Adobe-Photoshop/spread-page-template.psd
 Xtraz/Adobe-Photoshop/single-page-template.psd
 Xtraz/Adobe-Photoshop/book-covers-template.psd
 Xtraz/Lulu-Templates/
+
+scripts/create_spread_page_template_psd.py   → regenerates spread-page-template.psd
+scripts/create_ps_page_templates.py          → regenerates single-page + book-covers templates
 ```
+
+> **PSD blanks note (2026-08-07):** the three template PSDs went missing when they were
+> swept into `Hold-v1\` on Aug 1; they have been **restored** to `Xtraz\Adobe-Photoshop\`.
+> They are gitignored binaries — if they ever vanish again, regenerate with the two
+> creator scripts above (Photoshop open + adobepy broker :8766) or rebuild by hand from
+> **`.cursor/docs/BOOK-2-TEMPLATE-PSD-SPEC.md`** (exact sizes, layer stacks, guide colors).
 
 ### Create Fresh (Tier 2 — clone + replace content)
 

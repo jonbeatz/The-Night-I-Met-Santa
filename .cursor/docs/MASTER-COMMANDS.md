@@ -1,7 +1,7 @@
 # JonBeatz — Master Command Reference
 
 **Profile root:** `D:\Hermes\projects\JonBeatz`  
-**Last updated:** 2026-06-25 · **Version:** 4.0.0
+**Last updated:** 2026-08-08 · **Version:** 4.0.0
 
 ---
 
@@ -65,7 +65,7 @@
 | Command | What it does |
 |---------|--------------|
 | `npm run env:setup` | Create `.env.local` from template; merge HF_TOKEN from MSC if present |
-| `npm run image:doctor` | Verify HF_TOKEN, ComfyUI paths, Python deps, output dir |
+| `npm run image:doctor` | Verify HF_TOKEN, ComfyUI paths, Python deps, output dir + vault↔Comfy hardlinks |
 | `npm run image:gen -- "prompt"` | Cloud FLUX.1-schnell → `D:\Hermes\assets\media\JonBeatz` |
 | `npm run image:gen:open -- "prompt"` | Same + open in default viewer |
 | `npm run image:fal -- "prompt"` | fal.ai pay-per-use bonus (`FAL_API_KEY`) |
@@ -79,10 +79,13 @@
 | `npm run comfy:stop` | Stop ComfyUI only (keeps LM Studio) |
 | `npm run comfy:restart` | Restart ComfyUI |
 | `npm run comfy:status` | JSON: port, queue, PIDs |
-| `npm run comfy:repair-symlinks` | Recreate ComfyUI model symlinks (H:\LLM_VAULT → models/) |
+| `npm run comfy:repair-symlinks` | Recreate ComfyUI model hardlinks (H:\LLM_VAULT → models/) then verify |
+| `npm run comfy:hardlink-check` | Check-only Fable 5 vault↔Comfy hardlink health (exit 1 on critical fail) |
 | `npm run comfy:compare -- "prompt"` | Run all txt2img workflows + HF cloud comparison |
 | `npm run lmstudio:audit` | LM Studio vault + API health check |
 | `npm run comfy:idle-watcher` | MSC idle watcher daemon (suggest stop after 15m idle) |
+
+**Local dials (Fable 5 · 16 GB):** fast = z-image Q4 · fast keep = z-image BF16 · best = Qwen-Image-2512 · edit = Edit-2511 · Flux = Klein 9B/4B. Unload `qwen3-4b` before heavy Qwen. **ComfyUI only** (LMS cannot load diffusion). Vault: `[[Local-image-model-picker-16GB]]`.
 
 **Docs:** [IMAGE-WORKFLOW.md](./IMAGE-WORKFLOW.md) · [COMFYUI-MODELS.md](./COMFYUI-MODELS.md) · [VRAM-IMAGE.md](./VRAM-IMAGE.md)
 
@@ -99,7 +102,22 @@
 | `npm run fleet:merge-npm` | Additive merge of fleet npm aliases into each profile package.json |
 | `npm run docs:pull-shared` | Alias: sync universal docs into this profile |
 
-**Doc:** [COMMAND-CENTER.md](./COMMAND-CENTER.md)
+**Doc:** [COMMAND-CENTER.md](./COMMAND-CENTER.md) · Client invoices (not API spend): [INVOICING.md](./INVOICING.md)
+
+---
+
+## Client invoicing (Jon Farrell — vault)
+
+Freelance invoices live in **Vader Vault**, not in LiteLLM “billing mode”.
+
+| What | Where |
+|------|--------|
+| Playbook | [INVOICING.md](./INVOICING.md) |
+| Ledger | `H:\Vader_Vault\_attachments\invoices\JonFarrell\INVOICE-LEDGER.md` |
+| Files | `…\issued\` · `…\clients\<Client>\` · `…\templates\` |
+| Patterns | vault `Pattern-Invoice-tracking-vault` · `Pattern-Invoice-list-rate-courtesy-discount` |
+
+**Chat:** “what did we invoice …”, “invoice for …”, “was … paid” → ledger first, then issued files.
 
 ---
 
@@ -226,7 +244,7 @@ LiteLLM / DeepSeek stack scripts live in `D:\Hermes\projects\_core-scripts\deeps
 | Provider slug | Endpoint | Models |
 |---------------|----------|--------|
 | `local-127.0.0.1:4000` | LiteLLM `:4000` | `deepseek-v4-pro`, `deepseek-v4-flash` |
-| `local-lm-studio-(free)` | LM Studio `:1234` | `qwen3-4b-instruct-2507`, `qwen3.5-9b`, `qwen2.5-coder-32b-instruct`, `deepseek-r1-distill-qwen-14b` |
+| `local-lm-studio-(free)` | LM Studio `:1234` | `qwen3-4b-instruct-2507` (default), `gemma-4-12b-it-qat`, `qwen3.5-9b`, `gpt-oss-20b`, `deepseek-r1-distill-qwen-14b`, `qwen3.6-27b`, `qwen2.5-coder-32b-instruct`, `qwen3.6-35b-a3b-ud` |
 
 **Desktop picker (preferred):** Hermes Desktop → model menu → **Refresh Models** → pick from **LOCAL DEEPSEEK LITELLM (PAID)** or **LOCAL LM STUDIO (FREE)**. Use **Edit Models…** to show/hide rows.
 
@@ -447,7 +465,7 @@ MSC Kanban ports (3001/3005/9119) live in the **MyStudioChannel** repo — not s
 | `npm run handy:model` | Download default Parakeet model into HF cache (workaround for Handy content-range bug) |
 | `npm run handy:model:list` | List Handy catalog repo ids + default GGUF filenames |
 | `npm run wan21:install` | Clone Wan2.1 + download T2V-1.3B weights to `H:\AI_Models\Wan2.1` |
-| `npm run wan21:status` | Verify Wan2.1 repo + native/Diffusers checkpoints on H: |
+| `npm run wan21:status` | Verify Wan2.1 repo + **both** native (`checkpoints`) and Diffusers (`hf`) — keep both (Jon 2026-08-08) |
 | `npm run skills:emil:install` | Install/update emilkowalski/skills — npx global + vendor to `shared-profile-content/skills` + sync project |
 | `npm run skills:emil:status` | Verify 5 Emil skills in shared library, global `~\.agents\skills`, and project `.cursor\skills` |
 | `npm run ecosystem:audit` | Regenerate secrets inventory + credentials manifest + G:\\ backup |
@@ -482,6 +500,7 @@ MSC Kanban ports (3001/3005/9119) live in the **MyStudioChannel** repo — not s
 | **review batch** / multiple URLs | Review-Tool.md batch — grades first, one install gate |
 | **review design** / **grade this site** | Review-Tool.md design grade → DESIGN-REFERENCES |
 | **review session done** | Review-Session-Done.md + sync:docs + tools:status |
+| **what did we invoice …** / **invoice for …** / **was … paid** | [INVOICING.md](./INVOICING.md) → vault `INVOICE-LEDGER.md` + `issued/` |
 
 See **[Agent-Runbook.md](./Agent-Runbook.md)** for full copy/paste prompts.
 

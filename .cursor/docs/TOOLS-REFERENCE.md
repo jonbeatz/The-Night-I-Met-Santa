@@ -194,12 +194,50 @@ We build **directly in code** (Tailwind + React). Penpot pays off only if:
 - Self-hosting design instead of Figma subscription
 - Running **Penpot MCP + Cursor** design-to-code experiments
 
-**Alternatives on deck:** **Pencil MCP** (already in JonBeatz manifest) — use Pencil for quick canvas; Penpot if self-hosted Figma-like workflow or external designer.
+**Alternatives on deck:** **Pencil MCP** (already in JonBeatz manifest) — use Pencil for quick canvas; Penpot if self-hosted Figma-like workflow or external designer. **Mood boards / refs:** use **DesignLab (VaderBoard)** instead — see [DESIGNLAB-WORKFLOW.md](./DESIGNLAB-WORKFLOW.md).
 
 ### When to use
 
 - Designer handoff workflow
 - Client wants mockups before build (MSC, etc.)
+
+---
+
+## DesignLab (alias VaderBoard)
+
+- **URL / path:** `D:\Hermes\apps\designlab` · http://127.0.0.1:3090
+- **Engine:** [excalidraw/excalidraw](https://github.com/excalidraw/excalidraw) MIT · npm `@excalidraw/excalidraw`
+- **Grade:** **A- (90/100)** · **Cost:** Free OSS
+- **Verdict:** **IN USE** · **Setup:** **READY** (2026-08-07)
+- **Summary:** Local FigJam-style mood board / reference studio for all Hermes projects — disk-backed boards + agent PNG export.
+
+### What it does
+
+Infinite canvas (images, draw, text, frames), multi-board sidebar with project tags, auto-save JSON under `data/boards/`, **Export for Agent** → `data/exports/*.png`, `GET /api/agent/context` for Cursor.
+
+### Ecosystem assessment
+
+**Verdict: IN USE**
+
+Fills the **personal mood board** gap without Miro/FigJam/Kosmik SaaS. Complements Penpot (design systems) and DESIGN-REFERENCES (URL bookmarks). Explicitly **not** tldraw (custom production license). Alias **VaderBoard** = same product.
+
+### When to use
+
+- Project refs / UI options / book art mood boards
+- Agent-assisted visual critique (export PNG or browser screenshot `:3090`)
+- Cross-project idea studio — tag `project` field per Hermes repo
+
+### Verify
+
+```powershell
+npm run designlab:dev
+# or: cd D:\Hermes\apps\designlab && npm run dev
+Invoke-RestMethod http://127.0.0.1:3090/api/health
+```
+
+### Docs
+
+[DESIGNLAB-WORKFLOW.md](./DESIGNLAB-WORKFLOW.md) · app `README.md` + `AGENTS.md`
 
 ---
 
@@ -1999,6 +2037,15 @@ See [VOICE-WORKFLOW.md](./VOICE-WORKFLOW.md) — dictation is inbound STT, not r
 **Verify:** `npm run wan21:status` after `npm run wan21:install`.
 
 **Install path (Jon 2026-07-13):** repo + weights on **`H:\AI_Models\Wan2.1`** (large files on H:). Windows: run via **ComfyUI** Wan workflows (`npm run comfy:start` when needed) — native `generate.py` needs `flash_attn` (Linux/CUDA build).
+
+**Keep both weight lanes (Jon 2026-08-08):** Do **not** delete Diffusers to “save space” unless `H:` is critically full.
+
+| Path | Size (approx) | Role |
+|------|---------------|------|
+| `H:\AI_Models\Wan2.1\checkpoints` | ~16 GB | Native T2V-1.3B (primary scripts / Comfy) |
+| `H:\AI_Models\Wan2.1\hf` | ~27 GB | Diffusers format (Windows fallback via ComfyUI Python) |
+
+Both report **OK** on `npm run wan21:status`. Cloud default for production clips remains **fal** (`video:fal` / OpenMontage).
 
 See [IMAGE-WORKFLOW.md](./IMAGE-WORKFLOW.md) video section + OpenMontage `AGENT_GUIDE.md`.
 

@@ -6,15 +6,23 @@ Operator: Jon · Gift for **Jack Farrell** · Birthday **2026-08-15**
 
 ---
 
-## One-line status (2026-08-03)
+## One-line status (2026-08-18)
 
-**Gift path:** Lulu orders live (Jack Expedited + Jon Mail). **Sell path:** research locked · **HOLD** until books in hand · then implement Plan B-soft.
+**Gift path:** Books in hand (QC good). **Family order links LIVE** — Select Access SC $12 + HC $22 (see table below). **Sell/Amazon:** still optional later (`SELL-ONLINE-STRATEGY.md`).
 
-### Lulu projects (gift)
+### Family share links (Select — not public)
+| Binding | ID | List | URL |
+|---------|-----|------|-----|
+| Softcover | `454zdy8` | $12 | https://www.lulu.com/shop/jon-farrell/the-night-i-met-santa-softcover/paperback/product-454zdy8.html |
+| Hardcover | `v82ejwq` | $22 | https://www.lulu.com/shop/jon-farrell/the-night-i-met-santa-hardcover/hardcover/product-v82ejwq.html |
+
+**Wizard playbook:** `.cursor/docs/LULU-BOOKSTORE-SELECT-PLAYBOOK.md` · **links:** `.cursor/docs/LULU-FAMILY-ORDERING.md`
+
+### Lulu projects (gift + family Select)
 | Binding | ID | Specs |
 |---------|-----|--------|
-| Hardcover | `v82ejwq` | Case Wrap · Matte · Premium · 80# · ~$18.28 |
-| Softcover | `454zdy8` | Perfect Bound · Matte · Premium · 80# · ~$9.46 |
+| Hardcover | `v82ejwq` | Case Wrap · Matte · Premium · 80# · ~$18.28 · Select $22 |
+| Softcover | `454zdy8` | Perfect Bound · Matte · Premium · 80# · ~$9.46 · Select $12 |
 
 | Who | Order | Est. delivery |
 |-----|-------|---------------|

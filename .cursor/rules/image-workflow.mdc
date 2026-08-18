@@ -1,5 +1,5 @@
 ---
-description: JonBeatz image workflow — Hugging Face cloud + ComfyUI VRAM policy
+description: Fleet image workflow — HF cloud + fal + ComfyUI local GPU (shared workstation)
 globs:
   - "**/*comfy*"
   - "**/*image*"
@@ -9,43 +9,44 @@ globs:
 alwaysApply: false
 ---
 
-# JonBeatz Image Workflow Rules
+# Hermes fleet — Image Workflow Rules
 
 ## Docs first
 
-Before image/video tasks, read **`.cursor/docs/IMAGE-WORKFLOW.md`**. Model inventory: **`COMFYUI-MODELS.md`**. VRAM: **`VRAM-IMAGE.md`**.
+1. **`.cursor/docs/IMAGE-WORKFLOW.md`** — master guide (fleet mirror from shared)
+2. **Model inventory + VRAM:** `.cursor/docs/ENGINEERING.md` (COMFYUI-MODELS + VRAM-IMAGE sections). Thin stubs `COMFYUI-MODELS.md` / `VRAM-IMAGE.md` point there if present.
+3. **Book projects:** also read project `IMAGE-LANE-SYSTEM-v2.md` + `LOCAL-COMFY-PICKER.md` when present (fal lane lock stays primary for print books).
 
 ## Environment
 
-1. JonBeatz secrets live in **`D:\Hermes\projects\JonBeatz\.env.local`** — not MSC `.env.local` when working in this profile (run `npm run env:setup` to seed from MSC).
-2. Personal outputs go to **`D:\Hermes\assets\media\{ProjectName}`** (JonBeatz: `D:\Hermes\assets\media\JonBeatz`) via `IMAGE_OUTPUT_DIR`.
+4. Secrets live in **this profile’s `.env.local`** (not MSC). Run `npm run env:setup` to seed.
+5. Local outputs: `IMAGE_OUTPUT_DIR` → `D:\Hermes\assets\media\{ProjectName}` (create if missing). Promote book keepers into project `Media/` with RECIPE/meta.
 
-## Hugging Face (cloud)
+## Hugging Face (cloud — free/cheap)
 
-3. **`npm run image:gen -- "prompt"`** for quick txt2img — **zero local VRAM** (default free path).
-4. Requires **`HF_TOKEN`** in `.env.local`. Run **`npm run image:doctor`** if missing.
+6. **`npm run image:gen -- "prompt"`** when the profile has it — **zero local VRAM**.
+7. Requires **`HF_TOKEN`**. Run **`npm run image:doctor`** if missing.
 
-## fal.ai (paid bonus — optional)
+## fal.ai (paid — book dials / premium)
 
-5. **`npm run image:fal -- "prompt"`** when Jon wants premium models or HF is capped — **pay-per-use** prepaid wallet.
-6. Requires **`FAL_API_KEY`** in `.env.local`. Run **`npm run sync:mcp-env`** for Cursor **fal-ai** MCP.
-7. Default model: **`FAL_IMAGE_MODEL=fal-ai/flux/schnell`** (~$0.003/image). See **IMAGE-WORKFLOW.md** for Nano Banana 2 / GPT Image 2 ids.
-8. **Never replace** `image:gen` with fal for routine stills — fal is bonus only.
+8. **`npm run image:fal -- "prompt"`** (or book presets) — pay-per-use. Requires **`FAL_API_KEY`**.
+9. Picture books: follow project IMAGE-LANE (often Klein 9B dial → Qwen alt → Banana Pro finals). Do not replace locked fal finals with random local gens without Jon asking.
 
-## ComfyUI (local GPU)
+## ComfyUI (local GPU — opt-in)
 
-9. **Never start ComfyUI** unless Jon explicitly asks, runs **`npm run comfy:start`**, or sets **`JONBEATZ_COMFYUI_AUTO_START=1`**.
-10. Before start, check **`npm run comfy:status`** or VRAM. Warn if **>65%** unless Jon uses `-NoVRAMCheck`.
-11. Prefer **`npm run comfy:stop`** over full VRAM cleanup when only image VRAM should be freed (keeps LM Studio).
-12. After local image/video work, **suggest `npm run comfy:stop`** to restore Mem0/LM Studio headroom.
-
-## Workstation profile commands
-
-13. Jon's PowerShell profile exposes **`gen-image-local`**, **`edit-image`**, **`inpaint-image`**, **`upscale-image`**, **`generate-video`**, **`animate-image`** — require ComfyUI on **:8188**.
-14. **JonBeatz Cursor MCP `comfyui`** (`comfyui-mcp`) — local ComfyUI only; enable in Cursor Settings after `npm run sync:mcp-env`. Still run **`comfy:start`** before MCP tools; **`comfy:stop`** when done. No Comfy Cloud MCP.
-15. Translate natural language to the right command; ask **cloud vs local vs fal bonus** when ambiguous.
+10. **Never start ComfyUI** unless Jon asks, runs **`npm run comfy:start`**, or sets **`COMFYUI_AUTO_START=1`** (legacy alias `JONBEATZ_COMFYUI_AUTO_START=1` also honored).
+11. Check **`npm run comfy:status`** / VRAM first. Prefer **`npm run comfy:stop`** when done (keeps LM Studio).
+12. **ComfyUI is the ONLY local image runtime** — LM Studio cannot load diffusion GGUFs (text/Mem0 only).
+13. **VRAM (16 GB):** unload `qwen3-4b-instruct-2507` before **Qwen-Image-2512** / **Qwen-Image-Edit-2511** (`lms unload …` or `comfy:start -- -UnloadLMStudio`); restore with `npm run mem0:preflight`. Klein + z-image OK with text model resident.
+14. **Easy GUI (preferred):** App Mode — `:8188` → Workflows → **Hermes-Fable5** → `*-AppMode.json` (see vault `ComfyUI-App-Mode-Fable5` / IMAGE-WORKFLOW § App Mode). Graph/API under `H:\AI_Models\ComfyUI\workflows\` for debug/CLI:
+    - Fast iterate → `z-image-turbo-Q4-AppMode.json` / `txt2img-z-image-turbo.json`
+    - Fast keep → `z-image-turbo-BF16-AppMode.json` / `txt2img-z-image-turbo-bf16.json`
+    - Best quality → `qwen-image-2512-AppMode.json` / `txt2img-qwen-image-2512.json`
+    - Local edit → `edit-qwen-2511-AppMode.json` / `edit-image-qwen-2511.json`
+    - Flux → `flux-klein-9B-AppMode.json` / `flux-klein-4B-AppMode.json` (+ matching txt2img JSON)
+15. Stack: ComfyUI **0.31.0** · torch **2.11.0+cu128** — never `pip install torch` from default PyPI.
 
 ## Boundaries
 
-16. Do not apply MSC **deploy** or **Next.js** rules for image tasks in JonBeatz.
-17. Log reusable prompts/styles to **Mem0** (`npm run mem0:add`).
+16. Do not apply MSC **deploy** rules unless working in the MSC repo.
+17. Log durable style/model decisions to project Mem0 + vault `[[Local-image-model-picker-16GB]]`.

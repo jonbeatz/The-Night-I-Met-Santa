@@ -61,6 +61,7 @@ Earlier validation used Vertex via LiteLLM. **Daily driver is now DeepSeek** —
 |-------|------|-----------|--------------|
 | **Outbound alerts** | `scripts/telegram-notify.mjs` | PC → iPhone | Boot pings, test messages, agent notifications |
 | **Two-way chat** | **Hermes Telegram Gateway** | iPhone ↔ PC | `hermes -p <profile> gateway …` — full agent with tools |
+| **Cursor live bridge** | **Hermes MCP (`hermes mcp serve`)** | Cursor ↔ Telegram | Cursor user MCP `hermes` — **IN USE** 2026-08-04; JonBeatz `HERMES-MCP-BRIDGE.md`. Gateway required; Desktop optional |
 | **Fallback relay** | `msc-telegram-bot.mjs --standalone` | iPhone ↔ LiteLLM only | Only when gateway is **off** and Desktop is **off** |
 
 **Never run two pollers on the same bot token.** Hermes gateway + `msc-telegram-bot` together drops messages.
