@@ -43,6 +43,7 @@ Switching Cursor folders does **not** change the vault bridge. Leave notes there
 | Draven continuity | `draven_memories` / `qdrant_draven` (shared assistant store) |
 | Mid-thread working notes | Mnemosyne (Cursor trial only — do **not** set Hermes `memory.provider`) |
 | Tell the other agent | Vault bridge board |
+| **Tool IN USE install** | Vault Pattern how-to + session + hub Decision + For Hermes — `Vault-note-after-tool-install`. Grades stay in shared `TOOLS-*` (link only). |
 | Always-on infra | That Hermes profile's `MEMORY.md` (short; no book/project bloat) |
 
 ---
@@ -67,11 +68,11 @@ Switching Cursor folders does **not** change the vault bridge. Leave notes there
 
 When the profile uses LiteLLM `http://127.0.0.1:4000/v1`:
 
-1. **API key** = real master `sk-jonbeatz-deepseek-2026` (never a chat-redacted `«redacted:sk-…»` string in YAML)
+1. **API key** = real master `<MSC_LITELLM_MASTER_KEY>` (never a chat-redacted `«redacted:sk-…»` string in YAML)
 2. DeepSeek provider = **Flash + Pro only** + **`discover_models: false`**
 3. **Never** add a second LiteLLM OpenRouter provider (same URL → Hermes merges → floods DeepSeek Direct)
 4. New OpenRouter models → **native** OpenRouter provider / aliases (Hermes), or Cursor `*-or` via LiteLLM
-5. Default **`deepseek-v4-flash`** on **all** Hermes profiles (Pro when operator asks).
+5. Default **`deepseek-v4-flash`** on **all** Hermes profiles (Pro when operator asks). Also `providers.local-127.0.0.1:4000.default_model` = flash (unspecified-model fallback — fixed jonbeatz 2026-08-16).
 6. `hermes config set` **cannot** set dotted provider keys — **Cursor edits `config.yaml`** (Hermes proposes only).
 7. **Self-breaking changes → Cursor owns them.** OpenRouter settings, Hermes provider/model/alias/`config.yaml` rewrites, LiteLLM YAML, anything that can take Hermes offline mid-edit → **do in Cursor**. Hermes: stop, bridge “For Cursor”, wait. Why: Hermes often drops before the fix lands; Cursor stays connected.
 8. **Jon paste habit:** when Cursor needs Hermes to know/verify/stop, Cursor gives Jon a ready-to-paste prompt for Hermes (Draven).
@@ -142,7 +143,7 @@ npm run fleet:status
 npm run fleet:sync
 
 # Hermes profiles (API key + discover_models) — ask Hermes or Cursor audit
-# Expect: real sk-jonbeatz-deepseek-2026, discover_models: false on :4000 DeepSeek providers
+# Expect: real <MSC_LITELLM_MASTER_KEY>, discover_models: false on :4000 DeepSeek providers
 ```
 
 Hub-only deep matrix (JonBeatz): `.cursor/docs/MEMORY-SYSTEMS-HEALTH.md`, `.cursor/docs/TEAM-CURSOR-HERMES.md`, `.cursor/docs/HERMES-MODEL-UPDATE-RUNBOOK.md`

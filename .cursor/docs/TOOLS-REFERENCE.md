@@ -645,8 +645,8 @@ Skills land in `%USERPROFILE%\.agents\skills\` (spec-driven-development, test-dr
 
 - **URL:** https://www.agentmail.to/ · **Docs:** https://docs.agentmail.to/
 - **Grade:** **A- (91/100)** · **Cost:** Freemium — free tier, no credit card to start; paid at scale
-- **Verdict:** **ADOPT** — on deck for agent email workflows; key provisioned 2026-07-07
-- **Setup:** **PARTIAL** — `AGENTMAIL_API_KEY` SET in Next-Flick `.env.local`; SDK/MCP not installed until first use
+- **Verdict:** **IN USE** on Grok Bot (2026-08-27) · **ADOPT** for Cursor SDK/MCP (not installed)
+- **Setup:** **PARTIAL** — Grok Bot plugin READY (OAuth `default` Connected, 26/26 tools). `AGENTMAIL_API_KEY` SET in Next-Flick + `_core-scripts/.env.local.master`. Cursor SDK/MCP not installed.
 - **Summary:** Email **inbox API for AI agents** — programmatic inboxes, threads, replies, attachments, webhooks, semantic search. YC-backed (Seed $6M).
 
 ### vs our stack
@@ -681,7 +681,20 @@ Skills land in `%USERPROFILE%\.agents\skills\` (spec-driven-development, test-dr
 | Cost/complexity | 17/20 | Freemium; API-only until integrated |
 | Maturity | 13/15 | YC, enterprise references, 100M+ emails claimed |
 
-**Install gate:** ADOPT — no SDK install until a concrete agent email task.
+**Install gate:** Cursor SDK still ADOPT — no `npm i agentmail` until a concrete Cursor email task.
+
+### 2026-08-27 — Grok Bot plugin IN USE
+
+- **URL:** https://www.agentmail.to/blog/give-grok-bot-email-address
+- Jon connected **Grok Bot → Settings → Plugins → AgentMail**. Account **default = Connected**. **26/26 tools** enabled (blog said 24; UI now shows 26). 1 connector `agentmail` + 8 skills.
+- **Owner:** **Clerk** (ops). Live address **`jonbeatz-clerk@agentmail.to`** (Gmail smoke landed 2026-08-27). Ravyn dispatches mail jobs to Clerk. Scout/Atelier/Quill/Wrench do not send.
+- **Paste files:** `D:\Cursor_Projectz\GrokBot\Assets\agents\Clerk.md` · `Ravyn.md` — re-paste into Grok Bot agent instructions after edits.
+- **Do not:** mix GrokBot sends with `jonbeatz@gmail.com`; custom domain until a paid AgentMail plan; assume Hermes Desktop has this plugin; paste `AGENTMAIL_API_KEY` into Grok Bot (OAuth already done).
+- **Risks:** OAuth is Cursor-branded; bot can sign up for services with 2FA in its inbox — keep that off personal identity; SES suppression list can silently drop sends (test first to Gmail); Grok Bot routines stay on the cloud computer (laptop closed OK).
+
+**Verify (Grok Bot):** **PASS 2026-08-27** — `jonbeatz-clerk@agentmail.to` → Jon Gmail → reply → Clerk read the same thread.
+
+**How-to:** vault [[agentmail-grokbot-plugin]]
 
 ---
 
@@ -825,7 +838,7 @@ npm run doctor -- examples/noir/index.html
 
 | Setup | Cursor key | Override URL | Model names |
 |-------|------------|--------------|-------------|
-| **B — LiteLLM** (daily) | `sk-jonbeatz-deepseek-2026` | ngrok `/v1` | `deepseek-v4-pro`, `*-or` aliases |
+| **B — LiteLLM** (daily) | `<MSC_LITELLM_MASTER_KEY>` | ngrok `/v1` | `deepseek-v4-pro`, `*-or` aliases |
 | **C — OR direct** | `sk-or-v1-...` | `openrouter.ai/api/v1/cursor` | OpenRouter slugs (`z-ai/glm-4.5-air`, …) |
 
 **Auto mode:** With Setup B ON, **Auto** uses Cursor subscription (Composer 2.5-ish) — **not** the custom `-or` list. Pick models explicitly for LiteLLM routing.
@@ -1420,6 +1433,52 @@ Open-source video editor (web/desktop/mobile roadmap). Classic: browser timeline
 - Need pro multi-track + local AI captions/music — try **FreeCut**
 
 **Re-grade when:** MCP server + headless mode land; desktop Windows build verified.
+
+---
+
+## Clypra (AIEraDev) — 2026-08-27
+
+- **URL:** https://github.com/AIEraDev/Clypra · **Site:** https://clypra.abdulkabirmusa.com/ · **Studio:** https://github.com/AIEraDev/clypra-studio
+- **Grade:** **B- (80/100)** · **Cost:** Free **MIT** desktop · FFmpeg **LGPL** · open-core AI (captions / scene detect / NL edit) is proprietary `clypra-api`
+- **Verdict:** **WATCH** · **Setup:** NOT_INSTALLED
+- **Stars:** ~3.1k · **Version:** v1.4.5 (2026-08-27)
+
+### Summary
+
+CapCut-style **native NLE**: Tauri v2 + React 19 + Rust FFmpeg, GPU decode (D3D11VA on Windows), wgpu SDF text, multi-track timeline, ProRes/H.264 export. Windows MSI ~44 MB. Closer to a real desktop app than OpenCut classic or Krypt Editor. Still below **FreeCut IN USE** for this polish chain (on-device Whisper/TTS, no cloud ingest).
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 32/40 | Native HW preview/export is the real FreeCut gap (long 4K); Kinocut+FreeCut already cover ritual polish |
+| Stack fit | 18/25 | Tauri/Rust is clean; default telemetry + D3D11VA can fight Comfy VRAM; no Cursor hooks |
+| Cost / complexity | 17/20 | MIT installer; source build wants Rust + FFmpeg/vcpkg; effects panel can need `VITE_CLYPRA_API_KEY` |
+| Maturity | 13/15 | 3.1k★, v1.4.5 same day as this review; single maintainer; Windows preview historically lost WebGL (#174) |
+
+### Gap / overlap
+
+| Job | Hermes today | Clypra |
+|-----|----------------|--------|
+| **Human timeline** | **FreeCut** IN USE | Native Tauri NLE — same job, heavier GPU |
+| **Agent cut / QC** | **Kinocut** IN USE | No MCP |
+| **On-device captions/TTS** | FreeCut Whisper + Kokoro | FAQ: captions/scene/NL edit are **proprietary** `clypra-api` |
+| **OpenCut WATCH** | Browser classic | Clypra is native, not an OpenCut wrap |
+| **Krypt Editor SKIP** | Unsigned Electron + autostart | Clypra is the one to prefer if a native NLE is ever spiked |
+| **LTX Desktop WATCH** | Local AI gen NLE | Clypra = edit; LTX = gen+edit |
+
+### Risks
+
+- **Telemetry on by default.** `telemetryCollector.ts` `isEnabled = true`; `setEnabled` is test-only. POSTs GPU model (unmasked WebGL renderer), OS family, codec/resolution buckets to `https://clypra-worker-api.abdulkabirmusa.com/performance/telemetry/ingest/batch`. Spec claims zero PII; GPU string is still fingerprinty. No Settings opt-out found.
+- **Open core:** README says 100% free; [FAQ](https://github.com/AIEraDev/Clypra/blob/master/FAQ.md) says auto-caption / scene detect / NL editing fund the project via proprietary API. Effects library from source can be empty without `VITE_CLYPRA_API_KEY` (issue #172).
+- **Windows GPU:** D3D11VA decode + wgpu compose — unload Comfy if preview stutters. Historical **black preview / WebGL context loss** on Win11 (#174, v1.1.1; 1.4.x moved text to wgpu — re-verify before trusting).
+- **Unsigned MSI / NSIS** — SmartScreen “More info → Run anyway.” Site documents this.
+- **Auto-updater** (Tauri plugin) — two-stage, save-before-restart; still a live updater on a lab app.
+- No Hermes/Cursor MCP. Do not clone into fleet apps unless Jon asks for a lab spike.
+
+**Verify (lab only):** GitHub release `Clypra_1.4.5_x64_en-US.msi` — **do not** install on this workstation today. If spiked: expect telemetry unless they ship a toggle.
+
+**Recommendation:** **WATCH.** Best *native* CapCut-shaped OSS on the deck. Keep FreeCut for polish. Spike Clypra only if WebCodecs preview is the bottleneck.
 
 ---
 
@@ -3278,4 +3337,662 @@ Claude Code plugin: CSS generate/validate, a11y, CWV, Divi 5 breakpoints, option
 ## Prisma (ORM + platform) — status note 2026-07-14
 
 **No re-grade.** Still **B- (81) WATCH** — marketing now stresses Agent Infrastructure / Compute; stack choice remains **Drizzle + Neon + Payload**. Treat [prisma.io](https://www.prisma.io/) as the same known alternative.
+
+---
+
+## Hindsight (vectorize-io) — 2026-08-27
+
+- **URL:** https://github.com/vectorize-io/hindsight · **Docs:** https://hindsight.vectorize.io/ · **Benches:** https://benchmarks.hindsight.vectorize.io
+- **Grade:** **B (83/100)** · **Cost:** Free MIT self-host · Cloud usage-based
+- **Verdict:** **WATCH** · **Setup:** NOT_INSTALLED
+- **Stars:** ~21.5k (2026-08-27)
+
+### Summary
+
+Agent memory built to **learn**, not only recall: retain / recall / reflect, observations with evidence, mental models, knowledge pages, isolated banks. Claims SOTA LongMemEval. Docker API `:8888` + UI `:9999`. OpenAI-compatible LLMs including **LiteLLM** and **LM Studio**. Built-in MCP per bank. Cursor plugin auto-recalls on session start and auto-retains on task stop.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 32/40 | Real “learn over time” layer Mem0 does not do; working 3-layer cake already covers ritual memory |
+| Stack fit | 20/25 | Windows + Docker + LiteLLM/LM Studio OK; Cursor `init` would rewrite live MCP/hooks |
+| Cost / complexity | 16/20 | MIT; retain costs LLM tokens; full image ~9 GB; ~1.5–2 GB RAM |
+| Maturity | 15/15 | 21k★, MIT, active, independent bench reproduction claimed |
+
+### Gap / overlap
+
+| Layer | Hermes today | Hindsight |
+|-------|----------------|-----------|
+| **Mem0 + Qdrant** | Canonical semantic memory | Competes as primary write target |
+| **Mnemosyne** | Cursor MCP episodic trial | Same IDE surface — hooks + MCP collide |
+| **Vader Vault** | Human durable markdown | Knowledge pages overlap the wiki idea |
+| **ReCall / project-log** | Session ritual | Auto-retain is a noisier write path |
+| **MemPalace WATCH** | Verbatim local | Hindsight is extract+learn, not verbatim |
+
+### Risks
+
+- **`hindsight-cursor init` writes agent config** — `.cursor-plugin/`, `~/.hindsight/cursor.json`, **rewrites `.cursor/mcp.json`**, always-on `hindsight-memory.mdc`, auto-retain on every task stop (secrets/PII). Never run `npx @vectorize-io/hindsight-coding-agents install all` on this workstation.
+- Ports **`:8888` / `:9999`** (Docker) and local daemon **`:9077`**.
+- Default Docker example wants `OPENAI_API_KEY`; point at LiteLLM `:4000` if ever trialed.
+- Cloud path sends memories to `api.hindsight.vectorize.io`.
+- Additive-only: **do not replace Mem0**.
+
+**Verify (isolated lab only):** Docker `ghcr.io/vectorize-io/hindsight:latest-slim` + LiteLLM provider → health on `:8888`. **Do not** run Cursor `init` against JonBeatz `.cursor/mcp.json`.
+
+**Recommendation:** **WATCH.** Best “new autonomous agent / new PC lab” memory if Mem0 ever fails a learning use-case. Restore Mem0 + Vault + Mnemosyne first on a new box.
+
+---
+
+## OpenViking — 2026-08-27
+
+- **URL:** https://github.com/volcengine/OpenViking · **Site:** https://openviking.ai/ · **Docs:** https://docs.openviking.ai/
+- **Grade:** **B- (80/100)** · **Cost:** Free **AGPLv3** self-host · Volcengine / BytePlus SaaS
+- **Verdict:** **WATCH** · **Setup:** NOT_INSTALLED
+- **Stars:** ~33.9k (2026-08-27)
+
+### Summary
+
+Context database: memories, resources, and skills as a virtual filesystem under `viking://`, with L0/L1/L2 tiered loading and visible retrieval trajectories. Native **Hermes** memory provider (`hermes memory setup openviking`, default `http://127.0.0.1:1933`). Cursor / Claude Code plugins. Helper desktop app auto-detects agents and wires MCP/hooks. Built by Volcengine (ByteDance). Published benches used Doubao models.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 32/40 | Unified FS for skills+docs+memory is a real idea; Vault + `SKILL.md` + Mem0 already split that on purpose |
+| Stack fit | 18/25 | Hermes HTTP provider is clean; `memory setup` would displace Mem0; Helper auto-wires Cursor |
+| Cost / complexity | 16/20 | Self-host free; AGPL network copyleft; SaaS is Volcano Engine (China) / BytePlus later |
+| Maturity | 14/15 | 34k★, VLDB VikingMem paper; AGPL + vendor + Doubao-only published benches |
+
+### Gap / overlap
+
+| Layer | Hermes today | OpenViking |
+|-------|----------------|------------|
+| **Vader Vault** | Human-readable FS memory | Closest overlap — `viking://` is an agent-facing vault |
+| **Cursor / Hermes skills** | `SKILL.md` trees | Skills are a first-class `viking://` type |
+| **Mem0** | Semantic facts | Session commit extracts preferences into long-term memory |
+| **codebase-memory-mcp** | Code graph | Directory-recursive retrieval over repos |
+| **Mnemosyne** | Episodic SQLite | Session → memory pipeline overlaps |
+
+### Risks
+
+- **AGPLv3** on the main project (CLI/examples Apache-2.0). Network copyleft if you expose a modified server.
+- **ByteDance / Volcengine** — OSS is auditable; managed SaaS is Volcano Engine (China); global BytePlus “coming.” Do not send fleet secrets to Studio/SaaS.
+- **`hermes memory setup openviking`** changes Hermes `memory.provider` — Mnemosyne Hermes plugin is still deferred; Mem0 stays canonical.
+- **OpenViking Helper** auto-configures Cursor MCP/hooks — same class of risk as Hindsight `init`.
+- `openviking-server init` can detect/install **Ollama** and pull models (VRAM fight with LM Studio / Comfy).
+- Default HTTP **`:1933`** (not InDesign `:19300`).
+- Benchmarks used Doubao — local Ollama/OpenAI quality may not match the paper numbers.
+
+**Verify (when trial):** `pip install openviking` in an isolated venv → `openviking-server doctor` — **do not** run Helper against this Cursor profile; **do not** `hermes memory setup openviking`.
+
+**Recommendation:** **WATCH.** Interesting if a future Hermes-only box wants one context FS. Not worth the AGPL + vendor + memory-provider swap on this workstation. New PC: clone Vault + Mem0 first; OpenViking only as a later lab.
+
+**New PC:** Skip day-one. Revisit only if you explicitly want a single `viking://` brain *instead of* (not in addition to) Vault+skills.
+
+---
+
+## Honcho (plastic-labs) — 2026-08-27
+
+- **URL:** https://github.com/plastic-labs/honcho · **Docs:** https://honcho.dev/docs/ · **Managed:** https://app.honcho.dev/ · **Evals:** https://honcho.dev/evals/
+- **Grade:** **B- (81/100)** · **Cost:** Free **AGPL-3.0** self-host · managed `api.honcho.dev` ($100 signup credits, then usage)
+- **Verdict:** **WATCH** · **Setup:** NOT_INSTALLED
+- **Stars:** ~6.9k (2026-08-27)
+
+### Summary
+
+Reasoning-first **peer memory** for stateful agents: workspaces → peers → sessions → messages; background deriver builds representations/conclusions you query (chat, context, hybrid search). Python/TS SDKs, MCP (`https://mcp.honcho.dev`), CLI `honcho start --setup` (Docker + Postgres + Redis + LLM keys). First-class **Hermes** path: `hermes memory setup` → select **honcho**. Also Claude Code plugin, OpenCode, OpenClaw, and `npx skills add plastic-labs/honcho`.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 32/40 | Peer representations + multi-peer observation is a real Mem0 gap; 3-layer cake already covers ritual memory |
+| Stack fit | 18/25 | Windows Docker OK; **`hermes memory setup honcho` would displace Mem0** — same class as OpenViking |
+| Cost / complexity | 17/20 | Local needs Gemini + Anthropic + OpenAI keys by default; managed credits then paid; AGPL |
+| Maturity | 14/15 | 6.9k★, Plastic Labs, published evals; AGPL + SaaS deriver |
+
+### Gap / overlap
+
+| Layer | Hermes today | Honcho |
+|-------|----------------|--------|
+| **Mem0 + Qdrant** | Canonical semantic facts | Competes as primary write/query target |
+| **Mnemosyne** | Cursor MCP episodic trial | MCP HTTP to `mcp.honcho.dev` collides on the IDE surface |
+| **Vader Vault** | Human durable markdown | Peer cards/representations overlap the “who is this” wiki |
+| **Hindsight WATCH** | Learn/retain/reflect | Closest peer — Honcho is more productized (Hermes + managed) |
+| **OpenViking WATCH** | `viking://` + Hermes provider | Same **do not swap Hermes memory.provider** rule |
+
+### Risks
+
+- **`hermes memory setup` → honcho** changes Hermes `memory.provider`. Mem0 stays canonical. Do not run this on jonbeatz Desktop.
+- **`npx skills add plastic-labs/honcho`** writes agent skills into the client. Do not run against this Cursor profile.
+- **Cursor/Claude MCP** to `https://mcp.honcho.dev` with `HONCHO_API_KEY` sends session text to managed (or your self-host). Do not add to JonBeatz `.cursor/mcp.json` today.
+- **OpenClaw** `openclaw honcho setup` migrates `MEMORY.md` / `USER.md` / `IDENTITY.md` into Honcho (originals kept). Not our OpenClaw path.
+- **AGPL-3.0** network copyleft if you expose a modified server.
+- Local stack: Docker **API `:8000`** + Postgres + Redis + deriver LLM spend. Do not `honcho start --setup` on this workstation (VRAM/RAM fight with Comfy / LM Studio / existing Docker).
+- Cloud path: org instance at Plastic Labs; treat like any SaaS memory — no secrets in stored messages.
+
+**Verify (isolated lab only):** `uv tool install honcho-cli` → `honcho doctor` against a throwaway key — **do not** `hermes memory setup honcho`; **do not** `npx skills add plastic-labs/honcho`.
+
+**Recommendation:** **WATCH.** Strongest “productized peer memory” on the deck after Hindsight. Not worth a fourth memory silo or a Hermes provider swap on this box. New PC: restore Mem0 + Vault + Mnemosyne first.
+
+---
+
+## obsidian-skills (kepano) — 2026-08-27
+
+- **URL:** https://github.com/kepano/obsidian-skills
+- **Grade:** **A- (91/100)** · **Cost:** Free MIT
+- **Verdict:** **IN USE** · **Setup:** **READY** (cherry-pick: `obsidian-markdown` + `json-canvas`)
+- **Stars:** ~47.4k (2026-08-27) · last push 2026-06-08
+
+### Summary
+
+Official-quality **Agent Skills** pack from Obsidian’s Steph Ango (kepano): Obsidian Flavored Markdown (wikilinks, embeds, callouts, properties), Bases (`.base`), JSON Canvas (`.canvas`), Obsidian CLI, and Defuddle (web → clean markdown). Spec-compliant `SKILL.md` for Cursor / Claude Code / Codex / OpenCode.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 34/40 | Agents already write vault notes; OFM/wikilink/callout spec is the missing craft layer |
+| Stack fit | 24/25 | `H:\Vader_Vault` + `vault` MCP + vader-vault.mdc; no daemon, no ports |
+| Cost / complexity | 19/20 | Copy SKILL.md into shared library; zero VRAM |
+| Maturity | 14/15 | 47k★, kepano, MIT; small pack (46 commits); CLI skill needs Obsidian open |
+
+### Gap / overlap
+
+| vs | Notes |
+|----|--------|
+| **vault filesystem MCP** | Keep as I/O; skills teach *how* to write OFM |
+| **vader-vault.mdc** | Policy (link, no secrets); skills = syntax |
+| **markdownify + Firecrawl** | Prefer those for URL/PDF extract; skip **defuddle** unless token-trim needed |
+| **find-skills IN USE** | Same `npx skills add` mechanism — still vendor into shared library for fleet |
+| **DesignLab canvases** | `json-canvas` is Obsidian `.canvas`, not Cursor `.canvas.tsx` |
+
+### Risks
+
+- **Claude `/plugin marketplace add`** writes `.claude` agent config — **do not** use on this box; vendor into `_core-scripts/shared-profile-content/skills/` + `fleet:sync`.
+- **obsidian-cli** requires **Obsidian running**; `obsidian eval` is a JS RCE-in-app surface — vault MCP stays the default write path.
+- **defuddle** is another HTML→MD tool (overlap with markdownify).
+- Do not treat JSON Canvas skill as Cursor Canvas.
+
+**Verify (after vendor):** skill folders exist under `.cursor/skills/` (or shared library) → write one vault note with `[[wikilink]]` + properties → confirm in Obsidian.
+
+**Recommendation:** **IN USE** (2026-08-27 cherry-pick). **obsidian-markdown** + **json-canvas** vendored; skip defuddle; CLI/Bases only if Jon asks.
+
+**New PC:** Yes — copy the vendored skills with the vault. Cheap, high fit, no extra services.
+
+---
+
+## MeiGen AI Design MCP — 2026-08-27
+
+- **URL:** https://github.com/jau123/MeiGen-AI-Design-MCP · site https://www.meigen.ai/
+- **Grade:** **B- (81/100)** · **Cost:** Freemium (gallery free; API gen = purchased credits only)
+- **Verdict:** **WATCH** · **Setup:** NOT_INSTALLED
+- **Stars:** ~1.7k (2026-08-27) · npm `meigen@1.4.0` · MIT
+
+### Summary
+
+MCP + website wrapping a **1,446-prompt gallery** (GPT Image / Nano Banana / Seedance) plus optional cloud gen and a ComfyUI `:8188` bridge. The gallery is the useful part for us. Generation overlaps fal + local Comfy.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 32/40 | Trending still/video prompt library we do not have; gen stack already covered |
+| Stack fit | 18/25 | Bookmark DESIGN-REFERENCES; wiring MCP fights Comfy `:8188` + writes Cursor MCP config |
+| Cost / complexity | 17/20 | Browse/enhance free; `generate_*` needs `meigen_sk_` and **cannot use daily free credits via API** |
+| Maturity | 14/15 | MIT, npm 1.4.0, ~1.7k★; Meigen Creative L.L.C.; init-on-bad-JSON risk |
+
+### Gap / overlap
+
+| vs | Notes |
+|----|--------|
+| **ComfyUI + Image-Workflow** | Keep as local stills; MeiGen Comfy mode is a second client on `:8188` |
+| **fal nano-banana-pro** | Book identity/finals stay fal — MeiGen Nanobanana is another paid meter |
+| **OpenMontage / Kinocut** | Video polish stays ours |
+| **DESIGN-REFERENCES** | Same class as aicameramovements / Brand Motion prompts |
+
+### Risks
+
+- **`npx meigen init cursor`** writes `.cursor/mcp.json`. Merge is OK on valid JSON; **parse failure starts a blank config and overwrites the file**. Do not run.
+- Claude `/plugin marketplace add` — skip (same class as kepano marketplace).
+- Do **not** add `mcp_servers.meigen` to Hermes `config.yaml` unless Jon asks (video timeout 2700s vs Hermes 120s default).
+- Cloud refs upload to `gen.meigen.ai` R2 (24h expiry, no auth on upload).
+- API tokens spend **purchased credits only** — daily free web credits do not apply.
+
+**Verify (if ever installed):** `npx -y meigen@1.4.0` tools list `search_gallery` without a token. Never `init cursor` on this box.
+
+**Recommendation:** **WATCH — Jon 2026-08-27: bookmark only.** Use [meigen.ai](https://www.meigen.ai/) for prompts. MCP is an **option later** if in-chat `search_gallery` / `enhance_prompt` is needed — wire by hand, never `npx meigen init cursor`, never Hermes `config.yaml`, no token unless asked. Comfy + fal stay generators.
+
+**New PC:** Copy DESIGN-REFERENCES bookmark. Skip MCP day-one.
+
+---
+
+## GitReverse — 2026-08-27
+
+- **URL:** https://www.gitreverse.com/ · OSS https://github.com/filiksyos/gitreverse
+- **Grade:** **B- (80/100)** · **Cost:** Free hosted; self-host needs your LLM keys
+- **Verdict:** **WATCH** · **Setup:** NOT_INSTALLED (bookmark)
+- **Stars:** ~1.9k · 316 forks (2026-08-27)
+- **Trick:** replace `hub` with `reverse` in any GitHub URL (`github.com/org/repo` → `gitreverse.com/org/repo`)
+
+### Summary
+
+Public GitHub repo (metadata + **root tree depth 1** + README) or a public website → one synthetic “rebuild this in Cursor” prompt. Also `/game` and `/library` (~29k cached prompts). Same class as a prompt gallery, not a generator or a full reverse-engineer.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 30/40 | Fast public-repo/site → starting prompt we don’t already have; shallow (not full RE) |
+| Stack fit | 19/25 | Bookmark DESIGN-REFERENCES; no ports; do **not** self-host or send private Hermes repos |
+| Cost / complexity | 18/20 | Hosted free; self-host = extra LLM keys we already have elsewhere |
+| Maturity | 13/15 | 1.9k★ Next.js SaaS; context goes to **their** LLM |
+
+### Gap / overlap
+
+| vs | Notes |
+|----|--------|
+| **DesignMD / getdesign.md IN USE** | DesignMD = brand DESIGN.md extract; GitReverse = rebuild prompt from README + depth-1 tree |
+| **Firecrawl / Context7** | Those fetch live docs; GitReverse synthesizes one prompt |
+| **MeiGen gallery** | Both are prompt libraries; MeiGen = still/video; GitReverse = codebase/site rebuild |
+
+### Risks
+
+- **Privacy:** hosted path sends repo/site context to GitReverse’s LLM. Public OSS/docs only. Never paste private Hermes / MSC / GrokBot repos.
+- **Ethics / license:** output is a vibe-clone starter. Use for architecture language, not shipping clones of licensed products.
+- **Shallow:** root tree depth 1 + README — not a substitute for reading the repo.
+- **Self-host:** needs Grok / OpenRouter / Azure / Google / ApiSmart keys — skip; hosted bookmark is enough.
+- Unrelated clone: GraeLefix/GITVERSE → gitverse.id is **not** this product.
+
+**Verify:** open a **public** example (`Next.js` / `React` on the homepage) → copy prompt into chat. Do not reverse this fleet’s private remotes.
+
+**Recommendation:** **WATCH + DESIGN-REFERENCES bookmark.** Use for public inspiration prompts. Do not install/self-host. Do not treat as DesignMD.
+
+**New PC:** Bookmark gitreverse.com + `/library`. Skip self-host.
+
+---
+
+## Hostinger Connector — 2026-08-27
+
+- **URL:** https://docs.hostinger.com/hostinger-connector/overview · plugin https://github.com/hostinger/hostinger-cursor-plugin
+- **Grade:** **C (74/100)** · **Cost:** Free with an existing Hostinger plan (not an upsell)
+- **Verdict:** **SKIP** · **Setup:** NOT_INSTALLED
+- **Email:** Hostinger marketing to jonf822@gmail.com — “Install Hostinger Connector”
+
+### Summary
+
+Official editor extension / Cursor plugin that registers Hostinger MCP servers (`hostinger-api-mcp`) so the agent can deploy, DNS, VPS, domains, billing, Reach, ecommerce. **We already have this API live** as four scoped servers: `hostinger-hosting`, `hostinger-vps`, `hostinger-domains`, `hostinger-dns` via `jonbeatz-hostinger-mcp.mjs` + `HOSTINGER_API_TOKEN`. hPanel token `Cursor-MyStudioChannel` last used 2026-08-26.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 24/40 | Extra product areas (billing, Reach, WP, ecommerce) we do not need; core hosting/DNS/VPS/domains already IN USE |
+| Stack fit | 16/25 | Extension writes `~/.cursor/mcp.json`; official warning: plugin + extension ≈ 200 duplicate tools; fights our scoped launcher |
+| Cost / complexity | 20/20 | Included with hosting — email is not selling a new SKU |
+| Maturity | 14/15 | Official Hostinger; docs 2026-07-22 |
+
+### Gap / overlap
+
+| vs | Notes |
+|----|--------|
+| **Hostinger MCPs (4) IN USE** | Same npm package. We filter invalid tool names and avoid the 129-tool dump |
+| **MSC FTPS pipelines** | Still preferred for shared Node; MCP zip deploy is a known pitfall |
+| **hPanel Restart** | Connector does not replace the golden split |
+
+### Risks
+
+- Duplicate MCP servers if Connector is installed on top of current `mcp.json`
+- Agent may try MCP zip deploy on MSC shared Node (`better-sqlite3`)
+- Never-expiring API token already exists — do not mint a second token for the extension
+- Do not follow `clicks.hostinger.com` tracking links; use hPanel / docs.hostinger.com
+
+**Verify (current stack, already PASS):** `hosting_listWebsitesV1` returns next-flick.com, mystudiochannel.com, jon-beatz.com, jonbeatz.dev, vaderlabz.com, etc.
+
+**Recommendation:** **SKIP.** Keep the four scoped MCPs. Do not install Hostinger Connector / Cursor plugin.
+
+**New PC:** Copy `HOSTINGER_API_TOKEN` + `sync:mcp-env`. Skip the marketplace Connector.
+
+---
+
+## OpenMausBot — 2026-08-27
+
+- **URL:** https://github.com/milind-soni/OpenMausBot · https://www.openmausbot.com/
+- **Grade:** **B- (81/100)** · **Cost:** Free Apache-2.0 (Composio / Box / ElevenLabs optional paid)
+- **Verdict:** **WATCH** · **Setup:** NOT_INSTALLED
+- **Stars:** ~1.8k · v0.1.37 · Windows `.exe` (unsigned) + macOS signed DMG
+
+### Summary
+
+Open-source **Grok Bot** shape: Telegram-style roster, each bot = local `claude` / `codex` / `grok` CLI + optional cloud Linux desktop (Box) or host control. Harness `127.0.0.1:8799`, app `:5199`, webhooks `:8800`. We **just** put Ravyn/Clerk on xAI Grok Bot + AgentMail — do not replace that.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 32/40 | Real OSS Grok Bot if xAI product goes away; today the gap is already filled |
+| Stack fit | 18/25 | Windows build exists; ports unused; **cua-driver 0.19.3** vs Hermes **0.22.2** |
+| Cost / complexity | 17/20 | App free; Box after trial; ElevenLabs for voice |
+| Maturity | 14/15 | Early v0.1.x; 1.8k★; Apache-2; no-crypto disclaimer |
+
+### Risks
+
+- Windows installer **not code-signed** (SmartScreen).
+- **Host control** of this PC — never enable. Cloud VM / Local VM only if ever trialed.
+- Packaged **Cua 0.19.3** must not overwrite Hermes cua-driver 0.22.2 overlay harden.
+- Composio OAuth + Box keys in `~/.openmausbot`. Webhook receiver must stay loopback.
+- Do not import BotMRR team packs that turn on connectors without review.
+
+**Verify (if ever installed):** app opens, one bot chats via existing `grok` CLI, Computer panel **off** / no host-control. `netstat` only `:8799`/`:5199` localhost.
+
+**Recommendation:** **WATCH.** Keep xAI Grok Bot. Revisit only if Grok Bot is gone or Jon wants a local-first twin in a VM.
+
+**New PC:** Skip. Grok Bot is the live roster.
+
+---
+
+## fx (Vercel Labs) — 2026-08-27
+
+- **URL:** https://github.com/vercel-labs/fx · https://fx.sh/
+- **Grade:** **B- (80/100)** · **Cost:** Free Apache-2.0 (inference via Gateway / Codex / Grok OAuth)
+- **Verdict:** **WATCH** · **Setup:** NOT_INSTALLED
+- **Stars:** ~2.5k · Zig 0.16+ · **Experimental** banner
+
+### Summary
+
+Tiny Unix-like coding-agent CLI (~7.8 MiB), embeddable (ACP / WASM). Overlaps **Cursor** (primary), Hermes, Grok Build. Research/embed interesting; not a daily driver.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 30/40 | Embeddable harness we do not have; user-facing agent we do (Cursor) |
+| Stack fit | 18/25 | Skills + MCP exist; installer is `curl \| bash` → `~/.local/bin`; auto permission mode |
+| Cost / complexity | 18/20 | OSS; uses logins we already have (Grok/Codex) |
+| Maturity | 14/15 | Vercel Labs, 2.5k★, still experimental |
+
+### Risks
+
+- **Never** `curl -fsSL https://fx.sh/setup.sh | bash` on this box. Prefer `zig build` or a reviewed release binary.
+- OAuth sessions in `~/.fx/chatgpt-auth.json` / `grok-auth.json`.
+- `auto` permissions + `yolo` mode can run terminal/write tools.
+- `fx mcp add` is another MCP config surface — do not dump fleet MCPs into `~/.fx/mcp.json`.
+- Unix-first PATH (`~/.local/bin`); Windows is second-class vs Cursor.
+
+**Verify (if ever):** `fx doctor` in a throwaway folder, not the Hermes monorepo. No yolo.
+
+**Recommendation:** **WATCH.** Cursor stays the builder. Do not install today.
+
+**New PC:** Skip unless Jon wants a lab CLI in a sandbox.
+
+---
+
+## Token Harbor — 2026-08-27
+
+- **URL:** https://tokenharbor.ai/ · compare https://tokenharbor.ai/docs/compare/openrouter
+- **Grade:** **C (76/100)** · **Cost:** Freemium (Passes from ~$0.99–$2.99+; trial credits)
+- **Verdict:** **SKIP** · **Setup:** NOT_INSTALLED
+- **Org:** Token Harbor PTE. LTD. (Singapore)
+
+### Summary
+
+OpenAI-compatible + native Anthropic gateway. Same job as **OpenRouter IN USE** + LiteLLM `:4000` + DeepSeek direct. Connect CLI is the landmine.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 26/40 | Curated catalog + claimed no silent swaps; we already have OpenRouter + integrity rails |
+| Stack fit | 18/25 | Connect CLI **auto-writes** Claude/Codex/OpenClaw configs and can set `OPENAI_*` / `ANTHROPIC_*` (Hermes listed as env mode) |
+| Cost / complexity | 18/20 | Free tier + cheap Passes; another wallet vs OpenRouter |
+| Maturity | 14/15 | Younger than OpenRouter; marketing-heavy compare page |
+
+### Risks
+
+- **Never** `irm https://tokenharbor.ai/connect.ps1 | iex` or `curl …/connect.sh | sh`.
+- **Never** menu **Connect ALL**. Auto adapters write `~/.claude/settings.json`, `~/.codex/config.toml`, `~/.openclaw/openclaw.json`; env mode can pollute **Hermes**.
+- `--env-all` can override an existing `OPENAI_API_KEY`.
+- Do not point LiteLLM or Cursor Setup B at Token Harbor without a dedicated isolated trial Jon asked for.
+
+**Verify (if Jon later wants a hand trial):** create `thk_` key, one curl to `https://tokenharbor.ai/v1` — **no** Connect CLI.
+
+**Recommendation:** **SKIP.** OpenRouter + LiteLLM stay. Token Harbor is a second gateway with a config-writing installer.
+
+**New PC:** Skip. Copy OpenRouter keys only.
+
+---
+
+## VoxCPM — 2026-08-27
+
+- **URL:** https://github.com/OpenBMB/VoxCPM
+- **Grade:** **B+ (85/100)** · **Cost:** Free Apache-2.0
+- **Verdict:** **WATCH** · **Setup:** NOT_INSTALLED
+- **Stars:** ~36k · VoxCPM2 = 2B, 30 languages, ~8 GB VRAM, 48 kHz
+
+### Summary
+
+Tokenizer-free diffusion TTS (MiniCPM-4 backbone). Voice design from a text description, controllable clone from a short clip, studio 48 kHz. CUDA ≥ 12, Python 3.10–3.12. RTF quoted on 4090, not 5060 Ti.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 34/40 | Clone + multilingual + voice design we do not have in ritual TTS |
+| Stack fit | 18/25 | Fits 16 GB if Comfy/LMS unloaded; fights Lightning; not `draven:speak` |
+| Cost / complexity | 18/20 | Apache-2; separate venv required (not Hermes Python) |
+| Maturity | 15/15 | 36k★ OpenBMB; Apache-2 commercial-ready |
+
+### Risks
+
+- **~8 GB VRAM** for VoxCPM2 — unload Comfy `:8188` and LMS before any spike.
+- Do not `pip install voxcpm` into Hermes/LiteLLM venvs.
+- Gradio `app.py` port unknown — never steal `:3000`/`:4000`/`:8188`.
+- Voice clone of real people — keep to Jon-owned refs.
+- Ritual TTS stays **Edge Liam**; Omni remains optional restore.
+
+**Verify (if ever):** dedicated venv + `VoxCPM.from_pretrained("openbmb/VoxCPM2")` one wav, then unload. `npm run draven:speak` still Liam.
+
+**Recommendation:** **WATCH.** Best local clone/multilingual TTS on the list. Do not install today.
+
+**New PC:** Skip. Copy Edge Liam ritual.
+
+---
+
+## BetterWright — 2026-08-27
+
+- **URL:** https://github.com/BetterWright/betterwright
+- **Grade:** **B- (80/100)** · **Cost:** Free MIT
+- **Verdict:** **WATCH** · **Setup:** NOT_INSTALLED
+- **Stars:** ~224
+
+### Summary
+
+Persistent, policy-guarded Playwright for agents: compressed snapshots, AES credential vault, local CAPTCHA helpers, live view/handoff. `betterwright init` auto-wires detected agents.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 32/40 | Token-efficient persistent sessions + vault is a real agent-browser idea |
+| Stack fit | 16/25 | We already have cursor-ide-browser, Playwright, Agent Browser IN USE |
+| Cost / complexity | 18/20 | `npm i -g`; no extra SaaS for core |
+| Maturity | 14/15 | Small but MIT, tests, docs; Chromium fork |
+
+### Risks
+
+- **`betterwright init`** and **`skill --install --all`** write `~/.claude/skills` and **`~/.cursor/skills`**. Do not run on this box (same class as MeiGen `init cursor`).
+- Credential vault + CAPTCHA solve — keep off banking/Hostinger/Gmail unless Jon explicitly authorizes a site.
+- Chromium fork / stealth claims — ToS gray on some sites.
+- Standalone `exec` wants Codex/Grok OAuth or API keys — another login surface.
+
+**Verify (if ever):** VM or throwaway profile only. `betterwright skill --status` must **not** show Cursor skills on the fleet machine.
+
+**Recommendation:** **WATCH.** Playwright + cursor-ide-browser stay. No init.
+
+**New PC:** Skip.
+
+---
+
+## Ramp Router (router.com) — 2026-08-27
+
+- **URL:** https://router.com/ · Ramp acquired the domain
+- **Grade:** **C (74/100)** · **Cost:** Free routing through 2026 + $26 credits (then list-price tokens)
+- **Verdict:** **SKIP** · **Setup:** NOT_INSTALLED
+
+### Summary
+
+OpenAI/Anthropic-compatible LLM gateway that routes to cheaper models (Switchyard). Same job as **OpenRouter IN USE**. US-only today. Installer: `curl … agents.ramp.com/install.sh | sh && ramp router configure`.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 26/40 | Cost routing + $26 credits; we already pick Flash vs Pro ourselves |
+| Stack fit | 14/25 | `install.sh` + `ramp router configure` mutates agent configs; US-only |
+| Cost / complexity | 20/20 | Free routing through 2026 is the pitch |
+| Maturity | 14/15 | Ramp production (2.75T tokens/mo claimed); younger public product |
+
+### Risks
+
+- **Never** `curl -fsSL https://agents.ramp.com/install.sh | sh`.
+- Router stores inputs/outputs to improve the service unless you pick ZDR models — different from our OpenRouter + LiteLLM hygiene.
+- BYOK exists but still another wallet and routing layer vs `:4000`.
+- Same class as Token Harbor Connect — do not let it rewrite Cursor/Hermes.
+
+**Verify (if Jon later wants a hand trial):** dashboard API key + one curl — **no** install.sh.
+
+**Recommendation:** **SKIP.** OpenRouter + LiteLLM + DeepSeek stay. Credits are not worth a third gateway + shell installer.
+
+**New PC:** Skip.
+
+---
+
+## krypt.cc/tools — 2026-08-27
+
+- **URL:** https://krypt.cc/tools · publisher Mimosa Solutions
+- **Grade:** **C (73/100)** · **Cost:** Free as-is (arbitration + class-action waiver in download terms)
+- **Verdict:** **SKIP** · **Setup:** NOT_INSTALLED
+
+### Summary
+
+Fourteen-item “krypt workshop” catalog: Discord automation (Cord), location spoof (Ghost), poker/sports betting helpers, Polymarket/Kalshi trading bots, VPN, macro/autoclicker, **PC Tweaker 2.0**, **PC Cleaner**, **Cursor Customizer**, video editor, crosshair overlay. Site disclaimer: scan binaries, no warranty, may breach third-party ToS. Not a Hermes/Cursor stack gap — [Toolfolio](https://toolfolio.com/) already covers discovery.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 22/40 | Directory exists; almost none of the 14 map to fleet jobs |
+| Stack fit | 10/25 | Tweaker/cleaner/Cursor customizer can break this workstation; Ghost/Cord/trading are out of scope |
+| Cost / complexity | 18/20 | Free downloads; as-is + scan-yourself |
+| Maturity | 13/15 | Live catalog; unsigned/workshop binaries; Mimosa legal wrap |
+
+### Hard skips (do not download)
+
+| Item | Why |
+|------|-----|
+| **Krypt Tweaker 2.0 / Cleaner** | Registry/service “optimizers” on a tuned AI workstation — never |
+| **Krypt Cursor** | Cursor customizer — can fight live IDE settings / MCP |
+| **Krypt Ghost** | Location spoof — not for this profile |
+| **Krypt Cord** | Discord automation — ToS / spam class |
+| **Krypt VPN** | We already have Cloudflare / tunnels; random multi-hop VPN is a trust hit |
+| **PolyBot / Trader / Poker / Scout** | Trading/gambling bots — not the fleet; not financial advice |
+| **Macro / Crosshair** | Autoclicker / game overlay — not needed |
+| **Krypt Editor** | OpenCut Electron fork (v0.2.0, MIT zip). Unsigned NSIS; **always-on login + tray + Discord RPC** in packaged builds. Screenshot is AI (C2PA gpt-image). FreeCut already IN USE — do not install |
+
+**Verify:** none. Do not run their installers.
+
+**Recommendation:** **SKIP** the catalog. Bookmark only as “already reviewed — do not install.” If a *single* OSS repo from this shop is ever re-pasted, grade that repo alone.
+
+**New PC:** Skip.
+
+---
+
+## Agent Arena (arena.ai) — 2026-08-27
+
+- **URL:** https://arena.ai/leaderboard/agent · **Overview:** https://arena.ai/leaderboard · **Method:** https://arena.ai/blog/agent-arena-methodology/
+- **Grade:** **A- (90/100)** · **Cost:** Free to browse · login only for Arena **Agent Mode**
+- **Verdict:** **REF** · **Setup:** **READY** (bookmark)
+- **Snapshot:** 2026-08-26 · ~2.06M sessions · 54 models (LMSYS → Arena.ai)
+
+### Summary
+
+In-the-wild **orchestrator** ranking: how well a model drives tools on Arena’s own Agent Mode (code, research, planning, etc.). Not pairwise ELO. **Causal tracing** estimates net improvement from the model vs the rest of the harness. Signals: confirmed success, praise vs complaint, steerability, bash recovery, tool hallucination. Also **Pareto** (net improvement × median $/task) and Code / Chat / Work filters.
+
+### Grade breakdown
+
+| Axis | Score | Notes |
+|------|-------|-------|
+| Gap fill | 36/40 | Agent-tool signals we do not get from OpenRouter charts or TokenTracker |
+| Stack fit | 20/25 | Bookmark only; Arena harness ≠ Cursor/Hermes — do not auto-swap defaults |
+| Cost / complexity | 20/20 | Free board; no install |
+| Maturity | 14/15 | LMSYS lineage, millions of sessions; first agent board (Jun 2026 method post) |
+
+### Gap / overlap
+
+| Layer | Hermes today | Agent Arena |
+|-------|----------------|-------------|
+| **What to run in Cursor** | `CURSOR-MODELS-CHEATSHEET.md` | Informs, does not replace |
+| **Spend** | TokenTracker `:7680` | Cost/task P50 is quality×waste, not our invoices |
+| **Routing** | LiteLLM + DeepSeek + OpenRouter | Rank ≠ availability on `:4000` |
+| **free-llm-api-resources REF** | Free tier catalog | Arena = quality/cost of *agent* runs |
+
+### Risks
+
+- Rankings are **Arena Agent Mode traces**, not Cursor Composer / Hermes Desktop. Tool sets and recovery loops differ.
+- Headline “Net Improvement” can look inverted at the bottom of the HTML table (negative τ̂) — use Pareto + error bars, not a screenshot of rank #54.
+- Login / Agent Mode sends **your tasks** to Arena if you use the product, not just the public board.
+- Do **not** switch DeepSeek/Hermes defaults because Opus 5 (High) is #1 (~$2.58/task on their P50).
+
+**Verify:** Open the board → Pareto → filter **Code**. No npm, no MCP.
+
+**Recommendation:** **REF.** Bookmark for model-picker conversations. Snapshot worth knowing (Aug 26): DeepSeek V4 Pro (High) sits mid-board with low $/task; Kimi K3 (Max) leads confirmed-success; Claude Opus 5 leads aggregate. Re-check the page before acting — the board moves.
+
+---
+
+## Agent credentials — Bitwarden vs Proton Pass MCP (2026-08-27)
+
+- **Human apps (already in use):** [Bitwarden](https://bitwarden.com/) · [Proton Pass](https://proton.me/pass)
+- **Official MCP:** https://github.com/bitwarden/mcp-server · blog: https://bitwarden.com/blog/bitwarden-mcp-server/
+- **Unofficial Proton:** [hesreallyhim/proton-pass-community-mcp](https://github.com/hesreallyhim/proton-pass-community-mcp) · [aureTheDev/protonpass-mcp](https://github.com/aureTheDev/protonpass-mcp)
+
+### Process (locked)
+
+| Store | What lives there | Who reads it |
+|-------|------------------|--------------|
+| **`.env.local`** + `.env.local.master` | Runtime keys (DeepSeek, OpenRouter, Telegram, Hostinger, HF, fal, MCP tokens) | Node, LiteLLM, `sync:mcp-env` |
+| **Bitwarden / Proton Pass** | Human logins, bank, TOTP, recovery codes | Jon (browser/app autofill) |
+| **Vader Vault** | Docs only — **no secrets** | Agents + Jon |
+
+Password-manager MCP does **not** replace `.env.local`. Apps still need env vars at process start. MCP only helps an *agent* fetch a secret at chat time — and then that secret is in **Cursor’s cloud model context** (Grok / Composer / etc.). Bitwarden’s own README: use a **local/self-hosted LLM** for vault MCP; never expose the server on a network.
+
+**Do not** add any of these MCPs to JonBeatz `.cursor/mcp.json` while Agent chats go to cloud models.
+
+If a later lab is approved: a **dedicated** Bitwarden folder/collection named something like `hermes-agent` containing **only** keys that already exist in `.env.local` — never the personal login vault, never org-admin API tools, never `BW_SESSION` in git.
+
+### Bitwarden MCP — B- (80/100) WATCH
+
+Official `@bitwarden/mcp-server` (GPL-3, ~238★). CLI vault tools + optional org Public API. Native OS unlock dialog so the master password does not go through MCP. Still: `get` / `list` return vault contents to the assistant; `BW_SESSION` in MCP env is a full vault key. Org tools (`invite_org_member`, policies, subscriptions) are out of scope for this profile.
+
+| Axis | Score |
+|------|-------|
+| Gap fill | 32/40 |
+| Stack fit | 16/25 |
+| Cost | 18/20 |
+| Maturity | 14/15 |
+
+### proton-pass-community-mcp — C (76/100) WATCH
+
+Unofficial, not Proton. Best of the Proton wrappers: list/search **omit secrets**, writes need `ALLOW_WRITE=1` + `confirm: true`. Needs `pass-cli` (beta, **Visionary+**). Tools include `inject` / `run` (secrets into files/commands) and `view_item` (full credentials). Still skip Cursor.
+
+### protonpass-mcp (aureTheDev) — C (70/100) SKIP
+
+0★, one commit, Docker `pass-cli` wrapper, session in a named volume, 14 tools including `view_item` / TOTP / share. No license file called out as strongly as the community project. Do not run.
+
+---
+
+
+
+
+
 

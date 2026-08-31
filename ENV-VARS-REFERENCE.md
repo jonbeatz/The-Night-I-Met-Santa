@@ -8,7 +8,7 @@ Central registry of all environment variables used across JonBeatz, MyStudioChan
 |----------|-----------|--------|---------|--------|---------|
 | DEEPSEEK_API_KEY | Yes | JonBeatz, MSC | — | `.env.local` | DeepSeek V4 API provider key for LiteLLM |
 | DEEPSEEK_API_KEY_NAME | No | JonBeatz | — | `.env.local` | Human-readable label for the API key |
-| MSC_LITELLM_MASTER_KEY | Yes | JonBeatz, MSC | sk-jonbeatz-deepseek-2026 | `.env.local` | LiteLLM proxy local master key |
+| MSC_LITELLM_MASTER_KEY | Yes | JonBeatz, MSC | <MSC_LITELLM_MASTER_KEY> | `.env.local` | LiteLLM proxy local master key |
 | MSC_LITELLM_PORT | No | JonBeatz, MSC | 4000 | `.env.local` | LiteLLM proxy port |
 | MSC_LITELLM_CONFIG | Conditional | JonBeatz, MSC | config/litellm_config.yaml | `.env.local` | LiteLLM yaml config file path |
 | MSC_LITELLM_START_NGROK | No | JonBeatz, MSC | 0 | `.env.local` | Set to 1 to enable ngrok tunnel for Cursor Agent |

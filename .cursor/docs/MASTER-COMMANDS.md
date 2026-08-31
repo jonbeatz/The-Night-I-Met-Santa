@@ -1,7 +1,7 @@
 # JonBeatz — Master Command Reference
 
 **Profile root:** `D:\Hermes\projects\JonBeatz`  
-**Last updated:** 2026-08-08 · **Version:** 4.0.0
+**Last updated:** 2026-08-27 · **Version:** 4.0.0
 
 ---
 
@@ -26,6 +26,9 @@
 | `npm run doctor` | **Unified** health: services, env, image, Google, git | Anytime |
 | `npm run boot:setup` | Refresh Master-Startup + DeepSeek + Telegram shortcuts; remove duplicate `Hermes_Gateway_*`, Profile Jedi Tray from Startup | After boot script changes |
 | `npm run boot:doctor` | Audit shortcuts, single Startup entry, ports, LM Studio tuning | Troubleshoot boot |
+| `npm run n8n:watchdog:hidden` | Re-register hidden n8n health task (`wscript` + `pythonw` every 15 min) | After n8n watchdog script change |
+| `npm run watchdogs:hidden` | Re-register Profile / Memory / Vault Sync / Mem0 backup / Mnemosyne sleep hidden tasks | After those scripts change; **do not resume** matching Hermes cron jobs |
+| Other profiles | `register-hidden-hermes-script-task.ps1` (shared scripts) | Hide one Hermes Python/PowerShell job on Windows. `fleet:sync` copies `hermes-*-hidden.vbs` into `scripts/` if missing. Pause the matching Hermes cron. |
 
 ---
 
@@ -34,7 +37,7 @@
 | Item | Path / command |
 |------|----------------|
 | **Windows Startup** | `Startup\Master-Startup.lnk` only (hidden) → `Master-Startup.ps1 -SkipDesktop` |
-| Boot sequence | Telegram gateway → partial ping → LiteLLM + ngrok (background). **Desktop skipped** — open via `npm run hermes:desktop-ready` |
+| Boot sequence | Telegram gateway → partial ping → LiteLLM + ngrok **detached** (no console; log `deepseek-api\logs\litellm-proxy.log`). **Desktop skipped** — open via `npm run hermes:desktop-ready` |
 | Manual boot | `D:\Hermes\Master-Startup.lnk` or `Master-Startup.ps1 -ShowWindows` (omit `-SkipDesktop` to also launch Desktop) |
 | DeepSeek only | `D:\Hermes\My-DeepSeek-API.lnk` or `npm run deepseek:on` |
 | Telegram reconnect | `D:\Hermes\Start Telegram Gateway.lnk` or `npm run telegram:gateway` |
@@ -76,20 +79,40 @@
 | `npm run video:polish:status` | Doctor for polish chain folders + Kinocut |
 | `npm run freecut:open` | FreeCut human polish (freecut.net + workspace folder) |
 | `npm run comfy:start` | Start shared ComfyUI (:8188) with VRAM guards |
+| `npm run comfy:start:qwen` | Unload LMS + `--lowvram` — **2512 Lightning / keep** start. Card: [LOCAL-COMFY-2512-LIGHTNING.md](./LOCAL-COMFY-2512-LIGHTNING.md) |
 | `npm run comfy:stop` | Stop ComfyUI only (keeps LM Studio) |
 | `npm run comfy:restart` | Restart ComfyUI |
 | `npm run comfy:status` | JSON: port, queue, PIDs |
 | `npm run comfy:repair-symlinks` | Recreate ComfyUI model hardlinks (H:\LLM_VAULT → models/) then verify |
 | `npm run comfy:hardlink-check` | Check-only Fable 5 vault↔Comfy hardlink health (exit 1 on critical fail) |
+| `npm run comfy:print-upscale-smoke` | HBA: Siax + tiled 2512 print chain → 5250×2625 (needs Comfy up) |
+| `npm run prompt:expand -- "idea"` | Sidecar: expand a short idea to 2512 positive (DeepSeek `:4000` first) |
+| `npm run comfy:qwen2512` | HBA keep (portrait 1024 / 20). Spreads: `scripts/comfy-qwen2512-run.py --mode keep` |
+| `npm run comfy:qwen2512:lightning` | 4-step Lightning draft only — never page keep |
 | `npm run comfy:compare -- "prompt"` | Run all txt2img workflows + HF cloud comparison |
 | `npm run lmstudio:audit` | LM Studio vault + API health check |
 | `npm run comfy:idle-watcher` | MSC idle watcher daemon (suggest stop after 15m idle) |
 
-**Local dials (Fable 5 · 16 GB):** fast = z-image Q4 · fast keep = z-image BF16 · best = Qwen-Image-2512 · edit = Edit-2511 · Flux = Klein 9B/4B. Unload `qwen3-4b` before heavy Qwen. **ComfyUI only** (LMS cannot load diffusion). Vault: `[[Local-image-model-picker-16GB]]`.
+**Local dials (16 GB):** **default free still = 2512 Lightning** (4-step). z-image Q4 = fast photoreal-ish iterate · 2512 20-step = keep · Edit-2511 = local edit · Flux = Klein 9B/4B. Unload `qwen3-4b` before 2512. **ComfyUI only** (LMS cannot load diffusion). Vault: `[[Local-image-model-picker-16GB]]`.
 
 **Docs:** [IMAGE-WORKFLOW.md](./IMAGE-WORKFLOW.md) · [COMFYUI-MODELS.md](./COMFYUI-MODELS.md) · [VRAM-IMAGE.md](./VRAM-IMAGE.md)
 
 **Profile commands** (PowerShell profile, require ComfyUI): `gen-image-local`, `edit-image`, `inpaint-image`, `upscale-image`, `generate-video`, `animate-image`.
+
+## Adobe Photoshop + InDesign (UXP — hub + book profiles)
+
+**Canonical tooling:** TNIMS `tools/layout-mcp` · JonBeatz/HBA use a **junction** to that folder. Hub playbook: profile `ADOBE-UXP-CONTROL.md` · setup: `tools/layout-mcp/SETUP.md` + `PHOTOSHOP-SETUP.md`.
+
+| Command | What it does |
+|---------|--------------|
+| `npm run layout:photoshop-mcp:bg` | Start adobepy broker `:47391` + MCP `:8766` (background) |
+| `npm run layout:photoshop-mcp` | Same, foreground |
+| `npm run layout:indesign-bridge` | InDesign UXP bridge `:19300` / `:19301` |
+| `npm run layout:adobe:diagnose` | Ports + PS readyz + path smoke |
+| `npm run layout:install` | Reinstall layout MCP deps |
+| `npm run ps:export-layers` | Export each PS layer as JPG (skill: Photoshop-Layer-Export) |
+
+**Gate:** Creative Cloud signed in → UDT Load/Watch → if PS `sessions=0`, UDT **Reload** Adobe Python Bridge → reload Cursor MCP. Prefer `indesign-uxp` over COM `indesign-exec`.
 
 ---
 
@@ -114,6 +137,8 @@ Freelance invoices live in **Vader Vault**, not in LiteLLM “billing mode”.
 |------|--------|
 | Playbook | [INVOICING.md](./INVOICING.md) |
 | Ledger | `H:\Vader_Vault\_attachments\invoices\JonFarrell\INVOICE-LEDGER.md` |
+| **Default template** | `…\templates\JonFarrell_Invoice_MASTER_DEFAULT.docx` |
+| New blank copy | `npm run invoice:template` (Desktop draft) |
 | Files | `…\issued\` · `…\clients\<Client>\` · `…\templates\` |
 | Patterns | vault `Pattern-Invoice-tracking-vault` · `Pattern-Invoice-list-rate-courtesy-discount` |
 
@@ -243,7 +268,7 @@ LiteLLM / DeepSeek stack scripts live in `D:\Hermes\projects\_core-scripts\deeps
 
 | Provider slug | Endpoint | Models |
 |---------------|----------|--------|
-| `local-127.0.0.1:4000` | LiteLLM `:4000` | `deepseek-v4-pro`, `deepseek-v4-flash` |
+| `local-127.0.0.1:4000` | LiteLLM `:4000` | **Default `deepseek-v4-flash`** (provider `default_model` must match). `deepseek-v4-pro` only when picked. |
 | `local-lm-studio-(free)` | LM Studio `:1234` | `qwen3-4b-instruct-2507` (default), `gemma-4-12b-it-qat`, `qwen3.5-9b`, `gpt-oss-20b`, `deepseek-r1-distill-qwen-14b`, `qwen3.6-27b`, `qwen2.5-coder-32b-instruct`, `qwen3.6-35b-a3b-ud` |
 
 **Desktop picker (preferred):** Hermes Desktop → model menu → **Refresh Models** → pick from **LOCAL DEEPSEEK LITELLM (PAID)** or **LOCAL LM STUDIO (FREE)**. Use **Edit Models…** to show/hide rows.
@@ -281,9 +306,11 @@ LiteLLM / DeepSeek stack scripts live in `D:\Hermes\projects\_core-scripts\deeps
 | `npm run deepseek:status` | Probe `:4000/v1/models` + Hermes model line |
 | `npm run deepseek:test` | One-shot LiteLLM chat completion smoke test |
 
+PC login starts LiteLLM **without** a desktop console (`MSC_LITELLM_DETACHED_CONSOLE` unset/`0`). Visible fleet window: `MSC_LITELLM_DETACHED_CONSOLE=1` or `Master-Startup.ps1 -ShowWindows`. Logs: `_core-scripts/deepseek-api/logs/litellm-proxy.log`.
+
 **Ngrok (Cursor Agent):** Run `npm run deepseek:ngrok` (LiteLLM + ngrok from the `_core-scripts/deepseek-api` stack) — use the HTTPS URL + `/v1` in Cursor Override. The public URL is written to `_core-scripts/deepseek-api/logs/ngrok-public-url.txt`. Localhost `:4000` fails Agent ("private networks forbidden").
 
-**Cursor (Setup B — JonBeatz hub):** Override ON → ngrok `/v1` + `sk-jonbeatz-deepseek-2026`. Models: `deepseek-v4-pro` / `deepseek-v4-flash` (direct) + OpenRouter `*-or` aliases. Registry: JonBeatz **`CURSOR-MODELS-CHEATSHEET.md`** · `npm run cursor:models`. **Auto** = Cursor subscription, not BYOK list — pick models explicitly.
+**Cursor (Setup B — JonBeatz hub):** Override ON → ngrok `/v1` + `<MSC_LITELLM_MASTER_KEY>`. Models: `deepseek-v4-pro` / `deepseek-v4-flash` (direct) + OpenRouter `*-or` aliases. Registry: JonBeatz **`CURSOR-MODELS-CHEATSHEET.md`** · `npm run cursor:models`. **Auto** = Cursor subscription, not BYOK list — pick models explicitly.
 
 **Verify:** `npm run deepseek:test` · `npm run deepseek:test:openrouter`
 
@@ -497,10 +524,11 @@ MSC Kanban ports (3001/3005/9119) live in the **MyStudioChannel** repo — not s
 | **push jon-beatz live** / **update jon-beatz site** | `site:package` + MCP deploy + CDN flush |
 | **push jonbeatz.dev live** / **update .dev site** | Open `D:\Hermes\projects\JonBeatz.dev` → `npm run site:package` + MCP deploy `jonbeatz.dev` + CDN flush |
 | **review tool** / paste repo URL | Review-Tool.md + update TOOLS-*.md |
-| **review batch** / multiple URLs | Review-Tool.md batch — grades first, one install gate |
+| **review batch** / multiple URLs | Review-Tool.md batch — grades first this turn; one install gate **next** turn |
 | **review design** / **grade this site** | Review-Tool.md design grade → DESIGN-REFERENCES |
 | **review session done** | Review-Session-Done.md + sync:docs + tools:status |
 | **what did we invoice …** / **invoice for …** / **was … paid** | [INVOICING.md](./INVOICING.md) → vault `INVOICE-LEDGER.md` + `issued/` |
+| **invoice template** / **new invoice** / **give me the invoice template** | `npm run invoice:template` → Desktop draft from vault `JonFarrell_Invoice_MASTER_DEFAULT.docx` |
 
 See **[Agent-Runbook.md](./Agent-Runbook.md)** for full copy/paste prompts.
 

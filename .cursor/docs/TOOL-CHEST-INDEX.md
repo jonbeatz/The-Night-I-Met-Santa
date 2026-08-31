@@ -60,7 +60,7 @@
 | **InDesign UXP Bridge** | Free | — (InDesign + UDT) | `npm run layout:indesign-bridge` · Bridge Connected ✓ | IN USE — TNIMS; `tools/layout-mcp/SETUP.md` |
 | **FreeCut** | Free | — | `npm run freecut:open` | IN USE — human polish UI (freecut.net) |
 | **Video polish chain** | Free / fal | `FAL_API_KEY` optional | `npm run video:polish:status` | IN USE — VIDEO-POLISH-CHAIN.md |
-| **profile-health-watchdog** | Free | — | Hermes cron every 6h | Fleet — LiteLLM key probe; Telegram on failure |
+| **profile-health-watchdog** | Free | — | Windows task 00/06/12/18 | Fleet — LiteLLM key probe; Telegram on failure |
 
 Run `npm run ecosystem:audit` for exact SET/EMPTY per file.
 
@@ -135,9 +135,9 @@ Run `npm run ecosystem:audit` for exact SET/EMPTY per file.
 
 | Check | What | Where |
 |-------|------|-------|
-| **Master key policy** | All 7 profiles use `sk-jonbeatz-deepseek-2026` + `deepseek-v4-pro` | `%LOCALAPPDATA%\hermes\profiles\*\config.yaml` |
-| **Watchdog** | Cron every 6h — probes LiteLLM `/v1/models` per profile key | `profiles\jonbeatz\scripts\profile-health-watchdog.py` |
-| **Alert** | Telegram only on failure; silent = healthy | Hermes cron `56769cb1e0f3` |
+| **Master key policy** | All 7 profiles use `<MSC_LITELLM_MASTER_KEY>` + `deepseek-v4-pro` | `%LOCALAPPDATA%\hermes\profiles\*\config.yaml` |
+| **Watchdog** | Hidden Windows task 00/06/12/18 — probes LiteLLM `/v1/models` per profile key | `profiles\jonbeatz\scripts\profile-health-watchdog.py` |
+| **Alert** | Telegram only on failure; silent = healthy | Task `JonBeatz_Profile_Health_Watchdog` (Hermes cron `56769cb1e0f3` paused) |
 | **Backups** | Before fleet-wide key changes | `D:\Hermes\projects\JonBeatz\.backups\profiles\YYYYMMDD\` |
 
 **Gotcha:** Wrong per-profile key → LiteLLM returns HTTP 400 **"No connected db"** (misleading — not a SQLite issue). See JonBeatz `TRUTH.md` → LiteLLM Master Key Policy.
